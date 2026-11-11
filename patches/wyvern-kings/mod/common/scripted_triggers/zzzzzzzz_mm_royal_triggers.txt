@@ -1,0 +1,137 @@
+﻿mm_royal_is_king = { OR = { has_trait = mm_royal_dragon_king has_trait = mm_royal_complete has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress } }
+mm_royal_is_emperor = { OR = { has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress } }
+mm_royal_player_available = { is_alive = yes is_adult = yes is_imprisoned = no is_incapable = no myv_is_wyvern = no }
+mm_royal_has_bonded_king = {
+    any_relation = { type = myv_bonded_wyvern is_alive = yes mm_royal_is_king = yes }
+}
+mm_royal_pair_ready_for_devour = {
+    mm_royal_player_available = yes
+    scope:recipient = {
+        is_alive = yes
+        has_trait = mm_royal_dragon_king
+        has_character_flag = mm_royal_fixed_identity
+        NOT = { has_trait = mm_royal_torpor }
+        has_relation_myv_wyvern_bonded_character = scope:actor
+        trigger_if = {
+            limit = { exists = var:mm_royal_twin }
+            has_relation_mm_dragon_twin = var:mm_royal_twin
+            var:mm_royal_twin = {
+                is_alive = yes
+                has_trait = mm_royal_dragon_king
+                has_character_flag = mm_royal_fixed_identity
+                NOT = { has_trait = mm_royal_torpor }
+                has_relation_myv_wyvern_bonded_character = scope:actor
+                var:mm_royal_twin = prev
+                var:mm_royal_throne = prev.var:mm_royal_throne
+            }
+        }
+        trigger_else = { always = no }
+    }
+    OR = {
+        AND = { scope:recipient = { var:mm_royal_throne = 1 } NOT = { has_global_variable = mm_royal_fire_united } }
+        AND = { scope:recipient = { var:mm_royal_throne = 2 } NOT = { has_global_variable = mm_royal_earth_united } }
+        AND = { scope:recipient = { var:mm_royal_throne = 3 } NOT = { has_global_variable = mm_royal_sea_united } }
+        AND = { scope:recipient = { var:mm_royal_throne = 4 } NOT = { has_global_variable = mm_royal_sky_united } }
+    }
+}
+mm_royal_fire_united = { has_global_variable = mm_royal_fire_united }
+mm_royal_earth_united = { has_global_variable = mm_royal_earth_united }
+mm_royal_sea_united = { has_global_variable = mm_royal_sea_united }
+mm_royal_sky_united = { has_global_variable = mm_royal_sky_united }
+mm_royal_all_thrones_united = { mm_royal_fire_united = yes mm_royal_earth_united = yes mm_royal_sea_united = yes mm_royal_sky_united = yes }
+myv_is_living_wild_wyvern = {
+	myv_is_living_wyvern = yes
+	NOT = { has_trait = myv_wyvern_tamed }
+	NOT = { has_variable = mm_wyvern_captor }
+    NOT = { has_trait = mm_royal_torpor }
+}
+
+
+mm_wyvern_can_serve_as_knight = {
+    is_available_quick = { ai = yes adult = yes imprisoned = no incapable = no hostage = no }
+    myv_is_living_wyvern = yes
+    has_trait = myv_wyvern_tamed
+    exists = employer
+    employer = $ARMY_OWNER$
+    NOT = { has_variable = mm_wyvern_captor }
+    NOT = { mm_wyvern_has_assigned_rider = yes }
+    NOT = { has_character_flag = myv_wyvern_travelling_with_rider }
+    NOT = { exists = current_travel_plan }
+    trigger_if = {
+        limit = { exists = var:myv_wyvern_bonded_character }
+        var:myv_wyvern_bonded_character = { is_alive = yes }
+    }
+    trigger_else = { always = no }
+    trigger_if = {
+        limit = { $ARMY_OWNER$ = { is_ai = no } }
+        is_knight_permitted = $ARMY_OWNER$
+    }
+    NOT = { has_trait = mm_royal_torpor }
+}
+
+mm_dragon_human_pair_valid_trigger = {
+	is_alive = yes
+	is_female = yes
+	age >= 18
+	has_trait = myv_wyvern_tamed
+	has_character_flag = mm_wyvern_human_form
+	is_imprisoned = no
+	is_incapable = no
+	NOT = { has_character_flag = mm_dragon_half_breeding_cooldown }
+	has_relation_myv_wyvern_bonded_character = $FATHER$
+	NOT = { is_close_family_of = $FATHER$ }
+	$FATHER$ = {
+		is_alive = yes
+		is_female = no
+		age >= 18
+		is_imprisoned = no
+		is_incapable = no
+		has_trait = mm_wyvern_bathed_in_dragon_blood
+		myv_is_wyvern = no
+	}
+    NOT = { has_trait = mm_royal_torpor }
+}
+
+mm_dragon_stable_mother_valid_trigger = {
+	is_alive = yes
+	is_female = yes
+	age >= 12
+	has_trait = myv_wyvern_tamed
+	has_character_flag = myv_wyvern_in_stable
+	has_variable = myv_wyvern_stable_county
+	NOT = { has_character_flag = mm_dragon_forced_breeding_cooldown }
+	var:myv_wyvern_stable_county = {
+		holder = $KEEPER$
+		any_county_province = { has_building_or_higher = myv_wyvern_stable_01 }
+	}
+    NOT = { has_trait = mm_royal_torpor }
+}
+
+mm_dragon_stable_pair_valid_trigger = {
+	is_alive = yes
+	is_female = no
+	age >= 12
+	has_trait = myv_wyvern_tamed
+	has_character_flag = myv_wyvern_in_stable
+	has_variable = myv_wyvern_stable_county
+	$MOTHER$ = { mm_dragon_stable_mother_valid_trigger = { KEEPER = $KEEPER$ } }
+	var:myv_wyvern_stable_county = $MOTHER$.var:myv_wyvern_stable_county
+	NOT = { is_close_family_of = $MOTHER$ }
+    NOT = { has_trait = mm_royal_torpor }
+    NOT = { has_relation_mm_dragon_twin = $MOTHER$ }
+}
+
+myv_is_personally_bonded_tamed_wyvern = {
+    # Tooltip evaluation may inspect all AND terms; branch before dereferencing.
+    trigger_if = {
+        limit = { myv_is_living_wyvern = yes }
+        has_trait = myv_wyvern_tamed
+        trigger_if = {
+            limit = { exists = var:myv_wyvern_bonded_character }
+            var:myv_wyvern_bonded_character = $OWNER$
+        }
+        trigger_else = { always = no }
+    }
+    trigger_else = { always = no }
+    NOT = { has_trait = mm_royal_torpor }
+}

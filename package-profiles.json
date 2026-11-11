@@ -1,0 +1,73 @@
+{
+  "wyvern-pod": {
+    "name": "黑暗亲王与飞龙兼容",
+    "folder": "VOTC_Wyvern_POD_Compatibility",
+    "mods": [
+      "3811316052",
+      "2216659254"
+    ],
+    "modules": [
+      "wyvern",
+      "wyvern-capture",
+      "wyvern-human-form",
+      "wyvern-bloodline",
+      "wyvern-kings",
+      "wyvern-ascension",
+      "dragon-creed",
+      "dragon-culture",
+      "dragon-politics",
+      "dragon-bond",
+      "dragon-recovery",
+      "dragon-death-servants",
+      "dragon-news",
+      "dragon-map-performance",
+      "dragon-ritual",
+      "dragon-relics",
+      "character-preservation"
+    ],
+    "omitDependencies": [
+      "chinese-core"
+    ],
+    "overlay": "patches/wyvern-pod/mod",
+    "exclude": [
+      "wyvern:gui/window_character.gui",
+      "wyvern:gui/window_character_finder.gui",
+      "wyvern:gui/interaction_confirmation.gui",
+      "wyvern:gui/shared/00_votc_trait_tooltip.gui",
+      "wyvern:common/genes/05_genes_special_accessories_clothes.txt",
+      "dragon-creed:gui/window_faith.gui",
+      "dragon-map-performance:gui/map_icon_layer.gui",
+      "character-preservation:common/scripted_triggers/zzzzzzzzzzzz_mm_BoTL_cleanup.txt",
+      "character-preservation:common/scripted_triggers/zzzzzzzzzzzz_mm_cleanup_protection.txt",
+      "dragon-culture:history/cultures/myv_wyvern_culture.txt",
+      "character-preservation:common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "character-preservation:events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "dragon-creed:common/factions/zzzzzz_mm_v1312_factions.txt",
+      "dragon-creed:common/script_values/zzzzzz_mm_dragon_v1312_faction_values.txt",
+      "dragon-creed:common/script_values/zzzzzz_mm_dragon_v1312_religion_values.txt",
+      "dragon-creed:common/script_values/zzzzzz_mm_dragon_v1312_conversion_factors.txt",
+      "dragon-bond:common/scripted_modifiers/zzzz_mm_dragon_bond_marriage.txt",
+      "dragon-bond:common/scripted_triggers/zzzz_mm_dragon_bond_marriage.txt",
+      "wyvern-ascension:common/scripted_triggers/zzzzzzzzzz_mm_ascension_civil_rights.txt",
+      "wyvern-capture:common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "dragon-relics:common/scripted_triggers/zzzzzz_mm_relic_puppet_access.txt",
+      "dragon-relics:common/artifacts/templates/zzzzzz_mm_relic_forging_access.txt",
+      "dragon-relics:common/artifacts/templates/mm_dragon_relics.txt",
+      "dragon-creed:common/casus_belli_types/zzzzzz_mm_v1312_religious_wars.txt",
+      "dragon-relics:common/schemes/scheme_types/zzzzzz_mm_relic_court_scheme.txt",
+      "dragon-relics:common/schemes/scheme_types/zzzzzz_mm_relic_seduce_scheme.txt",
+      "dragon-creed:common/inspirations/zzzz_mm_v1312_forging.txt",
+      "dragon-relics:common/inspirations/zzzzzz_mm_relic_forging.txt",
+      "dragon-creed:common/scripted_effects/zzzz_mm_v1312_activity_rewards.txt",
+      "dragon-creed:common/scripted_effects/zzzz_mm_v1312_quality.txt",
+      "wyvern-human-form:common/character_interactions/mm_wyvern_human_form.txt",
+      "wyvern-human-form:gfx/portraits/portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "wyvern-human-form:gfx/portraits/trait_portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "wyvern-kings:common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "wyvern-kings:common/traits/mm_royal_traits.txt",
+      "wyvern-bloodline:common/on_action/mm_dragon_lineage_initialization.txt",
+      "wyvern-kings:common/scripted_effects/zzzzzzzzzz_mm_lineage_initialization_compat.txt",
+      "wyvern-kings:gui/custom_gui/myv_wyvern_character_window.gui"
+    ]
+  }
+}

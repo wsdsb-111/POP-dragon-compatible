@@ -1,0 +1,109 @@
+# Preserve ordinary character eligibility without granting immunity to
+# the existing health, office, gender, government, or knight restrictions.
+
+can_hunt_trigger = {
+	OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+	NOR = {
+		has_trait = wounded_2
+		has_trait = wounded_3
+		has_trait = infirm
+		has_trait = maimed
+		has_trait = blind
+	}
+	has_contagious_deadly_disease_trigger = no
+	custom_tooltip = {
+		text = hunt_cannot_hunt_parameter_tt
+		NOT = {
+			culture = { has_cultural_parameter = cannot_hunt }
+		}
+	}
+}
+
+court_position_employee_shown_trigger = {
+    is_imprisoned = no
+    tgp_is_ceremonial_liege_trigger = no
+    OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+}
+
+can_be_knight_trigger = {
+    trigger_if = {
+        limit = { myv_is_wyvern = yes NOT = { has_trait = mm_asc_dragon_body } }
+        mm_wyvern_can_serve_as_knight = { ARMY_OWNER = $ARMY_OWNER$ }
+    }
+    trigger_else = {
+	is_available_quick = {
+		ai = yes
+		hostage = no
+	}
+	OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+	can_be_warrior_trigger = { ARMY_OWNER = $ARMY_OWNER$ }
+	trigger_if = { # Admin governors cannot be knights
+		limit = {
+			$ARMY_OWNER$ = { government_has_mechanic = administrative }
+			is_courtier = no
+			exists = primary_title
+		}
+		primary_title = {
+			tier < tier_duchy
+			trigger_if = {
+				limit = { is_noble_family_title = yes }
+				always = no
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			$ARMY_OWNER$.culture = {
+				has_cultural_parameter = minimum_prowess_for_knights
+			}
+		}
+		prowess >= 12
+	}
+	trigger_if = {
+		limit = {
+			is_clergy = yes
+		}
+		OR = {
+			rite = { rite_has_parameter = clergy_can_fight }
+			AND = {
+				has_personal_tenet_flag = clergy_can_fight_personal
+				NOT = { rite = { rite_has_parameter = pacifist } }
+			}
+			culture = { has_cultural_parameter = culture_clergy_can_fight }
+			AND = {
+				$ARMY_OWNER$.culture = {
+					has_cultural_parameter = high_prowess_ignores_knight_restrictions
+				}
+				prowess >= 10
+			}
+		}
+	}
+	OR = {
+		AND = {
+			$ARMY_OWNER$.culture = {
+				has_cultural_parameter = high_prowess_ignores_knight_restrictions
+			}
+			prowess >= 10
+		}
+		has_trait = order_member
+		NOR = {
+			has_trait = blind
+			has_court_position = master_assassin_court_position
+		}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.diarch
+		}
+		this != liege.diarch
+	}
+	trigger_if = {
+		limit = {
+			$ARMY_OWNER$ = {
+				is_ai = no
+			}
+		}
+		is_knight_permitted = $ARMY_OWNER$
+	}
+    }
+}

@@ -1,0 +1,20 @@
+on_game_start_after_lobby = { on_actions = { mm_dragon_v139_identity_repair } }
+mm_dragon_v139_identity_repair = {
+    effect = {
+        character:99001001 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001002 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001003 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001304 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001305 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001306 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001307 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001308 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001309 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        character:99001310 = { if = { limit = { is_alive = yes } mm_dragon_assign_regional_identity_effect = yes } }
+        every_in_global_list = {
+            variable = myv_living_wyverns
+            limit = { is_alive = yes }
+            mm_dragon_assign_regional_identity_effect = yes
+        }
+    }
+}

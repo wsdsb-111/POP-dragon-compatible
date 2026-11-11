@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-03",
+  "scope": "PoD profile fixed-royal age display and appearance ages only; no tests, game launch, install, or true_age change.",
+  "sourceRoots": {
+    "R": ".",
+    "PoD": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2216659254",
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game"
+  },
+  "sources": [
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/POD_interface_triggers.txt",
+      "sha256": "4f3400ea696618b1a3062a4549fcb139224ef0e330061368bb7c95cce1fd6f12",
+      "roles": [
+        "native POD_character_age_predates_mankind definition"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/wyvern-pod/mod/common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_species.txt",
+      "sha256": "44f1f9a106e890517b92912d6c965f603d844f47decb5302d8587b67dd3d3242",
+      "roles": [
+        "reused mm_pod_is_fixed_royal trigger"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/customizable_localization/POD_fog_of_war_custom_loc.txt",
+      "sha256": "5abb706475848683acd54b8cbeee338fb8a5eb1b137a9a6d9cf9fd17f436b89d",
+      "roles": [
+        "native PODCharacterAge and PODCharacterAgeTooltip dispatch"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/script_values/POD_visual_age_values.txt",
+      "sha256": "9e5c802841aab4457e53ad768a6c261a623735614c8e3f31498a0ef8cad7566c",
+      "roles": [
+        "native visual-age calculation"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "localization/english/gui/POD_character_window_l_english.yml",
+      "sha256": "1651d439b1a9983aa9f0b9a8c6525dd854e15c3b3b127bfa8d28f34dc77da725",
+      "roles": [
+        "native English dinosaur-age tooltip and visual-age localization"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "localization/simp_chinese/gui/POD_character_window_l_simp_chinese.yml",
+      "sha256": "2ede47cc4fe62d3790f7cc0120aa733e7699c991a3c4af669469ae5087d391f1",
+      "roles": [
+        "native Chinese dinosaur-age tooltip and visual-age localization"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/effect_localization/00_additional_effects.txt",
+      "sha256": "d5b57f16a47cea994ca3541270d0e4b01e32146faaa5dc11f0f48320cee7c27b",
+      "roles": [
+        "native set_immortal_age effect localization"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "sha256": "fc450ad557a981982be06dc72aae684efbc4ef765d4c2c1bf1efe63515ca60cd",
+      "role": "PoD native age trigger plus fixed-royal branch"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "sha256": "7531aff8fd75308281d56585d02f9845d10ab093e39157531c75d19d50db7df7",
+      "role": "per-character fixed-royal appearance-age setter using set_immortal_age"
+    },
+    {
+      "path": "mod/common/customizable_localization/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "sha256": "3f05edf6e1b945def0bd2d73be61d29c2896aef7e19f92e6947c48f17bce1ec8",
+      "role": "direct panel age dispatch with unique keys; independent of duplicate localization ordering"
+    },
+    {
+      "path": "mod/localization/replace/english/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age_l_english.yml",
+      "sha256": "58e5b7ae7adf98753fc169c2671e24fffa318857bcaadbf6b0aa63bdfea3a046",
+      "role": "unique fixed-royal question marks and native fallback; legacy panel key also aligned"
+    },
+    {
+      "path": "mod/localization/replace/simp_chinese/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age_l_simp_chinese.yml",
+      "sha256": "14eb3251cb806d8d4ff0ea26dee538e1768153fc3d26fd8e2676a45878318926",
+      "role": "unique fixed-royal question marks and native fallback; legacy panel key also aligned"
+    }
+  ],
+  "generator": {
+    "path": "scripts/build-wyvern-pod-hidden-age.js",
+    "sha256": "0b4112a588ab2afdcdbe91a59ba19a3178b0c663390c67362f6728ae6eb8ed90"
+  },
+  "appearanceAgeByCharacter": {
+    "99001001": 13,
+    "99001002": 18,
+    "99001003": 23,
+    "99001304": 30,
+    "99001305": 25,
+    "99001306": 23,
+    "99001307": 28,
+    "99001308": 60,
+    "99001309": 40,
+    "99001310": 35
+  },
+  "behavior": {
+    "fixedRoyalAgeText": "??? via direct mm_pod_character_panel_age dispatch and unique localization key; native PODCharacterAge remains the ordinary fallback",
+    "tooltip": "Root GUI integration should use PODCharacterAgeTooltip; native AGE_DINOSAUR_TT appends PODCharacterVisualAge, which uses POD_visual_age/effective_age for immortals.",
+    "caller": "Root integration calls mm_pod_apply_fixed_royal_appearance_effect in each fixed-character scope during delayed after_lobby setup and myv_wyvern_monthly_pulse.",
+    "trueAge": "Existing true_age 20k formula and identity generator/receipt are untouched."
+  }
+}

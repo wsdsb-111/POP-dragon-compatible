@@ -1,0 +1,258 @@
+{
+  "generated": "2026-10-30T02:35+08:00",
+  "root": "./artwork/dragon-relics/deepseek-from-scratch",
+  "scope": [
+    "建模",
+    "材质",
+    "正交四视+斜角预览",
+    "GLB 交换件"
+  ],
+  "excluded": [
+    "CK3 原生 mesh/DDS 导出",
+    "游戏内安装与微调",
+    "实机与性能验收（用户指示无需）"
+  ],
+  "assets": [
+    {
+      "id": "black_crown",
+      "threeview_label": "宽420 深380 高380 mm",
+      "reference_views": "正面/左侧/背面/俯视 + 5 组特写",
+      "blend": "black_crown/black_crown.blend",
+      "blend_bytes": 483214,
+      "blend_md5": "651991635e0575a63be16474795f2970",
+      "glb": "black_crown/out/black_crown.glb",
+      "glb_bytes": 48630660,
+      "glb_md5": "8615c23092c523b083401cc5af3d360e",
+      "qa": {
+        "asset": "black_crown",
+        "state": "pass",
+        "objs": 79,
+        "tris": 38004,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 420.0,
+        "D": 373.4,
+        "H": 357.9
+      },
+      "renders": [
+        "back.png",
+        "beauty_front.png",
+        "beauty_front34.png",
+        "beauty_side34.png",
+        "front.png",
+        "front_norim.png",
+        "front_zoom.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "black_regalia",
+      "threeview_label": "全长2280 头宽420 头深380 mm",
+      "reference_views": "正面/左侧/背面/头部俯视 + 6 组特写",
+      "blend": "black_regalia/black_regalia.blend",
+      "blend_bytes": 801608,
+      "blend_md5": "9e37839b42b9c729ec088a2761a9b742",
+      "glb": "black_regalia/out/black_regalia.glb",
+      "glb_bytes": 113510744,
+      "glb_md5": "e999467c00aee5cc0a1c51f579c6d366",
+      "qa": {
+        "asset": "black_regalia",
+        "state": "pass",
+        "objs": 141,
+        "tris": 86172,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 420.0,
+        "D": 380.0,
+        "H": 2282.0
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "white_book",
+      "threeview_label": "高280 宽220 厚70 mm",
+      "reference_views": "正面/左侧/背面/俯视 + 7 组特写",
+      "blend": "white_book/white_book.blend",
+      "blend_bytes": 454573,
+      "blend_md5": "782f701acaa676b26696227f44fa0996",
+      "glb": "white_book/out/white_book.glb",
+      "glb_bytes": 48348324,
+      "glb_md5": "55dc02060776474cc471d58784c4337d",
+      "qa": {
+        "asset": "white_book",
+        "state": "pass",
+        "objs": 83,
+        "tris": 56736,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 312.5,
+        "D": 111.9,
+        "H": 314.0
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "fire_ring",
+      "threeview_label": "外宽42 总高38 内宽22 戒面纵深26 mm",
+      "reference_views": "正面/侧面/背面/俯视 + 6 组特写",
+      "blend": "fire_ring/fire_ring.blend",
+      "blend_bytes": 351067,
+      "blend_md5": "8e2f648cfcceb39472550c4714de9638",
+      "glb": "fire_ring/out/fire_ring.glb",
+      "glb_bytes": 84254268,
+      "glb_md5": "d34917594c2d92a65c9a1110f369eba1",
+      "qa": {
+        "asset": "fire_ring",
+        "state": "pass",
+        "objs": 37,
+        "tris": 28352,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 43.5,
+        "D": 31.6,
+        "H": 38.0
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "earth_sarcophagus",
+      "threeview_label": "长2660 宽1120 高920 mm",
+      "reference_views": "正面/侧面/背面/棺盖俯视 + 角件/剖面",
+      "blend": "earth_sarcophagus/earth_sarcophagus.blend",
+      "blend_bytes": 844780,
+      "blend_md5": "84836222085d870434e2b7831236244c",
+      "glb": "earth_sarcophagus/out/earth_sarcophagus.glb",
+      "glb_bytes": 88614700,
+      "glb_md5": "d65eed03f5b22d1523b8d961787d3dcb",
+      "qa": {
+        "asset": "earth_sarcophagus",
+        "state": "pass",
+        "objs": 395,
+        "tris": 214932,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 2720.4,
+        "D": 1184.2,
+        "H": 961.0
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "sea_armor",
+      "threeview_label": "图上无整体尺寸（按各视图比例）",
+      "reference_views": "正面/左侧/背面/俯视 + 7 组特写",
+      "blend": "sea_armor/sea_armor.blend",
+      "blend_bytes": 708267,
+      "blend_md5": "71b14ab1106b4621b7bb8f38b3bd9a7b",
+      "glb": "sea_armor/out/sea_armor.glb",
+      "glb_bytes": 61004104,
+      "glb_md5": "e5648675ebc3ade1c38d85f817d60555",
+      "qa": {
+        "asset": "sea_armor",
+        "state": "pass",
+        "objs": 93,
+        "tris": 102194,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 966.9,
+        "D": 743.3,
+        "H": 1625.6
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    },
+    {
+      "id": "sky_spear",
+      "threeview_label": "全长2300 mm",
+      "reference_views": "正面/左侧/背面/整矛展示 + 7 组特写",
+      "blend": "sky_spear/sky_spear.blend",
+      "blend_bytes": 419505,
+      "blend_md5": "1fd7a1ae6845f2f674bf9ccb0a95d51f",
+      "glb": "sky_spear/out/sky_spear.glb",
+      "glb_bytes": 86614372,
+      "glb_md5": "07ee558892f63e0a4f8b3891b1d5b7d4",
+      "qa": {
+        "asset": "sky_spear",
+        "state": "pass",
+        "objs": 69,
+        "tris": 59590,
+        "boundary": 0,
+        "nonman": 0,
+        "degen": 0,
+        "loose": 0,
+        "self_int": 0,
+        "norm_bad": 0,
+        "W": 290.5,
+        "D": 69.5,
+        "H": 2300.0
+      },
+      "renders": [
+        "back.png",
+        "beauty_main.png",
+        "beauty_side.png",
+        "front.png",
+        "side.png",
+        "top.png"
+      ]
+    }
+  ]
+}

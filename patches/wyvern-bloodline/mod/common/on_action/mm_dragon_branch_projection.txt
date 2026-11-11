@@ -1,0 +1,10 @@
+on_game_start_after_lobby = { on_actions = { mm_dragon_restore_branch_projections } }
+mm_dragon_restore_branch_projections = {
+    effect = {
+        every_player = {
+            if = { limit = { mm_dragon_has_blood_trigger = yes } mm_dragon_repair_branch_projection_effect = yes }
+            every_child = { limit = { is_alive = yes mm_dragon_has_blood_trigger = yes } mm_dragon_repair_branch_projection_effect = yes }
+            every_courtier_or_guest = { limit = { is_alive = yes mm_dragon_has_blood_trigger = yes } mm_dragon_repair_branch_projection_effect = yes }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿POD_custom_incompatible_splats_trigger = {
+    # Ancient true dragons have no inherited species feud, in either direction.
+    # Blood grades and Umbral gifts alone do not grant this exemption.
+    $ACTOR$ ?= { mm_dragon_is_true_dragon_parent_trigger = no }
+    $RECIPIENT$ ?= { mm_dragon_is_true_dragon_parent_trigger = no }
+	trigger_if = {
+		limit = { POD_splat_hostility_disabled = yes }
+		$ACTOR$ ?= { is_ai = yes }
+		$RECIPIENT$ ?= { is_ai = yes }
+	}
+	OR = {
+		POD_supe_on_vamp_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_supe_on_vamp_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_werewolf_on_vampire_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_werewolf_on_vampire_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_werewolf_on_hunter_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_werewolf_on_hunter_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_osiris_league_on_apophis_servant_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_osiris_league_on_apophis_servant_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_supe_on_demon_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_supe_on_demon_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_supe_on_fae_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_supe_on_fae_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_supe_on_bane_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_supe_on_bane_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_vampire_on_fae_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_vampire_on_fae_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_gaia_on_wyrm_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_gaia_on_wyrm_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+		POD_wyld_on_weaver_trigger = { ACTOR = $ACTOR$ RECIPIENT = $RECIPIENT$ }
+		POD_wyld_on_weaver_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+	}
+	POD_osiris_league_on_league_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+	POD_set_corrupted_on_corrupted_trigger = { ACTOR = $RECIPIENT$ RECIPIENT = $ACTOR$ }
+}

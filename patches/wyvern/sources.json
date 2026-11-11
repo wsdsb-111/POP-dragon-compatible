@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-21",
+  "scope": "49-mod playset Wyvern conflict patch",
+  "sourceRoots": {
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310",
+    "game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "gui/interaction_confirmation.gui",
+      "sha256": "34b86f5253bc564f3e3ecdd4a037f4d66397c4063defa450208db5eb702dac68"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_character_finder.gui",
+      "sha256": "8f3958ad2d697bca22786bc50e753488e25c937b93daf91f325e01972e9fd604"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_character.gui",
+      "sha256": "2ff56541cb81ecb943ab34747ba4005cc0010f28a24494dc3e5728808050114d"
+    },
+    {
+      "root": "workshop",
+      "path": "2506311074/common/genes/05_genes_special_accessories_clothes.txt",
+      "sha256": "b3cb862c099093805806c1f85ebadc87d48b219b33802a18f4d78d751386b5de"
+    },
+    {
+      "root": "workshop",
+      "path": "2592094512/gui/window_character.gui",
+      "sha256": "443308abc0b325f5541874be9239fa86f508056b158c8c3af1d9dfb472c4e1f4"
+    },
+    {
+      "root": "workshop",
+      "path": "3614384002/gui/interaction_confirmation.gui",
+      "sha256": "6aa8ba800fb6e020cb5d0d2d7c515a0a67cc222367e531209a07a0a5b2d20eb0"
+    },
+    {
+      "root": "workshop",
+      "path": "3614384002/gui/window_character_finder.gui",
+      "sha256": "5e781d6091d9c44be24b15b19e635bfc5fac51cb6a78285b142670933c757bf9"
+    },
+    {
+      "root": "workshop",
+      "path": "3717989134/gui/window_character.gui",
+      "sha256": "7ce6dc077ac6c180d64a9b1bbd397cf356b4c19ede86e5cee01f061544c285a2"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/05_genes_special_accessories_clothes.txt",
+      "sha256": "a1eef98070eb119b500a0e03573e79c4b8e4a65f8bf7f716ffe519016ec2804f"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/interaction_confirmation.gui",
+      "sha256": "1f7b9e0b367e227609662b20edd720cc71dd46e6d5b177c4aafb002f8fb1aeff"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/window_character_finder.gui",
+      "sha256": "9f77c9263b289866b4eaccd8e979475879abe9d3985d61e110518212fbd1d8ba"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/window_character.gui",
+      "sha256": "0b2251594b68fd492857e9adf531169859506042e2ca1cc469ee0ee69cf69940"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/shared/cooltip.gui",
+      "sha256": "9175a62c0ff839de7f0aa5a60bc3af0b00cec172e0954d8abd346cf181d63313",
+      "previousSha256": "c5db637c9ca094006e07b32f50cbaf964848425ec25c3beca64d37c9b3548497",
+      "reviewed": "2026-10-23: local file changed outside the consumed template; character_trait_tooltip still matches tooltipTemplateHash exactly after CRLF normalization. No patch output changed."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/script_values/myv_wyvern_values.txt",
+      "sha256": "f94724851b8690e8123571dbae20d775c83546f1be1064bc873ec626d2406792"
+    }
+  ],
+  "merges": [
+    {
+      "output": "mod/gui/window_character.gui",
+      "base": "2592094512/gui/window_character.gui",
+      "commonAncestor": "game/gui/window_character.gui",
+      "additions": [
+        "3811316052 Wyvern GUI changes",
+        "3717989134 MorePersonalityDepth GUI changes"
+      ],
+      "method": "Three-way merge with LF-normalized text; both merges were conflict-free; output uses the Hanfan source BOM and CRLF style."
+    },
+    {
+      "output": "mod/gui/interaction_confirmation.gui",
+      "base": "3811316052/gui/interaction_confirmation.gui",
+      "commonAncestor": "game/gui/interaction_confirmation.gui",
+      "additions": [
+        "3614384002 widget_merit_standalone"
+      ],
+      "method": "Three-way merge with LF-normalized text; conflict-free; output uses the Wyvern source BOM and line-ending style."
+    },
+    {
+      "output": "mod/gui/window_character_finder.gui",
+      "base": "3811316052/gui/window_character_finder.gui",
+      "commonAncestor": "game/gui/window_character_finder.gui",
+      "additions": [
+        "3614384002 widget_merit_standalone"
+      ],
+      "method": "Three-way merge with LF-normalized text; conflict-free; output uses the Wyvern source BOM and line-ending style."
+    },
+    {
+      "output": "mod/common/genes/05_genes_special_accessories_clothes.txt",
+      "base": "2506311074/common/genes/05_genes_special_accessories_clothes.txt",
+      "additions": [
+        "3811316052 myv_no_clothes_forced block"
+      ],
+      "method": "Append only the Wyvern block under accessory_genes.clothes; all OE blocks remain sourced from the OE file."
+    },
+    {
+      "output": "mod/gui/shared/00_votc_trait_tooltip.gui",
+      "base": "3811316052/gui/shared/cooltip.gui character_trait_tooltip",
+      "additions": [
+        "More Personality Depth: hide personality XP tracks"
+      ],
+      "method": "Only the existing track visibility adds Not(Trait.IsPersonality); Wyvern marker restrictions and Rite API remain."
+    },
+    {
+      "output": "mod/common/script_values/zzzz_multi_mod_wyvern_hatching.txt",
+      "base": "3811316052/common/script_values/myv_wyvern_values.txt",
+      "method": "Override only myv_wyvern_equipped_egg_hatch_chance with value 50 for both player and AI. Do not redefine the inventory chance or the annual scheduling hooks."
+    }
+  ],
+  "indexResolution": {
+    "sourceIndex": 221,
+    "chosenIndex": 223,
+    "scope": "special_genes.accessory_genes.clothes",
+    "conflict": "OE already assigns index 221 to oe_green_hi_nob_si and index 222 to oe_green_hi_nob_zhuang in the same clothes gene.",
+    "reason": "Use the next unused index so both OE Chinese clothing variants keep their identifiers."
+  },
+  "excluded": [],
+  "outputs": [
+    {
+      "path": "mod/common/genes/05_genes_special_accessories_clothes.txt",
+      "sha256": "4fbd7f25ba102d60ae8dd57aa0e8b37d19c8d79093dfb17a3a28771a77ecf147"
+    },
+    {
+      "path": "mod/common/script_values/zzzz_multi_mod_wyvern_hatching.txt",
+      "sha256": "6051462a59ac1d92a782f50579e2e8ec0aaa202b4c2c1a62b15787937b07a970"
+    },
+    {
+      "path": "mod/gui/interaction_confirmation.gui",
+      "sha256": "377db30f4d674e1bc61e44ab1f76534e27a45b07c22177340d5b2c3d12f9f2ea"
+    },
+    {
+      "path": "mod/gui/shared/00_votc_trait_tooltip.gui",
+      "sha256": "fe8bfa4087f8ef7efc23455a36229b27c11cb9d503471229d86be52be0568ed4"
+    },
+    {
+      "path": "mod/gui/window_character.gui",
+      "sha256": "4d1881a195a939ebcbfc8ff93063def57a68769f66adbb719f1f14410a2cdc7e"
+    },
+    {
+      "path": "mod/gui/window_character_finder.gui",
+      "sha256": "bbcbaad82322338b4cb09269174c9632172f79ad4d132981da8f31210081af58"
+    }
+  ],
+  "tooltipTemplateHash": "d2c05832487487271cc19f4632776da02a059cd9fdf60d56e0a31668e9f5a73e",
+  "updated": "2026-10-28"
+}

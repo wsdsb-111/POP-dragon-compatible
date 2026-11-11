@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-26",
+  "scope": "Actual county culture-balanced new-game lineages, true biological ancestry, symmetric consenting dragon-human births, all-tier black-blood mutation and exact fatal-hunt absorption",
+  "sourceRoots": {
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310",
+    "game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+      "sha256": "cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396"
+    },
+    {
+      "root": "game",
+      "path": "common/on_action/child_birth_on_actions.txt",
+      "sha256": "0fd4e08b9b4edb209ad491afec498b24e0258d88d8d4d506d074377517ef7ccf"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_character_templates/_scripted_character_templates.info",
+      "sha256": "175721f6c148ea586d86eba5af92c977578e1c1a3a19874d569cd2c446d19915"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_single_combat_effects.txt",
+      "sha256": "21aad9b03ffc3cb3e4190ebd0b5cdc61bd112b58f23932060b861e16eccaf6cd"
+    },
+    {
+      "root": "game",
+      "path": "common/character_interactions/00_perk_interactions.txt",
+      "sha256": "b784c38e5f29ef244404b15ee7eaa165ada5fa7e768c49bd9564eb4e9e5646e0"
+    },
+    {
+      "root": "game",
+      "path": "common/on_action/game_start.txt",
+      "sha256": "d989d5179007ff37af6e6191ddd9276b6c470c61539a3194d597df0ed2624636"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_chinese.txt",
+      "sha256": "8adb40488a86d1dfcbed1159a677d9f7db06c0ae19d92ea951774b9f8f59fc12"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_iranian.txt",
+      "sha256": "f0f872098780fa65e1ac7266a0e356a0761a7e9315dc515f066ff7571ec2dd83"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_byzantine.txt",
+      "sha256": "c1b031ad54e5bdf4b8b86cf852ef20d21174b11954f4a5efb226251298c9b815"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_latin.txt",
+      "sha256": "31563651a0fcb104bb8b4d1ae119645fdd38bc4ded389f70f27dcf7a10bae9d6"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_north_germanic.txt",
+      "sha256": "5156fc12c19beebb406733852e90e6073c2a94fec2917f149b1d5badde9a97a8"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_frankish.txt",
+      "sha256": "4b803cc68626098c1955c3ab34b9575d4dd757d50b4696702fde6484f821dce3"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_arabic.txt",
+      "sha256": "5cc86e9d8703bb9b0520a8e2044c10fa5f4d019051384017bf9d1bc15b53f9ff"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_japonic.txt",
+      "sha256": "bbf3d073330b548918ce67a98d522a52ad2d6599564f510f1a46560c23de8806"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/on_action/myv_wyvern_on_actions.txt",
+      "sha256": "fd3d1a49811f1d89590d51dd654519d8881bfd2b84f72ca41d6c2f30a2a63720"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_stable_effects.txt",
+      "sha256": "00e051a2449a36a9e4260a17e309c7117d425bcb28f01af2e079370d93e29756"
+    },
+    {
+      "root": "game",
+      "path": "common/on_action/dynasty_on_actions.txt",
+      "sha256": "c43c24e64049fc0661a094c09ffcc07f10cf9d6d7c186564a9b64ad361b81b53"
+    },
+    {
+      "root": "game",
+      "path": "events/dlc/tgp/tgp_japan_decision_events.txt",
+      "sha256": "ba27e88b6eef9226f44d0ecc4f645dcdcf5ff2fd91dc42199a4be452031a535f"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "729b226703108d1339d42ee2c5d8ad8398db36456dab3ee0f9222271ef55e5bd"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/character_interactions/mm_dragon_blood_hunt.txt",
+      "sha256": "5549886df9b8e6597e7d616f327646b3ac9c3a00d5e8c4cc251d62a480afb2f6"
+    },
+    {
+      "path": "mod/common/character_interactions/mm_dragon_breeding.txt",
+      "sha256": "d0274d5d63f83742292d95e90b0f80e21bc7b6e2e8aaa89a4931ce1dc9297abd"
+    },
+    {
+      "path": "mod/common/customizable_localization/mm_dragon_lineage.txt",
+      "sha256": "d8a53eb358cea917ba33ff58e0a2cf4ab62c4b17e67c0d91307c32f07ea5836e"
+    },
+    {
+      "path": "mod/common/modifiers/mm_dragon_diluted_blood.txt",
+      "sha256": "7958228bb8ec3e32deae5efe589dcaf80ed7fe04e507e0861de15cbb0c635008"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_absorption.txt",
+      "sha256": "3e7697688bd617adf9dc48764bc91edd66b70e415ad2dd391ddc55aa42da42c7"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_branch_projection.txt",
+      "sha256": "152aa574b167b03bee02864a3ec52e62c16226ecc45166f36c8d05bc0d0585a1"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_lineage.txt",
+      "sha256": "8eced92a57d2537eac39bdf2d79601c0ffafb5010558ca8b7bd509669aaea122"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_lineage_initialization.txt",
+      "sha256": "ce2f67629c44d46ddaafd16a2a183e630636f626a6fd73c774ce4bdd428ba23a"
+    },
+    {
+      "path": "mod/common/on_action/zzzzz_mm_dragon_wild_breeding_hooks.txt",
+      "sha256": "9fe654c820019348fa31374bd25df40b36536669a20721e627fa610d8be081ef"
+    },
+    {
+      "path": "mod/common/script_values/mm_dragon_lineage_values.txt",
+      "sha256": "10c7c30c981539327ff58904cc8bb27764b0c6e2a216c393d8f02c3ab65a1a19"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_absorption.txt",
+      "sha256": "eb5a680850f4e90605b9db12669645aea73d29e5d265e2e7964425c020dd3c1d"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_branch_projection.txt",
+      "sha256": "aa6464d687d357c003e3d99b62eec1d381308424ca3fb7a780d8eff0575ab0ea"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_egg_features.txt",
+      "sha256": "2ae7f840580b5672c73a7b58bd7d44a2ff7671ec95ee459f995380dbbaa193c3"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_half_eggs.txt",
+      "sha256": "1f8e01e1bcbeb80032e6a6bc81a6f9826fd35c758d00be9d4280787c0258e65a"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_lineage.txt",
+      "sha256": "c4587d53e3a4f0fee18730d8a40fb0ba90cf30f7e6d46eb8482fc31faffbc486"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_lineage_initialization.txt",
+      "sha256": "f0ad734b763363be12d0e3d40f49bcda0d55f6fe189489bd5bd2c292b5d16dd9"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_wild_breeding.txt",
+      "sha256": "471a04ec8c725b383fdb9a126d53b06145624956863b2a187c3d66675567edde"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzz_mm_dragon_native_eggs.txt",
+      "sha256": "37e2589507b9aa31675779b0e857276f11e52deec29196769d6d088d629c545e"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_blood_hunt.txt",
+      "sha256": "529da56e6cbe651a866cea27b9aaf0eaff947e7f4c10567b8c9a35f8780728fc"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_breeding.txt",
+      "sha256": "9f917cc15cae355227296cb6d91f343b4996429619c0af4239726c3eb1e0e731"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_lineage.txt",
+      "sha256": "0313264082874f4c789147bbef967617064ba78feee5f7562ff5afb667defb9d"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_wild_breeding.txt",
+      "sha256": "c385ed4743e29c74cfd5fe805fe7292ddfc29eb478d7bbe4bdbe467299356f0e"
+    },
+    {
+      "path": "mod/common/traits/mm_dragon_bloodline.txt",
+      "sha256": "158e5dd880c00d962a70c41709d63b55c7c191f1f5094d65f7f5c285455999e5"
+    },
+    {
+      "path": "mod/common/traits/mm_dragon_branches.txt",
+      "sha256": "8e4479f9ea08e738deb1ab41e050c56d85ecce9704a44d5498202c024308bbaa"
+    },
+    {
+      "path": "mod/events/mm_dragon_birth.txt",
+      "sha256": "2959571314e53eedf731544f13723a9ab7b6da75d6d47a7dac10b79bd4cfb3ef"
+    },
+    {
+      "path": "mod/events/mm_dragon_blood_hunt.txt",
+      "sha256": "031581d07f666a60fe85640a46fb8fddadbd52ae64e239a3a4b16b48d757949a"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_black_blood.dds",
+      "sha256": "84e34140badfaec7ff3d7385dba0d9ec5ab84b3127d0a7cc5b7425fb8b2ac4c1"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_half_dragon.dds",
+      "sha256": "9b94f9a17f8c3e4d578b82f923e8c6325c70aab9edc7ca9b7e0bd2fdce23e898"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_lineage_1.dds",
+      "sha256": "3756476b094cd774305ace3d9a0ae0025993a897ae8c3934b0716c037eccc823"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_lineage_2.dds",
+      "sha256": "9114595168edfe668bf7b441d4834d46108dd7e5efd335c90369d0717c3622fb"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_lineage_3.dds",
+      "sha256": "5717218c16dfb46e36d07ae5802c1ec8d61438946fc03e289c17358eeb5ef1c7"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_lineage_4.dds",
+      "sha256": "5024d26216f37453e48621a55b4c6724d5b1b9b3ff71502b7fd88278c5a469df"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_dragon_lineage_golden_eyes.txt",
+      "sha256": "c4b5ba50177c1fc2be340c88a3002497c65db1b6aadc2e5610e66ef6f784d86b"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_bloodline_l_english.yml",
+      "sha256": "364cc247a59aa7ccdb183b30a3c43af3a4f7c7cc1f0f3ef78702917f2f549baf"
+    },
+    {
+      "path": "mod/localization/replace/english/mm_dragon_native_l_english.yml",
+      "sha256": "c325f1cc14ba44f37dd9be9fe98f4745d147ff902d08b42f5fa8e18f5b691c08"
+    },
+    {
+      "path": "mod/localization/replace/simp_chinese/mm_dragon_native_l_simp_chinese.yml",
+      "sha256": "648bfe14f4ed1c49b61b5e586e47ccc8cc9eeb6ceeb4c1582da3b29d608e61fc"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_bloodline_l_simp_chinese.yml",
+      "sha256": "d9bbb05de56b027a067505a2f466691a37dcf67b0d594b997d5649de50ddd6a1"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_force_hatch.txt",
+      "sha256": "3a0996cc9a0eddfe6d414ebffc5f273ee1112042e01cc4fad118874351c1bc9f"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_force_hatch.txt",
+      "sha256": "c71e927891483c4e560795e2c45cbdb5c31ececbb6e85bdb45f38e58f42a2f14"
+    },
+    {
+      "path": "mod/common/decisions/mm_dragon_recovery_decisions.txt",
+      "sha256": "6f885305c4f925a2f578800a022b78f0efceb13e8f676d33ac34ad0f42311401"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_recovery_l_simp_chinese.yml",
+      "sha256": "4934c83cb72a3327a022cc8bfc710896287ba4ed1445a54f4d1181769b310e91"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_recovery_l_english.yml",
+      "sha256": "0b78ec851cc2634a0aa7e281cab7d85a8a62f38403bb181f1c974cc39ce0baf2"
+    }
+  ],
+  "updated": "2026-10-29"
+}

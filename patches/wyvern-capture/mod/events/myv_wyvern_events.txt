@@ -1,0 +1,1397 @@
+namespace = myv_wyvern
+
+# Debug creature creation: select an exact visual size band before spawning.
+myv_wyvern.0001 = {
+	type = character_event
+	title = myv_wyvern.0001.t
+	desc = myv_wyvern.0001.desc
+	theme = martial
+
+	option = {
+		name = myv_wyvern.0001.hatchling
+		myv_create_wyvern_effect = { AGE = 0 SIZE = 5 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_01
+		myv_create_wyvern_effect = { AGE = 5 SIZE = 30 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_02
+		myv_create_wyvern_effect = { AGE = 13 SIZE = 60 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_03
+		myv_create_wyvern_effect = { AGE = 20 SIZE = 90 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_04
+		myv_create_wyvern_effect = { AGE = 30 SIZE = 120 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_05
+		myv_create_wyvern_effect = { AGE = 40 SIZE = 150 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_06
+		myv_create_wyvern_effect = { AGE = 50 SIZE = 180 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_07
+		myv_create_wyvern_effect = { AGE = 72 SIZE = 210 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_08
+		myv_create_wyvern_effect = { AGE = 93 SIZE = 240 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_09
+		myv_create_wyvern_effect = { AGE = 134 SIZE = 270 }
+	}
+	option = {
+		name = myv_wyvern.0001.tier_10
+		myv_create_wyvern_effect = { AGE = 200 SIZE = 300 }
+	}
+	option = {
+		name = myv_wyvern.0001.cancel
+	}
+}
+
+# A wyvern has reached this county and torn through the local herds. The loss
+# is applied by the dispatching effect so it resolves immediately even for AI
+# rulers and cannot be postponed by leaving a player event open.
+myv_wyvern.0100 = {
+    type = character_event
+    trigger = {
+        exists = scope:myv_raid_victim
+        this = scope:myv_raid_victim
+        OR = {
+            exists = scope:myv_raid_debug_override
+            myv_is_actual_wyvern_raid_recipient = { COUNTY = scope:myv_raided_county }
+        }
+    }
+    override_background = { reference = myv_wyvern_hungry_raid }
+    title = myv_wyvern.0100.t
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { exists = scope:myv_raid_court_victim }
+                desc = myv_wyvern.0100.desc_court_death
+            }
+            triggered_desc = {
+                trigger = { exists = scope:myv_raid_debt_branch }
+                desc = myv_wyvern.0100.desc_empty_court
+            }
+            desc = myv_wyvern.0100.desc
+        }
+    }
+    theme = martial
+
+    left_portrait = {
+        character = scope:myv_raid_court_victim
+        trigger = { exists = scope:myv_raid_court_victim }
+        animation = fear
+        animate_if_dead = yes
+    }
+
+    option = {
+        name = myv_wyvern.0100.a
+        show_as_tooltip = {
+            if = {
+                limit = { NOT = { exists = scope:myv_raid_debt_branch } }
+                remove_short_term_gold = 50
+            }
+            if = {
+                limit = { exists = scope:myv_raid_court_victim }
+                custom_tooltip = myv_wyvern.0100.court_death_tt
+            }
+            add_prestige = -100
+        }
+    }
+}
+
+# The annual egg pulse creates the hatchling before opening this notification.
+# scope:myv_new_wyvern is preserved from the creation effect.
+myv_wyvern.0300 = {
+	type = character_event
+	window = myv_wyvern_feeding_event
+	title = myv_wyvern.0300.t
+	desc = myv_wyvern.0300.desc
+	theme = family
+	override_background = { reference = myv_wyvern_hatching }
+
+	immediate = {
+		# The feeding and hatching scenes share one custom window. This flag is
+		# event-specific so an ordinary feeding scene with a young wyvern keeps
+		# the normal feeding camera, placement and hover glow.
+		scope:myv_new_wyvern = {
+			add_character_flag = myv_wyvern_hatching_event_portrait
+		}
+	}
+
+	right_portrait = {
+		character = scope:myv_new_wyvern
+		animation = myv_wyvern_main
+	}
+
+	widgets = {
+		widget = {
+			is_shown = { always = yes }
+			gui = "myv_wyvern_hatchling_name"
+			container = "dynamic_birth_name"
+			controller = name_character
+			setup_scope = {
+				scope:myv_new_wyvern = { save_scope_as = name_character_target }
+			}
+		}
+	}
+
+	option = {
+		name = myv_wyvern.0300.a
+		# A player-culture randomization temporarily changes only the culture
+		# consulted by the name controller; confirmation restores its original culture.
+		scope:myv_new_wyvern = {
+			remove_character_flag = myv_wyvern_hatching_event_portrait
+			if = {
+                limit = { exists = var:mm_dragon_name_original_culture }
+                set_culture = var:mm_dragon_name_original_culture
+                remove_variable = mm_dragon_name_original_culture
+            }
+		}
+	}
+}
+
+# Multi-round wyvern hunt. Every event reuses the existing wide duel window,
+# portraits, poses, outfits, and cameras; the background follows lair state.
+myv_wyvern.0200 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0200.t
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_wyvern_sleeping = 1 } desc = myv_wyvern.0200.desc_sleeping }
+			desc = myv_wyvern.0200.desc
+		}
+	}
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+
+	option = {
+		name = myv_wyvern.0200.a
+		trigger = {
+			var:myv_slay_wyvern_sleeping = 0
+			scope:myv_slay_wyvern_target = { myv_is_living_wyvern = yes }
+		}
+		trigger_event = myv_wyvern.0209
+	}
+
+	option = {
+		name = myv_wyvern.0200.ambush
+		trigger = {
+			var:myv_slay_wyvern_sleeping = 1
+			scope:myv_slay_wyvern_target = { myv_is_living_wyvern = yes }
+		}
+		custom_tooltip = { text = myv_wyvern.0200.ambush_hint }
+		trigger_event = myv_wyvern.0207
+	}
+
+	option = {
+		name = myv_wyvern.0200.b
+		myv_slay_reset_state_effect = yes
+	}
+
+}
+
+# Resolve the ambush after the option is selected. Option tooltip previews do
+# not retain a variable set by an earlier random effect in the same option.
+myv_wyvern.0207 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		set_variable = { name = myv_slay_wyvern_result value = 0 }
+		random = {
+			chance = myv_slay_ambush_chance
+			set_variable = { name = myv_slay_wyvern_result value = 1 }
+		}
+		scope:myv_slay_wyvern_target = {
+			if = {
+				limit = { has_character_modifier = myv_wyvern_enraged }
+				remove_character_modifier = myv_wyvern_enraged
+			}
+			add_character_modifier = {
+				modifier = myv_wyvern_enraged
+				months = 3
+			}
+			myv_refresh_wyvern_prowess_effect = yes
+		}
+		if = {
+			limit = { var:myv_slay_wyvern_result = 1 }
+			set_variable = { name = myv_slay_target_part value = 1 }
+			set_variable = { name = myv_slay_wound_amount value = 75 }
+			myv_slay_apply_targeted_wound_effect = yes
+			set_variable = { name = myv_slay_previous_outcome value = 5 }
+		}
+		else = { set_variable = { name = myv_slay_previous_outcome value = 6 } }
+		trigger_event = myv_wyvern.0209
+	}
+}
+
+# First-exchange router. It is shared by the face-to-face opening and both
+# outcomes of the sleeping-wyvern ambush, and deliberately uses the lair pool.
+myv_wyvern.0209 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { NOT = { scope:myv_slay_wyvern_target = { myv_is_living_wyvern = yes } } }
+			trigger_event = myv_wyvern.0204
+		}
+		else = {
+			myv_slay_choose_lair_action_effect = yes
+			if = { limit = { var:myv_slay_wyvern_action = 1 } trigger_event = myv_wyvern.0211 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 2 } trigger_event = myv_wyvern.0212 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 4 } trigger_event = myv_wyvern.0214 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 5 } trigger_event = myv_wyvern.0215 }
+			else = { trigger_event = myv_wyvern.0204 }
+		}
+	}
+}
+
+# Central result router for every wyvern hit, including a failed withdrawal.
+# 4 = light wound, 2 = severe/escalated wound, 3 = death.
+myv_wyvern.0208 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { var:myv_slay_wyvern_result = 4 }
+			add_trait = wounded_1
+			add_prestige = -50
+			if = {
+				limit = { var:myv_slay_retreat_failed = 1 }
+				set_variable = { name = myv_slay_previous_outcome value = 8 }
+				remove_variable = myv_slay_retreat_failed
+			}
+			else = { set_variable = { name = myv_slay_previous_outcome value = 7 } }
+			trigger_event = myv_wyvern.0229
+		}
+		else_if = { limit = { var:myv_slay_wyvern_result = 2 } trigger_event = myv_wyvern.0202 }
+		else_if = { limit = { var:myv_slay_wyvern_result = 3 } trigger_event = myv_wyvern.0203 }
+		else = { trigger_event = myv_wyvern.0204 }
+	}
+}
+
+# The five action events share one structure: evade safely, attack the exposed
+# part, or commit to a scene-specific counter. Withdrawal unlocks only after
+# three full exchanges, from round 4 onward.
+myv_wyvern.0211 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0211.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 2 var:myv_slay_previous_action = 3 } desc = myv_wyvern.combat.transition_dismounted }
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value >= 75 } has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value >= 75 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0211.desc_outdoor_wounded desc = myv_wyvern.0211.desc_outdoor_wounded_alt } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0211.desc_outdoor desc = myv_wyvern.0211.desc_outdoor_alt_1 desc = myv_wyvern.0211.desc_outdoor_alt_2 } }
+			}
+			triggered_desc = {
+				trigger = { scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value >= 75 } has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value >= 75 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0211.desc_wounded desc = myv_wyvern.0211.desc_wounded_alt } }
+			}
+			desc = { random_valid = { desc = myv_wyvern.0211.desc desc = myv_wyvern.0211.desc_alt_1 desc = myv_wyvern.0211.desc_alt_2 } }
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = {
+		name = myv_wyvern.0211.dodge
+		custom_tooltip = { text = myv_wyvern.combat.style_dodge_hint }
+		hidden_effect = {
+			myv_slay_resolve_dodge_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 1 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.0211.strike
+		custom_tooltip = { text = myv_wyvern.combat.style_normal_hint }
+		hidden_effect = {
+			set_variable = { name = myv_slay_target_part value = 1 }
+			myv_slay_resolve_targeted_hit_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 1 } myv_slay_apply_targeted_wound_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 2 } trigger_event = myv_wyvern.0229 }
+		else = { set_variable = { name = myv_slay_previous_outcome value = 3 } trigger_event = myv_wyvern.0229 }
+	}
+	option = {
+		name = myv_wyvern.0211.active
+		custom_tooltip = { text = myv_wyvern.combat.style_active_hint }
+		hidden_effect = {
+			myv_slay_resolve_active_response_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 4 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+myv_wyvern.0212 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0212.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 2 var:myv_slay_previous_action = 3 } desc = myv_wyvern.combat.transition_dismounted }
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_attack_strength = 1 scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 50 } has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 50 } } } }
+				desc = myv_wyvern.0212.desc_outdoor_strong_wounded
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_attack_strength = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0212.desc_outdoor_strong desc = myv_wyvern.0212.desc_outdoor_strong_alt } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 50 } has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 50 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0212.desc_outdoor_wounded desc = myv_wyvern.0212.desc_outdoor_wounded_alt } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0212.desc_outdoor desc = myv_wyvern.0212.desc_outdoor_alt_1 desc = myv_wyvern.0212.desc_outdoor_alt_2 } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_attack_strength = 1 scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 50 } has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 50 } } } }
+				desc = myv_wyvern.0212.desc_strong_wounded
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_attack_strength = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0212.desc_strong desc = myv_wyvern.0212.desc_strong_alt } }
+			}
+			triggered_desc = {
+				trigger = { scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 50 } has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 50 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0212.desc_wounded desc = myv_wyvern.0212.desc_wounded_alt } }
+			}
+			desc = { random_valid = { desc = myv_wyvern.0212.desc desc = myv_wyvern.0212.desc_alt_1 desc = myv_wyvern.0212.desc_alt_2 } }
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		triggered_animation = {
+			# Portrait triggers run on the wyvern; attack state belongs to the player.
+			trigger = { root = { has_variable = myv_slay_attack_strength var:myv_slay_attack_strength = 1 } }
+			animation = myv_wyvern_running
+		}
+		triggered_animation = {
+			trigger = { always = yes }
+			animation = myv_wyvern_main
+		}
+	}
+	option = {
+		name = myv_wyvern.0212.dodge
+		custom_tooltip = { text = myv_wyvern.combat.style_dodge_hint }
+		hidden_effect = {
+			myv_slay_resolve_dodge_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 1 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.0212.strike
+		custom_tooltip = { text = myv_wyvern.combat.style_normal_hint }
+		hidden_effect = {
+			set_variable = { name = myv_slay_target_part value = 3 }
+			myv_slay_resolve_targeted_hit_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 1 } myv_slay_apply_targeted_wound_effect = yes }
+			else_if = { limit = { var:myv_slay_attack_strength = 1 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 2 } trigger_event = myv_wyvern.0229 }
+		else_if = { limit = { var:myv_slay_attack_strength = 1 } trigger_event = myv_wyvern.0208 }
+		else = { set_variable = { name = myv_slay_previous_outcome value = 3 } trigger_event = myv_wyvern.0229 }
+	}
+	option = {
+		name = myv_wyvern.0212.active
+		custom_tooltip = { text = myv_wyvern.combat.style_active_hint }
+		hidden_effect = {
+			myv_slay_resolve_active_response_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 4 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+myv_wyvern.0213 = {
+	type = character_event
+	window = myv_wyvern_dive_event
+	override_background = { reference = myv_wyvern_dive }
+	title = myv_wyvern.0213.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 2 var:myv_slay_previous_action = 3 } desc = myv_wyvern.combat.transition_dismounted }
+		triggered_desc = {
+			trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 1 }
+			desc = myv_wyvern.0213.outdoor_opening
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value >= 50 } has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value >= 50 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0213.desc_wounded desc = myv_wyvern.0213.desc_wounded_alt desc = myv_wyvern.0213.desc_strong_wounded } }
+			}
+			desc = { random_valid = { desc = myv_wyvern.0213.desc desc = myv_wyvern.0213.desc_alt_1 desc = myv_wyvern.0213.desc_alt_2 desc = myv_wyvern.0213.desc_strong desc = myv_wyvern.0213.desc_strong_alt } }
+		}
+	}
+	theme = martial
+	left_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 1 }
+			animation = horse_sword_shield
+		}
+		triggered_animation = {
+			trigger = { always = yes }
+			animation = aggressive_sword
+		}
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_flying
+	}
+	option = {
+		name = myv_wyvern.0213.dodge
+		custom_tooltip = { text = myv_wyvern.combat.style_dodge_hint }
+		hidden_effect = {
+			myv_slay_resolve_dodge_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 1 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.0213.strike
+		custom_tooltip = { text = myv_wyvern.combat.style_normal_hint }
+		hidden_effect = {
+			set_variable = { name = myv_slay_target_part value = 2 }
+			myv_slay_resolve_targeted_hit_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 1 } myv_slay_apply_targeted_wound_effect = yes }
+			else_if = { limit = { var:myv_slay_attack_strength = 1 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 2 } trigger_event = myv_wyvern.0229 }
+		else_if = { limit = { var:myv_slay_attack_strength = 1 } trigger_event = myv_wyvern.0208 }
+		else = { set_variable = { name = myv_slay_previous_outcome value = 3 } trigger_event = myv_wyvern.0229 }
+	}
+	option = {
+		name = myv_wyvern.0213.active
+		custom_tooltip = { text = myv_wyvern.combat.style_active_hint }
+		hidden_effect = {
+			myv_slay_resolve_active_response_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 4 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+myv_wyvern.0214 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0214.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 2 var:myv_slay_previous_action = 3 } desc = myv_wyvern.combat.transition_dismounted }
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 scope:myv_slay_wyvern_target = { has_trait_xp = { trait = myv_wyvern_tail_injury value >= 50 } } }
+				desc = { random_valid = { desc = myv_wyvern.0214.desc_outdoor_wounded desc = myv_wyvern.0214.desc_outdoor_wounded_alt } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0214.desc_outdoor desc = myv_wyvern.0214.desc_outdoor_alt_1 desc = myv_wyvern.0214.desc_outdoor_alt_2 } }
+			}
+			triggered_desc = {
+				trigger = { scope:myv_slay_wyvern_target = { has_trait_xp = { trait = myv_wyvern_tail_injury value >= 50 } } }
+				desc = { random_valid = { desc = myv_wyvern.0214.desc_wounded desc = myv_wyvern.0214.desc_wounded_alt } }
+			}
+			desc = { random_valid = { desc = myv_wyvern.0214.desc desc = myv_wyvern.0214.desc_alt_1 desc = myv_wyvern.0214.desc_alt_2 } }
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = {
+		name = myv_wyvern.0214.dodge
+		custom_tooltip = { text = myv_wyvern.combat.style_dodge_hint }
+		hidden_effect = {
+			myv_slay_resolve_dodge_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 1 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.0214.strike
+		custom_tooltip = { text = myv_wyvern.combat.style_normal_hint }
+		hidden_effect = {
+			set_variable = { name = myv_slay_target_part value = 4 }
+			myv_slay_resolve_targeted_hit_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 1 } myv_slay_apply_targeted_wound_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 2 } trigger_event = myv_wyvern.0229 }
+		else = { set_variable = { name = myv_slay_previous_outcome value = 3 } trigger_event = myv_wyvern.0229 }
+	}
+	option = {
+		name = myv_wyvern.0214.active
+		custom_tooltip = { text = myv_wyvern.combat.style_active_hint }
+		hidden_effect = {
+			myv_slay_resolve_active_response_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 4 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+myv_wyvern.0215 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0215.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_round = 2 var:myv_slay_previous_action = 3 } desc = myv_wyvern.combat.transition_dismounted }
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value >= 50 } has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value >= 50 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0215.desc_outdoor_wounded desc = myv_wyvern.0215.desc_outdoor_wounded_alt } }
+			}
+			triggered_desc = {
+				trigger = { var:myv_slay_outdoor_battle = 1 }
+				desc = { random_valid = { desc = myv_wyvern.0215.desc_outdoor desc = myv_wyvern.0215.desc_outdoor_alt_1 desc = myv_wyvern.0215.desc_outdoor_alt_2 } }
+			}
+			triggered_desc = {
+				trigger = { scope:myv_slay_wyvern_target = { OR = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value >= 50 } has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value >= 50 } } } }
+				desc = { random_valid = { desc = myv_wyvern.0215.desc_wounded desc = myv_wyvern.0215.desc_wounded_alt } }
+			}
+			desc = { random_valid = { desc = myv_wyvern.0215.desc desc = myv_wyvern.0215.desc_alt_1 desc = myv_wyvern.0215.desc_alt_2 } }
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = {
+		name = myv_wyvern.0215.dodge
+		custom_tooltip = { text = myv_wyvern.combat.style_dodge_hint }
+		hidden_effect = {
+			myv_slay_resolve_dodge_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 1 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.0215.strike
+		custom_tooltip = { text = myv_wyvern.combat.style_normal_hint }
+		hidden_effect = {
+			set_variable = { name = myv_slay_target_part value = 2 }
+			myv_slay_resolve_targeted_hit_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 1 } myv_slay_apply_targeted_wound_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 2 } trigger_event = myv_wyvern.0229 }
+		else = { set_variable = { name = myv_slay_previous_outcome value = 3 } trigger_event = myv_wyvern.0229 }
+	}
+	option = {
+		name = myv_wyvern.0215.active
+		custom_tooltip = { text = myv_wyvern.combat.style_active_hint }
+		hidden_effect = {
+			myv_slay_resolve_active_response_effect = yes
+			if = { limit = { var:myv_slay_wyvern_result = 2 } myv_slay_resolve_wyvern_hit_effect = yes }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } set_variable = { name = myv_slay_previous_outcome value = 4 } trigger_event = myv_wyvern.0229 }
+		else = { trigger_event = myv_wyvern.0208 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+# Deterministic router used after each narrated exchange.
+myv_wyvern.0229 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		set_variable = { name = myv_slay_wyvern_result value = 0 }
+		set_variable = { name = myv_slay_previous_action value = var:myv_slay_wyvern_action }
+		if = {
+			limit = { NOT = { scope:myv_slay_wyvern_target = { myv_is_living_wyvern = yes } } }
+			trigger_event = myv_wyvern.0204
+		}
+		else_if = {
+			limit = {
+				scope:myv_slay_wyvern_target = {
+					OR = {
+						has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 100 }
+						has_trait_xp = { trait = myv_wyvern_tail_injury value >= 100 }
+					}
+				}
+			}
+			trigger_event = myv_wyvern.0250
+		}
+		else_if = {
+			limit = { var:myv_slay_round >= 5 }
+			if = { limit = { var:myv_slay_hits >= 3 } trigger_event = myv_wyvern.0250 }
+			else = { trigger_event = myv_wyvern.0252 }
+		}
+		else = {
+			change_variable = { name = myv_slay_round add = 1 }
+			if = {
+				limit = { var:myv_slay_outdoor_battle = 1 }
+				myv_slay_choose_action_effect = yes
+			}
+			else = { myv_slay_choose_lair_action_effect = yes }
+			if = { limit = { var:myv_slay_wyvern_action = 1 } trigger_event = myv_wyvern.0211 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 2 } trigger_event = myv_wyvern.0212 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 3 } trigger_event = myv_wyvern.0213 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 4 } trigger_event = myv_wyvern.0214 }
+			else_if = { limit = { var:myv_slay_wyvern_action = 5 } trigger_event = myv_wyvern.0215 }
+			else = { trigger_event = myv_wyvern.0204 }
+		}
+	}
+}
+
+myv_wyvern.0250 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0250.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 } desc = myv_wyvern.0250.desc_outdoor }
+			desc = myv_wyvern.0250.desc
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = {
+		name = myv_wyvern.0250.strike
+		hidden_effect = {
+			remove_variable = myv_slay_wyvern_result
+			random = {
+				chance = myv_slay_final_strike_chance
+				set_variable = { name = myv_slay_wyvern_result value = 1 }
+			}
+			if = {
+				limit = { NOT = { has_variable = myv_slay_wyvern_result } }
+				set_variable = { name = myv_slay_wyvern_result value = 2 }
+			}
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } trigger_event = myv_wyvern.0201 }
+		else = { trigger_event = myv_wyvern.0203 }
+	}
+	option = {
+		name = myv_wyvern.combat.retreat
+		trigger = { var:myv_slay_round >= 4 }
+		custom_tooltip = { text = myv_wyvern.combat.retreat_hint }
+		trigger_event = myv_wyvern.0253
+	}
+}
+
+myv_wyvern.0251 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0251.t
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 } desc = myv_wyvern.0251.desc_outdoor }
+			desc = myv_wyvern.0251.desc
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = { name = myv_wyvern.0251.a myv_slay_reset_state_effect = yes }
+}
+
+# Retreat succeeds on a hidden Prowess/advantage roll. Failure leaves the
+# hunter exposed to one immediate wyvern hit and the normal injury ladder.
+myv_wyvern.0253 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		remove_variable = myv_slay_wyvern_result
+		random = {
+			chance = myv_slay_retreat_chance
+			set_variable = { name = myv_slay_wyvern_result value = 1 }
+		}
+		if = { limit = { var:myv_slay_wyvern_result = 1 } trigger_event = myv_wyvern.0251 }
+		else = {
+			set_variable = { name = myv_slay_retreat_failed value = 1 }
+			myv_slay_resolve_wyvern_hit_effect = yes
+			trigger_event = myv_wyvern.0208
+		}
+	}
+}
+
+myv_wyvern.0252 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0252.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_previous_outcome > 0 } desc = myv_wyvern.combat.transition }
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 } desc = myv_wyvern.0252.desc_outdoor }
+			desc = myv_wyvern.0252.desc
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+	option = { name = myv_wyvern.0252.a myv_slay_reset_state_effect = yes }
+}
+
+myv_wyvern.0201 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = mm_wyvern_victory_title
+	desc = mm_wyvern_victory_desc
+	theme = martial
+	left_portrait = { character = root animation = aggressive_sword outfit_tags = { military_outfit } }
+	right_portrait = { character = scope:myv_slay_wyvern_target animation = myv_wyvern_main }
+	immediate = {
+        # Optional creed awards its victory once before the kill/capture choice.
+        mm_creed_award_dragon_victory_effect = yes
+		if = {
+			limit = { exists = scope:myv_slay_wyvern_target }
+			scope:myv_slay_wyvern_target = { save_scope_as = mm_capture_target }
+		}
+	}
+	option = {
+		name = mm_wyvern_victory_kill
+		trigger = { exists = scope:mm_capture_target scope:mm_capture_target = { myv_is_living_wild_wyvern = yes } }
+		custom_tooltip = mm_wyvern_victory_kill_tt
+		mm_wyvern_resolve_kill_effect = yes
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = mm_wyvern_victory_capture
+		trigger = { is_ai = no mm_wyvern_can_capture_target_trigger = yes }
+		custom_tooltip = mm_wyvern_victory_capture_tt
+		mm_wyvern_capture_target_effect = yes
+		myv_slay_reset_state_effect = yes
+		ai_chance = { base = 0 }
+	}
+	option = {
+		name = mm_wyvern_victory_unavailable
+		trigger = {
+			OR = {
+				NOT = { exists = scope:mm_capture_target }
+				scope:mm_capture_target = { NOT = { myv_is_living_wild_wyvern = yes } }
+			}
+		}
+		myv_slay_reset_state_effect = yes
+	}
+}
+
+myv_wyvern.0202 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0202.t
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_retreat_failed = 1 } desc = myv_wyvern.0202.desc_retreat_outdoor }
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 } desc = myv_wyvern.0202.desc_outdoor }
+			triggered_desc = { trigger = { var:myv_slay_retreat_failed = 1 } desc = myv_wyvern.0202.desc_retreat }
+			desc = myv_wyvern.0202.desc
+		}
+	}
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+
+	option = {
+		name = myv_wyvern.0202.a
+		if = {
+			limit = { has_trait = wounded_2 }
+			remove_trait = wounded_2
+			add_trait = wounded_3
+		}
+		else_if = {
+			limit = { has_trait = wounded_1 }
+			remove_trait = wounded_1
+			add_trait = wounded_2
+		}
+		else_if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_2 }
+		add_prestige = -100
+		myv_slay_reset_state_effect = yes
+	}
+}
+
+myv_wyvern.0203 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_duel }
+	title = myv_wyvern.0203.t
+	desc = {
+		first_valid = {
+            triggered_desc = { trigger = { has_character_flag = mm_creed_earth_wyvern_returned } desc = mm_creed_earth_wyvern_survived }
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 var:myv_slay_retreat_failed = 1 } desc = myv_wyvern.0203.desc_retreat_outdoor }
+			triggered_desc = { trigger = { var:myv_slay_outdoor_battle = 1 } desc = myv_wyvern.0203.desc_outdoor }
+			triggered_desc = { trigger = { var:myv_slay_retreat_failed = 1 } desc = myv_wyvern.0203.desc_retreat }
+			desc = myv_wyvern.0203.desc
+		}
+	}
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_main
+	}
+
+    immediate = { mm_creed_earth_wyvern_return_roll_effect = yes }
+	option = {
+		name = myv_wyvern.0203.a
+		myv_slay_reset_state_effect = yes
+        if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned }
+        else = { death = { death_reason = death_myv_killed_by_wyvern killer = scope:myv_slay_wyvern_target } }
+	}
+}
+
+# Safe fallback for an invalidated target or an unexpected resolution state.
+myv_wyvern.0204 = {
+	type = character_event
+	override_background = { reference = myv_wyvern_lair_expedition }
+	title = myv_wyvern.0204.t
+	desc = myv_wyvern.0204.desc
+	theme = martial
+
+	option = {
+		name = myv_wyvern.0204.a
+		myv_slay_reset_state_effect = yes
+	}
+}
+
+# A roaming hunt becomes a three-pass aerial duel when the hunter has a valid
+# designated war mount. The left portrait is the mounted pair; the right is the
+# wild target using its flying portrait group.
+myv_wyvern.0260 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0260.t
+	desc = myv_wyvern.0260.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_wild_aerial_flying
+	}
+	option = {
+		name = myv_wyvern.0260.a
+		trigger_event = myv_wyvern.0261
+	}
+}
+
+myv_wyvern.0261 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0261.t
+	immediate = { myv_ensure_aerial_duel_scene_state_effect = yes }
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		desc = myv_wyvern.0261.desc
+	}
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = scope:myv_slay_wyvern_target
+		animation = myv_wyvern_wild_aerial_flying
+	}
+	option = {
+		name = myv_wyvern.0261.cautious
+		custom_tooltip = myv_wyvern.0261.cautious_tt
+		hidden_effect = {
+			set_variable = { name = myv_slay_mounted_duel_action value = 1 }
+			trigger_event = myv_wyvern.0268
+		}
+	}
+	option = {
+		name = myv_wyvern.0261.balanced
+		custom_tooltip = myv_wyvern.0261.balanced_tt
+		custom_tooltip = myv_wyvern.0261.balanced_enemy_tt
+		hidden_effect = {
+			set_variable = { name = myv_slay_mounted_duel_action value = 2 }
+			trigger_event = myv_wyvern.0268
+		}
+	}
+	option = {
+		name = myv_wyvern.0261.aggressive
+		custom_tooltip = myv_wyvern.0261.aggressive_tt
+		custom_tooltip = myv_wyvern.0261.aggressive_enemy_tt
+		hidden_effect = {
+			set_variable = { name = myv_slay_mounted_duel_action value = 3 }
+			trigger_event = myv_wyvern.0268
+		}
+	}
+}
+
+# Resolve only after a choice is committed. Event-option tooltip simulation
+# cannot safely evaluate the random quality and hit variables for this round.
+myv_wyvern.0268 = {
+	type = character_event
+	hidden = yes
+	immediate = { myv_slay_resolve_mounted_duel_round_effect = yes }
+}
+
+
+myv_wyvern.0269 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		# Three exchanges without a destroyed wing end in a draw, regardless of
+		# how much non-lethal trauma either side has inflicted.
+		trigger_event = myv_wyvern.0272
+	}
+}
+
+myv_wyvern.0270 = {
+	type = character_event
+	hidden = yes
+	# Compatibility with saves that already queued the former score result.
+	immediate = { trigger_event = myv_wyvern.0272 }
+}
+
+myv_wyvern.0271 = {
+	type = character_event
+	hidden = yes
+	# Compatibility with saves that already queued the former score result.
+	immediate = { trigger_event = myv_wyvern.0272 }
+}
+
+myv_wyvern.0272 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0272.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		desc = myv_wyvern.0272.desc
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = scope:myv_slay_wyvern_target animation = myv_wyvern_wild_aerial_flying }
+	option = {
+		name = myv_wyvern.0272.a
+		myv_slay_reset_state_effect = yes
+	}
+}
+
+# The wild wyvern loses a wing. It usually dies on impact, but one fall in ten
+# leaves it alive and grievously injured across every tracked body region.
+myv_wyvern.0273 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0273.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern.0273.desc_survives }
+			desc = myv_wyvern.0273.desc_dies
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = scope:myv_slay_wyvern_target animation = myv_wyvern_wild_aerial_flying }
+	immediate = {
+		scope:myv_slay_wyvern_target = { myv_apply_aerial_crash_injuries_effect = yes }
+		set_variable = { name = myv_slay_mounted_wild_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } }
+        if = {
+            limit = { var:myv_slay_mounted_wild_survives_crash = 0 }
+            scope:myv_slay_wyvern_target = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } } }
+            }
+        }
+	}
+	option = {
+		name = myv_wyvern.0273.a
+		trigger = { var:myv_slay_mounted_wild_survives_crash = 0 scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes } }
+		custom_tooltip = myv_wyvern.0201.loot_chances_tt
+		add_prestige = 500
+		hidden_effect = {
+			mm_wyvern_create_random_material_drops_effect = yes
+			mm_wyvern_grant_decorative_trophies_effect = yes
+			scope:myv_slay_wyvern_target = {
+                death = { death_reason = death_myv_wyvern_slain killer = root }
+                root = { myv_grant_wyvern_slayer_reward_effect = yes mm_wyvern_legendary_blood_reward_effect = yes }
+            }
+			myv_slay_reset_state_effect = yes
+		}
+	}
+	option = {
+		name = myv_wyvern.0273.a
+		trigger = { var:myv_slay_mounted_wild_survives_crash = 1 scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes } }
+		trigger_event = myv_wyvern.0201
+	}
+	option = {
+		name = mm_wyvern_victory_unavailable
+		trigger = { NOT = { scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes } } }
+		myv_slay_reset_state_effect = yes
+	}
+}
+
+# The rider's mount loses a wing. The impact is normally fatal; survival leaves
+# the mount devastated and its rider severely wounded.
+myv_wyvern.0274 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0274.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 } desc = myv_wyvern.0274.desc_survives }
+			desc = myv_wyvern.0274.desc_dies
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = scope:myv_slay_wyvern_target animation = myv_wyvern_wild_aerial_flying }
+	immediate = {
+		var:myv_slay_mounted_player_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+		set_variable = { name = myv_slay_mounted_player_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+        if = {
+            limit = { var:myv_slay_mounted_player_survives_crash = 0 }
+            mm_creed_earth_wyvern_return_roll_effect = yes
+            if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+        }
+	}
+	option = {
+		name = myv_wyvern.0274.a
+		hidden_effect = {
+			var:myv_slay_mounted_player_mount = { save_scope_as = myv_defeated_slay_mount }
+			if = {
+				limit = { var:myv_slay_mounted_player_survives_crash = 1 }
+				if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+				if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+				if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 }
+				myv_slay_reset_state_effect = yes
+			}
+			else = {
+				scope:myv_defeated_slay_mount = {
+                    mm_creed_earth_wyvern_return_roll_effect = yes
+                    if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned }
+                    else = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = scope:myv_slay_wyvern_target } }
+                }
+				myv_slay_reset_state_effect = yes
+				death = { death_reason = death_myv_killed_by_wyvern killer = scope:myv_slay_wyvern_target }
+			}
+		}
+	}
+}
+
+# Simultaneous wing destruction resolves both impacts before either death. Each
+# side receives its own ten-percent survival roll.
+myv_wyvern.0275 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern.0275.t
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern.0275.desc_both_survive }
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 } desc = myv_wyvern.0275.desc_player_survives }
+			triggered_desc = { trigger = { var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern.0275.desc_wild_survives }
+			desc = myv_wyvern.0275.desc_none_survive
+		}
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = scope:myv_slay_wyvern_target animation = myv_wyvern_wild_aerial_flying }
+	immediate = {
+		var:myv_slay_mounted_player_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+		scope:myv_slay_wyvern_target = { myv_apply_aerial_crash_injuries_effect = yes }
+		set_variable = { name = myv_slay_mounted_player_survives_crash value = 0 }
+		set_variable = { name = myv_slay_mounted_wild_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } }
+        if = {
+            limit = { var:myv_slay_mounted_player_survives_crash = 0 }
+            mm_creed_earth_wyvern_return_roll_effect = yes
+            if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+        }
+        if = {
+            limit = { var:myv_slay_mounted_wild_survives_crash = 0 }
+            scope:myv_slay_wyvern_target = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } } }
+            }
+        }
+	}
+	option = {
+		name = myv_wyvern.0275.a
+		hidden_effect = {
+			var:myv_slay_mounted_player_mount = { save_scope_as = myv_defeated_slay_mount }
+			if = {
+				limit = { var:myv_slay_mounted_wild_survives_crash = 0 scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes } }
+				if = {
+					limit = { var:myv_slay_mounted_player_survives_crash = 1 }
+					mm_wyvern_create_random_material_drops_effect = yes
+					mm_wyvern_grant_decorative_trophies_effect = yes
+				}
+				scope:myv_slay_wyvern_target = {
+                death = { death_reason = death_myv_wyvern_slain killer = root }
+                root = {
+                    myv_grant_wyvern_slayer_reward_effect = yes
+                    if = { limit = { var:myv_slay_mounted_player_survives_crash = 1 } mm_wyvern_legendary_blood_reward_effect = yes }
+                }
+            }
+			}
+			if = {
+				limit = { var:myv_slay_mounted_player_survives_crash = 1 }
+				if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+				if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+				if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 }
+				if = {
+					limit = { var:myv_slay_mounted_wild_survives_crash = 1 scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes } }
+					trigger_event = myv_wyvern.0201
+				}
+				else = { myv_slay_reset_state_effect = yes }
+			}
+			else = {
+				scope:myv_defeated_slay_mount = {
+                    mm_creed_earth_wyvern_return_roll_effect = yes
+                    if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned }
+                    else = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = scope:myv_slay_wyvern_target } }
+                }
+				myv_slay_reset_state_effect = yes
+				death = { death_reason = death_myv_killed_by_wyvern killer = scope:myv_slay_wyvern_target }
+			}
+		}
+	}
+}

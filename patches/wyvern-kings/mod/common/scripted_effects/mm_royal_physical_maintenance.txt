@@ -1,0 +1,28 @@
+# Safe for both fresh campaigns and old catalogues. No ordinary cohort is reset.
+mm_royal_update_physical_profiles_effect = {
+    if = {
+        limit = { has_global_variable = mm_royal_catalog_initialized }
+        character:99001001 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001002 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001003 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001304 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001305 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001306 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001307 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001308 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001309 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        character:99001310 = { if = { limit = { is_alive = yes } mm_royal_repair_profile_effect = yes mm_royal_apply_physical_profile_effect = yes myv_refresh_wyvern_prowess_effect = yes } }
+        if = {
+            limit = { has_global_variable_list = mm_asc_sovereigns }
+            every_in_global_list = {
+                variable = mm_asc_sovereigns
+                limit = { is_alive = yes }
+                mm_royal_repair_source_body_effect = yes
+                mm_royal_repair_profile_effect = yes
+                mm_royal_apply_physical_profile_effect = yes
+                myv_refresh_wyvern_prowess_effect = yes
+            }
+        }
+    }
+}
+mm_royal_repair_source_body_effect = { }

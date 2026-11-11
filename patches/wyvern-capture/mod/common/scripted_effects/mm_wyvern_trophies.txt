@@ -1,0 +1,154 @@
+# Call only from a resolved player kill branch, before the target's death.
+# New kills use independent personal-material rolls; original egg-search logic is retained.
+mm_wyvern_source_original_material_effect = {
+	if = {
+		limit = { exists = scope:myv_wyvern_trophy exists = scope:myv_slay_wyvern_target }
+		scope:myv_slay_wyvern_target = { save_scope_as = mm_wyvern_trophy_source }
+		scope:myv_wyvern_trophy = {
+			set_variable = { name = mm_wyvern_trophy_source value = scope:mm_wyvern_trophy_source }
+			if = {
+				limit = { has_variable = myv_wyvern_scale_material }
+				set_variable = { name = mm_wyvern_material_kind value = flag:scale }
+				set_artifact_name = mm_wyvern_material_scale_name
+				set_artifact_description = mm_wyvern_material_scale_desc
+			}
+			else_if = {
+				limit = { has_variable = myv_wyvern_blood_material }
+				set_variable = { name = mm_wyvern_material_kind value = flag:blood }
+				set_artifact_name = mm_wyvern_material_blood_name
+				set_artifact_description = mm_wyvern_material_blood_desc
+			}
+			else = {
+				set_variable = { name = mm_wyvern_material_kind value = flag:fang }
+				set_artifact_name = mm_wyvern_material_fang_name
+				set_artifact_description = mm_wyvern_material_fang_desc
+			}
+			mm_wyvern_apply_trophy_affixes_effect = yes
+		}
+	}
+}
+
+mm_wyvern_grant_decorative_trophies_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			exists = scope:myv_slay_wyvern_target
+			scope:myv_slay_wyvern_target = {
+				myv_is_living_wild_wyvern = yes
+				NOT = { has_variable = mm_wyvern_trophies_claimed }
+			}
+		}
+		scope:myv_slay_wyvern_target = {
+			set_variable = { name = mm_wyvern_trophies_claimed value = root }
+			save_scope_as = mm_wyvern_trophy_source
+		}
+		if = {
+			limit = { scope:mm_wyvern_trophy_source = { OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin } } }
+			mm_wyvern_create_decorative_trophy_set_effect = { RARITY = illustrious }
+		}
+		else = { mm_wyvern_create_decorative_trophy_set_effect = { RARITY = famed } }
+		send_interface_toast = { type = event_toast_effect_good title = myv_wyvern_trophy_gained_toast left_icon = scope:mm_wyvern_trophy }
+	}
+}
+
+mm_wyvern_create_decorative_trophy_set_effect = {
+	create_artifact = {
+		name = mm_wyvern_trophy_head_name
+		description = mm_wyvern_trophy_head_desc
+		type = pedestal
+		visuals = mm_wyvern_trophy_head
+		rarity = $RARITY$
+		modifier = artifact_placeholder_modifier
+		generate_history = no
+		creator = root
+		decaying = no
+		save_scope_as = mm_wyvern_trophy
+	}
+	scope:mm_wyvern_trophy = {
+		set_variable = { name = mm_wyvern_trophy_source value = scope:mm_wyvern_trophy_source }
+		set_variable = { name = mm_wyvern_material_kind value = flag:head }
+		mm_wyvern_apply_trophy_affixes_effect = yes
+		add_artifact_history = { type = created actor = root recipient = root location = root.location }
+	}
+}
+
+# Called only after an actual slayer kill, never from the captive/reward preview.
+mm_wyvern_legendary_blood_reward_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			NOT = { has_trait = mm_wyvern_bathed_in_dragon_blood }
+			exists = scope:myv_slay_wyvern_target
+			scope:myv_slay_wyvern_target = {
+				is_alive = no
+				OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin }
+			}
+		}
+		add_trait = mm_wyvern_bathed_in_dragon_blood
+	}
+}
+
+# All five independent rolls run once per resolved player kill, before death.
+# This replaces the original mutually exclusive 65/20/15 material roll only.
+mm_wyvern_create_random_material_drops_effect = {
+  if = {
+    limit = {
+      is_alive = yes
+      exists = scope:myv_slay_wyvern_target
+      scope:myv_slay_wyvern_target = {
+        myv_is_living_wild_wyvern = yes
+        NOT = { has_variable = mm_wyvern_materials_claimed }
+      }
+    }
+    scope:myv_slay_wyvern_target = {
+      set_variable = { name = mm_wyvern_materials_claimed value = root }
+      save_scope_as = mm_wyvern_trophy_source
+    }
+    random = { chance = 75 mm_wyvern_create_source_quality_material_effect = { KIND = fang VISUALS = myv_wyvern_fang } }
+    random = { chance = 80 mm_wyvern_create_source_quality_material_effect = { KIND = scale VISUALS = myv_wyvern_scale } }
+    random = { chance = 65 mm_wyvern_create_source_quality_material_effect = { KIND = claw VISUALS = mm_wyvern_material_claw } }
+    random = { chance = 60 mm_wyvern_create_source_quality_material_effect = { KIND = horn VISUALS = mm_wyvern_material_horn } }
+    random = {
+      chance = 15
+      mm_wyvern_create_personal_material_effect = { KIND = blood VISUALS = myv_wyvern_blood RARITY = illustrious MODIFIER = artifact_monthly_minor_prestige_5_modifier }
+    }
+    myv_slay_try_find_wyvern_eggs_effect = yes
+  }
+}
+
+mm_wyvern_create_source_quality_material_effect = {
+  if = {
+    limit = { scope:mm_wyvern_trophy_source = { OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin } } }
+    mm_wyvern_create_personal_material_effect = { KIND = $KIND$ VISUALS = $VISUALS$ RARITY = illustrious MODIFIER = artifact_placeholder_modifier }
+  }
+  else = { mm_wyvern_create_personal_material_effect = { KIND = $KIND$ VISUALS = $VISUALS$ RARITY = famed MODIFIER = artifact_placeholder_modifier } }
+}
+
+mm_wyvern_create_personal_material_effect = {
+  create_artifact = {
+    name = mm_wyvern_material_$KIND$_name
+    description = mm_wyvern_material_$KIND$_desc
+    type = miscellaneous
+    visuals = $VISUALS$
+    rarity = $RARITY$
+    modifier = $MODIFIER$
+    generate_history = no
+    creator = root
+    decaying = no
+    save_scope_as = myv_wyvern_trophy
+  }
+  scope:myv_wyvern_trophy = {
+    set_variable = { name = mm_wyvern_trophy_source value = scope:mm_wyvern_trophy_source }
+    set_variable = { name = mm_wyvern_material_kind value = flag:$KIND$ }
+    if = {
+      limit = { var:mm_wyvern_material_kind = flag:scale }
+      set_variable = { name = myv_wyvern_scale_material value = 1 }
+    }
+    else_if = {
+      limit = { var:mm_wyvern_material_kind = flag:blood }
+      set_variable = { name = myv_wyvern_blood_material value = 1 }
+    }
+    mm_wyvern_apply_trophy_affixes_effect = yes
+    add_artifact_history = { type = created actor = root recipient = root location = root.location }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "人龙羁绊成长与婚配、繁育软接受度",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/scripted_modifiers/00_marriage_scripted_modifiers.txt",
+      "sha256": "329c570ae4fdd9cd8e898ffd32ea9b30c689446eb7874b0ce2cdf12fe842d630"
+    }
+  ],
+  "updated": "2026-10-28",
+  "outputs": [
+    {
+      "path": "mod/common/on_action/mm_dragon_bond_on_actions.txt",
+      "sha256": "c88a00af649925483e2e4ac9b0e81c864b045031e97173a34e753ab356b437bf"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_dragon_bond_effects.txt",
+      "sha256": "67aa589f50aadbd4d34e8ee72ebca071e9e414c67afe9c671da7cbafa9de2186"
+    },
+    {
+      "path": "mod/common/scripted_modifiers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "9b73909c31c2ec5f94dfa7eee7d99291c982904a4c7549bfd12867f4c01e010f"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "108404a8398731f08257f41c807c0474846c473856f9ddaf427777d04cad8d2b"
+    },
+    {
+      "path": "mod/common/traits/zzzzzz_mm_dragon_bond_species.txt",
+      "sha256": "60eebaf8a657d0b7eb3d16734f27ea041581582fdb03fe837c011afae15ad305"
+    },
+    {
+      "path": "mod/events/mm_dragon_bond_feeding_events.txt",
+      "sha256": "582f51e49123407087ad8c86d85118be1acd5dc7f68d76160c59dbdf02f47b0b"
+    },
+    {
+      "path": "mod/localization/replace/english/zzzz_mm_dragon_bond_l_english.yml",
+      "sha256": "9953586efb6d6cefca2bbcc9831f2c5b3eaa6b7678c98272acc16bf4cc00f808"
+    },
+    {
+      "path": "mod/localization/replace/simp_chinese/zzzz_mm_dragon_bond_l_simp_chinese.yml",
+      "sha256": "22793828ffc98bc7baa9657dc4169231a2d26085eba202320177a6ca09c78061"
+    }
+  ]
+}

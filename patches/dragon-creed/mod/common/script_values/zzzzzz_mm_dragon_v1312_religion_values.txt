@@ -1,0 +1,41 @@
+demand_conversion_tenet_impact = {
+	value = 0
+	if = {
+		limit = {
+			rite = {
+				rite_has_parameter = sanctioned_false_conversion
+				NOT = { rite_has_parameter = unattractive_for_character_conversions }
+			}
+		}
+		add = -20
+	}
+	if = {
+		limit = {
+			rite = { rite_has_parameter = tenet_adaptive_conversion_resistance }
+		}
+		add = -20
+	}
+	if = {
+		limit = {
+			rite = { rite_has_parameter = tenet_literalism_conversion_resistance }
+		}
+		add = -20
+	}
+	if = {
+		limit = {
+			rite = { rite_has_parameter = unattractive_for_character_conversions }
+		}
+		add = 20
+	}
+
+	# Only a vassal following the earth rite and its closure tenet resists its liege's demand.
+	if = {
+		limit = {
+			exists = scope:actor
+			is_vassal_or_below_of = scope:actor
+			rite = rite:mm_dragon_earth
+			rite = { rite_has_tenet = mm_tenet_earth_third }
+		}
+		add = -20
+	}
+}

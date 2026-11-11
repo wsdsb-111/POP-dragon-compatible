@@ -1,0 +1,50 @@
+{
+ "sea_armor": {
+  "state": "pass",
+  "refined": 15,
+  "tris": 409662,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ },
+ "white_book": {
+  "state": "pass",
+  "refined": 6,
+  "tris": 94360,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ },
+ "black_regalia": {
+  "state": "pass",
+  "refined": 4,
+  "tris": 201286,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ },
+ "fire_ring": {
+  "state": "pass",
+  "refined": 24,
+  "tris": 127908,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ },
+ "earth_sarcophagus": {
+  "state": "pass",
+  "refined": 94,
+  "tris": 467168,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ },
+ "sky_spear": {
+  "state": "pass",
+  "refined": 22,
+  "tris": 77778,
+  "self_intersections": 0,
+  "boundary": 0,
+  "nonmanifold": 0
+ }
+}

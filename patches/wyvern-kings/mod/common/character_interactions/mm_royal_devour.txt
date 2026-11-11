@@ -1,0 +1,76 @@
+﻿mm_royal_command_devour_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    use_diplomatic_range = yes
+    icon = icon_murder
+    desc = mm_royal_devour_desc
+    is_shown = {
+        scope:actor = { is_ai = no }
+        scope:recipient = { has_trait = mm_royal_dragon_king has_relation_myv_wyvern_bonded_character = scope:actor }
+    }
+    is_valid_showing_failures_only = { scope:actor = { mm_royal_pair_ready_for_devour = yes } }
+    on_accept = {
+        scope:actor = {
+            if = {
+                limit = { mm_royal_pair_ready_for_devour = yes }
+                scope:recipient = {
+                    save_scope_as = mm_royal_survivor
+                    var:mm_royal_twin = { save_scope_as = mm_royal_victim }
+                    if = {
+                        limit = { var:mm_royal_throne = 1 NOT = { has_global_variable = mm_royal_fire_united } }
+                        set_global_variable = { name = mm_royal_fire_united value = yes }
+                        set_variable = { name = mm_royal_consumed_twin value = scope:mm_royal_victim }
+                        remove_trait = mm_royal_dragon_king
+                        add_trait = mm_royal_complete
+                        set_name = mm_royal_complete_name_fire
+                        give_nickname = nick_mm_royal_complete_fire
+                        scope:mm_royal_victim = { death = { death_reason = death_mm_royal_devoured killer = scope:mm_royal_survivor } }
+                        mm_royal_repair_profile_effect = yes
+                        mm_royal_apply_physical_profile_effect = yes
+                        myv_refresh_wyvern_prowess_effect = yes
+                    }
+                    if = {
+                        limit = { var:mm_royal_throne = 2 NOT = { has_global_variable = mm_royal_earth_united } }
+                        set_global_variable = { name = mm_royal_earth_united value = yes }
+                        set_variable = { name = mm_royal_consumed_twin value = scope:mm_royal_victim }
+                        remove_trait = mm_royal_dragon_king
+                        add_trait = mm_royal_complete
+                        set_name = mm_royal_complete_name_earth
+                        give_nickname = nick_mm_royal_complete_earth
+                        scope:mm_royal_victim = { death = { death_reason = death_mm_royal_devoured killer = scope:mm_royal_survivor } }
+                        mm_royal_repair_profile_effect = yes
+                        mm_royal_apply_physical_profile_effect = yes
+                        myv_refresh_wyvern_prowess_effect = yes
+                    }
+                    if = {
+                        limit = { var:mm_royal_throne = 3 NOT = { has_global_variable = mm_royal_sea_united } }
+                        set_global_variable = { name = mm_royal_sea_united value = yes }
+                        set_variable = { name = mm_royal_consumed_twin value = scope:mm_royal_victim }
+                        remove_trait = mm_royal_dragon_king
+                        add_trait = mm_royal_complete
+                        set_name = mm_royal_complete_name_sea
+                        give_nickname = nick_mm_royal_complete_sea
+                        scope:mm_royal_victim = { death = { death_reason = death_mm_royal_devoured killer = scope:mm_royal_survivor } }
+                        mm_royal_repair_profile_effect = yes
+                        mm_royal_apply_physical_profile_effect = yes
+                        myv_refresh_wyvern_prowess_effect = yes
+                    }
+                    if = {
+                        limit = { var:mm_royal_throne = 4 NOT = { has_global_variable = mm_royal_sky_united } }
+                        set_global_variable = { name = mm_royal_sky_united value = yes }
+                        set_variable = { name = mm_royal_consumed_twin value = scope:mm_royal_victim }
+                        remove_trait = mm_royal_dragon_king
+                        add_trait = mm_royal_complete
+                        set_name = mm_royal_complete_name_sky
+                        give_nickname = nick_mm_royal_complete_sky
+                        scope:mm_royal_victim = { death = { death_reason = death_mm_royal_devoured killer = scope:mm_royal_survivor } }
+                        mm_royal_repair_profile_effect = yes
+                        mm_royal_apply_physical_profile_effect = yes
+                        myv_refresh_wyvern_prowess_effect = yes
+                    }
+                }
+            }
+        }
+    }
+}

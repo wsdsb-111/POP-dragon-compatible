@@ -1,0 +1,252 @@
+mm_relic_seed_all_effect = {
+    mm_v1313_ensure_rites_effect = yes
+    faith:mm_dragon_creed = {
+        every_holy_site = {
+            if = { limit = { this = holy_site:mm_dragon_site_baghdad } mm_relic_seed_black_crown_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_baghdad } mm_relic_seed_black_regalia_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_sagami } mm_relic_seed_white_book_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_jingzhao } mm_relic_seed_fire_ring_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_qus } mm_relic_seed_earth_sarcophagus_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_chandax } mm_relic_seed_sea_armor_effect = yes }
+            if = { limit = { this = holy_site:mm_dragon_site_sogn } mm_relic_seed_sky_spear_effect = yes }
+        }
+    }
+}
+
+mm_relic_seed_black_crown_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_black_crown_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_black_crown_name
+                description = mm_relic_black_crown_desc
+                type = mm_relic_black_crown_inventory
+                template = mm_relic_black_crown_template
+                visuals = mm_relic_black_crown_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_black_crown_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_black_crown_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_black_crown_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_black_regalia_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_black_regalia_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_black_regalia_name
+                description = mm_relic_black_regalia_desc
+                type = mm_relic_black_regalia_inventory
+                template = mm_relic_black_regalia_template
+                visuals = mm_relic_black_regalia_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_black_regalia_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_black_regalia_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_black_regalia_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_white_book_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_white_book_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_white_book_name
+                description = mm_relic_white_book_desc
+                type = mm_relic_white_book_inventory
+                template = mm_relic_white_book_template
+                visuals = mm_relic_white_book_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_white_book_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_white_book_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_white_book_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_fire_ring_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_fire_ring_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_fire_ring_name
+                description = mm_relic_fire_ring_desc
+                type = mm_relic_fire_ring_inventory
+                template = mm_relic_fire_ring_template
+                visuals = mm_relic_fire_ring_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_fire_ring_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_fire_ring_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_fire_ring_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_earth_sarcophagus_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_earth_sarcophagus_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_earth_sarcophagus_name
+                description = mm_relic_earth_sarcophagus_desc
+                type = mm_relic_earth_sarcophagus_inventory
+                template = mm_relic_earth_sarcophagus_template
+                visuals = mm_relic_earth_sarcophagus_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_earth_sarcophagus_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_earth_sarcophagus_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_earth_sarcophagus_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_sea_armor_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_sea_armor_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_sea_armor_name
+                description = mm_relic_sea_armor_desc
+                type = mm_relic_sea_armor_inventory
+                template = mm_relic_sea_armor_template
+                visuals = mm_relic_sea_armor_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_sea_armor_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_sea_armor_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_sea_armor_seeded value = yes }
+        } }
+    }
+}
+
+mm_relic_seed_sky_spear_effect = {
+    if = {
+        limit = {
+            NOT = { has_global_variable = mm_relic_sky_spear_seeded }
+            holy_site_artifact_count < 3
+            holy_site_county = { exists = holder }
+        }
+        save_scope_as = mm_relic_seed_site
+        holy_site_county = { holder = {
+            set_artifact_rarity_illustrious = yes
+            create_artifact = {
+                name = mm_relic_sky_spear_name
+                description = mm_relic_sky_spear_desc
+                type = mm_relic_sky_spear_inventory
+                template = mm_relic_sky_spear_template
+                visuals = mm_relic_sky_spear_inventory_visual
+                quality = scope:quality
+                wealth = scope:wealth
+                modifier = mm_relic_sky_spear_stats
+                history = { type = created_before_history }
+                save_scope_as = mm_relic_created
+            }
+            scope:mm_relic_created = {
+                set_artifact_rarity = illustrious
+                set_variable = { name = mm_relic_sky_spear_identity value = yes }
+                set_variable = { name = historical_unique_artifact value = yes }
+                set_holy_site_owner = { target = scope:mm_relic_seed_site generate_history = no }
+                equip_artifact_to_owner = yes
+            }
+            set_global_variable = { name = mm_relic_sky_spear_seeded value = yes }
+        } }
+    }
+}

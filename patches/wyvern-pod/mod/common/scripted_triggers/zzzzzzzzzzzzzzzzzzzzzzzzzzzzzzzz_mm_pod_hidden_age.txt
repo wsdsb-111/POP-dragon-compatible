@@ -1,0 +1,7 @@
+POD_character_age_predates_mankind = {
+	OR = {
+		this = character:795111 #Mokole-Mbembe
+		this = character:793509 #Hunger of Qyrl
+		mm_pod_is_fixed_royal = yes
+	}
+}

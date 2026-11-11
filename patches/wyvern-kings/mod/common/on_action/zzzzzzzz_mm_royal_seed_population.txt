@@ -1,0 +1,6 @@
+on_game_start = { on_actions = { mm_royal_seed_new_campaign } }
+mm_royal_seed_new_campaign = {
+    effect = { set_global_variable = { name = mm_royal_seed_new_campaign_pending value = yes } }
+}
+on_game_start_after_lobby = { on_actions = { mm_royal_seed_initial_population } }
+mm_royal_seed_initial_population = { effect = { mm_royal_seed_initial_population_effect = yes } }

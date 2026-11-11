@@ -1,0 +1,41 @@
+# All mutation, point and advancement balance is concentrated here.
+mm_dragon_black_mutation_chance = 10
+mm_dragon_absorption_c_to_b = 12
+mm_dragon_absorption_b_to_a = 30
+mm_dragon_absorption_a_to_s = 60
+mm_dragon_blood_rank = {
+    value = 0
+    if = { limit = { has_trait = mm_dragon_lineage_4 } value = 1 }
+    if = { limit = { has_trait = mm_dragon_lineage_3 } value = 2 }
+    if = { limit = { has_trait = mm_dragon_lineage_2 } value = 3 }
+    if = { limit = { has_trait = mm_dragon_lineage_1 } value = 4 }
+    if = { limit = { has_trait = mm_dragon_half } value = 5 }
+    if = { limit = { has_trait = mm_dragon_black_blood } value = 6 }
+    if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } value = 7 }
+}
+# Victim scope. A sovereign is worth six; ordinary true dragons four.
+mm_dragon_absorption_victim_value = {
+    value = 0
+    if = { limit = { has_trait = mm_dragon_lineage_3 } value = 1 }
+    if = { limit = { has_trait = mm_dragon_lineage_2 } value = 2 }
+    if = { limit = { has_trait = mm_dragon_lineage_1 } value = 3 }
+    if = { limit = { has_trait = mm_dragon_half } value = 4 }
+    if = { limit = { has_trait = mm_dragon_black_blood } value = 5 }
+    if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } value = 4 }
+    if = { limit = { mm_dragon_is_royal_parent_trigger = yes } value = 6 }
+}
+
+mm_dragon_absorption_eligible_c_to_b = {
+    value = mm_dragon_absorption_c_to_b
+    if = { limit = { has_character_flag = mm_creed_absorption_heresy_discount } multiply = 0.7 }
+}
+
+mm_dragon_absorption_eligible_b_to_a = {
+    value = mm_dragon_absorption_b_to_a
+    if = { limit = { has_character_flag = mm_creed_absorption_heresy_discount } multiply = 0.7 }
+}
+
+mm_dragon_absorption_eligible_a_to_s = {
+    value = mm_dragon_absorption_a_to_s
+    if = { limit = { has_character_flag = mm_creed_absorption_heresy_discount } multiply = 0.7 }
+}

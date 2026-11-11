@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "project": "CK3 Three-Mod Character Name Compatibility",
+  "source": {
+    "repositoryPath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court",
+    "commit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+    "workingTreeClean": false,
+    "selectedExportPathsMatchCommit": true,
+    "note": "Other VOTC worktree changes were outside the selected export paths and were not copied."
+  },
+  "target": {
+    "repositoryPath": "C:\\Users\\97330\\Documents\\Codex\\CK3-Three-Mod-Compatibility",
+    "remote": "https://github.com/wsdsb-111/CK3-Three-Mod-Compatibility.git",
+    "publicationState": "LOCAL_ONLY_NO_COMMIT_NO_PUSH"
+  },
+  "selectedModFileCountIncludingAdjacentDescriptor": 13,
+  "testScriptCount": 3,
+  "optionalTianjiaPatchFileCount": 3,
+  "entries": [
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\on_action\\zzzz_votc_celestial_office_release.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/on_action/zzzz_votc_celestial_office_release.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "f57c4f3e9cddabbbf45da314b98e62448cf16fdc0d32d3f358616b6b01fb90d5",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/on_action/zzzz_votc_celestial_office_release.txt",
+      "targetSha256": "f57c4f3e9cddabbbf45da314b98e62448cf16fdc0d32d3f358616b6b01fb90d5",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\script_values\\votc_celestial_succession_values.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/script_values/votc_celestial_succession_values.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "81df99906bd6b1dbae87da6058d161bac13f7d3872d861026829aa6eb1091677",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/script_values/votc_celestial_succession_values.txt",
+      "targetSha256": "81df99906bd6b1dbae87da6058d161bac13f7d3872d861026829aa6eb1091677",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\scripted_effects\\zzzz_votc_celestial_office_release.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_effects/zzzz_votc_celestial_office_release.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "3d31ef5d395be830626c96d8a8e481b7ce0da08951df2fbebdf67900f7bc8288",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_effects/zzzz_votc_celestial_office_release.txt",
+      "targetSha256": "3d31ef5d395be830626c96d8a8e481b7ce0da08951df2fbebdf67900f7bc8288",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\scripted_triggers\\votc_three_mod_render_safety.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_triggers/votc_three_mod_render_safety.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "abcb1f5abf2cd111323e64b3e85cb884061f41b873ddda5a6b1391cc24ebfc8c",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_triggers/votc_three_mod_render_safety.txt",
+      "targetSha256": "abcb1f5abf2cd111323e64b3e85cb884061f41b873ddda5a6b1391cc24ebfc8c",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\scripted_triggers\\zzzz_votc_celestial_office_release.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_triggers/zzzz_votc_celestial_office_release.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "911e85eceb62f10a827717c2f6e7d8adcb12e97311766d575662bd5ca8d29178",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_triggers/zzzz_votc_celestial_office_release.txt",
+      "targetSha256": "911e85eceb62f10a827717c2f6e7d8adcb12e97311766d575662bd5ca8d29178",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\common\\succession_appointment\\zzzzz_votc_celestial_governor.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/common/succession_appointment/zzzzz_votc_celestial_governor.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "0ed94e90848d993cb70859949e6ed092e4c0959503dca247d1028510e03a98cb",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/succession_appointment/zzzzz_votc_celestial_governor.txt",
+      "targetSha256": "0ed94e90848d993cb70859949e6ed092e4c0959503dca247d1028510e03a98cb",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\descriptor.mod",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/descriptor.mod",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "c5f14138c456da56504f46f61751b0d6b4558f93650081418dc4a330d90d851e",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/descriptor.mod",
+      "targetSha256": "c5f14138c456da56504f46f61751b0d6b4558f93650081418dc4a330d90d851e",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\events\\votc_celestial_office_release_events.txt",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/events/votc_celestial_office_release_events.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "07e1d82a80c22a54c919514666bf96ecf1756f7dc3c85381e2c8a5828ebe46c1",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/events/votc_celestial_office_release_events.txt",
+      "targetSha256": "07e1d82a80c22a54c919514666bf96ecf1756f7dc3c85381e2c8a5828ebe46c1",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\gui\\oe_hud.gui",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/gui/oe_hud.gui",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "dc837977db6f5953c2c7dbce3c45413e86a4d338c1cf8c9f3cb637d8738cab26",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/gui/oe_hud.gui",
+      "targetSha256": "dc837977db6f5953c2c7dbce3c45413e86a4d338c1cf8c9f3cb637d8738cab26",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\gui\\shared\\00_votc_trait_tooltip.gui",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/gui/shared/00_votc_trait_tooltip.gui",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "b19b1ad9fac6d733e9dc5bb9e56a90d976815b5126aa13e15d50857fc3a1c065",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/gui/shared/00_votc_trait_tooltip.gui",
+      "targetSha256": "b19b1ad9fac6d733e9dc5bb9e56a90d976815b5126aa13e15d50857fc3a1c065",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\localization\\simp_chinese\\replace\\zzzz_votc_three_mod_character_names_l_simp_chinese.yml",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/localization/simp_chinese/replace/zzzz_votc_three_mod_character_names_l_simp_chinese.yml",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "4ccf54f680f0ca59999ad85709db11673fecdc56e4adf6ee08d34b537263b062",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/localization/simp_chinese/replace/zzzz_votc_three_mod_character_names_l_simp_chinese.yml",
+      "targetSha256": "4ccf54f680f0ca59999ad85709db11673fecdc56e4adf6ee08d34b537263b062",
+      "byteIdentical": true
+    },
+    {
+      "kind": "mod-source",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility\\localization\\simp_chinese\\votc_celestial_succession_l_simp_chinese.yml",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility/localization/simp_chinese/votc_celestial_succession_l_simp_chinese.yml",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "4e0bdb4b6e11b21256d9247f4b6feeda7ea5c1a1d067c58b77c9a1b877ba92cf",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility/localization/simp_chinese/votc_celestial_succession_l_simp_chinese.yml",
+      "targetSha256": "4e0bdb4b6e11b21256d9247f4b6feeda7ea5c1a1d067c58b77c9a1b877ba92cf",
+      "byteIdentical": true
+    },
+    {
+      "kind": "launcher-descriptor",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-mods\\VOTC_Three_Mod_Character_Name_Compatibility.mod",
+      "sourceRelativePath": "compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility.mod",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "3c38e3f60b0f0040c0975d2acb05d3e6385d9cbabba26d2c7393301d133f49b3",
+      "targetPath": "mod/VOTC_Three_Mod_Character_Name_Compatibility.mod",
+      "targetSha256": "3c38e3f60b0f0040c0975d2acb05d3e6385d9cbabba26d2c7393301d133f49b3",
+      "byteIdentical": true
+    },
+    {
+      "kind": "test-script",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\scripts\\test-three-mod-character-name-compatibility.js",
+      "sourceRelativePath": "scripts/test-three-mod-character-name-compatibility.js",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "2de3937fe2cc969cce0364dac005e309e1eab485ed82afc6d85e3c46d92fd60b",
+      "beforeSha256": "2de3937fe2cc969cce0364dac005e309e1eab485ed82afc6d85e3c46d92fd60b",
+      "targetPath": "tests/test-three-mod-character-name-compatibility.js",
+      "targetSha256": "166d395bda5ef6572bcfeb5d713c97b4629dd50c7c039ad72ca99a3e7a0f53ff",
+      "afterSha256": "166d395bda5ef6572bcfeb5d713c97b4629dd50c7c039ad72ca99a3e7a0f53ff",
+      "transformation": "../compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility => ../mod/VOTC_Three_Mod_Character_Name_Compatibility",
+      "onlyModRootPathChanged": true
+    },
+    {
+      "kind": "test-script",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\scripts\\test-v8.15.2-celestial-office-release.js",
+      "sourceRelativePath": "scripts/test-v8.15.2-celestial-office-release.js",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "e40ba1eb98fc370c88406559fb252fe89e64cb83e4fbbd8cd2dd5d7ba2d8c6b3",
+      "beforeSha256": "e40ba1eb98fc370c88406559fb252fe89e64cb83e4fbbd8cd2dd5d7ba2d8c6b3",
+      "targetPath": "tests/test-v8.15.2-celestial-office-release.js",
+      "targetSha256": "c474ba5c11f3cd4d9a14e22ea8c90c37c2e075a13dd505799322e93147f8dd33",
+      "afterSha256": "c474ba5c11f3cd4d9a14e22ea8c90c37c2e075a13dd505799322e93147f8dd33",
+      "transformation": "../compatibility-mods/VOTC_Three_Mod_Character_Name_Compatibility => ../mod/VOTC_Three_Mod_Character_Name_Compatibility",
+      "onlyModRootPathChanged": true
+    },
+    {
+      "kind": "test-script",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\scripts\\test-v8.15.2-celestial-office-independent-qa.js",
+      "sourceRelativePath": "scripts/test-v8.15.2-celestial-office-independent-qa.js",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "2e5467f4d3074c5d9de3125ea86143c9f297cbecf20b92baa9f4f78bcb80926b",
+      "beforeSha256": "2e5467f4d3074c5d9de3125ea86143c9f297cbecf20b92baa9f4f78bcb80926b",
+      "targetPath": "tests/test-v8.15.2-celestial-office-independent-qa.js",
+      "targetSha256": "64dbfe994e5b41df0d64a667ee5feb501cef6bfd53896b1e1f6056f3ff4e5b78",
+      "afterSha256": "64dbfe994e5b41df0d64a667ee5feb501cef6bfd53896b1e1f6056f3ff4e5b78",
+      "transformation": "\"compatibility-mods\" => \"mod\"",
+      "onlyModRootPathChanged": true
+    },
+    {
+      "kind": "optional-patch-archive",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-patches\\tianjia-benji-repair\\README.md",
+      "sourceRelativePath": "compatibility-patches/tianjia-benji-repair/README.md",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "b48e4985f31494aaa3d890cdaed205937fffaa960dbc29d5aef5d0ca17591ba8",
+      "targetPath": "patches/tianjia-benji-repair/README.md",
+      "targetSha256": "b48e4985f31494aaa3d890cdaed205937fffaa960dbc29d5aef5d0ca17591ba8",
+      "byteIdentical": true
+    },
+    {
+      "kind": "optional-patch-archive",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-patches\\tianjia-benji-repair\\SanGong_Restore_Ruler_Stage_decisions.txt",
+      "sourceRelativePath": "compatibility-patches/tianjia-benji-repair/SanGong_Restore_Ruler_Stage_decisions.txt",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "572998d43c856a0177aa4d5cbabb25a780136b64cc38af86685c244cd91e11b4",
+      "targetPath": "patches/tianjia-benji-repair/SanGong_Restore_Ruler_Stage_decisions.txt",
+      "targetSha256": "572998d43c856a0177aa4d5cbabb25a780136b64cc38af86685c244cd91e11b4",
+      "byteIdentical": true
+    },
+    {
+      "kind": "optional-patch-archive",
+      "sourcePath": "C:\\Users\\97330\\AppData\\Local\\Programs\\voices-of-the-court\\compatibility-patches\\tianjia-benji-repair\\SanGong_Restore_Ruler_Stage_l_simp_chinese.yml",
+      "sourceRelativePath": "compatibility-patches/tianjia-benji-repair/SanGong_Restore_Ruler_Stage_l_simp_chinese.yml",
+      "sourceCommit": "3c49364fb1f9d4f1a90c6c09df3cc3966a01b8c4",
+      "sourceSha256": "f46e523c55a01fe804f20906cf304e59de9d8349727d09febd921f4ac2a651be",
+      "targetPath": "patches/tianjia-benji-repair/SanGong_Restore_Ruler_Stage_l_simp_chinese.yml",
+      "targetSha256": "f46e523c55a01fe804f20906cf304e59de9d8349727d09febd921f4ac2a651be",
+      "byteIdentical": true
+    }
+  ],
+  "tianjiaAudit": {
+    "sourceRelativePath": "compatibility-patches/tianjia-benji-repair",
+    "productionReferenceFound": false,
+    "searchedScopes": [
+      "resources/",
+      "scripts/",
+      "compatibility-mods/"
+    ],
+    "result": "README states manual deployment; no production reference or test-manifest dependency found in the searched scopes.",
+    "standaloneDisposition": "Copied byte-identically to patches/tianjia-benji-repair as optional archive; excluded from the Three-Mod package and test runner.",
+    "sourceRepositoryRemoval": "Root completed on 2026-10-11 after all 19 sourceSha256/targetSha256 checks passed."
+  },
+  "excludedData": [
+    "CK3 saves",
+    "AppData/VOTC runtime data",
+    "API credentials",
+    "debug logs",
+    "summaries",
+    "queues",
+    "settings"
+  ],
+  "gates": {
+    "independentLocalTests": "PASS_NODE_24_13_0_3_GROUPS_EXIT_0_IN_SEPARATE_CLEAN_COPY",
+    "missingScriptNegativeFixture": "PASS_EXPECTED_ENOENT_EXIT_1",
+    "githubActions": "CI_PENDING",
+    "realCk3": "CK3_PENDING",
+    "licenseReview": "PENDING",
+    "votcSourceRetirement": "LOCAL_PASS",
+    "push": "PROHIBITED"
+  },
+  "localValidation": {
+    "positiveCommand": "node tests/run-tests.js",
+    "positiveEnvironment": "Separate clean temporary copy without VOTC checkout or .git directory",
+    "nodeVersion": "v24.13.0",
+    "positiveExitCode": 0,
+    "groupsPassed": 3,
+    "negativeRemovedFile": "mod/VOTC_Three_Mod_Character_Name_Compatibility/common/scripted_effects/zzzz_votc_celestial_office_release.txt",
+    "negativeExpectedExitCode": 1,
+    "negativeObservedError": "ENOENT"
+  },
+  "localGit": {
+    "branch": "main",
+    "remote": "https://github.com/wsdsb-111/CK3-Three-Mod-Compatibility.git",
+    "commitCount": 0,
+    "commitCreated": false,
+    "pushPerformed": false
+  },
+  "sourceRetirement": {
+    "status": "LOCAL_PASS",
+    "completedOn": "2026-10-11",
+    "performedBy": "root agent",
+    "verifiedFileCount": 19,
+    "removedTestManifestGroups": 3,
+    "verification": "All 19 sourceSha256/targetSha256 pairs passed before removal.",
+    "installedModChanged": false,
+    "nativeBridgeChanged": false,
+    "sourcePathsAndHashesRetained": true
+  }
+}

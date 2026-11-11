@@ -1,0 +1,28 @@
+mm_v1312_clear_white_opinions_effect = {
+    save_scope_as = mm_v1312_white_observer
+    if = {
+        limit = { has_variable_list = mm_v1312_black_opinion_targets }
+        every_in_list = {
+            variable = mm_v1312_black_opinion_targets
+            save_scope_as = mm_v1312_black_opinion_target
+            scope:mm_v1312_white_observer = { remove_opinion = { target = scope:mm_v1312_black_opinion_target modifier = mm_v1312_white_black_opinion } }
+        }
+        clear_variable_list = mm_v1312_black_opinion_targets
+    }
+}
+
+mm_v1312_update_white_opinions_effect = {
+    mm_v1312_clear_white_opinions_effect = yes
+    if = {
+        limit = { is_alive = yes faith = faith:mm_dragon_creed rite = rite:mm_dragon_white has_global_variable_list = mm_dragon_creed_members }
+        every_in_global_list = {
+            variable = mm_dragon_creed_members
+            limit = { is_alive = yes faith = faith:mm_dragon_creed rite = rite:mm_dragon_black this != scope:mm_v1312_white_observer }
+            save_scope_as = mm_v1312_black_opinion_target
+            scope:mm_v1312_white_observer = {
+                add_opinion = { target = scope:mm_v1312_black_opinion_target modifier = mm_v1312_white_black_opinion months = 2 }
+                add_to_variable_list = { name = mm_v1312_black_opinion_targets target = scope:mm_v1312_black_opinion_target }
+            }
+        }
+    }
+}

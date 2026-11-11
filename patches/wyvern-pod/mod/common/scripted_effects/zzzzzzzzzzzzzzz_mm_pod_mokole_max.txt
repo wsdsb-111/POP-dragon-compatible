@@ -1,0 +1,108 @@
+﻿mm_pod_clear_mokole_max_effect = {
+    remove_character_modifier = mm_pod_mokole_max_0_0
+    remove_character_modifier = mm_pod_mokole_max_0_20
+    remove_character_modifier = mm_pod_mokole_max_0_60
+    remove_character_modifier = mm_pod_mokole_max_1_0
+    remove_character_modifier = mm_pod_mokole_max_1_20
+    remove_character_modifier = mm_pod_mokole_max_1_60
+    remove_character_modifier = mm_pod_mokole_max_2_0
+    remove_character_modifier = mm_pod_mokole_max_2_20
+    remove_character_modifier = mm_pod_mokole_max_2_60
+    remove_character_modifier = mm_pod_mokole_max_3_0
+    remove_character_modifier = mm_pod_mokole_max_3_20
+    remove_character_modifier = mm_pod_mokole_max_3_60
+    remove_character_modifier = mm_pod_mokole_max_4_0
+    remove_character_modifier = mm_pod_mokole_max_4_20
+    remove_character_modifier = mm_pod_mokole_max_4_60
+    remove_character_modifier = mm_pod_mokole_max_5_0
+    remove_character_modifier = mm_pod_mokole_max_5_20
+    remove_character_modifier = mm_pod_mokole_max_5_60
+    remove_variable = mm_pod_mokole_max_combination
+}
+mm_pod_sync_mokole_max_effect = {
+    if = {
+        limit = { has_trait = mokole }
+        if = { limit = { NOT = { is_target_in_global_variable_list = { name = mm_pod_mokole_max_characters target = this } } } add_to_global_variable_list = { name = mm_pod_mokole_max_characters target = this } }
+        mm_pod_queue_mokole_max_effect = yes
+        if = {
+            limit = { OR = { has_trait = mm_pod_dragon_gifts has_trait = mm_pod_mokole_gifts_0 has_trait = mm_pod_mokole_gifts_40 has_trait = mm_pod_mokole_gifts_60 } }
+            remove_trait = mm_pod_dragon_gifts
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } remove_trait = mm_pod_mokole_gifts_0 remove_trait = mm_pod_mokole_gifts_40 add_trait = mm_pod_mokole_gifts_60 }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 40 } } remove_trait = mm_pod_mokole_gifts_0 remove_trait = mm_pod_mokole_gifts_60 add_trait = mm_pod_mokole_gifts_40 }
+            else = { remove_trait = mm_pod_mokole_gifts_40 remove_trait = mm_pod_mokole_gifts_60 add_trait = mm_pod_mokole_gifts_0 }
+        }
+        set_variable = { name = mm_pod_mokole_max_desired value = 0 }
+        if = {
+            limit = { has_trait = mm_dragon_half }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 3 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 2 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 1 } }
+        }
+else_if = {
+            limit = { has_trait = mm_dragon_lineage_1 }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 6 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 5 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 4 } }
+        }
+else_if = {
+            limit = { has_trait = mm_dragon_lineage_2 }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 9 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 8 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 7 } }
+        }
+else_if = {
+            limit = { has_trait = mm_dragon_lineage_3 }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 12 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 11 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 10 } }
+        }
+else_if = {
+            limit = { has_trait = mm_dragon_lineage_4 }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 15 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 14 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 13 } }
+        }
+else_if = {
+            limit = { has_trait = mm_dragon_black_blood }
+            if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 60 } } set_variable = { name = mm_pod_mokole_max_desired value = 18 } }
+            else_if = { limit = { has_trait_xp = { trait = mokole track = mokole value >= 20 } } set_variable = { name = mm_pod_mokole_max_desired value = 17 } }
+            else = { set_variable = { name = mm_pod_mokole_max_desired value = 16 } }
+        }
+        if = {
+            limit = { OR = { NOT = { has_variable = mm_pod_mokole_max_combination } NOT = { var:mm_pod_mokole_max_combination = var:mm_pod_mokole_max_desired } } }
+            mm_pod_clear_mokole_max_effect = yes
+            if = { limit = { var:mm_pod_mokole_max_desired = 1 } add_character_modifier = { modifier = mm_pod_mokole_max_0_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 2 } add_character_modifier = { modifier = mm_pod_mokole_max_0_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 3 } add_character_modifier = { modifier = mm_pod_mokole_max_0_60 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 4 } add_character_modifier = { modifier = mm_pod_mokole_max_1_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 5 } add_character_modifier = { modifier = mm_pod_mokole_max_1_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 6 } add_character_modifier = { modifier = mm_pod_mokole_max_1_60 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 7 } add_character_modifier = { modifier = mm_pod_mokole_max_2_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 8 } add_character_modifier = { modifier = mm_pod_mokole_max_2_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 9 } add_character_modifier = { modifier = mm_pod_mokole_max_2_60 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 10 } add_character_modifier = { modifier = mm_pod_mokole_max_3_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 11 } add_character_modifier = { modifier = mm_pod_mokole_max_3_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 12 } add_character_modifier = { modifier = mm_pod_mokole_max_3_60 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 13 } add_character_modifier = { modifier = mm_pod_mokole_max_4_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 14 } add_character_modifier = { modifier = mm_pod_mokole_max_4_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 15 } add_character_modifier = { modifier = mm_pod_mokole_max_4_60 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 16 } add_character_modifier = { modifier = mm_pod_mokole_max_5_0 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 17 } add_character_modifier = { modifier = mm_pod_mokole_max_5_20 } }
+if = { limit = { var:mm_pod_mokole_max_desired = 18 } add_character_modifier = { modifier = mm_pod_mokole_max_5_60 } }
+            set_variable = { name = mm_pod_mokole_max_combination value = var:mm_pod_mokole_max_desired }
+        }
+        remove_variable = mm_pod_mokole_max_desired
+    }
+    else = {
+        if = { limit = { has_variable = mm_pod_mokole_max_combination } mm_pod_clear_mokole_max_effect = yes }
+        if = { limit = { OR = { has_trait = mm_pod_mokole_gifts_0 has_trait = mm_pod_mokole_gifts_40 has_trait = mm_pod_mokole_gifts_60 } } remove_trait = mm_pod_mokole_gifts_0 remove_trait = mm_pod_mokole_gifts_40 remove_trait = mm_pod_mokole_gifts_60 if = { limit = { mm_pod_has_dragon_blood = yes } add_trait = mm_pod_dragon_gifts } }
+        if = { limit = { has_global_variable_list = mm_pod_mokole_max_characters } remove_list_global_variable = { name = mm_pod_mokole_max_characters target = this } }
+    }
+}
+mm_pod_queue_mokole_max_effect = {
+    if = {
+        limit = { NOT = { has_global_variable = mm_pod_mokole_max_queued } }
+        set_global_variable = { name = mm_pod_mokole_max_queued value = yes days = 2 }
+        trigger_event = { on_action = mm_pod_mokole_max_daily days = 1 }
+    }
+}

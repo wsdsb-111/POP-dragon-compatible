@@ -1,0 +1,22 @@
+﻿# Earned from a completed legendary wyvern slayer kill; not inherited.
+mm_wyvern_bathed_in_dragon_blood = {
+	icon = "mm_dragon_bathed_blood.dds"
+	physical = yes
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	health = 666
+	elderly_health = 666
+	life_expectancy = 666
+	fertility = 1
+	years_of_fertility = 666
+	long_reign_bonus_mult = 1
+	prowess = 10
+	monthly_prestige = 2
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}

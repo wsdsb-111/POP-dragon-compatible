@@ -1,0 +1,46 @@
+myv_create_wyvern_effect = {
+    save_scope_as = myv_wyvern_creator
+    create_character = {
+        # CK3's native character age is the sole chronological source of truth.
+        age = $AGE$
+        # Wyverns use CK3's native binary sex field; either sex is equally likely.
+        gender_female_chance = 50
+        prowess = 0
+        dynasty = none
+        random_traits = no
+        location = scope:myv_wyvern_creator.location
+        culture = scope:myv_wyvern_creator.location.culture
+        faith = faith:pagan
+        trait = myv_wyvern
+        after_creation = {
+            save_scope_as = myv_new_wyvern
+            random_list = {
+                1 = { add_trait = myv_wyvern_physique_weak }
+                1 = { add_trait = myv_wyvern_physique_normal }
+                1 = { add_trait = myv_wyvern_physique_powerful }
+            }
+            myv_roll_wyvern_coordination_effect = yes
+            random_list = {
+                1 = { add_trait = myv_wyvern_temperament_docile }
+                1 = { add_trait = myv_wyvern_temperament_alert }
+                1 = { add_trait = myv_wyvern_temperament_fierce }
+            }
+            myv_roll_wyvern_color_effect = yes
+            set_variable = { name = myv_wyvern_size value = $SIZE$ }
+            set_variable = { name = myv_wyvern_size value = myv_wyvern_sanitized_size }
+            add_character_flag = mm_royal_newly_created
+            mm_dragon_register_true_dragon_origins_effect = yes
+            remove_character_flag = mm_royal_newly_created
+            mm_dragon_assign_regional_identity_effect = yes
+            myv_apply_wyvern_identity_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            add_to_global_variable_list = { name = myv_living_wyverns target = this }
+			myv_enforce_wyvern_population_game_rule_effect = yes
+        }
+    }
+}
+
+# Optional ancestry hook: the bloodline module owns the single hatch backend.
+mm_dragon_creation_source_hook_effect = {
+    mm_royal_assign_creation_effect = yes
+}

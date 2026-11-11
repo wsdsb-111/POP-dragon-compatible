@@ -1,0 +1,10 @@
+mm_wyvern_material_claw = {
+  default_type = miscellaneous
+  icon = "mm_wyvern_material_claw.dds"
+  asset = ep1_western_box_small_fancy_01_a_entity
+}
+mm_wyvern_material_horn = {
+  default_type = miscellaneous
+  icon = "mm_wyvern_material_horn.dds"
+  asset = ep1_western_box_small_fancy_01_a_entity
+}

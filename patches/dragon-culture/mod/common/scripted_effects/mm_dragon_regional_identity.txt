@@ -1,0 +1,59 @@
+﻿mm_dragon_assign_regional_identity_effect = {
+    if = {
+        limit = { myv_is_living_wyvern = yes NOT = { has_character_flag = mm_dragon_regional_identity_assigned } }
+        if = {
+            limit = { OR = { this = character:99001309 this = character:99001310 } }
+            set_culture = culture:myv_wyvern_culture
+        }
+        else_if = {
+            limit = { exists = location exists = location.culture }
+            set_culture = location.culture
+        }
+        if = {
+            limit = { OR = { AND = { mm_royal_is_king = yes has_variable = mm_royal_throne var:mm_royal_throne = 1 } AND = { mm_royal_is_king = no has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 1 } } }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_fire
+        }
+        if = {
+            limit = { OR = { AND = { mm_royal_is_king = yes has_variable = mm_royal_throne var:mm_royal_throne = 2 } AND = { mm_royal_is_king = no has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 2 } } }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_earth
+        }
+        if = {
+            limit = { OR = { AND = { mm_royal_is_king = yes has_variable = mm_royal_throne var:mm_royal_throne = 3 } AND = { mm_royal_is_king = no has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 3 } } }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_sea
+        }
+        if = {
+            limit = { OR = { AND = { mm_royal_is_king = yes has_variable = mm_royal_throne var:mm_royal_throne = 4 } AND = { mm_royal_is_king = no has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 4 } } }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_sky
+        }
+        if = {
+            limit = { NOT = { has_variable = mm_royal_creation_throne } exists = mother mother = { faith = faith:mm_dragon_creed } }
+            set_character_faith = mother.faith
+            set_character_rite = mother.rite
+        }
+        else_if = {
+            limit = { NOT = { has_variable = mm_royal_creation_throne } exists = real_father real_father = { faith = faith:mm_dragon_creed } }
+            set_character_faith = real_father.faith
+            set_character_rite = real_father.rite
+        }
+        else_if = {
+            limit = { NOT = { has_variable = mm_royal_creation_throne } exists = father father = { faith = faith:mm_dragon_creed } }
+            set_character_faith = father.faith
+            set_character_rite = father.rite
+        }
+        if = {
+            limit = { this = character:99001309 }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_black
+        }
+        if = {
+            limit = { this = character:99001310 }
+            set_character_faith = faith:mm_dragon_creed
+            set_character_rite = rite:mm_dragon_white
+        }
+        add_character_flag = mm_dragon_regional_identity_assigned
+    }
+}

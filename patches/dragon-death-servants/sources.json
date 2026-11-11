@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "压力血脉失控、当地NPC袭击、正常旅行与死侍讨伐",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/on_action/stress_on_actions.txt",
+      "sha256": "9fc07829b57730a6683c098f8a537468b1404f1264a7a673139733213cba8026"
+    },
+    {
+      "root": "game",
+      "path": "common/defines/00_defines.txt",
+      "sha256": "220fedcb4ad2bf1996b60244b2313094301d6ccdcd4835fcc3c3685e98c35ad7"
+    }
+  ],
+  "updated": "2026-10-29",
+  "outputs": [
+    {
+      "path": "mod/common/character_interactions/mm_dragon_death_servants.txt",
+      "sha256": "2d89b3c1926149240d59e7785e5cb7b9b64484d8c321f312dbfd144f53d11cd7"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_death_servants.txt",
+      "sha256": "4c5e2a09a2aabc11009661a76b7b7270349476e010fd1113a4060e846df10f55"
+    },
+    {
+      "path": "mod/common/script_values/mm_dragon_death_servants.txt",
+      "sha256": "940f7ed9b73de016ee5b75ac5a0659099795f957e07da3eaeb83fa9bbc479112"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_death_servants.txt",
+      "sha256": "abe05d8f212e865e84ae785fa463db61cce3f052ae24d6cf5897882727c98ed1"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_death_servants.txt",
+      "sha256": "d20f59fd6ab9c143029b0a0720b1dc60de2ff265393edb9966117510a2549857"
+    },
+    {
+      "path": "mod/events/mm_dragon_death_servants.txt",
+      "sha256": "90d8657c21528ed67c0521fa61fadd092fbfe2bdd67eec51284067e3e1dc2d0e"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_death_servants_l_english.yml",
+      "sha256": "e3ad97a0ae61f7c41ffd4200471ac94c206a73ee0fce6794adf9f573f56a3c7c"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_death_servants_l_simp_chinese.yml",
+      "sha256": "cb7a751ac1a5395f7620ecb09c5c777fc0800e83acc487af25ac87b5d85304c4"
+    }
+  ]
+}

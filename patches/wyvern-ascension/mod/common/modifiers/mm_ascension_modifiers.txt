@@ -1,0 +1,7 @@
+mm_asc_erosion_0 = { diplomacy = -1 health = -0.25 general_opinion = -5 }
+mm_asc_erosion_25 = { diplomacy = -2 health = -0.5 general_opinion = -10 }
+mm_asc_erosion_50 = { diplomacy = -3 health = -0.75 general_opinion = -15 }
+mm_asc_erosion_75 = { diplomacy = -4 health = -1 general_opinion = -20 }
+mm_asc_whispers = { stress_gain_mult = 0.15 stress_loss_mult = -0.1 }
+mm_asc_whisper_paranoia = { intrigue = 1 diplomacy = -2 general_opinion = -5 stress_gain_mult = 0.1 }
+mm_asc_whisper_madness = { learning = -2 diplomacy = -2 attraction_opinion = -10 stress_gain_mult = 0.2 }

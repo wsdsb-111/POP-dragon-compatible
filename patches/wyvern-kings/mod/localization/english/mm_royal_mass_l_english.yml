@@ -1,0 +1,5 @@
+﻿l_english:
+ mm_wyvern_mass_label:0 "Mass"
+ mm_wyvern_mass_kilograms_text:0 "[Character.MakeScope.ScriptValue('mm_wyvern_mass_kilograms')|1] kg"
+ mm_wyvern_mass_tonnes_text:0 "[Character.MakeScope.ScriptValue('mm_wyvern_mass_tonnes')|1] t"
+ mm_wyvern_mass_tooltip:0 "Mass grows with the cube of length, modified by physique and royal anatomy. Heavier dragons suffer less injury but lose agility.\nMass agility multiplier: [Character.MakeScope.ScriptValue('mm_wyvern_mass_agility_multiplier')|2]\nBody injury multiplier: [Character.MakeScope.ScriptValue('mm_wyvern_mass_wound_multiplier')|2]\nThe lower bounds are 0.35 and 0.20. The emperors retain their separate, single 70% immunity roll."

@@ -1,0 +1,69 @@
+﻿mm_royal_refresh_army_support_effect = {
+    clear_saved_scope = mm_royal_support_commander
+    if = {
+        limit = { is_alive = yes mm_royal_is_king = yes NOT = { has_trait = mm_royal_torpor } }
+        if = {
+            limit = { mm_wyvern_is_independent_knight_deployed = yes }
+            knight_army.army_commander ?= { save_scope_as = mm_royal_support_commander }
+        }
+        else_if = {
+            limit = { myv_is_wyvern_deployed_with_army = yes exists = var:myv_war_mount_rider }
+            var:myv_war_mount_rider = {
+                if = { limit = { exists = commanding_army } commanding_army.army_commander ?= { save_scope_as = mm_royal_support_commander } }
+                else_if = { limit = { exists = knight_army } knight_army.army_commander ?= { save_scope_as = mm_royal_support_commander } }
+            }
+        }
+        if = {
+            limit = { has_trait = mm_royal_dragon_king exists = scope:mm_royal_support_commander }
+            scope:mm_royal_support_commander = {
+                if = {
+                    limit = { is_alive = yes NOT = { has_character_modifier = mm_royal_support_2 } NOT = { has_character_modifier = mm_royal_support_3 } NOT = { has_character_modifier = mm_royal_support_4 } }
+                    remove_character_modifier = mm_royal_support_1
+                    remove_character_modifier = mm_royal_support_2
+                    remove_character_modifier = mm_royal_support_3
+                    remove_character_modifier = mm_royal_support_4
+                    add_character_modifier = { modifier = mm_royal_support_1 days = 2 }
+                }
+            }
+        }
+        if = {
+            limit = { has_trait = mm_royal_complete exists = scope:mm_royal_support_commander }
+            scope:mm_royal_support_commander = {
+                if = {
+                    limit = { is_alive = yes NOT = { has_character_modifier = mm_royal_support_3 } NOT = { has_character_modifier = mm_royal_support_4 } }
+                    remove_character_modifier = mm_royal_support_1
+                    remove_character_modifier = mm_royal_support_2
+                    remove_character_modifier = mm_royal_support_3
+                    remove_character_modifier = mm_royal_support_4
+                    add_character_modifier = { modifier = mm_royal_support_2 days = 2 }
+                }
+            }
+        }
+        if = {
+            limit = { has_trait = mm_royal_white_empress exists = scope:mm_royal_support_commander }
+            scope:mm_royal_support_commander = {
+                if = {
+                    limit = { is_alive = yes NOT = { has_character_modifier = mm_royal_support_4 } }
+                    remove_character_modifier = mm_royal_support_1
+                    remove_character_modifier = mm_royal_support_2
+                    remove_character_modifier = mm_royal_support_3
+                    remove_character_modifier = mm_royal_support_4
+                    add_character_modifier = { modifier = mm_royal_support_3 days = 2 }
+                }
+            }
+        }
+        if = {
+            limit = { has_trait = mm_royal_black_emperor exists = scope:mm_royal_support_commander }
+            scope:mm_royal_support_commander = {
+                if = {
+                    limit = { is_alive = yes  }
+                    remove_character_modifier = mm_royal_support_1
+                    remove_character_modifier = mm_royal_support_2
+                    remove_character_modifier = mm_royal_support_3
+                    remove_character_modifier = mm_royal_support_4
+                    add_character_modifier = { modifier = mm_royal_support_4 days = 2 }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+mm_ritual_sacrifice_valid = {
+    myv_is_living_wyvern = yes
+    mm_dragon_is_true_dragon_parent_trigger = yes
+    mm_royal_is_king = no
+    NOT = { has_trait = mm_dragon_half }
+    NOT = { has_character_flag = mm_wyvern_human_form }
+    OR = {
+        AND = { has_trait = myv_wyvern_tamed has_relation_myv_wyvern_bonded_character = $OWNER$ }
+        AND = { mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = $OWNER$ } has_character_flag = mm_wyvern_capture_stable_cage }
+    }
+}
+mm_ritual_selected_valid = {
+    exists = var:mm_ritual_selected_sacrifice
+    var:mm_ritual_selected_sacrifice = {
+        mm_ritual_sacrifice_valid = { OWNER = root }
+        OR = {
+            AND = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = $THRONE$ }
+            AND = {
+                NOT = { has_variable = mm_royal_creation_throne }
+                OR = {
+                    AND = { exists = mother mother = { mm_dragon_is_true_dragon_parent_trigger = yes var:mm_royal_creation_throne = $THRONE$ } }
+                    AND = { exists = real_father real_father = { mm_dragon_is_true_dragon_parent_trigger = yes var:mm_royal_creation_throne = $THRONE$ } }
+                }
+                NOT = { exists = mother mother = { has_variable = mm_royal_creation_throne NOT = { var:mm_royal_creation_throne = $THRONE$ } } }
+                NOT = { exists = real_father real_father = { has_variable = mm_royal_creation_throne NOT = { var:mm_royal_creation_throne = $THRONE$ } } }
+            }
+        }
+    }
+}
+mm_ritual_all_twins_ready = {
+    has_global_variable = mm_asc_seat_99001001
+    global_var:mm_asc_seat_99001001 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001305
+    global_var:mm_asc_seat_99001305 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001002
+    global_var:mm_asc_seat_99001002 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001306
+    global_var:mm_asc_seat_99001306 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001003
+    global_var:mm_asc_seat_99001003 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001307
+    global_var:mm_asc_seat_99001307 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001304
+    global_var:mm_asc_seat_99001304 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+    has_global_variable = mm_asc_seat_99001308
+    global_var:mm_asc_seat_99001308 = { OR = { is_alive = no NOT = { has_trait = mm_royal_torpor } } }
+}

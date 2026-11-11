@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "龙之信条六派、原创信仰图标与王座圣地",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/religion/religion_types/00_akom.txt",
+      "sha256": "4abf0acd135469cccfa1df70a5111ad505ad61acfc619632c99934e8fb8fc9fb"
+    },
+    {
+      "root": "game",
+      "path": "common/religion/tenet_types/00_tenet_types.txt",
+      "sha256": "c251b1c48bc75cc7b624bd7f607318c79dc0a5e3c0b743a2ebc3a9f3f0a22524"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_romance_effects.txt",
+      "sha256": "a4a88fa0f36e95e865dcdd077dcb64f5985db1b9a441fcca1795494abda66211"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/pam_effects.txt",
+      "sha256": "f4978bc5396431a0fb965dafc8163705c2cfea981ae4361ddb2340b3ff115404"
+    },
+    {
+      "root": "game",
+      "path": "common/activities/activity_types/funeral.txt",
+      "sha256": "3e9c0f0ff0fae6cd73fbe374f85a9130be081ed1cfed916119e15bec5e70f29c"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
+      "sha256": "1b60d78e54e1ebff7601bd13e59b2251cff47d96f595a4431c666fa3ee11a831"
+    },
+    {
+      "root": "game",
+      "path": "common/inspirations/00_inspirations.txt",
+      "sha256": "499b66073a52e0b2f3d001a7444ff26a877f2ce6fa13cb31870ae0dc3335558e"
+    },
+    {
+      "root": "game",
+      "path": "common/casus_belli_types/00_religious_war.txt",
+      "sha256": "3c390b6fc66b5204b176e82707b52b2c2b5163948867631e1fe83ea3374e2644"
+    },
+    {
+      "root": "game",
+      "path": "common/script_values/99_court_chaplain_values.txt",
+      "sha256": "216f07c8b65800faf373691a9247c913fbccd933161c8e2cebe3a37bf144e3f3"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_modifiers/00_faction_modifiers.txt",
+      "sha256": "7abe1a860106b178911b0298f45df75b13c5a1f04ecb3a9a33b68a3ce8519e1c"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_factions.txt",
+      "sha256": "c604b3fcf3fe315516483a9da45fe8c0e38db2031dc683ba6edd569c120b377b"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_nation_fracturing_faction.txt",
+      "sha256": "195e160d2c534f00d62e75ae1a44b88dc54fee01650d481bd8ea20560aa1d336"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_nomadic_faction.txt",
+      "sha256": "74be9ae0df2cfc89b5b5c99c57c2c567786af0b390339843224921ea26f0e858"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_peasant_faction_new.txt",
+      "sha256": "abcfd7119d00285660818e7e26aed230c78ace863f714a746a1ee99ea9672aa4"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_populist_faction.txt",
+      "sha256": "c67853a56bcea26ed90427cdba7ed4a51968ee085ec88e34fe2976ce5437dd4d"
+    },
+    {
+      "root": "game",
+      "path": "common/factions/10_tgp_factions.txt",
+      "sha256": "c232e64f26daa3a0bc1994fa55633af804d4935297bd075f5deee2b15932bd6a"
+    },
+    {
+      "root": "workshop",
+      "path": "2592094512/common/factions/hanfan_factions.txt",
+      "sha256": "958cf8f9b4c1a791d6a0b190ca4ffa8d27c8557de893bdeacaaa9566e2b4c200"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/events/myv_wyvern_battlefield_events.txt",
+      "sha256": "1be2399457be385e001af2542e29736fed313e80f7f35760ce13b514ad82cd14"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_faith.gui",
+      "sha256": "407a527291517ffd9f169e48ace81157e652541f6fe9a898073bda7f9336dc9b"
+    },
+    {
+      "root": "game",
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "630bcb50727a3b190a685e0404226432423b467420092352a5bab628cf5c7ebf"
+    },
+    {
+      "root": "game",
+      "path": "fonts/fonts.font",
+      "sha256": "727f611dfd9dc84fb8d49148d113923dadc1ea0542ca9324d9a4b00845e4a7ac"
+    },
+    {
+      "root": "game",
+      "path": "common/religion/doctrine_group_types/_doctrine_group_types.info",
+      "sha256": "729a90af80e920398cf2e0a1f981acc585228a5c3a2d3cbb84877e9bf9334996"
+    },
+    {
+      "root": "game",
+      "path": "common/religion/doctrine_types/_doctrine_types.info",
+      "sha256": "8e161d30cb96216f2fce091fc1907aa2141480e60fcde05b48a4e5d76a1aa9a4"
+    }
+  ],
+  "updated": "2026-10-29",
+  "outputs": [
+    {
+      "path": "mod/common/casus_belli_types/zzzzzz_mm_v1312_religious_wars.txt",
+      "sha256": "5933687681b19deed85351a6f6244c8d82664b6bfbf8be6a2f829b84556e1920"
+    },
+    {
+      "path": "mod/common/character_interactions/mm_v1311_mechanics.txt",
+      "sha256": "788b61c44effb8ae1eca541d5a1ddc6784c1152e6e627b74b3f26ba0c8509ed1"
+    },
+    {
+      "path": "mod/common/decisions/mm_v1311_mechanics.txt",
+      "sha256": "84e86ef9bc816894650c79dc94988d2ab5a880d9c7801d68ebb37eb1ce75325e"
+    },
+    {
+      "path": "mod/common/factions/zzzzzz_mm_v1312_factions.txt",
+      "sha256": "d19c3aca7448ea0bb853539a57e942a81f57e0da3116be1c3ce7e8c779c1977e"
+    },
+    {
+      "path": "mod/common/inspirations/zzzz_mm_v1312_forging.txt",
+      "sha256": "5ceddcc94ae1bbebc7813c55a22cb2c5d2f1f012ba85531aecbf84e5c0e5c608"
+    },
+    {
+      "path": "mod/common/modifiers/mm_v1311_mechanics.txt",
+      "sha256": "42e45d1b8aed4d1d2d81124c89733ac73f045765a6bf28f31aca3d5dd6e581c2"
+    },
+    {
+      "path": "mod/common/modifiers/mm_v1312_silk_road.txt",
+      "sha256": "6e31b766c1893ca8d39c2b71a2e8bf8459ba0de60c617515f0a36991341dae7a"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_creed_migration.txt",
+      "sha256": "77cc3a54f00847305ef6bb3b1a0461f779e8ca4703886a0e860ed0df034213f8"
+    },
+    {
+      "path": "mod/common/on_action/mm_v1311_mechanics.txt",
+      "sha256": "c8f82de3c57d7921dee4b0e40978cf115f0eceb6bb2ac567acb74e97b6579b1e"
+    },
+    {
+      "path": "mod/common/on_action/mm_v1312_criminal_rewards.txt",
+      "sha256": "34750a995e5d57c66b93d58f77568857e0722c6a826b17aa82c32fc30aefd628"
+    },
+    {
+      "path": "mod/common/on_action/mm_v1312_rite_opinions.txt",
+      "sha256": "ef44100d3e110a8d336d3222394f77aa42d15685b513844801cdbd61ddcc8281"
+    },
+    {
+      "path": "mod/common/on_action/mm_v1312_silk_road.txt",
+      "sha256": "bfb7fd7ac2bbabc2d27f29d6dca952036946fa4ebaa366186915cd17049634c8"
+    },
+    {
+      "path": "mod/common/opinion_modifiers/mm_v1312_rite_opinions.txt",
+      "sha256": "77c781d6bc93a4374955dc021ccf69612d700146872324aacbee515256ac793e"
+    },
+    {
+      "path": "mod/common/religion/doctrine_group_types/mm_dragon_creed.txt",
+      "sha256": "e31dc87fd50ca055c72e9519670031450bc14054c47c464abd400629bbbb3e79"
+    },
+    {
+      "path": "mod/common/religion/doctrine_types/mm_dragon_creed.txt",
+      "sha256": "ed60c3f827b06578ff2a8ac446b71a19ca66502c75faee5bd37ddae1d48f6b8a"
+    },
+    {
+      "path": "mod/common/religion/faith_types/mm_dragon_creed.txt",
+      "sha256": "a6e35b207b4aa043d4bb4724049a0572117ce36aa136fa8b258e6b4e6f8b06b0"
+    },
+    {
+      "path": "mod/common/religion/holy_site_types/mm_dragon_creed.txt",
+      "sha256": "f0af339cd4ed2ee0878acf9a9ab30b56d896c5c34dd38850dff421e637788fc6"
+    },
+    {
+      "path": "mod/common/religion/religion_types/mm_dragon_creed.txt",
+      "sha256": "8039b279ded7c627400826ded5376fbc82b8c6295bdde5036b27f1207dbe6834"
+    },
+    {
+      "path": "mod/common/religion/rite_types/mm_dragon_creed.txt",
+      "sha256": "360769674c73d47ef9ef0db3c5f7ffd2754fe72716017195a393bfe6981b40f3"
+    },
+    {
+      "path": "mod/common/religion/tenet_types/mm_dragon_creed.txt",
+      "sha256": "ce9d502bdc8fd4cdd7060df0c04dbd6c9e5e24210fc950ce5792da675e033197"
+    },
+    {
+      "path": "mod/common/script_values/zzzzzz_mm_dragon_v1312_conversion_factors.txt",
+      "sha256": "b2ec01979c20531c3fed8b5cbc26b854e08e8d4d34b20c66214c77889eba05e8"
+    },
+    {
+      "path": "mod/common/script_values/zzzzzz_mm_dragon_v1312_faction_values.txt",
+      "sha256": "f0a7b166f3749ccdcdf06533af5cdedc5bf19a8d1c8451ab9450a8031a12e1fb"
+    },
+    {
+      "path": "mod/common/script_values/zzzzzz_mm_dragon_v1312_religion_values.txt",
+      "sha256": "f3f5210e888e25d38e29bef9e8d0a7bc512f0a4486f3c90e6200d30951412397"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_creed_routing.txt",
+      "sha256": "07ac7390fe98e78ca3b0b7e4d00466d4f9cba006dce622700c22cd4d3a93931b"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_v1311_mechanics.txt",
+      "sha256": "1e17ea0398b33955305cb08098aa00f36858101e961db4b47debe17766101160"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_v1312_rite_opinions.txt",
+      "sha256": "8d5e39f75e77ecce57bda99d9163c0486b165dab1c543eb4507d738e7fe19103"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_v1312_silk_road.txt",
+      "sha256": "c2cecf9be8a35c725562218c9ccd8589699124159637020b4c9dcdaeca1c7474"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_v1313_faith_repair.txt",
+      "sha256": "1c417151dfb9749a420c683e0cf247a455850abedccc78f590b5f43c029cd2a5"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_v1314_split_cleanup.txt",
+      "sha256": "89317f7c19dfd68843c64d6f3f79c6a134e42a2c0560a3ebdeee27a5e3b4db4b"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_v1312_activity_rewards.txt",
+      "sha256": "33825d35918d0e9939aea544d37a458c0d33196044e8d72152bcdf5cb27f5139"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_v1312_forging.txt",
+      "sha256": "695ca8daecb8d60e253718f4a1bcd616d01c298c867e60242507a87f43489120"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_v1312_quality.txt",
+      "sha256": "724d2efe48aac9f1ae88390fe969ccdbc7a37cfb81cc691df607ddbe9c2651b9"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzz_mm_creed_combat_overrides.txt",
+      "sha256": "bbe96015410503bfd885888c1aef42bddf16c615db99e685cc248f5ba129166e"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_dragon_creed_hooks.txt",
+      "sha256": "c52ead4ee9bfc68a71dbeffc7466bc0586f6ee66c380c69301df29d1b44785fe"
+    },
+    {
+      "path": "mod/common/scripted_guis/mm_v1314_faith_projection.txt",
+      "sha256": "c6bc1bb14c2a7786f27e8c92f39508c2509f65bbdd2a6545de5d7f268fafa33d"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_creed_triggers.txt",
+      "sha256": "6126725774cfee7772afc5fe29fee941e9eea105ed67be36801984aae738115f"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_v1312_founder_wars.txt",
+      "sha256": "fe8a6fe3ca52ab0f5646e5507d6829fa8975b095471cb8ea8ce381f8685e4d78"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_v1312_silk_road.txt",
+      "sha256": "6e1a85d88d5af01bfd136fca05082eba8d327d73b8f0b43cf9ac7722c0145d02"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzz_mm_creed_combat_overrides.txt",
+      "sha256": "c7989794507c021eb56b0e06ef1cec95e2730f82772ca4bd39c3702b469d889f"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzz_mm_creed_death_servant_override.txt",
+      "sha256": "2caefc05c3d0200e14c4041ddb64767a4466fbc7fa7617d514d463325f0bd02a"
+    },
+    {
+      "path": "mod/common/traits/mm_dragon_death_servants.txt",
+      "sha256": "2377ca495de4fa7dae01d9e9b2aad3ac6bb14a5291ba6cfeb3d1e4728dce962f"
+    },
+    {
+      "path": "mod/events/mm_v1312_silk_road_events.txt",
+      "sha256": "435e124d6a76c6decdd1c5613640603a8cf35b7b2f209273e1536e343155f764"
+    },
+    {
+      "path": "mod/events/myv_wyvern_battlefield_events.txt",
+      "sha256": "fa64aeaa5e773c6053b8f6cfeba5f4a0ff026b6a35a762424a5b8f0f18951ebc"
+    },
+    {
+      "path": "mod/fonts/mm_v1314_tenet_upright.font",
+      "sha256": "80d1444e95b8dad714d01fb0152926c68c83e9cf778548a46f901c107a2d10dc"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_black.dds",
+      "sha256": "cd17c81f8c881ac246a8d2560c6d562ad3f6b0d08264c72b6ad5f3b15cbe7a91"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_creed.dds",
+      "sha256": "b7ffa8b0704d16dc7a191dc4d98d981004d077f4974e485252a8d551f681bd26"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_earth.dds",
+      "sha256": "e9c514169d560b99c284289aeef55b7a8ef9599d24cb42de9685bf382f388736"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_fire.dds",
+      "sha256": "76c627dba3dcaaa8860751712ab020804282eebb76518a60d81bd0c82028575f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_sea.dds",
+      "sha256": "8b151050de0013a0ec08e001dded15741df0e2bacdc9d3c021a885b80a838a3f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_sky.dds",
+      "sha256": "687c451c51630c67a0d553444c7abcda6afa34bff7e44a0637b190c5a4d938bd"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith/mm_dragon_white.dds",
+      "sha256": "08707dae8cd12b732f35a3c5718af9e63c2227c3139b291ec1af87e069f22f09"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrine_groups/mm_dragon_rite_doctrine.dds",
+      "sha256": "b7ffa8b0704d16dc7a191dc4d98d981004d077f4974e485252a8d551f681bd26"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_black.dds",
+      "sha256": "cd17c81f8c881ac246a8d2560c6d562ad3f6b0d08264c72b6ad5f3b15cbe7a91"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_earth.dds",
+      "sha256": "e9c514169d560b99c284289aeef55b7a8ef9599d24cb42de9685bf382f388736"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_fire.dds",
+      "sha256": "76c627dba3dcaaa8860751712ab020804282eebb76518a60d81bd0c82028575f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_sea.dds",
+      "sha256": "8b151050de0013a0ec08e001dded15741df0e2bacdc9d3c021a885b80a838a3f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_sky.dds",
+      "sha256": "687c451c51630c67a0d553444c7abcda6afa34bff7e44a0637b190c5a4d938bd"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_dragon_white.dds",
+      "sha256": "08707dae8cd12b732f35a3c5718af9e63c2227c3139b291ec1af87e069f22f09"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_black.dds",
+      "sha256": "059d72b4d6581ad3f084301ca246224f7ba18def2d99dabb59a58640727c63b9"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_earth.dds",
+      "sha256": "da5d1ecfaff812f0b07f48e99bd39cf6b91e1c3a87751312dca8f4135a8d85aa"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_fire.dds",
+      "sha256": "b7fd69486ed0a00598cb0158256d0c894e7482306e76b3a75cd7dd35421e377a"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_sea.dds",
+      "sha256": "62c1352ac81e57dcaccf9a730649d7a9c3ba13c100cd4860db8b3d0306af66b6"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_sky.dds",
+      "sha256": "5b4825c89ec04e9e80dc83cc5457d33659b327e16f637261e42f3656d5097cd3"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_white.dds",
+      "sha256": "6423733959566e6bc46b03efb6ed3f6fc7de2c860547d4c164cee3b05aca9d48"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black.dds",
+      "sha256": "3fa0b3b40f9e7055a93bd61632964e55f9637dcec8c67447dea92bb779fb350a"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black_second.dds",
+      "sha256": "4594b30474b0f3bb303c748fdb46d873bddfdd99869b70bd583479364bc7b700"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black_third.dds",
+      "sha256": "26434d3774f65592ee2a511cdbba701f6e0ebf2ed46919e2465f9c50c86bf287"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth.dds",
+      "sha256": "eafdc26ae616c63b2c8bba01eda21abc40898da023cc9503a477ad28706c17b0"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth_second.dds",
+      "sha256": "aa5457008d2d86b086e102a2531b06f56fe970c008d007153e25eea2c8ef2cc8"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth_third.dds",
+      "sha256": "882a4443529e632902cab8fba5fe972cb0e1aa0fa383e089cabd1d3bd69fe34f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire.dds",
+      "sha256": "b99467544960f979e9ca06beedf36620b94d65323adece4176adb52967875b02"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire_second.dds",
+      "sha256": "7923ac96ed1dae9be6ae5de12e19d2106ce073f29e08e2cb115550b426eb9cfc"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire_third.dds",
+      "sha256": "8b1e9585e7d099155ef29bd4e1d628fbc9c509583ac28fb72712110e1f4df929"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea.dds",
+      "sha256": "3f8743be3988f9206ce55699ddff46bb48b7829dc3ebc2168dfc9ad58fbbaadc"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea_second.dds",
+      "sha256": "e65b21720dd597ab1a1520fb7b38ad71d0b442d206ca30546a0bb6d65edbe5f9"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea_third.dds",
+      "sha256": "be8d84a27abe6d7d592b47675c0e8e46d91dc6aff13dc050ec04a38e6d81161a"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky.dds",
+      "sha256": "9ab200bcb04a54f681e7ac5c01e847813000f6ed9ec856485035b2dea071af72"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky_second.dds",
+      "sha256": "39efae2f6644cb91f352e45a6fbe56cd640c3eb929b1b367a4ea40d2ede55a25"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky_third.dds",
+      "sha256": "cf82a41a7751ef4b0330d224c8237c2687445f400bf6109bca8be6ed7661267a"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white.dds",
+      "sha256": "decbebe8c8432466e679481195159ac943a226da1c0f890f8f05ced3fae0dad7"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white_second.dds",
+      "sha256": "ba24721982728a688b3ecbd3966748c13e8cb618c8550066c6c5a56c562134dc"
+    },
+    {
+      "path": "mod/gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white_third.dds",
+      "sha256": "2177065ced48d181268224a5f07a1682d332fd88581d489e66bdd30f27be0cc3"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_death_servant.dds",
+      "sha256": "332674c00e71e90eb7e33ad1218b4e4f734d16900d99b9c8e0af7af03211ceac"
+    },
+    {
+      "path": "mod/gui/shared/mm_v1314_faith_tooltip.gui",
+      "sha256": "d1f2368b8fd189b1c58c93ee6f017de642e5cc7ec6732bb9d69dacebc0d1b184"
+    },
+    {
+      "path": "mod/gui/window_faith.gui",
+      "sha256": "49b4fcd0270cb3f08cb2d43f9c7368bdc866838211331377ac00f5f0047e1d4e"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_battlefield_v1312_l_english.yml",
+      "sha256": "34952a52f3e09996885081a1085294d12fccfbd6852f28a8b224bc3b93418648"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_creed_awakening_l_english.yml",
+      "sha256": "03d4d1fbeba6dd2816827edc47c74a4404c52d28bea16387fa3ffadcb33d9f0c"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_creed_l_english.yml",
+      "sha256": "80307d64cabc3f7f51b2fd7ce3cdb19eb42d9f750c044eab98e7940d1a8159a8"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_death_servant_identity_l_english.yml",
+      "sha256": "0a09e481964d41d036ce4c96691f5d93a3f72953faf41a087286e02fa4990d9d"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_v1311_l_english.yml",
+      "sha256": "943435b1b06a59cc7a5108fdcddfb114f4bb2c2c1d73d1da4b57e1b67bd775b3"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_v1312_conversion_l_english.yml",
+      "sha256": "c487043c782904b503b566b6b6f54ac4aa72ee4077bc770742882f9f64b28d3e"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_v1312_factions_l_english.yml",
+      "sha256": "8df6fcda72c96b2a5989d03e0d190ccf1ec335f7b0ceafde56a44ed8d794d6a8"
+    },
+    {
+      "path": "mod/localization/english/mm_v1312_quality_l_english.yml",
+      "sha256": "0bca88c0007f6cf352a12a02eb0bf2d9775173df79986ef30fabc702876b6aff"
+    },
+    {
+      "path": "mod/localization/english/mm_v1312_rite_opinions_l_english.yml",
+      "sha256": "b351be6421be81a32353d929154a2bc1c0f7a9b1f9abff14d6966a0c8add58cb"
+    },
+    {
+      "path": "mod/localization/english/mm_v1312_silk_road_l_english.yml",
+      "sha256": "cae5a5d6aaa72f506ede4702a7f1b14db119a5a58804c475cf283da23f8224a5"
+    },
+    {
+      "path": "mod/localization/english/mm_v1313_funeral_l_english.yml",
+      "sha256": "ff26e741ab25050a9acb773a892f3dec5d22577ddb82410279fb2d9a5fc9b319"
+    },
+    {
+      "path": "mod/localization/english/mm_v1314_projection_l_english.yml",
+      "sha256": "9c208f3cc5175fe745aa0d18677d39308376903e33b5d9793c8c2e652ddb31b5"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_battlefield_v1312_l_simp_chinese.yml",
+      "sha256": "d2251b4bbb9742c42282a6eeaff28308dd133fbb33953a4347ed62bd8fe81922"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_creed_awakening_l_simp_chinese.yml",
+      "sha256": "dbcbba422c0c3feae94287ca6ee07dd27d7865fcc1b2d5246fb8eeaae2940e31"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_creed_l_simp_chinese.yml",
+      "sha256": "f00c0fa9c1549ea06eb3c594e341e6240739da6c666a8a05dc56a7a597afc1d2"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_death_servant_identity_l_simp_chinese.yml",
+      "sha256": "ede713281d0e41d2045f3feaee34c0165351f2332969c27db1d4d7a847b10e3c"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_v1311_l_simp_chinese.yml",
+      "sha256": "f1d6707cb162e29088251c3f277b0201718d3107023aa0609660ac8c1b7921c1"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_v1312_conversion_l_simp_chinese.yml",
+      "sha256": "f5879598a2789e5d68f5e44ebeb9e39ead255c6def24ae9a02d286496fedcb91"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_v1312_factions_l_simp_chinese.yml",
+      "sha256": "625972c5ebdace1617d757c17bf07828ae348519b1ae23c4939d642f28d60fc3"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1311_mechanics_l_simp_chinese.yml",
+      "sha256": "a326b5424fbf2e1ecdf3a8c94f4c40911b51fede19cb59e90d5217d0609bf917"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1312_quality_l_simp_chinese.yml",
+      "sha256": "f6f2fa3a138fc2e3c3c0708e35c24b73e7ca4e27728fcd36604f5eec24196387"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1312_rite_opinions_l_simp_chinese.yml",
+      "sha256": "3424d5d1294ad1520b4a0af9f0454b1af8bcdb173a7eec02ee61e97822f23af5"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1312_silk_road_l_simp_chinese.yml",
+      "sha256": "c305cc8f2c8b969423091ce0a87b804291c3ffd9ae92b616bbae6c591110d28f"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1313_funeral_l_simp_chinese.yml",
+      "sha256": "5ef9e0a36a2277da75a7f60ea35c7f42a06ab8cb6f2abebe5e22a12f9375b696"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_v1314_projection_l_simp_chinese.yml",
+      "sha256": "6f585741247fd848f5da635bb190d48ae4a8e5f91d4dbf6f8ecbcaf4d904e13d"
+    }
+  ]
+}

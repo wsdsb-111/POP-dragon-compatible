@@ -1,0 +1,183 @@
+mm_tenet_black = {
+	icon = mm_v1318_mm_tenet_black
+	traits = {
+		virtues = { brave = { weight = 20 scale = 1 } mm_royal_black_emperor = { weight = 20 scale = 1 } }
+		sins = { craven = { weight = 20 scale = 1 } shy = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_black_second = {
+	icon = mm_v1318_mm_tenet_black_second
+	traits = {
+		virtues = { loyal = { weight = 20 scale = 1 } mm_dragon_branch_black = { weight = 20 scale = 1 } mm_dragon_black_blood = { weight = 20 scale = 1 } }
+		sins = { greedy = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_black_third = {
+	icon = mm_v1318_mm_tenet_black_third
+	traits = {
+		virtues = { zealous = { weight = 20 scale = 1 } just = { weight = 20 scale = 1 } }
+		sins = { lazy = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_white = {
+	icon = mm_v1318_mm_tenet_white
+	character_modifier = { stress_loss_mult = 0.5 stress_gain_mult = -0.5 general_opinion = 10 }
+	traits = {
+		virtues = { calm = { weight = 20 scale = 1 } patient = { weight = 20 scale = 1 } }
+		sins = { wrathful = { weight = 20 scale = 1 } craven = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_white_second = {
+	icon = mm_v1318_mm_tenet_white_second
+	character_modifier = { learning = 5 }
+	traits = {
+		virtues = { mm_dragon_branch_white = { weight = 20 scale = 1 } mm_dragon_black_blood = { weight = 20 scale = 1 } }
+		sins = { lazy = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_white_third = {
+	icon = mm_v1318_mm_tenet_white_third
+	traits = {
+		virtues = { cynical = { weight = 20 scale = 1 } mm_royal_white_empress = { weight = 20 scale = 1 } }
+		sins = { trusting = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_fire = {
+	icon = mm_v1318_mm_tenet_fire
+	character_modifier = { build_speed = -0.15 build_gold_cost = -0.1 artifact_decay_reduction_mult = -0.5 }
+	traits = {
+		virtues = { diligent = { weight = 20 scale = 1 } mm_royal_fire_king = { weight = 20 scale = 1 } }
+		sins = { lazy = { weight = 20 scale = 1 } gluttonous = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_fire_second = {
+	icon = mm_v1318_mm_tenet_fire_second
+	traits = {
+		virtues = { chaste = { weight = 20 scale = 1 } mm_dragon_branch_fire = { weight = 20 scale = 1 } }
+		sins = { greedy = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_fire_third = {
+	icon = mm_v1318_mm_tenet_fire_third
+	traits = {
+		virtues = { just = { weight = 20 scale = 1 } }
+		sins = { deceitful = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_earth = {
+	icon = mm_v1318_mm_tenet_earth
+	character_modifier = { monthly_piety_gain_mult = 0.1 army_toughness_mult = 0.1 }
+	traits = {
+		virtues = { patient = { weight = 20 scale = 1 } zealous = { weight = 20 scale = 1 } }
+		sins = { impatient = { weight = 20 scale = 1 } arrogant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_earth_second = {
+	icon = mm_v1318_mm_tenet_earth_second
+	traits = {
+		virtues = { temperate = { weight = 20 scale = 1 } mm_dragon_branch_earth = { weight = 20 scale = 1 } }
+		sins = { deceitful = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_earth_third = {
+	icon = mm_v1318_mm_tenet_earth_third
+	traits = {
+		virtues = { mm_royal_earth_king = { weight = 20 scale = 1 } }
+		sins = { craven = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sea = {
+	icon = mm_v1318_mm_tenet_sea
+	character_modifier = { character_travel_safety = 30 stewardship = 5 }
+	traits = {
+		virtues = { just = { weight = 20 scale = 1 } mm_royal_sea_king = { weight = 20 scale = 1 } }
+		sins = { craven = { weight = 20 scale = 1 } arrogant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sea_second = {
+	icon = mm_v1318_mm_tenet_sea_second
+	character_modifier = { general_opinion = 20 }
+	traits = {
+		virtues = { gregarious = { weight = 20 scale = 1 } mm_dragon_branch_sea = { weight = 20 scale = 1 } }
+		sins = { mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sea_third = {
+	icon = mm_v1318_mm_tenet_sea_third
+	character_modifier = { attraction_opinion = 10 fertility = 0.2 }
+	traits = {
+		virtues = { generous = { weight = 20 scale = 1 } }
+		sins = { reckless = { weight = 20 scale = 1 } zealous = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sky = {
+	icon = mm_v1318_mm_tenet_sky
+	character_modifier = { character_travel_speed_mult = 0.2 movement_speed = 0.1 }
+	traits = {
+		virtues = { stubborn = { weight = 20 scale = 1 } mm_dragon_branch_sky = { weight = 20 scale = 1 } }
+		sins = { lazy = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sky_second = {
+	icon = mm_v1318_mm_tenet_sky_second
+	character_modifier = { intimidated_vassal_tax_contribution_mult = 0.1 cowed_vassal_tax_contribution_mult = 0.1 }
+	traits = {
+		virtues = { zealous = { weight = 20 scale = 1 } ambitious = { weight = 20 scale = 1 } }
+		sins = { craven = { weight = 20 scale = 1 } shy = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_sky_third = {
+	icon = mm_v1318_mm_tenet_sky_third
+	traits = {
+		virtues = { mm_royal_sky_king = { weight = 20 scale = 1 } }
+		sins = { deceitful = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }
+	}
+	is_shown = { always = no }
+}
+
+mm_tenet_blood_purification = {
+	icon = tenet_sacred_childbirth
+	character_modifier = { fertility = 0.05 }
+	is_shown = { always = no }
+}
+
+mm_tenet_death_servant_punishment = {
+	icon = tenet_gruesome_festivals
+	character_modifier = { dread_gain_mult = 0.05 }
+	is_shown = { always = no }
+}
+

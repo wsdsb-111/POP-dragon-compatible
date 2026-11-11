@@ -1,0 +1,27 @@
+﻿mm_dragon_force_hatch_effect = {
+    if = {
+        limit = { is_alive = yes gold >= 100 piety >= 250 }
+        clear_saved_scope = mm_dragon_force_egg
+        clear_saved_scope = mm_dragon_new_child
+        clear_saved_scope = myv_new_wyvern
+        if = {
+            limit = { any_character_artifact = { mm_dragon_force_hatch_eligible_trigger = yes is_equipped = yes } }
+            random_character_artifact = { limit = { mm_dragon_force_hatch_eligible_trigger = yes is_equipped = yes } save_scope_as = mm_dragon_force_egg }
+        }
+        else = {
+            random_character_artifact = { limit = { mm_dragon_force_hatch_eligible_trigger = yes } save_scope_as = mm_dragon_force_egg }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_force_egg }
+            scope:mm_dragon_force_egg = {
+                if = { limit = { var:mm_dragon_half_egg = yes } remove_variable = mm_dragon_hatch_started }
+                myv_hatch_wyvern_egg_effect = yes
+            }
+            if = {
+                limit = { OR = { exists = scope:mm_dragon_new_child exists = scope:myv_new_wyvern } }
+                add_gold = -100
+                add_piety = -250
+            }
+        }
+    }
+}

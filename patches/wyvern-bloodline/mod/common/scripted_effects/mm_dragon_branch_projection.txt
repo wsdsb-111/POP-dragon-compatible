@@ -1,0 +1,15 @@
+# SOURCE scope: project its actual identity, falling back only for unclassified legacy sources.
+mm_dragon_project_biological_branch_effect = {
+    if = { limit = { OR = { mm_dragon_source_is_fire_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_fire } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_fire value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sea_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sea } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_sea value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sky_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sky } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_sky value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_earth_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_earth } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_earth value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_white_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_white } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_white value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_black_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_black } } } $TARGET$ = { set_variable = { name = mm_dragon_bio_black value = yes } } }
+}
+
+# A targeted load/use repair does not rewrite exact sources or acquired powers.
+mm_dragon_repair_branch_projection_effect = {
+    mm_dragon_prepare_biological_origins_effect = yes
+    mm_dragon_refresh_branch_traits_effect = yes
+}

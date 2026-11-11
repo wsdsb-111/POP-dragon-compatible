@@ -1,0 +1,32 @@
+myv_compact_head = {
+	male = {
+		default = { head = "idle" torso = "idle" }
+		force = yes
+# Royal and active ascension routes precede native fallbacks.
+		portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = compact_fire }
+		portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = compact_earth }
+		portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = compact_sea }
+		portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = compact_sky }
+		portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = compact_white }
+		portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = compact_black }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red } mm_asc_native_poses = compact_red }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green } mm_asc_native_poses = compact_green }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black } mm_asc_native_poses = compact_black }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey } mm_asc_native_poses = compact_grey }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold } mm_asc_native_poses = compact_gold }
+		portrait_modifier = { trigger = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare } mm_asc_native_poses = compact_nightmare }
+		portrait_modifier = { trigger = { OR = { has_character_flag = myv_wyvern_color_gold this = character:99001004 this = character:99001005 this = character:99001006 } } myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = gold }
+		portrait_modifier = { trigger = { has_character_flag = myv_wyvern_color_red } myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = red }
+		portrait_modifier = { trigger = { has_character_flag = myv_wyvern_color_black } myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = black }
+		portrait_modifier = { trigger = { has_character_flag = myv_wyvern_color_grey } myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = grey }
+		portrait_modifier = { trigger = { has_character_flag = myv_wyvern_color_nightmare } myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = nightmare }
+		portrait_modifier = {  myv_wyvern_visual_color_and_size = myv_wyvern_compact_hidden myv_compact_head_pose = green }
+		compact = {
+			animation = { head = "idle" torso = "idle" }
+			weight = { base = 100 }
+		}
+	}
+	boy = male
+	female = male
+	girl = male
+}

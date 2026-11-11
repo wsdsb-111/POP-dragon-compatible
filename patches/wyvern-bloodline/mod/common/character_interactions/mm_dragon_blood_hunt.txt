@@ -1,0 +1,32 @@
+# CK3 single combat, FATALITY=always: death_duel, killer=sc_victor.
+# The native death occurs before the output callback. Only on_death pays points.
+mm_dragon_blood_hunt_interaction = {
+    category = interaction_category_hostile
+    icon = icon_scheme_murder
+    common_interaction = yes
+    auto_accept = yes
+    desc = mm_dragon_blood_hunt_interaction_desc
+    is_shown = {
+        scope:actor = { is_ai = no mm_dragon_has_blood_trigger = yes }
+        scope:recipient = { mm_dragon_has_blood_trigger = yes }
+        scope:actor != scope:recipient
+    }
+    is_valid_showing_failures_only = { mm_dragon_blood_hunt_pair_trigger = yes }
+    on_accept = {
+        if = {
+            limit = { mm_dragon_blood_hunt_pair_trigger = yes }
+            scope:actor = { set_variable = { name = mm_dragon_blood_hunt_opponent value = scope:recipient } }
+            scope:recipient = { set_variable = { name = mm_dragon_blood_hunt_opponent value = scope:actor } }
+            configure_start_single_combat_effect = {
+                SC_INITIATOR = scope:actor
+                SC_ATTACKER = scope:actor
+                SC_DEFENDER = scope:recipient
+                FATALITY = always
+                FIXED = no
+                LOCALE = terrain_scope
+                OUTPUT_EVENT = mm_dragon_blood_hunt.0001
+                INVALIDATION_EVENT = mm_dragon_blood_hunt.0002
+            }
+        }
+    }
+}

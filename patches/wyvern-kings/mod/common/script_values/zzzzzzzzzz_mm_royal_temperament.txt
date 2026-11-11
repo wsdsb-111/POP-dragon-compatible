@@ -1,0 +1,25 @@
+# Preserve the original multiplier for ordinary wyverns; the royal trait
+# supplies each positive effect once regardless of the native temperament.
+myv_wyvern_temperament_agility_multiplier = {
+    value = 1
+    if = {
+        limit = { OR = { has_trait = myv_wyvern_temperament_alert has_trait = mm_royal_perfect_instinct } }
+        value = 1.1
+    }
+}
+
+myv_wyvern_temperament_prowess_multiplier = {
+    value = 1
+    if = {
+        limit = { has_trait = mm_royal_perfect_instinct }
+        value = 1.1
+    }
+    else_if = {
+        limit = { has_trait = myv_wyvern_temperament_docile }
+        value = 0.9
+    }
+    else_if = {
+        limit = { has_trait = myv_wyvern_temperament_fierce }
+        value = 1.1
+    }
+}

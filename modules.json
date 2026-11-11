@@ -1,0 +1,202 @@
+[
+  {
+    "id": "wyvern",
+    "source": "patches/wyvern/mod",
+    "requires": [
+      "chinese-core"
+    ],
+    "mods": [
+      "3811316052",
+      "3717989134",
+      "3614384002"
+    ],
+    "description": "飞龙与东方、汉番、人格经验、功绩界面的合并版"
+  },
+  {
+    "id": "wyvern-capture",
+    "source": "patches/wyvern-capture/mod",
+    "requires": [
+      "wyvern"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "战胜野龙后的猎杀战利品、兽栏及营地俘获、喂养与性情驯服"
+  },
+  {
+    "id": "wyvern-human-form",
+    "source": "patches/wyvern-human-form/mod",
+    "requires": [
+      "wyvern"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "成年羁绊飞龙可逆的人形外观，不更换人物或身份"
+  },
+  {
+    "id": "wyvern-bloodline",
+    "source": "patches/wyvern-bloodline/mod",
+    "requires": [
+      "wyvern-capture",
+      "wyvern-human-form"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "人龙蛋孵化、真实亲缘、四代血脉及兽栏主动繁育"
+  },
+  {
+    "id": "wyvern-kings",
+    "source": "patches/wyvern-kings/mod",
+    "requires": [
+      "wyvern-bloodline"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "固定龙王、蛰眠唤醒、双生吞噬、创造关系与王权战斗"
+  },
+  {
+    "id": "wyvern-ascension",
+    "source": "patches/wyvern-ascension/mod",
+    "requires": [
+      "wyvern-kings"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "王座龙血双轨融合、同ID王权接续与可逆化龙"
+  },
+  {
+    "id": "dragon-creed",
+    "source": "patches/dragon-creed/mod",
+    "requires": [
+      "wyvern-kings"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "龙之信条六派、原创信仰图标与王座圣地"
+  },
+  {
+    "id": "dragon-culture",
+    "source": "patches/dragon-culture/mod",
+    "requires": [
+      "wyvern-ascension",
+      "dragon-creed"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "出生地区文化、姓名与王族专属古龙文化"
+  },
+  {
+    "id": "dragon-politics",
+    "source": "patches/dragon-politics/mod",
+    "requires": [
+      "wyvern-ascension"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "排除龙形起义领袖，保留化形龙与混血政治资格"
+  },
+  {
+    "id": "dragon-bond",
+    "source": "patches/dragon-bond/mod",
+    "requires": [
+      "wyvern-bloodline",
+      "dragon-creed"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "人龙羁绊成长与婚配、繁育软接受度"
+  },
+  {
+    "id": "dragon-recovery",
+    "source": "patches/dragon-recovery/mod",
+    "requires": [
+      "wyvern-kings"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "七条龙伤轨道同时恢复，普通每月5点、王族每日1点"
+  },
+  {
+    "id": "dragon-death-servants",
+    "source": "patches/dragon-death-servants/mod",
+    "requires": [
+      "dragon-creed",
+      "wyvern-ascension"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "压力血脉失控、当地NPC袭击、正常旅行与死侍讨伐"
+  },
+  {
+    "id": "dragon-news",
+    "source": "patches/dragon-news/mod",
+    "requires": [
+      "wyvern-ascension",
+      "dragon-creed"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "龙灾当地受害者与定向消息"
+  },
+  {
+    "id": "dragon-map-performance",
+    "source": "patches/dragon-map-performance/mod",
+    "requires": [
+      "wyvern-ascension",
+      "dragon-creed"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "修复宗教地图过时绑定和显示条件"
+  },
+  {
+    "id": "dragon-ritual",
+    "source": "patches/dragon-ritual/mod",
+    "requires": [
+      "wyvern-ascension",
+      "dragon-creed"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "八位龙王献祭唤醒与黑白皇仪式"
+  },
+  {
+    "id": "dragon-relics",
+    "source": "patches/dragon-relics/mod",
+    "requires": [
+      "dragon-creed",
+      "dragon-bond",
+      "dragon-death-servants",
+      "wyvern-capture"
+    ],
+    "mods": [
+      "3811316052"
+    ],
+    "description": "七件卓越唯一圣物、原生圣地供奉与取回、宫廷重铸及教派主动能力"
+  },
+  {
+    "id": "character-preservation",
+    "source": "patches/character-preservation/mod",
+    "requires": [
+      "wyvern-ascension",
+      "chinese-core"
+    ],
+    "mods": [
+      "3740401066"
+    ],
+    "description": "生于斯土、原版人口池及无地转换清理豁免；保留现存龙族而非按年龄裁剪"
+  }
+]

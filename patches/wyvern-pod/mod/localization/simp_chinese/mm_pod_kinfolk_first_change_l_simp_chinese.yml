@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+ mm_pod_prepare_kinfolk_children_decision:0 "引导兽嫡后代觉醒"
+ mm_pod_prepare_kinfolk_children_decision_desc:0 "为尚未觉醒的兽嫡后代唤起首次化形的潜能。后代将保留现有种族血缘，在16岁时经历首次化形，而非立即转化。"
+ mm_pod_prepare_kinfolk_children_decision_tooltip:0 "为所有符合条件的未成年兽嫡后代补上首次化形标记。"
+ mm_pod_prepare_kinfolk_children_decision_confirm:0 "引导他们的潜能"
+ mm_pod_prepare_kinfolk_children_decision_effect:0 "所有活着、未满16岁且尚无首次化形标记的兽嫡后代获得觉醒潜能，16岁时按原有种族血缘触发首次化形。已是化兽族裔、换生灵或遗传血仆的后代不受影响。本决议不消耗金币或虔诚。"

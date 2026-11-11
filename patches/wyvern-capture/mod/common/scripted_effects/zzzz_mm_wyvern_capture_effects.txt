@@ -1,0 +1,546 @@
+# Public API. The winning character's scope must hold the live winner as root
+# and the original wild target as scope:mm_capture_target.
+mm_wyvern_capture_target_effect = {
+	clear_saved_scope = mm_wyvern_capture_selected_county
+	clear_saved_scope = mm_wyvern_capture_selected_province
+	clear_saved_scope = mm_wyvern_capture_camp_location
+	if = {
+		limit = { mm_wyvern_can_capture_target_trigger = yes }
+		scope:mm_capture_target = {
+			if = {
+				limit = { has_trait = myv_wyvern_legendary }
+				add_character_flag = mm_wyvern_legendary_origin
+			}
+		}
+		if = {
+			limit = { government_has_flag = government_is_landless_adventurer }
+			domicile = { domicile_location = { save_scope_as = mm_wyvern_capture_camp_location } }
+			scope:mm_capture_target = {
+				set_variable = { name = mm_wyvern_captor value = root }
+				set_variable = { name = mm_wyvern_taming_progress value = 0 }
+				add_character_flag = mm_wyvern_capture_temporary_cage
+				remove_character_flag = myv_wyvern_roaming
+				set_location = { location = scope:mm_wyvern_capture_camp_location stick_to_location = yes }
+			}
+		}
+		else = {
+			every_held_county = {
+				limit = { mm_wyvern_capture_stable_room_trigger = yes }
+				if = {
+					limit = { NOT = { exists = scope:mm_wyvern_capture_selected_county } }
+					save_scope_as = mm_wyvern_capture_selected_county
+				}
+			}
+			if = {
+				limit = { exists = scope:mm_wyvern_capture_selected_county }
+				scope:mm_wyvern_capture_selected_county = {
+					random_county_province = {
+						limit = { has_building_or_higher = myv_wyvern_stable_01 }
+						save_scope_as = mm_wyvern_capture_selected_province
+					}
+				}
+				if = {
+					limit = { exists = scope:mm_wyvern_capture_selected_province }
+					scope:mm_capture_target = {
+						set_variable = { name = mm_wyvern_captor value = root }
+						set_variable = { name = mm_wyvern_taming_progress value = 0 }
+						set_variable = { name = myv_wyvern_stable_county value = scope:mm_wyvern_capture_selected_county }
+						set_variable = { name = myv_wyvern_stable_payer value = root }
+						set_variable = { name = myv_wyvern_lair_barony value = scope:mm_wyvern_capture_selected_province.barony }
+						add_character_flag = mm_wyvern_capture_stable_cage
+						add_character_flag = myv_wyvern_in_stable
+						remove_character_flag = myv_wyvern_roaming
+						set_location = { location = scope:mm_wyvern_capture_selected_province stick_to_location = yes }
+					}
+				}
+			}
+		}
+	}
+	clear_saved_scope = mm_wyvern_capture_selected_county
+	clear_saved_scope = mm_wyvern_capture_selected_province
+	clear_saved_scope = mm_wyvern_capture_camp_location
+}
+
+mm_wyvern_capture_release_effect = {
+	if = {
+		limit = { myv_is_living_wyvern = yes has_variable = mm_wyvern_captor }
+		remove_variable = mm_wyvern_captor
+		remove_variable = mm_wyvern_taming_progress
+		remove_character_flag = mm_wyvern_capture_temporary_cage
+		remove_character_flag = mm_wyvern_capture_stable_cage
+		remove_character_flag = myv_wyvern_in_stable
+		remove_character_modifier = myv_wyvern_stabled
+		remove_character_modifier = myv_wyvern_stable_supply_paused
+		remove_variable = myv_wyvern_stable_county
+		remove_variable = myv_wyvern_stable_payer
+		add_character_flag = myv_wyvern_roaming
+	}
+}
+
+# Transfer a captured creature into the first directly held stable with a free
+# native 3/5/8 slot. The current cage is cleared only after a valid destination
+# and province have both been found.
+mm_wyvern_capture_transfer_to_stable_effect = {
+	clear_saved_scope = mm_wyvern_capture_selected_county
+	clear_saved_scope = mm_wyvern_capture_selected_province
+	if = {
+		limit = { has_variable = mm_wyvern_captor }
+		var:mm_wyvern_captor = {
+			if = {
+				limit = { is_alive = yes is_landed = yes }
+				every_held_county = {
+					limit = { mm_wyvern_capture_stable_room_trigger = yes }
+					if = {
+						limit = { NOT = { exists = scope:mm_wyvern_capture_selected_county } }
+						save_scope_as = mm_wyvern_capture_selected_county
+					}
+				}
+			}
+		}
+		if = {
+			limit = { exists = scope:mm_wyvern_capture_selected_county }
+			scope:mm_wyvern_capture_selected_county = {
+				random_county_province = {
+					limit = { has_building_or_higher = myv_wyvern_stable_01 }
+					save_scope_as = mm_wyvern_capture_selected_province
+				}
+			}
+			if = {
+				limit = { exists = scope:mm_wyvern_capture_selected_province }
+				remove_character_flag = mm_wyvern_capture_temporary_cage
+				remove_character_flag = mm_wyvern_capture_stable_cage
+				set_variable = { name = myv_wyvern_stable_county value = scope:mm_wyvern_capture_selected_county }
+				set_variable = { name = myv_wyvern_stable_payer value = var:mm_wyvern_captor }
+				set_variable = { name = myv_wyvern_lair_barony value = scope:mm_wyvern_capture_selected_province.barony }
+				add_character_flag = mm_wyvern_capture_stable_cage
+				add_character_flag = myv_wyvern_in_stable
+				remove_character_flag = myv_wyvern_roaming
+				set_location = { location = scope:mm_wyvern_capture_selected_province stick_to_location = yes }
+			}
+		}
+	}
+	clear_saved_scope = mm_wyvern_capture_selected_county
+	clear_saved_scope = mm_wyvern_capture_selected_province
+}
+
+mm_wyvern_capture_move_to_camp_effect = {
+	clear_saved_scope = mm_wyvern_capture_camp_location
+	if = {
+		limit = {
+			has_variable = mm_wyvern_captor
+			var:mm_wyvern_captor = {
+				is_alive = yes
+				government_has_flag = government_is_landless_adventurer
+				exists = domicile
+				domicile = { exists = domicile_location }
+			}
+		}
+		var:mm_wyvern_captor = { domicile = { domicile_location = { save_scope_as = mm_wyvern_capture_camp_location } } }
+		if = {
+			limit = { exists = scope:mm_wyvern_capture_camp_location }
+			remove_character_flag = mm_wyvern_capture_stable_cage
+			remove_character_flag = myv_wyvern_in_stable
+			remove_character_modifier = myv_wyvern_stabled
+			remove_character_modifier = myv_wyvern_stable_supply_paused
+			remove_variable = myv_wyvern_stable_county
+			remove_variable = myv_wyvern_stable_payer
+			add_character_flag = mm_wyvern_capture_temporary_cage
+			remove_character_flag = myv_wyvern_roaming
+			set_location = { location = scope:mm_wyvern_capture_camp_location stick_to_location = yes }
+		}
+	}
+	clear_saved_scope = mm_wyvern_capture_camp_location
+}
+
+mm_wyvern_capture_integrity_effect = {
+	if = {
+		limit = {
+			has_variable = mm_wyvern_captor
+			var:mm_wyvern_captor = { is_alive = yes }
+		}
+		if = {
+			limit = { mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = var:mm_wyvern_captor } }
+			remove_character_modifier = myv_wyvern_stabled
+			remove_character_modifier = myv_wyvern_stable_supply_paused
+			if = {
+				limit = { has_character_flag = mm_wyvern_capture_temporary_cage }
+				clear_saved_scope = mm_wyvern_capture_camp_location
+				var:mm_wyvern_captor = { domicile = { domicile_location = { save_scope_as = mm_wyvern_capture_camp_location } } }
+				if = {
+					limit = {
+						exists = scope:mm_wyvern_capture_camp_location
+						NOT = { location = scope:mm_wyvern_capture_camp_location }
+					}
+					set_location = { location = scope:mm_wyvern_capture_camp_location stick_to_location = yes }
+				}
+				clear_saved_scope = mm_wyvern_capture_camp_location
+			}
+			else = {
+				if = {
+					limit = { has_variable = myv_wyvern_lair_barony }
+					var:myv_wyvern_lair_barony = { title_province = { save_scope_as = mm_wyvern_capture_stable_location } }
+				}
+				if = {
+					limit = {
+						exists = scope:mm_wyvern_capture_stable_location
+						NOT = { location = scope:mm_wyvern_capture_stable_location }
+					}
+					set_location = { location = scope:mm_wyvern_capture_stable_location stick_to_location = yes }
+				}
+				clear_saved_scope = mm_wyvern_capture_stable_location
+			}
+		}
+		else_if = {
+			limit = {
+				var:mm_wyvern_captor = {
+					is_landed = yes
+					any_held_county = { mm_wyvern_capture_stable_room_trigger = yes }
+				}
+			}
+			mm_wyvern_capture_transfer_to_stable_effect = yes
+		}
+		else_if = {
+			limit = {
+				var:mm_wyvern_captor = {
+					government_has_flag = government_is_landless_adventurer
+				exists = domicile
+				domicile = { exists = domicile_location }
+				}
+			}
+			mm_wyvern_capture_move_to_camp_effect = yes
+		}
+		else = { mm_wyvern_capture_release_effect = yes }
+	}
+	else = { mm_wyvern_capture_release_effect = yes }
+}
+
+mm_wyvern_capture_feed_effect = {
+	if = {
+		limit = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = $CAPTOR$ } }
+		remove_character_modifier = myv_wyvern_stabled
+		remove_character_modifier = myv_wyvern_stable_supply_paused
+		myv_wyvern_feed_20_effect = yes
+		change_variable = { name = mm_wyvern_taming_progress add = 20 }
+		if = {
+			limit = { var:mm_wyvern_taming_progress > 100 }
+			set_variable = { name = mm_wyvern_taming_progress value = 100 }
+		}
+		myv_wyvern_refresh_hunger_state_effect = yes
+	}
+}
+
+mm_wyvern_capture_tame_effect = {
+	clear_saved_scope = mm_wyvern_capture_tame_in_stable
+	if = {
+		limit = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = $KEEPER$ }
+			var:mm_wyvern_taming_progress >= 100
+		}
+		if = { limit = { has_character_flag = mm_wyvern_capture_stable_cage } save_scope_value_as = { name = mm_wyvern_capture_tame_in_stable value = yes } }
+		remove_variable = mm_wyvern_captor
+		remove_variable = mm_wyvern_taming_progress
+		remove_character_flag = mm_wyvern_capture_temporary_cage
+		remove_character_flag = mm_wyvern_capture_stable_cage
+		remove_character_flag = myv_wyvern_roaming
+		remove_trait = myv_wyvern
+		remove_trait = myv_wyvern_legendary
+		add_trait = myv_wyvern_tamed
+		if = {
+			limit = { has_character_flag = mm_wyvern_legendary_origin }
+			add_trait = mm_wyvern_legendary_origin
+		}
+		myv_establish_wyvern_keeper_bond_effect = { KEEPER = $KEEPER$ WYVERN = this }
+		myv_apply_wyvern_identity_effect = yes
+		myv_wyvern_tamed_maintenance_effect = yes
+		myv_refresh_wyvern_prowess_effect = yes
+		if = {
+			limit = { exists = scope:mm_wyvern_capture_tame_in_stable }
+			if = { limit = { NOT = { has_character_modifier = myv_wyvern_stabled } } add_character_modifier = myv_wyvern_stabled }
+			myv_wyvern_stable_fill_satiety_effect = yes
+		}
+		clear_saved_scope = mm_wyvern_capture_tame_in_stable
+	}
+}
+
+mm_wyvern_capture_scheme_resolution_effect = {
+	save_scope_as = mm_wyvern_capture_scheme
+	scheme_target_character = { save_scope_as = mm_wyvern_capture_scheme_target }
+	scheme_owner = { save_scope_as = mm_wyvern_capture_scheme_owner }
+	clear_saved_scope = mm_wyvern_capture_scheme_successful
+	random = {
+		chance = scope:mm_wyvern_capture_scheme.scheme_success_chance
+		save_scope_value_as = { name = mm_wyvern_capture_scheme_successful value = yes }
+	}
+	scope:mm_wyvern_capture_scheme_owner = {
+		if = {
+			limit = { exists = scope:mm_wyvern_capture_scheme_successful }
+			trigger_event = mm_wyvern_capture.0002
+		}
+		else = { trigger_event = mm_wyvern_capture.0003 }
+	}
+}
+
+# Captured dragons do not receive the original stable modifier: its automatic
+# supply would prevent the five effective manual feedings needed for taming.
+# Keep the original integrity path byte-for-byte for every non-captured animal.
+myv_wyvern_stable_integrity_effect = {
+	if = {
+		limit = { has_variable = mm_wyvern_captor }
+		mm_wyvern_capture_integrity_effect = yes
+	}
+	else = { mm_wyvern_uncaptured_stable_integrity_effect = yes }
+}
+
+mm_wyvern_uncaptured_stable_integrity_effect = {
+	save_scope_as = myv_stable_integrity_wyvern
+	# Old saves did not record the sponsoring holder. Adopt the current holder
+	# once; all subsequent title changes are detected against this snapshot.
+	if = {
+		limit = {
+			has_character_flag = myv_wyvern_in_stable
+			has_variable = myv_wyvern_stable_county
+			NOT = { has_variable = myv_wyvern_stable_payer }
+			var:myv_wyvern_stable_county = {
+				exists = holder
+				holder = { is_alive = yes }
+			}
+		}
+		set_variable = {
+			name = myv_wyvern_stable_payer
+			value = var:myv_wyvern_stable_county.holder
+		}
+	}
+	if = {
+		limit = {
+			has_character_flag = myv_wyvern_in_stable
+			has_variable = myv_wyvern_stable_county
+			has_variable = myv_wyvern_stable_payer
+			var:myv_wyvern_stable_payer = { is_alive = yes }
+			var:myv_wyvern_stable_county = {
+				holder = scope:myv_stable_integrity_wyvern.var:myv_wyvern_stable_payer
+				any_county_province = {
+					has_building_or_higher = myv_wyvern_stable_01
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_modifier = myv_wyvern_stabled } }
+			add_character_modifier = myv_wyvern_stabled
+		}
+		# Backfill old saves and repair external moves: a housed wyvern's lair
+		# is the exact barony containing its selected stable.
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_variable = myv_wyvern_lair_barony }
+					NOT = {
+						var:myv_wyvern_lair_barony = {
+							county = scope:myv_stable_integrity_wyvern.var:myv_wyvern_stable_county
+						}
+					}
+				}
+			}
+			var:myv_wyvern_stable_county = {
+				random_county_province = {
+					limit = { has_building_or_higher = myv_wyvern_stable_01 }
+					save_scope_as = myv_integrity_stable_province
+				}
+			}
+			if = {
+				limit = { exists = scope:myv_integrity_stable_province }
+				set_variable = {
+					name = myv_wyvern_lair_barony
+					value = scope:myv_integrity_stable_province.barony
+				}
+			}
+		}
+		myv_sync_wyvern_deployed_army_location_effect = yes
+		if = {
+			limit = { has_variable = myv_wyvern_lair_barony }
+			var:myv_wyvern_lair_barony = {
+				title_province = { save_scope_as = myv_integrity_stable_location }
+			}
+			if = {
+				limit = {
+					NOT = { has_character_flag = myv_wyvern_travelling_with_rider }
+					NOT = { myv_is_wyvern_deployed_with_army = yes }
+					exists = scope:myv_integrity_stable_location
+					NOT = { location = scope:myv_integrity_stable_location }
+				}
+				set_location = {
+					location = scope:myv_integrity_stable_location
+					stick_to_location = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_character_flag = myv_wyvern_in_stable
+				has_character_modifier = myv_wyvern_stabled
+				has_variable = myv_wyvern_stable_county
+			}
+		}
+		# A tamed wyvern with nobody bonded to it cannot be housed again once
+		# conquest or demolition invalidates its stable. Snapshot the former
+		# payer for the warning, then let the creature return to the wild.
+		if = {
+			limit = {
+				has_trait = myv_wyvern_tamed
+				NOT = { has_variable = myv_wyvern_bonded_character }
+			}
+			save_scope_as = myv_fled_stable_wyvern
+			if = {
+				limit = {
+					has_variable = myv_wyvern_stable_payer
+					var:myv_wyvern_stable_payer = { is_alive = yes }
+				}
+				var:myv_wyvern_stable_payer = { save_scope_as = myv_fled_stable_payer }
+			}
+		}
+		save_scope_as = myv_stable_wyvern
+		myv_release_wyvern_from_stable_effect = yes
+		if = {
+			limit = { exists = scope:myv_fled_stable_wyvern }
+			myv_wyvern_return_to_wild_effect = yes
+			if = {
+				limit = {
+					exists = scope:myv_fled_stable_payer
+					scope:myv_fled_stable_payer = { is_ai = no }
+				}
+				scope:myv_fled_stable_payer = { trigger_event = myv_wyvern_stable.0102 }
+			}
+		}
+	}
+}
+
+myv_wyvern_move_one_province_effect = {
+	if = {
+		limit = {
+			NOT = { has_variable = mm_wyvern_captor }
+			NOT = { has_trait = mm_royal_torpor }
+		}
+	# Never reuse another creature's destination when selection fails.
+	    clear_saved_scope = myv_wyvern_roaming_destination
+	    if = {
+	        limit = {
+	            exists = location
+	            location = {
+	                any_neighboring_province = {
+	                    is_sea_province = no
+	                    exists = county
+	                }
+	            }
+	        }
+	        location = {
+	            random_neighboring_province = {
+	                limit = {
+	                    is_sea_province = no
+	                    exists = county
+	                }
+	                save_scope_as = myv_wyvern_roaming_destination
+	            }
+	        }
+	    }
+
+	    if = {
+	        limit = { exists = scope:myv_wyvern_roaming_destination }
+	        set_location = {
+	            location = scope:myv_wyvern_roaming_destination
+	            stick_to_location = yes
+	        }
+	        scope:myv_wyvern_roaming_destination.county = {
+	            # Re-entering the county replaces the old instance and resets the
+	            # expiry to one year instead of applying another control loss.
+	            if = {
+	                limit = { has_county_modifier = myv_wyvern_sighting_county }
+	                remove_county_modifier = myv_wyvern_sighting_county
+	            }
+	            else = {
+	                change_county_control = -10
+	            }
+	            add_county_modifier = {
+	                modifier = myv_wyvern_sighting_county
+	                years = 1
+	            }
+	        }
+	        random = {
+	            chance = myv_wyvern_roaming_attack_chance
+	            myv_wyvern_attack_herds_effect = yes
+	        }
+	    }
+	}
+}
+
+myv_wyvern_lair_county_maintenance_effect = {
+	if = {
+		limit = { NOT = { has_variable = mm_wyvern_captor } }
+	if = {
+	        limit = {
+	            NOT = { has_trait = myv_wyvern_tamed }
+	            has_variable = myv_wyvern_lair_barony
+	        }
+	        var:myv_wyvern_lair_barony = {
+	            county = {
+	                if = {
+	                    limit = { NOT = { has_county_modifier = myv_wyvern_lair_county } }
+	                    add_county_modifier = myv_wyvern_lair_county
+	                }
+	                myv_enforce_wyvern_county_control_cap_effect = yes
+	            }
+	        }
+	    }
+	}
+}
+
+myv_wyvern_monthly_roaming_effect = {
+	if = {
+		limit = {
+			NOT = { has_variable = mm_wyvern_captor }
+			NOT = { has_trait = mm_royal_torpor }
+		}
+	# Never reuse another creature's destination when selection fails.
+	    clear_saved_scope = myv_wyvern_lair_destination
+	    if = {
+	        limit = {
+	            OR = {
+	                current_month = 12
+	                current_month = 1
+	                current_month = 2
+	                current_month = 3
+	            }
+	        }
+	        remove_character_flag = myv_wyvern_roaming
+	        if = {
+	            limit = { has_variable = myv_wyvern_lair_barony }
+	            var:myv_wyvern_lair_barony = {
+	                title_province = { save_scope_as = myv_wyvern_lair_destination }
+	            }
+	        }
+	        if = {
+	            limit = {
+	                exists = scope:myv_wyvern_lair_destination
+	                NOT = { location = scope:myv_wyvern_lair_destination }
+	            }
+	            set_location = {
+	                location = scope:myv_wyvern_lair_destination
+	                stick_to_location = yes
+	            }
+	        }
+	    }
+	    else = {
+	        if = {
+	            limit = {
+	                NOT = { has_character_flag = myv_wyvern_roaming }
+	                var:myv_wyvern_hunger < 70
+	            }
+	            add_character_flag = myv_wyvern_roaming
+	        }
+	        if = {
+	            limit = { has_character_flag = myv_wyvern_roaming }
+	            myv_wyvern_move_one_province_effect = yes
+	        }
+	    }
+	}
+}

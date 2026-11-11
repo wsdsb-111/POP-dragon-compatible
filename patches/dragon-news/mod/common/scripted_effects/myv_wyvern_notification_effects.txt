@@ -1,0 +1,45 @@
+# Notification only. Scope each player once to avoid duplicate messages when
+# the keeper is also the county holder or an overlord.
+myv_notify_wyvern_success_effect = {
+ clear_saved_scope = myv_wyvern_news_actor
+ clear_saved_scope = myv_wyvern_news_wyvern
+ clear_saved_scope = mm_wyvern_news_keeper
+ clear_saved_scope = mm_wyvern_news_county
+ $ACTOR$ = { save_scope_as = myv_wyvern_news_actor }
+ $WYVERN$ = {
+  save_scope_as = myv_wyvern_news_wyvern
+  if = { limit = { exists = var:myv_wyvern_bonded_character } var:myv_wyvern_bonded_character = { save_scope_as = mm_wyvern_news_keeper } }
+  if = { limit = { exists = location.county } location.county = { save_scope_as = mm_wyvern_news_county } }
+ }
+ if = {
+  limit = { exists = scope:myv_wyvern_news_actor exists = scope:myv_wyvern_news_wyvern }
+  every_player = {
+   limit = {
+    is_alive = yes
+    NOT = { this = scope:myv_wyvern_news_actor }
+    OR = {
+     AND = {
+      exists = scope:mm_wyvern_news_county
+      myv_is_actual_wyvern_raid_recipient = { COUNTY = scope:mm_wyvern_news_county }
+     }
+     AND = {
+      exists = scope:mm_wyvern_news_keeper
+      this = scope:mm_wyvern_news_keeper
+     }
+    }
+   }
+   send_interface_toast = {
+    type = event_toast_effect_neutral
+    title = $TITLE$
+    desc = $DESC$
+    left_icon = scope:myv_wyvern_news_actor
+    right_icon = scope:myv_wyvern_news_wyvern
+   }
+  }
+ }
+ clear_saved_scope = mm_wyvern_news_keeper
+ clear_saved_scope = mm_wyvern_news_county
+ clear_saved_scope = myv_wyvern_news_actor
+ clear_saved_scope = myv_wyvern_news_wyvern
+}
+

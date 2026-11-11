@@ -1,0 +1,1 @@
+nick_mm_asc_successor = { is_prefix = no }

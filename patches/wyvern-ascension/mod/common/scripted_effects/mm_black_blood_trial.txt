@@ -1,0 +1,92 @@
+# Inventory materials carry the exact slain dragon, not an absorbed-branch flag.
+mm_asc_begin_black_trial_effect = {
+    if = {
+        limit = { mm_asc_black_trial_can_start_trigger = yes }
+        random_character_artifact = { limit = { mm_asc_fire_blood_material_trigger = yes } save_scope_as = mm_asc_fire_blood }
+        random_character_artifact = { limit = { mm_asc_earth_blood_material_trigger = yes } save_scope_as = mm_asc_earth_blood }
+        random_character_artifact = { limit = { mm_asc_sea_blood_material_trigger = yes } save_scope_as = mm_asc_sea_blood }
+        random_character_artifact = { limit = { mm_asc_sky_blood_material_trigger = yes } save_scope_as = mm_asc_sky_blood }
+        # Validate all four distinct sources before consuming any material.
+        if = {
+            limit = { exists = scope:mm_asc_fire_blood exists = scope:mm_asc_earth_blood exists = scope:mm_asc_sea_blood exists = scope:mm_asc_sky_blood }
+            destroy_artifact = scope:mm_asc_fire_blood
+            destroy_artifact = scope:mm_asc_earth_blood
+            destroy_artifact = scope:mm_asc_sea_blood
+            destroy_artifact = scope:mm_asc_sky_blood
+            add_character_flag = mm_asc_black_trial
+            add_trait = mm_asc_usurper_blood
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value = 0 }
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value = 0 }
+            set_variable = { name = mm_asc_last_erosion_year value = current_year }
+            add_to_global_variable_list = { name = mm_asc_candidates target = this }
+            mm_asc_refresh_erosion_effect = yes
+            trigger_event = mm_black_trial.1
+        }
+    }
+}
+
+# Only this trial changes the bloodline source. CK3 parentage and House survive.
+mm_asc_complete_black_blood_effect = {
+    remove_trait = mm_dragon_black_blood
+    remove_trait = mm_dragon_lineage_1
+    remove_trait = mm_dragon_lineage_2
+    remove_trait = mm_dragon_lineage_3
+    remove_trait = mm_dragon_lineage_4
+    add_trait = mm_dragon_half
+    set_variable = { name = mm_dragon_lineage_generation value = 0 }
+    add_character_flag = mm_dragon_black_ascended
+    clear_variable_list = mm_dragon_origins
+    set_variable = { name = mm_dragon_origin_count value = 0 }
+    remove_variable = mm_dragon_origin_1
+    remove_variable = mm_dragon_origin_2
+    remove_variable = mm_dragon_origin_3
+    remove_variable = mm_dragon_origin_4
+    remove_variable = mm_dragon_origin_5
+    remove_variable = mm_dragon_origin_6
+    remove_variable = mm_dragon_origin_7
+    remove_variable = mm_dragon_origin_8
+    remove_variable = mm_dragon_origin_9
+    remove_variable = mm_dragon_origin_10
+    remove_variable = mm_dragon_origin_11
+    remove_variable = mm_dragon_origin_12
+    remove_variable = mm_dragon_origin_13
+    remove_variable = mm_dragon_origin_14
+    remove_variable = mm_dragon_origin_15
+    remove_variable = mm_dragon_origin_16
+    remove_variable = mm_dragon_bio_fire
+    remove_variable = mm_dragon_bio_earth
+    remove_variable = mm_dragon_bio_sea
+    remove_variable = mm_dragon_bio_sky
+    remove_variable = mm_dragon_bio_white
+    remove_variable = mm_dragon_bio_black
+    save_scope_as = mm_asc_black_blood_ascendant
+    character:99001309 = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_asc_black_blood_ascendant } }
+    mm_dragon_route_creed_hook_effect = yes
+}
+
+mm_asc_resolve_black_trial_effect = {
+    if = {
+        limit = { mm_asc_is_candidate = yes has_character_flag = mm_asc_black_trial }
+        # Resolve erosion first in an abnormal double-full state, like the original race.
+        if = {
+            limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 } }
+            set_variable = { name = mm_asc_black_trial_outcome value = flag:failed }
+            mm_asc_black_trial_cleanup_effect = yes
+            mm_asc_black_trial_failure_hook_effect = yes
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value >= 100 } exists = character:99001309 }
+            set_variable = { name = mm_asc_black_trial_outcome value = flag:success }
+            mm_asc_black_trial_cleanup_effect = yes
+            mm_asc_complete_black_blood_effect = yes
+            trigger_event = mm_black_trial.2
+        }
+    }
+}
+mm_asc_black_trial_cleanup_effect = {
+    remove_trait = mm_asc_usurper_blood
+    remove_character_flag = mm_asc_black_trial
+    mm_asc_clear_negatives_effect = yes
+    remove_list_global_variable = { name = mm_asc_candidates target = this }
+}
+mm_asc_black_trial_failure_hook_effect = { }

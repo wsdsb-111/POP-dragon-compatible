@@ -1,0 +1,37 @@
+# Keep the natural raid's damage and food effects; select the local holder first.
+myv_wyvern_attack_herds_effect = {
+    clear_saved_scope = myv_raiding_wyvern
+    clear_saved_scope = myv_raided_county
+    clear_saved_scope = myv_raided_count_holder
+    clear_saved_scope = myv_raided_duke_holder
+    clear_saved_scope = myv_raided_king_holder
+    clear_saved_scope = myv_raided_emperor_holder
+    clear_saved_scope = myv_raid_debug_override
+    clear_saved_scope = myv_raid_victim
+    clear_saved_scope = myv_raid_court_victim
+    clear_saved_scope = myv_raid_debt_branch
+    if = {
+        limit = { myv_is_living_wyvern = yes exists = location.county }
+        save_scope_as = myv_raiding_wyvern
+        location.county = { save_scope_as = myv_raided_county }
+        if = {
+            limit = {
+                exists = scope:myv_raided_county.holder
+                scope:myv_raided_county.holder = { myv_is_actual_wyvern_raid_recipient = { COUNTY = scope:myv_raided_county } }
+            }
+            scope:myv_raided_county.holder = { save_scope_as = myv_raid_victim }
+        }
+        else_if = {
+            limit = {
+                exists = scope:myv_raided_county.holder.liege
+                scope:myv_raided_county.holder.liege = { myv_is_actual_wyvern_raid_recipient = { COUNTY = scope:myv_raided_county } }
+            }
+            scope:myv_raided_county.holder.liege = { save_scope_as = myv_raid_victim }
+        }
+        if = {
+            limit = { exists = scope:myv_raid_victim }
+            scope:myv_raid_victim = { myv_resolve_wyvern_raid_victim_effect = yes }
+            myv_change_wyvern_food_reserve_effect = { AMOUNT = myv_wyvern_manual_feed_satiety }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+mm_ritual_create_random_material_drops_effect = {
+  if = {
+    limit = {
+      is_alive = yes
+      exists = scope:myv_slay_wyvern_target
+      scope:myv_slay_wyvern_target = {
+        myv_is_living_wyvern = yes
+        NOT = { has_variable = mm_wyvern_materials_claimed }
+      }
+    }
+    scope:myv_slay_wyvern_target = {
+      set_variable = { name = mm_wyvern_materials_claimed value = root }
+      save_scope_as = mm_wyvern_trophy_source
+    }
+    random = { chance = 75 mm_wyvern_create_source_quality_material_effect = { KIND = fang VISUALS = myv_wyvern_fang } }
+    random = { chance = 80 mm_wyvern_create_source_quality_material_effect = { KIND = scale VISUALS = myv_wyvern_scale } }
+    random = { chance = 65 mm_wyvern_create_source_quality_material_effect = { KIND = claw VISUALS = mm_wyvern_material_claw } }
+    random = { chance = 60 mm_wyvern_create_source_quality_material_effect = { KIND = horn VISUALS = mm_wyvern_material_horn } }
+    random = {
+      chance = 15
+      mm_wyvern_create_personal_material_effect = { KIND = blood VISUALS = myv_wyvern_blood RARITY = illustrious MODIFIER = artifact_monthly_minor_prestige_5_modifier }
+    }
+    myv_slay_try_find_wyvern_eggs_effect = yes
+  }
+}
+
+mm_ritual_grant_decorative_trophies_effect = {
+	if = {
+		limit = {
+			is_alive = yes
+			exists = scope:myv_slay_wyvern_target
+			scope:myv_slay_wyvern_target = {
+				myv_is_living_wyvern = yes
+				NOT = { has_variable = mm_wyvern_trophies_claimed }
+			}
+		}
+		scope:myv_slay_wyvern_target = {
+			set_variable = { name = mm_wyvern_trophies_claimed value = root }
+			save_scope_as = mm_wyvern_trophy_source
+		}
+		if = {
+			limit = { scope:mm_wyvern_trophy_source = { OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin } } }
+			mm_wyvern_create_decorative_trophy_set_effect = { RARITY = illustrious }
+		}
+		else = { mm_wyvern_create_decorative_trophy_set_effect = { RARITY = famed } }
+		send_interface_toast = { type = event_toast_effect_good title = myv_wyvern_trophy_gained_toast left_icon = scope:mm_wyvern_trophy }
+	}
+}
+
+mm_ritual_consume_selected_effect = {
+    var:mm_ritual_selected_sacrifice = { save_scope_as = myv_slay_wyvern_target }
+    mm_ritual_create_random_material_drops_effect = yes
+    mm_ritual_grant_decorative_trophies_effect = yes
+    scope:myv_slay_wyvern_target = { death = { death_reason = death_myv_wyvern_slain } }
+    remove_variable = mm_ritual_selected_sacrifice
+}

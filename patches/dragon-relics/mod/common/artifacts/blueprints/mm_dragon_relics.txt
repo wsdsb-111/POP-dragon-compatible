@@ -1,0 +1,55 @@
+mm_relic_black_crown_to_court = {
+    in_type = mm_relic_black_crown_inventory
+    in_visuals = mm_relic_black_crown_inventory_visual
+    out_type = mm_relic_black_crown_court
+    out_visuals = mm_relic_black_crown_court_visual
+    template = mm_relic_black_crown_template
+}
+
+mm_relic_black_regalia_to_court = {
+    in_type = mm_relic_black_regalia_inventory
+    in_visuals = mm_relic_black_regalia_inventory_visual
+    out_type = mm_relic_black_regalia_court
+    out_visuals = mm_relic_black_regalia_court_visual
+    template = mm_relic_black_regalia_template
+}
+
+mm_relic_white_book_to_court = {
+    in_type = mm_relic_white_book_inventory
+    in_visuals = mm_relic_white_book_inventory_visual
+    out_type = mm_relic_white_book_court
+    out_visuals = mm_relic_white_book_court_visual
+    template = mm_relic_white_book_template
+}
+
+mm_relic_fire_ring_to_court = {
+    in_type = mm_relic_fire_ring_inventory
+    in_visuals = mm_relic_fire_ring_inventory_visual
+    out_type = mm_relic_fire_ring_court
+    out_visuals = mm_relic_fire_ring_court_visual
+    template = mm_relic_fire_ring_template
+}
+
+mm_relic_earth_sarcophagus_to_court = {
+    in_type = mm_relic_earth_sarcophagus_inventory
+    in_visuals = mm_relic_earth_sarcophagus_inventory_visual
+    out_type = mm_relic_earth_sarcophagus_court
+    out_visuals = mm_relic_earth_sarcophagus_court_visual
+    template = mm_relic_earth_sarcophagus_template
+}
+
+mm_relic_sea_armor_to_court = {
+    in_type = mm_relic_sea_armor_inventory
+    in_visuals = mm_relic_sea_armor_inventory_visual
+    out_type = mm_relic_sea_armor_court
+    out_visuals = mm_relic_sea_armor_court_visual
+    template = mm_relic_sea_armor_template
+}
+
+mm_relic_sky_spear_to_court = {
+    in_type = mm_relic_sky_spear_inventory
+    in_visuals = mm_relic_sky_spear_inventory_visual
+    out_type = mm_relic_sky_spear_court
+    out_visuals = mm_relic_sky_spear_court_visual
+    template = mm_relic_sky_spear_template
+}

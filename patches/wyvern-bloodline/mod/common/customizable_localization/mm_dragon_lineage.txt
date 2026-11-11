@@ -1,0 +1,20 @@
+mm_dragon_acquired_source_text = {
+    type = character
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_16 } localization_key = mm_dragon_absorbed_sources_16 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_15 } localization_key = mm_dragon_absorbed_sources_15 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_14 } localization_key = mm_dragon_absorbed_sources_14 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_13 } localization_key = mm_dragon_absorbed_sources_13 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_12 } localization_key = mm_dragon_absorbed_sources_12 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_11 } localization_key = mm_dragon_absorbed_sources_11 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_10 } localization_key = mm_dragon_absorbed_sources_10 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_9 } localization_key = mm_dragon_absorbed_sources_9 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_8 } localization_key = mm_dragon_absorbed_sources_8 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_7 } localization_key = mm_dragon_absorbed_sources_7 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_6 } localization_key = mm_dragon_absorbed_sources_6 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_5 } localization_key = mm_dragon_absorbed_sources_5 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_4 } localization_key = mm_dragon_absorbed_sources_4 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_3 } localization_key = mm_dragon_absorbed_sources_3 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_2 } localization_key = mm_dragon_absorbed_sources_2 }
+    text = { trigger = { has_variable = mm_dragon_absorbed_source_1 } localization_key = mm_dragon_absorbed_sources_1 }
+    text = { localization_key = mm_dragon_absorbed_sources_none }
+}

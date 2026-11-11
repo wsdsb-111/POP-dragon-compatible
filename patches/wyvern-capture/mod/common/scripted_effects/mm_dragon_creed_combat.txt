@@ -1,0 +1,35 @@
+# Called only when this character would otherwise die in a wyvern fight.
+mm_creed_earth_wyvern_return_roll_effect = {
+    remove_character_flag = mm_creed_earth_wyvern_returned
+    if = {
+        limit = { mm_creed_earth_return_eligible_trigger = yes }
+        random = {
+            chance = 15
+            # At 100 an injury disables a dragon in the next hunt. Keep each
+            # such track below that threshold; other injuries stay unchanged.
+            if = {
+                limit = { myv_is_living_wyvern = yes }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value >= 100 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = -1 } }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value >= 100 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value = -1 } }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value >= 100 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = -1 } }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value >= 100 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value = -1 } }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value >= 100 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = -1 } }
+                if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value >= 100 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value = -1 } }
+                if = { limit = { has_trait = myv_wyvern_tail_injury has_trait_xp = { trait = myv_wyvern_tail_injury value >= 100 } } add_trait_xp = { trait = myv_wyvern_tail_injury value = -1 } }
+                myv_refresh_wyvern_prowess_effect = yes
+            }
+            add_character_flag = mm_creed_earth_wyvern_returned
+            add_character_modifier = { modifier = mm_creed_earth_wyvern_return days = 1095 }
+        }
+    }
+}
+
+# Hunter or rider scope, with a live opposing wyvern scope. Used before death.
+mm_creed_earth_wyvern_hunter_death_effect = {
+    mm_creed_earth_wyvern_return_roll_effect = yes
+    if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned }
+    else = { death = { death_reason = death_myv_killed_by_wyvern killer = scope:myv_slay_wyvern_target } }
+}
+
+# No-op when Dragon Creed is not installed.
+mm_creed_award_dragon_victory_effect = { }

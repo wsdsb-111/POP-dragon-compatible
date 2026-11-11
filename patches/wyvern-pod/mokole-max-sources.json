@@ -1,0 +1,358 @@
+{
+  "date": "2026-11-03",
+  "sourceFiles": [
+    {
+      "root": "pod",
+      "path": "common/traits/00_POD_traits_fera.txt",
+      "sha256": "1493f8a69aed83c9e6ce3dbef7f4a158f1ab75ace88915b3d568208bc82be56f"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-bloodline/mod/common/traits/mm_dragon_bloodline.txt",
+      "sha256": "158e5dd880c00d962a70c41709d63b55c7c191f1f5094d65f7f5c285455999e5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "common/modifiers/mm_pod_mokole_max.txt",
+      "sha256": "6c68d68f1a048069ded5777fd1df45f4f58d69697f6c29f3f7d7e62332b495a1"
+    },
+    {
+      "path": "common/traits/mm_pod_mokole_gifts.txt",
+      "sha256": "e9f9c7fc6fc9b9dfc938cde7f633b582f6b9d5c1d5526b8d627de8940c74b1d2"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzzz_mm_pod_mokole_max.txt",
+      "sha256": "18cba9c5b8e191b59ceb2ab646de918076034b60a665fb6b59fbe47f61558922"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzzz_mm_pod_mokole_max.txt",
+      "sha256": "5e2da611a3a2d03cdf9d1cc1c54875f129e70fb5020daf64a685b760ed2e3d1e"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzzz_mm_pod_mokole_max_l_simp_chinese.yml",
+      "sha256": "08a64ab4d8c72706ddba6a8b95dead5856fd5b4e31e2ab941e80c4f63bf11638"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzzz_mm_pod_mokole_max_l_english.yml",
+      "sha256": "7e776ce4f682efee892f59824503401a7a07cd60d5ad5ad6eb121c16a23e08ff"
+    }
+  ],
+  "grades": [
+    {
+      "trait": "mm_dragon_half",
+      "health": 5,
+      "life": 150,
+      "prowess": 50,
+      "legitimacy": 2
+    },
+    {
+      "trait": "mm_dragon_lineage_1",
+      "health": 4,
+      "life": 50,
+      "prowess": 30,
+      "legitimacy": 1
+    },
+    {
+      "trait": "mm_dragon_lineage_2",
+      "health": 3,
+      "life": 30,
+      "prowess": 20,
+      "legitimacy": 0.75
+    },
+    {
+      "trait": "mm_dragon_lineage_3",
+      "health": 2,
+      "life": 15,
+      "prowess": 10,
+      "legitimacy": 0.5
+    },
+    {
+      "trait": "mm_dragon_lineage_4",
+      "health": 1,
+      "life": 5,
+      "prowess": 5,
+      "legitimacy": 0.25
+    },
+    {
+      "trait": "mm_dragon_black_blood",
+      "health": 5,
+      "life": 100,
+      "prowess": 80,
+      "legitimacy": 2.5
+    }
+  ],
+  "combinations": [
+    {
+      "trait": "mm_dragon_half",
+      "health": 5,
+      "life": 150,
+      "prowess": 50,
+      "legitimacy": 2,
+      "index": 0,
+      "xp": 0,
+      "id": 1,
+      "key": "mm_pod_mokole_max_0_0",
+      "healthDelta": -2,
+      "lifeDelta": -150,
+      "prowessDelta": -10,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_half",
+      "health": 5,
+      "life": 150,
+      "prowess": 50,
+      "legitimacy": 2,
+      "index": 0,
+      "xp": 20,
+      "id": 2,
+      "key": "mm_pod_mokole_max_0_20",
+      "healthDelta": -2,
+      "lifeDelta": -150,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_half",
+      "health": 5,
+      "life": 150,
+      "prowess": 50,
+      "legitimacy": 2,
+      "index": 0,
+      "xp": 60,
+      "id": 3,
+      "key": "mm_pod_mokole_max_0_60",
+      "healthDelta": -2,
+      "lifeDelta": -150,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.1
+    },
+    {
+      "trait": "mm_dragon_lineage_1",
+      "health": 4,
+      "life": 50,
+      "prowess": 30,
+      "legitimacy": 1,
+      "index": 1,
+      "xp": 0,
+      "id": 4,
+      "key": "mm_pod_mokole_max_1_0",
+      "healthDelta": -2,
+      "lifeDelta": -50,
+      "prowessDelta": -10,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_lineage_1",
+      "health": 4,
+      "life": 50,
+      "prowess": 30,
+      "legitimacy": 1,
+      "index": 1,
+      "xp": 20,
+      "id": 5,
+      "key": "mm_pod_mokole_max_1_20",
+      "healthDelta": -2,
+      "lifeDelta": -50,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_lineage_1",
+      "health": 4,
+      "life": 50,
+      "prowess": 30,
+      "legitimacy": 1,
+      "index": 1,
+      "xp": 60,
+      "id": 6,
+      "key": "mm_pod_mokole_max_1_60",
+      "healthDelta": -2,
+      "lifeDelta": -50,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.1
+    },
+    {
+      "trait": "mm_dragon_lineage_2",
+      "health": 3,
+      "life": 30,
+      "prowess": 20,
+      "legitimacy": 0.75,
+      "index": 2,
+      "xp": 0,
+      "id": 7,
+      "key": "mm_pod_mokole_max_2_0",
+      "healthDelta": -2,
+      "lifeDelta": -30,
+      "prowessDelta": -10,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_lineage_2",
+      "health": 3,
+      "life": 30,
+      "prowess": 20,
+      "legitimacy": 0.75,
+      "index": 2,
+      "xp": 20,
+      "id": 8,
+      "key": "mm_pod_mokole_max_2_20",
+      "healthDelta": -2,
+      "lifeDelta": -30,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_lineage_2",
+      "health": 3,
+      "life": 30,
+      "prowess": 20,
+      "legitimacy": 0.75,
+      "index": 2,
+      "xp": 60,
+      "id": 9,
+      "key": "mm_pod_mokole_max_2_60",
+      "healthDelta": -2,
+      "lifeDelta": -30,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.1
+    },
+    {
+      "trait": "mm_dragon_lineage_3",
+      "health": 2,
+      "life": 15,
+      "prowess": 10,
+      "legitimacy": 0.5,
+      "index": 3,
+      "xp": 0,
+      "id": 10,
+      "key": "mm_pod_mokole_max_3_0",
+      "healthDelta": -2,
+      "lifeDelta": -15,
+      "prowessDelta": -10,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_lineage_3",
+      "health": 2,
+      "life": 15,
+      "prowess": 10,
+      "legitimacy": 0.5,
+      "index": 3,
+      "xp": 20,
+      "id": 11,
+      "key": "mm_pod_mokole_max_3_20",
+      "healthDelta": -2,
+      "lifeDelta": -15,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_lineage_3",
+      "health": 2,
+      "life": 15,
+      "prowess": 10,
+      "legitimacy": 0.5,
+      "index": 3,
+      "xp": 60,
+      "id": 12,
+      "key": "mm_pod_mokole_max_3_60",
+      "healthDelta": -2,
+      "lifeDelta": -15,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.1
+    },
+    {
+      "trait": "mm_dragon_lineage_4",
+      "health": 1,
+      "life": 5,
+      "prowess": 5,
+      "legitimacy": 0.25,
+      "index": 4,
+      "xp": 0,
+      "id": 13,
+      "key": "mm_pod_mokole_max_4_0",
+      "healthDelta": -1,
+      "lifeDelta": -5,
+      "prowessDelta": -5,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_lineage_4",
+      "health": 1,
+      "life": 5,
+      "prowess": 5,
+      "legitimacy": 0.25,
+      "index": 4,
+      "xp": 20,
+      "id": 14,
+      "key": "mm_pod_mokole_max_4_20",
+      "healthDelta": -1,
+      "lifeDelta": -5,
+      "prowessDelta": -5,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_lineage_4",
+      "health": 1,
+      "life": 5,
+      "prowess": 5,
+      "legitimacy": 0.25,
+      "index": 4,
+      "xp": 60,
+      "id": 15,
+      "key": "mm_pod_mokole_max_4_60",
+      "healthDelta": -1,
+      "lifeDelta": -5,
+      "prowessDelta": -5,
+      "legitimacyDelta": -0.1
+    },
+    {
+      "trait": "mm_dragon_black_blood",
+      "health": 5,
+      "life": 100,
+      "prowess": 80,
+      "legitimacy": 2.5,
+      "index": 5,
+      "xp": 0,
+      "id": 16,
+      "key": "mm_pod_mokole_max_5_0",
+      "healthDelta": -2,
+      "lifeDelta": -100,
+      "prowessDelta": -10,
+      "legitimacyDelta": 0
+    },
+    {
+      "trait": "mm_dragon_black_blood",
+      "health": 5,
+      "life": 100,
+      "prowess": 80,
+      "legitimacy": 2.5,
+      "index": 5,
+      "xp": 20,
+      "id": 17,
+      "key": "mm_pod_mokole_max_5_20",
+      "healthDelta": -2,
+      "lifeDelta": -100,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.05
+    },
+    {
+      "trait": "mm_dragon_black_blood",
+      "health": 5,
+      "life": 100,
+      "prowess": 80,
+      "legitimacy": 2.5,
+      "index": 5,
+      "xp": 60,
+      "id": 18,
+      "key": "mm_pod_mokole_max_5_60",
+      "healthDelta": -2,
+      "lifeDelta": -100,
+      "prowessDelta": -10,
+      "legitimacyDelta": -0.1
+    }
+  ],
+  "CK3Runtime": "NOT_RUN"
+}

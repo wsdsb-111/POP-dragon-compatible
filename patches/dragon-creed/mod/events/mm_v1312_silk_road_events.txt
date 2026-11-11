@@ -1,0 +1,29 @@
+namespace = mm_v1312_silk_road
+
+mm_v1312_silk_road.0001 = {
+    type = character_event
+    hidden = yes
+    immediate = {
+        save_scope_as = mm_v1312_silk_road_target
+        if = {
+            limit = {
+                is_alive = yes
+                mm_v1312_silk_sea_member_trigger = yes
+                mm_v1312_silk_road_active_participant_trigger = yes
+            }
+            if = {
+                limit = {
+                    OR = {
+                        NOT = { has_variable = mm_v1312_silk_road_last_date }
+                        var:mm_v1312_silk_road_last_date < current_date
+                    }
+                }
+                remove_character_flag = mm_v1312_silk_road_daily_queued
+                set_variable = { name = mm_v1312_silk_road_last_date value = current_date }
+                mm_v1312_silk_road_refresh_effect = yes
+                mm_v1312_silk_road_queue_daily_effect = yes
+            }
+        }
+        else = { mm_v1312_silk_road_clear_effect = yes }
+    }
+}

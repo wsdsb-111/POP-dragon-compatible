@@ -1,0 +1,28 @@
+# Source snapshot: D:\SteamLibrary\steamapps\workshop\content\1158310\2506311074\common\scripted_triggers\oe_contract_trigger.txt
+# Source SHA256: 8C55E34D1EE6243B5FAF7F7ACB79ED2B9176EA4A5BBA614144840E81A86A224F
+# Source lines: 140-164
+is_oe_landed_bureaucrat_trigger = { #什么是在职流官
+	custom_description = {
+		text = IS_BUREAU
+		top_liege != this
+		OR = {
+			government_has_flag = government_is_bureau
+			government_has_flag = government_uses_celestial_bureaucracy
+			government_has_flag = government_has_merit
+		}
+		#所有流官继承头衔
+		OR = {
+			has_realm_law_flag = celestial_bureaucrat
+			has_realm_law = official_succession_law
+			has_realm_law = admin_succession_law
+			has_realm_law = celestial_appointment_succession_law # [HEALTH 2026-10-06]
+		}
+		#伯爵级以上
+		highest_held_title_tier >= tier_county
+		NOT = { has_trait = great_misit	}
+		NOR = {
+			vassal_contract_has_flag = heir_succession_rights_unlock
+			primary_title ?= { has_variable = titular_title }
+		}
+	}
+}

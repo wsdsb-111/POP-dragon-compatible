@@ -1,0 +1,118 @@
+﻿myv_wyvern_stable_yearly_breeding_effect = {
+	if = {
+		limit = { has_global_variable_list = myv_living_wyverns }
+		clear_global_variable_list = myv_wyvern_breeding_stable_counties
+		every_in_global_list = {
+			variable = myv_living_wyverns
+			limit = {
+				myv_is_living_wyvern = yes
+                        NOT = { has_trait = mm_royal_torpor }
+				is_female = yes
+				age >= 12
+				has_character_flag = myv_wyvern_in_stable
+				has_variable = myv_wyvern_stable_county
+			}
+			var:myv_wyvern_stable_county = { save_scope_as = myv_breeding_candidate_county }
+			if = {
+				limit = {
+					scope:myv_breeding_candidate_county = {
+						exists = holder
+						holder = { is_alive = yes }
+						any_county_province = { has_building_or_higher = myv_wyvern_stable_01 }
+					}
+					any_in_global_list = {
+						variable = myv_living_wyverns
+						myv_is_living_wyvern = yes
+                        NOT = { has_trait = mm_royal_torpor }
+						is_female = no
+						age >= 12
+						has_character_flag = myv_wyvern_in_stable
+						has_variable = myv_wyvern_stable_county
+						var:myv_wyvern_stable_county = scope:myv_breeding_candidate_county
+					}
+					NOT = {
+						is_target_in_global_variable_list = {
+							name = myv_wyvern_breeding_stable_counties
+							target = scope:myv_breeding_candidate_county
+						}
+					}
+				}
+				add_to_global_variable_list = {
+					name = myv_wyvern_breeding_stable_counties
+					target = scope:myv_breeding_candidate_county
+				}
+			}
+		}
+
+		every_in_global_list = {
+			variable = myv_wyvern_breeding_stable_counties
+			save_scope_as = myv_breeding_stable_county
+            clear_saved_scope = myv_wyvern_egg_mother
+            clear_saved_scope = myv_wyvern_egg_father
+			random = {
+				chance = 10
+				random_in_global_list = {
+					variable = myv_living_wyverns
+					limit = {
+						myv_is_living_wyvern = yes
+                        NOT = { has_trait = mm_royal_torpor }
+						is_female = yes
+						age >= 12
+						has_character_flag = myv_wyvern_in_stable
+						has_variable = myv_wyvern_stable_county
+						var:myv_wyvern_stable_county = scope:myv_breeding_stable_county
+					}
+					save_scope_as = myv_wyvern_egg_mother
+				}
+				random_in_global_list = {
+					variable = myv_living_wyverns
+					limit = {
+						myv_is_living_wyvern = yes
+                        NOT = { has_trait = mm_royal_torpor }
+						is_female = no
+						age >= 12
+						has_character_flag = myv_wyvern_in_stable
+						has_variable = myv_wyvern_stable_county
+						var:myv_wyvern_stable_county = scope:myv_breeding_stable_county
+                        NOT = { has_relation_mm_dragon_twin = scope:myv_wyvern_egg_mother }
+                        NOT = { is_close_family_of = scope:myv_wyvern_egg_mother }
+					}
+					save_scope_as = myv_wyvern_egg_father
+				}
+				if = {
+                    limit = { exists = scope:myv_wyvern_egg_mother exists = scope:myv_wyvern_egg_father }
+scope:myv_wyvern_egg_mother = { save_scope_as = myv_wyvern_egg_creator }
+				random_county_province = {
+					limit = { has_building_or_higher = myv_wyvern_stable_01 }
+					save_scope_as = myv_wyvern_egg_location
+				}
+				holder = { save_scope_as = myv_wyvern_breeding_stable_owner }
+				scope:myv_wyvern_breeding_stable_owner = {
+					random_list = {
+						75 = {
+							save_scope_value_as = { name = myv_wyvern_stable_clutch_size value = 1 }
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+						}
+						20 = {
+							save_scope_value_as = { name = myv_wyvern_stable_clutch_size value = 2 }
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+						}
+						5 = {
+							save_scope_value_as = { name = myv_wyvern_stable_clutch_size value = 3 }
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+							myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+						}
+					}
+					if = {
+						limit = { is_ai = no }
+						trigger_event = myv_wyvern_stable.0300
+					}
+				}
+                }
+			}
+		}
+		clear_global_variable_list = myv_wyvern_breeding_stable_counties
+	}
+}

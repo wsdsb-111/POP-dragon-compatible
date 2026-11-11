@@ -1,0 +1,52 @@
+# New-game-only caller; historical identity bootstrap remains its own idempotent API.
+mm_dragon_initialize_seed_catalog_effect = {
+    mm_royal_bootstrap_effect = yes
+    if = {
+        limit = { mm_dragon_lineage_seed_available_trigger = yes }
+        clear_global_variable_list = mm_dragon_seed_cultures
+        clear_global_variable_list = mm_dragon_seed_round
+        clear_saved_scope = mm_dragon_seed_origin_b
+        character:99001001 = { save_scope_as = mm_dragon_seed_origin_a }
+        character:99001305 = { save_scope_as = mm_dragon_seed_origin_b }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:han }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:persian }
+        mm_dragon_seed_run_group_effect = yes
+        clear_global_variable_list = mm_dragon_seed_cultures
+        clear_global_variable_list = mm_dragon_seed_round
+        clear_saved_scope = mm_dragon_seed_origin_b
+        character:99001003 = { save_scope_as = mm_dragon_seed_origin_a }
+        character:99001307 = { save_scope_as = mm_dragon_seed_origin_b }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:greek }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:italian }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:sardinian }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:cisalpine }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:roman }
+        mm_dragon_seed_run_group_effect = yes
+        clear_global_variable_list = mm_dragon_seed_cultures
+        clear_global_variable_list = mm_dragon_seed_round
+        clear_saved_scope = mm_dragon_seed_origin_b
+        character:99001304 = { save_scope_as = mm_dragon_seed_origin_a }
+        character:99001308 = { save_scope_as = mm_dragon_seed_origin_b }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:norse }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:norman }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:norwegian }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:swedish }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:danish }
+        mm_dragon_seed_run_group_effect = yes
+        clear_global_variable_list = mm_dragon_seed_cultures
+        clear_global_variable_list = mm_dragon_seed_round
+        clear_saved_scope = mm_dragon_seed_origin_b
+        character:99001002 = { save_scope_as = mm_dragon_seed_origin_a }
+        character:99001306 = { save_scope_as = mm_dragon_seed_origin_b }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:egyptian }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:levantine }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:bedouin }
+        mm_dragon_seed_run_group_effect = yes
+        clear_global_variable_list = mm_dragon_seed_cultures
+        clear_global_variable_list = mm_dragon_seed_round
+        clear_saved_scope = mm_dragon_seed_origin_b
+        character:99001310 = { save_scope_as = mm_dragon_seed_origin_a }
+        mm_dragon_seed_add_culture_effect = { CULTURE = culture:japanese }
+        mm_dragon_seed_run_group_effect = yes
+    }
+}

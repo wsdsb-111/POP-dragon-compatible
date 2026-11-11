@@ -1,0 +1,42 @@
+﻿on_game_start = { on_actions = { mm_dragon_seed_new_campaign } }
+mm_dragon_seed_new_campaign = { effect = { set_global_variable = { name = mm_dragon_seed_new_campaign_pending value = yes } } }
+on_game_start_after_lobby = { on_actions = { mm_dragon_seed_initialize_campaign mm_dragon_register_known_true_sources } }
+mm_dragon_seed_initialize_campaign = {
+    effect = {
+        if = {
+            limit = { has_global_variable = mm_dragon_seed_new_campaign_pending NOT = { has_global_variable = mm_lineage_families_initialized_v132 } }
+            # The catalog is a no-op without kings. No delayed/yearly retry exists.
+            set_global_variable = { name = mm_lineage_families_initialized_v132 value = yes }
+            remove_global_variable = mm_dragon_seed_new_campaign_pending
+            clear_global_variable_list = mm_dragon_seed_people
+            clear_global_variable_list = mm_dragon_seed_houses
+            every_living_character = {
+                limit = { mm_dragon_has_blood_trigger = no mm_dragon_is_true_dragon_parent_trigger = no }
+                add_to_global_variable_list = { name = mm_dragon_seed_people target = this }
+            }
+            set_global_variable = { name = mm_dragon_seed_assigned_founders value = 0 }
+            debug_log = "MM_DRAGON_SEED_INITIALIZATION_BEGIN"
+            mm_dragon_initialize_seed_catalog_effect = yes
+            if = {
+                limit = { global_var:mm_dragon_seed_assigned_founders > 0 }
+                set_global_variable = { name = mm_dragon_seed_families_confirmed_v1322 value = yes }
+                debug_log = "MM_DRAGON_SEED_INITIALIZATION_SUCCESS"
+            }
+            else = { debug_log = "MM_DRAGON_SEED_INITIALIZATION_EMPTY_RETRY_ALLOWED" }
+            every_in_global_list = { variable = mm_dragon_seed_people remove_character_flag = mm_dragon_seed_existing_carrier }
+            clear_global_variable_list = mm_dragon_seed_people
+            clear_global_variable_list = mm_dragon_seed_houses
+            remove_global_variable = mm_dragon_seed_probe_generation
+        }
+    }
+}
+
+# Only the native dragon registry is visited; this never creates families/people.
+mm_dragon_register_known_true_sources = {
+    effect = {
+        if = {
+            limit = { has_global_variable_list = myv_living_wyverns }
+            every_in_global_list = { variable = myv_living_wyverns mm_dragon_register_true_dragon_origins_effect = yes }
+        }
+    }
+}

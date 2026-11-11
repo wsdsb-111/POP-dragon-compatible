@@ -1,0 +1,6 @@
+﻿mm_dragon_rite_doctrine = {
+    category = special
+    divergence = category
+    doctrine_lock = religion
+    is_available_on_create = { religion = religion:mm_dragon_creed_religion }
+}

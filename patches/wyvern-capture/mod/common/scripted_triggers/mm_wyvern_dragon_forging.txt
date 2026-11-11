@@ -1,0 +1,89 @@
+# Only known, owned, unequipped materials qualify; legacy eye/head displays are never inferred as another material.
+mm_wyvern_forge_material_available_trigger = {
+  artifact_owner = root
+  is_equipped = no
+}
+mm_wyvern_forge_fang_material_trigger = {
+  mm_wyvern_forge_material_available_trigger = yes
+  OR = {
+    var:mm_wyvern_material_kind = flag:fang
+    AND = {
+      NOT = { has_variable = mm_wyvern_material_kind }
+      has_variable = mm_wyvern_trophy_source
+      artifact_slot_type = miscellaneous
+      NOT = { has_variable = myv_wyvern_scale_material }
+      NOT = { has_variable = myv_wyvern_blood_material }
+    }
+  }
+}
+mm_wyvern_forge_claw_material_trigger = {
+  mm_wyvern_forge_material_available_trigger = yes
+  var:mm_wyvern_material_kind = flag:claw
+}
+mm_wyvern_forge_scale_material_trigger = {
+  mm_wyvern_forge_material_available_trigger = yes
+  OR = {
+    var:mm_wyvern_material_kind = flag:scale
+    AND = { NOT = { has_variable = mm_wyvern_material_kind } has_variable = myv_wyvern_scale_material }
+  }
+}
+mm_wyvern_forge_horn_material_trigger = {
+  mm_wyvern_forge_material_available_trigger = yes
+  var:mm_wyvern_material_kind = flag:horn
+}
+
+mm_wyvern_sword_recipe_available_trigger = {
+  any_character_artifact = { count >= 2 mm_wyvern_forge_fang_material_trigger = yes }
+  any_character_artifact = { mm_wyvern_forge_claw_material_trigger = yes }
+  any_character_artifact = { mm_wyvern_forge_horn_material_trigger = yes }
+}
+mm_wyvern_sword_pair_valid_trigger = {
+  is_alive = yes
+  is_ai = no
+  exists = scope:mm_wyvern_sword_fang
+  exists = scope:mm_wyvern_sword_fang_second
+  exists = scope:mm_wyvern_sword_claw
+  exists = scope:mm_wyvern_sword_horn
+  scope:mm_wyvern_sword_fang = {
+    mm_wyvern_forge_fang_material_trigger = yes
+  }
+  scope:mm_wyvern_sword_fang_second = {
+    mm_wyvern_forge_fang_material_trigger = yes
+    NOT = { this = scope:mm_wyvern_sword_fang }
+  }
+  scope:mm_wyvern_sword_claw = {
+    mm_wyvern_forge_claw_material_trigger = yes
+    NOT = { this = scope:mm_wyvern_sword_fang }
+    NOT = { this = scope:mm_wyvern_sword_fang_second }
+  }
+  scope:mm_wyvern_sword_horn = {
+    mm_wyvern_forge_horn_material_trigger = yes
+    NOT = { this = scope:mm_wyvern_sword_fang }
+    NOT = { this = scope:mm_wyvern_sword_fang_second }
+    NOT = { this = scope:mm_wyvern_sword_claw }
+  }
+}
+
+mm_wyvern_bow_recipe_available_trigger = {
+  any_character_artifact = { count >= 2 mm_wyvern_forge_scale_material_trigger = yes }
+  any_character_artifact = { mm_wyvern_forge_horn_material_trigger = yes }
+}
+mm_wyvern_bow_pair_valid_trigger = {
+  is_alive = yes
+  is_ai = no
+  exists = scope:mm_wyvern_bow_scale
+  exists = scope:mm_wyvern_bow_scale_second
+  exists = scope:mm_wyvern_bow_horn
+  scope:mm_wyvern_bow_scale = {
+    mm_wyvern_forge_scale_material_trigger = yes
+  }
+  scope:mm_wyvern_bow_scale_second = {
+    mm_wyvern_forge_scale_material_trigger = yes
+    NOT = { this = scope:mm_wyvern_bow_scale }
+  }
+  scope:mm_wyvern_bow_horn = {
+    mm_wyvern_forge_horn_material_trigger = yes
+    NOT = { this = scope:mm_wyvern_bow_scale }
+    NOT = { this = scope:mm_wyvern_bow_scale_second }
+  }
+}

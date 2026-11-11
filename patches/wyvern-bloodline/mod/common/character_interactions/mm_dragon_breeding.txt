@@ -1,0 +1,122 @@
+mm_dragon_request_half_dragon_interaction = {
+    category = interaction_category_friendly
+    filter_tags = { myv_wyvern_interaction }
+    icon = icon_marriage
+    common_interaction = yes
+    desc = mm_dragon_request_half_dragon_interaction_desc
+    auto_accept = no
+    is_shown = {
+        scope:actor = { is_ai = no age >= 18 }
+        scope:recipient = { age >= 18 }
+        OR = {
+            AND = { scope:actor = { mm_dragon_is_true_dragon_parent_trigger = no } scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form } }
+            AND = { scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = no } scope:actor = { mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form } }
+        }
+    }
+    is_valid_showing_failures_only = { mm_dragon_consent_pair_valid_trigger = yes }
+    ai_accept = {
+        base = 25
+        modifier = { add = 50 scope:recipient = { opinion = { target = scope:actor value >= 50 } } }
+        modifier = { add = 25 scope:recipient = { has_relation_lover = scope:actor } }
+        modifier = { add = -25 scope:recipient = { mm_creed_is_dragon_faith_trigger = yes } }
+        modifier = {
+            add = 10
+            OR = {
+                scope:actor = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:recipient has_relation_myv_wyvern_bonded_character = scope:recipient has_trait_xp = { trait = myv_wyvern_harmony value >= 25 } }
+                scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:actor has_relation_myv_wyvern_bonded_character = scope:actor has_trait_xp = { trait = myv_wyvern_harmony value >= 25 } }
+            }
+        }
+        modifier = {
+            add = 10
+            OR = {
+                scope:actor = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:recipient has_relation_myv_wyvern_bonded_character = scope:recipient has_trait_xp = { trait = myv_wyvern_harmony value >= 50 } }
+                scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:actor has_relation_myv_wyvern_bonded_character = scope:actor has_trait_xp = { trait = myv_wyvern_harmony value >= 50 } }
+            }
+        }
+        modifier = {
+            add = 10
+            OR = {
+                scope:actor = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:recipient has_relation_myv_wyvern_bonded_character = scope:recipient has_trait_xp = { trait = myv_wyvern_harmony value >= 75 } }
+                scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:actor has_relation_myv_wyvern_bonded_character = scope:actor has_trait_xp = { trait = myv_wyvern_harmony value >= 75 } }
+            }
+        }
+        modifier = {
+            add = 10
+            OR = {
+                scope:actor = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:recipient has_relation_myv_wyvern_bonded_character = scope:recipient has_trait_xp = { trait = myv_wyvern_harmony value >= 100 } }
+                scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:actor has_relation_myv_wyvern_bonded_character = scope:actor has_trait_xp = { trait = myv_wyvern_harmony value >= 100 } }
+            }
+        }
+    }
+    on_accept = {
+        if = {
+            limit = { mm_dragon_consent_pair_valid_trigger = yes }
+            if = {
+                limit = { scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+                scope:recipient = { save_scope_as = mm_dragon_half_dragon_parent mm_dragon_initialize_features_effect = yes }
+                scope:actor = { mm_dragon_create_half_egg_effect = yes }
+            }
+            else = {
+                scope:actor = { save_scope_as = mm_dragon_half_dragon_parent mm_dragon_initialize_features_effect = yes }
+                scope:recipient = { mm_dragon_create_half_egg_effect = yes }
+            }
+        }
+    }
+}
+
+# Two explicit character clicks use the native interaction UI; no unverified
+# secondary-recipient picker or hidden random mate selection is involved.
+mm_dragon_select_stable_mother_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_marriage
+	common_interaction = yes
+	auto_accept = yes
+	desc = mm_dragon_select_stable_mother_interaction_desc
+	is_shown = {
+		scope:actor = { is_ai = no is_alive = yes is_imprisoned = no is_incapable = no }
+		scope:recipient = { mm_dragon_stable_mother_valid_trigger = { KEEPER = scope:actor } }
+	}
+	on_accept = {
+		if = {
+			limit = { scope:recipient = { mm_dragon_stable_mother_valid_trigger = { KEEPER = scope:actor } } }
+			scope:actor = { set_variable = { name = mm_dragon_selected_mother value = scope:recipient } }
+		}
+	}
+}
+mm_dragon_force_stable_breeding_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_marriage
+	common_interaction = yes
+	auto_accept = yes
+	desc = mm_dragon_force_stable_breeding_interaction_desc
+	is_shown = {
+		scope:actor = { is_ai = no is_alive = yes is_imprisoned = no is_incapable = no has_variable = mm_dragon_selected_mother }
+		scope:recipient = { mm_dragon_stable_pair_valid_trigger = { MOTHER = scope:actor.var:mm_dragon_selected_mother KEEPER = scope:actor } }
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = { mm_dragon_stable_pair_valid_trigger = { MOTHER = scope:actor.var:mm_dragon_selected_mother KEEPER = scope:actor } }
+	}
+	on_accept = {
+		if = {
+			limit = {
+				scope:actor = { is_alive = yes is_imprisoned = no is_incapable = no has_variable = mm_dragon_selected_mother }
+				scope:recipient = { mm_dragon_stable_pair_valid_trigger = { MOTHER = scope:actor.var:mm_dragon_selected_mother KEEPER = scope:actor } }
+			}
+			scope:actor.var:mm_dragon_selected_mother = {
+				save_scope_as = myv_wyvern_egg_mother
+				save_scope_as = myv_wyvern_egg_creator
+				location = { save_scope_as = myv_wyvern_egg_location }
+			}
+			scope:recipient = { save_scope_as = myv_wyvern_egg_father }
+			clear_saved_scope = myv_wyvern_egg
+			scope:actor = { myv_create_stable_bred_wyvern_egg_artifact_effect = yes }
+			if = {
+				limit = { exists = scope:myv_wyvern_egg }
+				scope:myv_wyvern_egg_mother = { add_character_flag = { flag = mm_dragon_forced_breeding_cooldown years = 1 } }
+				scope:actor = { remove_variable = mm_dragon_selected_mother }
+			}
+		}
+	}
+}

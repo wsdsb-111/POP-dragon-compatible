@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-27",
+  "modulePath": "patches/wyvern-ascension/mod",
+  "scope": "Source-bound competing native trait tracks, paid annual fusion, reversible human/dragon bodies for both outcomes, current-incarnation royal succession, and legacy completion preservation; no CK3 runtime acceptance claimed",
+  "requires": [
+    "wyvern-kings"
+  ],
+  "sourceRoots": {
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310",
+    "game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game",
+    "baseline": "./.build/v132-before"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+      "sha256": "cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/myv_wyvern_triggers.txt",
+      "sha256": "9cb5d15fcb86100b50dd2dbd82c2fba1d0fbe08165021b21b110b0fe6446b1ad"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_game_rule_effects.txt",
+      "sha256": "899225ad0ea9d59bec51ce0c489aa574b30c1b9676431a9284e64426543de389"
+    },
+    {
+      "root": "game",
+      "path": "common/traits/_traits.info",
+      "sha256": "8f6ef61eee2ecf32ba1280cf600a4d5f8c897e0b783020678bdebc3aedc54ae9"
+    },
+    {
+      "root": "game",
+      "path": "events/birth_events.txt",
+      "sha256": "f1dffdfd9d8fa6f1d3ca7147080e2e005e924a0a984279d25d774accfabcedc4"
+    },
+    {
+      "root": "game",
+      "path": "events/yearly_events/bp1_yearly_james.txt",
+      "sha256": "0a2adc2247112eff548f281080a2522e314862561f2f6b868b4ac03ce9bbba8f"
+    },
+    {
+      "root": "game",
+      "path": "events/war_events/combat_events.txt",
+      "sha256": "d6cd87366f14654f860ee6daf70d41094b6bcfd6e32b3358e29f8a74d58842b1"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/zz_myv_hunt_exclusion.txt",
+      "sha256": "6213ace8f78b9715bf0e19760f6bb9ce867469df1d624a966bf87060f210283e"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/zz_myv_court_position_triggers.txt",
+      "sha256": "ccbdcf30a778fbb46627cd10702d45aae7575b099d49ff7a6d71f8fffc91118a"
+    },
+    {
+      "root": "baseline",
+      "path": "patches/wyvern-capture/mod/common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "sha256": "1c47f6a9a10617da2b79ce6570e40048c22757ea15607bcd842c0af01179bb7c"
+    },
+    {
+      "root": "baseline",
+      "path": "patches/wyvern-kings/mod/common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "sha256": "1a48475f3ebe8329fef35526f87996debcf7fe8f88194594e5575540a1da8b5b"
+    },
+    {
+      "root": "baseline",
+      "path": "patches/wyvern-kings/mod/common/character_interactions/mm_royal_devour.txt",
+      "sha256": "856efab9f6f99950645b07a425cef9c6c3d342eb18f4af69be84ddf324a26101"
+    },
+    {
+      "root": "baseline",
+      "path": "patches/wyvern-kings/mod/common/decisions/mm_royal_awakening.txt",
+      "sha256": "b84dba40df28ece61c2b3cd331133a0dc8f7f8b88e9fe27582900cea6aeadae3"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_wyvern_accessory_genes.txt",
+      "sha256": "478983f34b7599b91d083c28233787aca13aa231e47a42f276917dead86b62eb"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_wyvern_flying_genes.txt",
+      "sha256": "26b3484be6f764875f12a52d9e29abc92f5df55d86ffe911a943e7e8fe2c7f9f"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_wyvern_running_genes.txt",
+      "sha256": "ed1fdfe0c7347af88a893f37fd4cb677b57cb148c7dcc0b9d00349cdad26fc3f"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_wyvern_mounted_genes.txt",
+      "sha256": "e3fa151a7a1fab2984c4ab6960c779c28a0963b0067a05ef0b951c00176eacbd"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_wyvern_wild_aerial_flying_genes.txt",
+      "sha256": "222e163f376b0d23e41a2d67a9a00eff9ca7eba62d795e7385a5f763dac7beae"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_compact_head_genes.txt",
+      "sha256": "936b14954d1dd43cae73d7bbe1548c02d51c518aeb27d8108c50de2ead832a45"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "sha256": "c018bdda9563f9d48b709e6d3b82b0de1d35552e32eb9b3e60231ba2ae8819a6"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_running.txt",
+      "sha256": "ceb02d18ae8c717ee151926b6a4db357ce7be165cee829a16c03d5e201a0a488"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "sha256": "fc46f54479b05bfcea4f7104d7b769a8440c2ae8c5a26b4b95db8b5ed331bac4"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt",
+      "sha256": "7995d48db5f42427e6410f3dcbebc4cb9ce5cd76ea3b2cfcd0bf23343ac78a60"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_compact_head.txt",
+      "sha256": "7add5f9d0fe967e8f33b50201b1709563ff14432b7f4c29b685e75b2057ac133"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_memorial.txt",
+      "sha256": "750216a32956201a97cb9b4ecd2786e6601ee24ebfad442cce7d2d9dff587c7f"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt",
+      "sha256": "8161caaefe9bf0a4d0abc89c108524e3ad1de8a572fcd6bdbb6ab9ad536f657e"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt",
+      "sha256": "419942d8b179790598553c210301eb7281e1f2e9071ace052e2b4f68a99aaf66"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_compact_head.mesh",
+      "sha256": "d69fb22c769b30a3715fe935b071e0352d9e49d17979099acdfa327f3e4888fb"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern.mesh",
+      "sha256": "5569e1394222b5b431d7f31dde27e2fc4332438ff6719fc03e046eea644a5be8"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse.dds",
+      "sha256": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_black.dds",
+      "sha256": "17d51928e98182ad1af79aeee1ae2f9f6fe41fa00964393fb4a61c09067ee435"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_gold.dds",
+      "sha256": "8bc6fd39284a3ea72f6d28db40653c3cf0aa14b9932e46383c0bcbdda965f411"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_green.dds",
+      "sha256": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_grey.dds",
+      "sha256": "bd3da04e670f9e3a640471fa04e1abea30322897ba7bd26acdf6601bad68f7ed"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_nightmare.dds",
+      "sha256": "33e186d906c084de5db3f05883bdae032e90c70b6957e5e7a02b04328497a76d"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_red.dds",
+      "sha256": "4ca222aa6b4e04966f929527c699c9a609c3c461e8939d350517c7fdfd73f216"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_flying.anim",
+      "sha256": "5ad2087df3ccedb4416e98a2b40eb34e433d58a54bbc775d1b9a4ec8cee15824"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_idle.anim",
+      "sha256": "86642436aa7d361b879e18a7557aff8338ccb18d34736fc5e470076716167215"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_mounted_flying.anim",
+      "sha256": "941bb080c31052c5497f7cdd94ddd5ff203f9b4afb71bb0783d60593bbcfb9e2"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_normal.dds",
+      "sha256": "3a6912abe0be9af058afb351521e76bc96414595b2205dd926bb3470a3406292"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_properties.dds",
+      "sha256": "37f2fcffd4cd4e7c40a53edab548b9cd110dcf5e50ce5b958663c2a0b1397aa2"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_running.anim",
+      "sha256": "f7d52629902b7d3aeeb7843547851055d7edee3532488da02db90c539adde282"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_hatchling.anim",
+      "sha256": "f9b35f3f701e2fb44a099c8e1810b2d65303cdffc436c866191393bbf9269bdc"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_01.anim",
+      "sha256": "721029d8ec299398147a323a6052c6f899e3060b62ec2d6b05571a86c44efd27"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_02.anim",
+      "sha256": "31063881380e7269fc63f6fbb036e3fd517923d333fa6cd48e688d663deb3ba7"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_03.anim",
+      "sha256": "47613b387b5bf3e73fce53b16ecbad6cdef55012ef23d22ac4d4f2b207f5e99e"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_04.anim",
+      "sha256": "4d72ac7b801ba2eb1710b8de9d5ac843befae760592a4d46f26318de1e15721f"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_05.anim",
+      "sha256": "5af3ab3d407948671d236c07c3ea07748cda39bff4e94071d98d489db3a3ce1b"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_06.anim",
+      "sha256": "612eac9dd1427be0c5c700b1943c6760a5bd6c3bdac0b23996f5e1d350a53f10"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_07.anim",
+      "sha256": "fce2ea62ecc0d6895182fd13a94ad87f9665a16fe4d435ca76099dcdd95fb440"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_08.anim",
+      "sha256": "279d2c5ad4d5bdce0d1d0e71d8ee9b177b10f669fa7b82480da35a68cee5b660"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_09.anim",
+      "sha256": "55e745246816720134b76880bb9124e81f92e66c4b5d55a9dce95443fb07c441"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_10.anim",
+      "sha256": "43796d90e8a970d8349d3190d2657ff3578aafccf4c67773bc776eda81e84571"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/FX/myv_wyvern_portrait.shader",
+      "sha256": "0376d8ea5cee74ceb9576508defbdfdaf45a513be5bebefad47d9a743eb3195a"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/court_scene/character_roles/00_default_roles.txt",
+      "sha256": "1db114bd8a2a7a4941590bdf1ce4e8cf38f7acb8e6a0c62585182b4c4233eda7"
+    }
+  ],
+  "scriptOverrides": {
+    "mm_wyvern_legendary_blood_reward_effect": "wyvern-capture",
+    "mm_wyvern_bathed_in_dragon_blood": "wyvern-capture",
+    "myv_is_wyvern": "MYV",
+    "myv_is_living_wild_wyvern": "wyvern-kings",
+    "mm_royal_player_available": "wyvern-kings",
+    "mm_royal_pair_ready_for_devour": "wyvern-kings",
+    "mm_royal_command_devour_interaction": "wyvern-kings",
+    "mm_royal_wake_*_decision": "wyvern-kings",
+    "myv_remove_human_character_traits_effect": "MYV",
+    "myv_wyvern_human_death_protection_effect": "MYV",
+    "myv_wyvern_nonhuman_maintenance_effect": "MYV",
+    "myv_apply_wyvern_identity_effect": "MYV",
+    "can_hunt_trigger": "MYV",
+    "court_position_employee_shown_trigger": "MYV",
+    "can_be_knight_trigger": "wyvern-capture",
+    "myv_wyvern_character_window": "wyvern-human-form",
+    "myv_attempt_slay_wyvern_interaction": "wyvern-kings"
+  },
+  "outputs": [
+    {
+      "path": "mod/common/character_interactions/zzzzzzzzzz_mm_ascension_devour.txt",
+      "sha256": "adde4b001e3900288c95a2c9640f9235adda90ac43856a6760604c818f6a6bf3"
+    },
+    {
+      "path": "mod/common/character_interactions/zzzzzzzzzz_mm_ascension_hunt_eligibility.txt",
+      "sha256": "7c1be728e3b86d7832c451f375773c347d9c3927effc8d76860030336944d094"
+    },
+    {
+      "path": "mod/common/decisions/mm_ascension_decisions.txt",
+      "sha256": "8e0b6fb3a97a355a0d5638b16499ae3d6c5977c8c0d851ce5cc5a5ad1dd87964"
+    },
+    {
+      "path": "mod/common/decisions/zzzzzzzzzz_mm_ascension_awakening.txt",
+      "sha256": "a5f31664ca321e85a2fb2c722ad0b24cb3893542d71d1da0db3137686b74601e"
+    },
+    {
+      "path": "mod/common/modifiers/mm_ascension_modifiers.txt",
+      "sha256": "a48f3fc0a152dbf0fac9d5254afee494ac34dbb4d8c4b2fcef309a248c90e172"
+    },
+    {
+      "path": "mod/common/nicknames/mm_ascension_nicknames.txt",
+      "sha256": "ed2241c2d7bb060998e79d2c6425491adfcf2e4c2dc90c0d2369aa26c345dd58"
+    },
+    {
+      "path": "mod/common/on_action/zzzzzzzzzz_mm_ascension_on_actions.txt",
+      "sha256": "90f704433116e0c3d91f71c17d66527184992383b56a403d756ccdf211631ce9"
+    },
+    {
+      "path": "mod/common/script_values/mm_ascension_values.txt",
+      "sha256": "c74b3d4b7a0653514bb01f3f6178adf7720e7084abc2b33e351e40b2764f07f7"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_ascension_devour_effects.txt",
+      "sha256": "91842952905aaf514ef38fa6f6b1be4179bc6955e8980854b942e0bedc2d1fd4"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_ascension_effects.txt",
+      "sha256": "b0fd837425f591ff59826c88dd467703ee71946e7c2deb1b4c20f2f1835d1216"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_ascension_maintenance.txt",
+      "sha256": "8ad1e695c5ac8134ad0fba0bd6a1ec3298e1aa8ddf3063ff53b03f46ff11567d"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_ascension_reward.txt",
+      "sha256": "2fff2e1dd625d4eb777127c0c9e4f9c86e97a493325738be739cca0c18623ec6"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_royal_source_body_bridge.txt",
+      "sha256": "3a4a824e1e9feaf4674fbbe4c37d7b05d0611940db384f80e236bf7576d9f13e"
+    },
+    {
+      "path": "mod/common/scripted_guis/zzzzzzzzzz_mm_ascension_character_window.txt",
+      "sha256": "ca2b49a7ad072320a5bc5d1d5ae12c21c77c2652a2ce167b235775674ab18a7e"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzz_mm_asc_visual_triggers.txt",
+      "sha256": "b1b0cdd1eb714b2fa247a81510ff7a17ebba7ec591d4ac11e37776d1e47b03f2"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_breeding.txt",
+      "sha256": "17a614aea6f947dbce91aeb45a2f49a1b82203328c115ce5da89918d2e0a0e16"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_civil_rights.txt",
+      "sha256": "5e1689d0cade5751aab0bc1aebae77aae92fbf11a1729611d12821fdb6e3322d"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_royal_triggers.txt",
+      "sha256": "8e235a824e80032a13af333cf457ed5ef16bb87dd33449243ae8948e94fcacab"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_triggers.txt",
+      "sha256": "e814b1cb2b0df94bb61477c1963efbdc95c3c6b676b50896249682a09cdd5f9e"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzz_mm_royal_source_body_bridge.txt",
+      "sha256": "a41ec87553a626ec43a3afb933463145c4d188c462cab8a91aecc5ce0c618728"
+    },
+    {
+      "path": "mod/common/traits/mm_ascension_traits.txt",
+      "sha256": "50baf454a92d57cb4d6d643d0ade11180fbbff42ac4aa5eea1afdd2470ac7115"
+    },
+    {
+      "path": "mod/common/traits/zzzzzzzzzz_mm_ascension_legacy_completion.txt",
+      "sha256": "ea36364e81f089aacb3a6491c6e26a800cda9e9e10c49ce88fc92e72344128fb"
+    },
+    {
+      "path": "mod/events/mm_ascension_events.txt",
+      "sha256": "1b8e31a08da45faee6b1cae7a4c7949b6e2ecef7835951c0c1665c8826246802"
+    },
+    {
+      "path": "mod/gfx/court_scene/character_roles/00_default_roles.txt",
+      "sha256": "a59b7642cf05e415b673cab7f8640edbbc7b2db0784dd60f0a98d498e7429697"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_animations/myv_compact_head.txt",
+      "sha256": "9f07a208b67aed82da1e1d5f9909b738592f1342c06c4f5c4d5a5b6d4ba21f6d"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "sha256": "ae6cc0d1d18526bde8df5c69d89889c40e4cce2784517ac05edff2a046d99d13"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "sha256": "bc0af896c2666a23f3059547e51df0430801a1c363d72d716b7d87768371ca4b"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_animations/myv_wyvern_running.txt",
+      "sha256": "992f7b15a13860157d3f3c179cdd4e6f65a59d6afc677f47176fd8162a0d2e3e"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt",
+      "sha256": "cad4f43a9879b69f7056d7f324f09ad690044c9ba0c7ee525bff7ccbfbc0910c"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_asc_dragon_portrait.txt",
+      "sha256": "9c0dbe7ab07df132d0a8945fb1380bb87e28136654cde88bc4c905172ecfc91e"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_asc_human_golden_eyes.txt",
+      "sha256": "a65a70aeef718a8fcab3485d74bbf73cc440678b9220db0307038fc386702ccd"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_asc_native_poses.txt",
+      "sha256": "5c1f91c40f7c06b884355664dd4e593f5aab09066758b19346d448b5c88a0c71"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_asc_no_human_accessories.txt",
+      "sha256": "dfb3c0bf11898f0c044f57a2e7e43da2109797a3cea82eaaf1c6369702743f37"
+    },
+    {
+      "path": "mod/gfx/portraits/trait_portrait_modifiers/mm_asc_dragon_body.txt",
+      "sha256": "ed41c62de202f060348e85779939c0a2415cbb9bccff9d4936f4bf22f5582a2a"
+    },
+    {
+      "path": "mod/localization/english/mm_ascension_l_english.yml",
+      "sha256": "a5de340d138f35dc04ce5d8387559028122eae25e658e470a6a228fb7f83a226"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_ascension_l_simp_chinese.yml",
+      "sha256": "76cba2e38bb75bcdac6e3395e775ec736bb15e4bc2d11813641323453c2e5e57"
+    }
+  ],
+  "updated": "2026-10-29",
+  "paletteManifest": {
+    "file": "artwork/dragon-kings/palettes-v132/manifest.json",
+    "sha256": "7b624c273fc164de6bab4724e18e241b178814e229c5dd83e105b020571b814d"
+  }
+}

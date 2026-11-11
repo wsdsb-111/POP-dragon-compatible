@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "textureContract": {
+    "tileColumns": 4,
+    "tileRows": 4,
+    "tileIndexing": "zero-based top-left row-major",
+    "profiles": {
+      "trophy": {
+        "width": 2048,
+        "height": 2048,
+        "mipLevels": 12,
+        "propertiesGreenGlobalMax": 75,
+        "propertiesGreenNonGemTileMax": 32,
+        "gemTiles": [6, 12]
+      },
+      "head": {
+        "width": 4096,
+        "height": 4096,
+        "mipLevels": 13,
+        "propertiesGreenGlobalMax": 32,
+        "propertiesGreenNonGemTileMax": 32,
+        "gemTiles": []
+      },
+      "weapon": {
+        "width": 4096,
+        "height": 4096,
+        "mipLevels": 13,
+        "propertiesGreenGlobalMax": 75,
+        "propertiesGreenNonGemTileMax": 32,
+        "gemTiles": [6, 13]
+      }
+    }
+  },
+  "shaderSources": [
+    {
+      "path": "game/gfx/FX/court_scene.shader",
+      "sha256": "b67a90d1134bdb356f1999693fbc660b350f45df2bea240f7ab321dcab8c7386",
+      "fragments": [
+        "SMaterialProperties MaterialProps = GetMaterialProperties( Diffuse.rgb, Normal, saturate( Properties.a ), Properties.g, Properties.b );",
+        "float ScatteringMask = Properties.r;",
+        "float emissiveMask = PdxTex2D( NormalMap, Input.UV0 ).b;",
+        "Color = lerp(Color, emissiveColor, emissiveMask);",
+        "Effect court { VertexShader = \"VS_standard\" PixelShader = \"PS_court\" Defines = { \"EMISSIVE\" } }"
+      ]
+    },
+    {
+      "path": "game/gfx/FX/cw/lighting.fxh",
+      "sha256": "4140c3e5916cf7a9ebc82cdbf87197f7ff47f236d26e968007c654f8659a5f0b",
+      "fragments": [
+        "return 0.25 * SampledSpec;",
+        "return PerceptualRoughness * PerceptualRoughness;"
+      ]
+    },
+    {
+      "path": "game/gfx/FX/cw/lighting_util.fxh",
+      "sha256": "b60d4517203a331b0d9822c2b17d1059aa28b53d5ad5e73d644034a3979c944c",
+      "fragments": [
+        "MaterialProps._Roughness = RoughnessFromPerceptualRoughness( MaterialProps._PerceptualRoughness );",
+        "float SpecRemapped = RemapSpec( SampledSpec );",
+        "MaterialProps._Metalness = SampledMetalness;",
+        "MaterialProps._SpecularColor = MetalnessToSpec( MaterialProps._Metalness, SampledDiffuse, SpecRemapped );"
+      ]
+    },
+    {
+      "path": "clausewitz/gfx/FX/cw/utility.fxh",
+      "sha256": "abd382499457d6616597e41647983b982a44aea7a0a3392927693827201cab1b",
+      "fragments": [
+        "float x = NormalMapSample.g * 2.0 - 1.0;",
+        "float y = NormalMapSample.a * 2.0 - 1.0;",
+        "y = -y;",
+        "float z = sqrt( saturate( 1.0 - x * x - y * y ) );",
+        "return float3( x, y, z );"
+      ]
+    }
+  ]
+}

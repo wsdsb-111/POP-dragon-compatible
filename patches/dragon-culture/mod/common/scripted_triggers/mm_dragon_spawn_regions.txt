@@ -1,0 +1,23 @@
+﻿# Province-scoped filters use both geography and the local culture.
+mm_dragon_spawn_fire_region = {
+    exists = culture
+    OR = {
+        AND = { geographical_region = world_asia_east culture = { has_cultural_pillar = heritage_chinese } }
+        AND = { geographical_region = world_middle_east_persia culture = { has_cultural_pillar = heritage_iranian } }
+    }
+}
+mm_dragon_spawn_earth_region = {
+    exists = culture
+    geographical_region = world_africa_north_east
+    OR = { culture = culture:egyptian culture = { has_cultural_pillar = heritage_egyptian } }
+}
+mm_dragon_spawn_sea_region = {
+    exists = culture
+    geographical_region = world_europe_south
+    culture = { OR = { has_cultural_pillar = heritage_byzantine has_cultural_pillar = heritage_latin } }
+}
+mm_dragon_spawn_sky_region = {
+    exists = culture
+    geographical_region = world_europe_north
+    culture = { has_cultural_pillar = heritage_north_germanic }
+}

@@ -1,0 +1,1 @@
+﻿death_mm_royal_devoured = { public_knowledge = yes icon = "death_murder.dds" }

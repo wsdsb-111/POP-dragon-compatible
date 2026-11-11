@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ mm_asc_black_blood_trial_decision:0 "汇聚四系，叩问始祖"
+ mm_asc_black_blood_trial_decision_desc:0 "消耗火、地、海、风四系普通龙族之血各一份，开启黑血晋升考验。每年侵蚀增加10；沿用龙血融合仪式，每个日历年可支付250金币、250虔诚和100威望推进融合20。融合先达100：黑血升为初代种，血脉始祖唯一改指黑皇；侵蚀先达100：失去理智，变为死侍。不得到龙皇身份、王座或龙身，真实父母与家族不变。"
+ mm_asc_black_blood_trial_decision_tooltip:0 "以四份龙血开启不可撤销的侵蚀与融合考验。"
+ mm_black_trial.1.t:0 "四系归一，黑血苏醒"
+ mm_black_trial.1.desc:0 "四份龙血已尽数融入我的黑血。远古意志在体内苏醒，侵蚀与融合开始竞逐。我必须以每年的融合仪式守住自我；若被侵蚀吞没，我将沦为死侍。"
+ mm_black_trial.1.a:0 "我会驾驭这份力量。"
+ mm_black_trial.2.t:0 "黑皇血脉，始祖之源"
+ mm_black_trial.2.desc:0 "融合已先于侵蚀完成。黑血蜕变为初代种，血脉始祖归于黑皇。我仍保有原本的姓名、家族与真正的父母；获得的是始祖的血脉，并非祂的王座与身份。"
+ mm_black_trial.2.a:0 "始祖之血，归于我身。"
+ mm_asc_black_blood_fusion_decision:0 "举行黑血融合仪式"
+ mm_asc_black_blood_fusion_decision_desc:0 "每个日历年可支付250金币、250虔诚与100威望，推进融合20。融合先达100即晋升黑皇血脉初代种；侵蚀先达100将变为死侍。不会继承龙皇王座或获得龙身。"
+ mm_asc_black_trial_blood_desc:0 "四系普通龙血已融入黑血，侵蚀与融合开始竞逐。每年侵蚀+10，每年融合仪式+20；融合100则升为以黑皇为始祖的初代种，侵蚀100则变为死侍。"

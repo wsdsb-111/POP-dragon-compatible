@@ -1,0 +1,14 @@
+﻿namespace = mm_royal
+mm_royal.0001 = {
+    type = character_event
+    hidden = yes
+    immediate = {
+        remove_character_flag = mm_royal_daily_queued
+        if = {
+            limit = { is_alive = yes mm_royal_is_king = yes }
+            mm_royal_native_recovery_effect = yes
+            mm_royal_refresh_army_support_effect = yes
+            mm_royal_queue_daily_effect = yes
+        }
+    }
+}

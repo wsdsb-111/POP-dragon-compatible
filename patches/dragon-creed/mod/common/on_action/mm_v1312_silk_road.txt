@@ -1,0 +1,78 @@
+ # New rite-only entrants are discovered by the existing monthly pass; active participants refresh daily.
+on_game_start_after_lobby = { on_actions = { mm_v1312_silk_road_startup } }
+mm_v1312_silk_road_startup = {
+    effect = {
+        every_living_character = {
+            save_scope_as = mm_v1312_silk_road_target
+            if = {
+                limit = { mm_v1312_silk_sea_member_trigger = yes }
+                if = {
+                    limit = { mm_v1312_silk_road_active_participant_trigger = yes }
+                    mm_v1312_silk_road_queue_daily_effect = yes
+                }
+                else = { mm_v1312_silk_road_clear_effect = yes }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        has_character_modifier = mm_v1312_silk_road_china_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_china_bonus_40
+                        has_character_modifier = mm_v1312_silk_road_tibet_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_tibet_bonus_40
+                        has_character_modifier = mm_v1312_silk_road_india_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_india_bonus_40
+                        has_character_modifier = mm_v1312_silk_road_central_asia_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_central_asia_bonus_40
+                        has_character_modifier = mm_v1312_silk_road_transcaspia_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_transcaspia_bonus_40
+                        has_character_modifier = mm_v1312_silk_road_occident_bonus_20
+                        has_character_modifier = mm_v1312_silk_road_occident_bonus_40
+                        has_character_flag = mm_v1312_silk_road_daily_queued
+                        has_variable = mm_v1312_silk_road_last_date
+                    }
+                }
+                mm_v1312_silk_road_clear_effect = yes
+            }
+        }
+    }
+}
+
+myv_wyvern_monthly_pulse = { on_actions = { mm_v1312_silk_road_monthly_members } }
+mm_v1312_silk_road_monthly_members = {
+    effect = {
+        if = {
+            limit = { has_global_variable_list = mm_dragon_creed_members }
+            every_in_global_list = {
+                variable = mm_dragon_creed_members
+                save_scope_as = mm_v1312_silk_road_target
+                if = {
+                    limit = { mm_v1312_silk_sea_member_trigger = yes }
+                    if = {
+                        limit = { mm_v1312_silk_road_active_participant_trigger = yes }
+                        mm_v1312_silk_road_queue_daily_effect = yes
+                    }
+                    else = { mm_v1312_silk_road_clear_effect = yes }
+                }
+                else = { mm_v1312_silk_road_clear_effect = yes }
+            }
+        }
+    }
+}
+
+on_faith_conversion = { on_actions = { mm_v1312_silk_road_faith_conversion } }
+mm_v1312_silk_road_faith_conversion = {
+    effect = {
+        save_scope_as = mm_v1312_silk_road_target
+        if = {
+            limit = {
+                mm_v1312_silk_sea_member_trigger = yes
+                mm_v1312_silk_road_active_participant_trigger = yes
+            }
+            mm_v1312_silk_road_queue_daily_effect = yes
+        }
+        else = { mm_v1312_silk_road_clear_effect = yes }
+    }
+}
+
+on_death = { on_actions = { mm_v1312_silk_road_death_cleanup } }
+mm_v1312_silk_road_death_cleanup = { effect = { mm_v1312_silk_road_clear_effect = yes } }

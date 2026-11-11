@@ -1,0 +1,5 @@
+mm_dragon_creed = {
+	main_rite = mm_dragon_black
+	faith_details = { religion = mm_dragon_creed_religion color = { 0.8 0.2 0.1 } icon = mm_dragon_creed graphical_faith = "pagan_gfx" }
+	eminent_holy_sites = { mm_dragon_site_chengdu mm_dragon_site_jingzhao mm_dragon_site_tbilisi mm_dragon_site_qus mm_dragon_site_malta mm_dragon_site_chandax mm_dragon_site_sogn mm_dragon_site_faereyar mm_dragon_site_baghdad mm_dragon_site_sagami }
+}

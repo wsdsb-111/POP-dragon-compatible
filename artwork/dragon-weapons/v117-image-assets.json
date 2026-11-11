@@ -1,0 +1,35 @@
+{
+  "mode": "built-in image_gen",
+  "created": "2026-10-25",
+  "assets": [
+    {
+      "file": "materials-v117-source.png",
+      "role": "Sixteen albedo material samples for UV packing and physical map baking",
+      "generation": "exec-3b51928c-b379-4175-930f-a987dbd3befb",
+      "promptSummary": "4 by 4 realistic flat albedo samples: dragon hide, scales, ivory, horn, bronze, walnut, amber, leather, steel, mouth, forest scales, oxidized knotwork, garnet, emerald, dark bone and gold."
+    },
+    {
+      "file": "iris-v117-source.png",
+      "role": "Legacy eye texture, retained for old artifacts",
+      "generation": "exec-b842f038-b05e-4f35-85fe-ad1250b6f006",
+      "promptSummary": "Flat high-detail dragon iris albedo for planar UV projection, no illustrated head."
+    },
+    {
+      "file": "head-materials-v117-source.png",
+      "role": "Final complete bust albedo samples, recolored to the user's palette A",
+      "generation": "exec-084b3711-c203-427f-9eab-e356c230a8c6",
+      "referencedImages": [
+        "previous 2x2 head material atlas generated with image_gen",
+        "user-supplied palette A screenshot"
+      ],
+      "prompt": "Edit the first reference, a 2x2 PBR base color material atlas, to use the EXACT Sand-Gold Brown Ancient Dragon palette in the second reference. Preserve the fine realistic reptile-scale detail and exact 2x2 layout with NO borders, NO text, NO lighting, NO highlights. This is diffuse/albedo color for an actual sculpted dragon bust in CK3, NOT a dragon illustration. Top-left: naturally aged sandy golden-brown dragon hide, main scale faces #8A6A45, smaller/secondary scales #6F5338, grooves #4A3727. Overall medium lightness clearly showing detail in a warm palace, NOT red or oxblood, NOT dark chocolate, NOT metallic gold, no green. Top-right: matte keratin horns #3B312B with natural fine longitudinal striations, readable #54473C worn ridges, not pitch black. Bottom-left: aged bone teeth base #D7C6A1 with very fine ochre staining, preserve realistic subtle cracks, not bright white. Bottom-right: keep the dead dragon iris, make the surrounding soft tissue muted taupe #8C6B5A with a cloudy gray-beige dead eye and dull dark vertical pupil, no bright amber or painted glare. Keep the atlas an exactly evenly divided square 2x2 material sheet, fully filled cells, realistic textured surfaces, restrained medieval artifact palette."
+    },
+    {
+      "file": "../wyvern-trophies/material-icons-v117-source.png",
+      "role": "Personal claw and horn inventory sprite sheet; mechanically split and encoded into DDS",
+      "generation": "exec-0019cb52-f963-47f4-b3aa-340a83c86c10",
+      "prompt": "Create a CK3-style medieval artifact inventory icon sprite sheet with TWO equally sized square panels side by side, 2 columns and 1 row, no text, no labels, no border, identical muted deep violet woven parchment background. LEFT: a single severed dragon foreclaw material trophy, a slender sinewy dark red-brown scaled reptile hand with four articulated fingers and long backward-curved black-brown talons, old ivory hints on damaged nail edges, dignified fearsome western dragon anatomy, no fat mammal paw, no stand or display base, no blood. RIGHT: a single majestic black-brown ridged dragon horn, thick at its cut base, curved upward then swept back to a sharp point, keratin striations with dry reddish-brown dragon skin ring at base, no stand. Both centered, isolated collectible objects, detailed realistic hand-painted medieval RPG item illustration with muted natural colors, soft top-left light and restrained highlights, fill ~80% of each square, crisp silhouette legible at 240x240. These will be two personal carried crafting materials, NOT 3D model previews."
+    }
+  ],
+  "processing": "Source images preserved; UV packing, normal projection, shader swizzling, mip creation and inventory sprite splitting are technical asset conversion. Head sculpt geometry is separately credited to winner_77 under CC BY 4.0."
+}

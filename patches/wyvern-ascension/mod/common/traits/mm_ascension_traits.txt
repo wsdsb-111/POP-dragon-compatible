@@ -1,0 +1,54 @@
+mm_asc_usurper_blood = {
+    icon = "mm_dragon_bathed_blood.dds"
+    physical = yes
+    opposites = { mm_wyvern_bathed_in_dragon_blood mm_asc_dragon_body }
+    prowess = 2
+    health = 0.5
+    monthly_prestige = 0.25
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    tracks = {
+        mm_asc_erosion = {
+            0 = { }
+            25 = { }
+            50 = { }
+            75 = { }
+            100 = { }
+        }
+        mm_asc_fusion = {
+            0 = { }
+            20 = { }
+            40 = { }
+            60 = { }
+            80 = { }
+            100 = { }
+        }
+    }
+    desc = {
+        first_valid = {
+            triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_asc_usurper_blood_desc }
+            triggered_desc = { trigger = { has_character_flag = mm_asc_black_trial } desc = mm_asc_black_trial_blood_desc }
+            triggered_desc = { trigger = { exists = var:mm_asc_blood_source } desc = mm_asc_usurper_source_desc }
+            desc = trait_mm_asc_usurper_blood_desc
+        }
+    }
+}
+
+# A sovereign's reversible body, not a wild animal. Political rights and
+# existing biological parentage are unchanged in either appearance.
+mm_asc_dragon_body = {
+    icon = "mm_dragon_bathed_blood.dds"
+    physical = yes
+    opposites = { mm_asc_usurper_blood }
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = {
+        first_valid = {
+            triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_asc_dragon_body_desc }
+            triggered_desc = { trigger = { exists = var:mm_asc_blood_source } desc = mm_asc_body_source_desc }
+            desc = trait_mm_asc_dragon_body_desc
+        }
+    }
+}

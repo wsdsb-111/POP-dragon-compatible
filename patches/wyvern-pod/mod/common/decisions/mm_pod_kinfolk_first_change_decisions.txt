@@ -1,0 +1,22 @@
+﻿mm_pod_prepare_kinfolk_children_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = mm_pod_prepare_kinfolk_children_decision_desc
+    selection_tooltip = mm_pod_prepare_kinfolk_children_decision_tooltip
+    confirm_text = mm_pod_prepare_kinfolk_children_decision_confirm
+    is_shown = {
+        is_ai = no
+        is_adult = yes
+        mm_pod_has_eligible_kinfolk_descendant_trigger = yes
+    }
+    is_valid = {
+        is_alive = yes
+        is_ai = no
+        is_adult = yes
+        mm_pod_has_eligible_kinfolk_descendant_trigger = yes
+    }
+    effect = {
+        custom_tooltip = mm_pod_prepare_kinfolk_children_decision_effect
+        mm_pod_mark_eligible_kinfolk_descendants_effect = yes
+    }
+    ai_check_interval = 0
+}

@@ -1,0 +1,10 @@
+namespace = mm_dragon_birth
+mm_dragon_birth.0001 = {
+	type = character_event
+	title = mm_dragon_birth.0001.t
+	desc = mm_dragon_birth.0001.desc
+	theme = family
+	left_portrait = { character = scope:mm_dragon_new_child animation = personality_content }
+	right_portrait = { character = scope:mm_dragon_half_mother animation = personality_content }
+	option = { name = mm_dragon_birth.0001.a }
+}

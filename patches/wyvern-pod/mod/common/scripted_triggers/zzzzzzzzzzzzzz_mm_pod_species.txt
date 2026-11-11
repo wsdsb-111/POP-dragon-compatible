@@ -1,0 +1,46 @@
+﻿mm_pod_is_fixed_royal = { OR = { this = character:99001001 this = character:99001305 this = character:99001002 this = character:99001306 this = character:99001003 this = character:99001307 this = character:99001304 this = character:99001308 this = character:99001309 this = character:99001310 } }
+mm_pod_has_dragon_blood = { OR = { mm_dragon_is_true_dragon_parent_trigger = yes mm_dragon_has_blood_trigger = yes has_trait = mokole } }
+has_POD_race_trait_trigger = {
+	OR = {
+        has_trait = mm_pod_dragon_race
+		has_trait = vampire
+		has_trait = ghoul
+		has_trait = revenant
+		has_trait = kueijin
+		has_trait = dhampyr
+		has_trait = fera
+		has_trait = abomination
+		has_trait = kinfolk
+		has_trait = fae
+		has_trait = changeling
+		has_trait = kinain
+		has_trait = demon
+		has_trait = laham
+		has_trait = nephilim
+		has_trait = supehunter
+		has_trait = mummy
+		has_trait = asekh_sen
+		has_trait = automaton
+		has_trait = mage
+		has_trait = wraith
+		has_trait = mortal
+		has_trait = dhampir
+		has_trait = spirit
+		has_trait = alien
+		has_trait = zombu
+	}
+}
+POD_character_age_is_ancient = { OR = { mm_pod_is_fixed_royal = yes age > 1000 } }
+POD_can_become_ancestor_spirit_trigger = {
+    OR = {
+        AND = { 
+	has_trait = fera
+	POD_fera_rank_value >= 3
+	is_adult = yes
+	POD_is_clone_trigger = no
+	is_lowborn = no
+	NOT = { this = character:792579 } # wepauwet gets put in the throngler
+ }
+        AND = { mm_pod_has_dragon_blood = yes is_adult = yes POD_is_clone_trigger = no }
+    }
+}

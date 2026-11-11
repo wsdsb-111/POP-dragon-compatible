@@ -1,0 +1,169 @@
+# Caller: the exact consenting human, with dragon_parent saved by the interaction.
+mm_dragon_create_half_egg_effect = {
+	clear_saved_scope = mm_dragon_half_egg
+	save_scope_as = mm_dragon_half_human_parent
+    if = {
+        limit = { is_female = yes }
+        save_scope_as = mm_dragon_half_mother
+        scope:mm_dragon_half_dragon_parent = { save_scope_as = mm_dragon_half_father }
+    }
+    else = {
+        save_scope_as = mm_dragon_half_father
+        scope:mm_dragon_half_dragon_parent = { save_scope_as = mm_dragon_half_mother }
+    }
+    # The proposer keeps the exact egg; parentage/culture never come from them.
+    save_scope_as = mm_dragon_half_keeper
+    if = { limit = { exists = scope:actor } scope:actor = { save_scope_as = mm_dragon_half_keeper } }
+    scope:mm_dragon_half_keeper = {
+	create_artifact = {
+		name = mm_dragon_half_egg_name
+		description = mm_dragon_half_egg_desc
+		type = regalia_simple
+		visuals = myv_wyvern_egg_green
+		rarity = illustrious
+		modifier = myv_wyvern_egg_prestige_modifier
+		creator = scope:mm_dragon_half_dragon_parent
+		decaying = no
+		save_scope_as = mm_dragon_half_egg
+	}
+    }
+	if = {
+		limit = { exists = scope:mm_dragon_half_egg }
+		scope:mm_dragon_half_egg = {
+			set_variable = { name = myv_wyvern_egg_color value = 2 }
+			set_variable = { name = mm_dragon_half_egg value = yes }
+			set_variable = { name = myv_wyvern_egg_mother value = scope:mm_dragon_half_mother }
+			set_variable = { name = myv_wyvern_egg_father value = scope:mm_dragon_half_father }
+            set_variable = { name = mm_dragon_half_dragon_parent value = scope:mm_dragon_half_dragon_parent }
+            set_variable = { name = mm_dragon_half_human_parent value = scope:mm_dragon_half_human_parent }
+            set_variable = { name = mm_dragon_frozen_birth_generation value = 1 }
+            if = { limit = { scope:mm_dragon_half_dragon_parent = { mm_dragon_is_royal_parent_trigger = yes } } set_variable = { name = mm_dragon_frozen_birth_generation value = 0 } }
+            # Direct dragon parentage fixes S/first generation; no human mutation roll.
+			if = {
+				limit = { scope:mm_dragon_half_dragon_parent = { mm_dragon_legendary_parent_trigger = yes } }
+				random_list = {
+					1 = { set_variable = { name = mm_dragon_inherited_count value = 3 } }
+					1 = { set_variable = { name = mm_dragon_inherited_count value = 4 } }
+				}
+			}
+			else = {
+				random_list = {
+					1 = { set_variable = { name = mm_dragon_inherited_count value = 1 } }
+					1 = { set_variable = { name = mm_dragon_inherited_count value = 2 } }
+				}
+			}
+			if = {
+				limit = { var:mm_dragon_inherited_count > scope:mm_dragon_half_dragon_parent.var:mm_dragon_feature_count }
+				set_variable = { name = mm_dragon_inherited_count value = scope:mm_dragon_half_dragon_parent.var:mm_dragon_feature_count }
+			}
+			mm_dragon_pick_egg_feature_effect = yes
+			if = { limit = { var:mm_dragon_inherited_count >= 2 } mm_dragon_pick_egg_feature_effect = yes }
+			if = { limit = { var:mm_dragon_inherited_count >= 3 } mm_dragon_pick_egg_feature_effect = yes }
+			if = { limit = { var:mm_dragon_inherited_count >= 4 } mm_dragon_pick_egg_feature_effect = yes }
+		}
+		scope:mm_dragon_half_dragon_parent = { add_character_flag = { flag = mm_dragon_half_breeding_cooldown years = 5 } }
+	}
+}
+
+# Exact egg-parent references survive ownership changes and death of a parent.
+# Legacy eggs without frozen generation preserve the old first-generation rule.
+mm_dragon_hatch_half_egg_effect = {
+    clear_saved_scope = mm_dragon_new_child
+    clear_saved_scope = mm_dragon_half_mother
+    clear_saved_scope = mm_dragon_half_father
+    clear_saved_scope = mm_dragon_half_owner
+    clear_saved_scope = mm_dragon_half_dragon_parent
+    clear_saved_scope = mm_dragon_half_human_parent
+    save_scope_as = mm_dragon_half_egg
+    if = {
+        limit = {
+            var:mm_dragon_half_egg = yes
+            exists = var:myv_wyvern_egg_mother
+            exists = var:myv_wyvern_egg_father
+            NOT = { has_variable = mm_dragon_hatch_started }
+            NOT = { has_variable = mm_dragon_hatched_child }
+            var:myv_wyvern_egg_mother = { is_female = yes }
+            var:myv_wyvern_egg_father = { is_female = no }
+            artifact_owner = { is_alive = yes exists = location }
+        }
+        set_variable = { name = mm_dragon_hatch_started value = yes }
+        var:myv_wyvern_egg_mother = { save_scope_as = mm_dragon_half_mother }
+        var:myv_wyvern_egg_father = { save_scope_as = mm_dragon_half_father }
+        if = {
+            limit = { exists = var:mm_dragon_half_dragon_parent exists = var:mm_dragon_half_human_parent }
+            var:mm_dragon_half_dragon_parent = { save_scope_as = mm_dragon_half_dragon_parent }
+            var:mm_dragon_half_human_parent = { save_scope_as = mm_dragon_half_human_parent }
+        }
+        else = {
+            # All pre-1.3.2 half-eggs had a dragon mother and a human father.
+            var:myv_wyvern_egg_mother = { save_scope_as = mm_dragon_half_dragon_parent }
+            var:myv_wyvern_egg_father = { save_scope_as = mm_dragon_half_human_parent }
+        }
+        artifact_owner = { save_scope_as = mm_dragon_half_owner }
+        scope:mm_dragon_half_human_parent = {
+            create_character = {
+                age = 0
+                gender_female_chance = 50
+                mother = scope:mm_dragon_half_mother
+                father = scope:mm_dragon_half_father
+                real_father = scope:mm_dragon_half_father
+                dynasty = inherit
+                culture = scope:mm_dragon_half_human_parent.culture
+                faith = scope:mm_dragon_half_human_parent.faith
+                ethnicity = parents
+                location = scope:mm_dragon_half_owner.location
+                random_traits = no
+                after_creation = {
+                    save_scope_as = mm_dragon_new_child
+                    save_scope_as = mm_dragon_lineage_child
+                    if = {
+                        limit = { scope:mm_dragon_half_dragon_parent = { faith = faith:mm_dragon_creed } }
+                        set_character_faith = scope:mm_dragon_half_dragon_parent.faith
+                        set_character_rite = scope:mm_dragon_half_dragon_parent.rite
+                    }
+                    add_character_flag = mm_dragon_blood_human
+                    add_character_flag = mm_dragon_features_rolled
+                    add_character_flag = mm_dragon_lineage_initialized
+                    set_variable = { name = mm_dragon_origin_count value = 0 }
+                    if = {
+                        # Legacy black-roll eggs still have a true-dragon parent; retain the S guarantee.
+                        limit = { scope:mm_dragon_half_egg = { OR = { var:mm_dragon_frozen_birth_generation = 1 var:mm_dragon_frozen_birth_generation = 6 } } }
+                        add_trait = mm_dragon_lineage_1
+                        set_variable = { name = mm_dragon_lineage_generation value = 1 }
+                    }
+                    else = {
+                        add_trait = mm_dragon_half
+                        set_variable = { name = mm_dragon_lineage_generation value = 0 }
+                    }
+                    if = { limit = { is_lowborn = yes exists = scope:mm_dragon_half_human_parent.house } set_house = scope:mm_dragon_half_human_parent.house }
+                    if = {
+                        limit = { is_lowborn = yes }
+                        set_variable = { name = block_dynamic_dynasty_naming days = 1 }
+                        create_dynasty = { spread_to_descendants = yes }
+                        house = { set_house_name_from_dynasty = dynasty }
+                    }
+                    if = { limit = { scope:mm_dragon_half_dragon_parent = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } } scope:mm_dragon_half_human_parent = { mm_dragon_has_inheritable_blood_trigger = no mm_dragon_is_true_dragon_parent_trigger = no } } add_character_modifier = mm_dragon_diluted_blood_modifier }
+                    mm_dragon_apply_egg_features_effect = yes
+                    scope:mm_dragon_half_dragon_parent = {
+                        mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_new_child }
+                        mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_new_child }
+                    }
+                    # A normal mixed human parent contributes their biological
+                    # sources, never their acquired/absorbed branches.
+                    if = {
+                        limit = { scope:mm_dragon_half_egg = { has_variable = mm_dragon_frozen_birth_generation } scope:mm_dragon_half_human_parent = { mm_dragon_has_inheritable_blood_trigger = yes } }
+                        scope:mm_dragon_half_human_parent = { mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_new_child } }
+                    }
+                    mm_dragon_route_creed_hook_effect = yes
+                }
+            }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_new_child }
+            set_variable = { name = mm_dragon_hatched_child value = scope:mm_dragon_new_child }
+            scope:mm_dragon_half_owner = { if = { limit = { is_ruler = yes } add_courtier = scope:mm_dragon_new_child } trigger_event = mm_dragon_birth.0001 }
+            destroy_artifact = scope:mm_dragon_half_egg
+        }
+        else = { remove_variable = mm_dragon_hatch_started }
+    }
+}

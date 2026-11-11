@@ -1,0 +1,16 @@
+# Player scope, using the exact target carried by the resolved victory event.
+mm_wyvern_resolve_kill_effect = {
+	if = {
+		limit = { exists = scope:mm_capture_target scope:mm_capture_target = { myv_is_living_wild_wyvern = yes } }
+		scope:mm_capture_target = { save_scope_as = myv_slay_wyvern_target }
+		add_prestige = 500
+		mm_wyvern_create_random_material_drops_effect = yes
+		mm_wyvern_grant_decorative_trophies_effect = yes
+		scope:mm_capture_target = {
+			death = { death_reason = death_myv_wyvern_slain killer = root }
+		}
+		myv_grant_wyvern_slayer_reward_effect = yes
+		mm_wyvern_legendary_blood_reward_effect = yes
+	}
+	myv_slay_reset_state_effect = yes
+}

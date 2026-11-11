@@ -1,0 +1,18 @@
+mm_relic_unowned_commander_count = {
+    value = 0
+    if = { limit = { NOR = { has_trait = logistician } } add = 1 }
+    if = { limit = { NOR = { has_trait = military_engineer } } add = 1 }
+    if = { limit = { NOR = { has_trait = aggressive_attacker } } add = 1 }
+    if = { limit = { NOR = { has_trait = unyielding_defender } } add = 1 }
+    if = { limit = { NOR = { has_trait = forder } } add = 1 }
+    if = { limit = { NOR = { has_trait = flexible_leader } } add = 1 }
+    if = { limit = { NOR = { has_trait = desert_warrior } } add = 1 }
+    if = { limit = { NOR = { has_trait = jungle_stalker } } add = 1 }
+    if = { limit = { NOR = { has_trait = reaver } } add = 1 }
+    if = { limit = { NOR = { has_trait = holy_warrior } } add = 1 }
+    if = { limit = { NOR = { has_trait = open_terrain_expert } } add = 1 }
+    if = { limit = { NOR = { has_trait = rough_terrain_expert } } add = 1 }
+    if = { limit = { NOR = { has_trait = forest_fighter } } add = 1 }
+    if = { limit = { NOR = { has_trait = cautious_leader has_trait = reckless } } add = 1 }
+    if = { limit = { NOR = { has_trait = organizer } } add = 1 }
+}

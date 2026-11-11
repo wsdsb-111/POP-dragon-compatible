@@ -1,0 +1,72 @@
+# Re-declare the MYV human-suppression entry with one extra guard. The source
+# modifier's priority-1000 added empty clothes and hair accessories cannot be
+# undone by a later replace, so it must not be selected in human form.
+myv_wyvern_no_human_accessories = {
+	usage = game
+	selection_behavior = weighted_random
+	priority = 1000
+
+	no_human_accessories = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			morph = { mode = replace gene = complexion template = complexion_no_face value = 1.0 }
+			morph = { mode = replace gene = gene_age template = no_aging value = 1.0 }
+			morph = { mode = replace gene = gene_eyebrows_shape template = no_eyebrows value = 1.0 }
+			morph = { mode = replace gene = gene_eyebrows_fullness template = no_eyebrows value = 1.0 }
+
+			accessory = { mode = add gene = clothes template = myv_no_clothes_forced range = { 0 1 } }
+			accessory = { mode = add gene = legwear template = no_legwear range = { 0 1 } }
+			accessory = { mode = add gene = cloaks template = no_cloak range = { 0 1 } }
+			accessory = { mode = add gene = headgear template = no_headgear range = { 0 1 } }
+			accessory = { mode = add gene = props_left template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = props_right template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = animated_props template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = hairstyles template = no_hairstyles range = { 0 1 } }
+			accessory = { mode = add gene = beards template = no_beard range = { 0 1 } }
+			accessory = { mode = replace gene = eye_accessory template = no_eyes value = 1.0 }
+			accessory = { mode = replace gene = eyelashes_accessory template = no_eyelashes value = 1.0 }
+			accessory = { mode = replace gene = teeth_accessory template = no_teeth value = 1.0 }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				AND = {
+					NOT = { has_character_flag = mm_wyvern_human_form }
+					OR = {
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+					}
+				}
+			}
+		}
+	}
+}
+
+# The base trait modifier and per-color/per-size groups continue to describe
+# the wyvern. This higher-priority game portrait layer resolves them back to
+# the character's preserved human phenotype while the form flag is set.
+mm_wyvern_human_form_portrait = {
+	usage = game
+	selection_behavior = weighted_random
+	priority = 2000
+
+	human_form = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = no_myv_wyvern value = 1.0 }
+			morph = { mode = replace gene = gene_myv_no_portrait template = normal_portrait value = 1.0 }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				AND = {
+					portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+					has_character_flag = mm_wyvern_human_form
+				}
+			}
+		}
+	}
+}

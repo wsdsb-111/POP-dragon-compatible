@@ -1,0 +1,99 @@
+mm_dragon_branch_fire = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_fire_desc }
+        triggered_desc = { trigger = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 1 } desc = trait_mm_dragon_branch_fire_creation_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_fire } desc = trait_mm_dragon_branch_fire_biological_desc }
+        desc = trait_mm_dragon_branch_fire_acquired_desc
+    } }
+    martial = 2
+    prowess = 4
+    monthly_prestige = 0.5
+}
+
+mm_dragon_branch_sea = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_sea_desc }
+        triggered_desc = { trigger = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 3 } desc = trait_mm_dragon_branch_sea_creation_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_sea } desc = trait_mm_dragon_branch_sea_biological_desc }
+        desc = trait_mm_dragon_branch_sea_acquired_desc
+    } }
+    stewardship = 2
+    diplomacy = 1
+    domicile_monthly_gold_mult = 0.03
+}
+
+mm_dragon_branch_sky = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_sky_desc }
+        triggered_desc = { trigger = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 4 } desc = trait_mm_dragon_branch_sky_creation_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_sky } desc = trait_mm_dragon_branch_sky_biological_desc }
+        desc = trait_mm_dragon_branch_sky_acquired_desc
+    } }
+    intrigue = 2
+    prowess = 3
+}
+
+mm_dragon_branch_earth = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_earth_desc }
+        triggered_desc = { trigger = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 2 } desc = trait_mm_dragon_branch_earth_creation_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_earth } desc = trait_mm_dragon_branch_earth_biological_desc }
+        desc = trait_mm_dragon_branch_earth_acquired_desc
+    } }
+    stewardship = 2
+    prowess = 2
+    general_opinion = 1
+}
+
+mm_dragon_branch_white = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_white_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_white } desc = trait_mm_dragon_branch_white_biological_desc }
+        desc = trait_mm_dragon_branch_white_acquired_desc
+    } }
+    diplomacy = 2
+    learning = 2
+    monthly_legitimacy_add = 0.1
+}
+
+mm_dragon_branch_black = {
+    icon = "mm_dragon_lineage_4.dds"
+    physical = yes
+    random_creation = 0
+    birth = 0
+    shown_in_ruler_designer = no
+    desc = { first_valid = {
+        triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_mm_dragon_branch_black_desc }
+        triggered_desc = { trigger = { has_variable = mm_dragon_bio_black } desc = trait_mm_dragon_branch_black_biological_desc }
+        desc = trait_mm_dragon_branch_black_acquired_desc
+    } }
+    martial = 2
+    intrigue = 2
+    dread_baseline_add = 3
+    general_opinion = -2
+}

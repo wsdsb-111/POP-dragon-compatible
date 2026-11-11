@@ -1,0 +1,19 @@
+mm_asc_fusion_ritual_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_asc_fusion_ritual_decision_desc
+    selection_tooltip = mm_asc_fusion_ritual_decision_tooltip
+    is_shown = { is_ai = no has_trait = mm_asc_usurper_blood NOT = { has_character_flag = mm_asc_black_trial } }
+    is_valid = { mm_asc_can_ritual = yes }
+    effect = { mm_asc_perform_ritual_effect = yes }
+    ai_check_interval = 0
+}
+
+mm_asc_change_form_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_asc_change_form_decision_desc
+    selection_tooltip = mm_asc_change_form_decision_tooltip
+    is_shown = { is_ai = no has_trait = mm_asc_dragon_body }
+    is_valid = { mm_asc_can_change_form = yes }
+    effect = { mm_asc_change_form_effect = yes }
+    ai_check_interval = 0
+}

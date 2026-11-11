@@ -1,0 +1,19 @@
+on_game_start_after_lobby = {
+	on_actions = { mm_dragon_backfill_human_features }
+}
+mm_dragon_backfill_human_features = {
+	effect = {
+		if = {
+			limit = { has_global_variable_list = myv_living_wyverns }
+			every_in_global_list = {
+				variable = myv_living_wyverns
+				limit = {
+					is_alive = yes
+					has_trait = myv_wyvern_tamed
+					has_character_flag = mm_wyvern_human_form
+				}
+				mm_dragon_initialize_features_effect = yes
+			}
+		}
+	}
+}

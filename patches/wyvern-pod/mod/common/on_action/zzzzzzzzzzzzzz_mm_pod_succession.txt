@@ -1,0 +1,22 @@
+﻿pod_leave_court = {
+	trigger = {
+        mm_dragon_is_true_dragon_parent_trigger = no
+        NOT = { employer = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+		NOT = { has_character_flag = blocked_from_leaving }
+		is_pool_character = no
+		OR = {
+			is_courtier = yes
+			is_foreign_court_or_pool_guest = yes
+		}
+	}
+	effect = {
+		move_to_pool = yes
+	}
+}
+mm_asc_load = { on_actions = { mm_pod_restore_royal_successions } }
+mm_pod_restore_royal_successions = {
+    effect = {
+        if = { limit = { has_global_variable_list = mm_asc_candidates } every_in_global_list = { variable = mm_asc_candidates limit = { mm_asc_is_candidate = yes } mm_pod_begin_royal_succession_effect = yes } }
+        if = { limit = { has_global_variable_list = mm_asc_sovereigns } every_in_global_list = { variable = mm_asc_sovereigns limit = { is_alive = yes has_trait = mm_asc_dragon_body } mm_pod_complete_royal_succession_effect = yes } }
+    }
+}

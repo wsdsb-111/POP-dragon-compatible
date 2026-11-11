@@ -1,0 +1,9 @@
+﻿l_english:
+ mm_dragon_force_hatch_decision:0 "Force an Egg to Hatch"
+ mm_dragon_force_hatch_decision_desc:0 "Hatch one owned dragon or half-dragon egg. An equipped eligible egg takes priority; otherwise choose a random eligible inventory egg. A successful hatch costs 100 gold and 250 piety. Half-dragon eggs require complete biological parent records."
+ mm_dragon_force_hatch_decision_tooltip:0 "Hatch one eligible existing egg without a hatch chance roll. Pay 100 gold and 250 piety only after success; preserve recorded parents and bloodline."
+ mm_dragon_force_hatch_decision_confirm:0 "Perform the ritual"
+ mm_dragon_repair_seed_families_decision:0 "Repair Missing Starting Bloodlines"
+ mm_dragon_repair_seed_families_decision_desc:0 "This campaign records completed initialization but has no living marked starting carrier. Distribute the five source groups among existing families and their biological descendants. Only a successful allocation counts as completion; failed attempts may be retried."
+ mm_dragon_repair_seed_families_decision_tooltip:0 "Restore starting bloodline allocation while preserving names, Houses, parents and titles."
+ mm_dragon_repair_seed_families_decision_confirm:0 "Restore the bloodlines"

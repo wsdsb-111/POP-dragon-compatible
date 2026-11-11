@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ mm_wyvern_victory_title:0 "巨龙败伏"
+ mm_wyvern_victory_desc:0 "[myv_slay_wyvern_target.GetFirstNameNoTooltip]倒在你的面前，仍在喘息。你可以结束它的生命并收集战利品，或将它俘获入笼，日后尝试驯服。"
+ mm_wyvern_victory_kill:0 "杀死它，收集战利品。"
+ mm_wyvern_victory_kill_tt:0 "保留原有屠龙奖励、随机锻造材料与龙蛋抽取，并追加龙牙、龙眼、龙鳞、龙头、龙爪五类装饰战利品。普通来源为名作级（3条随机增益），传说来源为卓越级（4条随机增益）；成功杀死传说飞龙后获得“沐浴龙血”特质。"
+ mm_wyvern_victory_capture:0 "留它一命，将它关进兽笼。"
+ mm_wyvern_victory_capture_tt:0 "不杀死飞龙，不获取尸体材料、龙蛋或屠龙者奖励。安置入可用自有兽栏，或无地冒险者的营地临时兽笼；喂养积累进度后才能尝试驯服。"
+ mm_wyvern_victory_unavailable:0 "这头飞龙已经不在我的掌控之中。"

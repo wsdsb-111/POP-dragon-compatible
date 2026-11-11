@@ -1,0 +1,10 @@
+mm_dragon_site_chengdu = { county = c_chengdu }
+mm_dragon_site_jingzhao = { county = c_jingzhao }
+mm_dragon_site_tbilisi = { county = c_tbilisi }
+mm_dragon_site_qus = { county = c_qus }
+mm_dragon_site_malta = { county = c_malta }
+mm_dragon_site_chandax = { county = c_chandax }
+mm_dragon_site_sogn = { county = c_sogn }
+mm_dragon_site_faereyar = { county = c_faereyar }
+mm_dragon_site_baghdad = { county = c_baghdad }
+mm_dragon_site_sagami = { county = c_sagami }

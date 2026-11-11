@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "出生地区文化、姓名与王族专属古龙文化",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/culture/cultures/00_syriac.txt",
+      "sha256": "af04acbdeb484ff996aacd9f435b015cb90999a1e8d4395a2ad8578b3f80062b"
+    },
+    {
+      "root": "game",
+      "path": "common/culture/innovations/00_tribal_innovations.txt",
+      "sha256": "e878e75efa1dba64557b254a68c4a1f4379ea92209bfb6821d6876db68f1f961"
+    }
+  ],
+  "updated": "2026-10-28",
+  "outputs": [
+    {
+      "path": "mod/common/culture/cultures/myv_wyvern_culture.txt",
+      "sha256": "ad94dd34cc343424ed02181e9d48815143a38636aa576ca4efa0161a87b05d3b"
+    },
+    {
+      "path": "mod/common/culture/pillars/mm_dragon_aesthetics.txt",
+      "sha256": "19fb16129df1102019eb57addafb803b52ee4b60a9e3152cc5fcf47cabb0be46"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_identity_repair.txt",
+      "sha256": "60981ef7278243485b0c4f7f6e271261fc573bf915bd62b3b2a37f7b8ea69d8c"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_regional_identity.txt",
+      "sha256": "cc59196fd0a59bd7def38a9bdc7eb3fd7827da96a7099c89b00b850bdaeac1ae"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_dragon_natural_spawn.txt",
+      "sha256": "75b4f3926d3723266b5fbe1661a1a825eaea7618bbaeee575827dedbf9881364"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzz_mm_dragon_tamed_creation.txt",
+      "sha256": "b8a0c0667786afcddcc8b0ac57f3993e2dcf1b3918f4b1591aac2d4ee036348a"
+    },
+    {
+      "path": "mod/common/scripted_guis/zzzzzzzzzz_mm_dragon_name_gui.txt",
+      "sha256": "a484dc45ed4b606cdfafd1529d8cb00aff28bba5327addbb27adb6bf3d8fec63"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_spawn_regions.txt",
+      "sha256": "92ea5e8cc0d76e123532da023d5d0ab276f1dd0ca03b48a775f4d04470ec9c85"
+    },
+    {
+      "path": "mod/gui/event_window_widgets/myv_wyvern_name_input.gui",
+      "sha256": "4c20325aad9c5d0b9eb1853cf507637f9deb16a911e17fddd715dae4c9e13100"
+    },
+    {
+      "path": "mod/history/cultures/myv_wyvern_culture.txt",
+      "sha256": "99590763de5a5d0e2c8cd63241c508100d3c4653aaffd2626f15e5aa35e1c130"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_culture_l_english.yml",
+      "sha256": "e31c14d51b173e9eca578f1b1eba9ecb5961692465fa37a31c14ecefe4d6179c"
+    },
+    {
+      "path": "mod/localization/replace/english/zzzz_mm_dragon_culture_l_english.yml",
+      "sha256": "7a2acef7cd0af6d2030f654349ea59ef2beb093ff9a774d487cb162b60126b0a"
+    },
+    {
+      "path": "mod/localization/replace/simp_chinese/zzzz_mm_dragon_culture_l_simp_chinese.yml",
+      "sha256": "48211d660a76b901b00213bbe012e309fc7294bc8c84a21702c06d2aff91f263"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_culture_l_simp_chinese.yml",
+      "sha256": "6aaa6164594f3d5dcaac0f5670080e4546bca23164a5f5bcbaf118c93c9ab859"
+    }
+  ]
+}

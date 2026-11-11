@@ -1,0 +1,7 @@
+mm_dragon_wild_population_protected_trigger = {
+    OR = { mm_royal_is_king = yes has_character_flag = mm_royal_initial_descendant }
+}
+mm_dragon_wild_not_twin_trigger = {
+    NOT = { has_relation_mm_dragon_twin = $OTHER$ }
+    $OTHER$ = { NOT = { has_relation_mm_dragon_twin = prev } }
+}

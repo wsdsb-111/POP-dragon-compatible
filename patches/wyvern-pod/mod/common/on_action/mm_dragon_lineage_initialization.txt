@@ -1,0 +1,29 @@
+﻿on_game_start_after_lobby = { on_actions = { mm_dragon_seed_initialize_campaign mm_pod_queue_load_integration mm_dragon_register_known_true_sources } }
+mm_dragon_seed_initialize_campaign = {
+    effect = {
+        if = {
+            limit = { NOT = { has_global_variable = mm_pod_mokole_cohort_initialized } }
+            mm_royal_bootstrap_effect = yes
+            every_living_character = { limit = { has_trait = mokole } add_character_flag = mm_pod_initial_cohort_candidate mm_pod_seed_mokole_effect = yes remove_character_flag = mm_pod_initial_cohort_candidate }
+            set_global_variable = { name = mm_pod_mokole_cohort_initialized value = yes }
+            set_global_variable = { name = mm_lineage_families_initialized_v132 value = yes }
+            set_global_variable = { name = mm_dragon_seed_families_confirmed_v1322 value = yes }
+            remove_global_variable = mm_dragon_seed_new_campaign_pending
+        }
+    }
+}
+mm_dragon_register_known_true_sources = {
+    effect = { if = { limit = { has_global_variable_list = myv_living_wyverns } every_in_global_list = { variable = myv_living_wyverns mm_dragon_register_true_dragon_origins_effect = yes } } }
+}
+mm_pod_queue_load_integration = { effect = { trigger_event = { on_action = mm_pod_population_integration days = 1 } } }
+mm_pod_population_integration = {
+    effect = {
+        every_living_character = {
+            limit = { mm_pod_has_dragon_blood = yes }
+            mm_pod_integrate_species_effect = yes
+            if = { limit = { has_trait = mokole is_ai = no NOT = { exists = mother } NOT = { exists = father } NOR = { this = character:795111 this = character:795113 this = character:795205 this = character:795206 this = character:795207 this = character:795114 this = character:795115 this = character:795116 this = character:795202 this = character:795208 this = character:795209 this = character:795210 this = character:795236 this = character:795243 this = character:795108 this = character:793509 this = character:795203 this = character:795204 this = character:795231 this = character:795234 this = character:795235 this = character:795237 this = character:795238 this = character:795239 this = character:795240 this = character:795211 this = character:795242 this = character:795107 this = character:795112 this = character:795232 this = character:795201 this = character:795241 this = character:795110 this = character:795233 this = character:795109 this = character:795271 this = character:795212 } NOT = { has_character_flag = mm_pod_initial_rank_assigned } } mm_pod_seed_mokole_effect = yes }
+            if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } mm_dragon_register_true_dragon_origins_effect = yes myv_refresh_wyvern_prowess_effect = yes }
+            if = { limit = { has_trait = mokole has_character_flag = mm_pod_initial_rank_assigned NOT = { has_character_flag = mm_pod_initial_source_assigned } } mm_pod_seed_source_effect = yes }
+        }
+    }
+}

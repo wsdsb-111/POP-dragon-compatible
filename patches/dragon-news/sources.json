@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "sourceRoots": {
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_notification_effects.txt",
+      "sha256": "181900bfb4596d24c097190046af3b8394f1efeb41ecb7e398a1c5dcec23cd4b"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+      "sha256": "cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/scripted_effects/myv_wyvern_notification_effects.txt",
+      "sha256": "5f39a6b3368bcfae8a9439716e7893d1eee701e715d754221e4c91b14d9809fc"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_dragon_raid_effects.txt",
+      "sha256": "5ee5b5ac07005568e52ef566270c42b108a21c305568b6cb71b2d3553626aff8"
+    }
+  ],
+  "updated": "2026-10-28"
+}

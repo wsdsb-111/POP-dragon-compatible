@@ -1,0 +1,244 @@
+﻿mm_royal_dragon_king = {
+    icon = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { NOT = { exists = this } }
+                desc = "mm_dragon_royal_crown.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 1 }
+                desc = "mm_royal_fire.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 2 }
+                desc = "mm_royal_earth.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 3 }
+                desc = "mm_royal_sea.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 4 }
+                desc = "mm_royal_sky.dds"
+            }
+            desc = "mm_dragon_royal_crown.dds"
+        }
+    }
+    physical = yes
+    opposites = { mm_royal_complete mm_royal_white_empress mm_royal_black_emperor }
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = is_immortal
+    flag = immortal_visuals
+    flag = immortal_incapability
+    flag = immune_to_disease
+    elderly_health = 666
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { NOT = { exists = this } }
+                desc = trait_mm_royal_dragon_king_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 1 }
+                desc = trait_mm_royal_fire_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 2 }
+                desc = trait_mm_royal_earth_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 3 }
+                desc = trait_mm_royal_sea_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 4 }
+                desc = trait_mm_royal_sky_desc
+            }
+            desc = trait_mm_royal_dragon_king_desc
+        }
+    }
+    prowess = 100
+    martial = 40
+    monthly_prestige = 15
+    monthly_legitimacy_add = 3
+    domicile_monthly_gold_mult = 0.3
+    health = 25
+    general_opinion = 15
+    attraction_opinion = 25
+    character_travel_speed = 0.2
+    dread_baseline_add = 40
+    enemy_hard_casualty_modifier = 0.3
+    movement_speed = 0.15
+    max_combat_roll = 4
+    siege_phase_time = -0.3
+    advantage = 10
+}
+
+mm_royal_complete = {
+    icon = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { NOT = { exists = this } }
+                desc = "mm_dragon_royal_crown.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 1 }
+                desc = "mm_royal_fire.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 2 }
+                desc = "mm_royal_earth.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 3 }
+                desc = "mm_royal_sea.dds"
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 4 }
+                desc = "mm_royal_sky.dds"
+            }
+            desc = "mm_dragon_royal_crown.dds"
+        }
+    }
+    physical = yes
+    opposites = { mm_royal_dragon_king mm_royal_white_empress mm_royal_black_emperor }
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = is_immortal
+    flag = immortal_visuals
+    flag = immortal_incapability
+    flag = immune_to_disease
+    elderly_health = 666
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { NOT = { exists = this } }
+                desc = trait_mm_royal_complete_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 1 }
+                desc = trait_mm_royal_fire_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 2 }
+                desc = trait_mm_royal_earth_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 3 }
+                desc = trait_mm_royal_sea_desc
+            }
+            triggered_desc = {
+                trigger = { has_variable = mm_royal_throne var:mm_royal_throne = 4 }
+                desc = trait_mm_royal_sky_desc
+            }
+            desc = trait_mm_royal_complete_desc
+        }
+    }
+    prowess = 150
+    martial = 60
+    monthly_prestige = 25
+    monthly_legitimacy_add = 5
+    domicile_monthly_gold_mult = 0.5
+    health = 40
+    general_opinion = 25
+    attraction_opinion = 30
+    character_travel_speed = 0.3
+    dread_baseline_add = 60
+    enemy_hard_casualty_modifier = 0.4
+    movement_speed = 0.25
+    max_combat_roll = 6
+    siege_phase_time = -0.4
+    advantage = 20
+}
+
+mm_royal_white_empress = {
+    icon = "mm_white_empress.dds"
+    physical = yes
+    opposites = { mm_royal_dragon_king mm_royal_complete mm_royal_black_emperor }
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = is_immortal
+    flag = immortal_visuals
+    flag = immortal_incapability
+    flag = immune_to_disease
+    elderly_health = 666
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_white_empress_desc
+    prowess = 250
+    martial = 80
+    monthly_prestige = 40
+    monthly_legitimacy_add = 8
+    domicile_monthly_gold_mult = 0.8
+    health = 75
+    general_opinion = 35
+    attraction_opinion = 40
+    character_travel_speed = 0.4
+    dread_baseline_add = 80
+    enemy_hard_casualty_modifier = 0.5
+    movement_speed = 0.3
+    max_combat_roll = 8
+    siege_phase_time = -0.5
+    advantage = 25
+}
+
+mm_royal_black_emperor = {
+    icon = "mm_black_emperor.dds"
+    physical = yes
+    opposites = { mm_royal_dragon_king mm_royal_complete mm_royal_white_empress }
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = is_immortal
+    flag = immortal_visuals
+    flag = immortal_incapability
+    flag = immune_to_disease
+    elderly_health = 666
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_black_emperor_desc
+    prowess = 300
+    martial = 100
+    monthly_prestige = 50
+    monthly_legitimacy_add = 10
+    domicile_monthly_gold_mult = 1
+    health = 100
+    general_opinion = 40
+    attraction_opinion = 40
+    character_travel_speed = 0.5
+    dread_baseline_add = 100
+    enemy_hard_casualty_modifier = 0.6
+    movement_speed = 0.4
+    max_combat_roll = 10
+    siege_phase_time = -0.6
+    advantage = 30
+}
+
+mm_royal_torpor = {
+    icon = "mm_dragon_torpor.dds"
+    physical = yes
+    incapacitating = yes
+    diplomacy_mult = -1
+    martial_mult = -1
+    stewardship_mult = -1
+    intrigue_mult = -1
+    learning_mult = -1
+    prowess_mult = -1
+    can_have_children = no
+    disables_combat_leadership = yes
+    inheritance_blocker = all
+    claim_inheritance_blocker = all
+    ai_energy = -100
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = mm_royal_torpor_desc
+}

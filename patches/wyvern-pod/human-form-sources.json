@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-02",
+  "sourceRoot": "E:\\Documents\\Paradox Interactive\\Crusader Kings III\\mod\\VOTC_Three_Mod_Character_Name_Compatibility",
+  "sourceFiles": [
+    {
+      "root": "installed",
+      "path": "gfx/portraits/trait_portrait_modifiers/myv_wyvern_trait_portrait_modifiers.txt",
+      "sha256": "e44e7757831f61e5412559d24aea848e323bd5cfe3affc8e7b685083f7fa1091"
+    },
+    {
+      "root": "installed",
+      "path": "gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt",
+      "sha256": "16fbd92db552c41cf2da74c0972352c24d562c0a04f6051a43b951abcb456804"
+    },
+    {
+      "root": "installed",
+      "path": "gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt",
+      "sha256": "dbe3c30e0a27a3b0b1ff92677584d46aae955653b2a978230755b572dfd4f732"
+    },
+    {
+      "root": "installed",
+      "path": "gfx/portraits/portrait_modifiers/mm_wyvern_human_form_portrait.txt",
+      "sha256": "85e2fd583c9f67121f86d083cc0c694a86a4046a797029b6fa3f6ddf247acb33"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-kings/mod/common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "sha256": "1a48475f3ebe8329fef35526f87996debcf7fe8f88194594e5575540a1da8b5b"
+    },
+    {
+      "root": "installed",
+      "path": "common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "sha256": "a99ab3aff0ecb19cdc7f3ef4443b0ac176fb1438d0eae570f47c44126ce9dfff"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "gfx/portraits/trait_portrait_modifiers/myv_wyvern_trait_portrait_modifiers.txt",
+      "sha256": "e44e7757831f61e5412559d24aea848e323bd5cfe3affc8e7b685083f7fa1091"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt",
+      "sha256": "16fbd92db552c41cf2da74c0972352c24d562c0a04f6051a43b951abcb456804"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt",
+      "sha256": "dbe3c30e0a27a3b0b1ff92677584d46aae955653b2a978230755b572dfd4f732"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_wyvern_human_form_portrait.txt",
+      "sha256": "85e2fd583c9f67121f86d083cc0c694a86a4046a797029b6fa3f6ddf247acb33"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "sha256": "977eb7e9297d3e3a514c1f917003d5481ac1d2eabad2e5854f138f0adacf0931"
+    }
+  ],
+  "notes": [
+    "Carry the user-confirmed installed human-form correction into the new profile; the existing Oriental installation is untouched.",
+    "Use the same-path MYV portrait overrides and one on_send interaction definition; exclude the old duplicate portrait and interaction declarations."
+  ]
+}

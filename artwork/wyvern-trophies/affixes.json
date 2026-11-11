@@ -1,0 +1,68 @@
+{
+  "source": "game/common/modifiers/00_artifact_modifiers.txt",
+  "sourceSha256": "06495c2f0b39634895f9587a4f3fb26725183d913851d4ea1ec6f4d3b8efe059",
+  "famed": 3,
+  "illustrious": 4,
+  "pool": [
+    {
+      "category": "prowess",
+      "famed": "artifact_prowess_3_modifier",
+      "illustrious": "artifact_prowess_5_modifier"
+    },
+    {
+      "category": "knight_effectiveness",
+      "famed": "artifact_knight_effectiveness_5_modifier",
+      "illustrious": "artifact_knight_effectiveness_8_modifier"
+    },
+    {
+      "category": "health",
+      "famed": "artifact_health_gain_2_modifier",
+      "illustrious": "artifact_health_gain_4_modifier"
+    },
+    {
+      "category": "prestige",
+      "famed": "artifact_monthly_prestige_3_modifier",
+      "illustrious": "artifact_monthly_prestige_5_modifier"
+    },
+    {
+      "category": "piety",
+      "famed": "artifact_monthly_piety_3_modifier",
+      "illustrious": "artifact_monthly_piety_5_modifier"
+    },
+    {
+      "category": "grandeur",
+      "famed": "artifact_court_grandeur_baseline_add_2_modifier",
+      "illustrious": "artifact_court_grandeur_baseline_add_3_modifier"
+    },
+    {
+      "category": "dread",
+      "famed": "artifact_dread_baseline_add_2_modifier",
+      "illustrious": "artifact_dread_baseline_add_3_modifier"
+    },
+    {
+      "category": "stress",
+      "famed": "artifact_stress_gain_3_modifier",
+      "illustrious": "artifact_stress_gain_4_modifier"
+    },
+    {
+      "category": "income",
+      "famed": "artifact_monthly_income_3_modifier",
+      "illustrious": "artifact_monthly_income_4_modifier"
+    },
+    {
+      "category": "dynasty_opinion",
+      "famed": "artifact_dynasty_opinion_4_modifier",
+      "illustrious": "artifact_dynasty_opinion_5_modifier"
+    },
+    {
+      "category": "short_reign",
+      "famed": "artifact_short_reign_duration_mult_3_modifier",
+      "illustrious": "artifact_short_reign_duration_mult_5_modifier"
+    },
+    {
+      "category": "renown",
+      "famed": "artifact_monthly_dynasty_prestige_2_modifier",
+      "illustrious": "artifact_monthly_dynasty_prestige_4_modifier"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+﻿l_english:
+ mm_asc_black_blood_trial_decision:0 "Gather the Four Bloods"
+ mm_asc_black_blood_trial_decision_desc:0 "Consume one ordinary dragon-blood material from each throne. Erosion rises by 10 yearly. The existing annual ritual costs 250 gold, 250 piety and 100 prestige and adds 20 fusion. Fusion reaching 100 first grants first-generation blood sourced solely to the Black Emperor. Erosion reaching 100 first turns you into a Death Servant. This grants no imperial identity, throne or dragon body, and preserves actual parents and House."
+ mm_asc_black_blood_trial_decision_tooltip:0 "Consume four blood materials to begin the irreversible trial."
+ mm_black_trial.1.t:0 "Four Bloods Awaken"
+ mm_black_trial.1.desc:0 "The four materials have been consumed. Erosion and fusion now race within my black blood. I must preserve myself through the annual fusion ritual, or fall into mindless servitude."
+ mm_black_trial.1.a:0 "I will master this power."
+ mm_black_trial.2.t:0 "Blood of the Black Emperor"
+ mm_black_trial.2.desc:0 "Fusion has won. My black blood has become first-generation blood sourced to the Black Emperor. My name, House and true parents remain my own. I inherit blood, not his throne or identity."
+ mm_black_trial.2.a:0 "The progenitor's blood is mine."
+ mm_asc_black_blood_fusion_decision:0 "Perform the Black Blood Fusion Ritual"
+ mm_asc_black_blood_fusion_decision_desc:0 "Once per calendar year, pay 250 gold, 250 piety and 100 prestige to gain 20 fusion. Fusion reaching 100 first grants first-generation blood sourced to the Black Emperor; erosion reaching 100 first turns you into a Death Servant. No imperial throne or dragon body is granted."
+ mm_asc_black_trial_blood_desc:0 "The four ordinary dragon bloods have entered your Black Blood. Erosion rises by 10 yearly; each annual fusion ritual grants 20 fusion. Fusion at 100 grants first-generation blood sourced to the Black Emperor. Erosion at 100 turns you into a Death Servant."

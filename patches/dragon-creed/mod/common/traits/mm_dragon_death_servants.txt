@@ -1,0 +1,22 @@
+mm_dragon_death_servant = {
+    icon = "mm_dragon_death_servant.dds"
+    physical = yes
+    prowess = 70
+    martial = 20
+    diplomacy = -20
+    health = 8
+    attraction_opinion = -50
+    general_opinion = -60
+    natural_dread = 50
+    stress_gain_mult = -1
+    can_have_children = no
+    incapacitating = yes
+    flag = can_not_marry
+    disables_combat_leadership = yes
+    ai_boldness = 100
+    ai_compassion = -100
+    ai_rationality = -100
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+}

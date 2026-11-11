@@ -1,0 +1,22 @@
+# on_death runs while the victim is about to die, with a known killer when available.
+on_death = { on_actions = { mm_v1312_fire_dynasty_criminal_killed } }
+mm_v1312_fire_dynasty_criminal_killed = {
+    effect = {
+        if = {
+            limit = {
+                exists = scope:killer
+                scope:killer != root
+                exists = root.dynasty
+                exists = scope:killer.dynasty
+                dynasty = scope:killer.dynasty
+                NOT = { has_trait = mm_dragon_death_servant }
+                scope:killer = { is_alive = yes rite = rite:mm_dragon_fire }
+                OR = {
+                    scope:killer = { has_imprisonment_reason = root }
+                    has_any_criminal_trait_in_rite_trigger = { CHARACTER = root RITE = scope:killer.rite }
+                }
+            }
+            scope:killer = { dynasty = { add_dynasty_prestige = 200 } change_spiritual_fulfillment = 10 }
+        }
+    }
+}

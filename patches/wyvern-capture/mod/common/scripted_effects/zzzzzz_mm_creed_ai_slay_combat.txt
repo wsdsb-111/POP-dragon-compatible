@@ -1,0 +1,43 @@
+# AI combat overrides preserve the upstream outcome flow; intentional final strikes remain unchanged.
+myv_wyvern_ai_slay_receive_hit_effect = {
+ myv_slay_resolve_wyvern_hit_effect = yes
+ if = {
+  limit = { var:myv_slay_wyvern_result = 3 }
+  add_character_flag = myv_wyvern_ai_slay_finished
+  myv_slay_reset_state_effect = yes
+  mm_creed_earth_wyvern_hunter_death_effect = yes
+ }
+ else_if = {
+  limit = { var:myv_slay_wyvern_result = 2 }
+  if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 add_trait = wounded_3 }
+  else_if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 add_trait = wounded_2 }
+  else_if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_2 }
+  add_prestige = -100
+  add_character_flag = myv_wyvern_ai_slay_finished
+ }
+ else = { add_trait = wounded_1 add_prestige = -50 }
+}
+
+myv_wyvern_ai_slay_final_strike_effect = {
+ add_character_flag = myv_wyvern_ai_slay_finished
+ remove_variable = myv_slay_wyvern_result
+ random = { chance = myv_slay_final_strike_chance set_variable = { name = myv_slay_wyvern_result value = 1 } }
+ if = {
+  limit = { var:myv_slay_wyvern_result = 1 }
+  add_prestige = 500
+  myv_slay_create_trophy_effect = yes
+  myv_slay_reset_state_effect = yes
+  scope:myv_slay_wyvern_target = {
+   if = {
+    limit = { myv_is_living_wild_wyvern = yes }
+    death = { death_reason = death_myv_wyvern_slain killer = root }
+    root = { myv_grant_wyvern_slayer_reward_effect = yes }
+   }
+  }
+ }
+ else = {
+  myv_slay_reset_state_effect = yes
+  mm_creed_earth_wyvern_hunter_death_effect = yes
+ }
+}
+

@@ -1,0 +1,24 @@
+# Fallbacks keep bloodline usable without the optional kings/ascension modules.
+mm_dragon_is_royal_parent_trigger = { always = no }
+# Ascension may authorize its actual autonomous successor, never a borrowed body.
+mm_dragon_is_independent_royal_parent_trigger = { always = no }
+mm_dragon_is_true_dragon_parent_trigger = {
+    OR = { has_trait = myv_wyvern has_trait = myv_wyvern_tamed has_trait = myv_wyvern_legendary mm_dragon_is_royal_parent_trigger = yes }
+}
+mm_dragon_has_inheritable_blood_trigger = { mm_dragon_is_true_dragon_parent_trigger = no OR = { has_trait = mm_dragon_half has_trait = mm_dragon_lineage_1 has_trait = mm_dragon_lineage_2 has_trait = mm_dragon_lineage_3 has_trait = mm_dragon_lineage_4 has_trait = mm_dragon_black_blood } }
+mm_dragon_has_blood_trigger = { OR = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } }
+mm_dragon_lineage_seed_available_trigger = { always = no }
+mm_dragon_breeding_dragon_available_trigger = { always = yes }
+mm_dragon_source_is_fire_trigger = { always = no }
+mm_dragon_source_is_sea_trigger = { always = no }
+mm_dragon_source_is_sky_trigger = { always = no }
+mm_dragon_source_is_earth_trigger = { always = no }
+mm_dragon_source_is_white_trigger = { always = no }
+mm_dragon_source_is_black_trigger = { always = no }
+
+mm_dragon_source_has_defined_branch_trigger = {
+    OR = { mm_dragon_source_is_fire_trigger = yes mm_dragon_source_is_sea_trigger = yes mm_dragon_source_is_sky_trigger = yes mm_dragon_source_is_earth_trigger = yes mm_dragon_source_is_white_trigger = yes mm_dragon_source_is_black_trigger = yes }
+}
+mm_dragon_source_has_usable_branch_trigger = {
+    OR = { mm_dragon_source_has_defined_branch_trigger = yes has_variable = mm_dragon_bio_fire has_variable = mm_dragon_bio_sea has_variable = mm_dragon_bio_sky has_variable = mm_dragon_bio_earth has_variable = mm_dragon_bio_white has_variable = mm_dragon_bio_black }
+}

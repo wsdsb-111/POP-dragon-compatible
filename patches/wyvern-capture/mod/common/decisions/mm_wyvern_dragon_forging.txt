@@ -1,0 +1,24 @@
+mm_wyvern_forge_dragon_treasures_decision = {
+  decision_group_type = major
+  desc = mm_wyvern_forge_dragon_treasures_decision_desc
+  selection_tooltip = mm_wyvern_forge_dragon_treasures_decision_tooltip
+  picture = { reference = "gfx/interface/illustrations/decisions/decision_smith.dds" }
+  is_shown = {
+    is_ai = no
+    any_character_artifact = {
+      OR = { has_variable = mm_wyvern_material_kind has_variable = mm_wyvern_trophy_source has_variable = myv_wyvern_scale_material }
+    }
+  }
+  is_valid = {
+    is_alive = yes
+    custom_description = {
+      text = mm_wyvern_dragon_forging.requirements
+      OR = { mm_wyvern_sword_recipe_available_trigger = yes mm_wyvern_bow_recipe_available_trigger = yes }
+    }
+  }
+  effect = {
+    custom_tooltip = mm_wyvern_dragon_forging.open
+    hidden_effect = { trigger_event = mm_wyvern_dragon_forging.0001 }
+  }
+  ai_check_interval = 0
+}

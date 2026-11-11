@@ -1,0 +1,25 @@
+﻿on_game_start_after_lobby = { on_actions = { mm_dragon_creed_repair_v1311 } }
+mm_dragon_creed_repair_v1311 = {
+    effect = {
+        mm_v1313_repair_saved_creed_effect = yes
+        every_living_character = { mm_dragon_route_creed_effect = yes mm_v1313_migrate_legacy_character_effect = yes mm_v1314_migrate_split_character_effect = yes if = { limit = { faith = faith:mm_dragon_creed } mm_v1314_refresh_doctrine_modifiers_effect = yes } }
+        every_county = { mm_v1313_migrate_legacy_county_effect = yes mm_v1314_migrate_split_county_effect = yes }
+    }
+}
+
+on_birth_child = { on_actions = { mm_dragon_creed_birth_v1311 } }
+mm_dragon_creed_birth_v1311 = { effect = { scope:child = { mm_dragon_register_true_dragon_origins_effect = yes mm_dragon_inherit_natural_blood_effect = yes mm_dragon_route_creed_effect = yes } } }
+
+on_faith_conversion = { on_actions = { mm_dragon_creed_conversion_v1311 } }
+mm_dragon_creed_conversion_v1311 = { effect = { mm_dragon_route_creed_effect = yes } }
+
+myv_wyvern_monthly_pulse = { on_actions = { mm_dragon_creed_monthly_v1311 } }
+mm_dragon_creed_monthly_v1311 = {
+    effect = {
+        if = { limit = { has_global_variable_list = myv_living_wyverns } every_in_global_list = { variable = myv_living_wyverns limit = { is_alive = yes } mm_dragon_route_creed_effect = yes } }
+        if = { limit = { has_global_variable_list = mm_dragon_blood_members } every_in_global_list = { variable = mm_dragon_blood_members limit = { is_alive = yes } mm_dragon_route_creed_effect = yes } }
+    }
+}
+
+on_character_created = { on_actions = { mm_dragon_creed_created_v1313 } }
+mm_dragon_creed_created_v1313 = { effect = { mm_dragon_route_creed_effect = yes } }

@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-03",
+  "sourceFiles": [
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_splat_hostility_triggers.txt",
+      "sha256": "16025df65b79d6f5f43e39555bc6732283ba236be34586817f8e6e630394a85c"
+    },
+    {
+      "root": "pod",
+      "path": "common/on_action/POD_vanilla_court_maintenance_on_actions.txt",
+      "sha256": "a774c420d4cdbe1ee6c4edc7ca88075def207dafab46979b932cd0ad224e8ea4"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_effects/POD_maintenance_remove_effects.txt",
+      "sha256": "4b483fd16176e6c6a3246e049a37699f7f89c3ba93c5acbe360e82bc53f7a36d"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_effects/POD_fera/POD_fera_initialization_effects.txt",
+      "sha256": "b8314d1180a1fb494504dfaf0420141a395ab40362ce215881d18abfc278a53a"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-ascension/mod/common/scripted_effects/mm_ascension_effects.txt",
+      "sha256": "b0fd837425f591ff59826c88dd467703ee71946e7c2deb1b4c20f2f1835d1216"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-ascension/mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_breeding.txt",
+      "sha256": "17a614aea6f947dbce91aeb45a2f49a1b82203328c115ce5da89918d2e0a0e16"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-ascension/mod/common/character_interactions/zzzzzzzzzz_mm_ascension_devour.txt",
+      "sha256": "adde4b001e3900288c95a2c9640f9235adda90ac43856a6760604c818f6a6bf3"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_hostility.txt",
+      "sha256": "1c95db6c368cfac562b299cdd03b23fd089d97d374ff3131a88a449556458041"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "sha256": "c0f9d44aea9ced966d5395817b5a676333f3db811694c4238b89ed5b659bef88"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "sha256": "a9b9b9301c2fe0117152fc9b32a3629e2c3fbeee083b0024223f2ab51a0fa7db"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_succession_breeding.txt",
+      "sha256": "7213f5886345856be7ea4bf7d5d28f2061739903b7f208b732dae552620c30cb"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzzzzzz_mm_pod_succession_devour.txt",
+      "sha256": "618b850af9b4662def4aabbf4ea8fc2f45f91c906d07738814e92d846f43f032"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "sha256": "0eebc91332c46fd19fff574ac7b60ee53ca93561ef19a9fdbcf30a00156fcc91"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzz_mm_pod_succession_l_simp_chinese.yml",
+      "sha256": "64f0bab4c47362ac4a910ab727f54d1d947dc7b1797d4e8161cf07aa38576e82"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzz_mm_pod_succession_l_english.yml",
+      "sha256": "41cccfc2c63a9fb70b6ac79fec6f089cb969d962935f80c868b6f319b358a833"
+    },
+    {
+      "path": "common/customizable_localization/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "sha256": "4e38d66a1d3479e3002a3cf1ef601e24694f2502375990f1ca97931d0c5e38c0"
+    }
+  ],
+  "traitHooks": [
+    "POD_remove_splat_traits_effect",
+    "POD_remove_vampire_clan_traits_effect",
+    "POD_remove_vampire_generation_traits_effect",
+    "POD_remove_vampire_discipline_traits_effect",
+    "POD_remove_vampire_predatortype_traits_effect",
+    "POD_remove_vampire_misc_traits_effect",
+    "POD_remove_hunter_traits_effect",
+    "POD_remove_mummy_traits_effect",
+    "POD_remove_wraith_traits_effect",
+    "POD_remove_wraith_arcanoi_traits_effect",
+    "POD_remove_breed_traits_effect",
+    "POD_remove_lunar_auspice_traits_effect",
+    "POD_remove_pryio_traits_effect",
+    "POD_remove_solar_auspice_traits_effect",
+    "POD_remove_demon_traits_effect",
+    "POD_remove_fae_kith_traits_effect",
+    "POD_remove_fae_art_traits_effect",
+    "POD_remove_fae_realm_traits_effect"
+  ],
+  "directTraits": [
+    "torpor",
+    "regnant",
+    "massregnant",
+    "unbondable",
+    "sire",
+    "masssire",
+    "diablerist",
+    "wight",
+    "exposed",
+    "oathbreaker",
+    "truefaith",
+    "beatific",
+    "witch",
+    "demonology",
+    "psychic",
+    "sorcerer",
+    "theurgist",
+    "gnosis",
+    "fomori",
+    "drone",
+    "gorgon",
+    "kami"
+  ],
+  "CK3Runtime": "NOT_RUN"
+}

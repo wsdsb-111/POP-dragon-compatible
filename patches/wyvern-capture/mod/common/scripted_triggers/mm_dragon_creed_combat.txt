@@ -1,0 +1,5 @@
+# Optional Dragon Creed and bloodline bridges default to inactive.
+mm_creed_is_founder_trigger = { always = no }
+mm_creed_is_death_servant_trigger = { always = no }
+mm_creed_has_biological_blood_trigger = { always = no }
+mm_creed_earth_return_eligible_trigger = { always = no }

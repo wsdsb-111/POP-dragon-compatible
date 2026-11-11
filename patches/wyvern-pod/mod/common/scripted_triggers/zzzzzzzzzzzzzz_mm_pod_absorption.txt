@@ -1,0 +1,24 @@
+﻿mm_dragon_blood_hunt_pair_trigger = {
+    scope:actor = {
+        is_alive = yes
+        age >= 18
+        mm_dragon_has_blood_trigger = yes
+        mm_dragon_is_true_dragon_parent_trigger = no
+        is_imprisoned = no
+        is_incapable = no
+        NOT = { has_variable = mm_dragon_blood_hunt_opponent }
+        can_start_single_combat_trigger = yes
+        custom_tooltip = { text = mm_dragon_blood_hunt_higher_grade_tt mm_dragon_blood_rank <= scope:recipient.mm_dragon_blood_rank }
+    }
+    scope:recipient = {
+        is_alive = yes
+        age >= 18
+        mm_dragon_has_blood_trigger = yes
+        mm_dragon_is_true_dragon_parent_trigger = no
+        is_imprisoned = no
+        is_incapable = no
+        NOT = { has_variable = mm_dragon_blood_hunt_opponent }
+        can_start_single_combat_trigger = yes
+    }
+    scope:actor != scope:recipient
+}

@@ -1,0 +1,19 @@
+{
+  "name": "黑暗亲王与飞龙兼容",
+  "version": "1.3.22",
+  "campaign": "new",
+  "gameVersionObserved": "1.20.1.2",
+  "mods": [
+    {
+      "id": "3811316052",
+      "name": "CK3 Mythical Vanilla : Wyvern",
+      "version": "0.4.0",
+      "scope": "角色面板、羁绊、功绩列表、特质轨道及服饰基因"
+    },
+    {
+      "id": "2216659254",
+      "name": "Princes of Darkness",
+      "scope": "黑暗亲王原生机制与种族兼容"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+# Reference lengths use native 0.1 m size points; masses are tonnes.
+mm_royal_reference_size = {
+    value = 0
+    if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 1 OR = { this = character:99001001 this = character:99001305 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001001 var:mm_asc_seat_anchor = character:99001305 } } } } value = 850 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 2 OR = { this = character:99001002 this = character:99001306 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001002 var:mm_asc_seat_anchor = character:99001306 } } } } value = 900 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 3 OR = { this = character:99001003 this = character:99001307 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001003 var:mm_asc_seat_anchor = character:99001307 } } } } value = 850 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 4 OR = { this = character:99001304 this = character:99001308 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001304 var:mm_asc_seat_anchor = character:99001308 } } } } value = 850 }
+    else_if = { limit = { OR = { this = character:99001001 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001001 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 1 } } } value = 750 }
+    else_if = { limit = { OR = { this = character:99001002 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001002 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 2 } } } value = 850 }
+    else_if = { limit = { OR = { this = character:99001003 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001003 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 3 } } } value = 800 }
+    else_if = { limit = { OR = { this = character:99001304 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001304 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 4 } } } value = 750 }
+    else_if = { limit = { OR = { this = character:99001305 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001305 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 1 } } } value = 800 }
+    else_if = { limit = { OR = { this = character:99001306 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001306 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 2 } } } value = 750 }
+    else_if = { limit = { OR = { this = character:99001307 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001307 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 3 } } } value = 820 }
+    else_if = { limit = { OR = { this = character:99001308 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001308 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 4 } } } value = 800 }
+    else_if = { limit = { OR = { this = character:99001309 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001309 has_trait = mm_royal_black_emperor } } } value = 1000 }
+    else_if = { limit = { OR = { this = character:99001310 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001310 has_trait = mm_royal_white_empress } } } value = 1000 }
+    else_if = { limit = { mm_royal_has_source_body_trigger = yes NOT = { OR = { has_trait = mm_royal_dragon_king has_trait = mm_royal_complete has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress } } has_variable = mm_asc_source_reference_size var:mm_asc_source_reference_size > 0 } value = var:mm_asc_source_reference_size }
+}
+
+mm_royal_reference_mass = {
+    value = 0
+    if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 1 OR = { this = character:99001001 this = character:99001305 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001001 var:mm_asc_seat_anchor = character:99001305 } } } } value = 8500 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 2 OR = { this = character:99001002 this = character:99001306 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001002 var:mm_asc_seat_anchor = character:99001306 } } } } value = 9000 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 3 OR = { this = character:99001003 this = character:99001307 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001003 var:mm_asc_seat_anchor = character:99001307 } } } } value = 7500 }
+    else_if = { limit = { has_trait = mm_royal_complete has_variable = mm_royal_throne var:mm_royal_throne = 4 OR = { this = character:99001304 this = character:99001308 AND = { exists = var:mm_asc_seat_anchor OR = { var:mm_asc_seat_anchor = character:99001304 var:mm_asc_seat_anchor = character:99001308 } } } } value = 3500 }
+    else_if = { limit = { OR = { this = character:99001001 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001001 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 1 } } } value = 8000 }
+    else_if = { limit = { OR = { this = character:99001002 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001002 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 2 } } } value = 7500 }
+    else_if = { limit = { OR = { this = character:99001003 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001003 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 3 } } } value = 6500 }
+    else_if = { limit = { OR = { this = character:99001304 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001304 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 4 } } } value = 2000 }
+    else_if = { limit = { OR = { this = character:99001305 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001305 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 1 } } } value = 8500 }
+    else_if = { limit = { OR = { this = character:99001306 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001306 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 2 } } } value = 1750 }
+    else_if = { limit = { OR = { this = character:99001307 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001307 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 3 } } } value = 2750 }
+    else_if = { limit = { OR = { this = character:99001308 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001308 has_trait = mm_royal_dragon_king has_variable = mm_royal_throne var:mm_royal_throne = 4 } } } value = 2750 }
+    else_if = { limit = { OR = { this = character:99001309 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001309 has_trait = mm_royal_black_emperor } } } value = 12500 }
+    else_if = { limit = { OR = { this = character:99001310 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001310 has_trait = mm_royal_white_empress } } } value = 10000 }
+    else_if = { limit = { mm_royal_has_source_body_trigger = yes NOT = { OR = { has_trait = mm_royal_dragon_king has_trait = mm_royal_complete has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress } } has_variable = mm_asc_source_reference_mass var:mm_asc_source_reference_mass > 0 } value = var:mm_asc_source_reference_mass }
+}
+
+# A source profile remains fixed while actual mass follows the cube of length.
+mm_wyvern_mass_size = { value = myv_wyvern_display_size min = 1 }
+
+mm_wyvern_mass_tonnes = {
+    value = mm_wyvern_mass_size
+    divide = 300
+    multiply = mm_wyvern_mass_size
+    divide = 300
+    multiply = mm_wyvern_mass_size
+    divide = 300
+    multiply = 100
+    if = { limit = { has_trait = myv_wyvern_physique_weak } multiply = 0.85 }
+    else_if = { limit = { has_trait = myv_wyvern_physique_powerful } multiply = 1.15 }
+    if = {
+        limit = { mm_royal_reference_size > 0 mm_royal_reference_mass > 0 }
+        value = mm_wyvern_mass_size
+        divide = mm_royal_reference_size
+        multiply = mm_wyvern_mass_size
+        divide = mm_royal_reference_size
+        multiply = mm_wyvern_mass_size
+        divide = mm_royal_reference_size
+        multiply = mm_royal_reference_mass
+    }
+}
+
+# Preserve the native threshold curve unless an actual source body has a snapshot.
+myv_wyvern_visual_size_tier = {
+    value = 10
+    if = { limit = { has_variable = mm_royal_visual_tier } value = var:mm_royal_visual_tier }
+    else_if = { limit = { myv_wyvern_display_size < 30 } value = 0 }
+    else_if = { limit = { myv_wyvern_display_size < 60 } value = 1 }
+    else_if = { limit = { myv_wyvern_display_size < 90 } value = 2 }
+    else_if = { limit = { myv_wyvern_display_size < 120 } value = 3 }
+    else_if = { limit = { myv_wyvern_display_size < 150 } value = 4 }
+    else_if = { limit = { myv_wyvern_display_size < 180 } value = 5 }
+    else_if = { limit = { myv_wyvern_display_size < 210 } value = 6 }
+    else_if = { limit = { myv_wyvern_display_size < 240 } value = 7 }
+    else_if = { limit = { myv_wyvern_display_size < 270 } value = 8 }
+    else_if = { limit = { myv_wyvern_display_size < 300 } value = 9 }
+}

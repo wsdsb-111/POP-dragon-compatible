@@ -1,0 +1,9 @@
+mm_ritual_select_sacrifice_interaction = {
+    category = interaction_category_friendly
+    common_interaction = yes
+    auto_accept = yes
+    desc = mm_ritual_select_sacrifice_desc
+    is_shown = { scope:actor = { is_ai = no mm_royal_player_available = yes } scope:recipient = { myv_is_living_wyvern = yes mm_royal_is_king = no } }
+    is_valid_showing_failures_only = { scope:recipient = { mm_ritual_sacrifice_valid = { OWNER = scope:actor } } }
+    on_accept = { scope:actor = { if = { limit = { scope:recipient = { mm_ritual_sacrifice_valid = { OWNER = scope:actor } } } set_variable = { name = mm_ritual_selected_sacrifice value = scope:recipient } } } }
+}

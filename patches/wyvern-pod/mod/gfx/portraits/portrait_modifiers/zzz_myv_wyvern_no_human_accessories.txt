@@ -1,0 +1,50 @@
+﻿myv_wyvern_no_human_accessories = {
+	usage = game
+	selection_behavior = weighted_random
+	# Run after ordinary outfit and appearance passes so they cannot restore
+	# collapsed human geometry or append a later accessory.
+	priority = 1000
+
+	no_human_accessories = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			# The trait modifier owns the single no_portrait morph. Keeping it out
+			# of this weighted pass prevents two hide genes from deforming the body.
+			morph = { mode = replace gene = complexion template = complexion_no_face value = 1.0 }
+			morph = { mode = replace gene = gene_age template = no_aging value = 1.0 }
+			morph = { mode = replace gene = gene_eyebrows_shape template = no_eyebrows value = 1.0 }
+			morph = { mode = replace gene = gene_eyebrows_fullness template = no_eyebrows value = 1.0 }
+
+			# CK3 special accessory genes only accept add. Because this group runs at
+			# priority 1000, these empty templates are appended after normal outfit
+			# selection and suppress the corresponding human geometry.
+			accessory = { mode = add gene = clothes template = myv_no_clothes_forced range = { 0 1 } }
+			accessory = { mode = add gene = legwear template = no_legwear range = { 0 1 } }
+			accessory = { mode = add gene = cloaks template = no_cloak range = { 0 1 } }
+			accessory = { mode = add gene = headgear template = no_headgear range = { 0 1 } }
+			accessory = { mode = add gene = props_left template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = props_right template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = animated_props template = no_props range = { 0 1 } }
+			accessory = { mode = add gene = hairstyles template = no_hairstyles range = { 0 1 } }
+			accessory = { mode = add gene = beards template = no_beard range = { 0 1 } }
+			accessory = { mode = replace gene = eye_accessory template = no_eyes value = 1.0 }
+			accessory = { mode = replace gene = eyelashes_accessory template = no_eyelashes value = 1.0 }
+			accessory = { mode = replace gene = teeth_accessory template = no_teeth value = 1.0 }
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				AND = {
+					NOT = { has_character_flag = mm_wyvern_human_form }
+					OR = {
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+					}
+				}
+			}
+		}
+	}
+}

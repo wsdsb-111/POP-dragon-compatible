@@ -1,0 +1,3189 @@
+{
+  "version": "1.3.22",
+  "campaign": "new",
+  "profile": "wyvern-pod",
+  "folder": "VOTC_Wyvern_POD_Compatibility",
+  "modules": [
+    "wyvern",
+    "wyvern-capture",
+    "wyvern-human-form",
+    "wyvern-bloodline",
+    "wyvern-kings",
+    "wyvern-ascension",
+    "dragon-creed",
+    "dragon-culture",
+    "dragon-politics",
+    "dragon-bond",
+    "dragon-recovery",
+    "dragon-death-servants",
+    "dragon-news",
+    "dragon-map-performance",
+    "dragon-ritual",
+    "dragon-relics",
+    "character-preservation"
+  ],
+  "dependencies": [
+    "3811316052",
+    "2216659254"
+  ],
+  "files": [
+    {
+      "path": "common/artifacts/blueprints/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 1992,
+      "sha256": "84bbb11f38f93d11fc714494150ae54bb8c2ab39923530ee3e3f95507a6ac338"
+    },
+    {
+      "path": "common/artifacts/blueprints/mm_wyvern_dragon_court_weapons.txt",
+      "source": "wyvern-capture",
+      "bytes": 5023,
+      "sha256": "b0eb1de7f4aef1e3a9a08571802ae05b8d00ba68b155741e2913a58493ccd1e5"
+    },
+    {
+      "path": "common/artifacts/templates/zzzz_mm_pod_dragon_relic_templates.txt",
+      "source": "wyvern-pod",
+      "bytes": 43517,
+      "sha256": "41091bc4d3d1a2338746495b262a32536edb8f0350119def2e9e908490f5b5c8"
+    },
+    {
+      "path": "common/artifacts/types/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 1749,
+      "sha256": "43b0c09b60d9fbb9b4aa0f1dc3bc3d536f06d48734e7c50efb0d3b4583805de8"
+    },
+    {
+      "path": "common/artifacts/visuals/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 2968,
+      "sha256": "eda5866c6c733078dad02b513183da584647e30e79325bbb2b39ab32ec1d75ba"
+    },
+    {
+      "path": "common/artifacts/visuals/mm_wyvern_dragon_court_weapons.txt",
+      "source": "wyvern-capture",
+      "bytes": 265,
+      "sha256": "7a54506eae054394e5e67dcf6685677a95d5788cd0ddf928abc436bbf788e1e2"
+    },
+    {
+      "path": "common/artifacts/visuals/mm_wyvern_dragon_weapons.txt",
+      "source": "wyvern-capture",
+      "bytes": 250,
+      "sha256": "f077e906c6b217e93fcf6faf44d61f5a2c4bcaa95bef5b5f6a43af6394dcf17b"
+    },
+    {
+      "path": "common/artifacts/visuals/mm_wyvern_personal_materials.txt",
+      "source": "wyvern-capture",
+      "bytes": 310,
+      "sha256": "9b4aed8f8482373f5064f6cfa4f2e4f847c9847066b08e4e62a2c9a4e4ce7a55"
+    },
+    {
+      "path": "common/artifacts/visuals/mm_wyvern_trophies.txt",
+      "source": "wyvern-capture",
+      "bytes": 757,
+      "sha256": "d520f2b14aea4b4acf7b3c03e5b2febddf712ecf24de1672803fe67e22f046dc"
+    },
+    {
+      "path": "common/casus_belli_types/mm_relic_storm_kingdom.txt",
+      "source": "dragon-relics",
+      "bytes": 8318,
+      "sha256": "1e36667696a1dbfec72f80cfbe081221f5a4fac5f4974dc58a05328107a60a47"
+    },
+    {
+      "path": "common/casus_belli_types/zzzz_mm_pod_dragon_creed_religious_wars.txt",
+      "source": "wyvern-pod",
+      "bytes": 49888,
+      "sha256": "3b3c7665f5471e1e750e1f14eb44537837382faf032cf76f1e50b6223a9f5a1a"
+    },
+    {
+      "path": "common/character_interactions/mm_dragon_blood_hunt.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1423,
+      "sha256": "5549886df9b8e6597e7d616f327646b3ac9c3a00d5e8c4cc251d62a480afb2f6"
+    },
+    {
+      "path": "common/character_interactions/mm_dragon_breeding.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 7097,
+      "sha256": "d0274d5d63f83742292d95e90b0f80e21bc7b6e2e8aaa89a4931ce1dc9297abd"
+    },
+    {
+      "path": "common/character_interactions/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 1416,
+      "sha256": "2d89b3c1926149240d59e7785e5cb7b9b64484d8c321f312dbfd144f53d11cd7"
+    },
+    {
+      "path": "common/character_interactions/mm_relic_powers.txt",
+      "source": "dragon-relics",
+      "bytes": 2445,
+      "sha256": "97998fc762e6164378ec477071d70ac3a0904639303da26b94389879408ffc48"
+    },
+    {
+      "path": "common/character_interactions/mm_royal_devour.txt",
+      "source": "wyvern-kings",
+      "bytes": 4624,
+      "sha256": "18d202043479bfbddf2abcba4e580cc84ba95a9a2a5450884065e811050f0d5d"
+    },
+    {
+      "path": "common/character_interactions/mm_v1311_mechanics.txt",
+      "source": "dragon-creed",
+      "bytes": 3973,
+      "sha256": "788b61c44effb8ae1eca541d5a1ddc6784c1152e6e627b74b3f26ba0c8509ed1"
+    },
+    {
+      "path": "common/character_interactions/zzzz_mm_wyvern_capture_interactions.txt",
+      "source": "wyvern-capture",
+      "bytes": 6990,
+      "sha256": "576afe261d15587a21eae533da23d58eeaca04233104421073d66ebfc098fc2a"
+    },
+    {
+      "path": "common/character_interactions/zzzzzz_mm_wyvern_mount_interaction.txt",
+      "source": "wyvern-capture",
+      "bytes": 1794,
+      "sha256": "30d32cc3b203ee91f5abd09338c3a22777faca4b33d40ff387053190b79298f6"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzz_mm_royal_availability.txt",
+      "source": "wyvern-pod",
+      "bytes": 12231,
+      "sha256": "9ea8ade3eba903abd8af563dbec86e2555823b66fce45864d665d0885881d3e8"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzz_mm_ascension_devour.txt",
+      "source": "wyvern-ascension",
+      "bytes": 1959,
+      "sha256": "adde4b001e3900288c95a2c9640f9235adda90ac43856a6760604c818f6a6bf3"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzz_mm_ascension_hunt_eligibility.txt",
+      "source": "wyvern-ascension",
+      "bytes": 2011,
+      "sha256": "0ef826d5245fe886f2c7de65ae439ac504b90dc0d124f1c7fdebb4451b48baab"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzzzz_mm_pod_torpor.txt",
+      "source": "wyvern-pod",
+      "bytes": 2961,
+      "sha256": "59e1d86bc82b38ced7fb7eb9fac7e558e6bf4dac6c4b16459934dc50772c69bc"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzzzz_mm_ritual.txt",
+      "source": "dragon-ritual",
+      "bytes": 671,
+      "sha256": "d9d2c35442af01eec0e9559cbba90ba69012aee9e0a5326b75d4c6340e7c4a1c"
+    },
+    {
+      "path": "common/character_interactions/zzzzzzzzzzzzzz_mm_pod_succession_devour.txt",
+      "source": "wyvern-pod",
+      "bytes": 1992,
+      "sha256": "618b850af9b4662def4aabbf4ea8fc2f45f91c906d07738814e92d846f43f032"
+    },
+    {
+      "path": "common/culture/cultures/myv_wyvern_culture.txt",
+      "source": "dragon-culture",
+      "bytes": 729,
+      "sha256": "ad94dd34cc343424ed02181e9d48815143a38636aa576ca4efa0161a87b05d3b"
+    },
+    {
+      "path": "common/culture/pillars/mm_dragon_aesthetics.txt",
+      "source": "dragon-culture",
+      "bytes": 88,
+      "sha256": "19fb16129df1102019eb57addafb803b52ee4b60a9e3152cc5fcf47cabb0be46"
+    },
+    {
+      "path": "common/customizable_localization/mm_dragon_lineage.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 2078,
+      "sha256": "d8a53eb358cea917ba33ff58e0a2cf4ab62c4b17e67c0d91307c32f07ea5836e"
+    },
+    {
+      "path": "common/customizable_localization/mm_royal_mass_display.txt",
+      "source": "wyvern-kings",
+      "bytes": 215,
+      "sha256": "b3a221d13760dd39ee8b9eedc5d71bf0dc0cb41b98d75a50632bb4a3ba55cc2d"
+    },
+    {
+      "path": "common/customizable_localization/zzzzzzzzzzzzzz_mm_pod_sources.txt",
+      "source": "wyvern-pod",
+      "bytes": 3214,
+      "sha256": "7cf935923bf77875534fcfc86d2f1397bca6c58485232d6eb1097e6c9f8b1f68"
+    },
+    {
+      "path": "common/customizable_localization/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "source": "wyvern-pod",
+      "bytes": 252,
+      "sha256": "4e38d66a1d3479e3002a3cf1ef601e24694f2502375990f1ca97931d0c5e38c0"
+    },
+    {
+      "path": "common/customizable_localization/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "source": "wyvern-pod",
+      "bytes": 268,
+      "sha256": "3f05edf6e1b945def0bd2d73be61d29c2896aef7e19f92e6947c48f17bce1ec8"
+    },
+    {
+      "path": "common/deathreasons/mm_royal_deathreasons.txt",
+      "source": "wyvern-kings",
+      "bytes": 83,
+      "sha256": "bf04779c48707464ef600ef8d59019569f9e1ac663f432c5b4f881c98067ac8f"
+    },
+    {
+      "path": "common/decisions/mm_ascension_decisions.txt",
+      "source": "wyvern-ascension",
+      "bytes": 897,
+      "sha256": "8e0b6fb3a97a355a0d5638b16499ae3d6c5977c8c0d851ce5cc5a5ad1dd87964"
+    },
+    {
+      "path": "common/decisions/mm_black_blood_trial.txt",
+      "source": "wyvern-ascension",
+      "bytes": 1033,
+      "sha256": "f74b0083fd4eb47e0ff8cc509239c2a3173d8d0b9333e07755320e15df1ec798"
+    },
+    {
+      "path": "common/decisions/mm_dragon_recovery_decisions.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1742,
+      "sha256": "6f885305c4f925a2f578800a022b78f0efceb13e8f676d33ac34ad0f42311401"
+    },
+    {
+      "path": "common/decisions/mm_pod_kinfolk_first_change_decisions.txt",
+      "source": "wyvern-pod",
+      "bytes": 930,
+      "sha256": "eb6f1692de5fd51707d1808d7ba26cd611201c52f57f707223fdc6f0f8dee220"
+    },
+    {
+      "path": "common/decisions/mm_relic_powers.txt",
+      "source": "dragon-relics",
+      "bytes": 2091,
+      "sha256": "722bd939241c6246db11378b60270a3583d5abf6b6208873d299a6c0e7215230"
+    },
+    {
+      "path": "common/decisions/mm_royal_awakening.txt",
+      "source": "wyvern-kings",
+      "bytes": 11880,
+      "sha256": "d0aa7efe397c8b08bde84179e49ab605c9300d854e22c5167cff2b8b84a8fecf"
+    },
+    {
+      "path": "common/decisions/mm_v1311_mechanics.txt",
+      "source": "dragon-creed",
+      "bytes": 807,
+      "sha256": "84e86ef9bc816894650c79dc94988d2ab5a880d9c7801d68ebb37eb1ce75325e"
+    },
+    {
+      "path": "common/decisions/mm_wyvern_dragon_forging.txt",
+      "source": "wyvern-capture",
+      "bytes": 889,
+      "sha256": "bf60c0c6b0b4528d0cf088041f8e0b42df03ff29b083d490ea5314bbad4032dc"
+    },
+    {
+      "path": "common/decisions/zzzzzzzzzz_mm_ascension_awakening.txt",
+      "source": "wyvern-ascension",
+      "bytes": 12631,
+      "sha256": "4ecd98b11aea31c3581446437b1525359b367d210b09be957c16955c45cec128"
+    },
+    {
+      "path": "common/decisions/zzzzzzzzzzzz_mm_pod_torpor.txt",
+      "source": "wyvern-pod",
+      "bytes": 1875,
+      "sha256": "176a997fe4011f85d3d9e7fb17a81fbaed3baa5783b1e8aa318a629c53fef649"
+    },
+    {
+      "path": "common/decisions/zzzzzzzzzzzz_mm_ritual.txt",
+      "source": "dragon-ritual",
+      "bytes": 17382,
+      "sha256": "77b515abb73c80e3baeee08e0340c5855a0285214f12b854b8bd59c593595b81"
+    },
+    {
+      "path": "common/factions/zzzz_mm_pod_dragon_creed_factions.txt",
+      "source": "wyvern-pod",
+      "bytes": 165184,
+      "sha256": "db4e44bd9ba4ef62dbe9c94b8a901c365218b913cdc3e0442484cc9cda866a24"
+    },
+    {
+      "path": "common/genes/mm_dragon_decor.txt",
+      "source": "wyvern-human-form",
+      "bytes": 1136,
+      "sha256": "0442a946f2f8d81634a3c7613dd08e6efee1a5e9674f36f3bb0155bd3889878a"
+    },
+    {
+      "path": "common/genes/myv_compact_head_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 1601,
+      "sha256": "20b2748e4d660f1ebeb1607a459726e3eed21e32cc375d88bd4266503d0711d0"
+    },
+    {
+      "path": "common/genes/myv_wyvern_accessory_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 17430,
+      "sha256": "ec43f64d2df13ee8728a3074c22bab444b6de91e2032a8928dc5eed84469d231"
+    },
+    {
+      "path": "common/genes/myv_wyvern_flying_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 17916,
+      "sha256": "eeed73f6d0cbcb259e00e75ea2a42595e8e30f668255de9104c12974eb7ddd8b"
+    },
+    {
+      "path": "common/genes/myv_wyvern_mounted_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 18124,
+      "sha256": "40b823d18e1a63a6f4520d357e152bb2a52a3098eb3ff1aa671150dd2fd0c024"
+    },
+    {
+      "path": "common/genes/myv_wyvern_running_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 18183,
+      "sha256": "b0f7daf63cc3f65d97fcbb2baf49950b2ea1e0a7cf26efce957627df08806615"
+    },
+    {
+      "path": "common/genes/myv_wyvern_wild_aerial_flying_genes.txt",
+      "source": "wyvern-kings",
+      "bytes": 20196,
+      "sha256": "4908de9cdfe376bd071af3ba7a900440826e23e40b666f3fa48f0b0b02afd95a"
+    },
+    {
+      "path": "common/inspirations/zzzz_mm_pod_dragon_relic_inspirations.txt",
+      "source": "wyvern-pod",
+      "bytes": 46159,
+      "sha256": "9e657de769f2dd2ffbf74e4f118f70599017f9ab07035cf6258fda082bdff14d"
+    },
+    {
+      "path": "common/modifiers/mm_ascension_modifiers.txt",
+      "source": "wyvern-ascension",
+      "bytes": 576,
+      "sha256": "a48f3fc0a152dbf0fac9d5254afee494ac34dbb4d8c4b2fcef309a248c90e172"
+    },
+    {
+      "path": "common/modifiers/mm_dragon_creed_combat.txt",
+      "source": "wyvern-capture",
+      "bytes": 137,
+      "sha256": "423548cee22d328c17576e6344b1862039ecf809568a283398e7e95075d0bead"
+    },
+    {
+      "path": "common/modifiers/mm_dragon_diluted_blood.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 157,
+      "sha256": "7958228bb8ec3e32deae5efe589dcaf80ed7fe04e507e0861de15cbb0c635008"
+    },
+    {
+      "path": "common/modifiers/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 1730,
+      "sha256": "a227819447cd00f6980ec3a7257b8c2aef751d0e0ae84734e28fd750c1119660"
+    },
+    {
+      "path": "common/modifiers/mm_pod_mokole_max.txt",
+      "source": "wyvern-pod",
+      "bytes": 3170,
+      "sha256": "6c68d68f1a048069ded5777fd1df45f4f58d69697f6c29f3f7d7e62332b495a1"
+    },
+    {
+      "path": "common/modifiers/mm_relic_active_powers.txt",
+      "source": "dragon-relics",
+      "bytes": 1377,
+      "sha256": "19397cc3f54bd28d47214e745e1d656761abc0c004e9513922d2ef9dc5847290"
+    },
+    {
+      "path": "common/modifiers/mm_royal_army_support.txt",
+      "source": "wyvern-kings",
+      "bytes": 796,
+      "sha256": "6c740ff42a4893a347a240232def160985eab205ce30e12a0252c113236ddaa9"
+    },
+    {
+      "path": "common/modifiers/mm_v1311_mechanics.txt",
+      "source": "dragon-creed",
+      "bytes": 6256,
+      "sha256": "42e45d1b8aed4d1d2d81124c89733ac73f045765a6bf28f31aca3d5dd6e581c2"
+    },
+    {
+      "path": "common/modifiers/mm_v1312_silk_road.txt",
+      "source": "dragon-creed",
+      "bytes": 800,
+      "sha256": "6e31b766c1893ca8d39c2b71a2e8bf8459ba0de60c617515f0a36991341dae7a"
+    },
+    {
+      "path": "common/modifiers/mm_wyvern_dragon_weapons.txt",
+      "source": "wyvern-capture",
+      "bytes": 1844,
+      "sha256": "df0c02f47b159071fb816026a9473c873cc1069d8ee8547e72e51f44e2ff59da"
+    },
+    {
+      "path": "common/nicknames/mm_ascension_nicknames.txt",
+      "source": "wyvern-ascension",
+      "bytes": 43,
+      "sha256": "ed2241c2d7bb060998e79d2c6425491adfcf2e4c2dc90c0d2369aa26c345dd58"
+    },
+    {
+      "path": "common/nicknames/mm_royal_nicknames.txt",
+      "source": "wyvern-kings",
+      "bytes": 673,
+      "sha256": "529aa61180d6f341c31377f5d8f26e05a148ea95e8fd0dc0105333cb906a41e4"
+    },
+    {
+      "path": "common/on_action/mm_dragon_absorption.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 143,
+      "sha256": "3e7697688bd617adf9dc48764bc91edd66b70e415ad2dd391ddc55aa42da42c7"
+    },
+    {
+      "path": "common/on_action/mm_dragon_bond_on_actions.txt",
+      "source": "dragon-bond",
+      "bytes": 1906,
+      "sha256": "c88a00af649925483e2e4ac9b0e81c864b045031e97173a34e753ab356b437bf"
+    },
+    {
+      "path": "common/on_action/mm_dragon_branch_projection.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 600,
+      "sha256": "152aa574b167b03bee02864a3ec52e62c16226ecc45166f36c8d05bc0d0585a1"
+    },
+    {
+      "path": "common/on_action/mm_dragon_creed_combat.txt",
+      "source": "wyvern-kings",
+      "bytes": 1101,
+      "sha256": "9473b501ff8495222c869e2563003449205e07091d47ec5cad530334b2af0aa3"
+    },
+    {
+      "path": "common/on_action/mm_dragon_creed_migration.txt",
+      "source": "dragon-creed",
+      "bytes": 1711,
+      "sha256": "77cc3a54f00847305ef6bb3b1a0461f779e8ca4703886a0e860ed0df034213f8"
+    },
+    {
+      "path": "common/on_action/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 593,
+      "sha256": "4c5e2a09a2aabc11009661a76b7b7270349476e010fd1113a4060e846df10f55"
+    },
+    {
+      "path": "common/on_action/mm_dragon_features.txt",
+      "source": "wyvern-human-form",
+      "bytes": 448,
+      "sha256": "30be7d18ec3dea8bd6808c475d6ae243a9b9f23a5a862645c3790fa6fe722c9f"
+    },
+    {
+      "path": "common/on_action/mm_dragon_identity_repair.txt",
+      "source": "dragon-culture",
+      "bytes": 1512,
+      "sha256": "60981ef7278243485b0c4f7f6e271261fc573bf915bd62b3b2a37f7b8ea69d8c"
+    },
+    {
+      "path": "common/on_action/mm_dragon_lineage_initialization.txt",
+      "source": "wyvern-pod",
+      "bytes": 2977,
+      "sha256": "cca3e5c71a3280a81f2dc2d59bdf63c1b8d544f972c0fe0fe4105ede8ae9e39c"
+    },
+    {
+      "path": "common/on_action/mm_dragon_lineage.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 234,
+      "sha256": "8eced92a57d2537eac39bdf2d79601c0ffafb5010558ca8b7bd509669aaea122"
+    },
+    {
+      "path": "common/on_action/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 141,
+      "sha256": "ee8966619e508a4ef146f30c0764a5b515d8d23b8cc40b517e972f7588288aa9"
+    },
+    {
+      "path": "common/on_action/mm_relic_daily.txt",
+      "source": "dragon-relics",
+      "bytes": 417,
+      "sha256": "6386cb3bd82bcc760f5c7a347ebcf6a7c3dc802c0ceb35e6b7eb3dd81e8477e0"
+    },
+    {
+      "path": "common/on_action/mm_v1311_mechanics.txt",
+      "source": "dragon-creed",
+      "bytes": 4244,
+      "sha256": "c8f82de3c57d7921dee4b0e40978cf115f0eceb6bb2ac567acb74e97b6579b1e"
+    },
+    {
+      "path": "common/on_action/mm_v1312_criminal_rewards.txt",
+      "source": "dragon-creed",
+      "bytes": 973,
+      "sha256": "34750a995e5d57c66b93d58f77568857e0722c6a826b17aa82c32fc30aefd628"
+    },
+    {
+      "path": "common/on_action/mm_v1312_rite_opinions.txt",
+      "source": "dragon-creed",
+      "bytes": 529,
+      "sha256": "ef44100d3e110a8d336d3222394f77aa42d15685b513844801cdbd61ddcc8281"
+    },
+    {
+      "path": "common/on_action/mm_v1312_silk_road.txt",
+      "source": "dragon-creed",
+      "bytes": 3550,
+      "sha256": "bfb7fd7ac2bbabc2d27f29d6dca952036946fa4ebaa366186915cd17049634c8"
+    },
+    {
+      "path": "common/on_action/POD_vanilla_child_birth_on_actions.txt",
+      "source": "wyvern-pod",
+      "bytes": 3960,
+      "sha256": "795b23e94d1611560c56276dbecb803ed378204eb440743c9dda7d3d735f3724"
+    },
+    {
+      "path": "common/on_action/zzzz_mm_wyvern_capture_on_actions.txt",
+      "source": "wyvern-capture",
+      "bytes": 2931,
+      "sha256": "fb4307e4e18a6053c8a864b1d787c670e6847dfeeb0f0a74f53a1c8201b1110b"
+    },
+    {
+      "path": "common/on_action/zzzzz_mm_dragon_wild_breeding_hooks.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 3486,
+      "sha256": "9fe654c820019348fa31374bd25df40b36536669a20721e627fa610d8be081ef"
+    },
+    {
+      "path": "common/on_action/zzzzzzzz_mm_royal_initialization.txt",
+      "source": "wyvern-kings",
+      "bytes": 4395,
+      "sha256": "aa40bde068eadf7fc9f5729c90aebde677b8543bf94e1008197c1a430c4eb13b"
+    },
+    {
+      "path": "common/on_action/zzzzzzzz_mm_royal_monthly.txt",
+      "source": "wyvern-kings",
+      "bytes": 4704,
+      "sha256": "21f5dfbe56ec246318472e244a4a4b1401f7b6659d3256ab2dbc122ba8d7b968"
+    },
+    {
+      "path": "common/on_action/zzzzzzzz_mm_royal_seed_population.txt",
+      "source": "wyvern-kings",
+      "bytes": 374,
+      "sha256": "6a568865fbbc229b6ec650bf50c560cfc1662421cb42e4c7edcbec60e1139a4b"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzz_mm_ascension_on_actions.txt",
+      "source": "wyvern-ascension",
+      "bytes": 891,
+      "sha256": "90f704433116e0c3d91f71c17d66527184992383b56a403d756ccdf211631ce9"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzz_mm_royal_physical_load.txt",
+      "source": "wyvern-kings",
+      "bytes": 185,
+      "sha256": "7c539becce3dbcc7a2381f7dee9e385fcf025be9f8da1eade675c04511d35db3"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzz_mm_pod_identity.txt",
+      "source": "wyvern-pod",
+      "bytes": 2937,
+      "sha256": "f05f84cbec83f61363dcecbc112a0aa42afde011f052b4876ea5d9a132ce76f8"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "source": "wyvern-pod",
+      "bytes": 935,
+      "sha256": "0eebc91332c46fd19fff574ac7b60ee53ca93561ef19a9fdbcf30a00156fcc91"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzzz_mm_pod_mokole_max.txt",
+      "source": "wyvern-pod",
+      "bytes": 1078,
+      "sha256": "5e2da611a3a2d03cdf9d1cc1c54875f129e70fb5020daf64a685b760ed2e3d1e"
+    },
+    {
+      "path": "common/opinion_modifiers/mm_v1312_rite_opinions.txt",
+      "source": "dragon-creed",
+      "bytes": 49,
+      "sha256": "77c781d6bc93a4374955dc021ccf69612d700146872324aacbee515256ac793e"
+    },
+    {
+      "path": "common/religion/doctrine_group_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 195,
+      "sha256": "e31dc87fd50ca055c72e9519670031450bc14054c47c464abd400629bbbb3e79"
+    },
+    {
+      "path": "common/religion/doctrine_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 1992,
+      "sha256": "ed60c3f827b06578ff2a8ac446b71a19ca66502c75faee5bd37ddae1d48f6b8a"
+    },
+    {
+      "path": "common/religion/faith_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 438,
+      "sha256": "a6e35b207b4aa043d4bb4724049a0572117ce36aa136fa8b258e6b4e6f8b06b0"
+    },
+    {
+      "path": "common/religion/holy_site_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 474,
+      "sha256": "f0af339cd4ed2ee0878acf9a9ab30b56d896c5c34dd38850dff421e637788fc6"
+    },
+    {
+      "path": "common/religion/religion_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 28425,
+      "sha256": "8039b279ded7c627400826ded5376fbc82b8c6295bdde5036b27f1207dbe6834"
+    },
+    {
+      "path": "common/religion/rite_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 6872,
+      "sha256": "360769674c73d47ef9ef0db3c5f7ffd2754fe72716017195a393bfe6981b40f3"
+    },
+    {
+      "path": "common/religion/tenet_types/mm_dragon_creed.txt",
+      "source": "dragon-creed",
+      "bytes": 5915,
+      "sha256": "ce9d502bdc8fd4cdd7060df0c04dbd6c9e5e24210fc950ce5792da675e033197"
+    },
+    {
+      "path": "common/schemes/scheme_types/zzzz_mm_pod_dragon_relic_seduction.txt",
+      "source": "wyvern-pod",
+      "bytes": 54480,
+      "sha256": "dbe5919b86596f4b4a0baefdf5393b00d8a3ef6fdf4a94a3f03d44a40eb9d023"
+    },
+    {
+      "path": "common/schemes/scheme_types/zzzz_mm_wyvern_capture_schemes.txt",
+      "source": "wyvern-capture",
+      "bytes": 4216,
+      "sha256": "29b9511cab58a5b50f5c1b4f2c27cac7b105bc4cf424da8a00f88757eb8a16b0"
+    },
+    {
+      "path": "common/script_values/mm_ascension_values.txt",
+      "source": "wyvern-ascension",
+      "bytes": 139,
+      "sha256": "c74b3d4b7a0653514bb01f3f6178adf7720e7084abc2b33e351e40b2764f07f7"
+    },
+    {
+      "path": "common/script_values/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 1478,
+      "sha256": "940f7ed9b73de016ee5b75ac5a0659099795f957e07da3eaeb83fa9bbc479112"
+    },
+    {
+      "path": "common/script_values/mm_dragon_lineage_values.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1921,
+      "sha256": "10c7c30c981539327ff58904cc8bb27764b0c6e2a216c393d8f02c3ab65a1a19"
+    },
+    {
+      "path": "common/script_values/mm_relic_commander_traits.txt",
+      "source": "dragon-relics",
+      "bytes": 1124,
+      "sha256": "01d3b2b04084240392274bccbf80292032346cececa223e4146f3ed618a20fc2"
+    },
+    {
+      "path": "common/script_values/mm_royal_mass_display_values.txt",
+      "source": "wyvern-kings",
+      "bytes": 77,
+      "sha256": "008345cc0ae2084d78807e4b2f7a3d281097abb92f436bca9213d067940d8b07"
+    },
+    {
+      "path": "common/script_values/zzzz_mm_pod_dragon_creed_conversion.txt",
+      "source": "wyvern-pod",
+      "bytes": 8310,
+      "sha256": "6f68c32659ac48f37f5affd96707afd29ba933b795a46f2566dae26f175ac50c"
+    },
+    {
+      "path": "common/script_values/zzzz_mm_pod_dragon_creed_faction_values.txt",
+      "source": "wyvern-pod",
+      "bytes": 1410,
+      "sha256": "d23e5d4fd25c660d14c54fc7b3217a40aa3ab7aa0157c9403ea1e19b7bb96bbf"
+    },
+    {
+      "path": "common/script_values/zzzz_multi_mod_wyvern_hatching.txt",
+      "source": "wyvern",
+      "bytes": 207,
+      "sha256": "6051462a59ac1d92a782f50579e2e8ec0aaa202b4c2c1a62b15787937b07a970"
+    },
+    {
+      "path": "common/script_values/zzzzzz_mm_wyvern_combat_values.txt",
+      "source": "wyvern-capture",
+      "bytes": 4107,
+      "sha256": "01b1ce9e5174d0a38cf064b84d1c000940fe1aec4307ef5710cab0cad6061164"
+    },
+    {
+      "path": "common/script_values/zzzzzzzz_mm_royal_power.txt",
+      "source": "wyvern-kings",
+      "bytes": 2083,
+      "sha256": "9e6c44d02bc5e3f3ae919e965c75a735cc068a706817daf22db04c4d8a0d0b07"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzz_mm_royal_physical_values.txt",
+      "source": "wyvern-kings",
+      "bytes": 10164,
+      "sha256": "87e4c0ee6a55e4898ef53fab8824b80873cd667c41299a54c9d181c6c2fe033f"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzz_mm_royal_temperament.txt",
+      "source": "wyvern-kings",
+      "bytes": 746,
+      "sha256": "04da6129ccb4b29884508688f77822570e363d00e364b4573c5d2e1997677756"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzzz_mm_wyvern_mass_combat.txt",
+      "source": "wyvern-kings",
+      "bytes": 1674,
+      "sha256": "d5597cad46bf457b3937872bc1447aaf68786092360eb0272eac5c21466cd50c"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzzzz_mm_pod_combat.txt",
+      "source": "wyvern-pod",
+      "bytes": 7118,
+      "sha256": "2a771a092ece3594ffac874dc183a8e2d55a77f4f077202ca268f4a6224458a4"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzzzzzz_mm_pod_age.txt",
+      "source": "wyvern-pod",
+      "bytes": 48683,
+      "sha256": "58d8adb4b72e7aad8e84ee22f7705faf83000c15359912416cc96138f36f9777"
+    },
+    {
+      "path": "common/scripted_effects/mm_ascension_devour_effects.txt",
+      "source": "wyvern-ascension",
+      "bytes": 4083,
+      "sha256": "91842952905aaf514ef38fa6f6b1be4179bc6955e8980854b942e0bedc2d1fd4"
+    },
+    {
+      "path": "common/scripted_effects/mm_ascension_effects.txt",
+      "source": "wyvern-ascension",
+      "bytes": 17323,
+      "sha256": "b0fd837425f591ff59826c88dd467703ee71946e7c2deb1b4c20f2f1835d1216"
+    },
+    {
+      "path": "common/scripted_effects/mm_black_blood_trial.txt",
+      "source": "wyvern-ascension",
+      "bytes": 4675,
+      "sha256": "40a4ef3e08b690839505e224244730ae07edc2b5c5178d1661d247c565a4dff2"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_absorption.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 4849,
+      "sha256": "eb5a680850f4e90605b9db12669645aea73d29e5d265e2e7964425c020dd3c1d"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_branch_projection.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1823,
+      "sha256": "aa6464d687d357c003e3d99b62eec1d381308424ca3fb7a780d8eff0575ab0ea"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_creed_combat.txt",
+      "source": "wyvern-capture",
+      "bytes": 2939,
+      "sha256": "b624d286d173779c9e6fc8605b96ebb5528dbb4dc9cd12ef1125f54b2082cef3"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_creed_routing.txt",
+      "source": "dragon-creed",
+      "bytes": 9380,
+      "sha256": "07ac7390fe98e78ca3b0b7e4d00466d4f9cba006dce622700c22cd4d3a93931b"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 4541,
+      "sha256": "abe05d8f212e865e84ae785fa463db61cce3f052ae24d6cf5897882727c98ed1"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_egg_features.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1731,
+      "sha256": "2ae7f840580b5672c73a7b58bd7d44a2ff7671ec95ee459f995380dbbaa193c3"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_features.txt",
+      "source": "wyvern-human-form",
+      "bytes": 691,
+      "sha256": "53ebb2443cd29a4298adc837a6da9c86ccbbc0d26f35216d7b13a6e3d27a5f6f"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_force_hatch.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1239,
+      "sha256": "c71e927891483c4e560795e2c45cbdb5c31ececbb6e85bdb45f38e58f42a2f14"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_half_eggs.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 9683,
+      "sha256": "1f8e01e1bcbeb80032e6a6bc81a6f9826fd35c758d00be9d4280787c0258e65a"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_lineage_initialization.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 7686,
+      "sha256": "f0ad734b763363be12d0e3d40f49bcda0d55f6fe189489bd5bd2c292b5d16dd9"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_lineage.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 37736,
+      "sha256": "c4587d53e3a4f0fee18730d8a40fb0ba90cf30f7e6d46eb8482fc31faffbc486"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_regional_identity.txt",
+      "source": "dragon-culture",
+      "bytes": 3201,
+      "sha256": "cc59196fd0a59bd7def38a9bdc7eb3fd7827da96a7099c89b00b850bdaeac1ae"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_relic_initialization.txt",
+      "source": "dragon-relics",
+      "bytes": 11390,
+      "sha256": "e38452e46faf79a229df8b9ed4779878ac192cbdfbbc17a20f121affe362361b"
+    },
+    {
+      "path": "common/scripted_effects/mm_dragon_wild_breeding.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 9702,
+      "sha256": "471a04ec8c725b383fdb9a126d53b06145624956863b2a187c3d66675567edde"
+    },
+    {
+      "path": "common/scripted_effects/mm_pod_legacy_torpor.txt",
+      "source": "wyvern-pod",
+      "bytes": 180,
+      "sha256": "2e8051806d84b8ad3abc77b547665ec063b95cc79ced4a97a7b4a2c75c2d6732"
+    },
+    {
+      "path": "common/scripted_effects/mm_relic_self_powers.txt",
+      "source": "dragon-relics",
+      "bytes": 8599,
+      "sha256": "8b1aca901a16b501440398f2887b654b0e2ec773979022c317aada41f5df74fc"
+    },
+    {
+      "path": "common/scripted_effects/mm_relic_target_powers.txt",
+      "source": "dragon-relics",
+      "bytes": 7609,
+      "sha256": "8289228f2a59f2c5da158a34d040838f81c7f92b9e21073fab6b8dfec04f7574"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_army_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 3768,
+      "sha256": "1add05c9e53921d0cd132fe4b309d201c79cb2aaa43c31cf31f90a146eea6b4a"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_creation_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 2920,
+      "sha256": "50651bf10a1ef5450740043b1398acf1d856992db4d12b03825399cb485a4f9d"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_identity_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 15215,
+      "sha256": "770380801adf3b039062f6d58cfc458d6531e673e6249a9606b93b0656cc03d8"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_physical_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 739,
+      "sha256": "6c689726b5f784891d5d8185d6dc075174ca898bc630098d0ea60255754c6a11"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_physical_maintenance.txt",
+      "source": "wyvern-kings",
+      "bytes": 2627,
+      "sha256": "a967b9f58cc8e6959078bb4fe91faebb73133c9e286ed3948cb3f2ce5978cae3"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_profile_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 6316,
+      "sha256": "baf2815d6783b8333fd8c2e18444eccc90912bacdf9700930cf7afbfda85f4fa"
+    },
+    {
+      "path": "common/scripted_effects/mm_royal_seed_population_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 5308,
+      "sha256": "67ed4402b49c6a05fa9b88ef780e474fc81abe8b948e6c08e01ee83b398d7eaa"
+    },
+    {
+      "path": "common/scripted_effects/mm_v1311_mechanics.txt",
+      "source": "dragon-creed",
+      "bytes": 9017,
+      "sha256": "1e17ea0398b33955305cb08098aa00f36858101e961db4b47debe17766101160"
+    },
+    {
+      "path": "common/scripted_effects/mm_v1312_rite_opinions.txt",
+      "source": "dragon-creed",
+      "bytes": 1390,
+      "sha256": "8d5e39f75e77ecce57bda99d9163c0486b165dab1c543eb4507d738e7fe19103"
+    },
+    {
+      "path": "common/scripted_effects/mm_v1312_silk_road.txt",
+      "source": "dragon-creed",
+      "bytes": 4192,
+      "sha256": "c2cecf9be8a35c725562218c9ccd8589699124159637020b4c9dcdaeca1c7474"
+    },
+    {
+      "path": "common/scripted_effects/mm_v1313_faith_repair.txt",
+      "source": "dragon-creed",
+      "bytes": 12680,
+      "sha256": "1c417151dfb9749a420c683e0cf247a455850abedccc78f590b5f43c029cd2a5"
+    },
+    {
+      "path": "common/scripted_effects/mm_v1314_split_cleanup.txt",
+      "source": "dragon-creed",
+      "bytes": 2343,
+      "sha256": "89317f7c19dfd68843c64d6f3f79c6a134e42a2c0560a3ebdeee27a5e3b4db4b"
+    },
+    {
+      "path": "common/scripted_effects/mm_wyvern_dragon_forging.txt",
+      "source": "wyvern-capture",
+      "bytes": 7065,
+      "sha256": "04182474e3f972c26b5f8b417ccad13965a660ae89c019de90a1398a8c986d48"
+    },
+    {
+      "path": "common/scripted_effects/mm_wyvern_dragon_weapon_affixes.txt",
+      "source": "wyvern-capture",
+      "bytes": 4131,
+      "sha256": "c26330309f0fb053f00da3bd79733d66a9aab3b22108232fdbc82d01d83f7a6d"
+    },
+    {
+      "path": "common/scripted_effects/mm_wyvern_trophies.txt",
+      "source": "wyvern-capture",
+      "bytes": 6365,
+      "sha256": "7330ad8c1a633dc49024bc82a4addcb19c01fa34cc96d6aa9c917d87c2ed720d"
+    },
+    {
+      "path": "common/scripted_effects/mm_wyvern_trophy_affixes.txt",
+      "source": "wyvern-capture",
+      "bytes": 5100,
+      "sha256": "78bfaf1b6aad4f6155917178c7811a17e2c36eccb28edd5f175222c3aa075bee"
+    },
+    {
+      "path": "common/scripted_effects/mm_wyvern_victory_effects.txt",
+      "source": "wyvern-capture",
+      "bytes": 677,
+      "sha256": "7c187b7fc4647d5311e458cb4ea16b2085a070c5e9d60e5a278cbe6c569e1f7b"
+    },
+    {
+      "path": "common/scripted_effects/myv_wyvern_notification_effects.txt",
+      "source": "dragon-news",
+      "bytes": 1556,
+      "sha256": "5f39a6b3368bcfae8a9439716e7893d1eee701e715d754221e4c91b14d9809fc"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_dragon_bond_effects.txt",
+      "source": "dragon-bond",
+      "bytes": 2390,
+      "sha256": "67aa589f50aadbd4d34e8ee72ebca071e9e414c67afe9c671da7cbafa9de2186"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_dragon_raid_effects.txt",
+      "source": "dragon-news",
+      "bytes": 1707,
+      "sha256": "5ee5b5ac07005568e52ef566270c42b108a21c305568b6cb71b2d3553626aff8"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_pod_character_preservation.txt",
+      "source": "wyvern-pod",
+      "bytes": 19595,
+      "sha256": "8fafce2b729a0131383b24f0e1a275c97fdb8d3552e6adb80a327566d070eb2c"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_pod_dragon_creed_effects.txt",
+      "source": "wyvern-pod",
+      "bytes": 19454,
+      "sha256": "fb47575545f469c17e02d9c6f664572f68748fff76f84ae78665f1badee002e1"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_v1312_forging.txt",
+      "source": "dragon-creed",
+      "bytes": 749,
+      "sha256": "695ca8daecb8d60e253718f4a1bcd616d01c298c867e60242507a87f43489120"
+    },
+    {
+      "path": "common/scripted_effects/zzzz_mm_wyvern_capture_effects.txt",
+      "source": "wyvern-capture",
+      "bytes": 19045,
+      "sha256": "7ea6a66e4b5a27bd7c6c40f29b69c34328b4bb8b34a80e22002139b771c804db"
+    },
+    {
+      "path": "common/scripted_effects/zzzzz_mm_dragon_native_eggs.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 5416,
+      "sha256": "37e2589507b9aa31675779b0e857276f11e52deec29196769d6d088d629c545e"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzz_mm_creed_ai_slay_combat.txt",
+      "source": "wyvern-capture",
+      "bytes": 1611,
+      "sha256": "e111f877fd0bbdac3d0065243263714454bf9b56030f0042dd623333fa63f202"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzz_mm_creed_combat_overrides.txt",
+      "source": "dragon-creed",
+      "bytes": 367,
+      "sha256": "bbe96015410503bfd885888c1aef42bddf16c615db99e685cc248f5ba129166e"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzz_mm_wyvern_ai_hunt_effects.txt",
+      "source": "wyvern-capture",
+      "bytes": 925,
+      "sha256": "ac62835f649406d87fb8619a0ab27a1f5eb127659901f4c5df1e22ca3e7ab84e"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzz_mm_wyvern_army_effects.txt",
+      "source": "wyvern-capture",
+      "bytes": 7541,
+      "sha256": "d83885418a5d2667e26b264ac9b14fb9664b4eb7036636c5d0ce0c6c4606e982"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzz_mm_royal_combat_effects.txt",
+      "source": "wyvern-kings",
+      "bytes": 24230,
+      "sha256": "484bc2c7678c3a27e2518d3ba7e8597216bfbb30f709d8b4bd90e4e962fbe880"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzz_mm_royal_creation_hooks.txt",
+      "source": "wyvern-kings",
+      "bytes": 2059,
+      "sha256": "83ab19e0a88e3d4d910b81cc48c4ab9d8cb0b415a12d225aa2df9108a1f6cff1"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzz_mm_royal_stable_breeding.txt",
+      "source": "wyvern-kings",
+      "bytes": 4209,
+      "sha256": "93684c17eabe740645393981e3b0195e05f51e3603de4f7d01358b49758b143e"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzz_mm_royal_population.txt",
+      "source": "wyvern-kings",
+      "bytes": 1326,
+      "sha256": "187714f3702626096d0184eb2f381f854fcbb34344c677116d11ace1aefd2236"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_ascension_maintenance.txt",
+      "source": "wyvern-ascension",
+      "bytes": 8142,
+      "sha256": "8ad1e695c5ac8134ad0fba0bd6a1ec3298e1aa8ddf3063ff53b03f46ff11567d"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_ascension_reward.txt",
+      "source": "wyvern-ascension",
+      "bytes": 87,
+      "sha256": "2fff2e1dd625d4eb777127c0c9e4f9c86e97a493325738be739cca0c18623ec6"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_dragon_creed_hooks.txt",
+      "source": "dragon-creed",
+      "bytes": 153,
+      "sha256": "c52ead4ee9bfc68a71dbeffc7466bc0586f6ee66c380c69301df29d1b44785fe"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_dragon_natural_spawn.txt",
+      "source": "dragon-culture",
+      "bytes": 10414,
+      "sha256": "75b4f3926d3723266b5fbe1661a1a825eaea7618bbaeee575827dedbf9881364"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_dragon_tamed_creation.txt",
+      "source": "dragon-culture",
+      "bytes": 2360,
+      "sha256": "b8a0c0667786afcddcc8b0ac57f3993e2dcf1b3918f4b1591aac2d4ee036348a"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_royal_portrait_flags.txt",
+      "source": "wyvern-kings",
+      "bytes": 3623,
+      "sha256": "56b4cc0bfcdf13fd7e9bb2fb820231d80a5870079b22fc47276a70c465245542"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzz_mm_royal_source_body_bridge.txt",
+      "source": "wyvern-ascension",
+      "bytes": 1518,
+      "sha256": "3a4a824e1e9feaf4674fbbe4c37d7b05d0611940db384f80e236bf7576d9f13e"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzz_mm_black_trial.txt",
+      "source": "dragon-death-servants",
+      "bytes": 210,
+      "sha256": "3fcb35dde7155df3dbf41dfe11b262aa4510924a1cf71bc39f2e69e27837e64f"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzz_mm_dragon_nonlethal_population.txt",
+      "source": "character-preservation",
+      "bytes": 673,
+      "sha256": "802680268fea995644270bb39ac7a81b82ecc43d0fb97acac4c03a84ddc62565"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzz_mm_dragon_politics.txt",
+      "source": "dragon-politics",
+      "bytes": 6877,
+      "sha256": "bd90602fe149c3004170d3643fbbccb28bdb8cf91a88f0ff2ca2e1463849a807"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzz_mm_dragon_recovery.txt",
+      "source": "dragon-recovery",
+      "bytes": 22589,
+      "sha256": "918f53a4f9a10fb68135ba9ddbb4c8538a10a8f7a6430ffd7a53c3a9e1e090f6"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzz_mm_ritual.txt",
+      "source": "dragon-ritual",
+      "bytes": 2499,
+      "sha256": "562cfc59c26d11d267dc64d00a06390d311623e1f39616ba8c30ef60b35ff9d9"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_absorption.txt",
+      "source": "wyvern-pod",
+      "bytes": 4773,
+      "sha256": "748f6a1d6881a8f1e92ebe11e491bccae120e03277d7c2a78353ab40d5d9a698"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_identity.txt",
+      "source": "wyvern-pod",
+      "bytes": 26449,
+      "sha256": "b348cd7378390bcc9ecc44ad4d01227355211ac119bfbd0b9cfdd16c0fc4318b"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "source": "wyvern-pod",
+      "bytes": 8430,
+      "sha256": "a9b9b9301c2fe0117152fc9b32a3629e2c3fbeee083b0024223f2ab51a0fa7db"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzzz_mm_pod_creation.txt",
+      "source": "wyvern-pod",
+      "bytes": 4262,
+      "sha256": "1dbadc5c190753f51966e1d6af8a52813e97968d0a80b3c44fb556bf85b76afa"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzzz_mm_pod_mokole_max.txt",
+      "source": "wyvern-pod",
+      "bytes": 8635,
+      "sha256": "18cba9c5b8e191b59ceb2ab646de918076034b60a665fb6b59fbe47f61558922"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "source": "wyvern-pod",
+      "bytes": 1024,
+      "sha256": "7531aff8fd75308281d56585d02f9845d10ab093e39157531c75d19d50db7df7"
+    },
+    {
+      "path": "common/scripted_guis/mm_v1314_faith_projection.txt",
+      "source": "dragon-creed",
+      "bytes": 262,
+      "sha256": "c6bc1bb14c2a7786f27e8c92f39508c2509f65bbdd2a6545de5d7f268fafa33d"
+    },
+    {
+      "path": "common/scripted_guis/zzzz_multi_mod_wyvern_human_form.txt",
+      "source": "wyvern-human-form",
+      "bytes": 300,
+      "sha256": "44f0a7d47709941950afee0e6ae75ba897a1d6883df1126d36f433867b6b5982"
+    },
+    {
+      "path": "common/scripted_guis/zzzzzzzzzz_mm_ascension_character_window.txt",
+      "source": "wyvern-ascension",
+      "bytes": 296,
+      "sha256": "ca2b49a7ad072320a5bc5d1d5ae12c21c77c2652a2ce167b235775674ab18a7e"
+    },
+    {
+      "path": "common/scripted_guis/zzzzzzzzzz_mm_dragon_name_gui.txt",
+      "source": "dragon-culture",
+      "bytes": 7902,
+      "sha256": "a484dc45ed4b606cdfafd1529d8cb00aff28bba5327addbb27adb6bf3d8fec63"
+    },
+    {
+      "path": "common/scripted_modifiers/zzzz_mm_pod_dragon_bond_marriage.txt",
+      "source": "wyvern-pod",
+      "bytes": 47813,
+      "sha256": "57d2959e2266af89b540acd67675c8bb23a1e184a0ef109c748b1c9dc377dfda"
+    },
+    {
+      "path": "common/scripted_relations/mm_royal_relations.txt",
+      "source": "wyvern-kings",
+      "bytes": 176,
+      "sha256": "b15d35a99183fa7fe5002f7e45c6d29814b7740c6d7c133e106e1ac774b63cd0"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_blood_hunt.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 884,
+      "sha256": "529da56e6cbe651a866cea27b9aaf0eaff947e7f4c10567b8c9a35f8780728fc"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_breeding.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 3343,
+      "sha256": "9f917cc15cae355227296cb6d91f343b4996429619c0af4239726c3eb1e0e731"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_creed_combat.txt",
+      "source": "wyvern-capture",
+      "bytes": 283,
+      "sha256": "5a7e116f5d81be88013a31930f49a1513a362b7d9a7289fa6787c30f1267fe07"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_creed_triggers.txt",
+      "source": "dragon-creed",
+      "bytes": 1893,
+      "sha256": "6126725774cfee7772afc5fe29fee941e9eea105ed67be36801984aae738115f"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 1155,
+      "sha256": "d20f59fd6ab9c143029b0a0720b1dc60de2ff265393edb9966117510a2549857"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_force_hatch.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 482,
+      "sha256": "3a0996cc9a0eddfe6d414ebffc5f273ee1112042e01cc4fad118874351c1bc9f"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_lineage.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1943,
+      "sha256": "0313264082874f4c789147bbef967617064ba78feee5f7562ff5afb667defb9d"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_relic_hook.txt",
+      "source": "dragon-death-servants",
+      "bytes": 54,
+      "sha256": "7dffe1853615cc5be1ba81df9e4e5f9caec20ea0f43b6001331a1ea386c8af4a"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_relics.txt",
+      "source": "dragon-relics",
+      "bytes": 5470,
+      "sha256": "0888c25f97dd32f53dedeedadb36b4671ca55e653fdc21c4c4487f93e8a610a7"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_spawn_regions.txt",
+      "source": "dragon-culture",
+      "bytes": 960,
+      "sha256": "92ea5e8cc0d76e123532da023d5d0ab276f1dd0ca03b48a775f4d04470ec9c85"
+    },
+    {
+      "path": "common/scripted_triggers/mm_dragon_wild_breeding.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 4390,
+      "sha256": "c385ed4743e29c74cfd5fe805fe7292ddfc29eb478d7bbe4bdbe467299356f0e"
+    },
+    {
+      "path": "common/scripted_triggers/mm_pod_kinfolk_first_change.txt",
+      "source": "wyvern-pod",
+      "bytes": 263,
+      "sha256": "f784e7da4dc6474e32f8ee2fdd4c067eee4b43a64c3e061b1df9a6a56469ce3a"
+    },
+    {
+      "path": "common/scripted_triggers/mm_relic_power_targets.txt",
+      "source": "dragon-relics",
+      "bytes": 1677,
+      "sha256": "268e5598156a5478bb1efefa61f7d1c89ce31f40e67b0b7fbf47089af3693af3"
+    },
+    {
+      "path": "common/scripted_triggers/mm_royal_source_body_bridge.txt",
+      "source": "wyvern-kings",
+      "bytes": 52,
+      "sha256": "b93ad55b70a3cda09a180c3ecf096084cd41959f5e5576e8fd4e145b1a0ab219"
+    },
+    {
+      "path": "common/scripted_triggers/mm_royal_visual_triggers.txt",
+      "source": "wyvern-kings",
+      "bytes": 1475,
+      "sha256": "51c7b35bd0bf247f72b991fc24f21069ccac8bab1d533e23775294278b3609e3"
+    },
+    {
+      "path": "common/scripted_triggers/mm_v1312_founder_wars.txt",
+      "source": "dragon-creed",
+      "bytes": 815,
+      "sha256": "fe8a6fe3ca52ab0f5646e5507d6829fa8975b095471cb8ea8ce381f8685e4d78"
+    },
+    {
+      "path": "common/scripted_triggers/mm_v1312_silk_road.txt",
+      "source": "dragon-creed",
+      "bytes": 2215,
+      "sha256": "6e1a85d88d5af01bfd136fca05082eba8d327d73b8f0b43cf9ac7722c0145d02"
+    },
+    {
+      "path": "common/scripted_triggers/mm_wyvern_dragon_forging.txt",
+      "source": "wyvern-capture",
+      "bytes": 3219,
+      "sha256": "550b490834379b0cfbbd1f5ac2d768021f559f197cd6f0826eb6eb20d0c06f15"
+    },
+    {
+      "path": "common/scripted_triggers/zzzz_mm_pod_wyvern_dragon_triggers.txt",
+      "source": "wyvern-pod",
+      "bytes": 7696,
+      "sha256": "664e1862e470b7eb525a7aa23b0ab334f17bdd6cef58cfacee4016eeec896999"
+    },
+    {
+      "path": "common/scripted_triggers/zzzz_mm_wyvern_capture_triggers.txt",
+      "source": "wyvern-capture",
+      "bytes": 3941,
+      "sha256": "5236c2faa654edcf98a9fa8730c39c8b2cb8da9ca0957a6f6a38c0dc19ee79fc"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzz_mm_creed_combat_overrides.txt",
+      "source": "dragon-creed",
+      "bytes": 384,
+      "sha256": "c7989794507c021eb56b0e06ef1cec95e2730f82772ca4bd39c3702b469d889f"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzz_mm_creed_death_servant_override.txt",
+      "source": "dragon-creed",
+      "bytes": 137,
+      "sha256": "2caefc05c3d0200e14c4041ddb64767a4466fbc7fa7617d514d463325f0bd02a"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzz_mm_relic_death_servants.txt",
+      "source": "dragon-relics",
+      "bytes": 83,
+      "sha256": "1c4c16bb8065b08d166dc56a97ca70071ac8d03d312544ef658ee005f672eba2"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzz_mm_asc_visual_triggers.txt",
+      "source": "wyvern-ascension",
+      "bytes": 3116,
+      "sha256": "b1b0cdd1eb714b2fa247a81510ff7a17ebba7ec591d4ac11e37776d1e47b03f2"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzz_mm_royal_triggers.txt",
+      "source": "wyvern-kings",
+      "bytes": 5386,
+      "sha256": "8ce2058b2e0fcd5c69ed792861cd8a0ee88b616f5faf16fabdec33cf5a06a34c"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_ascension_breeding.txt",
+      "source": "wyvern-ascension",
+      "bytes": 340,
+      "sha256": "17a614aea6f947dbce91aeb45a2f49a1b82203328c115ce5da89918d2e0a0e16"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_ascension_royal_triggers.txt",
+      "source": "wyvern-ascension",
+      "bytes": 3176,
+      "sha256": "25058ac37277ee3a71bade5d709b30a9cf7835ee611de5f9c76b0eab549c672a"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_ascension_triggers.txt",
+      "source": "wyvern-ascension",
+      "bytes": 2121,
+      "sha256": "e814b1cb2b0df94bb61477c1963efbdc95c3c6b676b50896249682a09cdd5f9e"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_black_blood_trial.txt",
+      "source": "wyvern-ascension",
+      "bytes": 2693,
+      "sha256": "60a133b7760b4e410027bf2a45438fc3a5d2272ba495850e334f908107d6abaf"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_lineage_breeding_compat.txt",
+      "source": "wyvern-kings",
+      "bytes": 2034,
+      "sha256": "f9308cc6248da52a516260f4e91c38634fcdaf050119e3b1a40d80f61a252d3b"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_royal_source_body_bridge.txt",
+      "source": "wyvern-ascension",
+      "bytes": 71,
+      "sha256": "a41ec87553a626ec43a3afb933463145c4d188c462cab8a91aecc5ce0c618728"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzz_mm_wild_population_bridge.txt",
+      "source": "wyvern-kings",
+      "bytes": 288,
+      "sha256": "8d8c61899013cfe176239b17d27866302f4861894f04c1d5166519bce3521393"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_black_trial.txt",
+      "source": "dragon-death-servants",
+      "bytes": 56,
+      "sha256": "de7149b94d4fb9a444686174312182a5dfb51ada734553fb710f06787b69d658"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_cleanup_protection.txt",
+      "source": "wyvern-pod",
+      "bytes": 904,
+      "sha256": "d8f8efbb5503e52d26e4168ce2827051f801f90f87f94a08263e2a40844a29a8"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_dragon_politics.txt",
+      "source": "dragon-politics",
+      "bytes": 1346,
+      "sha256": "f43524d56c21adc6b2b69ef115ce1f19949417ade10d785d6f545a73523d8f5c"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_pod_dragon_religion.txt",
+      "source": "wyvern-pod",
+      "bytes": 2967,
+      "sha256": "5afdb9a5be0f0d2e13b6badf777d9d1b82505facf45e8cdfb6b47806f509f1de"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_pod_torpor_portrait.txt",
+      "source": "wyvern-pod",
+      "bytes": 243,
+      "sha256": "435f02ce29f2eaa2c9e20b54aa7d7ac11a1b55cccf9833076a31e1d0708e5a0d"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_ritual.txt",
+      "source": "dragon-ritual",
+      "bytes": 2738,
+      "sha256": "a197abb39cc0d321523d44ca116a87ad37d836d69b4963aa6ab1f382dc9cac3b"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_absorption.txt",
+      "source": "wyvern-pod",
+      "bytes": 864,
+      "sha256": "aa5a4a048175b7cdea35f74f6e6551e8e23d1304bed67b5d2c91f7bf91ad39da"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_hostility.txt",
+      "source": "wyvern-pod",
+      "bytes": 2175,
+      "sha256": "1c95db6c368cfac562b299cdd03b23fd089d97d374ff3131a88a449556458041"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_species.txt",
+      "source": "wyvern-pod",
+      "bytes": 1491,
+      "sha256": "44f1f9a106e890517b92912d6c965f603d844f47decb5302d8587b67dd3d3242"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_succession_breeding.txt",
+      "source": "wyvern-pod",
+      "bytes": 236,
+      "sha256": "7213f5886345856be7ea4bf7d5d28f2061739903b7f208b732dae552620c30cb"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_succession.txt",
+      "source": "wyvern-pod",
+      "bytes": 287,
+      "sha256": "c0f9d44aea9ced966d5395817b5a676333f3db811694c4238b89ed5b659bef88"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age.txt",
+      "source": "wyvern-pod",
+      "bytes": 170,
+      "sha256": "fc450ad557a981982be06dc72aae684efbc4ef765d4c2c1bf1efe63515ca60cd"
+    },
+    {
+      "path": "common/traits/mm_ascension_traits.txt",
+      "source": "wyvern-ascension",
+      "bytes": 1726,
+      "sha256": "50baf454a92d57cb4d6d643d0ade11180fbbff42ac4aa5eea1afdd2470ac7115"
+    },
+    {
+      "path": "common/traits/mm_dragon_bloodline.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 14300,
+      "sha256": "158e5dd880c00d962a70c41709d63b55c7c191f1f5094d65f7f5c285455999e5"
+    },
+    {
+      "path": "common/traits/mm_dragon_branches.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 3954,
+      "sha256": "8e4479f9ea08e738deb1ab41e050c56d85ecce9704a44d5498202c024308bbaa"
+    },
+    {
+      "path": "common/traits/mm_dragon_death_servants.txt",
+      "source": "dragon-creed",
+      "bytes": 521,
+      "sha256": "2377ca495de4fa7dae01d9e9b2aad3ac6bb14a5291ba6cfeb3d1e4728dce962f"
+    },
+    {
+      "path": "common/traits/mm_dragon_features.txt",
+      "source": "wyvern-human-form",
+      "bytes": 622,
+      "sha256": "93fcbe66e3fd5f946d7a8b54b9e7f02815a09d33161a0d71a6b26145a3d7841e"
+    },
+    {
+      "path": "common/traits/mm_pod_mokole_gifts.txt",
+      "source": "wyvern-pod",
+      "bytes": 1274,
+      "sha256": "e9f9c7fc6fc9b9dfc938cde7f633b582f6b9d5c1d5526b8d627de8940c74b1d2"
+    },
+    {
+      "path": "common/traits/mm_pod_species.txt",
+      "source": "wyvern-pod",
+      "bytes": 741,
+      "sha256": "587e26955bd8e8c764e3e960902d6e5bd98992f0b3bac77898e9cc42656abb57"
+    },
+    {
+      "path": "common/traits/mm_royal_perfect_instinct.txt",
+      "source": "wyvern-kings",
+      "bytes": 289,
+      "sha256": "449901aa2c0f8426853eb8f28a94bf23e90257bd2c1bca066d8a6a5bb788e72f"
+    },
+    {
+      "path": "common/traits/mm_royal_throne_identity_traits.txt",
+      "source": "wyvern-kings",
+      "bytes": 672,
+      "sha256": "15c71d0c730a0d98528ce9f2820f9074a4e45b628d712bc4b4d27716d62adf3d"
+    },
+    {
+      "path": "common/traits/mm_royal_traits.txt",
+      "source": "wyvern-pod",
+      "bytes": 7527,
+      "sha256": "58031817a1b6136361b9a09dc0076666db9609353270175d06334a9ce7c3869c"
+    },
+    {
+      "path": "common/traits/mm_wyvern_dragon_blood.txt",
+      "source": "wyvern-capture",
+      "bytes": 541,
+      "sha256": "05e187de1a599c3973bdc85f51f98c58163e450627fe62a5cb981bfe6aeb309f"
+    },
+    {
+      "path": "common/traits/zzzz_mm_wyvern_capture_traits.txt",
+      "source": "wyvern-capture",
+      "bytes": 596,
+      "sha256": "87f6dbc270edf17af16889da1cda2c41b7144bfd0a1b43ab610934f421a4fe87"
+    },
+    {
+      "path": "common/traits/zzzzz_mm_wyvern_species_health.txt",
+      "source": "wyvern-capture",
+      "bytes": 2238,
+      "sha256": "e2a7a2c09f8ead603179bbf52dbf5b19ac6eecaba0b11c8798726d267d271467"
+    },
+    {
+      "path": "common/traits/zzzzzz_mm_dragon_bond_species.txt",
+      "source": "dragon-bond",
+      "bytes": 2160,
+      "sha256": "60eebaf8a657d0b7eb3d16734f27ea041581582fdb03fe837c011afae15ad305"
+    },
+    {
+      "path": "common/traits/zzzzzzzzzz_mm_ascension_legacy_completion.txt",
+      "source": "wyvern-ascension",
+      "bytes": 964,
+      "sha256": "ea36364e81f089aacb3a6491c6e26a800cda9e9e10c49ce88fc92e72344128fb"
+    },
+    {
+      "path": "common/traits/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_native_immortality.txt",
+      "source": "wyvern-pod",
+      "bytes": 751,
+      "sha256": "f1b2e76f922d86cb5894abd4c708ba78bfb5513662b399d4f0b85cf7be6d1121"
+    },
+    {
+      "path": "CREDITS-winner_77-dragon-head.txt",
+      "source": "wyvern-capture",
+      "bytes": 1343,
+      "sha256": "42706b263f63547ff3aa35f9280bad19880e108f1304bc580950911da4e79f30"
+    },
+    {
+      "path": "descriptor.mod",
+      "source": "package-metadata",
+      "bytes": 198,
+      "sha256": "9c177c96504ec047dc29939e6f03c7a10e61fb259108cb5cd31ec0b24915b4d6"
+    },
+    {
+      "path": "events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "source": "wyvern-pod",
+      "bytes": 2472,
+      "sha256": "f1500b5fac9b28f669996586727929d33b1b3db10e890cfd5640f358aa0d2810"
+    },
+    {
+      "path": "events/mm_ascension_events.txt",
+      "source": "wyvern-ascension",
+      "bytes": 1224,
+      "sha256": "1b8e31a08da45faee6b1cae7a4c7949b6e2ecef7835951c0c1665c8826246802"
+    },
+    {
+      "path": "events/mm_black_blood_trial_events.txt",
+      "source": "wyvern-ascension",
+      "bytes": 387,
+      "sha256": "b639b755f4c59deb5430d377f94b13a495694a7212cf7f79e0973488a31b181c"
+    },
+    {
+      "path": "events/mm_dragon_birth.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 390,
+      "sha256": "2959571314e53eedf731544f13723a9ab7b6da75d6d47a7dac10b79bd4cfb3ef"
+    },
+    {
+      "path": "events/mm_dragon_blood_hunt.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1261,
+      "sha256": "031581d07f666a60fe85640a46fb8fddadbd52ae64e239a3a4b16b48d757949a"
+    },
+    {
+      "path": "events/mm_dragon_bond_feeding_events.txt",
+      "source": "dragon-bond",
+      "bytes": 7783,
+      "sha256": "582f51e49123407087ad8c86d85118be1acd5dc7f68d76160c59dbdf02f47b0b"
+    },
+    {
+      "path": "events/mm_dragon_death_servants.txt",
+      "source": "dragon-death-servants",
+      "bytes": 421,
+      "sha256": "90d8657c21528ed67c0521fa61fadd092fbfe2bdd67eec51284067e3e1dc2d0e"
+    },
+    {
+      "path": "events/mm_royal_events.txt",
+      "source": "wyvern-kings",
+      "bytes": 418,
+      "sha256": "aa3cc8ed24ab22a2d9fc5f79d2c451d275c39b8d59eb366db49df4a4392beb19"
+    },
+    {
+      "path": "events/mm_v1312_silk_road_events.txt",
+      "source": "dragon-creed",
+      "bytes": 1008,
+      "sha256": "435e124d6a76c6decdd1c5613640603a8cf35b7b2f209273e1536e343155f764"
+    },
+    {
+      "path": "events/mm_wyvern_dragon_forging_events.txt",
+      "source": "wyvern-capture",
+      "bytes": 1613,
+      "sha256": "9dd9dac083c19abec986586efe0e10f74a771f0b36e8e16a9daa5339cb173fb3"
+    },
+    {
+      "path": "events/myv_wyvern_battlefield_events.txt",
+      "source": "dragon-creed",
+      "bytes": 46705,
+      "sha256": "fa64aeaa5e773c6053b8f6cfeba5f4a0ff026b6a35a762424a5b8f0f18951ebc"
+    },
+    {
+      "path": "events/myv_wyvern_events.txt",
+      "source": "wyvern-capture",
+      "bytes": 72279,
+      "sha256": "f1fe2d0deba1ae8c5fd122e1a49e55de942426fbe25aea4698c0ca619c78ed81"
+    },
+    {
+      "path": "events/zzzz_mm_wyvern_capture_events.txt",
+      "source": "wyvern-capture",
+      "bytes": 8961,
+      "sha256": "faddb6022d42f222d2c371d77ecb380d3d092037b8ed55c0f31e6b5f6091be61"
+    },
+    {
+      "path": "fonts/mm_v1314_tenet_upright.font",
+      "source": "dragon-creed",
+      "bytes": 305,
+      "sha256": "80d1444e95b8dad714d01fb0152926c68c83e9cf778548a46f901c107a2d10dc"
+    },
+    {
+      "path": "gfx/court_scene/character_roles/00_default_roles.txt",
+      "source": "wyvern-ascension",
+      "bytes": 75134,
+      "sha256": "a59b7642cf05e415b673cab7f8640edbbc7b2db0784dd60f0a98d498e7429697"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_dragon_draxel.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "0a86bfc661ebc1130ff47d61ff006b98ed9ed66c791cef1ebc34be93c9453a0f"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_dragon_serind.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "8ad745b376cf28279a22f882924a212635363ab22f682ebf196afc5c15f8ec72"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_black_crown.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "9649119e51d3a4f7fa55921de06718393690f71bec5bbab0ded9bd0ebeba1a7f"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_black_regalia.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "f521130374571974ed162a834bf0c20f83d285ef8d452788269dbca6521403be"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_earth_sarcophagus.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "4013ae11fcf3d94d455d1452636dd1cac31b1d2bfa871f3359dd90cac08c7384"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_fire_ring.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "d73464cfee17c096291d68c97795ccdfcbd51030c8910421b75173de93237120"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_sea_armor.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "2b08f444a5c8ab407a446ea6f3059f834b2ae1948a5f1f75477bfa4e0a27e5ce"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_sky_spear.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "3b7302140f6d86caa7aadf16c3b1583e73cdf00ba4fc356d322e4b8bc4a94829"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_relic_white_book.dds",
+      "source": "dragon-relics",
+      "bytes": 262272,
+      "sha256": "ae7a898260f967adca85e6a18087751f57ff8bbd5de41850e959eb51b936a921"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_black_crown.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "486ff74c6f296ee2dd5c468df82eba4cf3d504e96ffe606786753b99104489fb"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_black_regalia.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "5af6658000fda950d49a08721bd18dde894568e5fc8b87e155782f75dd501c5e"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_earth_sarcophagus.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "d6ac84d18a83541db6db35eda02ec0cb5a8a15766976b47cd77eb50b985594c1"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_fire_ring.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "0665353b3876127c61280ce65025c625f72c6c8fee4932b3d96e59e781cb4d6f"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_sea_armor.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "33bfb9749404dd8f23057f288c2bcd450d155f025a0d4151587cbcd276fd97b3"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_sky_spear.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "ce36428bcbba4d9f458bea3527cc1b295c08c7f6d6f6b8c767c3937ee0290c44"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_v1322_relic_white_book.dds",
+      "source": "dragon-relics",
+      "bytes": 230528,
+      "sha256": "31a94bf790b1bfb5e910dff42e0f12334231f8d486158ce51fd6b62339b755da"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_material_claw.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "df8f4b5fe44694c2ecd6156a1dc412e620a3ab36ff0d6efe0db74291a4fcd098"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_material_horn.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "21bbf538c185b568e0dfcf23861fbfdf65f3d2c17ff07b1c90e8c1a99987bd0e"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_trophy_claw.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "f0ed9556b011dced93be9744896c55e894a95341efdb4e227892830521a7f8bd"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_trophy_eye.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "51a5f89fed365d93381291b2c2debdbc0b7645a13948477dd27cab96cf516d0c"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_trophy_fang.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "15101114a434631ed461d62e6bd5a9a6738a217d495ad9604ec382de77f97d67"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_trophy_head.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "47c43c8b2cc9ae294097f4ffe0ac2c9a3151167221f7f84419a9004a5be9fbce"
+    },
+    {
+      "path": "gfx/interface/icons/artifact/mm_wyvern_trophy_scale.dds",
+      "source": "wyvern-capture",
+      "bytes": 57728,
+      "sha256": "212cb1a0ffa4e839aa734a301ad5533416a9e094ce0ff1f52c7fd0360d484176"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrine_groups/mm_dragon_rite_doctrine.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "b7ffa8b0704d16dc7a191dc4d98d981004d077f4974e485252a8d551f681bd26"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_black.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "cd17c81f8c881ac246a8d2560c6d562ad3f6b0d08264c72b6ad5f3b15cbe7a91"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_earth.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "e9c514169d560b99c284289aeef55b7a8ef9599d24cb42de9685bf382f388736"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_fire.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "76c627dba3dcaaa8860751712ab020804282eebb76518a60d81bd0c82028575f"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_sea.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "8b151050de0013a0ec08e001dded15741df0e2bacdc9d3c021a885b80a838a3f"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_sky.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "687c451c51630c67a0d553444c7abcda6afa34bff7e44a0637b190c5a4d938bd"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_dragon_white.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "08707dae8cd12b732f35a3c5718af9e63c2227c3139b291ec1af87e069f22f09"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_black.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "059d72b4d6581ad3f084301ca246224f7ba18def2d99dabb59a58640727c63b9"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_earth.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "da5d1ecfaff812f0b07f48e99bd39cf6b91e1c3a87751312dca8f4135a8d85aa"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_fire.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "b7fd69486ed0a00598cb0158256d0c894e7482306e76b3a75cd7dd35421e377a"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_sea.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "62c1352ac81e57dcaccf9a730649d7a9c3ba13c100cd4860db8b3d0306af66b6"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_sky.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "5b4825c89ec04e9e80dc83cc5457d33659b327e16f637261e42f3656d5097cd3"
+    },
+    {
+      "path": "gfx/interface/icons/faith_doctrines/mm_v1318_mm_doctrine_white.dds",
+      "source": "dragon-creed",
+      "bytes": 14528,
+      "sha256": "6423733959566e6bc46b03efb6ed3f6fc7de2c860547d4c164cee3b05aca9d48"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "4594b30474b0f3bb303c748fdb46d873bddfdd99869b70bd583479364bc7b700"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "26434d3774f65592ee2a511cdbba701f6e0ebf2ed46919e2465f9c50c86bf287"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_black.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "3fa0b3b40f9e7055a93bd61632964e55f9637dcec8c67447dea92bb779fb350a"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "aa5457008d2d86b086e102a2531b06f56fe970c008d007153e25eea2c8ef2cc8"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "882a4443529e632902cab8fba5fe972cb0e1aa0fa383e089cabd1d3bd69fe34f"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_earth.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "eafdc26ae616c63b2c8bba01eda21abc40898da023cc9503a477ad28706c17b0"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "7923ac96ed1dae9be6ae5de12e19d2106ce073f29e08e2cb115550b426eb9cfc"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "8b1e9585e7d099155ef29bd4e1d628fbc9c509583ac28fb72712110e1f4df929"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_fire.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "b99467544960f979e9ca06beedf36620b94d65323adece4176adb52967875b02"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "e65b21720dd597ab1a1520fb7b38ad71d0b442d206ca30546a0bb6d65edbe5f9"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "be8d84a27abe6d7d592b47675c0e8e46d91dc6aff13dc050ec04a38e6d81161a"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sea.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "3f8743be3988f9206ce55699ddff46bb48b7829dc3ebc2168dfc9ad58fbbaadc"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "39efae2f6644cb91f352e45a6fbe56cd640c3eb929b1b367a4ea40d2ede55a25"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "cf82a41a7751ef4b0330d224c8237c2687445f400bf6109bca8be6ed7661267a"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_sky.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "9ab200bcb04a54f681e7ac5c01e847813000f6ed9ec856485035b2dea071af72"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white_second.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "ba24721982728a688b3ecbd3966748c13e8cb618c8550066c6c5a56c562134dc"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white_third.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "2177065ced48d181268224a5f07a1682d332fd88581d489e66bdd30f27be0cc3"
+    },
+    {
+      "path": "gfx/interface/icons/faith_tenets/mm_v1318_mm_tenet_white.dds",
+      "source": "dragon-creed",
+      "bytes": 104128,
+      "sha256": "decbebe8c8432466e679481195159ac943a226da1c0f890f8f05ced3fae0dad7"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_black.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "cd17c81f8c881ac246a8d2560c6d562ad3f6b0d08264c72b6ad5f3b15cbe7a91"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_creed.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "b7ffa8b0704d16dc7a191dc4d98d981004d077f4974e485252a8d551f681bd26"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_earth.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "e9c514169d560b99c284289aeef55b7a8ef9599d24cb42de9685bf382f388736"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_fire.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "76c627dba3dcaaa8860751712ab020804282eebb76518a60d81bd0c82028575f"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_sea.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "8b151050de0013a0ec08e001dded15741df0e2bacdc9d3c021a885b80a838a3f"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_sky.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "687c451c51630c67a0d553444c7abcda6afa34bff7e44a0637b190c5a4d938bd"
+    },
+    {
+      "path": "gfx/interface/icons/faith/mm_dragon_white.dds",
+      "source": "dragon-creed",
+      "bytes": 40128,
+      "sha256": "08707dae8cd12b732f35a3c5718af9e63c2227c3139b291ec1af87e069f22f09"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_black_emperor.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "f1eadd9780e98af0f8d7b515ae15c3d406eef10303e5deeede89948d64796248"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_bathed_blood.dds",
+      "source": "wyvern-capture",
+      "bytes": 16512,
+      "sha256": "d2946816035878d30533aa85430c55c3737418c70c8efc48fb1568a910d329e1"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_black_blood.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "84e34140badfaec7ff3d7385dba0d9ec5ab84b3127d0a7cc5b7425fb8b2ac4c1"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_death_servant.dds",
+      "source": "dragon-creed",
+      "bytes": 57728,
+      "sha256": "332674c00e71e90eb7e33ad1218b4e4f734d16900d99b9c8e0af7af03211ceac"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_half_dragon.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "9b94f9a17f8c3e4d578b82f923e8c6325c70aab9edc7ca9b7e0bd2fdce23e898"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_horns.dds",
+      "source": "wyvern-human-form",
+      "bytes": 16512,
+      "sha256": "5e4b004e169301e4db08090606491b749a9d4cd9f763a7e8e48b1c5a027943cc"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_lineage_1.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "3756476b094cd774305ace3d9a0ae0025993a897ae8c3934b0716c037eccc823"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_lineage_2.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "9114595168edfe668bf7b441d4834d46108dd7e5efd335c90369d0717c3622fb"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_lineage_3.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "5717218c16dfb46e36d07ae5802c1ec8d61438946fc03e289c17358eeb5ef1c7"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_lineage_4.dds",
+      "source": "wyvern-bloodline",
+      "bytes": 16512,
+      "sha256": "5024d26216f37453e48621a55b4c6724d5b1b9b3ff71502b7fd88278c5a469df"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_pupils.dds",
+      "source": "wyvern-human-form",
+      "bytes": 16512,
+      "sha256": "71d1cbe1b4d5aec7cd15571f815fe92fe695de02cbd76cdcaf102f8f12ebe19d"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_royal_crown.dds",
+      "source": "wyvern-kings",
+      "bytes": 14528,
+      "sha256": "672ffbdd9613c099738d555f4704ad06efde2815da2044fc5d5d4ce0e39218dd"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_scales.dds",
+      "source": "wyvern-human-form",
+      "bytes": 16512,
+      "sha256": "11e598649f552de57ad68516093a0e645c35c8b0ef58492ea3e33c6f5c25ea9e"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_tail.dds",
+      "source": "wyvern-human-form",
+      "bytes": 16512,
+      "sha256": "c56bff72a046039281a21a2b58b2e5f3ff89f31446083286135604916e89766f"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_dragon_torpor.dds",
+      "source": "wyvern-kings",
+      "bytes": 14528,
+      "sha256": "672ffbdd9613c099738d555f4704ad06efde2815da2044fc5d5d4ce0e39218dd"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_royal_earth.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "9728b8afc9f8dbe09ae5ca7370607031bdf0bd0cb06d6a1dae1eb5ce0626c925"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_royal_fire.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "d365429852ea031432598cccb3407b4dc464656f8f39a65751a21c1bd5ffc615"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_royal_sea.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "e07c45dfe63f871935af8009be4e1e2bd3eced5424968d5a6f745e1d11c13152"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_royal_sky.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "400284811b10dd840c9249438b97c41a4762968800b4d41fba367f1fa672280b"
+    },
+    {
+      "path": "gfx/interface/icons/traits/mm_white_empress.dds",
+      "source": "wyvern-kings",
+      "bytes": 16512,
+      "sha256": "bc5bfcadac2db1e6534c162e39e4255cbfda9cc8e7ce37b4d645bb3d165def1b"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_diffuse.dds",
+      "source": "dragon-relics",
+      "bytes": 5592560,
+      "sha256": "e65f7d966e4c51126966f55a87f70577965c11bfd2b04160dd55829cce8af743"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_normal.dds",
+      "source": "dragon-relics",
+      "bytes": 5592560,
+      "sha256": "b031f77397fc637cfcfc8eb7ca251c2d44abea5966dc2567685882296531bc8d"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_properties.dds",
+      "source": "dragon-relics",
+      "bytes": 5592560,
+      "sha256": "6e0793998ba2e710a1bec0b09f7ee18eef4727fed23a6ea1dd7b2b61e236d7a4"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics.asset",
+      "source": "dragon-relics",
+      "bytes": 9234,
+      "sha256": "961723c2cf69a949183e87144fe888a6b20e714778febdcffac31d3de7180bd2"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_black_crown.mesh",
+      "source": "dragon-relics",
+      "bytes": 17984535,
+      "sha256": "8d321e8e8cf8620ee2b697708449211514fecdda33156761426739d4e20915a6"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_black_regalia.mesh",
+      "source": "dragon-relics",
+      "bytes": 11538575,
+      "sha256": "ed14617628bd31287e2eb7909a9c43dcf0e7bbc6380f0d494918e70a47065072"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_earth_sarcophagus.mesh",
+      "source": "dragon-relics",
+      "bytes": 13891584,
+      "sha256": "ed00cd76c73cf7f421c482a4231eeaa6595fcf487dc7a9741551e39bcee488b3"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_fire_ring.mesh",
+      "source": "dragon-relics",
+      "bytes": 8466499,
+      "sha256": "d211468e9b6775ab3e87113816d651f54e4d5f2601d8c96ba3600d85625421d3"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_sea_armor.mesh",
+      "source": "dragon-relics",
+      "bytes": 14330728,
+      "sha256": "eb308abf763ce269df4fa7970052e0932c6aec293aea773d352d6a470ca9f0b8"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_sky_spear.mesh",
+      "source": "dragon-relics",
+      "bytes": 8594227,
+      "sha256": "f6eab959796e30ee1f9efc398d9aab2efe210c31545635ecb73ade7c93a1365d"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_relics/mm_relic_white_book.mesh",
+      "source": "dragon-relics",
+      "bytes": 10988276,
+      "sha256": "59df07b9825be70331236bc464ef944469e5980dbc15ff46a2d7063193fb5eac"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_draxel.mesh",
+      "source": "wyvern-capture",
+      "bytes": 14768258,
+      "sha256": "6209420bffa56d6bb735054486150bf2d33a3d30a95e8b0ad143b081a146cd92"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_serind.mesh",
+      "source": "wyvern-capture",
+      "bytes": 17312066,
+      "sha256": "513521b7d862dc26dbce397f9268edd32c84bb3c88fc8aadd374e02589fd62b9"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_diffuse.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "8ccc61040226fed550b84c7fdc8ef721915d695f59d6faa3c83196089a8734cb"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_normal.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "b24d14865414fadd1fb8da75f73b0d092d75c1092006972c3e14fcbe096fd27e"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_properties.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "1c06761388bee21ce96928388e1eb2a885a78b08ea7391f526716222e46914ff"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons.asset",
+      "source": "wyvern-capture",
+      "bytes": 3214,
+      "sha256": "6fd8f5945c7822506eb0c2705769809f314d3bb1e2f1f2698807b44991246d8d"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_diffuse.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "7fe70e8241b0dfc800be6ac602af63e787a1aac4eab09e8c24bff764bf148557"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_normal.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "3601659da71bfdd5a1b9782c313c47c9b5795d3d8432cc409f506ac814bddc0b"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_properties.dds",
+      "source": "wyvern-capture",
+      "bytes": 22369776,
+      "sha256": "58c80d73af1dabfc3e9467995af63f3b7423ed5b5a28d73c85446e3b47c86160"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_diffuse.dds",
+      "source": "wyvern-capture",
+      "bytes": 5592560,
+      "sha256": "bf0db29651cfae9970a24738bbb8a57e74d9aaf71eb476f5104635cb19dfc52d"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_normal.dds",
+      "source": "wyvern-capture",
+      "bytes": 5592560,
+      "sha256": "dbf70ba501e278d368745dba1cccd74944cc89f2ac831bebe2123cd7bb71ed3c"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_properties.dds",
+      "source": "wyvern-capture",
+      "bytes": 5592560,
+      "sha256": "ce52670a64b0bdbd8b6d60208313d8919cfbd71bc75759db7d3c78a51643a3d8"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies.asset",
+      "source": "wyvern-capture",
+      "bytes": 4371,
+      "sha256": "92d97650a58cf6648e07a57b7734573f70683513964813ce6f3c0505bb46b68a"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_claw.mesh",
+      "source": "wyvern-capture",
+      "bytes": 1556163,
+      "sha256": "1f1e80a9bff2c9e7bebec5849efeb7558e6728df5e30fba6f462df7520e48a96"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_eye.mesh",
+      "source": "wyvern-capture",
+      "bytes": 908786,
+      "sha256": "f69fe4b8e0a340e25bddcf3f8dabaae5006f8dd3594e44f6d9eba7d66951d122"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_fang.mesh",
+      "source": "wyvern-capture",
+      "bytes": 746931,
+      "sha256": "5749ec741baa17c4ef02fdab1138554660f1f9d4e8ced0862ebacf0d0145785e"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_head.mesh",
+      "source": "wyvern-capture",
+      "bytes": 23568561,
+      "sha256": "a1df48ceb2c38d7de9639f4d31468d98942c19e8eadfc7e4e9bb0d263cd1ed67"
+    },
+    {
+      "path": "gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_scale.mesh",
+      "source": "wyvern-capture",
+      "bytes": 698164,
+      "sha256": "fcfb31d4086e584a7eceb76364becce80c374f062ce8baa02c6c9a22238d07ac"
+    },
+    {
+      "path": "gfx/models/portraits/female_body/female_body.asset",
+      "source": "wyvern-pod",
+      "bytes": 174906,
+      "sha256": "da3c6b788922c2b835c062c4847b1b0f43c8d2d0799b762ad5e436b08b4c2c7a"
+    },
+    {
+      "path": "gfx/models/portraits/female_head/female_head.asset",
+      "source": "wyvern-pod",
+      "bytes": 168523,
+      "sha256": "9d048517b3d8e0f73310d62cb0d7536ba99eb424ee53e5ebbb1c4b3779de5b62"
+    },
+    {
+      "path": "gfx/models/portraits/male_body/male_body.asset",
+      "source": "wyvern-pod",
+      "bytes": 229162,
+      "sha256": "1275055bb029a4db794b5daa87b2fe17c786088dcfbc49493c2c22effa47e73f"
+    },
+    {
+      "path": "gfx/models/portraits/male_head/male_head.asset",
+      "source": "wyvern-pod",
+      "bytes": 223555,
+      "sha256": "3ebfd68fb6bca2f842e4b1fb8789ae1ccc845622940181224883c3a343efda7e"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_diffuse.dds",
+      "source": "wyvern-human-form",
+      "bytes": 1398256,
+      "sha256": "9cb6e34421c60b932ddaafa9c290b1d067292e6991887ca6275ab12998c60ad6"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_normal.dds",
+      "source": "wyvern-human-form",
+      "bytes": 1398256,
+      "sha256": "98de517b92f29a43c450574e2bc23b889795683fba80785a7ee3b37c612e0423"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_properties.dds",
+      "source": "wyvern-human-form",
+      "bytes": 1398256,
+      "sha256": "acdf7793fd4c322fdc0c721b7003a0fec3db1f0fcecb54e923594c538216c97e"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_decor.asset",
+      "source": "wyvern-human-form",
+      "bytes": 2922,
+      "sha256": "46103de272391aa8614df810dab247de20681bf8b2a180f6b277320f43c78cc1"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_horns_child.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 46767,
+      "sha256": "843fc406d7c3b1d18397f94d1304ebbe30f2ea00bcee3b87d9aca8e43ccd2922"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_horns.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 46761,
+      "sha256": "7afe6cccf2c2200db46700503a5a196c53b3e80e3067c4f71d42fe6a4e8d986a"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_scales_child.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 86800,
+      "sha256": "39242cc94e6f598ea98df46d84c1b898c00d5bff5e712c7ea2f51e25dff7e714"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_scales.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 86794,
+      "sha256": "729c7cae3edb2e4983bb6542d71b70b67a975b48e7358e7b512e758657f3a52e"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_tail_child.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 96302,
+      "sha256": "fc638cb489257fdc124410b3d8853dfb726b896ea6bdf49e742a8b99106f57c1"
+    },
+    {
+      "path": "gfx/models/portraits/mm_dragon_decor/mm_dragon_tail.mesh",
+      "source": "wyvern-human-form",
+      "bytes": 96296,
+      "sha256": "acea9ff95bb34f3902df776839137da05a4f577e522e305058c2ee3587480026"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_black_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "54c74ccd92b2170d023e43e2722afe409fca6563d1d55d0e40b782461bcaf6c3"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_earth_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "af49a00ae2c9ef95c7741fd5810dd170fdfe9cf946c0d53f8f36650be00d6148"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_fire_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "57caa43e70c65e23050fef9e82f95437d0a2cc78b1441ff97eb6a4b231585af8"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_sea_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "333e90044de4dd4f6a016fe367b3081ca84c9f3ded7b2f893fd718738f5148ab"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_sky_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "1a31f4f891afedfc09a304b1e3aa5e5ef695284475957501f452c9bc8ca001c6"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_white_diffuse.dds",
+      "source": "wyvern-kings",
+      "bytes": 16777344,
+      "sha256": "2234c90c058062a15624c9c05258826052a76c2697707a31da143d419c408ae6"
+    },
+    {
+      "path": "gfx/models/portraits/myv_wyvern/mm_royal_wyvern.asset",
+      "source": "wyvern-kings",
+      "bytes": 374257,
+      "sha256": "bfba44810ce9e71c517d7cf4686b033a46baa1652f057fb44c346b69ba1edd23"
+    },
+    {
+      "path": "gfx/portraits/accessories/mm_dragon_decor.txt",
+      "source": "wyvern-human-form",
+      "bytes": 630,
+      "sha256": "0a34acafa7a66f28e59f0f5258b9ff6e937afb11b4f1c4dc596b2601eff0afa6"
+    },
+    {
+      "path": "gfx/portraits/accessories/mm_royal_wyvern.txt",
+      "source": "wyvern-kings",
+      "bytes": 48514,
+      "sha256": "d2b452dbf8100c84f3abbe58d72d918d511a54963d8b89c07e2cca9c6afab12a"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_compact_head.txt",
+      "source": "wyvern-ascension",
+      "bytes": 4018,
+      "sha256": "9f07a208b67aed82da1e1d5f9909b738592f1342c06c4f5c4d5a5b6d4ba21f6d"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "source": "wyvern-ascension",
+      "bytes": 60231,
+      "sha256": "ae6cc0d1d18526bde8df5c69d89889c40e4cce2784517ac05edff2a046d99d13"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_wyvern_memorial.txt",
+      "source": "wyvern-kings",
+      "bytes": 74424,
+      "sha256": "4030563a84f66728e0c1e239d0cc11e426453c8d9fb0f7b1ad4f8eb49c156d71"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "source": "wyvern-ascension",
+      "bytes": 80855,
+      "sha256": "bc0af896c2666a23f3059547e51df0430801a1c363d72d716b7d87768371ca4b"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_wyvern_running.txt",
+      "source": "wyvern-ascension",
+      "bytes": 60432,
+      "sha256": "992f7b15a13860157d3f3c179cdd4e6f65a59d6afc677f47176fd8162a0d2e3e"
+    },
+    {
+      "path": "gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt",
+      "source": "wyvern-ascension",
+      "bytes": 61707,
+      "sha256": "cad4f43a9879b69f7056d7f324f09ad690044c9ba0c7ee525bff7ccbfbc0910c"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_asc_dragon_portrait.txt",
+      "source": "wyvern-ascension",
+      "bytes": 36588,
+      "sha256": "9c0dbe7ab07df132d0a8945fb1380bb87e28136654cde88bc4c905172ecfc91e"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_asc_human_golden_eyes.txt",
+      "source": "wyvern-ascension",
+      "bytes": 431,
+      "sha256": "a65a70aeef718a8fcab3485d74bbf73cc440678b9220db0307038fc386702ccd"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_asc_native_poses.txt",
+      "source": "wyvern-ascension",
+      "bytes": 64525,
+      "sha256": "5c1f91c40f7c06b884355664dd4e593f5aab09066758b19346d448b5c88a0c71"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_asc_no_human_accessories.txt",
+      "source": "wyvern-ascension",
+      "bytes": 2297,
+      "sha256": "dfb3c0bf11898f0c044f57a2e7e43da2109797a3cea82eaaf1c6369702743f37"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_dragon_decor.txt",
+      "source": "wyvern-human-form",
+      "bytes": 2719,
+      "sha256": "929c64c775edeaf4ff16e3f673d74417a0dac16039500bcdca9b329521a79589"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_dragon_lineage_golden_eyes.txt",
+      "source": "wyvern-bloodline",
+      "bytes": 1484,
+      "sha256": "c4b5ba50177c1fc2be340c88a3002497c65db1b6aadc2e5610e66ef6f784d86b"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_royal_human_golden_eyes.txt",
+      "source": "wyvern-kings",
+      "bytes": 634,
+      "sha256": "ed7eca2f4abd882c1b7b5fabdf7f39a21ecf942525d30178912deb0b3a662f66"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_royal_wyvern_portrait.txt",
+      "source": "wyvern-kings",
+      "bytes": 89781,
+      "sha256": "b4551f00df52d72f3e7cc2dd03cf64a307ab982df767354afcdfd8ae95d5f1f2"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/mm_wyvern_human_form_portrait.txt",
+      "source": "wyvern-pod",
+      "bytes": 865,
+      "sha256": "85e2fd583c9f67121f86d083cc0c694a86a4046a797029b6fa3f6ddf247acb33"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt",
+      "source": "wyvern-pod",
+      "bytes": 37400,
+      "sha256": "dbe3c30e0a27a3b0b1ff92677584d46aae955653b2a978230755b572dfd4f732"
+    },
+    {
+      "path": "gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt",
+      "source": "wyvern-pod",
+      "bytes": 2482,
+      "sha256": "16fbd92db552c41cf2da74c0972352c24d562c0a04f6051a43b951abcb456804"
+    },
+    {
+      "path": "gfx/portraits/trait_portrait_modifiers/mm_asc_dragon_body.txt",
+      "source": "wyvern-ascension",
+      "bytes": 320,
+      "sha256": "ed41c62de202f060348e85779939c0a2415cbb9bccff9d4936f4bf22f5582a2a"
+    },
+    {
+      "path": "gfx/portraits/trait_portrait_modifiers/myv_wyvern_trait_portrait_modifiers.txt",
+      "source": "wyvern-pod",
+      "bytes": 979,
+      "sha256": "e44e7757831f61e5412559d24aea848e323bd5cfe3affc8e7b685083f7fa1091"
+    },
+    {
+      "path": "gui/custom_gui/myv_wyvern_character_window.gui",
+      "source": "wyvern-pod",
+      "bytes": 65829,
+      "sha256": "b82ee840c3fcb052dfc2fba9bce339e7519081ffd65bbc7dc789af7e8f9e3ed5"
+    },
+    {
+      "path": "gui/event_window_widgets/myv_wyvern_name_input.gui",
+      "source": "dragon-culture",
+      "bytes": 1189,
+      "sha256": "4c20325aad9c5d0b9eb1853cf507637f9deb16a911e17fddd715dae4c9e13100"
+    },
+    {
+      "path": "gui/hud_outliner.gui",
+      "source": "wyvern-pod",
+      "bytes": 51439,
+      "sha256": "4b4bf8b10a6d3ca2bd5c8f0e50151467c7c6a6c7e6371046a3e2fe7667b3fda2"
+    },
+    {
+      "path": "gui/interaction_confirmation.gui",
+      "source": "wyvern-pod",
+      "bytes": 17797,
+      "sha256": "b362db0ed332d56de49874b43132461b337a92d609d687ac653a730472f10a44"
+    },
+    {
+      "path": "gui/map_icon_layer.gui",
+      "source": "wyvern-pod",
+      "bytes": 161630,
+      "sha256": "41e0cd9aa7cf78a5b460000c256ec9257d7e0c8f0d942de36f123f653b522869"
+    },
+    {
+      "path": "gui/shared/00_votc_trait_tooltip.gui",
+      "source": "wyvern-pod",
+      "bytes": 7574,
+      "sha256": "7d63bc814b00ca787cc9af23cde8359f8a89dc073d8dbea582ae27d3912a2dac"
+    },
+    {
+      "path": "gui/shared/cooltip.gui",
+      "source": "wyvern-pod",
+      "bytes": 256946,
+      "sha256": "fd80a62f5e4e8d0301759da9f6d49cd03ed2cfb1cbd2fa48aa564502ff357c97"
+    },
+    {
+      "path": "gui/shared/mm_v1314_faith_tooltip.gui",
+      "source": "dragon-creed",
+      "bytes": 2779,
+      "sha256": "d1f2368b8fd189b1c58c93ee6f017de642e5cc7ec6732bb9d69dacebc0d1b184"
+    },
+    {
+      "path": "gui/window_artifact_details.gui",
+      "source": "dragon-relics",
+      "bytes": 18628,
+      "sha256": "8e52aa1bee36b07e2499dfe0f98fb954f953f459968f9693835ed5987e107fe8"
+    },
+    {
+      "path": "gui/window_character_finder.gui",
+      "source": "wyvern-pod",
+      "bytes": 8110,
+      "sha256": "9e526588e02261dd72b0786adf3a979a506f0baa2b1190aa1e07be623a0aa2e4"
+    },
+    {
+      "path": "gui/window_character.gui",
+      "source": "wyvern-pod",
+      "bytes": 173208,
+      "sha256": "eaa4e9fe755164bb4db2df6b48bcb1a2d7baa691258636e50f8ca8c284c7ee69"
+    },
+    {
+      "path": "gui/window_faith.gui",
+      "source": "wyvern-pod",
+      "bytes": 157226,
+      "sha256": "0f0e01e395aa807a0b0650b44c70d797a28de02472c20dc21a21b96289b17fda"
+    },
+    {
+      "path": "history/characters/myv_historical_wyverns.txt",
+      "source": "wyvern-kings",
+      "bytes": 6486,
+      "sha256": "53438589258f0a400bae85b6ff79ec2f7c36c3621e36dbac43d9dc41953d92e1"
+    },
+    {
+      "path": "history/cultures/myv_wyvern_culture.txt",
+      "source": "wyvern-pod",
+      "bytes": 5378,
+      "sha256": "d25e7255b0abf841ab78fdab441964d7be2f34ced1105daeba0fb347453bf9cf"
+    },
+    {
+      "path": "localization/english/mm_ascension_l_english.yml",
+      "source": "wyvern-ascension",
+      "bytes": 5929,
+      "sha256": "a5de340d138f35dc04ce5d8387559028122eae25e658e470a6a228fb7f83a226"
+    },
+    {
+      "path": "localization/english/mm_black_blood_trial_l_english.yml",
+      "source": "wyvern-ascension",
+      "bytes": 1967,
+      "sha256": "3e27e03baa912d87d058fad6d8d60ae44471769f55d62c081d641d858f5b6760"
+    },
+    {
+      "path": "localization/english/mm_dragon_battlefield_v1312_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 940,
+      "sha256": "34952a52f3e09996885081a1085294d12fccfbd6852f28a8b224bc3b93418648"
+    },
+    {
+      "path": "localization/english/mm_dragon_bloodline_l_english.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 33106,
+      "sha256": "364cc247a59aa7ccdb183b30a3c43af3a4f7c7cc1f0f3ef78702917f2f549baf"
+    },
+    {
+      "path": "localization/english/mm_dragon_creed_awakening_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 531,
+      "sha256": "03d4d1fbeba6dd2816827edc47c74a4404c52d28bea16387fa3ffadcb33d9f0c"
+    },
+    {
+      "path": "localization/english/mm_dragon_creed_combat_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 189,
+      "sha256": "19d2e2bc97aa8df95d41207260534027c24f26f20c4e8868a327394ef3151123"
+    },
+    {
+      "path": "localization/english/mm_dragon_creed_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 6275,
+      "sha256": "80307d64cabc3f7f51b2fd7ce3cdb19eb42d9f750c044eab98e7940d1a8159a8"
+    },
+    {
+      "path": "localization/english/mm_dragon_culture_l_english.yml",
+      "source": "dragon-culture",
+      "bytes": 239,
+      "sha256": "e31c14d51b173e9eca578f1b1eba9ecb5961692465fa37a31c14ecefe4d6179c"
+    },
+    {
+      "path": "localization/english/mm_dragon_death_servant_identity_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 401,
+      "sha256": "0a09e481964d41d036ce4c96691f5d93a3f72953faf41a087286e02fa4990d9d"
+    },
+    {
+      "path": "localization/english/mm_dragon_death_servants_l_english.yml",
+      "source": "dragon-death-servants",
+      "bytes": 436,
+      "sha256": "e3ad97a0ae61f7c41ffd4200471ac94c206a73ee0fce6794adf9f573f56a3c7c"
+    },
+    {
+      "path": "localization/english/mm_dragon_features_l_english.yml",
+      "source": "wyvern-human-form",
+      "bytes": 558,
+      "sha256": "457566a9f7d2766289dcf166b57bdf8e279a08cbd5035efefdb7b2c861e0dff1"
+    },
+    {
+      "path": "localization/english/mm_dragon_recovery_l_english.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 1236,
+      "sha256": "0b78ec851cc2634a0aa7e281cab7d85a8a62f38403bb181f1c974cc39ce0baf2"
+    },
+    {
+      "path": "localization/english/mm_dragon_relics_l_english.yml",
+      "source": "dragon-relics",
+      "bytes": 4396,
+      "sha256": "a2c2bd98af40b449da019819cdf8a7907239753cea4c8462baa0c5a073fb7958"
+    },
+    {
+      "path": "localization/english/mm_dragon_v1311_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 7085,
+      "sha256": "943435b1b06a59cc7a5108fdcddfb114f4bb2c2c1d73d1da4b57e1b67bd775b3"
+    },
+    {
+      "path": "localization/english/mm_dragon_v1312_conversion_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 64,
+      "sha256": "c487043c782904b503b566b6b6f54ac4aa72ee4077bc770742882f9f64b28d3e"
+    },
+    {
+      "path": "localization/english/mm_dragon_v1312_factions_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 71,
+      "sha256": "8df6fcda72c96b2a5989d03e0d190ccf1ec335f7b0ceafde56a44ed8d794d6a8"
+    },
+    {
+      "path": "localization/english/mm_pod_kinfolk_first_change_l_english.yml",
+      "source": "wyvern-pod",
+      "bytes": 900,
+      "sha256": "3498385fb6abbd9c3d3619d30a2eb50aac88e50a45add4a22f9693553d2f2d45"
+    },
+    {
+      "path": "localization/english/mm_relic_powers_l_english.yml",
+      "source": "dragon-relics",
+      "bytes": 7332,
+      "sha256": "6265b9626df5eb9c4a1e7d6a426243eea0809bbaac024151cb6e3788ba4a1671"
+    },
+    {
+      "path": "localization/english/mm_royal_awakening_requirements_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 1693,
+      "sha256": "8ef9fd7905a026cc522bd7320176c73e34375951a6f5f60c279cd2ab05e70cde"
+    },
+    {
+      "path": "localization/english/mm_royal_instinct_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 242,
+      "sha256": "a527f8f6b58e70cf4824cf8d96f7e0923c322170d0a2d435a9c4dadb273364ed"
+    },
+    {
+      "path": "localization/english/mm_royal_mass_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 698,
+      "sha256": "49afb5c369b4a22bd1e1e4872cbc4f00587ed4f35b89dd21db31bf7159368d6e"
+    },
+    {
+      "path": "localization/english/mm_royal_throne_identity_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 528,
+      "sha256": "a479d13a9c842adbb2c9d0b4749d7611999cad34afa4d34580437821d48b9c85"
+    },
+    {
+      "path": "localization/english/mm_v1312_quality_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 272,
+      "sha256": "0bca88c0007f6cf352a12a02eb0bf2d9775173df79986ef30fabc702876b6aff"
+    },
+    {
+      "path": "localization/english/mm_v1312_rite_opinions_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 65,
+      "sha256": "b351be6421be81a32353d929154a2bc1c0f7a9b1f9abff14d6966a0c8add58cb"
+    },
+    {
+      "path": "localization/english/mm_v1312_silk_road_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 2431,
+      "sha256": "cae5a5d6aaa72f506ede4702a7f1b14db119a5a58804c475cf283da23f8224a5"
+    },
+    {
+      "path": "localization/english/mm_v1313_funeral_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 171,
+      "sha256": "ff26e741ab25050a9acb773a892f3dec5d22577ddb82410279fb2d9a5fc9b319"
+    },
+    {
+      "path": "localization/english/mm_v1314_projection_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 625,
+      "sha256": "9c208f3cc5175fe745aa0d18677d39308376903e33b5d9793c8c2e652ddb31b5"
+    },
+    {
+      "path": "localization/english/mm_wyvern_capture_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 5506,
+      "sha256": "9bf2befdb2d820df69dc065207734cf8c6928daf1bc7497946ada3d92eaf4055"
+    },
+    {
+      "path": "localization/english/mm_wyvern_dragon_forging_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 3815,
+      "sha256": "eb35e2b0268193175f1fee357180a44e4c524ce312a1ad18ef1213f15a33161d"
+    },
+    {
+      "path": "localization/english/mm_wyvern_human_form_l_english.yml",
+      "source": "wyvern-human-form",
+      "bytes": 196,
+      "sha256": "f60b0b5627bd96a926e49a68ae63db1d7dafc92d77df216ca66c4f96dc2170cc"
+    },
+    {
+      "path": "localization/english/mm_wyvern_personal_materials_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 857,
+      "sha256": "97d72db6b02a2eb040789e923d63f84cf774f919920ee4c56570645967b4c245"
+    },
+    {
+      "path": "localization/english/mm_wyvern_trophies_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 2738,
+      "sha256": "76182c9a104e6a78c3915c7b98cbb3a1dce7c193f68022abb57e864ff4893144"
+    },
+    {
+      "path": "localization/english/mm_wyvern_victory_l_english.yml",
+      "source": "wyvern-capture",
+      "bytes": 966,
+      "sha256": "fef903d509b62a20dbdc22a3d45140f9fcbe3e2d761b21f2d2f439c6d5b3bd5d"
+    },
+    {
+      "path": "localization/english/zzzz_mm_v1321_tenet_scope_l_english.yml",
+      "source": "dragon-creed",
+      "bytes": 5622,
+      "sha256": "b23d0337d9c2c371bf95374f64e57532611b68a2933a6ad98fd4f866d4cbd803"
+    },
+    {
+      "path": "localization/english/zzzzzzzz_mm_royal_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 14543,
+      "sha256": "18c3af67c9bc27f40dcd0a973133c127d9884411780a9db58c0e506ccb9c8af7"
+    },
+    {
+      "path": "localization/english/zzzzzzzzzzzz_mm_ritual_l_english.yml",
+      "source": "dragon-ritual",
+      "bytes": 6045,
+      "sha256": "36c71bef73550b3cac7a0e0a75bad1b3222fa2e4752315323593ecc2023649de"
+    },
+    {
+      "path": "localization/replace/english/mm_dragon_native_l_english.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 1284,
+      "sha256": "c325f1cc14ba44f37dd9be9fe98f4745d147ff902d08b42f5fa8e18f5b691c08"
+    },
+    {
+      "path": "localization/replace/english/mm_royal_population_l_english.yml",
+      "source": "wyvern-kings",
+      "bytes": 785,
+      "sha256": "037f6051e501b72e3595741979076f9645c4972c6ceade52bfd31b6a4cd8ec09"
+    },
+    {
+      "path": "localization/replace/english/zzzz_mm_dragon_bond_l_english.yml",
+      "source": "dragon-bond",
+      "bytes": 502,
+      "sha256": "9953586efb6d6cefca2bbcc9831f2c5b3eaa6b7678c98272acc16bf4cc00f808"
+    },
+    {
+      "path": "localization/replace/english/zzzz_mm_dragon_culture_l_english.yml",
+      "source": "dragon-culture",
+      "bytes": 278,
+      "sha256": "7a2acef7cd0af6d2030f654349ea59ef2beb093ff9a774d487cb162b60126b0a"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzz_mm_pod_identity_l_english.yml",
+      "source": "wyvern-pod",
+      "bytes": 4447,
+      "sha256": "07bc4940668216f6882040def91c0b01212c744b4e3197fdd960f4b745ef8949"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzz_mm_pod_succession_l_english.yml",
+      "source": "wyvern-pod",
+      "bytes": 730,
+      "sha256": "41cccfc2c63a9fb70b6ac79fec6f089cb969d962935f80c868b6f319b358a833"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzzz_mm_pod_mokole_max_l_english.yml",
+      "source": "wyvern-pod",
+      "bytes": 4608,
+      "sha256": "7e776ce4f682efee892f59824503401a7a07cd60d5ad5ad6eb121c16a23e08ff"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age_l_english.yml",
+      "source": "wyvern-pod",
+      "bytes": 179,
+      "sha256": "58e5b7ae7adf98753fc169c2671e24fffa318857bcaadbf6b0aa63bdfea3a046"
+    },
+    {
+      "path": "localization/replace/simp_chinese/mm_dragon_native_l_simp_chinese.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 1181,
+      "sha256": "648bfe14f4ed1c49b61b5e586e47ccc8cc9eeb6ceeb4c1582da3b29d608e61fc"
+    },
+    {
+      "path": "localization/replace/simp_chinese/mm_royal_population_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 721,
+      "sha256": "9ece3e2e85135e610b35575cb257260b31ccb304f8390d65e7c218a53c82a663"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzz_mm_dragon_bond_l_simp_chinese.yml",
+      "source": "dragon-bond",
+      "bytes": 487,
+      "sha256": "22793828ffc98bc7baa9657dc4169231a2d26085eba202320177a6ca09c78061"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzz_mm_dragon_culture_l_simp_chinese.yml",
+      "source": "dragon-culture",
+      "bytes": 270,
+      "sha256": "48211d660a76b901b00213bbe012e309fc7294bc8c84a21702c06d2aff91f263"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzz_mm_pod_identity_l_simp_chinese.yml",
+      "source": "wyvern-pod",
+      "bytes": 4316,
+      "sha256": "6205c9819f740dfd0c2a73bf6bd04a108511cc87ee5ed80a2f35182a7799bb71"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzz_mm_pod_succession_l_simp_chinese.yml",
+      "source": "wyvern-pod",
+      "bytes": 724,
+      "sha256": "64f0bab4c47362ac4a910ab727f54d1d947dc7b1797d4e8161cf07aa38576e82"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzzz_mm_pod_mokole_max_l_simp_chinese.yml",
+      "source": "wyvern-pod",
+      "bytes": 4076,
+      "sha256": "08a64ab4d8c72706ddba6a8b95dead5856fd5b4e31e2ab941e80c4f63bf11638"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_hidden_age_l_simp_chinese.yml",
+      "source": "wyvern-pod",
+      "bytes": 184,
+      "sha256": "14eb3251cb806d8d4ff0ea26dee538e1768153fc3d26fd8e2676a45878318926"
+    },
+    {
+      "path": "localization/simp_chinese/mm_ascension_l_simp_chinese.yml",
+      "source": "wyvern-ascension",
+      "bytes": 5298,
+      "sha256": "76cba2e38bb75bcdac6e3395e775ec736bb15e4bc2d11813641323453c2e5e57"
+    },
+    {
+      "path": "localization/simp_chinese/mm_black_blood_trial_l_simp_chinese.yml",
+      "source": "wyvern-ascension",
+      "bytes": 1841,
+      "sha256": "02e1d70632ea762af27545748154c3820b7a6c28a5308332a0d6de758f1a9cb7"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_battlefield_v1312_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 930,
+      "sha256": "d2251b4bbb9742c42282a6eeaff28308dd133fbb33953a4347ed62bd8fe81922"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_bloodline_l_simp_chinese.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 32217,
+      "sha256": "d9bbb05de56b027a067505a2f466691a37dcf67b0d594b997d5649de50ddd6a1"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_creed_awakening_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 476,
+      "sha256": "dbcbba422c0c3feae94287ca6ee07dd27d7865fcc1b2d5246fb8eeaae2940e31"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_creed_combat_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 160,
+      "sha256": "004c68fabed92dd77559d0a4d77eca011fa7fe94fdcc3ecd3784b909248ef39f"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_creed_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 5553,
+      "sha256": "f00c0fa9c1549ea06eb3c594e341e6240739da6c666a8a05dc56a7a597afc1d2"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_culture_l_simp_chinese.yml",
+      "source": "dragon-culture",
+      "bytes": 219,
+      "sha256": "6aaa6164594f3d5dcaac0f5670080e4546bca23164a5f5bcbaf118c93c9ab859"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_death_servant_identity_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 392,
+      "sha256": "ede713281d0e41d2045f3feaee34c0165351f2332969c27db1d4d7a847b10e3c"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_death_servants_l_simp_chinese.yml",
+      "source": "dragon-death-servants",
+      "bytes": 425,
+      "sha256": "cb7a751ac1a5395f7620ecb09c5c777fc0800e83acc487af25ac87b5d85304c4"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_features_l_simp_chinese.yml",
+      "source": "wyvern-human-form",
+      "bytes": 571,
+      "sha256": "952794097b544435b8994b0be3ef204b623ad538af2abec3407d13af91a2868f"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_recovery_l_simp_chinese.yml",
+      "source": "wyvern-bloodline",
+      "bytes": 1224,
+      "sha256": "4934c83cb72a3327a022cc8bfc710896287ba4ed1445a54f4d1181769b310e91"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_relics_l_simp_chinese.yml",
+      "source": "dragon-relics",
+      "bytes": 6228,
+      "sha256": "2cca72b0209f5c8061a78eaa01c2bf04baecc574850303cc9675da4529472062"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_v1311_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 5853,
+      "sha256": "f1d6707cb162e29088251c3f277b0201718d3107023aa0609660ac8c1b7921c1"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_v1312_conversion_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 65,
+      "sha256": "f5879598a2789e5d68f5e44ebeb9e39ead255c6def24ae9a02d286496fedcb91"
+    },
+    {
+      "path": "localization/simp_chinese/mm_dragon_v1312_factions_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 67,
+      "sha256": "625972c5ebdace1617d757c17bf07828ae348519b1ae23c4939d642f28d60fc3"
+    },
+    {
+      "path": "localization/simp_chinese/mm_pod_kinfolk_first_change_l_simp_chinese.yml",
+      "source": "wyvern-pod",
+      "bytes": 795,
+      "sha256": "a0d87016eab3704ad39e060168d3399ac0e39bd579238f48fc7a28fd3d1b7289"
+    },
+    {
+      "path": "localization/simp_chinese/mm_relic_powers_l_simp_chinese.yml",
+      "source": "dragon-relics",
+      "bytes": 6955,
+      "sha256": "3471843b8aa98f0b6022c54b3edcf56c7f969aa209ed4d165b37d2602ac28b13"
+    },
+    {
+      "path": "localization/simp_chinese/mm_royal_awakening_requirements_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 1643,
+      "sha256": "5d15de89a637df95a68d532df9f1be26fb8324406e7334b26503cf4b0c715b48"
+    },
+    {
+      "path": "localization/simp_chinese/mm_royal_instinct_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 210,
+      "sha256": "8ce265fdf9526db2fcc5766cfafc9da62461e2c0cd501f706ad7ec1aa0d87b21"
+    },
+    {
+      "path": "localization/simp_chinese/mm_royal_mass_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 685,
+      "sha256": "c6846b396f984a5bf19b86a8debdcb11654ca4fc753dfdaa5cd2dbc21d1c729f"
+    },
+    {
+      "path": "localization/simp_chinese/mm_royal_throne_identity_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 501,
+      "sha256": "2a6bfb59a0dc8613a870fa148ad8a5b686fb2bbf875c866cb3143aa3037ba2e2"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1311_mechanics_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 6945,
+      "sha256": "a326b5424fbf2e1ecdf3a8c94f4c40911b51fede19cb59e90d5217d0609bf917"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1312_quality_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 349,
+      "sha256": "f6f2fa3a138fc2e3c3c0708e35c24b73e7ca4e27728fcd36604f5eec24196387"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1312_rite_opinions_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 77,
+      "sha256": "3424d5d1294ad1520b4a0af9f0454b1af8bcdb173a7eec02ee61e97822f23af5"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1312_silk_road_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 2232,
+      "sha256": "c305cc8f2c8b969423091ce0a87b804291c3ffd9ae92b616bbae6c591110d28f"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1313_funeral_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 143,
+      "sha256": "5ef9e0a36a2277da75a7f60ea35c7f42a06ab8cb6f2abebe5e22a12f9375b696"
+    },
+    {
+      "path": "localization/simp_chinese/mm_v1314_projection_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 631,
+      "sha256": "6f585741247fd848f5da635bb190d48ae4a8e5f91d4dbf6f8ecbcaf4d904e13d"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_capture_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 5195,
+      "sha256": "f967148d213940ffd58cd86f04fc7e3c1f7089c828f8598cb004ba4552372924"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_dragon_forging_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 4022,
+      "sha256": "f8edfed0ce4043f62eb65565cd30eaadebdd828844ba5a8cf728a6304054b62f"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_human_form_l_simp_chinese.yml",
+      "source": "wyvern-human-form",
+      "bytes": 181,
+      "sha256": "eef5ff0fecfdc6cb6b1ad0bb2ce893f39a3f76f7d291c4a4e677e2ee260c9fdd"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_personal_materials_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 885,
+      "sha256": "9c90d354e273d513b1926a21b7a472d9d25b0bc0e183874b9d365d2cfd932ed6"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_trophies_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 2593,
+      "sha256": "8b1a3b78c708677b0d9435d0c275afc48c489ebafa6d0e99af0afb4814cc4963"
+    },
+    {
+      "path": "localization/simp_chinese/mm_wyvern_victory_l_simp_chinese.yml",
+      "source": "wyvern-capture",
+      "bytes": 1027,
+      "sha256": "a8e80082b8f193da9e10ab1e0a0c980dfe5a8ab785bcd0d81c83c1156a9663e9"
+    },
+    {
+      "path": "localization/simp_chinese/zzzz_mm_v1321_tenet_scope_l_simp_chinese.yml",
+      "source": "dragon-creed",
+      "bytes": 5551,
+      "sha256": "78bad39bb12b347d6189988951429a122f4437afd91189186a9aa1688821bb0d"
+    },
+    {
+      "path": "localization/simp_chinese/zzzzzzzz_mm_royal_l_simp_chinese.yml",
+      "source": "wyvern-kings",
+      "bytes": 13527,
+      "sha256": "24cdbd7a0a48ff09b77916ea03e28f55a280ef563413e25cfcf07b7bb32e4a40"
+    },
+    {
+      "path": "localization/simp_chinese/zzzzzzzzzzzz_mm_ritual_l_simp_chinese.yml",
+      "source": "dragon-ritual",
+      "bytes": 5781,
+      "sha256": "06404665186c2100424221cefc3f0cc5c2fdd2a1ed7ac904820503575baecf97"
+    }
+  ],
+  "descriptor": "version=\"1.3.22\"\ntags={\n\t\"Fixes\"\n\t\"Utilities\"\n}\nname=\"多 Mod 兼容 Mod - 飞龙与黑暗亲王\"\ndependencies={\n\t\"CK3 Mythical Vanilla : Wyvern\"\n\t\"Princes of Darkness\"\n}\nsupported_version=\"1.20.*\"\n",
+  "externalDescriptor": "version=\"1.3.22\"\ntags={\n\t\"Fixes\"\n\t\"Utilities\"\n}\nname=\"多 Mod 兼容 Mod - 飞龙与黑暗亲王\"\ndependencies={\n\t\"CK3 Mythical Vanilla : Wyvern\"\n\t\"Princes of Darkness\"\n}\nsupported_version=\"1.20.*\"\npath=\"mod/VOTC_Wyvern_POD_Compatibility\"\n"
+}

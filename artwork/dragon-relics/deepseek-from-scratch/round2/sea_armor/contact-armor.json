@@ -1,0 +1,50 @@
+[
+ {
+  "part": "GEO-veil_cloth0",
+  "overlap_pairs": 396,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 692.19,
+  "connected": true
+ },
+ {
+  "part": "GEO-veil_cloth1",
+  "overlap_pairs": 142,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 692.36,
+  "connected": true
+ },
+ {
+  "part": "GEO-veil_cloth2",
+  "overlap_pairs": 174,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 703.04,
+  "connected": true
+ },
+ {
+  "part": "GEO-veil_cloth3",
+  "overlap_pairs": 474,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 696.45,
+  "connected": true
+ },
+ {
+  "part": "GEO-veil_cloth4",
+  "overlap_pairs": 136,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 711.94,
+  "connected": true
+ },
+ {
+  "part": "GEO-veil_cloth5",
+  "overlap_pairs": 164,
+  "base_inside_pts": 0,
+  "base_pts": 12,
+  "min_dist_mm": 717.92,
+  "connected": true
+ }
+]

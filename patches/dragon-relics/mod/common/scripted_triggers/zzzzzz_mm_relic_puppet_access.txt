@@ -1,0 +1,25 @@
+can_have_external_ruler_puppet_trigger = {
+ OR = {
+  AND = { has_character_flag = mm_relic_oracle_cast_in_progress has_pam_dlc_trigger = yes }
+  AND = {
+	can_have_puppets_trigger = yes
+	has_pam_dlc_trigger = yes
+}
+ }
+}
+can_have_theological_agent_puppet_trigger = {
+ OR = {
+  AND = { has_character_flag = mm_relic_oracle_cast_in_progress has_pam_dlc_trigger = yes }
+  AND = {
+	can_have_puppets_trigger = yes
+	rite = {
+		OR = {
+			rite_has_doctrine = doctrine_theocracy_temporal
+			rite_has_doctrine = doctrine_monasticism_accepted
+			rite_has_doctrine = doctrine_monasticism_encouraged
+		}
+	}
+	has_pam_dlc_trigger = yes
+}
+ }
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "mapping": "Final user correction: black, fire, white, sea, earth, sky",
+  "processing": "Only baked checkerboard removed with built-in image_gen on uploads 1/3/5. Uploads 2/4/6 preserved byte-for-byte. DDS conversion is deterministic.",
+  "assets": [
+    {
+      "index": 1,
+      "role": "black_emperor",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/black_emperor-original.png",
+        "sha256": "24f2c9ecb84b636b6d5dec1c847a280515f6374d4b19477928dd12ef8ea21d34"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/black_emperor-transparent.png",
+        "sha256": "5da5bd4e978643a5262970fd29f3570d7e1bddc22d106092d335bff4f869177f"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_black_emperor.dds",
+        "sha256": "f1eadd9780e98af0f8d7b515ae15c3d406eef10303e5deeede89948d64796248"
+      },
+      "backgroundRemoved": true
+    },
+    {
+      "index": 2,
+      "role": "fire",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/fire-original.png",
+        "sha256": "2433b33a66ffefc1a1750903d769daf76899905f260e84b6674d0d5f714b1240"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/fire-original.png",
+        "sha256": "2433b33a66ffefc1a1750903d769daf76899905f260e84b6674d0d5f714b1240"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_royal_fire.dds",
+        "sha256": "d365429852ea031432598cccb3407b4dc464656f8f39a65751a21c1bd5ffc615"
+      },
+      "backgroundRemoved": false
+    },
+    {
+      "index": 3,
+      "role": "white_empress",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/white_empress-original.png",
+        "sha256": "74a68f1610d4a25c0042a540022499efb7dd83bb32a9f91d2e93ba069b7e22a6"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/white_empress-transparent.png",
+        "sha256": "da735ae3808e51dcddfec59d2ba0fa6a868d7f4ce799fec7791ad822d8adbff7"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_white_empress.dds",
+        "sha256": "bc5bfcadac2db1e6534c162e39e4255cbfda9cc8e7ce37b4d645bb3d165def1b"
+      },
+      "backgroundRemoved": true
+    },
+    {
+      "index": 4,
+      "role": "sea",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/sea-original.png",
+        "sha256": "e7990b5ff1e6f887452e429d37647899b00ad5530ac8c0e23e8b2fe4bea4ebd6"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/sea-original.png",
+        "sha256": "e7990b5ff1e6f887452e429d37647899b00ad5530ac8c0e23e8b2fe4bea4ebd6"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_royal_sea.dds",
+        "sha256": "e07c45dfe63f871935af8009be4e1e2bd3eced5424968d5a6f745e1d11c13152"
+      },
+      "backgroundRemoved": false
+    },
+    {
+      "index": 5,
+      "role": "earth",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/earth-original.png",
+        "sha256": "8edb5a53a5afad0e38f90bb36f217d88005e49b942998b2eb765e69a6c792883"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/earth-transparent.png",
+        "sha256": "05759531f6a61cced7977c48cc1f5b55d9c41d006954ed87bb62f71f31b55a1e"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_royal_earth.dds",
+        "sha256": "9728b8afc9f8dbe09ae5ca7370607031bdf0bd0cb06d6a1dae1eb5ce0626c925"
+      },
+      "backgroundRemoved": true
+    },
+    {
+      "index": 6,
+      "role": "sky",
+      "original": {
+        "file": "artwork/dragon-kings/user-icons/sky-original.png",
+        "sha256": "e14f51d79c165a6b735661889725cf0131b29cfd041f4cd845ba16d756b7ee5d"
+      },
+      "processed": {
+        "file": "artwork/dragon-kings/user-icons/sky-original.png",
+        "sha256": "e14f51d79c165a6b735661889725cf0131b29cfd041f4cd845ba16d756b7ee5d"
+      },
+      "dds": {
+        "file": "patches/wyvern-kings/mod/gfx/interface/icons/traits/mm_royal_sky.dds",
+        "sha256": "400284811b10dd840c9249438b97c41a4762968800b4d41fba367f1fa672280b"
+      },
+      "backgroundRemoved": false
+    }
+  ]
+}

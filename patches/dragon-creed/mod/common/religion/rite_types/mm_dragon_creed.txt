@@ -1,0 +1,96 @@
+﻿mm_dragon_fire = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_fire
+	color = { 0.8 0.2 0.1 }
+	tenets = { mm_tenet_fire mm_tenet_fire_second mm_tenet_fire_third }
+	doctrines = { doctrine_gender_male_dominated doctrine_pluralism_righteous doctrine_theocracy_temporal doctrine_temporal_head doctrine_pilgrimage_local_rites doctrine_polytheist doctrine_concubines doctrine_divorce_approval doctrine_bastardry_legitimization doctrine_consanguinity_cousins doctrine_homosexuality_shunned doctrine_deviancy_shunned doctrine_adultery_men_shunned doctrine_adultery_women_crime doctrine_kinslaying_any_dynasty_member_crime doctrine_witchcraft_shunned doctrine_clerical_function_taxation doctrine_clerical_gender_male_only doctrine_clerical_succession_temporal_fixed_appointment doctrine_funeral_bewailment doctrine_anointment_permitted doctrine_monasticism_absent doctrine_sacraments_central doctrine_clerical_marriage_allowed mm_doctrine_fire }
+}
+
+mm_dragon_earth = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_earth
+	color = { 0.35 0.25 0.15 }
+	tenets = { mm_tenet_earth mm_tenet_earth_second mm_tenet_earth_third }
+	doctrines = { doctrine_gender_female_dominated doctrine_pluralism_pluralistic doctrine_theocracy_temporal doctrine_spiritual_head doctrine_pilgrimage_encouraged doctrine_polytheist doctrine_monogamy doctrine_divorce_allowed doctrine_bastardry_legitimization doctrine_consanguinity_cousins doctrine_homosexuality_accepted doctrine_deviancy_shunned doctrine_adultery_men_shunned doctrine_adultery_women_shunned doctrine_kinslaying_close_kin_crime doctrine_witchcraft_accepted doctrine_clerical_function_alms_and_pacification doctrine_clerical_gender_either doctrine_clerical_succession_spiritual_fixed_appointment doctrine_funeral_mummification doctrine_anointment_permitted doctrine_monasticism_accepted doctrine_sacraments_central doctrine_clerical_marriage_allowed mm_doctrine_earth }
+}
+
+mm_dragon_sea = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_sea
+	color = { 0.1 0.35 0.65 }
+	tenets = { mm_tenet_sea mm_tenet_sea_second mm_tenet_sea_third }
+	doctrines = { doctrine_gender_male_dominated doctrine_pluralism_pluralistic doctrine_theocracy_lay_clergy doctrine_temporal_head doctrine_pilgrimage_encouraged doctrine_polytheist doctrine_concubines doctrine_divorce_allowed doctrine_bastardry_legitimization doctrine_consanguinity_cousins doctrine_homosexuality_accepted doctrine_deviancy_accepted doctrine_adultery_men_accepted doctrine_adultery_women_shunned doctrine_kinslaying_extended_family_crime doctrine_witchcraft_accepted doctrine_clerical_function_alms_and_pacification doctrine_clerical_gender_either doctrine_clerical_succession_temporal_appointment mm_doctrine_funeral_sea doctrine_anointment_permitted doctrine_monasticism_absent doctrine_sacraments_central doctrine_clerical_marriage_allowed mm_doctrine_sea }
+}
+
+mm_dragon_sky = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_sky
+	color = { 0.4 0.6 0.8 }
+	tenets = { mm_tenet_sky mm_tenet_sky_second mm_tenet_sky_third }
+	doctrines = { doctrine_gender_male_dominated doctrine_pluralism_fundamentalist doctrine_theocracy_temporal doctrine_temporal_head doctrine_pilgrimage_local_rites doctrine_polytheist doctrine_polygamy doctrine_divorce_allowed doctrine_bastardry_legitimization doctrine_consanguinity_cousins doctrine_homosexuality_shunned doctrine_deviancy_accepted doctrine_adultery_men_accepted doctrine_adultery_women_crime doctrine_kinslaying_shunned doctrine_witchcraft_virtuous doctrine_clerical_function_recruitment doctrine_clerical_gender_male_only doctrine_clerical_succession_temporal_appointment doctrine_funeral_cremation doctrine_no_anointment doctrine_monasticism_forbidden doctrine_sacraments_central doctrine_clerical_marriage_allowed mm_doctrine_sky }
+}
+
+mm_dragon_black = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_black
+	color = { 0.15 0.15 0.15 }
+	tenets = { mm_tenet_black mm_tenet_black_second mm_tenet_black_third }
+	doctrines = { doctrine_gender_male_dominated doctrine_pluralism_fundamentalist doctrine_theocracy_temporal doctrine_spiritual_head doctrine_pilgrimage_mandatory doctrine_monotheist doctrine_concubines doctrine_divorce_approval doctrine_bastardry_none doctrine_consanguinity_unrestricted doctrine_homosexuality_crime doctrine_deviancy_crime doctrine_adultery_men_crime doctrine_adultery_women_crime doctrine_kinslaying_close_kin_crime doctrine_witchcraft_accepted doctrine_clerical_function_taxation doctrine_clerical_gender_male_only doctrine_clerical_succession_spiritual_fixed_appointment doctrine_funeral_bewailment doctrine_imperial_anointment doctrine_monasticism_accepted doctrine_sacraments_central doctrine_clerical_marriage_allowed mm_doctrine_black }
+}
+
+mm_dragon_white = {
+	faith = mm_dragon_creed
+	icon = mm_dragon_white
+	color = { 0.9 0.9 0.85 }
+	tenets = { mm_tenet_white mm_tenet_white_second mm_tenet_white_third }
+	doctrines = { doctrine_gender_equal doctrine_pluralism_pluralistic doctrine_theocracy_lay_clergy doctrine_no_head doctrine_pilgrimage_local_rites doctrine_polytheist doctrine_monogamy doctrine_divorce_allowed doctrine_bastardry_legitimization doctrine_consanguinity_restricted doctrine_homosexuality_accepted doctrine_deviancy_accepted doctrine_adultery_men_shunned doctrine_adultery_women_shunned doctrine_kinslaying_accepted doctrine_witchcraft_virtuous doctrine_clerical_function_alms_and_pacification doctrine_clerical_gender_either doctrine_clerical_succession_temporal_appointment doctrine_funeral_stoic doctrine_no_anointment doctrine_monasticism_encouraged doctrine_sacraments_absent doctrine_clerical_marriage_allowed mm_doctrine_white }
+}
+
+
+mm_dragon_legacy_fire = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_fire
+	tenets = { mm_tenet_fire mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}
+
+mm_dragon_legacy_earth = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_earth
+	tenets = { mm_tenet_earth mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}
+
+mm_dragon_legacy_sea = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_sea
+	tenets = { mm_tenet_sea mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}
+
+mm_dragon_legacy_sky = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_sky
+	tenets = { mm_tenet_sky mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}
+
+mm_dragon_legacy_black = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_black
+	tenets = { mm_tenet_black mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}
+
+mm_dragon_legacy_white = {
+	faith = mm_dragon_creed
+	create = no
+	history = yes
+	icon = mm_dragon_white
+	tenets = { mm_tenet_white mm_tenet_blood_purification mm_tenet_death_servant_punishment }
+}

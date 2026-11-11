@@ -1,0 +1,46 @@
+namespace = mm_asc
+
+mm_asc.0001 = {
+    type = character_event
+    title = mm_asc.0001.t
+    desc = mm_asc.0001.desc
+    theme = mental_break
+    trigger = { mm_asc_is_candidate = yes }
+    option = {
+        name = mm_asc.0001.a
+        if = { limit = { mm_asc_is_candidate = yes } add_stress = 25 }
+    }
+    option = {
+        name = mm_asc.0001.b
+        if = {
+            limit = { mm_asc_is_candidate = yes }
+            add_stress = 10
+            if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 75 } } add_character_modifier = { modifier = mm_asc_whisper_madness years = 2 } }
+            else = { add_character_modifier = { modifier = mm_asc_whisper_paranoia years = 2 } }
+        }
+    }
+}
+
+mm_asc.0002 = {
+    type = character_event
+    title = mm_asc.0002.t
+    desc = mm_asc.0002.desc
+    theme = learning
+    option = { name = mm_asc.0002.a }
+}
+
+mm_asc.0003 = {
+    type = character_event
+    title = mm_asc.0003.t
+    desc = mm_asc.0003.desc
+    theme = martial
+    option = { name = mm_asc.0003.a }
+}
+
+mm_asc.0004 = {
+    type = character_event
+    title = mm_asc.0004.t
+    desc = mm_asc.0004.desc
+    theme = learning
+    option = { name = mm_asc.0004.a }
+}

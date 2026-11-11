@@ -1,0 +1,134 @@
+# The cooldown belongs to the unique artifact and survives ownership/reforging.
+mm_relic_set_cooldown_effect = {
+    every_equipped_character_artifact = {
+        limit = { has_variable = $IDENTITY$ }
+        set_variable = { name = mm_relic_cooldown value = yes years = $YEARS$ }
+    }
+}
+
+# Dragon scope: detach only this animal, leaving the previous keeper's other dragons alone.
+mm_relic_release_old_bond_effect = {
+    save_scope_as = mm_relic_transferred_dragon
+    if = {
+        limit = { exists = var:myv_war_mount_rider }
+        var:myv_war_mount_rider = {
+            if = { limit = { var:myv_war_mount = scope:mm_relic_transferred_dragon } remove_variable = myv_war_mount myv_refresh_war_mount_combat_stats_effect = yes }
+        }
+        remove_variable = myv_war_mount_rider
+    }
+    every_relation = {
+        type = myv_wyvern_rider
+        save_scope_as = mm_relic_old_rider
+        if = { limit = { var:myv_war_mount = scope:mm_relic_transferred_dragon } remove_variable = myv_war_mount myv_refresh_war_mount_combat_stats_effect = yes }
+        if = { limit = { var:myv_riding_portrait_wyvern = scope:mm_relic_transferred_dragon } remove_variable = myv_riding_portrait_wyvern remove_character_flag = myv_wyvern_rider_duel_portrait }
+        scope:mm_relic_transferred_dragon = {
+            myv_archive_wyvern_former_rider_effect = { RIDER = scope:mm_relic_old_rider DATE_KNOWN = yes }
+            set_relation_myv_wyvern_former_rider = scope:mm_relic_old_rider
+            remove_relation_myv_wyvern_rider = scope:mm_relic_old_rider
+        }
+    }
+    every_relation = {
+        type = myv_wyvern_bonded_character
+        save_scope_as = mm_relic_old_keeper
+        if = { limit = { var:myv_current_wyvern = scope:mm_relic_transferred_dragon } remove_variable = myv_current_wyvern }
+        scope:mm_relic_transferred_dragon = { remove_relation_myv_wyvern_bonded_character = scope:mm_relic_old_keeper }
+        if = { limit = { NOT = { any_relation = { type = myv_bonded_wyvern is_alive = yes } } } remove_character_flag = myv_wyvern_keeper }
+    }
+    remove_variable = myv_wyvern_bonded_character
+    remove_variable = myv_wyvern_bond_heir
+    remove_variable = mm_wyvern_captor
+    remove_variable = mm_wyvern_taming_progress
+    remove_variable = myv_wyvern_stable_county
+    remove_variable = myv_wyvern_stable_payer
+    remove_character_flag = myv_wyvern_in_stable
+    remove_character_flag = mm_wyvern_capture_temporary_cage
+    remove_character_flag = mm_wyvern_capture_stable_cage
+    remove_character_modifier = myv_wyvern_stabled
+    remove_character_modifier = myv_wyvern_stable_supply_paused
+    remove_trait = myv_wyvern_harmony
+    remove_variable = myv_wyvern_harmony_saved_xp
+    remove_character_flag = mm_dragon_bond_unridden_harmony
+}
+mm_relic_subjugate_effect = {
+    if = {
+        limit = { mm_relic_black_crown_ready_trigger = yes scope:recipient = { mm_relic_subordinate_dragon_trigger = yes } }
+        save_scope_as = mm_relic_new_keeper
+        scope:recipient = {
+            mm_relic_release_old_bond_effect = yes
+            if = { limit = { has_trait = myv_wyvern_legendary } add_character_flag = mm_wyvern_legendary_origin add_trait = mm_wyvern_legendary_origin }
+            remove_trait = myv_wyvern
+            remove_trait = myv_wyvern_legendary
+            add_trait = myv_wyvern_tamed
+            remove_character_flag = myv_wyvern_roaming
+            myv_establish_wyvern_keeper_bond_effect = { KEEPER = scope:mm_relic_new_keeper WYVERN = this }
+            myv_apply_wyvern_identity_effect = yes
+            myv_wyvern_tamed_maintenance_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            mm_dragon_route_creed_hook_effect = yes
+        }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_black_crown_identity YEARS = 4 }
+    }
+}
+
+# Full settlement also works for tamed dragons; it never invokes the wild-only wrapper.
+mm_relic_dragon_material_settlement_effect = {
+    scope:recipient = { save_scope_as = mm_wyvern_trophy_source save_scope_as = myv_slay_wyvern_target }
+    if = {
+        limit = { scope:recipient = { NOT = { has_variable = mm_wyvern_materials_claimed } } }
+        scope:recipient = { set_variable = { name = mm_wyvern_materials_claimed value = scope:actor } }
+        mm_wyvern_create_source_quality_material_effect = { KIND = fang VISUALS = myv_wyvern_fang }
+        mm_wyvern_create_source_quality_material_effect = { KIND = scale VISUALS = myv_wyvern_scale }
+        mm_wyvern_create_source_quality_material_effect = { KIND = claw VISUALS = mm_wyvern_material_claw }
+        mm_wyvern_create_source_quality_material_effect = { KIND = horn VISUALS = mm_wyvern_material_horn }
+        mm_wyvern_create_personal_material_effect = { KIND = blood VISUALS = myv_wyvern_blood RARITY = illustrious MODIFIER = artifact_monthly_minor_prestige_5_modifier }
+    }
+    if = {
+        limit = { scope:recipient = { NOT = { has_variable = mm_wyvern_trophies_claimed } } }
+        scope:recipient = { set_variable = { name = mm_wyvern_trophies_claimed value = scope:actor } }
+        if = { limit = { scope:recipient = { OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin } } } mm_wyvern_create_decorative_trophy_set_effect = { RARITY = illustrious } }
+        else = { mm_wyvern_create_decorative_trophy_set_effect = { RARITY = famed } }
+    }
+}
+mm_relic_destroy_effect = {
+    if = {
+        limit = { mm_relic_black_regalia_ready_trigger = yes scope:recipient = { mm_relic_destruction_target_trigger = yes } }
+        if = { limit = { scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes } } mm_relic_dragon_material_settlement_effect = yes }
+        scope:recipient = { death = { death_reason = death_myv_wyvern_slain killer = scope:actor } }
+        if = {
+            limit = { scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+            add_prestige = 500
+            myv_grant_wyvern_slayer_reward_effect = yes
+            mm_wyvern_legendary_blood_reward_effect = yes
+        }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_black_regalia_identity YEARS = 5 }
+    }
+}
+
+mm_relic_convert_white_character_effect = {
+    if = {
+        limit = { is_alive = yes mm_relic_oracle_immune_trigger = no }
+        add_character_flag = mm_relic_forced_white_rite
+        set_character_faith = faith:mm_dragon_creed
+        set_character_rite = rite:mm_dragon_white
+        every_held_title = {
+            limit = { tier = tier_county }
+            set_county_faith = faith:mm_dragon_creed
+            set_county_rite = rite:mm_dragon_white
+        }
+    }
+}
+mm_relic_oracle_effect = {
+    if = {
+        limit = { mm_relic_white_book_ready_trigger = yes has_pam_dlc_trigger = yes scope:recipient = { is_alive = yes mm_relic_oracle_immune_trigger = no } }
+        add_character_flag = { flag = mm_relic_oracle_cast_in_progress days = 1 }
+        scope:recipient = { clear_puppet_status = yes remove_puppet_modifiers_effect = yes }
+        if = { limit = { scope:recipient = { is_clergy = yes } } set_puppet = { target = scope:recipient type = external_theological_agent_puppet } }
+        else = { set_puppet = { target = scope:recipient type = external_ruler_puppet } }
+        remove_character_flag = mm_relic_oracle_cast_in_progress
+        scope:recipient = {
+            mm_relic_convert_white_character_effect = yes
+            every_vassal_or_below = { mm_relic_convert_white_character_effect = yes }
+        }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_white_book_identity YEARS = 5 }
+    }
+}

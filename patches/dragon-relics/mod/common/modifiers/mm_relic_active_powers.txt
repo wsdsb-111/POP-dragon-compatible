@@ -1,0 +1,17 @@
+﻿mm_relic_fire_forging = { icon = goods_positive }
+mm_relic_earth_creation = { icon = stewardship_positive build_speed = -0.3 build_gold_cost = -0.8 }
+mm_relic_sea_trade = { icon = economy_positive domicile_monthly_gold_mult = 0.3 }
+mm_relic_sea_coastal_trade = { icon = economy_positive tax_mult = 0.5 }
+mm_relic_sky_execution = { icon = martial_positive prowess = 20 martial = 10 }
+mm_relic_silk_china_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_china_low = { icon = economy_positive domain_tax_mult = 0.002 }
+mm_relic_silk_tibet_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_tibet_low = { icon = economy_positive domain_tax_mult = 0.002 }
+mm_relic_silk_india_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_india_low = { icon = economy_positive domain_tax_mult = 0.002 }
+mm_relic_silk_central_asia_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_central_asia_low = { icon = economy_positive domain_tax_mult = 0.002 }
+mm_relic_silk_transcaspia_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_transcaspia_low = { icon = economy_positive domain_tax_mult = 0.002 }
+mm_relic_silk_occident_high = { icon = economy_positive domain_tax_mult = 0.004 }
+mm_relic_silk_occident_low = { icon = economy_positive domain_tax_mult = 0.002 }

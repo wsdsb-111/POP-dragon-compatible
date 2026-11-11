@@ -1,0 +1,232 @@
+{
+  "version": "1.3.22",
+  "method": "builtin_imagegen_background_only_edit",
+  "packing": "DXT5 RGBA 960x240; four identical 240x240 rarity frames; 12px minimum padding",
+  "courtModels": "unchanged; custom 3D bound only to court visuals",
+  "assets": [
+    {
+      "id": "white_book",
+      "name": "白色神谕之书",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-46fcd740-90e2-4d16-b51e-336b582c83ec.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep only the closed ivory-and-gold dragon book with all attached pearls/chains. Remove the book support and pedestal. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/白色神谕之书.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/white_book.png",
+      "originalSha256": "1a88b0d21be5087a2377db27ad1263dd18837ea3f3279e6907b3b92f4665ca04",
+      "cutoutSha256": "aeb94f69d5e190e9e4d84f0d77106f1ffc9ad7e9eba0cc80dd3168e3658dad84",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        1,
+        1238,
+        1254
+      ],
+      "fittedSize": [
+        213,
+        216
+      ],
+      "position": [
+        13,
+        12
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_white_book.dds",
+      "gameSha256": "31a94bf790b1bfb5e910dff42e0f12334231f8d486158ce51fd6b62339b755da",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/white_book.png",
+      "previewSha256": "b1cc801f446a99064dfda84d119d2e9fbb11ab1cf0a4e279538d8a6b3e715472"
+    },
+    {
+      "id": "black_crown",
+      "name": "暴君始祖黑鳞冠",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-32c9685b-46ff-4873-96d0-0b823c0ef882.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep only the full black-scale and gold crown including its thin tips. Remove the red cushion and stone pedestal. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/暴君始祖黑鳞冠.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/black_crown.png",
+      "originalSha256": "af1c0087381cb8c8d6122d6841742f9f480da4ac1d9b1b78bb3b305bb9a89348",
+      "cutoutSha256": "214d3dbd243102cbea27c9059e9c4e3e09461d696f28d1c7404cc892fd45ebda",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        27,
+        1254,
+        1254
+      ],
+      "fittedSize": [
+        216,
+        211
+      ],
+      "position": [
+        12,
+        14
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_black_crown.dds",
+      "gameSha256": "486ff74c6f296ee2dd5c468df82eba4cf3d504e96ffe606786753b99104489fb",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/black_crown.png",
+      "previewSha256": "9e3c007e5dad8638d7d03c8068733d35f36846e19b9895f59aad0b4b47f224f5"
+    },
+    {
+      "id": "earth_sarcophagus",
+      "name": "常暗地脉石棺",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-c83e8ad5-79bb-4c23-a8ab-e0a81673a417.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep the entire floating dragon sarcophagus, its surrounding floating rocks and delicate magical wisps. Remove the separate stone display pedestal below. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/常暗地脉石棺.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/earth_sarcophagus.png",
+      "originalSha256": "3771fbd62b06de4437429887525f1e3f298afccf014191c815c2f3fbe99e46fd",
+      "cutoutSha256": "1508cb0f5cb9097c7c46ec657b6ad2315bdb30451bcbf76dbbb4188888455b37",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        23,
+        1254,
+        1254
+      ],
+      "fittedSize": [
+        216,
+        212
+      ],
+      "position": [
+        12,
+        14
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_earth_sarcophagus.dds",
+      "gameSha256": "d6ac84d18a83541db6db35eda02ec0cb5a8a15766976b47cd77eb50b985594c1",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/earth_sarcophagus.png",
+      "previewSha256": "aacf2c3e63ae7b3fad54dfd0031255fbf5a1181ff6f3d8053df7853618ac7846"
+    },
+    {
+      "id": "black_regalia",
+      "name": "黑色皇帝之权柄",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-b125e8d8-f9b4-42bf-8acb-ee06788097f0.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep only the diagonal imperial dragon scepter, its red ribbons and hanging chains. Remove the upright display support, pedestal and draped cloth underneath. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/黑色皇帝之权柄.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/black_regalia.png",
+      "originalSha256": "69052e5516e8a91bef486b4323e87f43f0c1a1b30c934b8a72d49f599761bcee",
+      "cutoutSha256": "6935336f06e469f419720d8c2c5eb6eec4e78581d9ec111e2d37383ca41a08b9",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        14,
+        22,
+        1254,
+        1254
+      ],
+      "fittedSize": [
+        216,
+        215
+      ],
+      "position": [
+        12,
+        12
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_black_regalia.dds",
+      "gameSha256": "5af6658000fda950d49a08721bd18dde894568e5fc8b87e155782f75dd501c5e",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/black_regalia.png",
+      "previewSha256": "b667b533290e41f06b5f2715abe484fa18145f80bc166d37f90b526ed84682a1"
+    },
+    {
+      "id": "sea_armor",
+      "name": "怒潮海妖之甲",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-ac3d088c-bf9c-403b-98f4-88b2e6ee073b.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep the complete blue white and gold armor/dress, all its flowing cloth, pearls and translucent sleeves. Remove the rectangular stone plinth. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/怒潮海妖之甲.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/sea_armor.png",
+      "originalSha256": "f1964c69fa9488beb1511610d56014bccbbd132fe6e81024c2d8eba60ae1af13",
+      "cutoutSha256": "e32fc9cfa5ec4c0796a196a21ac1ca1083c7a5a74d42935533531ca39e6c7316",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        16,
+        1166,
+        1224
+      ],
+      "fittedSize": [
+        208,
+        216
+      ],
+      "position": [
+        16,
+        12
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_sea_armor.dds",
+      "gameSha256": "33bfb9749404dd8f23057f288c2bcd450d155f025a0d4151587cbcd276fd97b3",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/sea_armor.png",
+      "previewSha256": "f2321d65658eda79fdb6f1a7333288d3bacfb279df153303e39b893a6a700f65"
+    },
+    {
+      "id": "sky_spear",
+      "name": "永恒之矛昆古尼尔",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-f2cd8a62-bd32-4844-bde9-e70b8dd7439a.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep only the entire diagonal spear from upper-left tip to lower-right butt, the red ribbons and blue luminous energy. Remove the wooden weapon rack behind it. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/永恒之矛昆古尼尔.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/sky_spear.png",
+      "originalSha256": "5ee217f6d8ee6a10090f890e3ef331ae927a4e1a6df963fb87e655fa14e126d7",
+      "cutoutSha256": "b22d8d7002095eb2be5d3a66abc589669c9337b9894bb4f62569c9cb3587026f",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        20,
+        1248,
+        1254
+      ],
+      "fittedSize": [
+        216,
+        214
+      ],
+      "position": [
+        12,
+        13
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_sky_spear.dds",
+      "gameSha256": "ce36428bcbba4d9f458bea3527cc1b295c08c7f6d6f6b8c767c3937ee0290c44",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/sky_spear.png",
+      "previewSha256": "226bdc01c381f9d3a4ac4a45eeb0e17f81e4f98e5040ea700390f4611e11d208"
+    },
+    {
+      "id": "fire_ring",
+      "name": "烛龙青铜玄戒",
+      "generatedPath": "C:\\Users\\97330\\.codex\\generated_images\\01a18186-b6cc-75a1-9ec6-e40acecc806f\\exec-6384b5c4-109e-47c2-a84a-655971205381.png",
+      "prompt": "Edit target: the attached user-painted CK3 relic illustration. Background removal / faithful cutout ONLY. Preserve the exact artifact design, painterly texture, metallic colors, fine ornament, lighting, perspective and pose; do not redesign or add any details. Keep only the whole bronze dragon ring and its small fiery glow. Remove the red cushion and pedestal. Make the open ring hole genuinely transparent. Remove ALL dark blue textured backdrop and the thin outer gold rectangular image border. Transparent alpha background, including gaps between ornament and chains; no checkerboard painted into the image, no black/white fill, no new border, no shadow plane or floor. Keep the complete artifact comfortably inside the canvas with a small clear margin. This is an inventory icon cutout, not a new illustration.",
+      "original": "artwork/dragon-relics/illustrations/originals/烛龙青铜玄戒.jpg",
+      "cutout": "artwork/dragon-relics/illustrations/cutouts/fire_ring.png",
+      "originalSha256": "313d66819cfd5c09f4e750fc9b4bb36679afe82a7b601493461d67c49039e6b4",
+      "cutoutSha256": "b21a929d18aa565378a956b5b9ec4b1a75b4fe7e5dbcacc22ea39894ff9c414c",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        0,
+        22,
+        1224,
+        1254
+      ],
+      "fittedSize": [
+        215,
+        216
+      ],
+      "position": [
+        12,
+        12
+      ],
+      "gameFile": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_v1322_relic_fire_ring.dds",
+      "gameSha256": "0665353b3876127c61280ce65025c625f72c6c8fee4932b3d96e59e781cb4d6f",
+      "framePreview": "artwork/dragon-relics/illustrations/frames/fire_ring.png",
+      "previewSha256": "08df0763b16b0667be85c4eadb83346d2556301ec3ba20117cdbf450736ef0b8"
+    }
+  ]
+}

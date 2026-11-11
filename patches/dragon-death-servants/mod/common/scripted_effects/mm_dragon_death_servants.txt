@@ -1,0 +1,117 @@
+mm_ds_stress_check_effect = {
+    if = {
+        limit = { mm_ds_susceptible_trigger = yes NOT = { has_character_flag = mm_ds_stage_$STAGE$_checked_today } }
+        add_character_flag = { flag = mm_ds_stage_$STAGE$_checked_today days = 1 }
+        set_variable = { name = mm_ds_stress_stage value = $STAGE$ }
+        random = { chance = mm_ds_mutation_chance mm_ds_transform_effect = yes }
+        remove_variable = mm_ds_stress_stage
+    }
+}
+mm_ds_transform_effect = {
+    if = {
+        limit = { mm_ds_susceptible_trigger = yes }
+        mm_ds_commit_transformation_effect = yes
+    }
+}
+mm_ds_commit_transformation_effect = {
+    if = {
+        limit = { is_alive = yes NOT = { has_trait = mm_dragon_death_servant } }
+        add_trait = mm_dragon_death_servant
+        add_character_flag = mm_ds_lost_mind
+        save_scope_as = mm_ds_new_servant
+        clear_saved_scope = mm_ds_player_successor
+        if = {
+            limit = { is_ai = no exists = player_heir }
+            player_heir = { save_scope_as = mm_ds_player_successor }
+        }
+        send_interface_toast = {
+            type = event_toast_effect_bad
+            title = mm_ds_transformation_title
+            desc = mm_ds_transformation_desc
+            left_icon = root
+        }
+        # Native abdication transfers titles; preserve the former character alive.
+        if = { limit = { is_ruler = yes } depose = yes }
+        if = {
+            limit = { exists = scope:mm_ds_player_successor }
+            set_player_character = scope:mm_ds_player_successor
+        }
+        if = {
+            limit = { exists = employer }
+            employer = { remove_courtier_or_guest = scope:mm_ds_new_servant }
+        }
+        add_to_global_variable_list = { name = mm_ds_living_servants target = this }
+        trigger_event = { id = mm_dragon_death_servants.1 days = 1 }
+    }
+}
+mm_ds_choose_victim_effect = {
+    clear_saved_scope = mm_ds_victim
+    random_living_character = {
+        limit = { mm_ds_wanderer_victim_trigger = yes }
+        save_scope_as = mm_ds_victim
+    }
+    if = {
+        limit = { NOT = { exists = scope:mm_ds_victim } }
+        random_living_character = {
+            limit = { mm_ds_local_victim_trigger = yes }
+            save_scope_as = mm_ds_victim
+        }
+    }
+    if = {
+        limit = { exists = scope:mm_ds_victim }
+        mm_ds_attack_effect = yes
+    }
+}
+mm_ds_attack_effect = {
+    if = {
+        limit = { scope:mm_ds_victim = { mm_ds_strong_opponent_trigger = yes } }
+        mm_ds_duel_effect = yes
+    }
+    else = {
+        scope:mm_ds_victim = { death = { death_reason = death_murder killer = scope:mm_ds_attacker } }
+    }
+}
+mm_ds_duel_effect = {
+    random_list = {
+        1 = {
+            modifier = { factor = mm_ds_attacker_win_chance }
+            scope:mm_ds_victim = { death = { death_reason = death_duel killer = scope:mm_ds_attacker } }
+        }
+        1 = {
+            modifier = { factor = { value = 100 subtract = mm_ds_attacker_win_chance } }
+            death = { death_reason = death_duel killer = scope:mm_ds_victim }
+        }
+    }
+}
+mm_ds_daily_rampage_effect = {
+    if = {
+        limit = { is_alive = yes has_trait = mm_dragon_death_servant is_imprisoned = no exists = location.county }
+        save_scope_as = mm_ds_attacker
+        random_list = {
+            1 = { set_variable = { name = mm_ds_attacks_remaining value = 1 } }
+            1 = { set_variable = { name = mm_ds_attacks_remaining value = 2 } }
+            1 = { set_variable = { name = mm_ds_attacks_remaining value = 3 } }
+        }
+        while = {
+            limit = { is_alive = yes var:mm_ds_attacks_remaining > 0 }
+            mm_ds_choose_victim_effect = yes
+            change_variable = { name = mm_ds_attacks_remaining add = -1 }
+        }
+        remove_variable = mm_ds_attacks_remaining
+        if = {
+            limit = { is_alive = yes is_traveling = no NOT = { has_character_flag = mm_ds_roam_cooldown } }
+            clear_saved_scope = mm_ds_destination
+            location = {
+                random_neighboring_province = {
+                    limit = { is_sea_province = no exists = county }
+                    save_scope_as = mm_ds_destination
+                }
+            }
+            if = {
+                limit = { exists = scope:mm_ds_destination }
+                add_character_flag = { flag = mm_ds_roam_cooldown days = 7 }
+                start_travel_plan = { destination = scope:mm_ds_destination return_trip = no on_arrival_destinations = last }
+            }
+        }
+    }
+}

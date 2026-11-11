@@ -1,0 +1,28 @@
+﻿# When the human-form flag is set, restore the preserved human phenotype even if
+# a lower-priority color/size or outfit layer still describes the wyvern.
+mm_wyvern_human_form_portrait = {
+	usage = game
+	selection_behavior = weighted_random
+	priority = 2000
+
+	human_form = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = no_myv_wyvern value = 1.0 }
+			morph = { mode = replace gene = gene_myv_no_portrait template = normal_portrait value = 1.0 }
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				AND = {
+					has_character_flag = mm_wyvern_human_form
+					OR = {
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+						portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+					}
+				}
+			}
+		}
+	}
+}

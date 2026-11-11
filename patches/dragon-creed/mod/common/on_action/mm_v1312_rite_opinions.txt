@@ -1,0 +1,11 @@
+myv_wyvern_monthly_pulse = { on_actions = { mm_v1312_rite_opinions_monthly } }
+mm_v1312_rite_opinions_monthly = {
+    effect = {
+        if = {
+            limit = { has_global_variable_list = mm_dragon_creed_members }
+            every_in_global_list = { variable = mm_dragon_creed_members mm_v1312_update_white_opinions_effect = yes }
+        }
+    }
+}
+on_faith_conversion = { on_actions = { mm_v1312_rite_opinions_conversion } }
+mm_v1312_rite_opinions_conversion = { effect = { mm_v1312_update_white_opinions_effect = yes } }

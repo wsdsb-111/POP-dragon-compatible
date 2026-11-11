@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "background-extraction",
+  "editTarget": "material-icons-v117-source.png",
+  "output": "material-icons-v118-transparent.png",
+  "transparentBackground": true,
+  "prompt": "Use case: background-extraction. Edit target: the supplied two-cell game icon sheet, dragon claw on the left and curved dragon horn on the right. Remove ONLY the purple fabric background completely, including all gaps between talons, leaving a genuine transparent alpha channel. Preserve both objects' exact silhouettes, textures, proportions, orientation, lighting, color and fine details. Keep the two objects isolated, one centered within each equal square half of a wide 2:1 sheet, with no overlap, no shadows outside the objects, no frame, no purple cloth, no text, no new objects. These are existing CK3 inventory icons; the game itself will draw the rarity cloth and frame behind the transparent objects. Do not draw a replacement background or checkerboard."
+}

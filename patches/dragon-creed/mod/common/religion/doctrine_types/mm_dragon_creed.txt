@@ -1,0 +1,58 @@
+﻿mm_doctrine_black = {
+    divergence = 0
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_black
+	character_modifier = { monthly_piety_gain_mult = 0.25 }
+}
+
+mm_doctrine_white = {
+    divergence = -1000
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_white
+}
+
+mm_doctrine_fire = {
+    divergence = -1000
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_fire
+}
+
+mm_doctrine_earth = {
+    divergence = -1000
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_earth
+	character_modifier = { monthly_county_control_growth_factor = 0.3 }
+}
+
+mm_doctrine_sea = {
+    divergence = -1000
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_sea
+	character_modifier = { character_travel_speed_mult = 0.2 }
+}
+
+mm_doctrine_sky = {
+    divergence = -1000
+    is_shown = { religion = religion:mm_dragon_creed_religion }
+    can_pick = { religion = religion:mm_dragon_creed_religion }
+	doctrine_group_type = mm_dragon_rite_doctrine
+	icon = mm_v1318_mm_doctrine_sky
+	character_modifier = { prowess = 5 army_damage_mult = 0.15 }
+}
+
+mm_doctrine_funeral_sea = {
+	doctrine_group_type = doctrine_funeral
+	index = 5
+	divergence = 1.5
+	piety_cost = { value = faith_doctrine_cost_mid }
+}

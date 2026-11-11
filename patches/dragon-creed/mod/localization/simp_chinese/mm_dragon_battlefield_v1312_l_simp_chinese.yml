@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ mm_creed_bf_0110_changed:0 "敌方骑手与坐骑坠落，冥府之力改变了战局。"
+ mm_creed_bf_0111_changed:0 "你与坐骑坠落，冥府之力改变了战局。"
+ mm_creed_bf_0113_changed:0 "双方骑手与坐骑坠落，冥府之力改变了战局。"
+ mm_creed_bf_pounce_tt:0 "敌方指挥官受到致命攻击，可能受到冥府庇佑而生还。"
+ mm_creed_bf_player_rider_alive:0 "你从坠落中生还。"
+ mm_creed_bf_player_rider_dead:0 "你在坠落中丧生。"
+ mm_creed_bf_player_mount_alive:0 "你的坐骑从坠落中生还。"
+ mm_creed_bf_player_mount_dead:0 "你的坐骑在坠落中丧生。"
+ mm_creed_bf_enemy_rider_alive:0 "敌方骑手从坠落中生还。"
+ mm_creed_bf_enemy_rider_dead:0 "敌方骑手在坠落中丧生。"
+ mm_creed_bf_enemy_mount_alive:0 "敌方坐骑从坠落中生还。"
+ mm_creed_bf_enemy_mount_dead:0 "敌方坐骑在坠落中丧生。"

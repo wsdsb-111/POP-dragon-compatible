@@ -1,0 +1,12 @@
+# Appearance only. Neither ordinary ancestry nor creator lineage authorizes a palette.
+mm_royal_visual_fire = { NOT = { has_character_flag = mm_wyvern_human_form } AND = { OR = { portrait_has_trait_trigger = { TRAIT = mm_royal_dragon_king } portrait_has_trait_trigger = { TRAIT = mm_royal_complete } } has_variable = mm_royal_throne var:mm_royal_throne = 1 } }
+
+mm_royal_visual_earth = { NOT = { has_character_flag = mm_wyvern_human_form } AND = { OR = { portrait_has_trait_trigger = { TRAIT = mm_royal_dragon_king } portrait_has_trait_trigger = { TRAIT = mm_royal_complete } } has_variable = mm_royal_throne var:mm_royal_throne = 2 } }
+
+mm_royal_visual_sea = { NOT = { has_character_flag = mm_wyvern_human_form } AND = { OR = { portrait_has_trait_trigger = { TRAIT = mm_royal_dragon_king } portrait_has_trait_trigger = { TRAIT = mm_royal_complete } } has_variable = mm_royal_throne var:mm_royal_throne = 3 } }
+
+mm_royal_visual_sky = { NOT = { has_character_flag = mm_wyvern_human_form } AND = { OR = { portrait_has_trait_trigger = { TRAIT = mm_royal_dragon_king } portrait_has_trait_trigger = { TRAIT = mm_royal_complete } } has_variable = mm_royal_throne var:mm_royal_throne = 4 } }
+
+mm_royal_visual_white = { NOT = { has_character_flag = mm_wyvern_human_form } portrait_has_trait_trigger = { TRAIT = mm_royal_white_empress } }
+
+mm_royal_visual_black = { NOT = { has_character_flag = mm_wyvern_human_form } portrait_has_trait_trigger = { TRAIT = mm_royal_black_emperor } }

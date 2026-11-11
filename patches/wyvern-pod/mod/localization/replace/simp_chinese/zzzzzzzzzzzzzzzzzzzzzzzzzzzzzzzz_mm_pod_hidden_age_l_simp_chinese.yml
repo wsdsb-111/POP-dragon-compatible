@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ myv_wyvern_panel_age:0 "[Character.Custom('PODCharacterAge')]"
+ mm_pod_royal_age_unknown:0 "???"
+ mm_pod_panel_age_native:0 "[ROOT.Char.Custom('PODCharacterAge')]"

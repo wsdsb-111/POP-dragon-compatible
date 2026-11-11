@@ -1,0 +1,13 @@
+# These traits belong to this optional module, never the standalone bloodline API.
+mm_dragon_is_royal_parent_trigger = { OR = { has_trait = mm_royal_dragon_king has_trait = mm_royal_complete has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress } }
+mm_dragon_breeding_dragon_available_trigger = { NOT = { has_trait = mm_royal_torpor } }
+mm_dragon_human_pair_valid_trigger = { mm_dragon_human_pair_base_trigger = { HUMAN = $FATHER$ } mm_dragon_breeding_dragon_available_trigger = yes }
+mm_dragon_stable_mother_valid_trigger = { mm_dragon_stable_mother_base_trigger = { KEEPER = $KEEPER$ } mm_dragon_is_royal_parent_trigger = no mm_dragon_breeding_dragon_available_trigger = yes }
+mm_dragon_stable_pair_valid_trigger = { mm_dragon_stable_pair_base_trigger = { MOTHER = $MOTHER$ KEEPER = $KEEPER$ } mm_dragon_is_royal_parent_trigger = no mm_dragon_breeding_dragon_available_trigger = yes NOT = { has_relation_mm_dragon_twin = $MOTHER$ } }
+mm_dragon_lineage_seed_available_trigger = { has_global_variable = mm_royal_catalog_initialized exists = character:99001310 }
+mm_dragon_source_is_fire_trigger = { OR = { AND = { mm_dragon_is_royal_parent_trigger = yes var:mm_royal_throne = 1 } AND = { mm_dragon_is_royal_parent_trigger = no var:mm_royal_creation_throne = 1 } } }
+mm_dragon_source_is_earth_trigger = { OR = { AND = { mm_dragon_is_royal_parent_trigger = yes var:mm_royal_throne = 2 } AND = { mm_dragon_is_royal_parent_trigger = no var:mm_royal_creation_throne = 2 } } }
+mm_dragon_source_is_sea_trigger = { OR = { AND = { mm_dragon_is_royal_parent_trigger = yes var:mm_royal_throne = 3 } AND = { mm_dragon_is_royal_parent_trigger = no var:mm_royal_creation_throne = 3 } } }
+mm_dragon_source_is_sky_trigger = { OR = { AND = { mm_dragon_is_royal_parent_trigger = yes var:mm_royal_throne = 4 } AND = { mm_dragon_is_royal_parent_trigger = no var:mm_royal_creation_throne = 4 } } }
+mm_dragon_source_is_white_trigger = { has_trait = mm_royal_white_empress }
+mm_dragon_source_is_black_trigger = { has_trait = mm_royal_black_emperor }

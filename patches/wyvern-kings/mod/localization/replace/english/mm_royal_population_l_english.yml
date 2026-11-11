@@ -1,0 +1,4 @@
+﻿l_english:
+ setting_myv_max_wyverns_10_desc:0 "Up to #V 10#! additional ordinary dragons, removing the oldest first. Fixed sovereigns and each throne's initial 5–10 creations are excluded from population pruning, but remain subject to starvation, wounds and hunts."
+ setting_myv_max_wyverns_30_desc:0 "Up to #V 30#! additional ordinary dragons, removing the oldest first. Fixed sovereigns and each throne's initial 5–10 creations are excluded from population pruning, but remain subject to starvation, wounds and hunts."
+ setting_myv_max_wyverns_50_desc:0 "Up to #V 50#! additional ordinary dragons, removing the oldest first. Fixed sovereigns and each throne's initial 5–10 creations are excluded from population pruning, but remain subject to starvation, wounds and hunts."

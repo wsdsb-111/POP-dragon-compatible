@@ -1,0 +1,20 @@
+{
+  "chancePercent": {
+    "fang": 75,
+    "scale": 80,
+    "claw": 65,
+    "horn": 60,
+    "blood": 15
+  },
+  "sourceQuality": {
+    "ordinary": "famed",
+    "legendary": "illustrious",
+    "blood": "illustrious"
+  },
+  "bloodNativeModifier": "artifact_monthly_minor_prestige_5_modifier",
+  "nativeMaterialFlags": {
+    "scale": "myv_wyvern_scale_material",
+    "blood": "myv_wyvern_blood_material"
+  },
+  "kinds": ["fang", "scale", "claw", "horn", "blood"]
+}

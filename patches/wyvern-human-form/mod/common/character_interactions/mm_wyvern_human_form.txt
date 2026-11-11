@@ -1,0 +1,75 @@
+# The wyvern's own bonded keeper may switch its portrait between its human
+# phenotype and custom wyvern mesh without changing its game identity or stats.
+mm_wyvern_toggle_human_form_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_scheme_befriend
+	interface_priority = 97
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+
+	desc = mm_wyvern_toggle_human_form_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			myv_is_wyvern = no
+			is_imprisoned = no
+			is_incapable = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+			has_trait = myv_wyvern_tamed
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			age >= 10
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_alive = yes
+			myv_is_wyvern = no
+			is_imprisoned = no
+			is_incapable = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+			has_trait = myv_wyvern_tamed
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			age >= 10
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = {
+					is_ai = no
+					is_alive = yes
+					myv_is_wyvern = no
+					is_imprisoned = no
+					is_incapable = no
+					scope:recipient = {
+						myv_is_living_wyvern = yes
+						has_trait = myv_wyvern_tamed
+						has_relation_myv_wyvern_bonded_character = scope:actor
+						age >= 10
+					}
+				}
+				scope:recipient = {
+					if = {
+						limit = { has_character_flag = mm_wyvern_human_form }
+						remove_character_flag = mm_wyvern_human_form
+					}
+					else = {
+						mm_dragon_initialize_features_effect = yes
+						add_character_flag = mm_wyvern_human_form
+					}
+				}
+			}
+		}
+	}
+}

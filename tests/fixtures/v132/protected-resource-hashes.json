@@ -1,0 +1,310 @@
+{
+  "purpose": "Independent pre-implementation fingerprints of native resources and existing capture/trophy assets. No copies or re-exports.",
+  "files": [
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_compact_head.asset",
+      "sha256": "172608ca411f99e67992f19e991a7d24b5bc2a6712359499716f13305ebc4812"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_compact_head.mesh",
+      "sha256": "d69fb22c769b30a3715fe935b071e0352d9e49d17979099acdfa327f3e4888fb"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_black.dds",
+      "sha256": "17d51928e98182ad1af79aeee1ae2f9f6fe41fa00964393fb4a61c09067ee435"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_gold.dds",
+      "sha256": "8bc6fd39284a3ea72f6d28db40653c3cf0aa14b9932e46383c0bcbdda965f411"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_green.dds",
+      "sha256": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_grey.dds",
+      "sha256": "bd3da04e670f9e3a640471fa04e1abea30322897ba7bd26acdf6601bad68f7ed"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_nightmare.dds",
+      "sha256": "33e186d906c084de5db3f05883bdae032e90c70b6957e5e7a02b04328497a76d"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_red.dds",
+      "sha256": "4ca222aa6b4e04966f929527c699c9a609c3c461e8939d350517c7fdfd73f216"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse.dds",
+      "sha256": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_flying_entities.asset",
+      "sha256": "30a6984fb0d2cf53a29e3b390a8f5179bdeec3f6a54a80ec846e297bfc939879"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_flying.anim",
+      "sha256": "5ad2087df3ccedb4416e98a2b40eb34e433d58a54bbc775d1b9a4ec8cee15824"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_idle.anim",
+      "sha256": "86642436aa7d361b879e18a7557aff8338ccb18d34736fc5e470076716167215"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_mounted_flying.anim",
+      "sha256": "941bb080c31052c5497f7cdd94ddd5ff203f9b4afb71bb0783d60593bbcfb9e2"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_mounted.asset",
+      "sha256": "0c6e46d3384b2f51a8363f6092f1f64d57458d62c585fd9a3a6d97c60b4b0740"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_normal.dds",
+      "sha256": "3a6912abe0be9af058afb351521e76bc96414595b2205dd926bb3470a3406292"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_properties.dds",
+      "sha256": "37f2fcffd4cd4e7c40a53edab548b9cd110dcf5e50ce5b958663c2a0b1397aa2"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_running_entities.asset",
+      "sha256": "199ac3a48ebe69aa1c2c0217508cab074145445243dcbc2716ec48eaa2b95a4e"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_running.anim",
+      "sha256": "f7d52629902b7d3aeeb7843547851055d7edee3532488da02db90c539adde282"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_hatchling.anim",
+      "sha256": "f9b35f3f701e2fb44a099c8e1810b2d65303cdffc436c866191393bbf9269bdc"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_01.anim",
+      "sha256": "721029d8ec299398147a323a6052c6f899e3060b62ec2d6b05571a86c44efd27"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_02.anim",
+      "sha256": "31063881380e7269fc63f6fbb036e3fd517923d333fa6cd48e688d663deb3ba7"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_03.anim",
+      "sha256": "47613b387b5bf3e73fce53b16ecbad6cdef55012ef23d22ac4d4f2b207f5e99e"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_04.anim",
+      "sha256": "4d72ac7b801ba2eb1710b8de9d5ac843befae760592a4d46f26318de1e15721f"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_05.anim",
+      "sha256": "5af3ab3d407948671d236c07c3ea07748cda39bff4e94071d98d489db3a3ce1b"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_06.anim",
+      "sha256": "612eac9dd1427be0c5c700b1943c6760a5bd6c3bdac0b23996f5e1d350a53f10"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_07.anim",
+      "sha256": "fce2ea62ecc0d6895182fd13a94ad87f9665a16fe4d435ca76099dcdd95fb440"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_08.anim",
+      "sha256": "279d2c5ad4d5bdce0d1d0e71d8ee9b177b10f669fa7b82480da35a68cee5b660"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_09.anim",
+      "sha256": "55e745246816720134b76880bb9124e81f92e66c4b5d55a9dce95443fb07c441"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_10.anim",
+      "sha256": "43796d90e8a970d8349d3190d2657ff3578aafccf4c67773bc776eda81e84571"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial.asset",
+      "sha256": "0d7208f0f70f3131f7a84f9ea73594d5e2649e0663139dc36cc5aa71611053cc"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern.asset",
+      "sha256": "528f72f219d0931c4da7589386ba3b712516f57af6ae2bd6f22d89e11fc87ad3"
+    },
+    {
+      "root": "native",
+      "path": "gfx/models/portraits/myv_wyvern/myv_wyvern.mesh",
+      "sha256": "5569e1394222b5b431d7f31dde27e2fc4332438ff6719fc03e046eea644a5be8"
+    },
+    {
+      "root": "native",
+      "path": "gfx/FX/myv_wyvern_portrait.shader",
+      "sha256": "0376d8ea5cee74ceb9576508defbdfdaf45a513be5bebefad47d9a743eb3195a"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_dragon_draxel.dds",
+      "sha256": "0a86bfc661ebc1130ff47d61ff006b98ed9ed66c791cef1ebc34be93c9453a0f"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_dragon_serind.dds",
+      "sha256": "8ad745b376cf28279a22f882924a212635363ab22f682ebf196afc5c15f8ec72"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_material_claw.dds",
+      "sha256": "df8f4b5fe44694c2ecd6156a1dc412e620a3ab36ff0d6efe0db74291a4fcd098"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_material_horn.dds",
+      "sha256": "21bbf538c185b568e0dfcf23861fbfdf65f3d2c17ff07b1c90e8c1a99987bd0e"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_trophy_claw.dds",
+      "sha256": "f0ed9556b011dced93be9744896c55e894a95341efdb4e227892830521a7f8bd"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_trophy_eye.dds",
+      "sha256": "51a5f89fed365d93381291b2c2debdbc0b7645a13948477dd27cab96cf516d0c"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_trophy_fang.dds",
+      "sha256": "15101114a434631ed461d62e6bd5a9a6738a217d495ad9604ec382de77f97d67"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_trophy_head.dds",
+      "sha256": "47c43c8b2cc9ae294097f4ffe0ac2c9a3151167221f7f84419a9004a5be9fbce"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/artifact/mm_wyvern_trophy_scale.dds",
+      "sha256": "212cb1a0ffa4e839aa734a301ad5533416a9e094ce0ff1f52c7fd0360d484176"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/interface/icons/traits/mm_dragon_bathed_blood.dds",
+      "sha256": "d2946816035878d30533aa85430c55c3737418c70c8efc48fb1568a910d329e1"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_draxel.mesh",
+      "sha256": "6209420bffa56d6bb735054486150bf2d33a3d30a95e8b0ad143b081a146cd92"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_serind.mesh",
+      "sha256": "513521b7d862dc26dbce397f9268edd32c84bb3c88fc8aadd374e02589fd62b9"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_diffuse.dds",
+      "sha256": "8ccc61040226fed550b84c7fdc8ef721915d695f59d6faa3c83196089a8734cb"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_normal.dds",
+      "sha256": "b24d14865414fadd1fb8da75f73b0d092d75c1092006972c3e14fcbe096fd27e"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_properties.dds",
+      "sha256": "1c06761388bee21ce96928388e1eb2a885a78b08ea7391f526716222e46914ff"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons.asset",
+      "sha256": "6fd8f5945c7822506eb0c2705769809f314d3bb1e2f1f2698807b44991246d8d"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_diffuse.dds",
+      "sha256": "7fe70e8241b0dfc800be6ac602af63e787a1aac4eab09e8c24bff764bf148557"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_normal.dds",
+      "sha256": "3601659da71bfdd5a1b9782c313c47c9b5795d3d8432cc409f506ac814bddc0b"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_properties.dds",
+      "sha256": "58c80d73af1dabfc3e9467995af63f3b7423ed5b5a28d73c85446e3b47c86160"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_diffuse.dds",
+      "sha256": "bf0db29651cfae9970a24738bbb8a57e74d9aaf71eb476f5104635cb19dfc52d"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_normal.dds",
+      "sha256": "dbf70ba501e278d368745dba1cccd74944cc89f2ac831bebe2123cd7bb71ed3c"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_properties.dds",
+      "sha256": "ce52670a64b0bdbd8b6d60208313d8919cfbd71bc75759db7d3c78a51643a3d8"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies.asset",
+      "sha256": "92d97650a58cf6648e07a57b7734573f70683513964813ce6f3c0505bb46b68a"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_claw.mesh",
+      "sha256": "1f1e80a9bff2c9e7bebec5849efeb7558e6728df5e30fba6f462df7520e48a96"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_eye.mesh",
+      "sha256": "f69fe4b8e0a340e25bddcf3f8dabaae5006f8dd3594e44f6d9eba7d66951d122"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_fang.mesh",
+      "sha256": "5749ec741baa17c4ef02fdab1138554660f1f9d4e8ced0862ebacf0d0145785e"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_head.mesh",
+      "sha256": "a1df48ceb2c38d7de9639f4d31468d98942c19e8eadfc7e4e9bb0d263cd1ed67"
+    },
+    {
+      "root": "project",
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_scale.mesh",
+      "sha256": "fcfb31d4086e584a7eceb76364becce80c374f062ce8baa02c6c9a22238d07ac"
+    }
+  ]
+}

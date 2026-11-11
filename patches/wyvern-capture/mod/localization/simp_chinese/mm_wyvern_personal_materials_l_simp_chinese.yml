@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+ mm_wyvern_material_claw_name:0 "[mm_wyvern_trophy_source.GetFirstNameNoTooltip]之龙爪"
+ mm_wyvern_material_claw_desc:0 "一截坚韧的鳞皮龙爪，黑褐利爪仍有撕裂铁甲的锋芒。可作为随身宝物，也可用于锻造德拉克斯尔。\n\n取自飞龙「[mm_wyvern_trophy_source.GetFirstNameNoTooltip]」。"
+ mm_wyvern_material_horn_name:0 "[mm_wyvern_trophy_source.GetFirstNameNoTooltip]之龙角"
+ mm_wyvern_material_horn_desc:0 "一支层理密实、向后弯曲的龙角。可作为随身宝物，也是龙宝武器的重要骨架材料。\n\n取自飞龙「[mm_wyvern_trophy_source.GetFirstNameNoTooltip]」。"
+ myv_wyvern.0201.loot_chances_tt:0 "获得龙头宫廷战利品；独立判定龙牙75%、龙鳞80%、龙爪65%、龙角60%、龙血15%。同种材料每条龙最多一件，不再掉落龙眼；仍可能发现龙蛋。"

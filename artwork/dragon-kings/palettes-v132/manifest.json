@@ -1,0 +1,459 @@
+{
+  "version": "1.3.2",
+  "method": "User-authorized deterministic native-pixel RGB transfer; native alpha unchanged; ImageGen edits rejected",
+  "nativeRoot": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\3811316052",
+  "nativeInputs": {
+    "common/genes/myv_wyvern_accessory_genes.txt": "478983f34b7599b91d083c28233787aca13aa231e47a42f276917dead86b62eb",
+    "common/genes/myv_wyvern_flying_genes.txt": "26b3484be6f764875f12a52d9e29abc92f5df55d86ffe911a943e7e8fe2c7f9f",
+    "common/genes/myv_wyvern_running_genes.txt": "ed1fdfe0c7347af88a893f37fd4cb677b57cb148c7dcc0b9d00349cdad26fc3f",
+    "common/genes/myv_wyvern_mounted_genes.txt": "e3fa151a7a1fab2984c4ab6960c779c28a0963b0067a05ef0b951c00176eacbd",
+    "common/genes/myv_wyvern_wild_aerial_flying_genes.txt": "222e163f376b0d23e41a2d67a9a00eff9ca7eba62d795e7385a5f763dac7beae",
+    "common/genes/myv_compact_head_genes.txt": "936b14954d1dd43cae73d7bbe1548c02d51c518aeb27d8108c50de2ead832a45",
+    "gfx/portraits/portrait_animations/myv_wyvern_flying.txt": "c018bdda9563f9d48b709e6d3b82b0de1d35552e32eb9b3e60231ba2ae8819a6",
+    "gfx/portraits/portrait_animations/myv_wyvern_running.txt": "ceb02d18ae8c717ee151926b6a4db357ce7be165cee829a16c03d5e201a0a488",
+    "gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt": "fc46f54479b05bfcea4f7104d7b769a8440c2ae8c5a26b4b95db8b5ed331bac4",
+    "gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt": "7995d48db5f42427e6410f3dcbebc4cb9ce5cd76ea3b2cfcd0bf23343ac78a60",
+    "gfx/portraits/portrait_animations/myv_compact_head.txt": "7add5f9d0fe967e8f33b50201b1709563ff14432b7f4c29b685e75b2057ac133",
+    "gfx/portraits/portrait_animations/myv_wyvern_memorial.txt": "750216a32956201a97cb9b4ecd2786e6601ee24ebfad442cce7d2d9dff587c7f",
+    "gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt": "8161caaefe9bf0a4d0abc89c108524e3ad1de8a572fcd6bdbb6ab9ad536f657e",
+    "gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt": "419942d8b179790598553c210301eb7281e1f2e9071ace052e2b4f68a99aaf66",
+    "gfx/models/portraits/myv_wyvern/myv_compact_head.mesh": "d69fb22c769b30a3715fe935b071e0352d9e49d17979099acdfa327f3e4888fb",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern.mesh": "5569e1394222b5b431d7f31dde27e2fc4332438ff6719fc03e046eea644a5be8",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse.dds": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_black.dds": "17d51928e98182ad1af79aeee1ae2f9f6fe41fa00964393fb4a61c09067ee435",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_gold.dds": "8bc6fd39284a3ea72f6d28db40653c3cf0aa14b9932e46383c0bcbdda965f411",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_green.dds": "2a0064ffd27fd09a567b0ce7ca3eaabfdd3aea15f72277a4f5b8efe3113c05e0",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_grey.dds": "bd3da04e670f9e3a640471fa04e1abea30322897ba7bd26acdf6601bad68f7ed",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_nightmare.dds": "33e186d906c084de5db3f05883bdae032e90c70b6957e5e7a02b04328497a76d",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_diffuse_red.dds": "4ca222aa6b4e04966f929527c699c9a609c3c461e8939d350517c7fdfd73f216",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_flying.anim": "5ad2087df3ccedb4416e98a2b40eb34e433d58a54bbc775d1b9a4ec8cee15824",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_idle.anim": "86642436aa7d361b879e18a7557aff8338ccb18d34736fc5e470076716167215",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_mounted_flying.anim": "941bb080c31052c5497f7cdd94ddd5ff203f9b4afb71bb0783d60593bbcfb9e2",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_normal.dds": "3a6912abe0be9af058afb351521e76bc96414595b2205dd926bb3470a3406292",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_properties.dds": "37f2fcffd4cd4e7c40a53edab548b9cd110dcf5e50ce5b958663c2a0b1397aa2",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_running.anim": "f7d52629902b7d3aeeb7843547851055d7edee3532488da02db90c539adde282",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_hatchling.anim": "f9b35f3f701e2fb44a099c8e1810b2d65303cdffc436c866191393bbf9269bdc",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_01.anim": "721029d8ec299398147a323a6052c6f899e3060b62ec2d6b05571a86c44efd27",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_02.anim": "31063881380e7269fc63f6fbb036e3fd517923d333fa6cd48e688d663deb3ba7",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_03.anim": "47613b387b5bf3e73fce53b16ecbad6cdef55012ef23d22ac4d4f2b207f5e99e",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_04.anim": "4d72ac7b801ba2eb1710b8de9d5ac843befae760592a4d46f26318de1e15721f",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_05.anim": "5af3ab3d407948671d236c07c3ea07748cda39bff4e94071d98d489db3a3ce1b",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_06.anim": "612eac9dd1427be0c5c700b1943c6760a5bd6c3bdac0b23996f5e1d350a53f10",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_07.anim": "fce2ea62ecc0d6895182fd13a94ad87f9665a16fe4d435ca76099dcdd95fb440",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_08.anim": "279d2c5ad4d5bdce0d1d0e71d8ee9b177b10f669fa7b82480da35a68cee5b660",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_09.anim": "55e745246816720134b76880bb9124e81f92e66c4b5d55a9dce95443fb07c441",
+    "gfx/models/portraits/myv_wyvern/myv_wyvern_wild_aerial_tier_10.anim": "43796d90e8a970d8349d3190d2657ff3578aafccf4c67773bc776eda81e84571",
+    "gfx/FX/myv_wyvern_portrait.shader": "0376d8ea5cee74ceb9576508defbdfdaf45a513be5bebefad47d9a743eb3195a"
+  },
+  "generator": {
+    "file": "scripts/build-royal-palettes.py",
+    "sha256": "4eba20a644b4f51d73a410373dfe2586ed66770ae685d1ab7048fed1c297d15b"
+  },
+  "families": {
+    "fire": 1,
+    "earth": 2,
+    "sea": 3,
+    "sky": 4,
+    "white": 5,
+    "black": 6
+  },
+  "templates": {
+    "fire": [
+      "mm_royal_fire_hatchling",
+      "mm_royal_fire_tier_01",
+      "mm_royal_fire_tier_02",
+      "mm_royal_fire_tier_03",
+      "mm_royal_fire_tier_04",
+      "mm_royal_fire_tier_05",
+      "mm_royal_fire_tier_06",
+      "mm_royal_fire_tier_07",
+      "mm_royal_fire_tier_08",
+      "mm_royal_fire_tier_09",
+      "mm_royal_fire_tier_10"
+    ],
+    "earth": [
+      "mm_royal_earth_hatchling",
+      "mm_royal_earth_tier_01",
+      "mm_royal_earth_tier_02",
+      "mm_royal_earth_tier_03",
+      "mm_royal_earth_tier_04",
+      "mm_royal_earth_tier_05",
+      "mm_royal_earth_tier_06",
+      "mm_royal_earth_tier_07",
+      "mm_royal_earth_tier_08",
+      "mm_royal_earth_tier_09",
+      "mm_royal_earth_tier_10"
+    ],
+    "sea": [
+      "mm_royal_sea_hatchling",
+      "mm_royal_sea_tier_01",
+      "mm_royal_sea_tier_02",
+      "mm_royal_sea_tier_03",
+      "mm_royal_sea_tier_04",
+      "mm_royal_sea_tier_05",
+      "mm_royal_sea_tier_06",
+      "mm_royal_sea_tier_07",
+      "mm_royal_sea_tier_08",
+      "mm_royal_sea_tier_09",
+      "mm_royal_sea_tier_10"
+    ],
+    "sky": [
+      "mm_royal_sky_hatchling",
+      "mm_royal_sky_tier_01",
+      "mm_royal_sky_tier_02",
+      "mm_royal_sky_tier_03",
+      "mm_royal_sky_tier_04",
+      "mm_royal_sky_tier_05",
+      "mm_royal_sky_tier_06",
+      "mm_royal_sky_tier_07",
+      "mm_royal_sky_tier_08",
+      "mm_royal_sky_tier_09",
+      "mm_royal_sky_tier_10"
+    ],
+    "white": [
+      "mm_royal_white_hatchling",
+      "mm_royal_white_tier_01",
+      "mm_royal_white_tier_02",
+      "mm_royal_white_tier_03",
+      "mm_royal_white_tier_04",
+      "mm_royal_white_tier_05",
+      "mm_royal_white_tier_06",
+      "mm_royal_white_tier_07",
+      "mm_royal_white_tier_08",
+      "mm_royal_white_tier_09",
+      "mm_royal_white_tier_10"
+    ],
+    "black": [
+      "mm_royal_black_hatchling",
+      "mm_royal_black_tier_01",
+      "mm_royal_black_tier_02",
+      "mm_royal_black_tier_03",
+      "mm_royal_black_tier_04",
+      "mm_royal_black_tier_05",
+      "mm_royal_black_tier_06",
+      "mm_royal_black_tier_07",
+      "mm_royal_black_tier_08",
+      "mm_royal_black_tier_09",
+      "mm_royal_black_tier_10"
+    ]
+  },
+  "outputs": [
+    {
+      "file": "patches/wyvern-ascension/mod/common/scripted_triggers/zzzzzzzz_mm_asc_visual_triggers.txt",
+      "sha256": "b1b0cdd1eb714b2fa247a81510ff7a17ebba7ec591d4ac11e37776d1e47b03f2",
+      "bytes": 3116
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_animations/myv_compact_head.txt",
+      "sha256": "9f07a208b67aed82da1e1d5f9909b738592f1342c06c4f5c4d5a5b6d4ba21f6d",
+      "bytes": 4018
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "sha256": "ae6cc0d1d18526bde8df5c69d89889c40e4cce2784517ac05edff2a046d99d13",
+      "bytes": 60231
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "sha256": "bc0af896c2666a23f3059547e51df0430801a1c363d72d716b7d87768371ca4b",
+      "bytes": 80855
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_animations/myv_wyvern_running.txt",
+      "sha256": "992f7b15a13860157d3f3c179cdd4e6f65a59d6afc677f47176fd8162a0d2e3e",
+      "bytes": 60432
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt",
+      "sha256": "cad4f43a9879b69f7056d7f324f09ad690044c9ba0c7ee525bff7ccbfbc0910c",
+      "bytes": 61707
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_modifiers/mm_asc_dragon_portrait.txt",
+      "sha256": "9c0dbe7ab07df132d0a8945fb1380bb87e28136654cde88bc4c905172ecfc91e",
+      "bytes": 36588
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_modifiers/mm_asc_native_poses.txt",
+      "sha256": "5c1f91c40f7c06b884355664dd4e593f5aab09066758b19346d448b5c88a0c71",
+      "bytes": 64525
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/portrait_modifiers/mm_asc_no_human_accessories.txt",
+      "sha256": "dfb3c0bf11898f0c044f57a2e7e43da2109797a3cea82eaaf1c6369702743f37",
+      "bytes": 2297
+    },
+    {
+      "file": "patches/wyvern-ascension/mod/gfx/portraits/trait_portrait_modifiers/mm_asc_dragon_body.txt",
+      "sha256": "ed41c62de202f060348e85779939c0a2415cbb9bccff9d4936f4bf22f5582a2a",
+      "bytes": 320
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_compact_head_genes.txt",
+      "sha256": "20b2748e4d660f1ebeb1607a459726e3eed21e32cc375d88bd4266503d0711d0",
+      "bytes": 1601
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_wyvern_accessory_genes.txt",
+      "sha256": "ec43f64d2df13ee8728a3074c22bab444b6de91e2032a8928dc5eed84469d231",
+      "bytes": 17430
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_wyvern_flying_genes.txt",
+      "sha256": "eeed73f6d0cbcb259e00e75ea2a42595e8e30f668255de9104c12974eb7ddd8b",
+      "bytes": 17916
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_wyvern_mounted_genes.txt",
+      "sha256": "40b823d18e1a63a6f4520d357e152bb2a52a3098eb3ff1aa671150dd2fd0c024",
+      "bytes": 18124
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_wyvern_running_genes.txt",
+      "sha256": "b0f7daf63cc3f65d97fcbb2baf49950b2ea1e0a7cf26efce957627df08806615",
+      "bytes": 18183
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/genes/myv_wyvern_wild_aerial_flying_genes.txt",
+      "sha256": "4908de9cdfe376bd071af3ba7a900440826e23e40b666f3fa48f0b0b02afd95a",
+      "bytes": 20196
+    },
+    {
+      "file": "patches/wyvern-kings/mod/common/scripted_triggers/mm_royal_visual_triggers.txt",
+      "sha256": "51c7b35bd0bf247f72b991fc24f21069ccac8bab1d533e23775294278b3609e3",
+      "bytes": 1475
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_black_diffuse.dds",
+      "sha256": "54c74ccd92b2170d023e43e2722afe409fca6563d1d55d0e40b782461bcaf6c3",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_earth_diffuse.dds",
+      "sha256": "af49a00ae2c9ef95c7741fd5810dd170fdfe9cf946c0d53f8f36650be00d6148",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_fire_diffuse.dds",
+      "sha256": "57caa43e70c65e23050fef9e82f95437d0a2cc78b1441ff97eb6a4b231585af8",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_sea_diffuse.dds",
+      "sha256": "333e90044de4dd4f6a016fe367b3081ca84c9f3ded7b2f893fd718738f5148ab",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_sky_diffuse.dds",
+      "sha256": "1a31f4f891afedfc09a304b1e3aa5e5ef695284475957501f452c9bc8ca001c6",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_white_diffuse.dds",
+      "sha256": "2234c90c058062a15624c9c05258826052a76c2697707a31da143d419c408ae6",
+      "bytes": 16777344
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/models/portraits/myv_wyvern/mm_royal_wyvern.asset",
+      "sha256": "bfba44810ce9e71c517d7cf4686b033a46baa1652f057fb44c346b69ba1edd23",
+      "bytes": 374257
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/accessories/mm_royal_wyvern.txt",
+      "sha256": "d2b452dbf8100c84f3abbe58d72d918d511a54963d8b89c07e2cca9c6afab12a",
+      "bytes": 48514
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_compact_head.txt",
+      "sha256": "a313e9b690791c33c10c27cc109283dde1e964c140d423c10786d4eb04c0e542",
+      "bytes": 1992
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "sha256": "b4879899b15c69379a21167443988490b8394216205874280866f257a8ea5863",
+      "bytes": 34529
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_wyvern_memorial.txt",
+      "sha256": "4030563a84f66728e0c1e239d0cc11e426453c8d9fb0f7b1ad4f8eb49c156d71",
+      "bytes": 74424
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "sha256": "f02883705820c3f6a0e9bfeae550f6a4be989b3edea5b07d3f475cdc9c60e83d",
+      "bytes": 44989
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_wyvern_running.txt",
+      "sha256": "0ba297aac61becaeffcb81b86be5b329313627aa175cc0bf672b1064a426b828",
+      "bytes": 34664
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_animations/myv_wyvern_wild_aerial_flying.txt",
+      "sha256": "07a1c443a864f17a527ddcc1fc11b6b8ef8dd81690ff13c08442eb7e849e6cc6",
+      "bytes": 35675
+    },
+    {
+      "file": "patches/wyvern-kings/mod/gfx/portraits/portrait_modifiers/mm_royal_wyvern_portrait.txt",
+      "sha256": "b4551f00df52d72f3e7cc2dd03cf64a307ab982df767354afcdfd8ae95d5f1f2",
+      "bytes": 89781
+    }
+  ],
+  "sources": [
+    {
+      "file": "artwork/dragon-kings/palettes-v132/black-albedo.png",
+      "sha256": "cd49a2d61a8790a76c11f4d97b885109161f4035bf6016d5d7bf8ace22fe7b6d",
+      "bytes": 4667657
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/black-native-bind-preview.png",
+      "sha256": "5b2a655ecdbcf18521a6c2318a85066a3f18d5a29fd13f9f7dfbdac6b17e5386",
+      "bytes": 25504
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/deterministic-albedo-contact.png",
+      "sha256": "ae5b13055bd13ff158caf5d987fb36d3fb0ceac90020c8f18e9ffb14f580f84e",
+      "bytes": 2073816
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/earth-albedo.png",
+      "sha256": "b44f905745bc50b8ce64a78f766aa85cc727cf00f68fda977e73c0fece601633",
+      "bytes": 4857796
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/earth-native-bind-preview.png",
+      "sha256": "25a03ffe67b490201d8c25c6927dcf110f6b418cb0f03c7cbab383ae66b45401",
+      "bytes": 26428
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/fire-albedo.png",
+      "sha256": "791ab4558d1a47dad22182aa15e1d9c9dd07af146ec6650e44b9efda9c608022",
+      "bytes": 5269239
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/fire-native-bind-preview.png",
+      "sha256": "4b479ae3f4fe95d61b3cee398e7fb447649ee85663d91b47800dc98a2f6ab945",
+      "bytes": 27806
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/mask-body.png",
+      "sha256": "a8e303b12ff8d5bac4ead7b9764e74fed3181bd0bd10272fc036e7805c2c1fc8",
+      "bytes": 1816027
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/mask-pale.png",
+      "sha256": "084eaa1a91956de13772b7dec176c388011e6ffc57638b7194766da6e2c8b499",
+      "bytes": 1085466
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/mask-protected-eye-mouth.png",
+      "sha256": "35b53b4989e2a5806133a670dee5779d252731cb8a6234d6c2aa87dd179bd51f",
+      "bytes": 12562
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/mask-ridge.png",
+      "sha256": "45a14568dc03e779251dd55ed5a72db9e244bd8eadd6f17db4f452df0aa7a53c",
+      "bytes": 354096
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/mask-wing.png",
+      "sha256": "1dbf80aa82ca506009702e5ff20292fc86fe66ed4ecf85dccd229e2670fe8cbd",
+      "bytes": 519656
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/native-bind-comparison.png",
+      "sha256": "cfe85b06043a27c03b8997c857c4b04f8873b9aeb160eb97917917b7077d61f0",
+      "bytes": 144470
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/native-uv-bone-regions.png",
+      "sha256": "a3570773c34610715f381b3e327720b5a204f20bd732196bdc428b634b58e9b9",
+      "bytes": 70871
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/native-uv-coverage.png",
+      "sha256": "4a513f0c71eade06d3720d134fa625f7886ae9e5bf116f0b176a0a32c6b9dad2",
+      "bytes": 43505
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/original-green-atlas.png",
+      "sha256": "581f52ca64f7b83023c8488f3a7c0182786b60aa6436fa2be1e57e5dec3afdf6",
+      "bytes": 5105615
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sea-albedo.png",
+      "sha256": "f6c6abc6d9b8d9f64ee753bd78dc0b0a905ebba71c7869490844fcdc5543609e",
+      "bytes": 5222490
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sea-native-bind-preview.png",
+      "sha256": "157612c1c9111f530be0a9bc429a8583339bd832b31ed08f65015004b2010ea8",
+      "bytes": 27145
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sky-albedo.png",
+      "sha256": "22218242517e76186eed98c1a809ba3e2c58570da008b1e4be90e4313aaaeb42",
+      "bytes": 4916957
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sky-native-bind-preview.png",
+      "sha256": "05912bbf51edc5eed98d71005403f2e675b5a6474b461954ec436d83d52a7d96",
+      "bytes": 26754
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/white-albedo.png",
+      "sha256": "c35e40cce87dd35200647118cbed19efc5b1e6e72dd3601cfbd23a882ef4f834",
+      "bytes": 5031294
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/white-native-bind-preview.png",
+      "sha256": "6fe47f345449b61d785f5503733db8755fd321a1f2357d3a5c72276693766f2f",
+      "bytes": 28203
+    }
+  ],
+  "engineVerification": "NOT_RUN",
+  "recipe": {
+    "file": "artwork/dragon-kings/palettes-v132/recipes.json",
+    "sha256": "6ae980a5562c8612b20ea1f46c08c36a54156ab0bb2ec09fbc64ad4462b82f04"
+  },
+  "maskEvidence": {
+    "file": "artwork/dragon-kings/palettes-v132/mask-evidence.json",
+    "sha256": "a20d8fb934a913bfff01ba4b7704f015fbd6e58fe8a31ebd14219777abae2e28"
+  },
+  "previewGenerator": {
+    "file": "scripts/render-royal-palettes.py",
+    "sha256": "af8548a352207e024a4b18591c00bc925ab74df2058850e77c89b1c7a904d6bf"
+  },
+  "rejectedImagegen": [
+    {
+      "file": "artwork/dragon-kings/palettes-v132/black-imagegen.png",
+      "sha256": "73ce27b518df2a5dd4f5c675972cd36651ee77c29ac6305aa17b8f740a73894d",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/earth-imagegen.png",
+      "sha256": "7dbd1284f332b1c97c2c8339a6763380f86d8508f0f6db8f9d03f05ffcebff1b",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/fire-imagegen.png",
+      "sha256": "5eb8b960db0098dc3d0438fc3b4f097f655e8a7ce03a2de87dd3a8646aecee8a",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sea-imagegen.png",
+      "sha256": "1b8a0709018401e13bb20456dbb8b4440360e182fcf1de2566432153bebd15f9",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/sky-imagegen.png",
+      "sha256": "8f2cd0a72d407c2d3ddeadcc821db81350730ee07f07a746e00991303246261c",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    },
+    {
+      "file": "artwork/dragon-kings/palettes-v132/white-imagegen.png",
+      "sha256": "cf6a7f25c41063213dfdd80ca8ec2c97535dbc0093a2625f7cbca5501a45b591",
+      "status": "REJECTED_NOT_USED_IN_PRODUCTION"
+    }
+  ]
+}

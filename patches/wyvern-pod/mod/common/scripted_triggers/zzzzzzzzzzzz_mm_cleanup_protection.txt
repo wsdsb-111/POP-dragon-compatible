@@ -1,0 +1,25 @@
+﻿# Exempt from population deletion, not from combat, murder or natural lifespan.
+mm_cleanup_is_protected = {
+    OR = {
+        is_immortal = yes
+        has_trait_with_flag = is_immortal
+        has_trait = immortal
+        has_trait = myv_wyvern
+        has_trait = myv_wyvern_tamed
+        has_trait = myv_wyvern_legendary
+        has_trait = mm_royal_dragon_king
+        has_trait = mm_royal_complete
+        has_trait = mm_royal_black_emperor
+        has_trait = mm_royal_white_empress
+        has_trait = mm_royal_torpor
+        has_trait = mm_wyvern_legendary_origin
+        has_trait = mm_wyvern_bathed_in_dragon_blood
+        has_trait = mm_dragon_half
+        has_trait = mm_dragon_lineage_1
+        has_trait = mm_dragon_lineage_2
+        has_trait = mm_dragon_lineage_3
+        has_trait = mm_dragon_lineage_4
+        has_trait = mm_dragon_black_blood
+        has_trait = mm_asc_dragon_body
+    }
+}

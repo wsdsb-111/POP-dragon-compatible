@@ -1,0 +1,100 @@
+﻿myv_historical_wyverns_initialization = {
+    effect = {
+        if = {
+            limit = { exists = character:99001310 }
+            mm_royal_bootstrap_effect = yes
+        }
+        else = {
+character:99001001 = { # Ascalon
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_character_flag = ai_will_not_convert } }
+                    add_character_flag = ai_will_not_convert
+                }
+                myv_normalize_legendary_wyvern_effect = { TEMPERAMENT = myv_wyvern_temperament_alert }
+                if = {
+                    limit = { NOT = { has_variable = myv_wyvern_lair_barony } }
+                    set_variable = { name = myv_wyvern_lair_barony value = province:6100.barony }
+                }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:6100
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 3 }
+            }
+        }
+        character:99001002 = { # Goch
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_character_flag = ai_will_not_convert } }
+                    add_character_flag = ai_will_not_convert
+                }
+                myv_normalize_legendary_wyvern_effect = { TEMPERAMENT = myv_wyvern_temperament_fierce }
+                if = {
+                    limit = { NOT = { has_variable = myv_wyvern_lair_barony } }
+                    set_variable = { name = myv_wyvern_lair_barony value = province:1666.barony }
+                }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:1666
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 1 }
+            }
+        }
+        character:99001003 = { # Aypnos
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_character_flag = ai_will_not_convert } }
+                    add_character_flag = ai_will_not_convert
+                }
+                myv_normalize_legendary_wyvern_effect = { TEMPERAMENT = myv_wyvern_temperament_docile }
+                if = {
+                    limit = { NOT = { has_variable = myv_wyvern_lair_barony } }
+                    set_variable = { name = myv_wyvern_lair_barony value = province:5751.barony }
+                }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:5751
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 5 }
+            }
+        }
+        character:99001004 = { # Typhon
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:5751
+                    set_variable = { name = myv_wyvern_lair_barony value = province:5751.barony }
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 5 }
+            }
+        }
+        character:99001005 = { # Gaia
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:5751
+                    set_variable = { name = myv_wyvern_lair_barony value = province:5751.barony }
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 5 }
+            }
+        }
+        character:99001006 = { # Ladon
+            if = {
+                limit = { is_alive = yes }
+                if = {
+                    limit = { NOT = { has_variable = myv_historical_wyvern_initialized } }
+                    set_location = province:5751
+                    set_variable = { name = myv_wyvern_lair_barony value = province:5751.barony }
+                }
+                myv_initialize_historical_wyvern_effect = { COLOR = 5 }
+            }
+        }
+        }
+    }
+}

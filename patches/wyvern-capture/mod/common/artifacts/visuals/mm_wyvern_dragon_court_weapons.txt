@@ -1,0 +1,11 @@
+mm_wyvern_dragon_sword_court = {
+  default_type = pedestal
+  icon = "mm_dragon_draxel.dds"
+  asset = mm_dragon_draxel_court_entity
+}
+
+mm_wyvern_dragon_bow_court = {
+  default_type = pedestal
+  icon = "mm_dragon_serind.dds"
+  asset = mm_dragon_serind_court_entity
+}

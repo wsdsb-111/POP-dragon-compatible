@@ -1,0 +1,62 @@
+{
+ "black_crown": {
+  "state": "pass",
+  "tris": 534574,
+  "objects": 213,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 0,
+  "rounds": 4
+ },
+ "white_book": {
+  "state": "fail",
+  "tris": 519724,
+  "objects": 97,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 2410,
+  "rounds": 5
+ },
+ "sky_spear": {
+  "state": "fail",
+  "tris": 619882,
+  "objects": 68,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 170,
+  "rounds": 5
+ },
+ "fire_ring": {
+  "state": "fail",
+  "tris": 531804,
+  "objects": 108,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 8528,
+  "rounds": 5
+ },
+ "black_regalia": {
+  "state": "pass",
+  "tris": 532818,
+  "objects": 205,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 0,
+  "rounds": 4
+ },
+ "sea_armor": {
+  "state": "pass",
+  "tris": 531042,
+  "objects": 95,
+  "si": 0,
+  "bnd": 0,
+  "nm": 0,
+  "deg": 0,
+  "rounds": 2
+ }
+}

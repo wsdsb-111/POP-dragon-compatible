@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ mm_dragon_force_hatch_decision:0 "强制孵化龙蛋"
+ mm_dragon_force_hatch_decision_desc:0 "以仪式孵化你持有的一枚普通龙蛋或半龙之蛋。优先选择已装备的合格蛋，否则从背包合格蛋中随机选择一枚。成功孵化消耗100金币和250虔诚；半龙蛋须有完整的真实亲本记录。"
+ mm_dragon_force_hatch_decision_tooltip:0 "立即孵化一枚合格的现有龙蛋，不进行孵化概率抽签；成功后消耗100金币和250虔诚，保留蛋中记录的血统和亲本。"
+ mm_dragon_force_hatch_decision_confirm:0 "举行孵化仪式"
+ mm_dragon_repair_seed_families_decision:0 "修复缺失的开局混血家族"
+ mm_dragon_repair_seed_families_decision_desc:0 "此存档记录了已完成开局分配，但没有存活的开局血脉携带者标记。重新在既有家族人物中分配五组混血来源，并按真实亲缘处理后代。成功分配后仅可进行一次；未分配到携带者时可重试。"
+ mm_dragon_repair_seed_families_decision_tooltip:0 "重新分配缺失的开局混血血脉，保留现有人物的姓名、家族、父母和领地。"
+ mm_dragon_repair_seed_families_decision_confirm:0 "修复血脉分配"

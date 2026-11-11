@@ -1,0 +1,2 @@
+# The trait exists only when death servants are installed.
+mm_creed_is_death_servant_trigger = { has_trait = mm_dragon_death_servant }

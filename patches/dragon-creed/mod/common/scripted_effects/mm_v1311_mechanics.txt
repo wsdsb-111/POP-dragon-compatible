@@ -1,0 +1,95 @@
+﻿mm_v1311_earth_birth_effect = {
+    if = {
+        limit = { is_alive = yes rite = rite:mm_dragon_earth }
+        add_prestige = 150
+        add_piety = 150
+        add_legitimacy = 100
+        if = { limit = { NOT = { has_character_modifier = mm_v1311_earth_birth_1 } } add_character_modifier = mm_v1311_earth_birth_1 }
+        else_if = { limit = { NOT = { has_character_modifier = mm_v1311_earth_birth_2 } } add_character_modifier = mm_v1311_earth_birth_2 }
+        else_if = { limit = { NOT = { has_character_modifier = mm_v1311_earth_birth_3 } } add_character_modifier = mm_v1311_earth_birth_3 }
+        else_if = { limit = { NOT = { has_character_modifier = mm_v1311_earth_birth_4 } } add_character_modifier = mm_v1311_earth_birth_4 }
+        else_if = { limit = { NOT = { has_character_modifier = mm_v1311_earth_birth_5 } } add_character_modifier = mm_v1311_earth_birth_5 }
+    }
+}
+mm_v1311_sea_relation_effect = {
+    if = { limit = { is_alive = yes rite = rite:mm_dragon_sea } change_spiritual_fulfillment = 3 add_stress = -30 }
+}
+
+mm_v1311_monthly_character_effect = {
+    if = { limit = { rite = rite:mm_dragon_white } change_spiritual_fulfillment = 1 }
+    mm_v1314_refresh_doctrine_modifiers_effect = yes
+}
+
+mm_v1314_refresh_doctrine_modifiers_effect = {
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_white } if = { limit = { NOT = { has_character_modifier = mm_v1311_white_ruler } } add_character_modifier = mm_v1311_white_ruler } }
+    else = { remove_character_modifier = mm_v1311_white_ruler }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_black mm_creed_controls_baghdad_holy_site_trigger = yes } if = { limit = { NOT = { has_character_modifier = mm_v1311_black_baghdad } } add_character_modifier = mm_v1311_black_baghdad } }
+    else = { remove_character_modifier = mm_v1311_black_baghdad }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire mm_creed_controls_jingzhao_holy_site_trigger = yes } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_jingzhao } } add_character_modifier = mm_v1311_fire_jingzhao } }
+    else = { remove_character_modifier = mm_v1311_fire_jingzhao }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_sky mm_creed_controls_sogn_holy_site_trigger = yes } if = { limit = { NOT = { has_character_modifier = mm_v1311_sky_sogn } } add_character_modifier = mm_v1311_sky_sogn } }
+    else = { remove_character_modifier = mm_v1311_sky_sogn }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire dynasty ?= { dynasty_prestige_level >= 1 dynasty_prestige_level < 2 } } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_dynasty_1 } } add_character_modifier = mm_v1311_fire_dynasty_1 } }
+    else = { remove_character_modifier = mm_v1311_fire_dynasty_1 }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire dynasty ?= { dynasty_prestige_level >= 2 dynasty_prestige_level < 3 } } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_dynasty_2 } } add_character_modifier = mm_v1311_fire_dynasty_2 } }
+    else = { remove_character_modifier = mm_v1311_fire_dynasty_2 }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire dynasty ?= { dynasty_prestige_level >= 3 dynasty_prestige_level < 4 } } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_dynasty_3 } } add_character_modifier = mm_v1311_fire_dynasty_3 } }
+    else = { remove_character_modifier = mm_v1311_fire_dynasty_3 }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire dynasty ?= { dynasty_prestige_level >= 4 dynasty_prestige_level < 5 } } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_dynasty_4 } } add_character_modifier = mm_v1311_fire_dynasty_4 } }
+    else = { remove_character_modifier = mm_v1311_fire_dynasty_4 }
+    if = { limit = { is_landed = yes rite = rite:mm_dragon_fire dynasty ?= { dynasty_prestige_level >= 5 } } if = { limit = { NOT = { has_character_modifier = mm_v1311_fire_dynasty_5 } } add_character_modifier = mm_v1311_fire_dynasty_5 } }
+    else = { remove_character_modifier = mm_v1311_fire_dynasty_5 }
+    if = {
+        limit = { is_landed = yes rite = rite:mm_dragon_sea }
+        save_scope_as = mm_v1311_sea_ruler
+        every_held_title = {
+            limit = { tier = tier_county any_county_province = { is_coastal = yes } }
+            add_county_modifier = { modifier = mm_v1311_sea_coastal months = 2 }
+            if = { limit = { scope:mm_v1311_sea_ruler = { mm_creed_controls_chandax_holy_site_trigger = yes } } add_county_modifier = { modifier = mm_v1311_sea_chandax months = 2 } }
+        }
+    }
+}
+
+mm_v1311_clear_dynamic_effect = {
+    remove_character_modifier = mm_v1311_white_ruler
+    remove_character_modifier = mm_v1311_black_baghdad
+    remove_character_modifier = mm_v1311_fire_jingzhao
+    remove_character_modifier = mm_v1311_sky_sogn
+    remove_character_modifier = mm_v1311_fire_dynasty_1
+    remove_character_modifier = mm_v1311_fire_dynasty_2
+    remove_character_modifier = mm_v1311_fire_dynasty_3
+    remove_character_modifier = mm_v1311_fire_dynasty_4
+    remove_character_modifier = mm_v1311_fire_dynasty_5
+}
+
+# One independent 1% roll per eligible courtier or vassal per month.
+mm_v1311_white_convert_target_effect = {
+    if = {
+        limit = { is_alive = yes NOT = { faith = faith:mm_dragon_creed } mm_dragon_has_blood_trigger = no mm_dragon_is_true_dragon_parent_trigger = no NOT = { has_character_flag = mm_v1311_white_conversion_checked } }
+        add_character_flag = { flag = mm_v1311_white_conversion_checked days = 30 }
+        random = { chance = 1 set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_white mm_dragon_route_creed_effect = yes }
+    }
+}
+mm_v1311_white_conversion_effect = {
+    every_courtier_or_guest = { mm_v1311_white_convert_target_effect = yes }
+    every_vassal_or_below = { mm_v1311_white_convert_target_effect = yes }
+}
+
+mm_v1311_eagle_attribute_effect = {
+    set_variable = { name = mm_v1311_eagle_value value = { value = $VALUE$ multiply = 0.2 floor = yes min = 0 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 8192 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_8192 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 8192 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 4096 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_4096 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 4096 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 2048 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_2048 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 2048 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 1024 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_1024 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 1024 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 512 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_512 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 512 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 256 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_256 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 256 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 128 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_128 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 128 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 64 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_64 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 64 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 32 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_32 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 32 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 16 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_16 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 16 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 8 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_8 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 8 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 4 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_4 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 4 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 2 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_2 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 2 } }
+    if = { limit = { var:mm_v1311_eagle_value >= 1 } add_character_modifier = { modifier = mm_v1311_eagle_$ATTRIBUTE$_1 years = 3 } change_variable = { name = mm_v1311_eagle_value subtract = 1 } }
+    remove_variable = mm_v1311_eagle_value
+}

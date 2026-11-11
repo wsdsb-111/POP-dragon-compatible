@@ -1,0 +1,99 @@
+{
+  "status": "SEVEN_THREEVIEW_REFERENCES_ARCHIVED_AND_VISUALLY_REVIEWED",
+  "assets": [
+    {
+      "id": "black_crown",
+      "canonicalName": "暴君始祖黑鳞冠",
+      "archive": "artwork/dragon-relics/crown-threeview/reference.png",
+      "sha256": "2a5929c44ff804b5f1b84249107c443cdfba9de14edb888cc824b6871722e6e3",
+      "size": [
+        1448,
+        1086
+      ],
+      "visualReview": "Front, side, back and interior details present; crown-only modeling resumed earlier."
+    },
+    {
+      "id": "white_book",
+      "canonicalName": "白色神谕之书",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\白色神谕之书三视图.png",
+      "archive": "artwork/dragon-relics/threeview-references/white_book.png",
+      "sha256": "ef2516d7736050133b1c5c42f31a9691c1200ca5bfd7721076ad98f7f97f2b62",
+      "size": [
+        1672,
+        941
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    },
+    {
+      "id": "black_regalia",
+      "canonicalName": "黑色皇帝之权柄",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\黑色皇帝之权柄.png",
+      "archive": "artwork/dragon-relics/threeview-references/black_regalia.png",
+      "sha256": "d161573a54b9e657ee0d2787dee122e5b1ce6afcdcd0ac4e45b423f227ddabcb",
+      "size": [
+        1312,
+        1199
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    },
+    {
+      "id": "fire_ring",
+      "canonicalName": "烛龙青铜玄戒",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\烛龙青铜玄戒三视图.png",
+      "archive": "artwork/dragon-relics/threeview-references/fire_ring.png",
+      "sha256": "ba8b7a0cc47b7066ac9469a799abbb9b85bb35ddf6f95fa52e2b63a833f9edce",
+      "size": [
+        1536,
+        1024
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    },
+    {
+      "id": "earth_sarcophagus",
+      "canonicalName": "常暗地脉石棺",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\常暗地脉石棺三视图.png",
+      "archive": "artwork/dragon-relics/threeview-references/earth_sarcophagus.png",
+      "sha256": "bf3239a9aa0455ef0bfd67960be204511bcaf712571f79e4b7dfd177f71464ae",
+      "size": [
+        1536,
+        1024
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    },
+    {
+      "id": "sea_armor",
+      "canonicalName": "怒潮海妖之甲",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\怒潮海妖之甲三视图.png",
+      "archive": "artwork/dragon-relics/threeview-references/sea_armor.png",
+      "sha256": "e45b63759851bb77cb08f39ef89be76535b6e8183c8f8c966c60204dfcf4469f",
+      "size": [
+        1448,
+        1086
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    },
+    {
+      "id": "sky_spear",
+      "canonicalName": "永恒之矛昆古尼尔",
+      "original": "C:\\Users\\97330\\Desktop\\圣物插图\\永恒之矛昆古尼尔三视图.png",
+      "archive": "artwork/dragon-relics/threeview-references/sky_spear.png",
+      "sha256": "73d1a5e33986bcb62591ed10dcb1b0f6c828ab0264c0457126c396ba5a7ca45d",
+      "size": [
+        1448,
+        1086
+      ],
+      "visualReview": "Front, side, back and detailed ornament sheets present; suitable as reference, not a metric CAD drawing."
+    }
+  ],
+  "rules": [
+    "Illustration labels are reference data, not authorization to rename game items or change mechanics.",
+    "New multi-view sheets guide geometry; retain existing inventory illustrations.",
+    "No need to redraw these sheets to begin modeling."
+  ],
+  "notes": {
+    "white_book": "TOP VIEW panel is a perspective cover view rather than a strict end view; rely on the explicit 280x220x70 mm labels for overall proportions.",
+    "sky_spear": "TOP VIEW panel shows the full spear again, not an axial cross-section; do not treat it as a literal top projection.",
+    "sea_armor": "Reference title differs from the canonical item name; do not rename the game artifact.",
+    "black_regalia": "PNG without the 三视图 suffix is the new view sheet; do not confuse it with the earlier JPG."
+  }
+}

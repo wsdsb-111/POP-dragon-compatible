@@ -1,0 +1,7 @@
+mm_pod_migrate_legacy_torpor_effect = {
+    if = {
+        limit = { has_trait = mm_royal_torpor }
+        add_trait = torpor
+        remove_trait = mm_royal_torpor
+    }
+}

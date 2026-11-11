@@ -1,0 +1,30 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-10-26",
+  "assets": [
+    {
+      "file": "artwork/dragon-weapons/head-materials-v121-source.png",
+      "source": "artwork/dragon-weapons/head-materials-v117-source.png",
+      "role": "Directional color edit of existing 2x2 sample atlas; atlas is reprojected through existing UVs and anatomical masks. No normal, properties, geometry or UV editing.",
+      "palette": {
+        "main": "#586347",
+        "raised": "#74805B",
+        "secondary": "#4D5940",
+        "grooves": "#30392D",
+        "throat": "#74745F",
+        "hornRoot": "#4B4035",
+        "hornMid": "#665642",
+        "hornTip": "#91816A",
+        "teeth": "#D2C39F",
+        "tissue": "#65574A"
+      },
+      "prompt": "Use case: precise-object-edit. Edit target: the attached existing square 2x2 material sample atlas used to color an existing CK3 dragon head. This is a material-color correction, NOT a new dragon or object render. Preserve the exact four quadrant positions, composition, scale pattern, horn striation, ivory grain, eye shape and overall detail placement. Maintain flat non-directional albedo illumination with minimal baked highlights. Top-left: change golden-brown reptilian scales to convincing muted grey olive GREEN organic preserved dragon hide, primary #586347, restrained raised scale edges #74805B, secondary scales #4D5940, seams #30392D. Dry supple reptile keratin, subtle natural mottling, not stone, yellow, bronze or wood. Do not add new scale outlines or noisy pores. Top-right: dry horn keratin, deep brown root #4B4035, mid #665642 and only very subtle grey-brown lighter grain #91816A; preserve lengthwise striations, no glossy streaks. Bottom-left: old ivory #D2C39F, subtle darker tooth-root grain, no pure white and no strong yellow. Bottom-right: preserve this same cloudy dead eye exactly in structure and shape, only shift its surrounding warm brown skin toward desaturated grey-brown #65574A. No wet gloss, glow, fresh blood, slime or rot. Keep existing 2x2 border-free square atlas, no labels, no text, no new objects. Result is a source color sample sheet for reprojection onto an already fixed UV model; geometry/normal/roughness will be kept outside this image."
+    },
+    {
+      "file": "artwork/dragon-lineage/black_blood.png",
+      "reference": "artwork/dragon-lineage/lineage_1.png",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Create ONE new CK3 physical trait icon for Black Blood, a rare terminal resurgence of ancient dragon ancestry. Reference image is STYLE AND diamond icon silhouette only; do not copy its central red blood-drop dragon. Transparent background outside the diamond, no text, no letters, no watermark. Match the ornate medieval painted realism, dark jade inset and gold/silver pointed diamond framing of the reference. Make Black Blood unmistakably distinct from the red and gold ranked mixed-blood icons: one obsidian BLACK blood droplet, narrow smoky crimson edge, a coiled ancient dragon in pale tarnished SILVER within the droplet, and a restrained broken silver halo around it. Central shape large and legible at 128px. Black interior should retain cool blue-grey facets and readable detail rather than an invisible black hole. Restrained silver ornamentation with only tiny antique gold accents; no giant red jewel, no bright golden dragon, no human portrait, no lettering, no skull or gore. Sharp clear central silhouette, luxurious embossed metal, hand-painted fantasy game UI finish, centered square composition. Real alpha transparency around the outer diamond."
+    }
+  ]
+}

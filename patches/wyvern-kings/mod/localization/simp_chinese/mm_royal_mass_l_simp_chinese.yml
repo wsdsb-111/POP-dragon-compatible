@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ mm_wyvern_mass_label:0 "体重"
+ mm_wyvern_mass_kilograms_text:0 "[Character.MakeScope.ScriptValue('mm_wyvern_mass_kilograms')|1] 千克"
+ mm_wyvern_mass_tonnes_text:0 "[Character.MakeScope.ScriptValue('mm_wyvern_mass_tonnes')|1] 吨"
+ mm_wyvern_mass_tooltip:0 "体重随体长的三次方增长，并受体质及王座身体构造影响。较重的龙承伤更低、敏捷也更低。\n敏捷质量倍率：[Character.MakeScope.ScriptValue('mm_wyvern_mass_agility_multiplier')|2]\n部位伤势倍率：[Character.MakeScope.ScriptValue('mm_wyvern_mass_wound_multiplier')|2]\n倍率最低分别为0.35与0.20；黑白皇原有70%免伤仍独立判定一次。"

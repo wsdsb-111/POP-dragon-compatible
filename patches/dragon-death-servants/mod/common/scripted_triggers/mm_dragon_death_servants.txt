@@ -1,0 +1,41 @@
+mm_ds_susceptible_trigger = {
+    is_alive = yes
+    NOR = {
+        has_trait = mm_dragon_death_servant
+        has_trait = mm_dragon_half
+        has_trait = mm_dragon_black_blood
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_royal_is_king = yes
+    }
+    OR = {
+        has_trait = mm_dragon_lineage_1
+        has_trait = mm_dragon_lineage_2
+        has_trait = mm_dragon_lineage_3
+        has_trait = mm_dragon_lineage_4
+    }
+}
+mm_ds_strong_opponent_trigger = {
+    OR = {
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_royal_is_king = yes
+        has_trait = mm_dragon_half
+        has_trait = mm_dragon_black_blood
+        has_trait = mm_dragon_lineage_1
+        has_trait = mm_dragon_death_servant
+    }
+}
+mm_ds_local_victim_trigger = {
+    is_alive = yes
+    is_ai = yes
+    this != scope:mm_ds_attacker
+    exists = location.county
+    location.county = scope:mm_ds_attacker.location.county
+}
+mm_ds_wanderer_victim_trigger = {
+    mm_ds_local_victim_trigger = yes
+    is_ruler = no
+    is_courtier = no
+    is_pool_guest = no
+    NOT = { exists = employer }
+    NOT = { any_held_title = { always = yes } }
+}

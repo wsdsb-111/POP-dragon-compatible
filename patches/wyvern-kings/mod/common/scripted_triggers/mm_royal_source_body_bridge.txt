@@ -1,0 +1,1 @@
+mm_royal_has_source_body_trigger = { always = no }

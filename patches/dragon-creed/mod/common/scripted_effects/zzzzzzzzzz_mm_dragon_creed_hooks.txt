@@ -1,0 +1,2 @@
+# Override the optional bloodline module's no-op after mm_dragon_lineage.txt.
+mm_dragon_route_creed_hook_effect = { mm_dragon_route_creed_effect = yes }

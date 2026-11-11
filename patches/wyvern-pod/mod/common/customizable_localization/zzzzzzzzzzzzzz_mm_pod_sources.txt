@@ -1,0 +1,33 @@
+﻿mm_pod_fire_source_names = { type = character
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001001 } is_target_in_variable_list = { name = mm_dragon_origins target = character:99001305 } } localization_key = mm_pod_fire_source_names_both }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001001 } } localization_key = mm_pod_source_99001001 }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001305 } } localization_key = mm_pod_source_99001305 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }
+
+mm_pod_earth_source_names = { type = character
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001002 } is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } } localization_key = mm_pod_earth_source_names_both }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001002 } } localization_key = mm_pod_source_99001002 }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } } localization_key = mm_pod_source_99001306 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }
+
+mm_pod_sea_source_names = { type = character
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001003 } is_target_in_variable_list = { name = mm_dragon_origins target = character:99001307 } } localization_key = mm_pod_sea_source_names_both }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001003 } } localization_key = mm_pod_source_99001003 }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001307 } } localization_key = mm_pod_source_99001307 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }
+
+mm_pod_sky_source_names = { type = character
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001304 } is_target_in_variable_list = { name = mm_dragon_origins target = character:99001308 } } localization_key = mm_pod_sky_source_names_both }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001304 } } localization_key = mm_pod_source_99001304 }
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001308 } } localization_key = mm_pod_source_99001308 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }
+
+mm_pod_white_source_names = { type = character
+
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001310 } } localization_key = mm_pod_source_99001310 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }
+
+mm_pod_black_source_names = { type = character
+
+text = { trigger = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001309 } } localization_key = mm_pod_source_99001309 }
+text = { localization_key = mm_pod_source_unknown fallback = yes } }

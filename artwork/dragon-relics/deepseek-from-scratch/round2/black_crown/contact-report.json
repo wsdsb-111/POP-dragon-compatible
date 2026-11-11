@@ -1,0 +1,109 @@
+{
+ "spikes": [
+  {
+   "part": "GEO-SPK_C0",
+   "overlap_pairs": 15,
+   "base_inside_pts": 2,
+   "base_pts": 24,
+   "min_dist_mm": 1.43,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_F1",
+   "overlap_pairs": 50,
+   "base_inside_pts": 17,
+   "base_pts": 24,
+   "min_dist_mm": 0.26,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_F1L",
+   "overlap_pairs": 74,
+   "base_inside_pts": 17,
+   "base_pts": 24,
+   "min_dist_mm": 0.26,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_T2",
+   "overlap_pairs": 13,
+   "base_inside_pts": 1,
+   "base_pts": 24,
+   "min_dist_mm": 0.85,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_T2L",
+   "overlap_pairs": 13,
+   "base_inside_pts": 1,
+   "base_pts": 24,
+   "min_dist_mm": 0.85,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_H3",
+   "overlap_pairs": 5,
+   "base_inside_pts": 3,
+   "base_pts": 24,
+   "min_dist_mm": 0.02,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_H3L",
+   "overlap_pairs": 10,
+   "base_inside_pts": 3,
+   "base_pts": 24,
+   "min_dist_mm": 0.02,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_T4",
+   "overlap_pairs": 36,
+   "base_inside_pts": 3,
+   "base_pts": 24,
+   "min_dist_mm": 0.22,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_T4L",
+   "overlap_pairs": 47,
+   "base_inside_pts": 3,
+   "base_pts": 24,
+   "min_dist_mm": 0.22,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_K5",
+   "overlap_pairs": 69,
+   "base_inside_pts": 12,
+   "base_pts": 24,
+   "min_dist_mm": 0.25,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_K5L",
+   "overlap_pairs": 122,
+   "base_inside_pts": 12,
+   "base_pts": 24,
+   "min_dist_mm": 0.25,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_C6",
+   "overlap_pairs": 30,
+   "base_inside_pts": 2,
+   "base_pts": 24,
+   "min_dist_mm": 1.21,
+   "connected": true
+  },
+  {
+   "part": "GEO-SPK_C6L",
+   "overlap_pairs": 44,
+   "base_inside_pts": 2,
+   "base_pts": 24,
+   "min_dist_mm": 1.21,
+   "connected": true
+  }
+ ],
+ "mask": []
+}

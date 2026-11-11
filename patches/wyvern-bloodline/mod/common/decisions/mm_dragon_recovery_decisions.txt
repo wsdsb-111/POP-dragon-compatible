@@ -1,0 +1,30 @@
+﻿mm_dragon_force_hatch_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_dragon_force_hatch_decision_desc
+    selection_tooltip = mm_dragon_force_hatch_decision_tooltip
+    confirm_text = mm_dragon_force_hatch_decision_confirm
+    is_shown = { is_ai = no any_character_artifact = { has_variable = myv_wyvern_egg_color } }
+    is_valid = { is_alive = yes gold >= 100 piety >= 250 any_character_artifact = { mm_dragon_force_hatch_eligible_trigger = yes } }
+    effect = { custom_tooltip = mm_dragon_force_hatch_decision_tooltip mm_dragon_force_hatch_effect = yes }
+    ai_check_interval = 0
+}
+mm_dragon_repair_seed_families_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_dragon_repair_seed_families_decision_desc
+    selection_tooltip = mm_dragon_repair_seed_families_decision_tooltip
+    confirm_text = mm_dragon_repair_seed_families_decision_confirm
+    is_shown = {
+        is_ai = no
+        has_global_variable = mm_lineage_families_initialized_v132
+        NOT = { has_global_variable = mm_dragon_seed_families_confirmed_v1322 }
+        NOT = { any_living_character = { has_character_flag = mm_dragon_seed_family_founder } }
+    }
+    is_valid = { mm_dragon_lineage_seed_available_trigger = yes }
+    effect = {
+        custom_tooltip = mm_dragon_repair_seed_families_decision_tooltip
+        remove_global_variable = mm_lineage_families_initialized_v132
+        set_global_variable = { name = mm_dragon_seed_new_campaign_pending value = yes }
+        trigger_event = { on_action = mm_dragon_seed_initialize_campaign }
+    }
+    ai_check_interval = 0
+}

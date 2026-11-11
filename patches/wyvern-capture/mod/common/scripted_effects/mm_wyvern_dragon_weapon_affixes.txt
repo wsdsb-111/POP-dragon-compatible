@@ -1,0 +1,80 @@
+mm_wyvern_apply_dragon_weapon_affixes_effect = {
+	if = {
+		limit = {
+			has_variable = mm_wyvern_weapon_kind
+			NOT = { has_variable = mm_wyvern_weapon_affixes_generated }
+		}
+		if = {
+			limit = { var:mm_wyvern_weapon_kind = flag:sword }
+			if = { limit = { rarity = masterwork } mm_wyvern_roll_dragon_weapon_affix_effect = yes }
+			if = {
+				limit = { rarity = famed }
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+			}
+			if = {
+				limit = { rarity = illustrious }
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+			}
+			set_variable = { name = mm_wyvern_weapon_affixes_generated value = 1 }
+		}
+		if = {
+			limit = { var:mm_wyvern_weapon_kind = flag:bow }
+			if = { limit = { rarity = famed } mm_wyvern_roll_dragon_weapon_affix_effect = yes }
+			if = {
+				limit = { rarity = illustrious }
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+				mm_wyvern_roll_dragon_weapon_affix_effect = yes
+			}
+			set_variable = { name = mm_wyvern_weapon_affixes_generated value = 1 }
+		}
+	}
+}
+
+mm_wyvern_roll_dragon_weapon_affix_effect = {
+	random_list = {
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_health_gain_2_modifier has_artifact_modifier = artifact_health_gain_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_health_gain_4_modifier }
+			else = { add_artifact_modifier = artifact_health_gain_2_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_knight_effectiveness_5_modifier has_artifact_modifier = artifact_knight_effectiveness_8_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_knight_effectiveness_8_modifier }
+			else = { add_artifact_modifier = artifact_knight_effectiveness_5_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_piety_3_modifier has_artifact_modifier = artifact_monthly_piety_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_piety_5_modifier }
+			else = { add_artifact_modifier = artifact_monthly_piety_3_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_court_grandeur_baseline_add_2_modifier has_artifact_modifier = artifact_court_grandeur_baseline_add_3_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_court_grandeur_baseline_add_3_modifier }
+			else = { add_artifact_modifier = artifact_court_grandeur_baseline_add_2_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_stress_gain_3_modifier has_artifact_modifier = artifact_stress_gain_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_stress_gain_4_modifier }
+			else = { add_artifact_modifier = artifact_stress_gain_3_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_income_3_modifier has_artifact_modifier = artifact_monthly_income_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_income_4_modifier }
+			else = { add_artifact_modifier = artifact_monthly_income_3_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_dynasty_opinion_4_modifier has_artifact_modifier = artifact_dynasty_opinion_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_dynasty_opinion_5_modifier }
+			else = { add_artifact_modifier = artifact_dynasty_opinion_4_modifier }
+		}
+		100 = {
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_short_reign_duration_mult_3_modifier has_artifact_modifier = artifact_short_reign_duration_mult_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_short_reign_duration_mult_5_modifier }
+			else = { add_artifact_modifier = artifact_short_reign_duration_mult_3_modifier }
+		}
+	}
+}

@@ -1,0 +1,32 @@
+﻿# The native name_character controller handles typing, applying and cancelling.
+vbox = {
+    name = "myv_wyvern_name_input"
+    layoutpolicy_horizontal = expanding
+    minimumsize = { 240 -1 }
+    margin = { 5 0 }
+    margin_bottom = 5
+    datacontext = "[EventWindowWidgetNameCharacter.GetCharacter]"
+
+    editbox_standard = {
+        size = { 240 30 }
+        blockoverride "editbox_properties" {
+            name = "myv_wyvern_name_edit"
+            text = "[EventWindowWidgetNameCharacter.GetCurrentName]"
+            ontextedited = "[EventWindowWidgetNameCharacter.OnEditCurrentName]"
+        }
+    }
+
+    # The controller targets the wyvern selected by the rename event.
+    button_round = {
+        size = { 44 44 }
+        datacontext = "[Character.GetCulture]"
+        onclick = "[EventWindowWidgetNameCharacter.SetCurrentName( EventWindowWidgetNameCharacter.GetRandomAvailableCultureName )]"
+        tooltip = "mm_dragon_rename_local_culture_name"
+        using = tooltip_se
+        highlight_icon = {
+            texture = "gfx/interface/icons/icon_culture.dds"
+            size = { 35 35 }
+            parentanchor = center
+        }
+    }
+}

@@ -1,0 +1,188 @@
+﻿# One global roll per year; independent of the one-time startup spawn.
+# Recount both caps before searching provinces, without removing existing animals.
+myv_wyvern_yearly_natural_spawn_effect = {
+    clear_saved_scope = myv_natural_wyvern_lair_province
+    myv_refresh_wyvern_lair_count_effect = yes
+    myv_refresh_wyvern_population_count_effect = yes
+    if = {
+        limit = { myv_can_spawn_natural_wyvern = yes }
+        random = {
+            chance = 20
+            random_province = {
+                limit = {
+                    exists = barony
+                    OR = { mm_dragon_spawn_fire_region = yes mm_dragon_spawn_earth_region = yes mm_dragon_spawn_sea_region = yes mm_dragon_spawn_sky_region = yes }
+                    exists = culture
+                    OR = {
+                        terrain = hills
+                        terrain = mountains
+                    }
+                    NOT = {
+                        any_in_global_list = {
+                            variable = myv_living_wyverns
+                            myv_is_living_wyvern = yes
+                            has_variable = myv_wyvern_lair_barony
+                            var:myv_wyvern_lair_barony = prev.barony
+                        }
+                    }
+                }
+                save_scope_as = myv_natural_wyvern_lair_province
+                create_character = {
+                    age = { 20 70 }
+                    gender_female_chance = 75
+                    prowess = 0
+                    dynasty = none
+                    random_traits = no
+                    location = scope:myv_natural_wyvern_lair_province
+                    culture = scope:myv_natural_wyvern_lair_province.culture
+                    faith = faith:pagan
+                    trait = myv_wyvern
+                    after_creation = {
+                        save_scope_as = myv_new_wyvern
+                        random_list = {
+                            1 = { add_trait = myv_wyvern_physique_weak }
+                            1 = { add_trait = myv_wyvern_physique_normal }
+                            1 = { add_trait = myv_wyvern_physique_powerful }
+                        }
+                        myv_roll_wyvern_coordination_effect = yes
+                        random_list = {
+                            1 = { add_trait = myv_wyvern_temperament_docile }
+                            1 = { add_trait = myv_wyvern_temperament_alert }
+                            1 = { add_trait = myv_wyvern_temperament_fierce }
+                        }
+                        myv_roll_wyvern_color_effect = yes
+                        set_variable = {
+                            name = myv_wyvern_size
+                            value = myv_wyvern_expected_size_from_age
+                        }
+                        set_variable = {
+                            name = myv_wyvern_lair_barony
+                            value = scope:myv_natural_wyvern_lair_province.barony
+                        }
+                        if = { limit = { location = { mm_dragon_spawn_fire_region = yes } } set_variable = { name = mm_royal_creation_throne value = 1 } }
+                        else_if = { limit = { location = { mm_dragon_spawn_earth_region = yes } } set_variable = { name = mm_royal_creation_throne value = 2 } }
+                        else_if = { limit = { location = { mm_dragon_spawn_sea_region = yes } } set_variable = { name = mm_royal_creation_throne value = 3 } }
+                        else = { set_variable = { name = mm_royal_creation_throne value = 4 } }
+                        add_character_flag = mm_royal_newly_created
+                        if = { limit = { var:mm_royal_creation_throne = 1 } set_relation_mm_dragon_creator = character:99001001 set_relation_mm_dragon_creator = character:99001305 }
+                        if = { limit = { var:mm_royal_creation_throne = 2 } set_relation_mm_dragon_creator = character:99001002 set_relation_mm_dragon_creator = character:99001306 }
+                        if = { limit = { var:mm_royal_creation_throne = 3 } set_relation_mm_dragon_creator = character:99001003 set_relation_mm_dragon_creator = character:99001307 }
+                        if = { limit = { var:mm_royal_creation_throne = 4 } set_relation_mm_dragon_creator = character:99001304 set_relation_mm_dragon_creator = character:99001308 }
+                        mm_dragon_register_true_dragon_origins_effect = yes
+                        remove_character_flag = mm_royal_newly_created
+                        mm_dragon_assign_regional_identity_effect = yes
+                        myv_apply_wyvern_identity_effect = yes
+                        myv_refresh_wyvern_prowess_effect = yes
+                        add_to_global_variable_list = {
+                            name = myv_living_wyverns
+                            target = this
+                        }
+    					myv_enforce_wyvern_population_game_rule_effect = yes
+                        myv_wyvern_lair_county_maintenance_effect = yes
+                    }
+                }
+            }
+        }
+    }
+    clear_saved_scope = myv_natural_wyvern_lair_province
+}
+
+myv_spawn_initial_random_wild_wyvern_effect = {
+	myv_refresh_wyvern_lair_count_effect = yes
+    if = {
+        limit = {
+            NOT = { has_global_variable = myv_initial_random_wild_wyvern_spawned }
+			OR = {
+				has_game_rule = myv_max_wyvern_lairs_unlimited
+				AND = {
+					has_game_rule = myv_max_wyvern_lairs_5
+					global_var:myv_wyvern_lair_count < 5
+				}
+				AND = {
+					NOT = { has_game_rule = myv_max_wyvern_lairs_5 }
+					NOT = { has_game_rule = myv_max_wyvern_lairs_unlimited }
+					global_var:myv_wyvern_lair_count < 10
+				}
+			}
+        }
+        random_province = {
+            limit = {
+                exists = barony
+                OR = { mm_dragon_spawn_fire_region = yes mm_dragon_spawn_earth_region = yes mm_dragon_spawn_sea_region = yes mm_dragon_spawn_sky_region = yes }
+                exists = culture
+                OR = {
+                    terrain = hills
+                    terrain = mountains
+                }
+                NOT = {
+                    any_in_global_list = {
+                        variable = myv_living_wyverns
+                        myv_is_living_wyvern = yes
+                        has_variable = myv_wyvern_lair_barony
+                        var:myv_wyvern_lair_barony = prev.barony
+                    }
+                }
+            }
+            save_scope_as = myv_initial_wyvern_lair_province
+            create_character = {
+                age = { 20 70 }
+                gender = female
+                prowess = 0
+                dynasty = none
+                random_traits = no
+                location = scope:myv_initial_wyvern_lair_province
+                culture = scope:myv_initial_wyvern_lair_province.culture
+                faith = faith:pagan
+                trait = myv_wyvern
+                after_creation = {
+                    save_scope_as = myv_new_wyvern
+                    random_list = {
+                        1 = { add_trait = myv_wyvern_physique_weak }
+                        1 = { add_trait = myv_wyvern_physique_normal }
+                        1 = { add_trait = myv_wyvern_physique_powerful }
+                    }
+                    myv_roll_wyvern_coordination_effect = yes
+                    random_list = {
+                        1 = { add_trait = myv_wyvern_temperament_docile }
+                        1 = { add_trait = myv_wyvern_temperament_alert }
+                        1 = { add_trait = myv_wyvern_temperament_fierce }
+                    }
+                    myv_roll_wyvern_color_effect = yes
+                    set_variable = {
+                        name = myv_wyvern_size
+                        value = myv_wyvern_expected_size_from_age
+                    }
+                    set_variable = {
+                        name = myv_wyvern_lair_barony
+                        value = scope:myv_initial_wyvern_lair_province.barony
+                    }
+                    if = { limit = { location = { mm_dragon_spawn_fire_region = yes } } set_variable = { name = mm_royal_creation_throne value = 1 } }
+                    else_if = { limit = { location = { mm_dragon_spawn_earth_region = yes } } set_variable = { name = mm_royal_creation_throne value = 2 } }
+                    else_if = { limit = { location = { mm_dragon_spawn_sea_region = yes } } set_variable = { name = mm_royal_creation_throne value = 3 } }
+                    else = { set_variable = { name = mm_royal_creation_throne value = 4 } }
+                    add_character_flag = mm_royal_newly_created
+                    if = { limit = { var:mm_royal_creation_throne = 1 } set_relation_mm_dragon_creator = character:99001001 set_relation_mm_dragon_creator = character:99001305 }
+                        if = { limit = { var:mm_royal_creation_throne = 2 } set_relation_mm_dragon_creator = character:99001002 set_relation_mm_dragon_creator = character:99001306 }
+                        if = { limit = { var:mm_royal_creation_throne = 3 } set_relation_mm_dragon_creator = character:99001003 set_relation_mm_dragon_creator = character:99001307 }
+                        if = { limit = { var:mm_royal_creation_throne = 4 } set_relation_mm_dragon_creator = character:99001304 set_relation_mm_dragon_creator = character:99001308 }
+                        mm_dragon_register_true_dragon_origins_effect = yes
+                    remove_character_flag = mm_royal_newly_created
+                    mm_dragon_assign_regional_identity_effect = yes
+                    myv_apply_wyvern_identity_effect = yes
+                    myv_refresh_wyvern_prowess_effect = yes
+                    add_to_global_variable_list = {
+                        name = myv_living_wyverns
+                        target = this
+                    }
+					myv_enforce_wyvern_population_game_rule_effect = yes
+                    myv_wyvern_lair_county_maintenance_effect = yes
+                    set_global_variable = {
+                        name = myv_initial_random_wild_wyvern_spawned
+                        value = yes
+                    }
+                }
+            }
+        }
+    }
+}
+

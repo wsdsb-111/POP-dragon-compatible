@@ -1,0 +1,27 @@
+{
+  "CrownTriangles": 879072,
+  "DrawParts": 8,
+  "MaxDrawPartVertices": 60000,
+  "FiniteGeometryNormalsWinding": true,
+  "GroundClearance": 0.043135881423950195,
+  "SixOtherRelicsUnchanged": [
+    "black_regalia",
+    "white_book",
+    "fire_ring",
+    "earth_sarcophagus",
+    "sea_armor",
+    "sky_spear"
+  ],
+  "ReferenceSha256": "2a5929c44ff804b5f1b84249107c443cdfba9de14edb888cc824b6871722e6e3",
+  "BlenderProjectSha256": "46b92b7d804d8d75489c020ffdc1927df7f1b78218670b56ae5f24f9718e6a4a",
+  "PreviewSha256": {
+    "front": "53c9000abc033de55ba1193b5e8254c82731bb8713eb4418ca21ae6e842acce5",
+    "side": "b22a19ed52d71f970e24140be717d5db95ebb3ca956506eebac6b65372a0cb98",
+    "back": "9dc4377a17d1f41756ec1cd391a53bfac0fe2431250f88110480b39c92078b25",
+    "angle": "f0fbc04e7fe3eb3cd625b40cd8609066c88af505dc705dc34ff4eef5138a29f8",
+    "interior": "1cc38d37033b55e5186fc7ea1ca7e4d2734f452423baa5cd761a693c3f16c749"
+  },
+  "Installed": false,
+  "GameRuntime": "NOT_TESTED",
+  "Fidelity": "REVIEW_PENDING"
+}

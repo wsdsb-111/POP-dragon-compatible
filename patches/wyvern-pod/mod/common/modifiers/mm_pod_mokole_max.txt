@@ -1,0 +1,161 @@
+﻿mm_pod_mokole_max_0_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -150
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_0_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -150
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_0_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -150
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.1
+}
+
+mm_pod_mokole_max_1_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -50
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_1_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -50
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_1_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -50
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.1
+}
+
+mm_pod_mokole_max_2_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -30
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_2_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -30
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_2_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -30
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.1
+}
+
+mm_pod_mokole_max_3_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -15
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_3_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -15
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_3_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -15
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.1
+}
+
+mm_pod_mokole_max_4_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -1
+    life_expectancy = -5
+    prowess_no_portrait = -5
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_4_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -1
+    life_expectancy = -5
+    prowess_no_portrait = -5
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_4_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -1
+    life_expectancy = -5
+    prowess_no_portrait = -5
+    monthly_legitimacy_add = -0.1
+}
+
+mm_pod_mokole_max_5_0 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -100
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = 0
+}
+
+mm_pod_mokole_max_5_20 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -100
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.05
+}
+
+mm_pod_mokole_max_5_60 = {
+    stacking = no
+    hide_effects = yes
+    health = -2
+    life_expectancy = -100
+    prowess_no_portrait = -10
+    monthly_legitimacy_add = -0.1
+}

@@ -1,0 +1,201 @@
+﻿myv_wyvern_tamed_maintenance_effect = {
+    if = {
+        limit = {
+            has_trait = myv_wyvern_tamed
+            has_variable = myv_wyvern_bonded_character
+            var:myv_wyvern_bonded_character = { is_alive = yes }
+        }
+        save_scope_as = myv_tamed_wyvern
+        var:myv_wyvern_bonded_character = { save_scope_as = myv_wyvern_bonded_owner }
+        myv_sync_wyvern_deployed_army_location_effect = yes
+
+        if = {
+            limit = {
+                has_any_court_position = yes
+                exists = employer
+            }
+            employer = {
+                save_scope_as = myv_tamed_wyvern_employer
+                add_character_flag = free_revoke_cost
+            }
+            fire_specific_court_position_effect = {
+                CHARACTER = scope:myv_tamed_wyvern
+                LIEGE = scope:myv_tamed_wyvern_employer
+            }
+        }
+
+        if = {
+            limit = {
+                scope:myv_wyvern_bonded_owner = { is_landed = yes }
+                OR = {
+                    NOT = { exists = employer }
+                    NOT = { employer = scope:myv_wyvern_bonded_owner }
+                }
+            }
+            set_employer = scope:myv_wyvern_bonded_owner
+        }
+        else_if = {
+            limit = {
+                scope:myv_wyvern_bonded_owner = { exists = employer }
+                OR = {
+                    NOT = { exists = employer }
+                    NOT = { employer = scope:myv_wyvern_bonded_owner.employer }
+                }
+            }
+            set_employer = scope:myv_wyvern_bonded_owner.employer
+        }
+
+        # A travel companion remains beside its rider throughout the activity
+        # between the outbound and return plans. Travel itself moves companions;
+        # this repair only covers the stationary stay and old saves in which the
+        # ordinary home pulse already sent the wyvern back to its lair.
+        if = {
+            limit = {
+                has_character_flag = myv_wyvern_travelling_with_rider
+                has_variable = myv_wyvern_travel_rider
+                var:myv_wyvern_travel_rider = {
+                    is_alive = yes
+                    exists = location
+                    exists = involved_activity
+                }
+                NOT = { exists = current_travel_plan }
+                NOT = { location = var:myv_wyvern_travel_rider.location }
+            }
+            set_location = {
+                location = var:myv_wyvern_travel_rider.location
+                stick_to_location = yes
+            }
+        }
+
+        if = {
+            limit = {
+                NOT = { has_character_flag = myv_wyvern_in_stable }
+                NOT = { has_character_flag = myv_wyvern_travelling_with_rider }
+            }
+
+            # The lair follows the owner's realm capital, not the owner's
+            # temporary travel or army position.
+            if = {
+                limit = {
+                    scope:myv_wyvern_bonded_owner = {
+                        is_landed = yes
+                        exists = capital_province
+                    }
+                }
+                set_variable = {
+                    name = myv_wyvern_lair_barony
+                    value = scope:myv_wyvern_bonded_owner.capital_province.barony
+                }
+            }
+            else_if = {
+                limit = {
+                    scope:myv_wyvern_bonded_owner = {
+                        exists = employer
+                        employer = { exists = capital_province }
+                    }
+                }
+                set_variable = {
+                    name = myv_wyvern_lair_barony
+                    value = scope:myv_wyvern_bonded_owner.employer.capital_province.barony
+                }
+            }
+            else_if = {
+                limit = { exists = scope:myv_wyvern_bonded_owner.location }
+                set_variable = {
+                    name = myv_wyvern_lair_barony
+                    value = scope:myv_wyvern_bonded_owner.location.barony
+                }
+            }
+
+            # While the bonded owner is personally serving in an army, the
+            # army movement on_action owns the war mount's live location.
+            if = {
+                limit = {
+                    has_variable = myv_wyvern_lair_barony
+                    NOT = { myv_is_wyvern_deployed_with_army = yes }
+                }
+                var:myv_wyvern_lair_barony = {
+                    title_province = { save_scope_as = myv_tamed_wyvern_home }
+                }
+                if = {
+                    limit = {
+                        exists = scope:myv_tamed_wyvern_home
+                        NOT = { location = scope:myv_tamed_wyvern_home }
+                    }
+                    set_location = {
+                        location = scope:myv_tamed_wyvern_home
+                        stick_to_location = yes
+                    }
+                }
+            }
+        }
+        remove_character_flag = myv_wyvern_roaming
+    }
+}
+
+myv_sync_wyvern_deployed_army_location_effect = {
+    clear_saved_scope = myv_deployed_wyvern_army_location
+    if = {
+        limit = {
+            myv_is_wyvern_deployed_with_army = yes
+            NOT = { has_trait = mm_royal_torpor }
+        }
+        if = {
+            limit = { mm_wyvern_is_independent_knight_deployed = yes }
+            knight_army.location = { save_scope_as = myv_deployed_wyvern_army_location }
+        }
+        else = {
+        var:myv_war_mount_rider = {
+            if = {
+                limit = { exists = commanding_army.location }
+                commanding_army.location = { save_scope_as = myv_deployed_wyvern_army_location }
+            }
+            else_if = {
+                limit = { exists = knight_army.location }
+                knight_army.location = { save_scope_as = myv_deployed_wyvern_army_location }
+            }
+        }
+        }
+        if = {
+            limit = {
+                exists = scope:myv_deployed_wyvern_army_location
+                NOT = { location = scope:myv_deployed_wyvern_army_location }
+            }
+            set_location = {
+                location = scope:myv_deployed_wyvern_army_location
+                stick_to_location = yes
+            }
+        }
+    }
+    clear_saved_scope = myv_deployed_wyvern_army_location
+}
+
+myv_wyvern_follow_rider_army_effect = {
+    if = {
+        limit = { mm_wyvern_is_independent_knight_deployed = yes }
+        myv_sync_wyvern_deployed_army_location_effect = yes
+    }
+    save_scope_as = myv_following_wyvern_rider
+    if = {
+        limit = {
+            has_variable = myv_war_mount
+            var:myv_war_mount = {
+                myv_is_living_wyvern = yes
+                myv_is_wyvern_deployed_with_army = yes
+                NOT = { has_trait = mm_royal_torpor }
+                has_variable = myv_war_mount_rider
+                var:myv_war_mount_rider = scope:myv_following_wyvern_rider
+            }
+            exists = scope:myv_war_mount_army_location
+        }
+        var:myv_war_mount = {
+            if = {
+                limit = { NOT = { location = scope:myv_war_mount_army_location } }
+                set_location = {
+                    location = scope:myv_war_mount_army_location
+                    stick_to_location = yes
+                }
+            }
+        }
+    }
+}

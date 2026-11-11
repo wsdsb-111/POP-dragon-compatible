@@ -1,0 +1,5 @@
+[
+  { "age": 12, "rolls": [0, 0, 0, 0], "physique": "myv_wyvern_physique_weak", "coordination": "myv_wyvern_coordination_clumsy", "size": 45.545 },
+  { "age": 50, "rolls": [1, 2, 1, 1], "physique": "myv_wyvern_physique_normal", "coordination": "myv_wyvern_coordination_dexterous", "size": 180 },
+  { "age": 150, "rolls": [2, 1, 2, 2], "physique": "myv_wyvern_physique_powerful", "coordination": "myv_wyvern_coordination_coordinated", "size": 352.875 }
+]

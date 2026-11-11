@@ -1,0 +1,13 @@
+﻿on_trait_gained = { on_actions = { mm_pod_mokole_max_trait_change } }
+on_trait_lost = { on_actions = { mm_pod_mokole_max_trait_change } }
+mm_pod_mokole_max_trait_change = {
+    trigger = { is_alive = yes scope:trait = { OR = { this = trait:mokole this = trait:mm_dragon_half this = trait:mm_dragon_lineage_1 this = trait:mm_dragon_lineage_2 this = trait:mm_dragon_lineage_3 this = trait:mm_dragon_lineage_4 this = trait:mm_dragon_black_blood } } }
+    effect = { mm_pod_sync_mokole_max_effect = yes }
+}
+mm_pod_mokole_max_daily = {
+    effect = {
+        remove_global_variable = mm_pod_mokole_max_queued
+        if = { limit = { has_global_variable_list = mm_pod_mokole_max_characters } every_in_global_list = { variable = mm_pod_mokole_max_characters if = { limit = { is_alive = yes } mm_pod_sync_mokole_max_effect = yes } else = { remove_list_global_variable = { name = mm_pod_mokole_max_characters target = this } } } }
+        if = { limit = { any_in_global_list = { variable = mm_pod_mokole_max_characters always = yes } } mm_pod_queue_mokole_max_effect = yes }
+    }
+}

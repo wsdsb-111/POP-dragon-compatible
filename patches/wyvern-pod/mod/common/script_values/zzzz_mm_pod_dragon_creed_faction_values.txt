@@ -1,0 +1,26 @@
+mm_creed_faction_raw_common = {
+    value = base_discontent_progress
+    if = { limit = { faction_power > faction_power_threshold } add = faction_discontent_for_extra_power }
+    if = { limit = { faction_power < faction_power_threshold } subtract = { value = base_discontent_progress multiply = 2 } }
+}
+
+mm_creed_faction_raw_populist = {
+    value = mm_creed_faction_raw_common
+    if = { limit = { faction_target = { can_vassals_be_attacked = yes } } add = 2 }
+    if = { limit = { faction_target = { top_participant_group:dynastic_cycle ?= { has_participant_group_parameter = dynastic_cycle_more_peasant_factions } } } add = 2 }
+}
+
+mm_creed_faction_raw_peasant = {
+    value = 2
+    if = { limit = { faction_target = { ep3_restored_rome_hard_mode_trigger = yes } } add = 10 }
+    if = { limit = { faction_target = { can_vassals_be_attacked = yes } } add = 2 }
+    if = { limit = { faction_target = { top_participant_group:dynastic_cycle ?= { has_participant_group_parameter = dynastic_cycle_more_peasant_factions } } } add = 2 }
+}
+
+mm_creed_faction_reduction_common = { value = mm_creed_faction_raw_common min = 0 multiply = -0.4 }
+
+mm_creed_faction_reduction_populist = { value = mm_creed_faction_raw_populist min = 0 multiply = -0.4 }
+
+mm_creed_faction_reduction_peasant = { value = mm_creed_faction_raw_peasant min = 0 multiply = -0.4 }
+
+mm_creed_faction_reduction_nomadic = { value = 5 multiply = -0.4 }

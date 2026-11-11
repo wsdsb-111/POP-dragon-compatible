@@ -1,0 +1,8 @@
+mm_dragon_diluted_blood_modifier = {
+    diplomacy = -1
+    martial = -1
+    stewardship = -1
+    intrigue = -1
+    learning = -1
+    prowess = -1
+}

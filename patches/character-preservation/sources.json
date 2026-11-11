@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-27",
+  "modulePath": "patches/character-preservation",
+  "scope": "Trait-based exemptions from audited population deletion; ordinary mortality and story deaths unchanged",
+  "sourceRoots": {
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310",
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3740401066/common/scripted_triggers/BoTL_scripted_triggers.txt",
+      "sha256": "436b34ffe2d6d67bbd0ea2321b238e81c1e9cb56e104b97641b23d81e2449f54"
+    },
+    {
+      "root": "game",
+      "path": "events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "bcb96949a4c6e6794b87175634d2a2d1c08435c4c4d35ae115e3b596c73743b5"
+    },
+    {
+      "root": "workshop",
+      "path": "3684849062/common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "fcfe1b3ad4d6b5038839e12a663d888ed7f7206b309685f84a45f142293a39da"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_game_rule_effects.txt",
+      "sha256": "899225ad0ea9d59bec51ce0c489aa574b30c1b9676431a9284e64426543de389"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/myv_wyvern_natural_spawn_triggers.txt",
+      "sha256": "0455f88935a0eeddb20610b7268008639735ef12d543d4804e1b97d5850eda7e"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/00_courtier_guest_management_triggers.txt",
+      "sha256": "f46358a485cd5360ec725afdb5a3a7ac5d770b0c09306f666470d8c3f6815950"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/20_health_triggers.txt",
+      "sha256": "2846f0591e692814a907bb111c161bb8124798af5a972bd2d3344de69799c883"
+    },
+    {
+      "root": "game",
+      "path": "common/traits/00_traits.txt",
+      "sha256": "79b82d7c3b336722bfe96c976951c2e8936ca2279b927fc81f066469136a74cf"
+    },
+    {
+      "root": "workshop",
+      "path": "2506311074/common/traits/nmih_traits.txt",
+      "sha256": "c952f2c8ed1e90582d3de8e93ed0320f141261d945f57b5f8a5cba47ac188a38"
+    },
+    {
+      "root": "workshop",
+      "path": "3740401066/common/on_action/0000_BoTL_on_yearly_global_pulse.txt",
+      "sha256": "53374da07a4bafb81ea904e8f87f82b54d9af9bd9cd65edd26c36af4e2d8962b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "65edc85ce6d71fd457953b434f9219feee80a05db88a8c71ce772810b0a39c4f"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzzzz_mm_dragon_nonlethal_population.txt",
+      "sha256": "802680268fea995644270bb39ac7a81b82ecc43d0fb97acac4c03a84ddc62565"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzz_mm_BoTL_cleanup.txt",
+      "sha256": "52a10eff801df567a7dc52f1a62b9d9d7cbfc3fae28c00f71d492c3fc7a3ba55"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzz_mm_cleanup_protection.txt",
+      "sha256": "60b632e6a4dacb884989d948ab1f1d156fb2f0086be376d3327f82cea763692d"
+    },
+    {
+      "path": "mod/events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "fe0a01c474bf3f1a35e8296f2e0a01f2c60fae1b486b68acdb30152a8791a550"
+    }
+  ],
+  "updated": "2026-10-28"
+}

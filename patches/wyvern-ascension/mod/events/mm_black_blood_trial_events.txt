@@ -1,0 +1,15 @@
+namespace = mm_black_trial
+mm_black_trial.1 = {
+    type = character_event
+    title = mm_black_trial.1.t
+    desc = mm_black_trial.1.desc
+    theme = mental_break
+    option = { name = mm_black_trial.1.a }
+}
+mm_black_trial.2 = {
+    type = character_event
+    title = mm_black_trial.2.t
+    desc = mm_black_trial.2.desc
+    theme = learning
+    option = { name = mm_black_trial.2.a }
+}

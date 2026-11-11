@@ -1,0 +1,18 @@
+{
+  "formatVersion": 1,
+  "assetPath": "game/gfx/models/artifacts/thrones/pam_papal_throne.asset",
+  "assetSha256": "786e500abce1e186e401eddad8748ef5c31e68bc8f7fa9b6abb3208cfd1c658a",
+  "meshPath": "game/gfx/models/artifacts/thrones/pam_papal_throne_arch.mesh",
+  "meshSha256": "d43ca467ca035e76370176e771c99ad31db380942a249d51b1a573f46b5b841d",
+  "meshName": "pam_papal_throne_arch_mesh",
+  "file": "pam_papal_throne_arch.mesh",
+  "shapeName": "pam_papal_throne_arch_LOD0Shape",
+  "indices": [0, 1, 2, 3, 4],
+  "submeshes": [
+    { "vertices": 246, "triangles": 190 },
+    { "vertices": 658, "triangles": 800 },
+    { "vertices": 120, "triangles": 66 },
+    { "vertices": 932, "triangles": 1100 },
+    { "vertices": 291, "triangles": 480 }
+  ]
+}

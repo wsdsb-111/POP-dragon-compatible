@@ -1,0 +1,33 @@
+# Mixed blood itself carries the golden-eye appearance, including seeded
+# families which did not roll a separate optional draconic feature trait.
+mm_dragon_lineage_golden_eyes = {
+    usage = game
+    selection_behavior = weighted_random
+    priority = 2101
+    dragon_blood_eyes = {
+        dna_modifiers = { color = { mode = replace gene = eye_color x = 0.4 y = 0.1 } }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_half }
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_lineage_1 }
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_lineage_2 }
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_lineage_3 }
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_lineage_4 }
+                    portrait_has_trait_trigger = { TRAIT = mm_dragon_black_blood }
+                }
+                NOT = { has_character_flag = mm_asc_dragon_form }
+                OR = {
+                    has_character_flag = mm_wyvern_human_form
+                    NOR = {
+                        portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+                        portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+                        portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+                    }
+                }
+            }
+        }
+    }
+}

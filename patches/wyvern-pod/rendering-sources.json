@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-03",
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "gfx/models/portraits/male_body/male_body.asset",
+      "sha256": "44b0f8f4bb76d9e03966b7779a3e963a4bc24e265654fa89bf371ff55f30a98f"
+    },
+    {
+      "root": "pod",
+      "path": "gfx/models/portraits/male_body/male_body.asset",
+      "sha256": "746500fd332ea7a12a006950fc387c9a1eb247e7873479c31bbfaacfe5fa8cce"
+    },
+    {
+      "root": "wyvern",
+      "path": "gfx/models/portraits/male_body/male_body.asset",
+      "sha256": "9839bd7817511d07776b0556491b23687f6508bcd12ea00dc219536fb23a4a04"
+    },
+    {
+      "root": "game",
+      "path": "gfx/models/portraits/female_body/female_body.asset",
+      "sha256": "1a3a1d677da7fe43394539d91a8217b0f0a6a1bbca7e5bbd2800d1ab6ba6e59a"
+    },
+    {
+      "root": "pod",
+      "path": "gfx/models/portraits/female_body/female_body.asset",
+      "sha256": "d5d462f60c43d827de8fdf9bca2aac032e27e84fb1a283bb818477c64c51549a"
+    },
+    {
+      "root": "wyvern",
+      "path": "gfx/models/portraits/female_body/female_body.asset",
+      "sha256": "c4731b288565420503d2d7acd3a74cd23dec5837d262391c7bb7182bf974958a"
+    },
+    {
+      "root": "game",
+      "path": "gfx/models/portraits/male_head/male_head.asset",
+      "sha256": "4fed46b800fdaef1a5733eaf6662fac70fe9c7ee289c9030340bef022670cd79"
+    },
+    {
+      "root": "pod",
+      "path": "gfx/models/portraits/male_head/male_head.asset",
+      "sha256": "d2101c6864f6b227330c367ec8b82a1823874663fcf9478ecfc5b9d2a5dfa7ad"
+    },
+    {
+      "root": "wyvern",
+      "path": "gfx/models/portraits/male_head/male_head.asset",
+      "sha256": "e99a0e3fbe382a6fd9a3a6bc729afdbe45bd44e0d2dd7eda5a77996c00a7c53e"
+    },
+    {
+      "root": "game",
+      "path": "gfx/models/portraits/female_head/female_head.asset",
+      "sha256": "df721de182459d921cfede36758713f060f187d0ed3b27083dd016e33ddf21bb"
+    },
+    {
+      "root": "pod",
+      "path": "gfx/models/portraits/female_head/female_head.asset",
+      "sha256": "b0a1f0180ecc0f78f39d6179b5068f7721479ed71f3789b8a8607876dfedcbd2"
+    },
+    {
+      "root": "wyvern",
+      "path": "gfx/models/portraits/female_head/female_head.asset",
+      "sha256": "b7ddd4f54c0e9b3b46fc194c737d15796668207a5f6b870c9a802307c32f6884"
+    },
+    {
+      "root": "game",
+      "path": "gui/hud_outliner.gui",
+      "sha256": "6adf5e25448c0c2ca5254330f597e898883f0e067d50b8d97286e1f835bc4d42"
+    },
+    {
+      "root": "pod",
+      "path": "gui/hud_outliner.gui",
+      "sha256": "eae245edc38ca0b452878b6a9988ee00007c2f93817ca42d59da8869f48910fc"
+    },
+    {
+      "root": "wyvern",
+      "path": "gui/hud_outliner.gui",
+      "sha256": "4d203e3696906acdc0e9a2c21242f28f4712220e97c4dabd187b5e0031cf6cbf"
+    },
+    {
+      "root": "game",
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "630bcb50727a3b190a685e0404226432423b467420092352a5bab628cf5c7ebf"
+    },
+    {
+      "root": "pod",
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "17a6bc9af62ac38ca68b7c36d989623aa7b57d517a725927a8ba141521c3545b"
+    },
+    {
+      "root": "wyvern",
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "9175a62c0ff839de7f0aa5a60bc3af0b00cec172e0954d8abd346cf181d63313"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "gfx/models/portraits/male_body/male_body.asset",
+      "sha256": "1275055bb029a4db794b5daa87b2fe17c786088dcfbc49493c2c22effa47e73f"
+    },
+    {
+      "path": "gfx/models/portraits/female_body/female_body.asset",
+      "sha256": "da3c6b788922c2b835c062c4847b1b0f43c8d2d0799b762ad5e436b08b4c2c7a"
+    },
+    {
+      "path": "gfx/models/portraits/male_head/male_head.asset",
+      "sha256": "3ebfd68fb6bca2f842e4b1fb8789ae1ccc845622940181224883c3a343efda7e"
+    },
+    {
+      "path": "gfx/models/portraits/female_head/female_head.asset",
+      "sha256": "9d048517b3d8e0f73310d62cb0d7536ba99eb424ee53e5ebbb1c4b3779de5b62"
+    },
+    {
+      "path": "gui/hud_outliner.gui",
+      "sha256": "4b4bf8b10a6d3ca2bd5c8f0e50151467c7c6a6c7e6371046a3e2fe7667b3fda2"
+    },
+    {
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "fd80a62f5e4e8d0301759da9f6d49cd03ed2cfb1cbd2fa48aa564502ff357c97"
+    }
+  ],
+  "method": "LF-normalized git merge-file: PoD + Wyvern with current game as common ancestor; output UTF-8 BOM/CRLF.",
+  "evidence": "2026-11-02 23:28 crash logs: body entities missing myv_wyvern_origin; compact portraits missing myv_wyvern_outliner_cooltip. The unsymbolicated C0000005 stack alone cannot prove the crash cause.",
+  "CK3Runtime": "NOT_RUN"
+}

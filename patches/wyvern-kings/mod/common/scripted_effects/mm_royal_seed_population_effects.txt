@@ -1,0 +1,108 @@
+# Four creation thrones, not eight additional royal identities. Existing saves
+# have no pending marker; loading or monthly maintenance never seeds a cohort.
+mm_royal_seed_initial_population_effect = {
+    if = {
+        limit = {
+            has_global_variable = mm_royal_seed_new_campaign_pending
+            NOT = { has_global_variable = mm_royal_seed_population_initialized }
+        }
+        set_global_variable = { name = mm_royal_seed_population_initialized value = yes }
+        remove_global_variable = mm_royal_seed_new_campaign_pending
+        mm_royal_bootstrap_effect = yes
+        set_global_variable = { name = mm_royal_seed_in_progress value = yes }
+        mm_royal_seed_group_effect = { THRONE = 1 CREATOR = character:99001305 }
+        mm_royal_seed_group_effect = { THRONE = 2 CREATOR = character:99001306 }
+        mm_royal_seed_group_effect = { THRONE = 3 CREATOR = character:99001003 }
+        mm_royal_seed_group_effect = { THRONE = 4 CREATOR = character:99001308 }
+        remove_global_variable = mm_royal_seed_in_progress
+        remove_global_variable = mm_royal_seed_throne
+        remove_global_variable = mm_royal_seed_remaining
+        myv_enforce_wyvern_population_game_rule_effect = yes
+    }
+}
+mm_royal_seed_group_effect = {
+    set_global_variable = { name = mm_royal_seed_throne value = $THRONE$ }
+    random_list = {
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 5 } }
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 6 } }
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 7 } }
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 8 } }
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 9 } }
+        1 = { set_global_variable = { name = mm_royal_seed_remaining value = 10 } }
+    }
+    while = {
+        limit = { global_var:mm_royal_seed_remaining > 0 }
+        $CREATOR$ = { mm_royal_create_seed_wyvern_effect = yes }
+        scope:myv_new_wyvern = { add_character_flag = mm_royal_initial_descendant }
+        change_global_variable = { name = mm_royal_seed_remaining add = -1 }
+    }
+}
+
+# Dedicated creator keeps the native AGE/SIZE macro contract for other callers.
+mm_royal_create_seed_wyvern_effect = {
+    save_scope_as = myv_wyvern_creator
+    clear_saved_scope = mm_dragon_seed_province
+    random_province = {
+        limit = {
+            exists = culture
+            OR = {
+                AND = { global_var:mm_royal_seed_throne = 1 mm_dragon_spawn_fire_region = yes }
+                AND = { global_var:mm_royal_seed_throne = 2 mm_dragon_spawn_earth_region = yes }
+                AND = { global_var:mm_royal_seed_throne = 3 mm_dragon_spawn_sea_region = yes }
+                AND = { global_var:mm_royal_seed_throne = 4 mm_dragon_spawn_sky_region = yes }
+            }
+        }
+        save_scope_as = mm_dragon_seed_province
+    }
+    create_character = {
+        age = { 12 150 }
+        gender_female_chance = 50
+        prowess = 0
+        dynasty = none
+        random_traits = no
+        location = scope:mm_dragon_seed_province
+        culture = scope:mm_dragon_seed_province.culture
+        faith = faith:pagan
+        trait = myv_wyvern
+        after_creation = {
+            save_scope_as = myv_new_wyvern
+            random_list = {
+                1 = { add_trait = myv_wyvern_physique_weak }
+                1 = { add_trait = myv_wyvern_physique_normal }
+                1 = { add_trait = myv_wyvern_physique_powerful }
+            }
+            myv_roll_wyvern_coordination_effect = yes
+            random_list = {
+                1 = { add_trait = myv_wyvern_temperament_docile }
+                1 = { add_trait = myv_wyvern_temperament_alert }
+                1 = { add_trait = myv_wyvern_temperament_fierce }
+            }
+            myv_roll_wyvern_color_effect = yes
+            random_list = {
+                1 = { set_variable = { name = mm_seed_growth_factor value = 0.9 } }
+                1 = { set_variable = { name = mm_seed_growth_factor value = 1 } }
+                1 = { set_variable = { name = mm_seed_growth_factor value = 1.1 } }
+            }
+            set_variable = {
+                name = myv_wyvern_size
+                value = {
+                    value = myv_wyvern_expected_size_from_age
+                    subtract = 5
+                    multiply = myv_wyvern_growth_physique_multiplier
+                    multiply = var:mm_seed_growth_factor
+                    add = 5
+                }
+            }
+            remove_variable = mm_seed_growth_factor
+            set_variable = { name = myv_wyvern_size value = myv_wyvern_sanitized_size }
+            add_character_flag = mm_royal_newly_created
+            mm_dragon_register_true_dragon_origins_effect = yes
+            remove_character_flag = mm_royal_newly_created
+            mm_dragon_assign_regional_identity_effect = yes
+            myv_apply_wyvern_identity_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            add_to_global_variable_list = { name = myv_living_wyverns target = this }
+            myv_enforce_wyvern_population_game_rule_effect = yes
+        }
+    }
+}

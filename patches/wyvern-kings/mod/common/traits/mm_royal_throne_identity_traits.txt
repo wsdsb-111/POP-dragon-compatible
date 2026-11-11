@@ -1,0 +1,31 @@
+mm_royal_fire_king = {
+    icon = "mm_royal_fire.dds"
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_fire_king_desc
+}
+
+mm_royal_earth_king = {
+    icon = "mm_royal_earth.dds"
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_earth_king_desc
+}
+
+mm_royal_sea_king = {
+    icon = "mm_royal_sea.dds"
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_sea_king_desc
+}
+
+mm_royal_sky_king = {
+    icon = "mm_royal_sky.dds"
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_sky_king_desc
+}

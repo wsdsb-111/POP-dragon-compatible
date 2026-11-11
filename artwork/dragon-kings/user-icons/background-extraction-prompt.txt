@@ -1,0 +1,6 @@
+Built-in image_gen edit; background-extraction; transparent_background=true.
+Applied separately to uploads 1 (Black Emperor), 3 (White Empress), and 5 (Earth and Mountains).
+
+Use case: background-extraction. Edit target: the single supplied finished CK3 trait emblem. ONLY remove the baked-in white/light-gray checkerboard outside the emblem, replacing that background with genuine alpha transparency. This is a strict faithful cutout, not a redraw. Preserve the exact original dragon(s), faces, eyes, scales, horns, complete ornate diamond metal frame, central interior backdrop, colors, lighting, pose, proportions, and composition. Preserve all frame tips and horn tips. Do not remove any white scales, white horns, water/rock details, highlights or jewel interiors. Do not invent any new elements, change the dragons, alter the frame, add text, add a drop shadow or add any solid/checkerboard background. Preserve original square framing. Output a clean truly transparent PNG.
+
+Uploads 2 (Bronze and Fire), 4 (Ocean and Water), and 6 (Sky and Wind) already had RGBA transparency and were archived byte-for-byte. No image_gen edit was applied to them. All six were mechanically encoded as 128x128 DXT5 using scripts/build-royal-trait-icons.py.

@@ -1,0 +1,12 @@
+mm_v1312_silk_road_china_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_china_bonus_40 = { domain_tax_mult = 0.004 }
+mm_v1312_silk_road_tibet_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_tibet_bonus_40 = { domain_tax_mult = 0.004 }
+mm_v1312_silk_road_india_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_india_bonus_40 = { domain_tax_mult = 0.004 }
+mm_v1312_silk_road_central_asia_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_central_asia_bonus_40 = { domain_tax_mult = 0.004 }
+mm_v1312_silk_road_transcaspia_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_transcaspia_bonus_40 = { domain_tax_mult = 0.004 }
+mm_v1312_silk_road_occident_bonus_20 = { domain_tax_mult = 0.002 }
+mm_v1312_silk_road_occident_bonus_40 = { domain_tax_mult = 0.004 }

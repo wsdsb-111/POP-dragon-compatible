@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-24",
+  "scope": "Appearance toggle with persistent draconic features; independent accessory genes and original rigid attachments",
+  "sourceRoots": {
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310",
+    "game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/common/character_interactions/myv_wyvern_interactions.txt",
+      "sha256": "362c09e08f37582e73e2c69456da77879a2d6dc18c3b24952195a0da3b57f812",
+      "reason": "Reference for the existing myv_wyvern_interaction filter and the bonded-ride age threshold of 10."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_guis/myv_wyvern_gui.txt",
+      "sha256": "18dcc97c428fdea404f750d72fd20eeb6732e333d2ffdc643113547ea6aa5d09",
+      "reason": "The wyvern character-window switch is re-declared with an additional human-form flag guard."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_modifiers/zzz_myv_wyvern_no_human_accessories.txt",
+      "sha256": "419942d8b179790598553c210301eb7281e1f2e9071ace052e2b4f68a99aaf66",
+      "reason": "Reference for the priority-1000 clothing, hair, face, and no-aging suppression that must stop in human form."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_modifiers/myv_wyvern_color_and_size.txt",
+      "sha256": "8161caaefe9bf0a4d0abc89c108524e3ad1de8a572fcd6bdbb6ab9ad536f657e",
+      "reason": "Reference for the priority-110 color/size group whose wyvern accessory is cleared by the higher-priority appearance layer."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/trait_portrait_modifiers/myv_wyvern_trait_portrait_modifiers.txt",
+      "sha256": "b4bf436f686fd8bc080aec2d22ac1ca9be9fe8a27fdbb28afb28dca1be60fdcf",
+      "reason": "Reference for the trait-owned body accessory and no_portrait morph resolved by the new portrait-only override."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/genes/myv_hide_body_gene.txt",
+      "sha256": "dbc17455429bf30a749c9a45ee38c1f9cdc747ee927afd9713d4f2db634720f5",
+      "reason": "Defines the normal_portrait template used to restore the existing human portrait phenotype."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/window_character.gui",
+      "sha256": "0b2251594b68fd492857e9adf531169859506042e2ca1cc469ee0ee69cf69940",
+      "reason": "The existing custom wyvern view shares the same scripted-GUI predicate as the native-panel fallback."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_portrait_animations.txt",
+      "sha256": "ab73fe4ecdd7daa79fb318e9cffcaf5143e8c06dcb87922d1a7d69156a10dd33",
+      "reason": "Confirms the custom wyvern main animation is only used by the custom character view."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_flying.txt",
+      "sha256": "c018bdda9563f9d48b709e6d3b82b0de1d35552e32eb9b3e60231ba2ae8819a6",
+      "reason": "Reviewed to keep existing flight portraits and animation rules outside the appearance toggle."
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gfx/portraits/portrait_animations/myv_wyvern_rider_flying.txt",
+      "sha256": "fc46f54479b05bfcea4f7104d7b769a8440c2ae8c5a26b4b95db8b5ed331bac4",
+      "reason": "Reviewed to keep riding and battlefield event portraits outside the appearance toggle."
+    },
+    {
+      "root": "game",
+      "path": "gui/window_character.gui",
+      "sha256": "2ff56541cb81ecb943ab34747ba4005cc0010f28a24494dc3e5728808050114d",
+      "reason": "The stock character-window main content is visible when the wyvern custom view predicate is false."
+    },
+    {
+      "root": "game",
+      "path": "gui/shared/portraits.gui",
+      "sha256": "149f61c0168aefa6409bd760821822da62d4ab4ed04dd04b595c0f63ffb2146f",
+      "reason": "Confirms the stock character portrait falls back to the normal idle human portrait."
+    },
+    {
+      "root": "game",
+      "path": "gfx/portraits/portrait_modifiers/_portrait_modifiers.info",
+      "sha256": "a0d8d14dea25814244615ea42f97a094272c2e6d3135543ced942ee57d50c597",
+      "reason": "Defines regular portrait modifier entries as weight-selected and confirms higher-priority groups apply later and overwrite earlier groups."
+    },
+    {
+      "root": "game",
+      "path": "gfx/portraits/trait_portrait_modifiers/_trait_modifier.info",
+      "sha256": "1187324d73385d17446df5f1f566b4056ea4bd425ec41ea2b62a186ddab91c52",
+      "reason": "Documents the trigger field on trait portrait modifier entries, used to gate the original no_portrait and wyvern-body application."
+    },
+    {
+      "root": "game",
+      "path": "common/council_tasks/00_steward_tasks.txt",
+      "sha256": "b3087378e04d0cdf7b1c1bebf97fd17e36d8684ddd157d4fb0647b1d5681fc4b",
+      "reason": "Base-game character-flag effect examples use add_character_flag; no set_character_flag command exists in the installed game scripts."
+    },
+    {
+      "root": "game",
+      "path": "common/genes/00_genes_color.txt",
+      "sha256": "b89caad9bccb3093c70deef24b8b0fbd0170c78a7e820a53a8ae44f4656aa9b7"
+    },
+    {
+      "root": "game",
+      "path": "common/genes/02_genes_accessories_misc.txt",
+      "sha256": "30e7ef687af9ce2cccd98061cb3211119d112aac28f56a027027a64eee247001"
+    },
+    {
+      "root": "game",
+      "path": "gfx/portraits/eye_palette.dds",
+      "sha256": "28d4a000486d7c9d578b9631d6f719792be8f0a7676b71413864f8f9fcc0dcef"
+    },
+    {
+      "root": "workshop",
+      "path": "3436935316/gfx/portraits/eye_palette.dds",
+      "sha256": "970bb27f015205f6e20d4ac6c254561b2d98c4d4c414ddb2986c15bfee228419"
+    }
+  ],
+  "changes": [
+    {
+      "output": "mod/common/character_interactions/mm_wyvern_human_form.txt",
+      "method": "Add one reversible interaction restricted to a living, tamed wyvern aged 10 or older and its actual bonded keeper. on_accept revalidates actor and recipient before it adds/removes mm_wyvern_human_form using supported character-flag effects."
+    },
+    {
+      "output": "mod/common/scripted_guis/zzzz_multi_mod_wyvern_human_form.txt",
+      "method": "Re-declare myv_wyvern_character_window with the existing myv_is_wyvern check and an additional NOT human-form flag, revealing the stock character panel while transformed."
+    },
+    {
+      "output": "mod/gfx/portraits/portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "method": "Use supported weight conditions to skip the priority-1000 no-human-accessories selection in human form while preserving base 0 and the original three-trait OR. Put DNA modifiers directly under dna_modifiers as the regular portrait schema requires. Add a priority-2000 layer after the priority-110 color/size group to clear the wyvern body accessory and restore normal_portrait without mutating stored DNA."
+    },
+    {
+      "output": "mod/gfx/portraits/trait_portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "method": "Re-declare the original wyvern trait modifier with the documented trait-entry trigger, disabling its no_portrait and body attachment in human form independently of portrait-group ordering."
+    },
+    {
+      "output": "mod/localization/english/mm_wyvern_human_form_l_english.yml",
+      "method": "Add the interaction label and description."
+    },
+    {
+      "output": "mod/localization/simp_chinese/mm_wyvern_human_form_l_simp_chinese.yml",
+      "method": "Add the interaction label and description."
+    }
+  ],
+  "boundaries": [
+    "Character identity, biological age, sex, parentage and wyvern abilities remain unchanged by the toggle.",
+    "The first human transformation rolls three or four persistent feature traits once; later toggles do not reroll.",
+    "Human-only accessories are isolated by feature and form flags; native dragon body, riding and flight remain separate.",
+    "Adult and reduced 55-percent child horns/tail/scales use separate bone-node attachments; eye meshes remain native."
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/character_interactions/mm_wyvern_human_form.txt",
+      "sha256": "ecf687ddab0bcf9952c887443f07aaa40afad6b31f96b41127d1805e0805cf7a"
+    },
+    {
+      "path": "mod/common/genes/mm_dragon_decor.txt",
+      "sha256": "0442a946f2f8d81634a3c7613dd08e6efee1a5e9674f36f3bb0155bd3889878a"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_features.txt",
+      "sha256": "30be7d18ec3dea8bd6808c475d6ae243a9b9f23a5a862645c3790fa6fe722c9f"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_features.txt",
+      "sha256": "53ebb2443cd29a4298adc837a6da9c86ccbbc0d26f35216d7b13a6e3d27a5f6f"
+    },
+    {
+      "path": "mod/common/scripted_guis/zzzz_multi_mod_wyvern_human_form.txt",
+      "sha256": "44f0a7d47709941950afee0e6ae75ba897a1d6883df1126d36f433867b6b5982"
+    },
+    {
+      "path": "mod/common/traits/mm_dragon_features.txt",
+      "sha256": "93fcbe66e3fd5f946d7a8b54b9e7f02815a09d33161a0d71a6b26145a3d7841e"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_horns.dds",
+      "sha256": "5e4b004e169301e4db08090606491b749a9d4cd9f763a7e8e48b1c5a027943cc"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_pupils.dds",
+      "sha256": "71d1cbe1b4d5aec7cd15571f815fe92fe695de02cbd76cdcaf102f8f12ebe19d"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_scales.dds",
+      "sha256": "11e598649f552de57ad68516093a0e645c35c8b0ef58492ea3e33c6f5c25ea9e"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_tail.dds",
+      "sha256": "c56bff72a046039281a21a2b58b2e5f3ff89f31446083286135604916e89766f"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_decor.asset",
+      "sha256": "46103de272391aa8614df810dab247de20681bf8b2a180f6b277320f43c78cc1"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_diffuse.dds",
+      "sha256": "9cb6e34421c60b932ddaafa9c290b1d067292e6991887ca6275ab12998c60ad6"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_normal.dds",
+      "sha256": "98de517b92f29a43c450574e2bc23b889795683fba80785a7ee3b37c612e0423"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_decor_properties.dds",
+      "sha256": "acdf7793fd4c322fdc0c721b7003a0fec3db1f0fcecb54e923594c538216c97e"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_horns.mesh",
+      "sha256": "7afe6cccf2c2200db46700503a5a196c53b3e80e3067c4f71d42fe6a4e8d986a"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_horns_child.mesh",
+      "sha256": "843fc406d7c3b1d18397f94d1304ebbe30f2ea00bcee3b87d9aca8e43ccd2922"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_scales.mesh",
+      "sha256": "729c7cae3edb2e4983bb6542d71b70b67a975b48e7358e7b512e758657f3a52e"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_scales_child.mesh",
+      "sha256": "39242cc94e6f598ea98df46d84c1b898c00d5bff5e712c7ea2f51e25dff7e714"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_tail.mesh",
+      "sha256": "acea9ff95bb34f3902df776839137da05a4f577e522e305058c2ee3587480026"
+    },
+    {
+      "path": "mod/gfx/models/portraits/mm_dragon_decor/mm_dragon_tail_child.mesh",
+      "sha256": "fc638cb489257fdc124410b3d8853dfb726b896ea6bdf49e742a8b99106f57c1"
+    },
+    {
+      "path": "mod/gfx/portraits/accessories/mm_dragon_decor.txt",
+      "sha256": "0a34acafa7a66f28e59f0f5258b9ff6e937afb11b4f1c4dc596b2601eff0afa6"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/mm_dragon_decor.txt",
+      "sha256": "929c64c775edeaf4ff16e3f673d74417a0dac16039500bcdca9b329521a79589"
+    },
+    {
+      "path": "mod/gfx/portraits/portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "sha256": "688eb16d74b67936bbc89094aaecbb45810f3abec11a24ad39c937350d922852"
+    },
+    {
+      "path": "mod/gfx/portraits/trait_portrait_modifiers/zzzz_multi_mod_wyvern_human_form.txt",
+      "sha256": "77ac57c5c2ca6cfcf96a920b990faf471d2297b41d77bba4369920b2dfe589bf"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_features_l_english.yml",
+      "sha256": "457566a9f7d2766289dcf166b57bdf8e279a08cbd5035efefdb7b2c861e0dff1"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_human_form_l_english.yml",
+      "sha256": "f60b0b5627bd96a926e49a68ae63db1d7dafc92d77df216ca66c4f96dc2170cc"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_features_l_simp_chinese.yml",
+      "sha256": "952794097b544435b8994b0be3ef204b623ad538af2abec3407d13af91a2868f"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_human_form_l_simp_chinese.yml",
+      "sha256": "eef5ff0fecfdc6cb6b1ad0bb2ce893f39a3f76f7d291c4a4e677e2ee260c9fdd"
+    }
+  ],
+  "updated": "2026-10-28"
+}

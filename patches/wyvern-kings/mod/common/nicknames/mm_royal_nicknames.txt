@@ -1,0 +1,14 @@
+﻿nick_mm_royal_constantine = { is_prefix = yes }
+nick_mm_royal_fenrir = { is_prefix = yes }
+nick_mm_royal_behemoth = { is_prefix = yes }
+nick_mm_royal_hrist = { is_prefix = yes }
+nick_mm_royal_norton = { is_prefix = yes }
+nick_mm_royal_jormungandr = { is_prefix = yes }
+nick_mm_royal_leviathan = { is_prefix = yes }
+nick_mm_royal_vidar = { is_prefix = yes }
+nick_mm_royal_black_emperor = { is_prefix = yes }
+nick_mm_royal_white_empress = { is_prefix = yes }
+nick_mm_royal_complete_fire = { is_prefix = yes }
+nick_mm_royal_complete_earth = { is_prefix = yes }
+nick_mm_royal_complete_sea = { is_prefix = yes }
+nick_mm_royal_complete_sky = { is_prefix = yes }

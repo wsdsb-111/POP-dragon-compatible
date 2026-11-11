@@ -1,0 +1,347 @@
+{
+ "frozenAt": "2026-10-30T12:01:02+08:00",
+ "note": "round1 交付基线冻结；round2 不覆盖这些文件",
+ "assets": [
+  {
+   "id": "black_crown",
+   "blend": {
+    "path": "black_crown/black_crown.blend",
+    "bytes": 483214,
+    "md5": "651991635e0575a63be16474795f2970",
+    "mtime": 1793298931.4479036
+   },
+   "glb": {
+    "path": "black_crown/out/black_crown.glb",
+    "bytes": 48630660,
+    "md5": "8615c23092c523b083401cc5af3d360e",
+    "mtime": 1793298998.509035
+   },
+   "ref": {
+    "path": "black_crown/ref/threeview.png",
+    "bytes": 2444180,
+    "md5": "db5ab21579b5e211bc0568f7d31253ab"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 880051,
+     "mtime": 1793298931.7117648
+    },
+    "beauty_front.png": {
+     "bytes": 1209565,
+     "mtime": 1793298975.5144894
+    },
+    "beauty_front34.png": {
+     "bytes": 1168822,
+     "mtime": 1793298974.5180085
+    },
+    "beauty_side34.png": {
+     "bytes": 1151897,
+     "mtime": 1793298975.0051115
+    },
+    "front.png": {
+     "bytes": 890085,
+     "mtime": 1793298931.5634706
+    },
+    "front_norim.png": {
+     "bytes": 819920,
+     "mtime": 1793297111.3263931
+    },
+    "front_zoom.png": {
+     "bytes": 1044174,
+     "mtime": 1793297121.8130312
+    },
+    "side.png": {
+     "bytes": 832129,
+     "mtime": 1793298931.6383576
+    },
+    "top.png": {
+     "bytes": 814177,
+     "mtime": 1793298931.7856748
+    }
+   },
+   "renders_newer_than_blend": false
+  },
+  {
+   "id": "black_regalia",
+   "blend": {
+    "path": "black_regalia/black_regalia.blend",
+    "bytes": 801608,
+    "md5": "9e37839b42b9c729ec088a2761a9b742",
+    "mtime": 1793298741.4344602
+   },
+   "glb": {
+    "path": "black_regalia/out/black_regalia.glb",
+    "bytes": 113510744,
+    "md5": "e999467c00aee5cc0a1c51f579c6d366",
+    "mtime": 1793298744.5939093
+   },
+   "ref": {
+    "path": "black_regalia/ref/threeview.png",
+    "bytes": 3051062,
+    "md5": "9d5496352c4f9962b3e3743013e0bfbf"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 693010,
+     "mtime": 1793298741.80371
+    },
+    "beauty_main.png": {
+     "bytes": 731104,
+     "mtime": 1793298742.7555206
+    },
+    "beauty_side.png": {
+     "bytes": 713241,
+     "mtime": 1793298743.1717067
+    },
+    "front.png": {
+     "bytes": 692612,
+     "mtime": 1793298741.6218505
+    },
+    "side.png": {
+     "bytes": 661359,
+     "mtime": 1793298741.7140656
+    },
+    "top.png": {
+     "bytes": 704613,
+     "mtime": 1793298741.894987
+    }
+   },
+   "renders_newer_than_blend": true
+  },
+  {
+   "id": "white_book",
+   "blend": {
+    "path": "white_book/white_book.blend",
+    "bytes": 454573,
+    "md5": "782f701acaa676b26696227f44fa0996",
+    "mtime": 1793298693.1651962
+   },
+   "glb": {
+    "path": "white_book/out/white_book.glb",
+    "bytes": 48348324,
+    "md5": "55dc02060776474cc471d58784c4337d",
+    "mtime": 1793298695.6340153
+   },
+   "ref": {
+    "path": "white_book/ref/threeview.png",
+    "bytes": 3177708,
+    "md5": "fe239204f65b19538f17b9cdef90dff9"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 877723,
+     "mtime": 1793298693.5407562
+    },
+    "beauty_main.png": {
+     "bytes": 880365,
+     "mtime": 1793298694.491736
+    },
+    "beauty_side.png": {
+     "bytes": 847062,
+     "mtime": 1793298694.8948507
+    },
+    "front.png": {
+     "bytes": 957146,
+     "mtime": 1793298693.3643641
+    },
+    "side.png": {
+     "bytes": 747999,
+     "mtime": 1793298693.449188
+    },
+    "top.png": {
+     "bytes": 680946,
+     "mtime": 1793298693.6490889
+    }
+   },
+   "renders_newer_than_blend": true
+  },
+  {
+   "id": "fire_ring",
+   "blend": {
+    "path": "fire_ring/fire_ring.blend",
+    "bytes": 351067,
+    "md5": "8e2f648cfcceb39472550c4714de9638",
+    "mtime": 1793298738.792088
+   },
+   "glb": {
+    "path": "fire_ring/out/fire_ring.glb",
+    "bytes": 84254268,
+    "md5": "d34917594c2d92a65c9a1110f369eba1",
+    "mtime": 1793298740.9707344
+   },
+   "ref": {
+    "path": "fire_ring/ref/threeview.png",
+    "bytes": 3138673,
+    "md5": "7f3f98d17c52fd1229354a1de962a30b"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 797471,
+     "mtime": 1793298739.0606706
+    },
+    "beauty_main.png": {
+     "bytes": 890720,
+     "mtime": 1793298739.875867
+    },
+    "beauty_side.png": {
+     "bytes": 858742,
+     "mtime": 1793298740.2292001
+    },
+    "front.png": {
+     "bytes": 809193,
+     "mtime": 1793298738.9262307
+    },
+    "side.png": {
+     "bytes": 773555,
+     "mtime": 1793298738.9948611
+    },
+    "top.png": {
+     "bytes": 764272,
+     "mtime": 1793298739.1244798
+    }
+   },
+   "renders_newer_than_blend": true
+  },
+  {
+   "id": "earth_sarcophagus",
+   "blend": {
+    "path": "earth_sarcophagus/earth_sarcophagus.blend",
+    "bytes": 844780,
+    "md5": "84836222085d870434e2b7831236244c",
+    "mtime": 1793298969.6518123
+   },
+   "glb": {
+    "path": "earth_sarcophagus/out/earth_sarcophagus.glb",
+    "bytes": 88614700,
+    "md5": "d65eed03f5b22d1523b8d961787d3dcb",
+    "mtime": 1793298973.605568
+   },
+   "ref": {
+    "path": "earth_sarcophagus/ref/threeview.png",
+    "bytes": 2910574,
+    "md5": "385a5c312920c27b03527a53e8d19cfd"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 684665,
+     "mtime": 1793298970.2076242
+    },
+    "beauty_main.png": {
+     "bytes": 926083,
+     "mtime": 1793298971.3977118
+    },
+    "beauty_side.png": {
+     "bytes": 881560,
+     "mtime": 1793298972.001777
+    },
+    "front.png": {
+     "bytes": 684185,
+     "mtime": 1793298969.9623647
+    },
+    "side.png": {
+     "bytes": 787553,
+     "mtime": 1793298970.087319
+    },
+    "top.png": {
+     "bytes": 705082,
+     "mtime": 1793298970.3342655
+    }
+   },
+   "renders_newer_than_blend": true
+  },
+  {
+   "id": "sea_armor",
+   "blend": {
+    "path": "sea_armor/sea_armor.blend",
+    "bytes": 708267,
+    "md5": "71b14ab1106b4621b7bb8f38b3bd9a7b",
+    "mtime": 1793298831.8859768
+   },
+   "glb": {
+    "path": "sea_armor/out/sea_armor.glb",
+    "bytes": 61004104,
+    "md5": "e5648675ebc3ade1c38d85f817d60555",
+    "mtime": 1793298835.874668
+   },
+   "ref": {
+    "path": "sea_armor/ref/threeview.png",
+    "bytes": 2835174,
+    "md5": "3c5dd203b02ef0d406d0c0b88261fcef"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 790232,
+     "mtime": 1793298832.2331467
+    },
+    "beauty_main.png": {
+     "bytes": 834189,
+     "mtime": 1793298833.337059
+    },
+    "beauty_side.png": {
+     "bytes": 817606,
+     "mtime": 1793298834.0571532
+    },
+    "front.png": {
+     "bytes": 779949,
+     "mtime": 1793298832.0745046
+    },
+    "side.png": {
+     "bytes": 737417,
+     "mtime": 1793298832.151028
+    },
+    "top.png": {
+     "bytes": 794492,
+     "mtime": 1793298832.3141775
+    }
+   },
+   "renders_newer_than_blend": true
+  },
+  {
+   "id": "sky_spear",
+   "blend": {
+    "path": "sky_spear/sky_spear.blend",
+    "bytes": 419505,
+    "md5": "1fd7a1ae6845f2f674bf9ccb0a95d51f",
+    "mtime": 1793298709.321246
+   },
+   "glb": {
+    "path": "sky_spear/out/sky_spear.glb",
+    "bytes": 86614372,
+    "md5": "07ee558892f63e0a4f8b3891b1d5b7d4",
+    "mtime": 1793298712.254004
+   },
+   "ref": {
+    "path": "sky_spear/ref/threeview.png",
+    "bytes": 2503206,
+    "md5": "07b1a60aa5d11ab3a0312e58bafeb824"
+   },
+   "renders": {
+    "back.png": {
+     "bytes": 677962,
+     "mtime": 1793298709.6865568
+    },
+    "beauty_main.png": {
+     "bytes": 705473,
+     "mtime": 1793298710.613283
+    },
+    "beauty_side.png": {
+     "bytes": 690798,
+     "mtime": 1793298711.0456443
+    },
+    "front.png": {
+     "bytes": 677869,
+     "mtime": 1793298709.5127668
+    },
+    "side.png": {
+     "bytes": 645759,
+     "mtime": 1793298709.600967
+    },
+    "top.png": {
+     "bytes": 637264,
+     "mtime": 1793298709.7764006
+    }
+   },
+   "renders_newer_than_blend": true
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+on_stress_level_1 = { on_actions = { mm_ds_stress_1 } }
+on_stress_level_2 = { on_actions = { mm_ds_stress_2 } }
+on_stress_level_3 = { on_actions = { mm_ds_stress_3 } }
+# Native 400-stress reset: the UI remains capped at level three.
+on_stress_level_4 = { on_actions = { mm_ds_stress_4 } }
+mm_ds_stress_1 = { effect = { mm_ds_stress_check_effect = { STAGE = 1 } } }
+mm_ds_stress_2 = { effect = { mm_ds_stress_check_effect = { STAGE = 2 } } }
+mm_ds_stress_3 = { effect = { mm_ds_stress_check_effect = { STAGE = 3 } } }
+mm_ds_stress_4 = { effect = { mm_ds_stress_check_effect = { STAGE = 4 } } }

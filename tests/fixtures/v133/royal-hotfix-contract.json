@@ -1,0 +1,17 @@
+{
+  "father": "99001309",
+  "mother": "99001310",
+  "seedPerLineage": { "minimum": 5, "maximum": 10 },
+  "characters": [
+    { "id": "99001001", "name": "mm_royal_name_constantine", "awake": false, "county": "c_jingzhao", "barony": "b_changan", "province": 10430, "titleFile": "02_china.txt", "twin": true },
+    { "id": "99001002", "name": "mm_royal_name_fenrir", "awake": false, "county": "c_qus", "barony": "b_qus", "province": 6077, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001003", "name": "mm_royal_name_behemoth", "awake": true, "county": "c_malta", "barony": "b_malta", "province": 2646, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001304", "name": "mm_royal_name_hrist", "awake": false, "county": "c_faereyar", "barony": "b_torshavn", "province": 6, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001305", "name": "mm_royal_name_norton", "awake": true, "county": "c_chengdu", "barony": "b_chengdu", "province": 10216, "titleFile": "02_china.txt", "twin": true },
+    { "id": "99001306", "name": "mm_royal_name_jormungandr", "awake": true, "county": "c_tbilisi", "barony": "b_tbilisi", "province": 5759, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001307", "name": "mm_royal_name_leviathan", "awake": false, "county": "c_chandax", "barony": "b_iraklio", "province": 480, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001308", "name": "mm_royal_name_vidar", "awake": true, "county": "c_sogn", "barony": "b_sognfylki", "province": 260, "titleFile": "00_landed_titles.txt", "twin": true },
+    { "id": "99001309", "name": "mm_royal_name_black_emperor", "awake": false, "county": "c_baghdad", "barony": "b_baghdad", "province": 4828, "titleFile": "00_landed_titles.txt", "twin": false },
+    { "id": "99001310", "name": "mm_royal_name_white_empress", "awake": false, "county": "c_sagami", "barony": "b_kamakura", "province": 10765, "titleFile": "01_japan.txt", "twin": false }
+  ]
+}

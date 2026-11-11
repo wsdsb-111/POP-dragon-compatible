@@ -1,0 +1,90 @@
+pdxmesh = {
+  name = "mm_dragon_horns_mesh"
+  file = "mm_dragon_horns.mesh"
+  meshsettings = {
+    name = "mm_dragon_horns_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_horns_entity" pdxmesh = "mm_dragon_horns_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_tail_mesh"
+  file = "mm_dragon_tail.mesh"
+  meshsettings = {
+    name = "mm_dragon_tail_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_tail_entity" pdxmesh = "mm_dragon_tail_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_scales_mesh"
+  file = "mm_dragon_scales.mesh"
+  meshsettings = {
+    name = "mm_dragon_scales_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_scales_entity" pdxmesh = "mm_dragon_scales_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_horns_child_mesh"
+  file = "mm_dragon_horns_child.mesh"
+  meshsettings = {
+    name = "mm_dragon_horns_child_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_horns_child_entity" pdxmesh = "mm_dragon_horns_child_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_tail_child_mesh"
+  file = "mm_dragon_tail_child.mesh"
+  meshsettings = {
+    name = "mm_dragon_tail_child_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_tail_child_entity" pdxmesh = "mm_dragon_tail_child_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_scales_child_mesh"
+  file = "mm_dragon_scales_child.mesh"
+  meshsettings = {
+    name = "mm_dragon_scales_child_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_decor_diffuse.dds"
+    texture_normal = "mm_dragon_decor_normal.dds"
+    texture_specular = "mm_dragon_decor_properties.dds"
+    shader = "portrait_attachment"
+    shader_file = "gfx/FX/jomini/portrait.shader"
+  }
+}
+entity = { name = "mm_dragon_scales_child_entity" pdxmesh = "mm_dragon_scales_child_mesh" }
+

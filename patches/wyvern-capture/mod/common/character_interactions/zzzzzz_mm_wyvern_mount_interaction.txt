@@ -1,0 +1,64 @@
+﻿myv_set_wyvern_war_mount_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_combat
+	interface_priority = 98
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = yes
+
+	desc = mm_wyvern_set_war_mount_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			has_trait = myv_wyvern_rider
+			NOT = { has_variable = myv_war_mount }
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+			has_trait = myv_wyvern_harmony
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			NOT = { has_variable = myv_war_mount_rider }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+        scope:recipient = { NOT = { exists = knight_army } }
+		scope:actor = {
+			is_imprisoned = no
+			is_incapable = no
+		}
+	}
+
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = {
+                    is_alive = yes
+                    has_trait = myv_wyvern_rider
+                    NOT = { has_variable = myv_war_mount }
+                    is_imprisoned = no
+                    is_incapable = no
+                }
+                scope:recipient = {
+                    myv_is_living_wyvern = yes
+                    has_trait = myv_wyvern_harmony
+                    has_relation_myv_wyvern_bonded_character = scope:actor
+                    NOT = { has_variable = myv_war_mount_rider }
+                    NOT = { exists = knight_army }
+                }
+            }
+
+		scope:recipient = {
+			set_variable = { name = myv_war_mount_rider value = scope:actor }
+		}
+		scope:actor = {
+			set_variable = { name = myv_war_mount value = scope:recipient }
+			myv_refresh_war_mount_combat_stats_effect = yes
+		}
+
+        }
+    }
+}

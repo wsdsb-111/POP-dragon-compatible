@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-03",
+  "sourceRoots": {
+    "R": ".",
+    "PoD": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2216659254"
+  },
+  "sources": [
+    {
+      "root": "R",
+      "path": "patches/wyvern-kings/mod/common/traits/mm_royal_traits.txt",
+      "sha256": "b4cf1f960e05ac2387d7e4136f2cc6ad8df15d4bfc802f62643e10ebee141c3d",
+      "role": "shared royal trait definitions; copied with only the legacy torpor definition neutralized"
+    },
+    {
+      "root": "PoD",
+      "path": "common/decisions/00_POD_torpor_decisions.txt",
+      "sha256": "2c424f1cd43d90c09e7bcc6cd535017a6603d7afe10ba35aeaecac8dd7300009",
+      "role": "ruler_exit_torpor base definition"
+    },
+    {
+      "root": "PoD",
+      "path": "common/character_interactions/POD_journey_interactions.txt",
+      "sha256": "b96ee7827c5561990ad6961396b1b6ba53289f002eaf7cad2b2022ebb047b6c8",
+      "role": "POD_wake_from_torpor_interaction base definition"
+    },
+    {
+      "root": "PoD",
+      "path": "common/character_interactions/POD_torpor_interactions.txt",
+      "sha256": "068912412c1c297e2971b3460390d820944c98ff3cb35abf32a3148024ceb7d4",
+      "role": "POD_awaketorpor_prisoner_interaction base definition"
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/POD_interface_triggers.txt",
+      "sha256": "4f3400ea696618b1a3062a4549fcb139224ef0e330061368bb7c95cce1fd6f12",
+      "role": "POD_uses_torpor_corpse_animation base definition"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/traits/mm_royal_traits.txt",
+      "sha256": "58031817a1b6136361b9a09dc0076666db9609353270175d06334a9ce7c3869c"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_pod_legacy_torpor.txt",
+      "sha256": "2e8051806d84b8ad3abc77b547665ec063b95cc79ced4a97a7b4a2c75c2d6732"
+    },
+    {
+      "path": "mod/common/decisions/zzzzzzzzzzzz_mm_pod_torpor.txt",
+      "sha256": "176a997fe4011f85d3d9e7fb17a81fbaed3baa5783b1e8aa318a629c53fef649"
+    },
+    {
+      "path": "mod/common/character_interactions/zzzzzzzzzzzz_mm_pod_torpor.txt",
+      "sha256": "59e1d86bc82b38ced7fb7eb9fac7e558e6bf4dac6c4b16459934dc50772c69bc"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzz_mm_pod_torpor_portrait.txt",
+      "sha256": "435f02ce29f2eaa2c9e20b54aa7d7ac11a1b55cccf9833076a31e1d0708e5a0d"
+    }
+  ],
+  "tooling": {
+    "path": "scripts/prepare-pod-script.js",
+    "sha256": "5c51117bfb6eafbcbe13ab90cd4d947431e9c306acb9382233f9e402951de596",
+    "role": "wyvern-pod-only legacy trait reference mapping"
+  },
+  "legacy": {
+    "oldTrait": "mm_royal_torpor",
+    "nativeTrait": "torpor",
+    "migrationEffect": "mm_pod_migrate_legacy_torpor_effect",
+    "note": "The old key remains as a no-bonus, non-random, non-designer save placeholder. The delayed after_lobby integration must call the migration effect in character scope. New history references are mapped by prepare-pod-script.js. PoD wake paths and corpse animation are guarded for true dragon kings so native torpor remains under the royal awakening API."
+  }
+}

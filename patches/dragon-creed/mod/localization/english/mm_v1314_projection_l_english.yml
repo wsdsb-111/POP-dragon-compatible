@@ -1,0 +1,7 @@
+﻿l_english:
+ mm_v1314_doctrine_title:0 "[DoctrineType.GetDescriptiveNameNoTooltip( FaithWindow.GetFaith )]"
+ mm_v1314_native_doctrine_title:0 "[DoctrineType.GetDescriptiveNameNoTooltip( GetNullCharacter.GetFaith )]"
+ mm_v1314_doctrine_effects:0 "[DoctrineType.GetEffectsDescription( FaithWindow.GetSelectedRite )]"
+ mm_v1314_doctrine_description:0 "[DoctrineType.GetDescription( FaithWindow.GetFaith )|F]"
+ mm_v1314_holy_site_under_control_ui:0 "Held by [FaithWindow.GetFaith.GetAdherentNamePlural]"
+ mm_v1314_holy_site_not_under_control_ui:0 "@warning_icon!Not held by [FaithWindow.GetFaith.GetAdherentNamePlural]"

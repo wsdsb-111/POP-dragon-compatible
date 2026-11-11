@@ -1,0 +1,112 @@
+﻿mm_relic_black_crown_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_black trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_black } faith = faith:mm_dragon_creed rite = rite:mm_dragon_black } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_black_crown_identity }
+}
+mm_relic_black_crown_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_black
+    mm_relic_black_crown_equipped_trigger = yes
+    mm_relic_has_black_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_black_crown_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_black_regalia_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_black trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_black } faith = faith:mm_dragon_creed rite = rite:mm_dragon_black } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_black_regalia_identity }
+}
+mm_relic_black_regalia_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_black
+    mm_relic_black_regalia_equipped_trigger = yes
+    mm_relic_has_black_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_black_regalia_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_white_book_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_white trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_white } faith = faith:mm_dragon_creed rite = rite:mm_dragon_white } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_white_book_identity }
+}
+mm_relic_white_book_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_white
+    mm_relic_white_book_equipped_trigger = yes
+    mm_relic_has_white_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_white_book_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_fire_ring_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_fire trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_fire } faith = faith:mm_dragon_creed rite = rite:mm_dragon_fire } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_fire_ring_identity }
+}
+mm_relic_fire_ring_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_fire
+    mm_relic_fire_ring_equipped_trigger = yes
+    mm_relic_has_fire_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_fire_ring_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_earth_sarcophagus_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_earth trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_earth } faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_earth_sarcophagus_identity }
+}
+mm_relic_earth_sarcophagus_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_earth
+    mm_relic_earth_sarcophagus_equipped_trigger = yes
+    mm_relic_has_earth_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_earth_sarcophagus_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_sea_armor_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_sea trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_sea } faith = faith:mm_dragon_creed rite = rite:mm_dragon_sea } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_sea_armor_identity }
+}
+mm_relic_sea_armor_ready_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_sea
+    mm_relic_sea_armor_equipped_trigger = yes
+    mm_relic_has_sea_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_sea_armor_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}
+
+mm_relic_sky_spear_equipped_trigger = {
+    OR = { AND = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_sky trigger_if = { limit = { exists = faith:mm_dragon_creed exists = rite:mm_dragon_sky } faith = faith:mm_dragon_creed rite = rite:mm_dragon_sky } } has_character_modifier = mm_relic_fire_forging }
+    any_equipped_character_artifact = { has_variable = mm_relic_sky_spear_identity }
+}
+mm_relic_sky_spear_ready_trigger = {
+    mm_relic_unowned_commander_count >= 3
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_sky
+    mm_relic_sky_spear_equipped_trigger = yes
+    mm_relic_has_sky_blood_trigger = yes
+    any_equipped_character_artifact = {
+        has_variable = mm_relic_sky_spear_identity
+        NOT = { has_variable = mm_relic_cooldown }
+    }
+}

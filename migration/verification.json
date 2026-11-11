@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-11",
+  "profile": "wyvern-pod",
+  "testGroups": 16,
+  "runtimeFiles": 529,
+  "runtimeByteParity": "PASS_AGAINST_INSTALLED_USER_FIXES_EXCEPT_DESCRIPTOR_AND_VOTC_BRIDGE",
+  "isolatedFullInstall": "PASS",
+  "zipCRC": "PASS",
+  "CK3Runtime": "NOT_RUN",
+  "ordinaryFileSymlinkNegative": "NOT_RUN_OS_PERMISSION",
+  "legacyArchiveMove": "PARTIAL_8_PROTECTED_CACHE_DIRECTORIES",
+  "userFixesImported": 7,
+  "kinfolkStatus": "USER_CONFIRMED_SELF_FIXED_IMPORTED_WITHOUT_REWRITE"
+}

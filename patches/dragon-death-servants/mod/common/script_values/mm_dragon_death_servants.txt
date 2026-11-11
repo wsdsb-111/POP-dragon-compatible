@@ -1,0 +1,35 @@
+mm_ds_mutation_chance = {
+    value = 0
+    if = { limit = { has_trait = mm_dragon_lineage_1 } value = 5 }
+    else_if = { limit = { has_trait = mm_dragon_lineage_2 } value = 3 }
+    else_if = { limit = { has_trait = mm_dragon_lineage_3 } value = 2 }
+    else_if = { limit = { has_trait = mm_dragon_lineage_4 } value = 1 }
+    multiply = var:mm_ds_stress_stage
+    if = {
+        limit = { var:mm_ds_stress_stage = 4 }
+        if = { limit = { has_trait = mm_dragon_lineage_1 } value = 100 }
+        else_if = { limit = { has_trait = mm_dragon_lineage_2 } value = 25 }
+        else_if = { limit = { has_trait = mm_dragon_lineage_3 } value = 15 }
+        else_if = { limit = { has_trait = mm_dragon_lineage_4 } value = 5 }
+    }
+    # The white rite's spiritual discipline halves the native mutation chance.
+    if = { limit = { rite = rite:mm_dragon_white } multiply = 0.5 }
+    if = { limit = { mm_ds_relic_mutation_bonus_trigger = yes } multiply = 2 }
+    max = 100
+}
+# Compare the actual participants, including the native dragon combat statistic.
+mm_ds_actor_strength = {
+    value = prowess
+    if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } value = myv_wyvern_target_prowess }
+    min = 1
+}
+mm_ds_attacker_win_chance = {
+    value = scope:mm_ds_attacker.mm_ds_actor_strength
+    multiply = 100
+    divide = {
+        value = scope:mm_ds_attacker.mm_ds_actor_strength
+        add = scope:mm_ds_victim.mm_ds_actor_strength
+    }
+    min = 5
+    max = 95
+}

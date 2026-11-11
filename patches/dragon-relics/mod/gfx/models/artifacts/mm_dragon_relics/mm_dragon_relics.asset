@@ -1,0 +1,273 @@
+﻿pdxmesh = {
+  name = "mm_relic_black_crown_mesh"
+  file = "mm_relic_black_crown.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_black_crown_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_crown_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_crown_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_crown_shape"
+    index = 3
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_crown_shape"
+    index = 4
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_black_crown_entity" pdxmesh = "mm_relic_black_crown_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_black_regalia_mesh"
+  file = "mm_relic_black_regalia.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_black_regalia_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_regalia_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_black_regalia_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_black_regalia_entity" pdxmesh = "mm_relic_black_regalia_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_white_book_mesh"
+  file = "mm_relic_white_book.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_white_book_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_white_book_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_white_book_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_white_book_entity" pdxmesh = "mm_relic_white_book_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_fire_ring_mesh"
+  file = "mm_relic_fire_ring.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_fire_ring_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_fire_ring_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_fire_ring_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_fire_ring_entity" pdxmesh = "mm_relic_fire_ring_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_earth_sarcophagus_mesh"
+  file = "mm_relic_earth_sarcophagus.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_earth_sarcophagus_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_earth_sarcophagus_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_earth_sarcophagus_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_earth_sarcophagus_shape"
+    index = 3
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_earth_sarcophagus_entity" pdxmesh = "mm_relic_earth_sarcophagus_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_sea_armor_mesh"
+  file = "mm_relic_sea_armor.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_sea_armor_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_sea_armor_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_sea_armor_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_sea_armor_shape"
+    index = 3
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_sea_armor_entity" pdxmesh = "mm_relic_sea_armor_mesh" }
+
+pdxmesh = {
+  name = "mm_relic_sky_spear_mesh"
+  file = "mm_relic_sky_spear.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_relic_sky_spear_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_sky_spear_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_relic_sky_spear_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_relics_diffuse.dds"
+    texture_normal = "mm_dragon_relics_normal.dds"
+    texture_specular = "mm_dragon_relics_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_relic_sky_spear_entity" pdxmesh = "mm_relic_sky_spear_mesh" }

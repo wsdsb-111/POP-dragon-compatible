@@ -1,0 +1,284 @@
+{
+  "sourcePath": "3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+  "sourceSha256": "cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396",
+  "rawMaterialCases": [
+    {
+      "id": "small_fang",
+      "material": "fang",
+      "sourceTraits": [],
+      "size": 149,
+      "rarity": "masterwork",
+      "name": "myv_wyvern_fang_name",
+      "description": "myv_wyvern_fang_desc",
+      "visuals": "myv_wyvern_fang",
+      "baseModifiers": ["artifact_monthly_prestige_2_modifier", "artifact_dread_baseline_add_1_modifier"],
+      "nativeVariables": {}
+    },
+    {
+      "id": "medium_fang",
+      "material": "fang",
+      "sourceTraits": ["myv_wyvern_legendary"],
+      "size": 150,
+      "rarity": "famed",
+      "name": "myv_wyvern_fang_name",
+      "description": "myv_wyvern_fang_desc",
+      "visuals": "myv_wyvern_fang",
+      "baseModifiers": ["artifact_monthly_prestige_3_modifier", "artifact_dread_baseline_add_2_modifier"],
+      "nativeVariables": {}
+    },
+    {
+      "id": "large_fang",
+      "material": "fang",
+      "sourceTraits": [],
+      "size": 240,
+      "rarity": "illustrious",
+      "name": "myv_wyvern_fang_name",
+      "description": "myv_wyvern_fang_desc",
+      "visuals": "myv_wyvern_fang",
+      "baseModifiers": ["artifact_monthly_prestige_4_modifier", "artifact_dread_baseline_add_3_modifier"],
+      "nativeVariables": {}
+    },
+    {
+      "id": "ordinary_scale",
+      "material": "scale",
+      "sourceTraits": [],
+      "size": null,
+      "rarity": "illustrious",
+      "name": "myv_wyvern_scale_name",
+      "description": "myv_wyvern_scale_desc",
+      "visuals": "myv_wyvern_scale",
+      "baseModifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "nativeVariables": {"myv_wyvern_scale_material": "1"}
+    },
+    {
+      "id": "legendary_scale",
+      "material": "scale",
+      "sourceTraits": ["myv_wyvern_legendary"],
+      "size": null,
+      "rarity": "illustrious",
+      "name": "myv_wyvern_scale_name",
+      "description": "myv_wyvern_scale_desc",
+      "visuals": "myv_wyvern_scale",
+      "baseModifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "nativeVariables": {"myv_wyvern_scale_material": "1"}
+    },
+    {
+      "id": "ordinary_blood",
+      "material": "blood",
+      "sourceTraits": [],
+      "size": null,
+      "rarity": "illustrious",
+      "name": "myv_wyvern_blood_name",
+      "description": "myv_wyvern_blood_desc",
+      "visuals": "myv_wyvern_blood",
+      "baseModifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "nativeVariables": {"myv_wyvern_blood_material": "1"}
+    },
+    {
+      "id": "legendary_blood",
+      "material": "blood",
+      "sourceTraits": ["myv_wyvern_legendary"],
+      "size": null,
+      "rarity": "illustrious",
+      "name": "myv_wyvern_blood_name",
+      "description": "myv_wyvern_blood_desc",
+      "visuals": "myv_wyvern_blood",
+      "baseModifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "nativeVariables": {"myv_wyvern_blood_material": "1"}
+    }
+  ],
+  "legacyArtifacts": [
+    {
+      "id": "legacy_illustrious_scale",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_scale_name",
+      "description": "mm_wyvern_material_scale_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:scale",
+        "myv_wyvern_scale_material": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_illustrious_blood",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_blood_name",
+      "description": "mm_wyvern_material_blood_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:blood",
+        "myv_wyvern_blood_material": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_famed_fang",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "famed",
+      "name": "mm_wyvern_material_fang_name",
+      "description": "mm_wyvern_material_fang_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:fang"
+      },
+      "modifiers": ["artifact_monthly_prestige_3_modifier", "artifact_dread_baseline_add_2_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_masterwork_fang",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "masterwork",
+      "name": "mm_wyvern_material_fang_name",
+      "description": "mm_wyvern_material_fang_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:fang"
+      },
+      "modifiers": ["artifact_monthly_prestige_2_modifier", "artifact_dread_baseline_add_1_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_common_fang",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "common",
+      "name": "mm_wyvern_material_fang_name",
+      "description": "mm_wyvern_material_fang_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:fang"
+      },
+      "modifiers": ["artifact_monthly_prestige_2_modifier", "artifact_dread_baseline_add_1_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_native_scale_marker",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_scale_name",
+      "description": "mm_wyvern_material_scale_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "myv_wyvern_scale_material": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_native_blood_marker",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_blood_name",
+      "description": "mm_wyvern_material_blood_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "myv_wyvern_blood_material": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "legacy_unknown_kind",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "personal_unknown_material_name",
+      "description": "personal_unknown_material_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:eye"
+      },
+      "modifiers": ["custom_personal_modifier"],
+      "shouldUpgrade": false
+    },
+    {
+      "id": "legacy_pre_affix_display_trophy",
+      "playerOwned": true,
+      "slot": "pedestal",
+      "rarity": "famed",
+      "name": "mm_wyvern_trophy_fang_name",
+      "description": "mm_wyvern_trophy_fang_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:fang"
+      },
+      "modifiers": ["artifact_placeholder_modifier"],
+      "shouldUpgrade": true
+    },
+    {
+      "id": "source_only_custom_miscellaneous",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "personal_relic_name",
+      "description": "personal_relic_desc",
+      "variables": {"mm_wyvern_trophy_source": "dragon_ashwing"},
+      "modifiers": ["custom_personal_modifier"],
+      "shouldUpgrade": false
+    },
+    {
+      "id": "source_only_custom_pedestal",
+      "playerOwned": true,
+      "slot": "pedestal",
+      "rarity": "common",
+      "name": "personal_pedestal_name",
+      "description": "personal_pedestal_desc",
+      "variables": {"mm_wyvern_trophy_source": "dragon_ashwing"},
+      "modifiers": ["custom_personal_modifier"],
+      "shouldUpgrade": false
+    },
+    {
+      "id": "unmarked_native_scale",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "user_relic_name",
+      "description": "user_relic_desc",
+      "variables": {"myv_wyvern_scale_material": "1"},
+      "modifiers": ["custom_personal_modifier"],
+      "shouldUpgrade": false
+    },
+    {
+      "id": "already_upgraded_material",
+      "playerOwned": true,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_blood_name",
+      "description": "mm_wyvern_material_blood_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:blood",
+        "myv_wyvern_blood_material": "1",
+        "mm_wyvern_trophy_affixes_generated": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier", "artifact_prowess_5_modifier", "artifact_health_gain_4_modifier"],
+      "shouldUpgrade": false
+    },
+    {
+      "id": "other_owner_material",
+      "playerOwned": false,
+      "slot": "miscellaneous",
+      "rarity": "illustrious",
+      "name": "mm_wyvern_material_scale_name",
+      "description": "mm_wyvern_material_scale_desc",
+      "variables": {
+        "mm_wyvern_trophy_source": "dragon_ashwing",
+        "mm_wyvern_material_kind": "flag:scale",
+        "myv_wyvern_scale_material": "1"
+      },
+      "modifiers": ["artifact_monthly_minor_prestige_5_modifier"],
+      "shouldUpgrade": false
+    }
+  ]
+}

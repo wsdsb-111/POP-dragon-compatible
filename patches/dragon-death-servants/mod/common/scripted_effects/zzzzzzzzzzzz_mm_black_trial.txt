@@ -1,0 +1,6 @@
+mm_asc_black_trial_failure_hook_effect = {
+    if = {
+        limit = { var:mm_asc_black_trial_outcome = flag:failed has_trait = mm_dragon_black_blood }
+        mm_ds_commit_transformation_effect = yes
+    }
+}

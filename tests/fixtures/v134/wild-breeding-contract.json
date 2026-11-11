@@ -1,0 +1,143 @@
+{
+  "eligibility": [
+    {
+      "case": "same_county",
+      "relation": "same",
+      "expected": true
+    },
+    {
+      "case": "adjacent_county_before_move",
+      "relation": "adjacent",
+      "expected": false
+    },
+    {
+      "case": "distant_county",
+      "relation": "distant",
+      "expected": false
+    },
+    {
+      "case": "close_family",
+      "relation": "same",
+      "closeFamily": true,
+      "expected": false
+    },
+    {
+      "case": "twin",
+      "relation": "same",
+      "twin": true,
+      "expected": false
+    },
+    {
+      "case": "cooldown",
+      "relation": "same",
+      "cooldown": true,
+      "expected": false
+    },
+    {
+      "case": "mother_torpor",
+      "relation": "same",
+      "motherTorpor": true,
+      "expected": false
+    },
+    {
+      "case": "father_torpor",
+      "relation": "same",
+      "fatherTorpor": true,
+      "expected": false
+    },
+    {
+      "case": "tamed_father",
+      "relation": "same",
+      "fatherTamed": true,
+      "expected": false
+    },
+    {
+      "case": "mother_underage",
+      "relation": "same",
+      "motherAge": 11,
+      "expected": false
+    },
+    {
+      "case": "mother_hunger_59",
+      "relation": "same",
+      "motherHunger": 59,
+      "expected": false
+    },
+    {
+      "case": "father_hunger_59",
+      "relation": "same",
+      "fatherHunger": 59,
+      "expected": false
+    },
+    {
+      "case": "both_hunger_60",
+      "relation": "same",
+      "motherHunger": 60,
+      "fatherHunger": 60,
+      "expected": true
+    },
+    {
+      "case": "royal_mother",
+      "relation": "same",
+      "motherRoyal": true,
+      "expected": false
+    },
+    {
+      "case": "royal_father",
+      "relation": "same",
+      "fatherRoyal": true,
+      "expected": false
+    },
+    {
+      "case": "tamed_mother",
+      "relation": "same",
+      "motherTamed": true,
+      "expected": false
+    },
+    {
+      "case": "captured_mother",
+      "relation": "same",
+      "motherCaptured": true,
+      "expected": false
+    },
+    {
+      "case": "captured_father",
+      "relation": "same",
+      "fatherCaptured": true,
+      "expected": false
+    },
+    {
+      "case": "asc_mother",
+      "relation": "same",
+      "motherAsc": true,
+      "expected": false
+    },
+    {
+      "case": "legendary_father",
+      "relation": "same",
+      "fatherLegendary": true,
+      "expected": false
+    }
+  ],
+  "movementMonths": [
+    [
+      2,
+      false
+    ],
+    [
+      3,
+      true
+    ],
+    [
+      5,
+      true
+    ],
+    [
+      6,
+      false
+    ]
+  ],
+  "chance": 10,
+  "cooldownYears": 5,
+  "eggsPerSuccess": 1
+}

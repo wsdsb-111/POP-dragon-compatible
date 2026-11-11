@@ -1,0 +1,1 @@
+mm_wyvern_mass_kilograms = { value = mm_wyvern_mass_tonnes multiply = 1000 }

@@ -1,0 +1,132 @@
+{
+  "archiveSHA": "053ab5334f7f41334252b854ea4707de8f27f9fd2f87269bce2133c820d33205",
+  "documentSha256": "bd21dd1b64e9ae5f8926d931b16e9a027fad30ac53e2d9e54efe4eff061c0728",
+  "sourceImages": [
+    {
+      "name": "僭越审判",
+      "sha256": "06156b0d8fa19fc5910cbd872901ba7862dcc95f43f149c3ea0e269afd0e7635",
+      "hasAlpha": true
+    },
+    {
+      "name": "冥府守序",
+      "sha256": "9037f2196de3edd4df6ed2164660e655ae19bb120513bfabaf2d43c4906419ec",
+      "hasAlpha": false
+    },
+    {
+      "name": "地之封闭",
+      "sha256": "81de79ca266752d80ad47843e4b40a090049b1c977a47edda8ac6208e9f48fed",
+      "hasAlpha": true
+    },
+    {
+      "name": "地脉安魂",
+      "sha256": "0a9a21b01513a8bf2f575ff79d72bc5e2e0af564e33643e54b7e19765fafe885",
+      "hasAlpha": false
+    },
+    {
+      "name": "地脉承嗣",
+      "sha256": "780c4ee6dac0e4b58162dc9c674505fe9f650fbf19a70ea94af267415435afe3",
+      "hasAlpha": false
+    },
+    {
+      "name": "始祖再临",
+      "sha256": "d0e4cc0d3c537f8e3beb06dc5a337540042bdfb8395500f8ea5a3a523c5f64b1",
+      "hasAlpha": false
+    },
+    {
+      "name": "宗庙血嗣",
+      "sha256": "f6bc6065bb65bd7361ef0e633076a837878d2974e2c406cec5dc78b426178557",
+      "hasAlpha": true
+    },
+    {
+      "name": "怒潮之誓",
+      "sha256": "c1d1177776cb82ca377c2303c48a8db2584fd1693010bcd4b410f83680303b05",
+      "hasAlpha": false
+    },
+    {
+      "name": "意识涤罪",
+      "sha256": "e9340f62e0b8c69d1fb443d1c4b1f186b3e888fdb822959ce074e7e9571c0e61",
+      "hasAlpha": false
+    },
+    {
+      "name": "战血淬炼",
+      "sha256": "4d6c7b25a20b83229463083767b60235d201711d88f04d2d8cf99f7e22e806ae",
+      "hasAlpha": true
+    },
+    {
+      "name": "海之风韵",
+      "sha256": "b307bf68a53722d9f2ed279b0e4b11421e7d4a8941bbb459e7713f445388baae",
+      "hasAlpha": true
+    },
+    {
+      "name": "海脉联姻",
+      "sha256": "d71a2f977cc334880fb23ed57ae9598e083e9f988689de705f0502dd1f9aef83",
+      "hasAlpha": true
+    },
+    {
+      "name": "潮汐霸权",
+      "sha256": "dd664428236bf440c30f3394c48469928670e3c7765b33e8e9296b6b76fcaccc",
+      "hasAlpha": true
+    },
+    {
+      "name": "灵血觉醒",
+      "sha256": "a16aa281434abc20c2d70f8ac8bb08bb007f9d954ce50fb7227078aaab9e547e",
+      "hasAlpha": true
+    },
+    {
+      "name": "焰刑正俗",
+      "sha256": "d3cef71fd7fd7c9efd2f22402e75b5a60074c945bdd8cec21638200b32ed08df",
+      "hasAlpha": true
+    },
+    {
+      "name": "百炼龙火",
+      "sha256": "8071e8fac148d7c83a5e5c70758bf40df8de96436248f37bc8cb415052d02e86",
+      "hasAlpha": true
+    },
+    {
+      "name": "精神共鸣",
+      "sha256": "970c34eef20848e50a288dc6699d9cd765a57f0e321ee02aa3c59facffffd0c2",
+      "hasAlpha": true
+    },
+    {
+      "name": "纯血圣约",
+      "sha256": "a95ccc8e6463d5d90c393b23cfa8f52092dfd0ef82a90caa6076a8dc57139087",
+      "hasAlpha": true
+    },
+    {
+      "name": "血脉压制",
+      "sha256": "53c9306b490ddc563839bd07438e2505d6510d01ffe9bea6e9fc7be2fea09276",
+      "hasAlpha": true
+    },
+    {
+      "name": "血鹰裁决",
+      "sha256": "8b882704769f290f363c850be1553231688bdf0da8be4872daa90154c56b6eb2",
+      "hasAlpha": true
+    },
+    {
+      "name": "逆命神谕",
+      "sha256": "f2d5f444cebfce263466ab4b6230ca2da4e237058352b5f43fa217ae70859784",
+      "hasAlpha": false
+    },
+    {
+      "name": "铸火匠心",
+      "sha256": "3fc7de8bdb4a57c44e25455bb7df5764f7265210b32b66d98fca718d184a1ee3",
+      "hasAlpha": false
+    },
+    {
+      "name": "风之轻盈",
+      "sha256": "0fa88568e975b120f59b94a995dff73755124994776dcc429d90f069cf4296f6",
+      "hasAlpha": true
+    },
+    {
+      "name": "风暴之翼",
+      "sha256": "5cec284aaa5c6bf2988d771265ba3d0a6d7e9031adacf92e212777bbdfa15f81",
+      "hasAlpha": false
+    }
+  ],
+  "baseline": {
+    "tenetTypesSha256": "7bcfe44e722a237c2759a077111a0d39b792e7efb45e1f2485028efda03925fd",
+    "tenetTypesText": "mm_tenet_black = {\n\ticon = tenet_communal_identity\n\ttraits = {\n\t\tvirtues = { brave = { weight = 20 scale = 1 } mm_royal_black_emperor = { weight = 20 scale = 1 } }\n\t\tsins = { craven = { weight = 20 scale = 1 } shy = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_black_second = {\n\ticon = tenet_communal_identity\n\ttraits = {\n\t\tvirtues = { loyal = { weight = 20 scale = 1 } mm_dragon_branch_black = { weight = 20 scale = 1 } }\n\t\tsins = { greedy = { weight = 20 scale = 1 } mm_dragon_black_blood = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_black_third = {\n\ticon = tenet_communal_identity\n\ttraits = {\n\t\tvirtues = { zealous = { weight = 20 scale = 1 } just = { weight = 20 scale = 1 } }\n\t\tsins = { lazy = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_white = {\n\ticon = tenet_scholasticism\n\tcharacter_modifier = { stress_loss_mult = 0.5 stress_gain_mult = -0.5 general_opinion = 10 }\n\ttraits = {\n\t\tvirtues = { calm = { weight = 20 scale = 1 } patient = { weight = 20 scale = 1 } }\n\t\tsins = { wrathful = { weight = 20 scale = 1 } craven = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_white_second = {\n\ticon = tenet_scholasticism\n\tcharacter_modifier = { learning = 5 }\n\ttraits = {\n\t\tvirtues = { mm_dragon_branch_white = { weight = 20 scale = 1 } mm_dragon_black_blood = { weight = 20 scale = 1 } }\n\t\tsins = { lazy = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_white_third = {\n\ticon = tenet_scholasticism\n\ttraits = {\n\t\tvirtues = { cynical = { weight = 20 scale = 1 } mm_royal_white_empress = { weight = 20 scale = 1 } }\n\t\tsins = { trusting = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_fire = {\n\ticon = tenet_warmonger\n\tcharacter_modifier = { build_speed = -0.15 build_gold_cost = -0.1 artifact_decay_reduction_mult = -0.5 }\n\ttraits = {\n\t\tvirtues = { diligent = { weight = 20 scale = 1 } mm_royal_fire_king = { weight = 20 scale = 1 } }\n\t\tsins = { lazy = { weight = 20 scale = 1 } gluttonous = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_fire_second = {\n\ticon = tenet_warmonger\n\ttraits = {\n\t\tvirtues = { chaste = { weight = 20 scale = 1 } mm_dragon_branch_fire = { weight = 20 scale = 1 } }\n\t\tsins = { greedy = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_fire_third = {\n\ticon = tenet_warmonger\n\ttraits = {\n\t\tvirtues = { just = { weight = 20 scale = 1 } }\n\t\tsins = { deceitful = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_earth = {\n\ticon = tenet_ancestor_worship\n\tcharacter_modifier = { monthly_piety_gain_mult = 0.1 army_toughness_mult = 0.1 }\n\ttraits = {\n\t\tvirtues = { patient = { weight = 20 scale = 1 } zealous = { weight = 20 scale = 1 } }\n\t\tsins = { impatient = { weight = 20 scale = 1 } arrogant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_earth_second = {\n\ticon = tenet_ancestor_worship\n\ttraits = {\n\t\tvirtues = { temperate = { weight = 20 scale = 1 } mm_dragon_branch_earth = { weight = 20 scale = 1 } }\n\t\tsins = { deceitful = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_earth_third = {\n\ticon = tenet_ancestor_worship\n\ttraits = {\n\t\tvirtues = { mm_royal_earth_king = { weight = 20 scale = 1 } }\n\t\tsins = { craven = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sea = {\n\ticon = tenet_ritual_celebrations\n\tcharacter_modifier = { character_travel_safety = 30 stewardship = 5 }\n\ttraits = {\n\t\tvirtues = { just = { weight = 20 scale = 1 } mm_royal_sea_king = { weight = 20 scale = 1 } }\n\t\tsins = { craven = { weight = 20 scale = 1 } arrogant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sea_second = {\n\ticon = tenet_ritual_celebrations\n\tcharacter_modifier = { general_opinion = 20 }\n\ttraits = {\n\t\tvirtues = { gregarious = { weight = 20 scale = 1 } mm_dragon_branch_sea = { weight = 20 scale = 1 } }\n\t\tsins = { mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sea_third = {\n\ticon = tenet_ritual_celebrations\n\tcharacter_modifier = { attraction_opinion = 10 fertility = 0.2 }\n\ttraits = {\n\t\tvirtues = { generous = { weight = 20 scale = 1 } }\n\t\tsins = { reckless = { weight = 20 scale = 1 } zealous = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sky = {\n\ticon = tenet_sanctity_of_nature\n\tcharacter_modifier = { character_travel_speed_mult = 0.2 movement_speed = 0.1 }\n\ttraits = {\n\t\tvirtues = { stubborn = { weight = 20 scale = 1 } mm_dragon_branch_sky = { weight = 20 scale = 1 } }\n\t\tsins = { lazy = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sky_second = {\n\ticon = tenet_sanctity_of_nature\n\tcharacter_modifier = { intimidated_vassal_tax_contribution_mult = 0.1 cowed_vassal_tax_contribution_mult = 0.1 }\n\ttraits = {\n\t\tvirtues = { zealous = { weight = 20 scale = 1 } ambitious = { weight = 20 scale = 1 } }\n\t\tsins = { craven = { weight = 20 scale = 1 } shy = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_sky_third = {\n\ticon = tenet_sanctity_of_nature\n\ttraits = {\n\t\tvirtues = { mm_royal_sky_king = { weight = 20 scale = 1 } }\n\t\tsins = { deceitful = { weight = 20 scale = 1 } mm_dragon_death_servant = { weight = 20 scale = 1 } }\n\t}\n\tis_shown = { always = no }\n}\n\nmm_tenet_blood_purification = {\n\ticon = tenet_sacred_childbirth\n\tcharacter_modifier = { fertility = 0.05 }\n\tis_shown = { always = no }\n}\n\nmm_tenet_death_servant_punishment = {\n\ticon = tenet_gruesome_festivals\n\tcharacter_modifier = { dread_gain_mult = 0.05 }\n\tis_shown = { always = no }\n}\n\n",
+    "doctrineTypesSha256": "04daa438552d0e0faa6b990eb22208ffc8c376256a26032424c256f05ac04fb3",
+    "doctrineTypesText": "mm_doctrine_black = {\n    divergence = 0\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_black\"\n\tcharacter_modifier = { monthly_piety_gain_mult = 0.25 }\n}\n\nmm_doctrine_white = {\n    divergence = -1000\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_white\"\n}\n\nmm_doctrine_fire = {\n    divergence = -1000\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_fire\"\n}\n\nmm_doctrine_earth = {\n    divergence = -1000\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_earth\"\n\tcharacter_modifier = { monthly_county_control_growth_factor = 0.3 }\n}\n\nmm_doctrine_sea = {\n    divergence = -1000\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_sea\"\n\tcharacter_modifier = { character_travel_speed_mult = 0.2 }\n}\n\nmm_doctrine_sky = {\n    divergence = -1000\n    is_shown = { religion = religion:mm_dragon_creed_religion }\n    can_pick = { religion = religion:mm_dragon_creed_religion }\n\tdoctrine_group_type = mm_dragon_rite_doctrine\n\ticon = \"mm_dragon_sky\"\n\tcharacter_modifier = { prowess = 5 army_damage_mult = 0.15 }\n}\n\nmm_doctrine_funeral_sea = {\n\tdoctrine_group_type = doctrine_funeral\n\tindex = 5\n\tdivergence = 1.5\n\tpiety_cost = { value = faith_doctrine_cost_mid }\n}\n"
+  }
+}

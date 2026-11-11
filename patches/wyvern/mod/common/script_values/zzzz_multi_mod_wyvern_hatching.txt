@@ -1,0 +1,5 @@
+# Override only the annual equipped-egg chance, for players and AI alike.
+# Inventory chances and the upstream yearly scheduling remain unchanged.
+myv_wyvern_equipped_egg_hatch_chance = {
+	value = 50
+}

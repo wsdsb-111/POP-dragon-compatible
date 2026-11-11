@@ -1,0 +1,19 @@
+{
+  "name": "ck3-pod-wyvern-compatibility",
+  "version": "1.3.22",
+  "private": true,
+  "description": "黑暗亲王与飞龙兼容",
+  "config": {
+    "compatibilityProfile": "wyvern-pod"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node --max-old-space-size=384 scripts/build-package.js",
+    "plan": "node --max-old-space-size=384 scripts/build-package.js --dry-run",
+    "test": "node --max-old-space-size=384 tests/run-tests.js",
+    "install-mod": "node --max-old-space-size=384 scripts/install-package.js",
+    "release": "python scripts/release-package.py"
+  }
+}

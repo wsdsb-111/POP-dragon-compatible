@@ -1,0 +1,43 @@
+# Append to the native monthly loop; the native effect remains responsible for decay.
+myv_wyvern_monthly_pulse = {
+    on_actions = { mm_dragon_bond_monthly_pulse }
+}
+mm_dragon_bond_monthly_pulse = {
+    effect = {
+        if = {
+            limit = { has_global_variable_list = myv_living_wyverns }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = {
+                    myv_is_living_wyvern = yes
+                    exists = var:myv_wyvern_bonded_character
+                    var:myv_wyvern_bonded_character = { is_alive = yes }
+                    has_relation_myv_wyvern_bonded_character = var:myv_wyvern_bonded_character
+                }
+                if = {
+                    limit = { NOT = { has_trait = myv_wyvern_harmony } }
+                    add_trait = myv_wyvern_harmony
+                    add_character_flag = mm_dragon_bond_unridden_harmony
+                }
+                save_scope_as = mm_dragon_bond_monthly_dragon
+                add_trait_xp = { trait = myv_wyvern_harmony value = 1 }
+                # Native decay is -1 unless this is the active war mount.
+                if = {
+                    limit = {
+                        NOT = {
+                            exists = var:myv_war_mount_rider
+                            var:myv_war_mount_rider = {
+                                is_alive = yes
+                                exists = var:myv_war_mount
+                                var:myv_war_mount = scope:mm_dragon_bond_monthly_dragon
+                            }
+                        }
+                    }
+                    add_trait_xp = { trait = myv_wyvern_harmony value = 1 }
+                }
+                myv_wyvern_harmony_integrity_effect = yes
+                myv_refresh_wyvern_prowess_effect = yes
+            }
+        }
+    }
+}

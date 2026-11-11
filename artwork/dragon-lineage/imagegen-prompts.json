@@ -1,0 +1,63 @@
+{
+  "tool": "built-in image_gen",
+  "icons": [
+    {
+      "output": "bathed_blood.png",
+      "prompt": "Single Crusader Kings III fantasy body-trait icon, square composition, one central emblem, finely painted medieval game UI artwork, beveled muted jade diamond backing and delicate antique gold rim, clear silhouette readable at 64 pixels, detailed but restrained, realistic materials, isolated on genuine transparent alpha outside the diamond. No letters, no words, no numbers, no watermark, no surrounding scene. A deep crimson drop of ancient dragon blood entwined with one small gold dragon, radiant amber core, powerful immortality emblem.",
+      "transparentBackground": true
+    },
+    {
+      "output": "half_dragon.png",
+      "prompt": "Single Crusader Kings III fantasy body-trait icon, square composition, one central emblem, finely painted medieval game UI artwork, beveled muted jade diamond backing and delicate antique gold rim, clear silhouette readable at 64 pixels, detailed but restrained, realistic materials, isolated on genuine transparent alpha outside the diamond. No letters, no words, no numbers, no watermark, no surrounding scene. An elegant human profile merging with a small dragon profile, warm amber and dark teal scales, half-human heritage emblem, dignified and beautiful.",
+      "transparentBackground": true
+    },
+    {
+      "output": "dragon_horns.png",
+      "prompt": "Single Crusader Kings III fantasy body-trait icon, square composition, one central emblem, finely painted medieval game UI artwork, beveled muted jade diamond backing and delicate antique gold rim, clear silhouette readable at 64 pixels, detailed but restrained, realistic materials, isolated on genuine transparent alpha outside the diamond. No letters, no words, no numbers, no watermark, no surrounding scene. A symmetric pair of small graceful swept-back dark bronze dragon horns, soft highlights, sophisticated silhouette.",
+      "transparentBackground": true
+    },
+    {
+      "output": "dragon_tail.png",
+      "prompt": "Single Crusader Kings III fantasy body-trait icon, square composition, one central emblem, finely painted medieval game UI artwork, beveled muted jade diamond backing and delicate antique gold rim, clear silhouette readable at 64 pixels, detailed but restrained, realistic materials, isolated on genuine transparent alpha outside the diamond. No letters, no words, no numbers, no watermark, no surrounding scene. One slender scaled dragon tail curved into a graceful S, muted teal-bronze scales and a small golden tip, no body.",
+      "transparentBackground": true
+    },
+    {
+      "output": "dragon_pupils.png",
+      "prompt": "Single Crusader Kings III fantasy body-trait icon, square composition, one central emblem, finely painted medieval game UI artwork, beveled muted jade diamond backing and delicate antique gold rim, clear silhouette readable at 64 pixels, detailed but restrained, realistic materials, isolated on genuine transparent alpha outside the diamond. No letters, no words, no numbers, no watermark, no surrounding scene. A single beautiful amber-gold dragon eye with a narrow vertical pupil and subtle dark emerald eyelid scales, no gore.",
+      "transparentBackground": true
+    },
+    {
+      "output": "dragon_scales.png",
+      "prompt": "One square Crusader Kings III fantasy body-trait game icon. A central emblem on muted jade diamond backing, fine antique gold beveled rim, painted medieval UI style matching premium CK3 traits, readable at 64 pixels, isolated with genuine transparent alpha outside diamond. No letters, numbers, words, scene or watermark. A small graceful patch of fine olive-teal dragon scales on warm human skin, restrained natural organic texture, an elegant subtle heritage mark, no wounds.",
+      "transparentBackground": true
+    },
+    {
+      "output": "lineage_1.png",
+      "prompt": "One square Crusader Kings III fantasy body-trait game icon. A central emblem on muted jade diamond backing, fine antique gold beveled rim, painted medieval UI style matching premium CK3 traits, readable at 64 pixels, isolated with genuine transparent alpha outside diamond. No letters, numbers, words, scene or watermark. An intense ruby-red blood drop containing a clearly defined curled golden dragon, bright antique gold aura, strongest first generation dragon bloodline.",
+      "transparentBackground": true
+    },
+    {
+      "output": "lineage_2.png",
+      "prompt": "One square Crusader Kings III fantasy body-trait game icon. A central emblem on muted jade diamond backing, fine antique gold beveled rim, painted medieval UI style matching premium CK3 traits, readable at 64 pixels, isolated with genuine transparent alpha outside diamond. No letters, numbers, words, scene or watermark. A warm amber blood drop with a distinct small bronze dragon within it, moderately bright gold aura, second generation dragon bloodline.",
+      "transparentBackground": true
+    },
+    {
+      "output": "lineage_3.png",
+      "prompt": "One square Crusader Kings III fantasy body-trait game icon. A central emblem on muted jade diamond backing, fine antique gold beveled rim, painted medieval UI style matching premium CK3 traits, readable at 64 pixels, isolated with genuine transparent alpha outside diamond. No letters, numbers, words, scene or watermark. A muted copper blood drop with a faint fine dragon silhouette, restrained amber highlights, third generation diluted dragon bloodline.",
+      "transparentBackground": true
+    },
+    {
+      "output": "lineage_4.png",
+      "prompt": "One square Crusader Kings III fantasy body-trait game icon. A central emblem on muted jade diamond backing, fine antique gold beveled rim, painted medieval UI style matching premium CK3 traits, readable at 64 pixels, isolated with genuine transparent alpha outside diamond. No letters, numbers, words, scene or watermark. A smoky pale bronze blood drop with one tiny ember and a very faint dragon tracing, subdued silver-bronze rim accents, last fourth generation remnant dragon bloodline.",
+      "transparentBackground": true
+    }
+  ],
+  "eye": {
+    "output": "dragon-eye-atlas-source.png",
+    "intent": "UV-aligned central iris edit",
+    "reference": "CK3 male_head/male_eyes_diffuse.dds converted to PNG for tool input",
+    "implementation": "Generated RGB is used only inside the iris; native BC3 alpha blocks remain byte-identical.",
+    "prompt": "Use case: precise-object-edit. This input is a CK3 eye diffuse UV texture atlas, NOT an illustration or icon. Preserve the exact centered iris placement, dimensions, sclera/veins surrounding it, seamless UV mapping and all existing details. Change ONLY the central gray iris and round pupil: make the iris a restrained amber-gold reptilian iris and the pupil a very narrow black vertical slit. Keep the iris circular at exactly the same radius and center as in the source. No glow, no eyelids, no added scales, no frame, no text, no 3D eyeball, no perspective. Preserve the flat square UV texture layout and opaque background. This texture must replace the original at the identical UV coordinates.",
+    "transparentBackground": false
+  }
+}

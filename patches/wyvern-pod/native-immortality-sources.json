@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-03",
+  "scope": "PoD-only legendary royal species: native immortality instead of a finite lifespan bonus",
+  "sourceFiles": [
+    {
+      "root": "repo",
+      "path": "patches/dragon-bond/mod/common/traits/zzzzzz_mm_dragon_bond_species.txt",
+      "sha256": "60eebaf8a657d0b7eb3d16734f27ea041581582fdb03fe837c011afae15ad305"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "common/traits/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz_mm_pod_native_immortality.txt",
+      "sha256": "f1b2e76f922d86cb5894abd4c708ba78bfb5513662b399d4f0b85cf7be6d1121"
+    }
+  ],
+  "behavior": "Only life_expectancy = 666 is removed. Native immortal = yes and all other species effects remain unchanged.",
+  "CK3Runtime": "NOT_RUN"
+}

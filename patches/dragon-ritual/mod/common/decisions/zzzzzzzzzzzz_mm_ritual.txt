@@ -1,0 +1,360 @@
+mm_royal_wake_constantine_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_constantine_desc
+    selection_tooltip = mm_ritual_wake_constantine_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001001 global_var:mm_asc_seat_99001001 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001001 global_var:mm_asc_seat_99001001 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_jingzhao_tt mm_creed_controls_jingzhao_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_1_tt mm_ritual_selected_valid = { THRONE = 1 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001001
+        global_var:mm_asc_seat_99001001 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_jingzhao_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 1 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001001 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_norton_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_norton_desc
+    selection_tooltip = mm_ritual_wake_norton_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001305 global_var:mm_asc_seat_99001305 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001305 global_var:mm_asc_seat_99001305 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_chengdu_tt mm_creed_controls_chengdu_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_1_tt mm_ritual_selected_valid = { THRONE = 1 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001305
+        global_var:mm_asc_seat_99001305 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_chengdu_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 1 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001305 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_fenrir_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_fenrir_desc
+    selection_tooltip = mm_ritual_wake_fenrir_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001002 global_var:mm_asc_seat_99001002 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001002 global_var:mm_asc_seat_99001002 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_qus_tt mm_creed_controls_qus_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_2_tt mm_ritual_selected_valid = { THRONE = 2 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001002
+        global_var:mm_asc_seat_99001002 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_qus_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 2 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001002 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_jormungandr_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_jormungandr_desc
+    selection_tooltip = mm_ritual_wake_jormungandr_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001306 global_var:mm_asc_seat_99001306 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001306 global_var:mm_asc_seat_99001306 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_tbilisi_tt mm_creed_controls_tbilisi_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_2_tt mm_ritual_selected_valid = { THRONE = 2 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001306
+        global_var:mm_asc_seat_99001306 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_tbilisi_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 2 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001306 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_behemoth_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_behemoth_desc
+    selection_tooltip = mm_ritual_wake_behemoth_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001003 global_var:mm_asc_seat_99001003 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001003 global_var:mm_asc_seat_99001003 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_malta_tt mm_creed_controls_malta_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_3_tt mm_ritual_selected_valid = { THRONE = 3 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001003
+        global_var:mm_asc_seat_99001003 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_malta_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 3 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001003 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_leviathan_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_leviathan_desc
+    selection_tooltip = mm_ritual_wake_leviathan_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001307 global_var:mm_asc_seat_99001307 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001307 global_var:mm_asc_seat_99001307 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_chandax_tt mm_creed_controls_chandax_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_3_tt mm_ritual_selected_valid = { THRONE = 3 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001307
+        global_var:mm_asc_seat_99001307 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_chandax_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 3 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001307 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_hrist_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_hrist_desc
+    selection_tooltip = mm_ritual_wake_hrist_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001304 global_var:mm_asc_seat_99001304 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001304 global_var:mm_asc_seat_99001304 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_faereyar_tt mm_creed_controls_faereyar_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_4_tt mm_ritual_selected_valid = { THRONE = 4 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001304
+        global_var:mm_asc_seat_99001304 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_faereyar_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 4 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001304 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_vidar_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_vidar_desc
+    selection_tooltip = mm_ritual_wake_vidar_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001308 global_var:mm_asc_seat_99001308 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001308 global_var:mm_asc_seat_99001308 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_sogn_tt mm_creed_controls_sogn_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_selected_4_tt mm_ritual_selected_valid = { THRONE = 4 } }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001308
+        global_var:mm_asc_seat_99001308 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_sogn_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_selected_valid = { THRONE = 4 }
+        gold >= 1500
+        prestige >= 1000
+        piety >= 500
+            }
+            add_gold = -1500
+            add_prestige = -1000
+            add_piety = -500
+            mm_ritual_consume_selected_effect = yes
+            global_var:mm_asc_seat_99001308 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_white_empress_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_white_empress_desc
+    selection_tooltip = mm_ritual_wake_white_empress_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001310 global_var:mm_asc_seat_99001310 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001310 global_var:mm_asc_seat_99001310 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_sagami_tt mm_creed_controls_sagami_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_all_twins_ready_tt mm_ritual_all_twins_ready = yes }
+        gold >= 5000
+        prestige >= 5000
+        piety >= 2000
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001310
+        global_var:mm_asc_seat_99001310 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_sagami_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_all_twins_ready = yes
+        gold >= 5000
+        prestige >= 5000
+        piety >= 2000
+            }
+            add_gold = -5000
+            add_prestige = -5000
+            add_piety = -2000
+            global_var:mm_asc_seat_99001310 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+
+mm_royal_wake_black_emperor_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_ritual_wake_black_emperor_desc
+    selection_tooltip = mm_ritual_wake_black_emperor_tooltip
+    is_shown = { is_ai = no has_global_variable = mm_royal_catalog_initialized has_global_variable = mm_asc_seat_99001309 global_var:mm_asc_seat_99001309 = { is_alive = yes has_trait = mm_royal_torpor } }
+    is_valid = {
+        custom_tooltip = { text = mm_royal_wake_target_torpor_tt has_global_variable = mm_asc_seat_99001309 global_var:mm_asc_seat_99001309 = { is_alive = yes has_trait = mm_royal_torpor } }
+        custom_tooltip = { text = mm_creed_control_baghdad_tt mm_creed_controls_baghdad_holy_site_trigger = yes }
+        custom_tooltip = { text = mm_royal_wake_eligible_asc_tt mm_royal_player_available = yes }
+        custom_tooltip = { text = mm_ritual_all_twins_ready_tt mm_ritual_all_twins_ready = yes }
+        custom_tooltip = { text = mm_royal_wake_white_awake_tt global_var:mm_asc_seat_99001310 = { is_alive = yes NOT = { has_trait = mm_royal_torpor } } }
+        gold >= 10000
+        prestige >= 10000
+        piety >= 5000
+    }
+    effect = {
+        if = {
+            limit = {
+        has_global_variable = mm_asc_seat_99001309
+        global_var:mm_asc_seat_99001309 = { is_alive = yes has_trait = mm_royal_torpor }
+        mm_creed_controls_baghdad_holy_site_trigger = yes
+        mm_royal_player_available = yes
+        mm_ritual_all_twins_ready = yes
+        global_var:mm_asc_seat_99001310 = { is_alive = yes NOT = { has_trait = mm_royal_torpor } }
+        gold >= 10000
+        prestige >= 10000
+        piety >= 5000
+            }
+            add_gold = -10000
+            add_prestige = -10000
+            add_piety = -5000
+            global_var:mm_asc_seat_99001309 = { mm_royal_awaken_effect = yes }
+        }
+    }
+    ai_check_interval = 0
+}
+

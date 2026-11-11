@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-11",
+  "source": "current installed compatibility mod",
+  "note": "Copied byte-for-byte; gameplay fixes belong to the user, not newly implemented by migration",
+  "files": [
+    {
+      "path": "common/decisions/mm_pod_kinfolk_first_change_decisions.txt",
+      "sha256": "4e52697ec31bbf7ec7b483f6c6febe576993d4e190e8df8ebb8ec595df151fcd",
+      "bytes": 829
+    },
+    {
+      "path": "common/scripted_triggers/mm_pod_kinfolk_first_change.txt",
+      "sha256": "149a1beb45807ab49d9c8c7f574845528da95afd69f80de373079f15b91018f4",
+      "bytes": 910
+    },
+    {
+      "path": "localization/english/mm_pod_kinfolk_first_change_l_english.yml",
+      "sha256": "d25d44a000b40fe5728cb167660a8adb885038c0bf77922ea46bd3b1dab2e6a1",
+      "bytes": 921
+    },
+    {
+      "path": "localization/simp_chinese/mm_pod_kinfolk_first_change_l_simp_chinese.yml",
+      "sha256": "2ed7eb8d51ff2ad1af31980faffb1254ca6dcefd6a2e3fe6cb1caf751a8dbcf9",
+      "bytes": 798
+    },
+    {
+      "path": "common/on_action/zzzz_mm_pod_kinfolk_first_change_birthday.txt",
+      "sha256": "d3976cef05af259542d27c34c8d4cad075968a83fe190d8be45389f762a51e4c",
+      "bytes": 328
+    },
+    {
+      "path": "common/scripted_effects/mm_pod_kinfolk_first_change_effects.txt",
+      "sha256": "d6153a6caac217b09470cb50d55d08180c458a0192b6623bce2d0db32c2b6974",
+      "bytes": 1140
+    },
+    {
+      "path": "events/mm_pod_kinfolk_first_change_events.txt",
+      "sha256": "30c53e6da7a21ae0f7b95bcb53dbe15b8ec0e45ba43e518d23b0f19c85c8c7fa",
+      "bytes": 672
+    }
+  ]
+}

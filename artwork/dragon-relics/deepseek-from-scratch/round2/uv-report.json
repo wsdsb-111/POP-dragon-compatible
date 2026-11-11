@@ -1,0 +1,30 @@
+{
+ "black_crown": {
+  "meshes": 205,
+  "unwrapped": 205
+ },
+ "black_regalia": {
+  "meshes": 205,
+  "unwrapped": 205
+ },
+ "white_book": {
+  "meshes": 97,
+  "unwrapped": 97
+ },
+ "fire_ring": {
+  "meshes": 108,
+  "unwrapped": 108
+ },
+ "earth_sarcophagus": {
+  "meshes": 485,
+  "unwrapped": 485
+ },
+ "sea_armor": {
+  "meshes": 95,
+  "unwrapped": 95
+ },
+ "sky_spear": {
+  "meshes": 68,
+  "unwrapped": 68
+ }
+}

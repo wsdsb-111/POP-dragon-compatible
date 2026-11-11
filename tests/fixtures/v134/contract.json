@@ -1,0 +1,5 @@
+{
+  "species": ["myv_wyvern", "myv_wyvern_tamed", "myv_wyvern_legendary"],
+  "bloodTraits": ["mm_dragon_half", "mm_dragon_lineage_1", "mm_dragon_lineage_2", "mm_dragon_lineage_3", "mm_dragon_lineage_4", "mm_dragon_black_blood"],
+  "thrones": [[1, "99001305"], [2, "99001306"], [3, "99001003"], [4, "99001308"]]
+}

@@ -1,0 +1,139 @@
+﻿l_simp_chinese:
+ mm_dragon_blood_generic_desc:0 "龙王与人类直系后代固定为初代种，普通真龙与人类直系后代固定为S级。混血与普通人的后代降一级；双混血按较强亲本降一级，C级降为普通人。双黑血亲本的子女必为黑血；仅一方黑血时，基础等级按另一方降一级，另一方为普通人则为C级。单黑血与其他混血配对均有10%黑血突变率；始祖派亲本使其升至20%。始祖派亲本的非黑血后代另有25%几率比更强亲本高一级，最高S级；黑血亲本的该项加成仍以S级为上限。始祖派龙血者与无龙血者的子代终身血脉稀薄。黑血不代表黑皇祖源。"
+ mm_dragon_request_half_dragon_interaction:0 "协商龙血繁育"
+ mm_dragon_request_half_dragon_interaction_desc:0 "向这位龙族化身征求同意，与其孕育真实亲缘的龙血后裔。任意成年异性人类均可参与，无需沐血；双方须有羁绊且非近亲。雌龙与男性、雄龙与女性均按真实母父记录，龙亲本五年冷却。 人类或真正龙族均可主动提出；蛋由提出者保管，亲缘与文化仍按真实亲本。 自主接位的真正龙王还可凭配偶、情人或灵魂伴侣关系建立羁绊；其他龙族仍须原有驯养羁绊。"
+ mm_dragon_select_stable_mother_interaction:0 "指定繁育母龙"
+ mm_dragon_select_stable_mother_interaction_desc:0 "将这条成年母龙选为繁育对象。随后对同一兽栏中的成年雄龙选择“强制繁殖”。"
+ mm_dragon_force_stable_breeding_interaction:0 "强制繁殖"
+ mm_dragon_force_stable_breeding_interaction_desc:0 "让这条雄龙与已指定的母龙[Actor.MakeScope.Var('mm_dragon_selected_mother').Char.GetName]立即繁育一颗龙蛋。母龙一年冷却；传说亲本的蛋有50%概率继承传说血脉。"
+ mm_dragon_half_egg_name:0 "半龙之蛋"
+ mm_dragon_half_egg_desc:0 "人类与龙族的血脉在蛋中交融。孵化后将诞生长寿的人形龙血后裔。"
+ mm_dragon_birth.0001.t:0 "破壳而生的龙血后裔"
+ mm_dragon_birth.0001.desc:0 "龙蛋裂开，诞生了[mm_dragon_new_child.GetName]。其母亲是[mm_dragon_half_mother.GetName]，生物父亲是[mm_dragon_half_father.GetName]；龙族印记来自[mm_dragon_half_dragon_parent.GetName]。"
+ mm_dragon_birth.0001.a:0 "欢迎来到这个世界。"
+ trait_mm_dragon_half:0 "混血种·初代种"
+ trait_mm_dragon_lineage_1:0 "混血种·S级"
+ trait_mm_dragon_lineage_2:0 "混血种·A级"
+ trait_mm_dragon_lineage_3:0 "混血种·B级"
+ trait_mm_dragon_lineage_4:0 "混血种·C级"
+ mm_dragon_blood_sources_1:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_2:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_3:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_4:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_5:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_6:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_7:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_8:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_9:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_10:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_11:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_12:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_12').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_13:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_13').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_14:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_14').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_15:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_14').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_15').Char.GetName][ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+ mm_dragon_blood_sources_16:0 "$mm_dragon_blood_generic_desc$\n\n源龙：[ROOT.Char.MakeScope.Var('mm_dragon_origin_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_14').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_15').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_origin_16').Char.GetName]\n共有[ROOT.Char.MakeScope.Var('mm_dragon_origin_count').GetValue|0]位确切源龙；此处最多显示16位，完整记录保留。[ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+
+ trait_mm_dragon_black_blood:0 "混血种·黑血"
+
+ mm_dragon_blood_hunt_interaction:0 "猎杀并吸收高阶混血"
+
+ mm_dragon_blood_hunt_interaction_desc:0 "与更高阶的成年混血进行真实致死决斗。胜负依原生个人战斗结算；只有实际猎杀才吸收，失败可能死亡。C→B、B→A、A→S分别需12、30、60点，每次猎杀最多提升一级，不能升为初代。"
+
+ mm_dragon_absorption_notice:0 "血脉吸收"
+
+ mm_dragon_absorption_points_tt:0 "已确认实际猎杀并结算血脉吸收。当前等级的吸收余量与所获来源可在血脉说明查看。"
+
+ mm_dragon_absorbed_sources_none:0 ""
+
+ mm_dragon_acquired_sources_only_desc:0 "$mm_dragon_blood_generic_desc$\n\n生物祖源未记录。[ROOT.Char.Custom('mm_dragon_acquired_source_text')]"
+
+ mm_dragon_absorbed_sources_1:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_2:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_3:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_4:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_5:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_6:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_7:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_8:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_9:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_10:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_11:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_12:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_12').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_13:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_13').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_14:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_14').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_15:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_14').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_15').Char.GetName]\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ mm_dragon_absorbed_sources_16:0 "\n\n吸收来源（非生物祖先）：[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_1').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_2').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_3').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_4').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_5').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_6').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_7').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_8').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_9').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_10').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_11').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_12').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_13').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_14').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_15').Char.GetName]、[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_16').Char.GetName]\n完整来源共[ROOT.Char.MakeScope.Var('mm_dragon_absorbed_source_count').GetValue|0]位，此处最多显示16位。\n当前吸收余量：[ROOT.Char.MakeScope.Var('mm_dragon_absorption_points').GetValue|0]；升阶门槛C→B 12、B→A 30、A→S 60。"
+
+ trait_mm_dragon_branch_fire:0 "青铜与火血脉分支"
+
+ trait_mm_dragon_branch_fire_desc:0 "对应青铜与火的独立权能。生物血脉与后天吸收分别记录，不因改文化或家族而覆盖。"
+
+ trait_mm_dragon_branch_fire_biological_desc:0 "$trait_mm_dragon_branch_fire_desc$\n\n生物祖源／既有创造归属中包含本分支；后代只依合法生物来源继承。"
+
+ trait_mm_dragon_branch_fire_acquired_desc:0 "$trait_mm_dragon_branch_fire_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ trait_mm_dragon_branch_sea:0 "海洋与水血脉分支"
+
+ trait_mm_dragon_branch_sea_desc:0 "对应海洋与水的独立权能。生物血脉与后天吸收分别记录，不因改文化或家族而覆盖。"
+
+ trait_mm_dragon_branch_sea_biological_desc:0 "$trait_mm_dragon_branch_sea_desc$\n\n生物祖源／既有创造归属中包含本分支；后代只依合法生物来源继承。"
+
+ trait_mm_dragon_branch_sea_acquired_desc:0 "$trait_mm_dragon_branch_sea_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ trait_mm_dragon_branch_sky:0 "天空与风血脉分支"
+
+ trait_mm_dragon_branch_sky_desc:0 "对应天空与风的独立权能。生物血脉与后天吸收分别记录，不因改文化或家族而覆盖。"
+
+ trait_mm_dragon_branch_sky_biological_desc:0 "$trait_mm_dragon_branch_sky_desc$\n\n生物祖源／既有创造归属中包含本分支；后代只依合法生物来源继承。"
+
+ trait_mm_dragon_branch_sky_acquired_desc:0 "$trait_mm_dragon_branch_sky_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ trait_mm_dragon_branch_earth:0 "大地与山血脉分支"
+
+ trait_mm_dragon_branch_earth_desc:0 "对应大地与山的独立权能。生物血脉与后天吸收分别记录，不因改文化或家族而覆盖。"
+
+ trait_mm_dragon_branch_earth_biological_desc:0 "$trait_mm_dragon_branch_earth_desc$\n\n生物祖源／既有创造归属中包含本分支；后代只依合法生物来源继承。"
+
+ trait_mm_dragon_branch_earth_acquired_desc:0 "$trait_mm_dragon_branch_earth_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ trait_mm_dragon_branch_white:0 "白皇血脉分支"
+
+ trait_mm_dragon_branch_white_desc:0 "白皇血脉源自人类对白皇圣骸之血的研究：研究者以圣血制造怪物，再使人类怀上怪物的孩子，由此形成可延续的混血谱系。这些家系并非白皇与人类直接生育的自然后裔。血源始祖记录指向白皇，表示力量源头，不代表白皇是其亲生母亲。"
+
+ trait_mm_dragon_branch_white_biological_desc:0 "$trait_mm_dragon_branch_white_desc$\n\n圣骸实验形成的血脉可由其人类后裔传承；记录不改写真实父母与家族。"
+
+ trait_mm_dragon_branch_white_acquired_desc:0 "$trait_mm_dragon_branch_white_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ trait_mm_dragon_branch_black:0 "黑皇血脉分支"
+
+ trait_mm_dragon_branch_black_desc:0 "黑皇没有默认生成的自然混血家系。黑血者集齐火、地、海、风四系普通龙血，并通过侵蚀与融合考验，方可晋升黑皇血脉，成为初代种；血脉始祖改指黑皇，真实父母与家族不变。"
+
+ trait_mm_dragon_branch_black_biological_desc:0 "$trait_mm_dragon_branch_black_desc$\n\n生物祖源／既有创造归属中包含本分支；后代只依合法生物来源继承。"
+
+ trait_mm_dragon_branch_black_acquired_desc:0 "$trait_mm_dragon_branch_black_desc$\n\n此分支来自后天获得的龙血，不是生物祖先，也不会自动遗传给普通人类后代。"
+
+ mm_dragon_blood_hunt_higher_grade_tt:0 "目标必须是真正比你更高阶的混血种。"
+
+ trait_mm_dragon_branch_fire_creation_desc:0 "$trait_mm_dragon_branch_fire_desc$\n\n创造归属：$mm_royal_name_constantine$与$mm_royal_name_norton$之系。创造关系独立于生物家谱。"
+
+ trait_mm_dragon_branch_sea_creation_desc:0 "$trait_mm_dragon_branch_sea_desc$\n\n创造归属：$mm_royal_name_behemoth$与$mm_royal_name_leviathan$之系。创造关系独立于生物家谱。"
+
+ trait_mm_dragon_branch_sky_creation_desc:0 "$trait_mm_dragon_branch_sky_desc$\n\n创造归属：$mm_royal_name_hrist$与$mm_royal_name_vidar$之系。创造关系独立于生物家谱。"
+
+ trait_mm_dragon_branch_earth_creation_desc:0 "$trait_mm_dragon_branch_earth_desc$\n\n创造归属：$mm_royal_name_fenrir$与$mm_royal_name_jormungandr$之系。创造关系独立于生物家谱。"
+ mm_dragon_diluted_blood_modifier:0 "血脉稀薄"

@@ -1,0 +1,336 @@
+mm_royal_fire_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_hatchling_entity" } }
+mm_royal_flying_fire_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_hatchling_entity" } }
+mm_royal_running_fire_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_hatchling_entity" } }
+mm_royal_mounted_fire_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_hatchling_entity" } }
+mm_royal_wild_aerial_fire_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_hatchling_entity" } }
+mm_royal_fire_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_01_entity" } }
+mm_royal_flying_fire_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_01_entity" } }
+mm_royal_running_fire_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_01_entity" } }
+mm_royal_mounted_fire_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_01_entity" } }
+mm_royal_wild_aerial_fire_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_01_entity" } }
+mm_royal_fire_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_02_entity" } }
+mm_royal_flying_fire_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_02_entity" } }
+mm_royal_running_fire_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_02_entity" } }
+mm_royal_mounted_fire_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_02_entity" } }
+mm_royal_wild_aerial_fire_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_02_entity" } }
+mm_royal_fire_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_03_entity" } }
+mm_royal_flying_fire_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_03_entity" } }
+mm_royal_running_fire_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_03_entity" } }
+mm_royal_mounted_fire_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_03_entity" } }
+mm_royal_wild_aerial_fire_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_03_entity" } }
+mm_royal_fire_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_04_entity" } }
+mm_royal_flying_fire_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_04_entity" } }
+mm_royal_running_fire_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_04_entity" } }
+mm_royal_mounted_fire_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_04_entity" } }
+mm_royal_wild_aerial_fire_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_04_entity" } }
+mm_royal_fire_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_05_entity" } }
+mm_royal_flying_fire_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_05_entity" } }
+mm_royal_running_fire_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_05_entity" } }
+mm_royal_mounted_fire_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_05_entity" } }
+mm_royal_wild_aerial_fire_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_05_entity" } }
+mm_royal_fire_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_06_entity" } }
+mm_royal_flying_fire_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_06_entity" } }
+mm_royal_running_fire_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_06_entity" } }
+mm_royal_mounted_fire_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_06_entity" } }
+mm_royal_wild_aerial_fire_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_06_entity" } }
+mm_royal_fire_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_07_entity" } }
+mm_royal_flying_fire_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_07_entity" } }
+mm_royal_running_fire_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_07_entity" } }
+mm_royal_mounted_fire_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_07_entity" } }
+mm_royal_wild_aerial_fire_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_07_entity" } }
+mm_royal_fire_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_08_entity" } }
+mm_royal_flying_fire_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_08_entity" } }
+mm_royal_running_fire_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_08_entity" } }
+mm_royal_mounted_fire_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_08_entity" } }
+mm_royal_wild_aerial_fire_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_08_entity" } }
+mm_royal_fire_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_09_entity" } }
+mm_royal_flying_fire_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_09_entity" } }
+mm_royal_running_fire_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_09_entity" } }
+mm_royal_mounted_fire_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_09_entity" } }
+mm_royal_wild_aerial_fire_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_09_entity" } }
+mm_royal_fire_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_fire_tier_10_entity" } }
+mm_royal_flying_fire_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_fire_tier_10_entity" } }
+mm_royal_running_fire_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_fire_tier_10_entity" } }
+mm_royal_mounted_fire_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_fire_tier_10_entity" } }
+mm_royal_wild_aerial_fire_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_fire_tier_10_entity" } }
+mm_royal_compact_fire = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_fire_entity" } }
+mm_royal_earth_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_hatchling_entity" } }
+mm_royal_flying_earth_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_hatchling_entity" } }
+mm_royal_running_earth_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_hatchling_entity" } }
+mm_royal_mounted_earth_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_hatchling_entity" } }
+mm_royal_wild_aerial_earth_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_hatchling_entity" } }
+mm_royal_earth_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_01_entity" } }
+mm_royal_flying_earth_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_01_entity" } }
+mm_royal_running_earth_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_01_entity" } }
+mm_royal_mounted_earth_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_01_entity" } }
+mm_royal_wild_aerial_earth_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_01_entity" } }
+mm_royal_earth_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_02_entity" } }
+mm_royal_flying_earth_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_02_entity" } }
+mm_royal_running_earth_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_02_entity" } }
+mm_royal_mounted_earth_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_02_entity" } }
+mm_royal_wild_aerial_earth_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_02_entity" } }
+mm_royal_earth_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_03_entity" } }
+mm_royal_flying_earth_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_03_entity" } }
+mm_royal_running_earth_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_03_entity" } }
+mm_royal_mounted_earth_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_03_entity" } }
+mm_royal_wild_aerial_earth_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_03_entity" } }
+mm_royal_earth_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_04_entity" } }
+mm_royal_flying_earth_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_04_entity" } }
+mm_royal_running_earth_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_04_entity" } }
+mm_royal_mounted_earth_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_04_entity" } }
+mm_royal_wild_aerial_earth_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_04_entity" } }
+mm_royal_earth_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_05_entity" } }
+mm_royal_flying_earth_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_05_entity" } }
+mm_royal_running_earth_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_05_entity" } }
+mm_royal_mounted_earth_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_05_entity" } }
+mm_royal_wild_aerial_earth_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_05_entity" } }
+mm_royal_earth_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_06_entity" } }
+mm_royal_flying_earth_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_06_entity" } }
+mm_royal_running_earth_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_06_entity" } }
+mm_royal_mounted_earth_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_06_entity" } }
+mm_royal_wild_aerial_earth_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_06_entity" } }
+mm_royal_earth_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_07_entity" } }
+mm_royal_flying_earth_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_07_entity" } }
+mm_royal_running_earth_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_07_entity" } }
+mm_royal_mounted_earth_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_07_entity" } }
+mm_royal_wild_aerial_earth_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_07_entity" } }
+mm_royal_earth_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_08_entity" } }
+mm_royal_flying_earth_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_08_entity" } }
+mm_royal_running_earth_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_08_entity" } }
+mm_royal_mounted_earth_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_08_entity" } }
+mm_royal_wild_aerial_earth_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_08_entity" } }
+mm_royal_earth_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_09_entity" } }
+mm_royal_flying_earth_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_09_entity" } }
+mm_royal_running_earth_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_09_entity" } }
+mm_royal_mounted_earth_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_09_entity" } }
+mm_royal_wild_aerial_earth_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_09_entity" } }
+mm_royal_earth_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_earth_tier_10_entity" } }
+mm_royal_flying_earth_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_earth_tier_10_entity" } }
+mm_royal_running_earth_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_earth_tier_10_entity" } }
+mm_royal_mounted_earth_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_earth_tier_10_entity" } }
+mm_royal_wild_aerial_earth_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_earth_tier_10_entity" } }
+mm_royal_compact_earth = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_earth_entity" } }
+mm_royal_sea_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_hatchling_entity" } }
+mm_royal_flying_sea_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_hatchling_entity" } }
+mm_royal_running_sea_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_hatchling_entity" } }
+mm_royal_mounted_sea_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_hatchling_entity" } }
+mm_royal_wild_aerial_sea_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_hatchling_entity" } }
+mm_royal_sea_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_01_entity" } }
+mm_royal_flying_sea_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_01_entity" } }
+mm_royal_running_sea_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_01_entity" } }
+mm_royal_mounted_sea_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_01_entity" } }
+mm_royal_wild_aerial_sea_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_01_entity" } }
+mm_royal_sea_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_02_entity" } }
+mm_royal_flying_sea_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_02_entity" } }
+mm_royal_running_sea_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_02_entity" } }
+mm_royal_mounted_sea_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_02_entity" } }
+mm_royal_wild_aerial_sea_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_02_entity" } }
+mm_royal_sea_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_03_entity" } }
+mm_royal_flying_sea_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_03_entity" } }
+mm_royal_running_sea_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_03_entity" } }
+mm_royal_mounted_sea_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_03_entity" } }
+mm_royal_wild_aerial_sea_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_03_entity" } }
+mm_royal_sea_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_04_entity" } }
+mm_royal_flying_sea_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_04_entity" } }
+mm_royal_running_sea_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_04_entity" } }
+mm_royal_mounted_sea_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_04_entity" } }
+mm_royal_wild_aerial_sea_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_04_entity" } }
+mm_royal_sea_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_05_entity" } }
+mm_royal_flying_sea_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_05_entity" } }
+mm_royal_running_sea_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_05_entity" } }
+mm_royal_mounted_sea_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_05_entity" } }
+mm_royal_wild_aerial_sea_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_05_entity" } }
+mm_royal_sea_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_06_entity" } }
+mm_royal_flying_sea_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_06_entity" } }
+mm_royal_running_sea_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_06_entity" } }
+mm_royal_mounted_sea_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_06_entity" } }
+mm_royal_wild_aerial_sea_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_06_entity" } }
+mm_royal_sea_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_07_entity" } }
+mm_royal_flying_sea_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_07_entity" } }
+mm_royal_running_sea_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_07_entity" } }
+mm_royal_mounted_sea_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_07_entity" } }
+mm_royal_wild_aerial_sea_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_07_entity" } }
+mm_royal_sea_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_08_entity" } }
+mm_royal_flying_sea_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_08_entity" } }
+mm_royal_running_sea_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_08_entity" } }
+mm_royal_mounted_sea_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_08_entity" } }
+mm_royal_wild_aerial_sea_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_08_entity" } }
+mm_royal_sea_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_09_entity" } }
+mm_royal_flying_sea_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_09_entity" } }
+mm_royal_running_sea_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_09_entity" } }
+mm_royal_mounted_sea_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_09_entity" } }
+mm_royal_wild_aerial_sea_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_09_entity" } }
+mm_royal_sea_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sea_tier_10_entity" } }
+mm_royal_flying_sea_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sea_tier_10_entity" } }
+mm_royal_running_sea_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sea_tier_10_entity" } }
+mm_royal_mounted_sea_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sea_tier_10_entity" } }
+mm_royal_wild_aerial_sea_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sea_tier_10_entity" } }
+mm_royal_compact_sea = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_sea_entity" } }
+mm_royal_sky_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_hatchling_entity" } }
+mm_royal_flying_sky_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_hatchling_entity" } }
+mm_royal_running_sky_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_hatchling_entity" } }
+mm_royal_mounted_sky_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_hatchling_entity" } }
+mm_royal_wild_aerial_sky_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_hatchling_entity" } }
+mm_royal_sky_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_01_entity" } }
+mm_royal_flying_sky_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_01_entity" } }
+mm_royal_running_sky_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_01_entity" } }
+mm_royal_mounted_sky_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_01_entity" } }
+mm_royal_wild_aerial_sky_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_01_entity" } }
+mm_royal_sky_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_02_entity" } }
+mm_royal_flying_sky_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_02_entity" } }
+mm_royal_running_sky_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_02_entity" } }
+mm_royal_mounted_sky_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_02_entity" } }
+mm_royal_wild_aerial_sky_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_02_entity" } }
+mm_royal_sky_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_03_entity" } }
+mm_royal_flying_sky_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_03_entity" } }
+mm_royal_running_sky_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_03_entity" } }
+mm_royal_mounted_sky_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_03_entity" } }
+mm_royal_wild_aerial_sky_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_03_entity" } }
+mm_royal_sky_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_04_entity" } }
+mm_royal_flying_sky_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_04_entity" } }
+mm_royal_running_sky_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_04_entity" } }
+mm_royal_mounted_sky_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_04_entity" } }
+mm_royal_wild_aerial_sky_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_04_entity" } }
+mm_royal_sky_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_05_entity" } }
+mm_royal_flying_sky_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_05_entity" } }
+mm_royal_running_sky_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_05_entity" } }
+mm_royal_mounted_sky_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_05_entity" } }
+mm_royal_wild_aerial_sky_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_05_entity" } }
+mm_royal_sky_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_06_entity" } }
+mm_royal_flying_sky_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_06_entity" } }
+mm_royal_running_sky_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_06_entity" } }
+mm_royal_mounted_sky_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_06_entity" } }
+mm_royal_wild_aerial_sky_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_06_entity" } }
+mm_royal_sky_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_07_entity" } }
+mm_royal_flying_sky_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_07_entity" } }
+mm_royal_running_sky_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_07_entity" } }
+mm_royal_mounted_sky_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_07_entity" } }
+mm_royal_wild_aerial_sky_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_07_entity" } }
+mm_royal_sky_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_08_entity" } }
+mm_royal_flying_sky_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_08_entity" } }
+mm_royal_running_sky_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_08_entity" } }
+mm_royal_mounted_sky_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_08_entity" } }
+mm_royal_wild_aerial_sky_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_08_entity" } }
+mm_royal_sky_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_09_entity" } }
+mm_royal_flying_sky_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_09_entity" } }
+mm_royal_running_sky_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_09_entity" } }
+mm_royal_mounted_sky_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_09_entity" } }
+mm_royal_wild_aerial_sky_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_09_entity" } }
+mm_royal_sky_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_sky_tier_10_entity" } }
+mm_royal_flying_sky_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_sky_tier_10_entity" } }
+mm_royal_running_sky_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_sky_tier_10_entity" } }
+mm_royal_mounted_sky_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_sky_tier_10_entity" } }
+mm_royal_wild_aerial_sky_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_sky_tier_10_entity" } }
+mm_royal_compact_sky = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_sky_entity" } }
+mm_royal_white_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_hatchling_entity" } }
+mm_royal_flying_white_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_hatchling_entity" } }
+mm_royal_running_white_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_hatchling_entity" } }
+mm_royal_mounted_white_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_hatchling_entity" } }
+mm_royal_wild_aerial_white_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_hatchling_entity" } }
+mm_royal_white_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_01_entity" } }
+mm_royal_flying_white_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_01_entity" } }
+mm_royal_running_white_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_01_entity" } }
+mm_royal_mounted_white_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_01_entity" } }
+mm_royal_wild_aerial_white_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_01_entity" } }
+mm_royal_white_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_02_entity" } }
+mm_royal_flying_white_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_02_entity" } }
+mm_royal_running_white_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_02_entity" } }
+mm_royal_mounted_white_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_02_entity" } }
+mm_royal_wild_aerial_white_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_02_entity" } }
+mm_royal_white_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_03_entity" } }
+mm_royal_flying_white_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_03_entity" } }
+mm_royal_running_white_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_03_entity" } }
+mm_royal_mounted_white_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_03_entity" } }
+mm_royal_wild_aerial_white_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_03_entity" } }
+mm_royal_white_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_04_entity" } }
+mm_royal_flying_white_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_04_entity" } }
+mm_royal_running_white_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_04_entity" } }
+mm_royal_mounted_white_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_04_entity" } }
+mm_royal_wild_aerial_white_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_04_entity" } }
+mm_royal_white_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_05_entity" } }
+mm_royal_flying_white_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_05_entity" } }
+mm_royal_running_white_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_05_entity" } }
+mm_royal_mounted_white_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_05_entity" } }
+mm_royal_wild_aerial_white_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_05_entity" } }
+mm_royal_white_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_06_entity" } }
+mm_royal_flying_white_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_06_entity" } }
+mm_royal_running_white_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_06_entity" } }
+mm_royal_mounted_white_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_06_entity" } }
+mm_royal_wild_aerial_white_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_06_entity" } }
+mm_royal_white_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_07_entity" } }
+mm_royal_flying_white_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_07_entity" } }
+mm_royal_running_white_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_07_entity" } }
+mm_royal_mounted_white_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_07_entity" } }
+mm_royal_wild_aerial_white_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_07_entity" } }
+mm_royal_white_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_08_entity" } }
+mm_royal_flying_white_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_08_entity" } }
+mm_royal_running_white_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_08_entity" } }
+mm_royal_mounted_white_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_08_entity" } }
+mm_royal_wild_aerial_white_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_08_entity" } }
+mm_royal_white_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_09_entity" } }
+mm_royal_flying_white_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_09_entity" } }
+mm_royal_running_white_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_09_entity" } }
+mm_royal_mounted_white_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_09_entity" } }
+mm_royal_wild_aerial_white_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_09_entity" } }
+mm_royal_white_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_white_tier_10_entity" } }
+mm_royal_flying_white_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_white_tier_10_entity" } }
+mm_royal_running_white_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_white_tier_10_entity" } }
+mm_royal_mounted_white_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_white_tier_10_entity" } }
+mm_royal_wild_aerial_white_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_white_tier_10_entity" } }
+mm_royal_compact_white = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_white_entity" } }
+mm_royal_black_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_hatchling_entity" } }
+mm_royal_flying_black_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_hatchling_entity" } }
+mm_royal_running_black_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_hatchling_entity" } }
+mm_royal_mounted_black_hatchling = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_hatchling_entity" } }
+mm_royal_wild_aerial_black_hatchling = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_hatchling_entity" } }
+mm_royal_black_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_01_entity" } }
+mm_royal_flying_black_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_01_entity" } }
+mm_royal_running_black_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_01_entity" } }
+mm_royal_mounted_black_tier_01 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_01_entity" } }
+mm_royal_wild_aerial_black_tier_01 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_01_entity" } }
+mm_royal_black_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_02_entity" } }
+mm_royal_flying_black_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_02_entity" } }
+mm_royal_running_black_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_02_entity" } }
+mm_royal_mounted_black_tier_02 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_02_entity" } }
+mm_royal_wild_aerial_black_tier_02 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_02_entity" } }
+mm_royal_black_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_03_entity" } }
+mm_royal_flying_black_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_03_entity" } }
+mm_royal_running_black_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_03_entity" } }
+mm_royal_mounted_black_tier_03 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_03_entity" } }
+mm_royal_wild_aerial_black_tier_03 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_03_entity" } }
+mm_royal_black_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_04_entity" } }
+mm_royal_flying_black_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_04_entity" } }
+mm_royal_running_black_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_04_entity" } }
+mm_royal_mounted_black_tier_04 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_04_entity" } }
+mm_royal_wild_aerial_black_tier_04 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_04_entity" } }
+mm_royal_black_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_05_entity" } }
+mm_royal_flying_black_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_05_entity" } }
+mm_royal_running_black_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_05_entity" } }
+mm_royal_mounted_black_tier_05 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_05_entity" } }
+mm_royal_wild_aerial_black_tier_05 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_05_entity" } }
+mm_royal_black_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_06_entity" } }
+mm_royal_flying_black_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_06_entity" } }
+mm_royal_running_black_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_06_entity" } }
+mm_royal_mounted_black_tier_06 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_06_entity" } }
+mm_royal_wild_aerial_black_tier_06 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_06_entity" } }
+mm_royal_black_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_07_entity" } }
+mm_royal_flying_black_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_07_entity" } }
+mm_royal_running_black_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_07_entity" } }
+mm_royal_mounted_black_tier_07 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_07_entity" } }
+mm_royal_wild_aerial_black_tier_07 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_07_entity" } }
+mm_royal_black_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_08_entity" } }
+mm_royal_flying_black_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_08_entity" } }
+mm_royal_running_black_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_08_entity" } }
+mm_royal_mounted_black_tier_08 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_08_entity" } }
+mm_royal_wild_aerial_black_tier_08 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_08_entity" } }
+mm_royal_black_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_09_entity" } }
+mm_royal_flying_black_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_09_entity" } }
+mm_royal_running_black_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_09_entity" } }
+mm_royal_mounted_black_tier_09 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_09_entity" } }
+mm_royal_wild_aerial_black_tier_09 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_09_entity" } }
+mm_royal_black_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_black_tier_10_entity" } }
+mm_royal_flying_black_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_flying_black_tier_10_entity" } }
+mm_royal_running_black_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_running_black_tier_10_entity" } }
+mm_royal_mounted_black_tier_10 = { entity = { required_tags = "" node = ground_joint inherit_rotation = no entity = "mm_royal_mounted_black_tier_10_entity" } }
+mm_royal_wild_aerial_black_tier_10 = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_wild_aerial_black_tier_10_entity" } }
+mm_royal_compact_black = { entity = { required_tags = "" node = "myv_wyvern_origin" entity = "mm_royal_compact_black_entity" } }

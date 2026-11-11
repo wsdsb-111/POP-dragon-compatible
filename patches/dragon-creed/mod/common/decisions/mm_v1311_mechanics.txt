@@ -1,0 +1,19 @@
+mm_v1311_dragon_inscription_decision = {
+    decision_group_type = major
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_smith.dds" }
+    desc = mm_v1311_dragon_inscription_decision_desc
+    selection_tooltip = mm_v1311_dragon_inscription_decision_tooltip
+    is_shown = { is_ai = no rite = rite:mm_dragon_fire }
+    is_valid = {
+        is_alive = yes piety >= 500
+        any_equipped_character_artifact = { NOT = { has_artifact_modifier = mm_v1311_dragon_inscription } }
+    }
+    effect = {
+        add_piety = -500
+        every_equipped_character_artifact = {
+            limit = { NOT = { has_artifact_modifier = mm_v1311_dragon_inscription } }
+            add_artifact_modifier = mm_v1311_dragon_inscription
+        }
+    }
+    ai_check_interval = 0
+}

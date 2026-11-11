@@ -1,0 +1,72 @@
+mm_relic_black_crown_stats = {
+    vassal_tax_contribution_mult = 0.25
+    monthly_prestige = 10
+    monthly_legitimacy_add = 5
+    monthly_piety = 10
+    monthly_influence = 20
+    monthly_dynasty_prestige = 5
+    domain_limit = 5
+    stress_gain_mult = 0.3
+}
+
+mm_relic_black_regalia_stats = {
+    dread_baseline_add = 30
+    domicile_monthly_gold_mult = 0.25
+    diplomacy = 10
+    martial = 10
+    stewardship = 10
+    intrigue = 10
+    learning = 10
+    prowess = 10
+    stress_gain_mult = 0.2
+}
+
+mm_relic_white_book_stats = {
+    learning = 20
+    stress_loss_mult = 0.5
+    general_opinion = 20
+    owned_hostile_scheme_success_chance_add = 30
+    owned_personal_scheme_success_chance_add = 30
+    owned_political_scheme_success_chance_add = 30
+    life_expectancy = 10
+    owned_scheme_secrecy_add = 30
+    health = -1
+}
+
+mm_relic_fire_ring_stats = {
+    stewardship = 10
+    learning = 10
+    build_speed = -0.1
+    levy_size = 0.1
+    character_capital_county_monthly_development_growth_add = 0.3
+    life_expectancy = -10
+}
+
+mm_relic_earth_sarcophagus_stats = {
+    domain_tax_mult = 0.1
+    fertility = 0.2
+    short_reign_duration_mult = 0.5
+    monthly_piety = 5
+    court_grandeur_baseline_add = 10
+    spouse_opinion = 20
+    monthly_prestige = -10
+}
+
+mm_relic_sea_armor_stats = {
+    prowess = 10
+    hard_casualty_modifier = -0.15
+    vassal_opinion = 20
+    attraction_opinion = 20
+    health = 0.4
+    stress_gain_mult = 0.2
+    stress_loss_mult = 0.2
+}
+
+mm_relic_sky_spear_stats = {
+    prowess = 15
+    knight_limit = 3
+    skirmishers_damage_mult = 0.15
+    knight_effectiveness_mult = 0.16
+    movement_speed = 0.05
+    martial = 10
+}

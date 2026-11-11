@@ -1,0 +1,24 @@
+﻿myv_wyvern = {
+	mm_wyvern_human_form = {
+		traits = { myv_wyvern myv_wyvern_tamed myv_wyvern_legendary }
+		trigger = { exists = root has_character_flag = mm_wyvern_human_form }
+		dna_modifiers = {
+			human = {
+				accessory = { mode = replace gene = gene_myv_wyvern template = no_myv_wyvern value = 1.0 }
+				morph = { mode = replace gene = gene_myv_no_portrait template = normal_portrait value = 1.0 }
+			}
+		}
+	}
+	myv_wyvern = {
+		traits = { myv_wyvern myv_wyvern_tamed myv_wyvern_legendary }
+		trigger = { exists = root NOT = { has_character_flag = mm_wyvern_human_form } }
+		dna_modifiers = {
+			human = {
+				# Follow the working AGOT wyvern/Kraken path: the creature trait owns
+				# both the replacement mesh and the human-body suppression.
+				accessory = { mode = modify gene = gene_myv_wyvern template = myv_wyvern_body value = 1.0 }
+				morph = { mode = replace gene = gene_myv_no_portrait template = no_portrait value = 1.0 }
+			}
+		}
+	}
+}

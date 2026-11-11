@@ -1,0 +1,1586 @@
+﻿######################################################
+############ MYTHICAL VANILLA WYVERN VIEW ############
+######################################################
+
+types CharacterWindow
+{
+	# The vanilla HUD stress bar is a hand-built textured meter rather than the
+	# generic progressbar skin. Reuse its rough edge, scratches and moving cloud
+	# layers while keeping the value bound exclusively to wyvern hunger.
+	type myv_wyvern_hunger_fill = icon {
+		texture = "gfx/interface/colors/green.dds"
+		shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+		alpha = 0.9
+
+		modify_texture = {
+			texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+			spriteType = Corneredtiled
+			spriteborder = { 20 20 }
+			blend_mode = alphamultiply
+			texture_density = 5
+		}
+
+		modify_texture = {
+			texture = "gfx/interface/component_masks/mask_fade_horizontal.dds"
+			blend_mode = alphamultiply
+			alpha = 0.3
+		}
+
+		modify_texture = {
+			texture = "gfx/interface/component_masks/mask_scratches.dds"
+			blend_mode = alphamultiply
+			spriteType = corneredtiled
+			alpha = 0.3
+			texture_density = 3
+		}
+
+		modify_texture = {
+			name = "clouds"
+			texture = "gfx/interface/component_masks/mask_clouds_solid.dds"
+			blend_mode = mask
+			spriteType = corneredtiled
+			texture_density = 1
+		}
+
+		modify_texture = {
+			texture = "gfx/interface/colors/gold.dds"
+			blend_mode = colordodge
+			alpha = 0.25
+		}
+
+		state = {
+			name = hunger_flow_a
+			next = hunger_flow_b
+			trigger_on_create = yes
+			duration = 2
+
+			modify_texture = {
+				name = "clouds"
+				translate_uv = { 0 0 }
+			}
+		}
+
+		state = {
+			name = hunger_flow_b
+			next = hunger_flow_a
+			duration = 2
+
+			modify_texture = {
+				name = "clouds"
+				translate_uv = { -1 0 }
+			}
+		}
+	}
+
+	# Every full-panel wyvern portrait uses the same compact identity/location
+	# cooltip as the outliner instead of the unrestricted human character one.
+	type myv_wyvern_character_portrait_button = portrait_button {
+		using = portrait_base
+
+		blockoverride "portrait_button_template_tooltip" {
+			tooltip_visible = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+			tooltipwidget = {
+				myv_wyvern_outliner_cooltip = {}
+			}
+		}
+	}
+
+	type myv_wyvern_character_view = vbox {
+		name = "myv_wyvern_character_content"
+		using = Window_Margins_Sidebar
+		visible = "[GetScriptedGui('myv_wyvern_character_window').IsShown( GuiScope.SetRoot( CharacterWindow.GetCharacter.MakeScope ).End )]"
+
+		widget = {
+			name = "myv_wyvern_portrait_area"
+			datacontext = "[GetIllustration( 'myv_wyvern_wilderness' )]"
+			layoutpolicy_horizontal = expanding
+			size = { 0 434 }
+
+			# Scene backgrounds share the same crop and mask so switching never
+			# changes the portrait composition. A housed wyvern always uses the
+			# stable; otherwise a resting wild wyvern uses its cave and roaming or
+			# tamed wyverns use their current terrain.
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_stable').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background_stable.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_cave').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background_cave.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_snow').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background_snow.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_mountains').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background_mountains.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_desert').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background_desert.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			widget = {
+				visible = "[GetScriptedGui('myv_wyvern_scene_grassland').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+				size = { 100% 100% }
+				background = {
+					texture = "gfx/interface/illustrations/myv/myv_wyvern_background.dds"
+					fittype = centercrop
+					alpha = 0.65
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_rough_edges_down_right.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 20 20 }
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+			}
+
+			# Keep the hitbox smaller than the full panel so window controls remain clickable.
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_0"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_0').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_0', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_0_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_0').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_0', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_0', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_0', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_0', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_0', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_0', 'myv_wyvern_memorial_green_0'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_1"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_1').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_1', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_1_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_1').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_1', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_1', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_1', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_1', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_1', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_1', 'myv_wyvern_memorial_green_1'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_2"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_2').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_2', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_2_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_2').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_2', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_2', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_2', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_2', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_2', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_2', 'myv_wyvern_memorial_green_2'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_3"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_3').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_3', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_3_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_3').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_3', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_3', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_3', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_3', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_3', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_3', 'myv_wyvern_memorial_green_3'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_4"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_4').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_4', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_4_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_4').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_4', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_4', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_4', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_4', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_4', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_4', 'myv_wyvern_memorial_green_4'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_5"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_5').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_5', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_5_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_5').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_5', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_5', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_5', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_5', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_5', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_5', 'myv_wyvern_memorial_green_5'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_6"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_6').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_6', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_6_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_6').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_6', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_6', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_6', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_6', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_6', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_6', 'myv_wyvern_memorial_green_6'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_7"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_7').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_7', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_7_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_7').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_7', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_7', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_7', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_7', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_7', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_7', 'myv_wyvern_memorial_green_7'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_8"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_8').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_8', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_8_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_8').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_8', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_8', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_8', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_8', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_8', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_8', 'myv_wyvern_memorial_green_8'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_9"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_9').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_9', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_9_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_9').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_9', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_9', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_9', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_9', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_9', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_9', 'myv_wyvern_memorial_green_9'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_10"
+				visible = "[And(Character.IsAlive, GetScriptedGui('myv_wyvern_uses_camera_tier_10').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_10', 'myv_wyvern_main', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			myv_wyvern_character_portrait_button = {
+				name = "myv_wyvern_portrait_tier_10_memorial"
+				visible = "[And(Not(Character.IsAlive), GetScriptedGui('myv_wyvern_uses_camera_tier_10').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+				size = { 594 434 }
+				position = { 0 0 }
+				parentanchor = top|hcenter
+				blockoverride "portrait_button_template_onrightclick" {
+					onrightclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'myv_wyvern_interaction')]"
+					button_ignore = none
+				}
+				portrait_texture = "[Character.GetPortrait(Illustration.GetEnvironment(Character.Self), 'camera_myv_wyvern_character_tier_10', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_1').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_red_10', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_3').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_black_10', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_4').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_grey_10', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_5').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_gold_10', Select_CString(GetScriptedGui('myv_wyvern_uses_portrait_color_6').IsShown(GuiScope.SetRoot(Character.MakeScope).End), 'myv_wyvern_memorial_nightmare_10', 'myv_wyvern_memorial_green_10'))))), PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				mask = "gfx/portraits/portrait_mask_character_view.dds"
+				effectname = "NoHighlight"
+				using = Animation_Character_Window_Refresh_Short
+			}
+
+			# Show the active rider in the same compact, clickable presentation as
+			# the vanilla player-heir portrait. Use the canonical bonded-character
+			# variable because hidden scripted relations are not reliably exposed as
+			# character-window data models.
+			container = {
+				name = "myv_wyvern_current_rider_portrait"
+				datacontext = "[CharacterWindow.GetCharacter.MakeScope.Var('myv_wyvern_bonded_character').Char]"
+				visible = "[And(And(Character.IsValid, Character.IsAlive), And(CharacterWindow.GetCharacter.IsAlive, CharacterWindow.GetCharacter.HasTrait(GetTrait('myv_wyvern_harmony'))))]"
+				parentanchor = bottom|right
+				position = { -20 -6 }
+				using = Animation_Character_Window_Refresh
+
+				portrait_head_small = {
+					blockoverride "portrait_transformation" {
+						portrait_scale = { -1 1 }
+						portrait_offset = { 1 0 }
+					}
+					blockoverride "portrait_button" {
+						alwaystransparent = "[GreaterThan_CFixedPoint(GetPlayer.MakeScope.Var('disable_clicking_portraits').GetValue, '(CFixedPoint)0')]"
+					}
+				}
+
+				text_label_center = {
+					parentanchor = top|hcenter
+					position = { 0 85 }
+					text = "myv_wyvern_current_rider"
+					multiline = yes
+					autoresize = yes
+					max_width = 100
+				}
+			}
+
+			buttons_window_control = {
+				parentanchor = top|right
+				position = { 0 -3 }
+
+				blockoverride "button_close" {
+					onclick = "[CharacterWindow.Close]"
+				}
+
+				blockoverride "button_back" {
+					visible = "[HasViewHistory]"
+					onclick = "[OpenFromViewHistory]"
+					tooltip = "[GetViewHistoryTooltip]"
+				}
+
+				blockoverride "button_me" {
+					visible = "[Not( Character.IsLocalPlayer )]"
+					onclick = "[DefaultOnCharacterClick( GetPlayer.GetID )]"
+				}
+
+				blockoverride "button_pin" {
+					visible = "[Not( Character.AccessDenied )]"
+				}
+
+				background = {
+					using = Background_Area_Solid
+					modify_texture = {
+						name = "mask"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_middle_thick.dds"
+						spriteType = Corneredstretched
+						spriteborder = { 0 0 }
+						blend_mode = alphamultiply
+					}
+					alpha = 0.7
+					margin_left = 30
+					margin_right = 30
+				}
+			}
+		}
+
+		vbox = {
+			name = "myv_wyvern_identity"
+			layoutpolicy_horizontal = expanding
+			margin = { 12 10 }
+			spacing = 6
+
+			background = {
+				using = Background_Area_Dark
+				alpha = 0.75
+			}
+
+			widget = {
+				size = { 570 26 }
+
+				text_single = {
+					parentanchor = center
+					size = { 100% 100% }
+					raw_text = "[Character.GetFirstNameNicknamedNoTooltip|V]"
+					align = center|nobaseline
+					default_format = "#high"
+					fontsize = 20
+				}
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				spacing = 5
+				expand = {}
+
+				icon = {
+					visible = "[Not( Character.IsFemale )]"
+					size = { 20 20 }
+					texture = "gfx/interface/icons/myv/myv_gender_male.dds"
+					tooltip = "myv_wyvern_sex_male_tt"
+				}
+				icon = {
+					visible = "[Character.IsFemale]"
+					size = { 20 20 }
+					texture = "gfx/interface/icons/myv/myv_gender_female.dds"
+					tooltip = "myv_wyvern_sex_female_tt"
+				}
+				text_single = {
+					visible = "[And(Not(Character.HasTrait(GetTrait('myv_wyvern_legendary'))), Not(Character.HasTrait(GetTrait('myv_wyvern_tamed'))))]"
+					text = "myv_wyvern_panel_subtitle"
+					tooltip = "myv_wyvern_panel_subtitle_tt"
+					using = tooltip_below
+					align = center|nobaseline
+					default_format = "#E"
+				}
+				text_single = {
+					visible = "[Character.HasTrait(GetTrait('myv_wyvern_tamed'))]"
+					text = "myv_wyvern_tamed_panel_subtitle"
+					tooltip = "myv_wyvern_panel_subtitle_tt"
+					using = tooltip_below
+					align = center|nobaseline
+					default_format = "#E"
+				}
+				text_single = {
+					visible = "[Character.HasTrait(GetTrait('myv_wyvern_legendary'))]"
+					text = "myv_wyvern_legendary_panel_subtitle"
+					tooltip = "myv_wyvern_panel_subtitle_tt"
+					using = tooltip_below
+					align = center|nobaseline
+					default_format = "#E"
+				}
+
+				# Keep the age visually separate from the creature-type link.
+				widget = { size = { 8 1 } }
+
+				text_single = {
+					raw_text = "[Character.Custom('mm_pod_character_panel_age')]"
+					tooltip = "[Character.Custom('PODCharacterAgeTooltip')]"
+					using = tooltip_below
+					align = center|nobaseline
+				}
+
+				icon = {
+					visible = "[Character.IsAlive]"
+					size = { 23 23 }
+					framesize = { 60 60 }
+					frame = "[Character.GetHealthIconFrame]"
+					texture = "gfx/interface/icons/character_status/icon_health.dds"
+					tooltip = "[Character.GetHealthInfo]"
+				}
+				icon = {
+					visible = "[Character.IsDeadAndValid]"
+					size = { 23 23 }
+					texture = "gfx/interface/icons/character_status/icon_dead.dds"
+					tooltip = "CHARACTER_DEAD_TOOLTIP"
+				}
+
+				expand = {}
+			}
+
+			widget = {
+				size = { 570 61 }
+
+				# Exact 570 px row: 283 traits + 4 gap + 224 hunger + 4 gap + 55 modifiers.
+				# Exact left half: native trait list on the left and its expand
+				# control at the right edge. The right half begins at x = 287.
+				widget = {
+					size = { 283 55 }
+					position = { 0 6 }
+
+					button_tertiary = {
+						position = { 261 5 }
+						size = { 22 45 }
+						onclick = "[CharacterWindow.ToggleExpandedTraits]"
+						down = "[CharacterWindow.AreTraitsExpanded]"
+						tooltip = "[SelectLocalization( CharacterWindow.AreTraitsExpanded, 'CV_TRAITS_HIDE_TT', 'CV_TRAITS_SHOW_TT' )]"
+
+						vbox = {
+							layoutpolicy_horizontal = expanding
+
+							icon = {
+								size = { 20 20 }
+								texture = "gfx/interface/icons/message_feed/trait.dds"
+							}
+						}
+					}
+
+					widget = {
+						position = { 0 0 }
+						size = { 257 55 }
+
+						hbox_traits_list_small = {
+							name = "myv_wyvern_traits_summary"
+							size = { 100% 100% }
+							datacontext = "[CharacterWindow.GetTraitArrays]"
+							margin_bottom = 2
+						}
+					}
+				}
+
+				# Right half: hunger meter plus a square, icon-only modifier control.
+				widget = {
+					size = { 283 55 }
+					position = { 287 6 }
+
+					widget = {
+						visible = "[Character.IsAlive]"
+						size = { 224 55 }
+						position = { 0 0 }
+						tooltip = "myv_wyvern_hunger_tt"
+						using = tooltip_below
+
+                        widget = {
+                            name = "myv_wyvern_hunger_meter"
+                            parentanchor = center
+                            widgetanchor = center
+                            position = { 8 0 }
+                            size = { 224 40 }
+
+                            # Stretch only the middle of the original stress frame.
+                            # Its circular head and right cap keep fixed proportions.
+                            widget = {
+                                name = "myv_wyvern_hunger_track"
+                                position = { 37 12 }
+                                size = { 180 16 }
+                                background = {
+                                    texture = "gfx/interface/colors/white.dds"
+                                    color = { 0.08 0.08 0.08 0.9 }
+                                }
+                                hbox = {
+                                    size = { 100% 100% }
+                                    widget = {
+                                        layoutpolicy_horizontal = expanding
+                                        layoutpolicy_vertical = expanding
+                                        layoutstretchfactor_horizontal = "[GetProgressBarValueMaxScaled( FixedPointToFloat( Character.MakeScope.Var( 'myv_wyvern_hunger' ).GetValue ), '(float)100', '(int32)180' )]"
+                                        myv_wyvern_hunger_fill = { size = { 100% 100% } }
+                                    }
+                                    widget = {
+                                        layoutpolicy_horizontal = expanding
+                                        layoutpolicy_vertical = expanding
+                                        layoutstretchfactor_horizontal = "[GetProgressBarValueMaxOtherScaled( FixedPointToFloat( Character.MakeScope.Var( 'myv_wyvern_hunger' ).GetValue ), '(float)100', '(int32)180' )]"
+                                    }
+                                }
+                            }
+                            icon = {
+                                name = "myv_wyvern_hunger_stress_frame"
+                                size = { 100% 100% }
+                                texture = "gfx/interface/myv_wyvern_hunger_frame.dds"
+                                spriteType = Corneredstretched
+                                spriteborder = { 38 12 }
+                                alwaystransparent = yes
+                            }
+                            icon = {
+                                name = "myv_wyvern_hunger_stomach_icon"
+                                position = { 7 8 }
+                                size = { 24 24 }
+                                texture = "gfx/interface/icons/myv_wyvern_stomach.dds"
+                                alwaystransparent = yes
+                            }
+                            widget = {
+                                name = "myv_wyvern_hunger_value"
+                                position = { 37 12 }
+                                size = { 180 16 }
+                                alwaystransparent = yes
+                                text_single = {
+                                    parentanchor = center
+                                    widgetanchor = center
+                                    raw_text = "[Character.MakeScope.Var( 'myv_wyvern_hunger' ).GetValue|0] / 100"
+                                    default_format = "#high"
+                                    fontsize = 13
+                                    align = center|nobaseline
+                                }
+                            }
+                        }
+                    }
+
+					button_group = {
+						size = { 55 55 }
+						position = { 240 0 }
+						onclick = "[CharacterWindow.ToggleExpandedModifiers]"
+						tooltip = "CHARACTER_WINDOW_MODIFIERS"
+
+						background = {
+							using = Background_Area_Dark
+							alpha = 0.8
+						}
+
+						button_tertiary = {
+							size = { 100% 100% }
+							down = "[CharacterWindow.AreModifiersExpanded]"
+						}
+
+						fixedgridbox = {
+							parentanchor = center
+							size = { 46 46 }
+							datamodel = "[CharacterWindow.GetTimedModifiers]"
+							addcolumn = 23
+							addrow = 23
+							datamodel_wrap = 1
+							maxhorizontalslots = 2
+							maxverticalslots = 2
+
+							item = {
+								modifier_item_icon = {
+									size = { 20 20 }
+
+									blockoverride "input_info_text" {
+										text = "CHARACTER_WINDOW_MODIFIERS"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		hbox = {
+			name = "myv_wyvern_statistics"
+			layoutpolicy_horizontal = expanding
+			size = { 0 88 }
+			maximumsize = { -1 88 }
+			margin = { 12 4 }
+
+			background = {
+				using = Background_Area_Dark
+				alpha = 0.55
+			}
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 8 2 }
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 32 }
+
+					icon = {
+						parentanchor = center
+						position = { -26 0 }
+						size = { 32 32 }
+						texture = "gfx/interface/icons/myv/myv_wyvern_agility.dds"
+					}
+
+					text_single = {
+						parentanchor = center
+						# The icon textures contain transparent right padding; this overlap
+						# keeps a 6 px visual gap between the visible glyph and title.
+						position = { 10 0 }
+						size = { 56 32 }
+						text = "myv_wyvern_label_agility"
+						align = left|nobaseline
+					}
+				}
+				text_single = {
+					raw_text = "[Character.MakeScope.ScriptValue('myv_wyvern_agility')|0]"
+					default_format = "#high"
+					align = center|nobaseline
+					fontsize = 20
+				}
+			}
+
+			divider_light = { layoutpolicy_vertical = expanding }
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 8 2 }
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 32 }
+
+					icon = {
+						parentanchor = center
+						position = { -26 0 }
+						size = { 32 32 }
+						texture = "gfx/interface/icons/myv/myv_wyvern_length.dds"
+					}
+
+					text_single = {
+						parentanchor = center
+						position = { 10 0 }
+						size = { 56 32 }
+						text = "myv_wyvern_label_size"
+						align = left|nobaseline
+					}
+				}
+				text_single = {
+					raw_text = "[Character.MakeScope.ScriptValue('myv_wyvern_length_meters')|1] m"
+					default_format = "#high"
+					align = center|nobaseline
+					fontsize = 20
+				}
+			}
+
+			divider_light = { layoutpolicy_vertical = expanding }
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 8 2 }
+				tooltip = "mm_wyvern_mass_tooltip"
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 32 }
+					text = "mm_wyvern_mass_label"
+					align = center|nobaseline
+				}
+				text_single = {
+					visible = "[LessThan_CFixedPoint(Character.MakeScope.ScriptValue('mm_wyvern_mass_tonnes'), '(CFixedPoint)1')]"
+					text = "mm_wyvern_mass_kilograms_text"
+					default_format = "#high"
+					align = center|nobaseline
+					fontsize = 18
+					}
+					text_single = {
+					visible = "[GreaterThanOrEqualTo_CFixedPoint(Character.MakeScope.ScriptValue('mm_wyvern_mass_tonnes'), '(CFixedPoint)1')]"
+					text = "mm_wyvern_mass_tonnes_text"
+					default_format = "#high"
+					align = center|nobaseline
+					fontsize = 18
+					}
+			}
+
+			divider_light = { layoutpolicy_vertical = expanding }
+
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 8 2 }
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 32 }
+
+					icon = {
+						parentanchor = center
+						position = { -26 0 }
+						size = { 32 32 }
+						texture = "gfx/interface/icons/myv/myv_wyvern_power.dds"
+					}
+
+					text_single = {
+						parentanchor = center
+						position = { 10 0 }
+						size = { 56 32 }
+						text = "myv_wyvern_label_power"
+						align = left|nobaseline
+					}
+				}
+				text_single = {
+					raw_text = "[Character.MakeScope.ScriptValue('myv_wyvern_panel_prowess')|0]"
+					default_format = "#high"
+					align = center|nobaseline
+					fontsize = 20
+				}
+			}
+		}
+
+		# Compact single-line strip for the wyvern's persistent lair barony.
+		# Its former second line is gone, so the saved 42 px belongs to the tabs.
+		widget = {
+			name = "myv_wyvern_lair_block"
+			visible = "[Character.IsAlive]"
+			layoutpolicy_horizontal = expanding
+			size = { 0 52 }
+			maximumsize = { -1 52 }
+			using = Animation_Character_Window_Refresh
+
+			background = {
+				texture = "gfx/interface/illustrations/event_scenes/ep2_hunt_cave_entrance.dds"
+				fittype = centercrop
+				alpha = 0.48
+
+				modify_texture = {
+					texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+					blend_mode = alphamultiply
+					mirror = vertical
+				}
+
+				using = Mask_Rough_Edges
+			}
+
+			background = {
+				using = Background_Bottom_Fade
+				alpha = 0.7
+			}
+
+			# Canonical display: use an absolute canvas so the title CoA's native
+			# internal offset is not rejected by a parent hbox/vbox layout.
+			widget = {
+				visible = "[Character.MakeScope.Var('myv_wyvern_lair_barony').Title.IsValid]"
+				size = { 100% 100% }
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 36 }
+					margin_top = 5
+					spacing = 0
+
+					widget = { layoutpolicy_horizontal = expanding }
+
+					text_single = {
+						layoutpolicy_horizontal = fixed
+						size = { 120 36 }
+						text = "myv_wyvern_lair_location"
+						using = Font_Size_Medium
+						default_format = "#high"
+						align = right|vcenter
+					}
+
+					widget = { layoutpolicy_horizontal = fixed size = { 8 36 } }
+
+					widget = {
+						layoutpolicy_horizontal = fixed
+						size = { 36 36 }
+
+						coa_title_tiny = {
+							datacontext = "[Character.MakeScope.Var('myv_wyvern_lair_barony').Title]"
+							parentanchor = center
+
+							blockoverride "position" {
+								position = { 0 0 }
+							}
+						}
+					}
+
+					widget = { layoutpolicy_horizontal = fixed size = { 6 36 } }
+
+					text_single = {
+						layoutpolicy_horizontal = fixed
+						size = { 190 36 }
+						datacontext = "[Character.MakeScope.Var('myv_wyvern_lair_barony').Title]"
+						text = "[Title.GetNameNoTooltip|U]"
+						default_format = "#low"
+						align = left|vcenter
+					}
+
+					widget = { layoutpolicy_horizontal = expanding }
+				}
+			}
+
+			# Old-save fallback until the identity repair pulse stores the lair.
+			widget = {
+				visible = "[Not(Character.MakeScope.Var('myv_wyvern_lair_barony').Title.IsValid)]"
+				size = { 100% 100% }
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 36 }
+					margin_top = 5
+					spacing = 0
+
+					widget = { layoutpolicy_horizontal = expanding }
+
+					text_single = {
+						layoutpolicy_horizontal = fixed
+						size = { 120 36 }
+						text = "myv_wyvern_lair_location"
+						using = Font_Size_Medium
+						default_format = "#high"
+						align = right|vcenter
+					}
+
+					widget = { layoutpolicy_horizontal = fixed size = { 8 36 } }
+
+					widget = {
+						layoutpolicy_horizontal = fixed
+						size = { 36 36 }
+
+						coa_title_tiny = {
+							datacontext = "[Character.GetCurrentLocation.GetTitle]"
+							parentanchor = center
+
+							blockoverride "position" {
+								position = { 0 0 }
+							}
+						}
+					}
+
+					widget = { layoutpolicy_horizontal = fixed size = { 6 36 } }
+
+					text_single = {
+						layoutpolicy_horizontal = fixed
+						size = { 190 36 }
+						datacontext = "[Character.GetCurrentLocation.GetTitle]"
+						text = "[Title.GetNameNoTooltip|U]"
+						default_format = "#low"
+						align = left|vcenter
+					}
+
+					widget = { layoutpolicy_horizontal = expanding }
+				}
+			}
+		}
+
+		# Keep the native character-window tab texture, cropped to the same
+		# approximately 34 px visible height used by the vanilla sheet.
+		hbox = {
+			name = "myv_wyvern_tabs"
+			visible = "[CharacterWindow.AreNoneExpanded]"
+			layoutpolicy_horizontal = expanding
+			size = { 0 34 }
+			maximumsize = { -1 34 }
+			using = Animation_ShowHide_Quick
+
+			button_tab = {
+				name = "myv_wyvern_bloodline_button"
+				size = { -1 34 }
+				maximumsize = { -1 34 }
+				down = "[Not(CharacterWindow.IsTabShown('relations'))]"
+				alwaystransparent = "[Not(CharacterWindow.IsTabShown('relations'))]"
+				onclick = "[CharacterWindow.SetTab('family')]"
+
+				blockoverride "tab_label" {
+					text = "myv_wyvern_tab_bloodline"
+					max_width = 220
+				}
+			}
+
+			button_tab = {
+				name = "myv_wyvern_riders_button"
+				size = { -1 34 }
+				maximumsize = { -1 34 }
+				down = "[CharacterWindow.IsTabShown('relations')]"
+				alwaystransparent = "[CharacterWindow.IsTabShown('relations')]"
+				onclick = "[CharacterWindow.SetTab('relations')]"
+
+				blockoverride "tab_label" {
+					text = "myv_wyvern_tab_riders"
+					max_width = 220
+				}
+			}
+		}
+
+		widget = {
+			name = "myv_wyvern_tab_content"
+			visible = "[CharacterWindow.AreNoneExpanded]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			using = Animation_Tab_Switch
+
+			background = {
+				using = Background_Area_Dark
+				alpha = 0.35
+			}
+
+			# BLOODLINE: this is the vanilla family_main_view hierarchy with the
+			# grandparents, spouses and concubines sections removed. Keeping the
+			# native 110 px row wrappers is what gives the headers and portrait
+			# grids their original left alignment and spacing.
+			widget = {
+				name = "myv_wyvern_bloodline"
+				visible = "[Not(CharacterWindow.IsTabShown('relations'))]"
+				size = { 100% 100% }
+
+				vbox = {
+					name = "myv_wyvern_bloodline_main_view"
+
+					widget = {
+						name = "myv_wyvern_parents_row"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						maximumsize = { -1 110 }
+						scissor = yes
+
+						hbox = {
+							vbox_character_row_item = {
+								name = "myv_wyvern_parents"
+								layoutpolicy_vertical = expanding
+
+								blockoverride "portrait_datamodel" {
+									datamodel = "[CharacterWindow.GetParents]"
+								}
+								blockoverride "header_text" { text = "PARENTS" }
+								blockoverride "expand_button" {}
+							}
+
+							expand = {}
+						}
+					}
+
+					widget = {
+						name = "myv_wyvern_children_row"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						maximumsize = { -1 110 }
+						scissor = yes
+
+						vbox_character_row_item = {
+							name = "myv_wyvern_children"
+
+							blockoverride "portrait_datamodel" {
+								datamodel = "[CharacterWindow.GetChildren]"
+							}
+							blockoverride "header_text" { text = "CV_CHILDREN_HEADING" }
+							blockoverride "expand_button" {}
+						}
+					}
+
+					widget = {
+						name = "myv_wyvern_siblings_row"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						maximumsize = { -1 110 }
+						scissor = yes
+
+						vbox_character_row_item = {
+							name = "myv_wyvern_siblings"
+
+							blockoverride "portrait_datamodel" {
+								datamodel = "[CharacterWindow.GetSiblings]"
+							}
+							blockoverride "header_text" { text = "CV_SIBLINGS_HEADING" }
+							blockoverride "expand_button" {}
+						}
+					}
+
+					expand = {}
+				}
+			}
+
+			# RIDERS: bond and current rider share the first row as two columns.
+			# The hidden rider relation is intentionally not used as a GUI data model;
+			# only the bonded character can ride this wyvern, and Harmony proves that
+			# the first ride has occurred.
+			widget = {
+				name = "myv_wyvern_riders"
+				visible = "[CharacterWindow.IsTabShown('relations')]"
+				size = { 100% 100% }
+
+				vbox = {
+					name = "myv_wyvern_riders_main_view"
+
+					widget = {
+						name = "myv_wyvern_bond_and_current_rider_row"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = fixed
+                        size = { 0 140 }
+						maximumsize = { -1 140 }
+						scissor = yes
+
+						hbox = {
+                            size = { 100% 100% }
+							vbox_character_row_bond_item = {
+								name = "myv_wyvern_bonded_character"
+                                visible = "[GreaterThan_int32(GetDataModelSize(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character'))), '(int32)0')]"
+                                ignoreinvisible = yes
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								blockoverride "portrait_datamodel" {
+									datamodel = "[DataModelFirst(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character')), '(int32)1')]"
+								}
+								blockoverride "header_text" { text = "myv_wyvern_bonded_character" }
+								blockoverride "expand_button" {}
+								blockoverride "find_partner" {}
+							}
+
+                            vbox_character_row_item = {
+                                name = "myv_wyvern_no_bonded_character"
+                                visible = "[Not(GreaterThan_int32(GetDataModelSize(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character'))), '(int32)0'))]"
+                                ignoreinvisible = yes
+                                layoutpolicy_horizontal = expanding
+                                layoutpolicy_vertical = expanding
+                                blockoverride "header_text" { text = "myv_wyvern_bonded_character" }
+                                blockoverride "expand_button" {}
+                                blockoverride "gridbox" {}
+                                blockoverride "find_partner" {
+                                    text_single = {
+                                        text = "myv_wyvern_no_bonded_character"
+                                        default_format = "#low"
+                                        align = left|nobaseline
+                                        margin_left = 10
+                                    }
+                                }
+                            }
+
+							vbox_character_row_bond_item = {
+								name = "myv_wyvern_current_rider"
+                                ignoreinvisible = yes
+								visible = "[And(And(CharacterWindow.GetCharacter.IsAlive, CharacterWindow.GetCharacter.HasTrait(GetTrait('myv_wyvern_harmony'))), GreaterThan_int32(GetDataModelSize(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character'))), '(int32)0'))]"
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+
+								blockoverride "portrait_datamodel" {
+									datamodel = "[DataModelFirst(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character')), '(int32)1')]"
+								}
+								blockoverride "header_text" { text = "myv_wyvern_current_rider" }
+								blockoverride "expand_button" {}
+								blockoverride "find_partner" {}
+							}
+
+							vbox_character_row_item = {
+								name = "myv_wyvern_no_current_rider"
+                                ignoreinvisible = yes
+								visible = "[Not(And(And(CharacterWindow.GetCharacter.IsAlive, CharacterWindow.GetCharacter.HasTrait(GetTrait('myv_wyvern_harmony'))), GreaterThan_int32(GetDataModelSize(CharacterWindow.GetRelationsOfType(GetRelation('myv_wyvern_bonded_character'))), '(int32)0')))]"
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								blockoverride "header_text" { text = "myv_wyvern_current_rider" }
+								blockoverride "expand_button" {}
+								blockoverride "gridbox" {}
+								blockoverride "find_partner" {
+									text_single = {
+										text = "myv_wyvern_no_current_rider"
+										default_format = "#low"
+										align = left|nobaseline
+										margin_left = 10
+									}
+								}
+							}
+						}
+					}
+
+                    vbox = {
+                        name = "myv_wyvern_former_riders_row"
+                        layoutpolicy_horizontal = expanding
+                        layoutpolicy_vertical = preferred
+                        spacing = 5
+
+                        widget = {
+                            size = { 0 25 }
+                            layoutpolicy_horizontal = expanding
+                            hbox = {
+                                margin = { 10 0 }
+                                background = {
+                                    using = Text_Label_Background
+                                    alpha = 0.5
+                                    margin = { 0 -2 }
+                                }
+                                text_single = {
+                                    text = "myv_wyvern_former_riders"
+                                    fontsize = 14
+                                    align = left|nobaseline
+                                }
+                                expand = {}
+                            }
+                        }
+
+                        # Show the matching archive directly, without a separate
+                        # viewport or a fixed-height wrapper. Grid rows size this section.
+                        flowcontainer = {
+                            visible = "[Not(GetScriptedGui('myv_wyvern_no_archived_former_riders').IsShown(GuiScope.SetRoot(CharacterWindow.GetCharacter.MakeScope).End))]"
+                            ignoreinvisible = yes
+                            direction = vertical
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = preferred
+                            datamodel = "[GetGlobalList('myv_wyvern_size_archives')]"
+                            item = {
+                                fixedgridbox = {
+                                    visible = "[ObjectsEqual(Scope.Var('myv_wyvern_archive_character').Char, CharacterWindow.GetCharacter)]"
+                                    parentanchor = top|left
+                                    widgetanchor = top|left
+                                    datamodel = "[Scope.GetList('myv_wyvern_archived_former_riders')]"
+                                    addcolumn = 85
+                                    addrow = 100
+                                    datamodel_wrap = 6
+                                    flipdirection = yes
+                                    item = {
+                                        portrait_head_small = {
+                                            size = { 85 100 }
+                                            datacontext = "[Scope.Char]"
+                                            blockoverride "portrait_button" { using = tooltip_ne }
+                                            blockoverride "glow_visible" { visible = no }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        text_single = {
+                            visible = "[GetScriptedGui('myv_wyvern_no_archived_former_riders').IsShown(GuiScope.SetRoot(CharacterWindow.GetCharacter.MakeScope).End)]"
+                            text = "myv_wyvern_no_former_riders"
+                            default_format = "#low"
+                            align = left|nobaseline
+                            margin_left = 10
+                        }
+                    }
+
+					expand = {}
+				}
+			}
+
+		}
+
+		scrollbox = {
+			name = "myv_wyvern_traits_expanded"
+			visible = "[CharacterWindow.AreTraitsExpanded]"
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			using = Animation_Tab_Switch
+
+			blockoverride "scrollbox_content" {
+				margin = { 16 14 }
+				spacing = 10
+
+				vbox = {
+					spacing = 5
+					datacontext = "[CharacterWindow.GetTraitArrays]"
+
+					text_label_center = {
+						text = "PERSONALITY_TRAITS"
+					}
+
+					fixedgridbox = {
+						name = "myv_wyvern_personality_traits_grid"
+						datamodel = "[TraitArrays.GetPersonalityTraits]"
+						addcolumn = 90
+						addrow = 105
+						flipdirection = yes
+						datamodel_wrap = 6
+
+						item = {
+							icon_trait = {
+								blockoverride "icon_size" {
+									size = { 70 70 }
+								}
+
+								text_multi = {
+									parentanchor = bottom|hcenter
+									widgetanchor = top|hcenter
+									position = { 0 -5 }
+									autoresize = yes
+									max_width = 80
+									text = "[Trait.GetNameNoTooltip(Character.Self)]"
+									default_format = "#high"
+									align = hcenter
+								}
+							}
+						}
+					}
+
+					text_label_center = {
+						text = "TRAITS"
+					}
+
+					fixedgridbox = {
+						name = "myv_wyvern_traits_grid"
+						datamodel = "[TraitArrays.GetTraits]"
+						addcolumn = 90
+						addrow = 105
+						flipdirection = yes
+						datamodel_wrap = 6
+
+						item = {
+							icon_trait = {
+								blockoverride "icon_size" {
+									size = { 70 70 }
+								}
+
+								text_multi = {
+									parentanchor = bottom|hcenter
+									widgetanchor = top|hcenter
+									position = { 0 -5 }
+									size = { 80 40 }
+									text = "[Trait.GetNameNoTooltip(Character.Self)]"
+									default_format = "#high"
+									align = top|hcenter
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		scrollbox = {
+			name = "myv_wyvern_modifiers"
+			visible = "[CharacterWindow.AreModifiersExpanded]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			using = Animation_Tab_Switch
+
+			background = {
+				using = Background_Area_Dark
+				alpha = 0.35
+			}
+
+			blockoverride "scrollbox_content" {
+				margin = { 16 14 }
+				spacing = 8
+
+				text_single = {
+					visible = "[IsDataModelEmpty( CharacterWindow.GetTimedModifiers )]"
+					layoutpolicy_horizontal = expanding
+					text = "myv_wyvern_no_modifiers"
+					default_format = "#low"
+					align = center|nobaseline
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					datamodel = "[CharacterWindow.GetTimedModifiers]"
+					spacing = 4
+
+					item = {
+						vbox = {
+							layoutpolicy_horizontal = expanding
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								spacing = 10
+
+								modifier_item_icon = {
+									size = { 34 34 }
+									parentanchor = vcenter
+
+									blockoverride "input_info_text" {
+										text = "CHARACTER_WINDOW_MODIFIERS"
+									}
+								}
+
+								text_single = {
+									layoutpolicy_horizontal = expanding
+									text = "[ModifierItem.GetStaticModifier.GetName]"
+									default_format = "#high"
+									align = left|nobaseline
+								}
+							}
+
+							divider_light = {
+								layoutpolicy_horizontal = expanding
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

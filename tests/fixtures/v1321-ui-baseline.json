@@ -1,0 +1,11 @@
+{
+  "version": "1.3.20",
+  "archiveSha256": "23496193c822367faa06bcfaf50b8d1ae961fcb9bc88e322485ad5f5c454ab2e",
+  "religionFiles": {
+    "common/religion/tenet_types/mm_dragon_creed.txt": "ce9d502bdc8fd4cdd7060df0c04dbd6c9e5e24210fc950ce5792da675e033197",
+    "common/religion/rite_types/mm_dragon_creed.txt": "360769674c73d47ef9ef0db3c5f7ffd2754fe72716017195a393bfe6981b40f3",
+    "common/religion/doctrine_types/mm_dragon_creed.txt": "ed60c3f827b06578ff2a8ac446b71a19ca66502c75faee5bd37ddae1d48f6b8a"
+  },
+  "nativeArtifactDetailsSha256": "718c86ae7abc6b884a52ffb8807e94638e5e03ec8042ca5f2b55bc8e89e4699e",
+  "nativeTenetInfoSha256": "3d92e01d1e619add5ad57b1f3aad59ee1080904e72ef79c225890a8872a37010"
+}

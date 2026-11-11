@@ -1,0 +1,26 @@
+# The native population limit still controls ordinary dragons. Unique royal
+# characters must not be silently killed by oldest-first animal pruning.
+myv_trim_wyvern_population_to_effect = {
+    if = {
+        limit = { NOT = { has_global_variable = mm_royal_seed_in_progress } }
+    set_global_variable = { name = mm_royal_population_trim_count value = global_var:myv_wyvern_population_count }
+    every_in_global_list = {
+        variable = myv_living_wyverns
+        limit = { myv_is_living_wyvern = yes OR = { mm_royal_is_king = yes has_character_flag = mm_royal_initial_descendant } }
+        change_global_variable = { name = mm_royal_population_trim_count add = -1 }
+    }
+    while = {
+        limit = { global_var:mm_royal_population_trim_count > $CAP$ }
+        ordered_in_global_list = {
+            variable = myv_living_wyverns
+            limit = { myv_is_living_wyvern = yes mm_royal_is_king = no NOT = { has_character_flag = mm_royal_initial_descendant } }
+            order_by = age
+            position = 0
+            death = { death_reason = death_old_age }
+        }
+        change_global_variable = { name = mm_royal_population_trim_count add = -1 }
+        change_global_variable = { name = myv_wyvern_population_count add = -1 }
+    }
+    remove_global_variable = mm_royal_population_trim_count
+    }
+}

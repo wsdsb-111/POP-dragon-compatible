@@ -1,0 +1,7434 @@
+﻿@base_peasant_discontent_progress = 2
+
+independence_faction = {
+	casus_belli = independence_faction_war
+
+	short_effect_desc = independence_faction_short_effect_desc
+
+	sort_order = 2
+
+	is_shown = {
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = liberty_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+
+		faction_target = {
+			save_scope_as = faction_target
+		}
+
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.0005
+		}
+
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.0001
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		# 40% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.5
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 1
+		}
+
+		modifier = {
+			add = 100
+			faction_target = {
+				is_at_war = yes # Independence Factions are opportunistic bastards!
+			}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	ai_create_score = {
+		base = -175 # Base reluctance value we must overcome to start an Independence Faction.
+
+		############
+		# BLOCKERS #
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_independence_faction_war
+		}
+
+		independence_faction_create_blockers  = {
+			FACTION_TARGET = scope:target
+		}
+
+		#######################
+		# Standard AI Weights #
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -0.4
+			MAX_OPINION = 100
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		independence_faction_modifiers = {
+			FACTION_TARGET = scope:target
+		}
+
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+
+	    # EP3 - Grand Ambitions Story Cycle
+	    modifier = {
+	    	desc = "EP3_GRAND_AMBITIONS_STORY"
+	    	any_owned_story = {
+	    		type = grand_ambitions_story_cycle
+	    		var:target_char ?= scope:target
+	    	}
+	    	factor = 1.5
+	    }
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			scope:target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_external_tributaries_vassals_increased_independence_desire
+				}
+			}
+		}
+
+		modifier = {
+			scope:target = { has_character_modifier = disbelieved_mandala_modifier }
+			add = 15
+			desc = is_disbelieved_mandala
+		}
+	}
+
+	ai_join_score = {
+		base = -150 # Base reluctance value we must overcome to join an Independence Faction.
+
+		############
+		# BLOCKERS #
+
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		#######################
+		# Standard AI Weights #
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -0.4
+			MAX_OPINION = 100
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		independence_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		# Small multiplier for my neighbors already in the Faction
+		modifier = {
+			desc = "FACTION_REASON_NEIGHBORS"
+
+			scope:faction = {
+				any_faction_member = { #suppress the description printout if factor is 1
+					any_neighboring_realm_same_rank_owner = {
+						this = root
+					}
+				}
+			}
+
+			factor = {
+				value = 1
+				scope:faction = {
+			    	every_faction_member = {
+			    		if = {
+			    			limit = {
+				    			any_neighboring_realm_same_rank_owner = {
+				    				this = root
+				    			}
+							}
+			    			add = 0.25
+			    		}
+			    	}
+		    	}
+	    	}
+	    }
+
+	    modifier = {
+			desc = "FACTION_REASON_POWERFUL_VASSAL"
+	    	factor = 2
+			is_powerful_vassal_of = scope:faction.faction_target
+	    }
+
+	    struggle_faction_modifiers = yes
+
+	    #House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:faction.faction_target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_external_tributaries_vassals_increased_independence_desire
+				}
+			}
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = independence_faction }
+
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		liege = {
+			top_liege = this
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				government_has_mechanic = administrative
+			}
+			custom_tooltip = {
+				text = admin_high_tier_vassal_create_faction
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+		#PROPPA CONFEDERATION VASSALS
+		trigger_if = {
+			limit = {
+				liege = {
+					is_confederation_member = yes
+				}
+			}
+			#Confederations block most faction types
+			custom_tooltip = {
+				text = confederaton_blocks_faction
+				NOR = {
+					government_has_flag = government_is_nomadic
+					government_has_flag = government_is_tribal
+				}
+			}
+		}
+		# The emperor does not want to leave his empire
+		tgp_is_ceremonial_liege_trigger = no
+		# Ministers cannot join this faction
+		custom_description = {
+			text = target_is_a_minister_desc
+			subject = this
+			tgp_is_any_minister = no
+		}
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		liege = {
+			top_liege = this
+		}
+
+		custom_description = {
+			text = character_blocked_from_joining # will never be displayed but without it, errors are triggered
+			OR = {
+		        is_ai = no
+		        culture != scope:target.culture
+		        faith != scope:target.faith
+		        NOT = {
+		            scope:target = {
+		                is_rightful_liege_of = root
+		            }
+		        }
+		        any_sub_realm_county = {
+		            percent <= 0.5
+		            save_temporary_scope_as = current_county
+		            scope:target.primary_title = {
+		                any_in_de_jure_hierarchy = { this = scope:current_county }
+		            }
+		        }
+				government_has_flag = government_is_nomadic
+	    	}
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				government_has_mechanic = administrative
+			}
+			custom_tooltip = {
+				text = admin_high_tier_vassal_create_faction
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+		#PROPPA CONFEDERATION VASSALS
+		trigger_if = {
+			limit = {
+				liege = {
+					is_confederation_member = yes
+				}
+			}
+			#Confederations block most faction types
+			custom_tooltip = {
+				text = confederaton_blocks_faction
+				NOR = {
+					government_has_flag = government_is_nomadic
+					government_has_flag = government_is_tribal
+				}
+			}
+		}
+		# The emperor does not want to leave his empire
+		tgp_is_ceremonial_liege_trigger = no
+		# Ministers cannot join this faction
+		custom_description = {
+			text = target_is_a_minister_desc
+			subject = this
+			tgp_is_any_minister = no
+		}
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				government_has_mechanic = administrative
+			}
+			custom_tooltip = {
+				text = admin_high_tier_vassal_join_faction
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+		#PROPPA CONFEDERATION VASSALS
+		trigger_if = {
+			limit = {
+				liege = {
+					is_confederation_member = yes
+				}
+			}
+			#Confederations block most faction types
+			custom_tooltip = {
+				text = confederaton_blocks_faction
+				NOR = {
+					government_has_flag = government_is_nomadic
+					government_has_flag = government_is_tribal
+				}
+			}
+		}
+		# The emperor does not want to leave his empire
+		tgp_is_ceremonial_liege_trigger = no
+		# Ministers cannot join this faction
+		custom_description = {
+			text = target_is_a_minister_desc
+			subject = this
+			tgp_is_any_minister = no
+		}
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+liberty_faction = {
+	casus_belli = liberty_faction_war
+
+	desc = liberty_faction_desc
+
+	short_effect_desc = liberty_faction_short_effect_desc
+
+	sort_order = 4
+
+	is_shown = {
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+
+		faction_target = {
+			save_scope_as = faction_target
+		}
+
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.0105
+		}
+
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.0101
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		# 30% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.375
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+
+		# Less likely if already in a war with an external ruler - the Liberty Faction is pretty sporting
+		modifier = {
+			add = -75
+			faction_target = {
+				any_war_enemy = {
+					NOT = {
+						target_is_liege_or_above = root.faction_target
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = liberty_faction }
+
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		has_valid_realm_laws_for_liberty_faction_trigger = {
+			TARGET = scope:target
+		}
+
+		trigger_if = {
+			limit = {
+				scope:target = { government_has_mechanic = administrative }
+			}
+			is_vassal_of = scope:target.top_liege
+		}
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		has_valid_realm_laws_for_liberty_faction_trigger = {
+			TARGET = scope:target
+		}
+
+		trigger_if = {
+			limit = {
+				scope:target = { government_has_mechanic = administrative }
+			}
+			is_vassal_of = scope:target.top_liege
+		}
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		OR = {
+			is_ai = no
+			has_valid_realm_laws_for_liberty_faction_trigger = {
+				TARGET = scope:faction.faction_target
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = { government_has_mechanic = administrative }
+			}
+			is_vassal_of = scope:faction.faction_target
+		}
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	ai_create_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+
+		############
+		# BLOCKERS #
+		############
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_liberty_faction_war
+		}
+
+		#######################
+		# Standard AI Weights #
+		#
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		# 'Base Join Weight' depends on the current Crown Authority level.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		liberty_faction_modifiers = {
+			FACTION_TARGET = scope:target
+		}
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+	}
+
+	ai_join_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+
+		############
+		# BLOCKERS #
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		#######################
+		# Standard AI Weights #
+		#AI
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		liberty_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		struggle_faction_modifiers = yes
+
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:faction.faction_target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+claimant_faction = {
+	casus_belli = claimant_faction_war
+
+	short_effect_desc = claimant_faction_short_effect_desc
+
+	sort_order = 1
+
+	show_special_title = yes
+	name = FACTION_CLAMAINT_DYNAMIC_NAME
+
+	character_interaction = create_claimant_faction_against_interaction
+
+	claimant = yes
+
+	is_shown = {
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = liberty_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	is_valid = { # If the FACTION itself is valid
+		# see also invalidate_claimant_factions_on_death_effect for what happens when the claimant dies
+
+		trigger_if = {
+			limit = {
+				OR = {
+					exists = special_character
+					exists = faction_war
+				}
+			}
+			special_title.holder ?= faction_target
+			special_title.holder ?= { tgp_is_ceremonial_regent_trigger = no }
+			OR = {
+				special_character ?= {
+					is_alive = yes
+					#has_claim_on = root.special_title
+					NOR = {
+						has_trait = incapable
+						this = root.faction_target
+					}
+					# Under Byzantine law, a ruler must be unblemished
+					trigger_if = {
+						limit = {
+							root.special_title.holder.culture ?= { has_cultural_parameter = physical_disfigurement_blocks_inheritance }
+						}
+						custom_description = {
+							text = "byzantine_claimant_is_disfigured"
+							object = this
+							valid_for_byz_succession_trigger = yes
+						}
+					}
+					trigger_if = { #If they're imprisoned by the faction target they can only be so for five years before invalidating
+						limit = {
+							is_imprisoned_by = root.faction_target
+						}
+						time_in_prison_type = {
+							years < 5
+						}
+					}
+					# Ministers cannot be claimants unless we are targeting h_china
+					trigger_if = {
+						limit = {
+							tgp_has_minister_title = yes
+						}
+						custom_description = {
+							text = target_is_a_minister_desc
+							subject = this
+							any_held_title = {
+								tgp_is_minister_title = yes
+								de_jure_liege = root.special_title
+							}
+						}
+					}
+				}
+				exists = faction_war
+			}
+		}
+	}
+
+	demand = { # The effect of pressing demand
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+
+		faction_target = {
+			save_scope_as = faction_target
+		}
+
+		special_character = {
+			save_scope_as = faction_claimant
+		}
+
+		special_title = {
+			save_scope_as = faction_targeted_title
+		}
+
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.2005
+		}
+
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.2001
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		#Won't send ultimatum if the claimant is imprisoned by the faction-target!
+		modifier = {
+			add = -500
+			faction_target = {
+				any_prisoner = {
+					this = root.special_character
+				}
+			}
+		}
+
+		# Won't start a war is the Realm is fighting against a Dissolution faction or Independent factions: you want to get the best realm possible. Better wait a bit longer
+		modifier = {
+			add = -1000
+			faction_target = {
+				any_character_war = {
+					OR = {
+						using_cb = independence_faction_war
+						using_cb = independence_war
+						using_cb = nation_fracturing_faction_war
+					}
+				}
+			}
+		}
+
+		# 40% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.5
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 1
+		}
+
+		# Less likely if already in a war with an external ruler
+		modifier = {
+			add = -50
+			faction_target = {
+				any_war_enemy = {
+					NOT = {
+						target_is_liege_or_above = root.faction_target
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_character_valid = { # Is the character valid to stay in the faction? This is also checked when creating it...
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		trigger_if = {
+			limit = {
+				government_has_mechanic = administrative
+			}
+			scope:faction.faction_target ?= {
+				OR = {
+					top_liege ?= this
+					NOT = { government_has_mechanic = administrative }
+				}
+			}
+		}
+
+		# TGP - Use Coup against Kampaku instead
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target ?= top_liege
+			}
+			scope:faction.faction_target ?= {
+				tgp_is_ceremonial_regent_trigger = no
+			}
+		}
+		has_valid_faction_members_trigger = yes
+	}
+
+	can_character_create_ui = {
+		is_character_interaction_valid = {
+			recipient = scope:target
+			interaction = create_claimant_faction_against_interaction
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+		# TGP - Use Coup against Kampaku instead
+		custom_tooltip = {
+			text = cannot_create_claimant_faction_against_kampaku_tooltip
+			scope:target = {
+				# TGP - Use Coup against Kampaku instead
+				tgp_is_ceremonial_regent_trigger = no
+			}
+		}
+	}
+
+	can_character_create = { # If a character is allowed to create the faction. The 'is_character_valid' block is also checked in conjunction with this when creating a faction.
+
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		# TGP - Use Coup against Kampaku instead
+		trigger_if = {
+			limit = {
+				exists = joined_faction
+				joined_faction.special_title.holder ?= {
+					this = scope:target
+				}
+			}
+			joined_faction.special_title.holder ?= {
+				tgp_is_ceremonial_regent_trigger = no
+			}
+		}
+		# TGP - Use Coup against Kampaku instead
+		trigger_else_if = {
+			limit = {
+				has_variable = claiming_title
+				var:claiming_title.holder ?= {
+					this = scope:target
+				}
+			}
+			var:claiming_title.holder ?= {
+				tgp_is_ceremonial_regent_trigger = no
+			}
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+
+	can_character_join = { # Can a character join an existing faction?
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	ai_create_score = { # How likely is an AI to create a faction?
+		base = -25
+
+		####
+		# BLOCKERS
+		####
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = none
+		}
+
+		claimant_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FACTION_CLAIMANT = scope:claimant
+		}
+
+		####
+		# AI modifiers
+		####
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1.5
+			MAX_OPINION = 150
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		claimant_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			FACTION_CLAIMANT = scope:claimant
+			FACTION_TITLE = scope:title
+		}
+
+		admin_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			FACTION_TYPE = claimant_faction
+		}
+
+		admin_claimant_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			FACTION_CLAIMANT = scope:claimant
+		}
+	}
+
+	ai_join_score = { # How likely is an AI to join an existing faction?
+		base = -25
+
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		claimant_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_CLAIMANT = scope:faction.special_character
+		}
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 100
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		claimant_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_CLAIMANT = scope:faction.special_character
+			FACTION_TITLE = scope:faction.special_title
+		}
+
+		admin_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_TYPE = claimant_faction
+		}
+
+		admin_claimant_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_CLAIMANT = scope:faction.special_character
+		}
+
+		# Faction 'Stacking' Factors, attempts to cluster AI rulers into several powerful factions instead of many weak ones.
+		join_faction_stacking_modifiers = yes
+
+		modifier = { # CE1 Divine Mandate perk
+			desc = "FACTION_REASON_LEGITIMACY_LEGACY_4"
+			liege.dynasty = { has_dynasty_perk = ce1_legitimacy_legacy_4 }
+			add = -10
+		}
+
+		struggle_faction_modifiers = yes
+
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+
+		#EP3 King of England disgruntled vassals/life threatened modifiers
+		modifier = {
+			desc = "FACTION_REASON_CLAIMANT_DISGRUNTLED_VASSALS"
+			add = 25
+			liege = {
+				has_character_modifier = ep3_disgruntled_vassals_modifier
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_CLAIMANT_DISGRUNTLED_VASSALS"
+			add = 25
+			liege = {
+				has_character_modifier = ep3_life_threatened_modifier
+			}
+		}
+	}
+
+	is_county_valid = {
+		scope:faction.faction_target = holder
+	}
+
+	can_county_join = {
+		# Counties can only join if the De Jure belong to the title being claimed.
+		exists = scope:faction.special_title
+		target_is_de_jure_liege_or_above = scope:faction.special_title
+	}
+
+	county_join_score =  {
+		base = -80 # Needs to be less than the weight set in 00_populist_faction.txt, or counties will never join a claimant faction over a populist faction.
+
+		# Up to +3 join score per negative opinion (+80 at -27 opinion) if different culture.
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_COUNTY_SHARED_CULTURE"
+			trigger = {
+				scope:faction.faction_target.culture != this.title_province.culture
+				scope:faction.special_character.culture = this.title_province.culture
+			}
+			value = county_opinion
+			multiplier = -2.0
+		}
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_COUNTY_SHARED_HERITAGE"
+			trigger = {
+				NOT = { this.title_province.culture = { has_same_culture_heritage = scope:faction.faction_target.culture } }
+				this.title_province.culture = { has_same_culture_heritage = scope:faction.special_character.culture }
+			}
+			value = county_opinion
+			multiplier = -2.0
+		}
+
+		# If we have better relations with the claimant's faith than our current liege's, gain up to +5 join score per negative opinion (at Righteous) down to +1 join score per negative opinion (at Hostile).
+		compare_modifier = {
+			desc = "FACTION_REASON_LIKE_CLAIMANT_FAITH"
+			trigger = {
+				faith = {
+					faith_hostility_level_comparison = {
+						scope:faction.faction_target.faith > scope:faction.special_character.faith
+					}
+				}
+			}
+			value = county_opinion
+			multiplier = {
+				value = 0.0
+				if = {
+					limit = {
+						faith = {
+							faith_hostility_level = {
+								target = scope:faction.special_character.faith
+								value = faith_hostile_level
+							}
+						}
+					}
+					value = -1.0 # Hostile
+				}
+				else_if = {
+					limit = {
+						faith = {
+							faith_hostility_level = {
+								target = scope:faction.special_character.faith
+								value = faith_astray_level
+							}
+						}
+					}
+					value = -3.0 # Astray
+				}
+				else = {
+					value = -5.0 # Righteous
+				}
+			}
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 50 # Worth ~12 opinion per virtue.
+		}
+
+		# Greatly reduced chance for a character's capital county to form a faction against them (extra -25 opinion needed).
+		modifier = {
+			desc = "FACTION_REASON_CAPITAL_COUNTY"
+			add = -200
+			this.title_province = scope:faction.faction_target.capital_province
+		}
+
+		# More likely to support adult claimants when a child is on the throne.
+		modifier = {
+			desc = "FACTION_REASON_ADULT_CLAIMANT_CHILD_RULER"
+			add = 10
+			exists = scope:faction.faction_target
+			exists = scope:faction.special_character
+			scope:faction.faction_target = { is_adult = no }
+			scope:faction.special_character = { is_adult = yes }
+		}
+
+		# Peasants perfer magnanimous rulers over harsh or cruel ones.
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_KINDNESS"
+			factor = {
+				# Gets a value between 0 (max greedy/dishonorable/vengeful/cruel) and 800 (max honorable/compassionate/generous/forgiving).
+				value = 400
+				add = scope:faction.special_character.ai_honor
+				add = scope:faction.special_character.ai_compassion
+				subtract = scope:faction.special_character.ai_greed
+				subtract = scope:faction.special_character.ai_vengefulness
+
+				# Converts the personality score into a percentage between 0% (will never support) and 100% (really wants to support)
+				divide = 800
+			}
+
+			# How big the factor is for supporting this claimant over other factions at max support.
+			multiplier = 2
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						has_contact = scope:faction.special_character
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = yes
+	county_allow_create = no
+	county_power = county_levies_to_raise
+
+	character_allow_create = yes
+
+	character_allow_join = yes
+
+	multiple_targeting = yes
+
+	special_character_title = "FACTIONS_WINDOW_CLAIMANT"
+
+	ignore_soft_block = yes
+}
+
+nation_fracturing_faction = {
+	casus_belli = nation_fracturing_faction_war
+
+	short_effect_desc = nation_fracturing_faction_short_effect_desc
+
+	sort_order = 0
+
+	is_shown = {
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = liberty_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+
+		tgp_realm_has_ceremonial_liege_trigger = no
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+
+		faction_target = {
+			save_scope_as = faction_target
+		}
+
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.1005
+		}
+
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.1000
+				days = 5
+			}
+		}
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = nation_fracturing_faction }
+
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		tgp_realm_has_ceremonial_liege_trigger = no
+
+		liege = {
+			top_liege = this
+			NOT = { government_has_flag = government_is_theocracy }
+			custom_tooltip = {
+				text = nation_fracturing_faction.can_character_create_ui.blocked_by_struggle
+				# We could use a parameter but this is just infinitely more performant.
+				NOT = {
+					any_held_title = { has_variable = struggle_block_dissolution_faction }
+				}
+			}
+		}
+
+		# Only powerful vassals can create such factions and they need to have either another culture or faith
+		OR = {
+			is_powerful_vassal = yes
+			government_has_flag = government_is_nomadic
+			is_ai = no
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		# Faction is not allowed against administrative rulers
+		trigger_if = {
+			limit = {
+				scope:target = { government_has_mechanic = administrative }
+			}
+			scope:target = { save_temporary_scope_as = recipient }
+			custom_tooltip = {
+				text = has_admin_gov
+				NOT = { scope:target = { government_has_mechanic = administrative } }
+			}
+		}
+
+		# Muslims vassals cannot create or join against Dar al-Islam
+		trigger_if = {
+			limit = {
+				scope:target = { has_title = title:h_dar_al_islam }
+			}
+			custom_tooltip = {
+				text = dar_al_islam_faction_block_desc
+				NOT = { faith.religion = religion:islam_religion }
+			}
+		}
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		# Bloc Cohesion requirement
+		japan_faction_cohesion_trigger = yes
+
+		tgp_realm_has_ceremonial_liege_trigger = no
+
+		liege = {
+			top_liege = this
+			NOT = { government_has_flag = government_is_theocracy }
+			custom_tooltip = {
+				text = nation_fracturing_faction.can_character_create_ui.blocked_by_struggle
+				# We could use a parameter but this is just infinitely more performant.
+				NOT = {
+					any_held_title = { has_variable = struggle_block_dissolution_faction }
+				}
+			}
+		}
+
+		# Only powerfull vassals can create such factions and they need to have either another culture or faith
+		OR = {
+			is_powerful_vassal = yes
+			is_ai = no
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		# Faction is not allowed against administrative rulers
+		trigger_if = {
+			limit = {
+				scope:target = { government_has_mechanic = administrative }
+			}
+			scope:target = { save_temporary_scope_as = recipient }
+			custom_tooltip = {
+				text = has_admin_gov
+				NOT = { scope:target = { government_has_mechanic = administrative } }
+			}
+		}
+
+		# Muslims vassals cannot create or join against Dar al-Islam
+		trigger_if = {
+			limit = {
+				scope:target = { has_title = title:h_dar_al_islam }
+			}
+			custom_tooltip = {
+				text = dar_al_islam_faction_block_desc
+				NOT = { faith.religion = religion:islam_religion }
+			}
+		}
+	}
+
+	ai_create_score = {
+		base = -200 # Base reluctance value we must overcome to start an Independence Faction.
+
+		############
+		# BLOCKERS #
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_nation_fracturing_faction_war
+		}
+
+		nation_fracturing_faction_blockers = {
+			FACTION_TARGET = scope:target
+		}
+
+		#######################
+		# Standard AI Weights #
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -2
+			MAX_OPINION = 200
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		nation_fracturing_faction_modifiers = {
+			FACTION_TARGET = scope:target
+		}
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		trigger_if = {
+			limit = {
+				faith.religion = religion:islam_religion
+				liege = { has_title = title:d_sunni }
+				title:d_sunni = {
+					has_variable = dar_al_islam
+				}
+			}
+			liege = {
+				NOT = {
+					has_title = title:d_sunni
+				}
+			}
+		}
+
+		# Faction is not allowed against administrative rulers
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = { government_has_mechanic = administrative }
+			}
+			scope:faction.faction_target = { save_temporary_scope_as = recipient }
+			custom_tooltip = {
+				text = has_admin_gov
+				NOT = { scope:faction.faction_target = { government_has_mechanic = administrative } }
+			}
+		}
+
+		# Muslims vassals cannot create or join against Dar al-Islam
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = { has_title = title:h_dar_al_islam }
+			}
+			custom_tooltip = {
+				text = dar_al_islam_faction_block_desc
+				NOT = { faith.religion = religion:islam_religion }
+			}
+		}
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	ai_join_score = {
+		base = -150 # Base reluctance value we must overcome to join an Independence Faction.
+
+		############
+		# BLOCKERS #
+
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		nation_fracturing_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		#######################
+		# Standard AI Weights #
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -2
+			MAX_OPINION = 100
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		nation_fracturing_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		modifier = { # CE1 Divine Mandate perk
+			desc = "FACTION_REASON_LEGITIMACY_LEGACY_4"
+			liege.dynasty = { has_dynasty_perk = ce1_legitimacy_legacy_4 }
+			add = -35
+		}
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		# 40% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.5
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 1
+		}
+
+		modifier = {
+			add = 100
+			faction_target = {
+				is_at_war = yes # Independence Factions are opportunistic bastards!
+			}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+
+	county_join_score =  {
+		base = 0
+		compare_modifier = {
+			desc = "FACTION_REASON_COUNTY_OPINION"
+			value = county_opinion
+			multiplier = -1.0
+		}
+	}
+
+	is_county_valid = {
+		holder = scope:faction.faction_target
+		OR = {
+			culture != scope:faction.faction_target.culture
+			faith != scope:faction.faction_target.faith
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					NOT = { has_contact = scope:faction.faction_target }
+					OR = {
+						faith = scope:faction.faction_target.faith
+						culture = scope:faction.faction_target.culture
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = yes
+	county_allow_create = no
+}
+
+nomadic_faction = {
+	casus_belli = nomadic_war
+
+	leaders_allowed_to_leave = no
+	player_can_join = no
+
+	sort_order = 3
+
+	name = FACTION_NOMAD_DYNAMIC_NAME
+
+	short_effect_desc = nomadic_faction_short_effect_desc
+
+	discontent_progress = {
+		base = 0
+
+		modifier = {
+			add = 5
+			desc = "BASE_COLON"
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_nomadic
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = 0
+
+	requires_county = yes
+	requires_character = no
+
+	is_valid = {
+		always = yes
+	}
+
+	is_county_valid = {
+		# Counties can only be in a faction against the top liege in their realm (who is inherently independent).
+		scope:faction.faction_target = holder.top_liege
+		holder.top_liege = {
+			NOR = {
+				has_government = herder_government
+				any_owned_story = {
+					OR = {
+						story_type = story_greatest_of_khans
+						story_type = story_mongol_invasion
+					}
+				}
+			}
+		}
+		
+		title_province = {
+			OR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_character_join = {
+		joined_faction = scope:faction
+	}
+
+	can_county_join = {
+		title_province = {
+			OR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_county_create = {
+		county_opinion < 0
+
+		# Can only join factions against our top liege (not direct liege)
+		scope:target = holder.top_liege
+		holder.top_liege = {
+			NOR = {
+				has_government = herder_government
+				any_owned_story = {
+					OR = {
+						story_type = story_greatest_of_khans
+						story_type = story_mongol_invasion
+					}
+				}
+			}
+		}
+		
+		title_province = {
+			OR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+
+		####
+		# BLOCKERS
+		####
+		# General Faction immunity
+		custom_description = {
+			text = character_is_immune_to_factions
+			subject = scope:target
+			NOT = { scope:target = { immune_to_factions_trigger = yes } }
+		}
+	}
+
+	can_character_become_leader = {
+		always = yes
+	}
+
+	county_create_score = {
+		base = -5
+		
+		compare_modifier = { # Non-nomads get it at -15 county opinion
+			trigger = {
+				scope:target = {
+					NOT = { government_has_flag = government_is_nomadic }
+				}
+			}
+			value = county_opinion
+			multiplier = -2
+			
+			desc = "FACTION_REASON_COUNTY_OPINION"
+		}
+		
+		compare_modifier = { # Nomads get it at roughly -35 county opinion
+			trigger = {
+				scope:target = {
+					government_has_flag = government_is_nomadic
+				}
+			}
+			value = county_opinion
+			multiplier = -1
+			
+			desc = "FACTION_REASON_COUNTY_OPINION"
+		}
+
+		# If the targeted ruler isn't nomadic... time to rumble
+		modifier = {
+			add = 20
+			scope:target = {
+				NOR = {
+					government_has_flag = government_is_nomadic
+					government_has_flag = government_is_herder
+				}
+			}
+			desc = "FACTION_REASON_DISLIKE_NON_NOMADS"
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:target
+			SCORE_PER_TRAIT = 10
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			add = -25
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			add = -50
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -25
+			has_game_rule = higher_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -50
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+
+		# 10-year 'grace period' from nomadic factions forming after game start
+		modifier = {
+			years_from_game_start <= 10
+			factor = {
+				value = 0
+				if = {
+					limit = { years_from_game_start >= 5 }
+					add = years_from_game_start
+					subtract = 5
+					divide = 5 # In year 6 factions can begin forming, but at 20% weighting. This increases to 40% in year 7, 60% in year 8, etc., up to 100% in year 10 where things are then normal.
+				}
+			}
+		}
+	}
+
+	county_join_score =  {
+		base = 0
+
+		compare_modifier = { # Non-nomads get it at -10 county opinion
+			trigger = {
+				scope:faction.faction_target = {
+					NOT = { government_has_flag = government_is_nomadic }
+				}
+			}
+			value = county_opinion
+			multiplier = -2
+			
+			desc = "FACTION_REASON_COUNTY_OPINION"
+		}
+		
+		compare_modifier = { # Nomads get it at roughly -30 county opinion
+			trigger = {
+				scope:faction.faction_target = {
+					government_has_flag = government_is_nomadic
+				}
+			}
+			value = county_opinion
+			multiplier = -1
+			
+			desc = "FACTION_REASON_COUNTY_OPINION"
+		}
+
+		# If the targeted ruler isn't nomadic... time to rumble
+		modifier = {
+			add = 10
+			scope:faction.faction_target = {
+				NOR = {
+					government_has_flag = government_is_nomadic
+					government_has_flag = government_is_herder
+				}
+			}
+			desc = "FACTION_REASON_DISLIKE_NON_NOMADS"
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 10
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -25
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -50
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -25
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -50
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:faction.faction_target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:faction.faction_target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+	}
+
+	county_power = county_horde_riders_to_raise_power
+
+	ai_join_score = {
+	}
+
+	on_creation = {
+		random_faction_county_member = {
+			save_scope_as = founding_county
+		}
+
+		set_variable = {
+			name = faction_culture
+			value = scope:founding_county.culture
+		}
+		set_variable = {
+			name = faction_faith
+			value = scope:founding_county.faith
+		}
+	}
+
+	on_destroy = {
+		set_variable = {
+			name = peasant_destroying
+			value = yes
+		}
+		if = {
+			limit = { exists = special_character }
+			special_character = {
+				save_temporary_scope_as = destroyer_of_titles
+				if = {
+					limit = {
+						has_variable = peasant_title
+						exists = this.var:peasant_title.holder
+					}
+					destroy_title = this.var:peasant_title
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_character_flag = successful_nomad_revolt_leader
+						}
+					}
+					every_held_title = {
+						limit = {
+							is_landless_type_title = yes
+						}
+						scope:destroyer_of_titles = { destroy_title = prev }
+					}
+					if = {
+						limit = { # To make sure we aren't in debt
+							gold > 0
+						}
+						remove_long_term_gold = gold # Zero out our wallet since the revolt is over and we're going back to being unlanded.
+					}
+				}
+				if = {
+					limit = {
+						is_alive = yes # To prevent dead people from being checked for variables
+					}
+					if = {
+						limit = {
+							has_variable = rebel_leader_peasants
+						}
+						remove_variable = rebel_leader_peasants
+					}
+					remove_variable = peasant_title
+					remove_character_flag = peasant_faction_random_peasant
+					remove_character_flag = peasant_faction_claimant_without_title
+					if = {
+						limit = {
+							has_character_flag = peasant_faction_random_peasant
+							NOT = {	has_character_flag = peasant_revolt_do_not_kill }
+						}
+						death = {
+							death_reason = death_vanished
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		setup_nomadic_leader_effect = yes
+		# Faction leader is unhappy if they reach the point of needing to issue an ultimatim.
+		faction_leader = {
+			add_opinion = {
+				modifier = angry_opinion
+				target = root.faction_target
+				opinion = -50
+			}
+		}
+
+		# Save scopes that will be used in the demand event.
+		save_scope_as = faction
+		special_character = {
+			save_scope_as = peasant_leader
+		}
+		
+		# Check for relevant vassals that owns any land targeted by the faction.
+		save_temporary_scope_as = county_faction
+		every_faction_county_member = {
+			limit = {
+				holder = {
+					NOT = { this = scope:faction.faction_target }
+					NOT = { is_in_list = nomadic_faction_vassal_targets }
+				}
+			}
+			holder = {
+				add_to_list = nomadic_faction_vassal_targets
+			}
+		}
+		every_faction_county_member = {
+			holder = {
+				every_liege_or_above = {
+					limit = {
+						NOT = { this = scope:faction.faction_target }
+						NOT = { is_in_list = nomadic_faction_vassal_targets }
+					}
+					add_to_list = nomadic_faction_vassal_targets
+				}
+			}
+		}
+		
+		# Check if there is a player affected by the faction. AI rulers are blocked from accepting the faction demand if so.
+		if = {
+			limit = {
+				any_in_list = {
+					list = nomadic_faction_vassal_targets
+					is_ai = no
+				}
+			}
+			scope:faction = {
+				set_variable = {
+					name = faction_targets_player
+					value = yes
+				}
+			}
+		}
+		
+		# Fire the demand event. A follow up event will be sent to affected vassals.
+		scope:faction.faction_target = {
+			trigger_event = faction_demand.9998
+		}
+	}
+
+	ai_demand_chance = {
+		base = 100
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		# Duchy initialization so we can concentrate the rebels in just a few important counties instead of spreading them over the entire realm.
+		every_faction_county_member = {
+			duchy = {
+				if = {
+					limit = {
+						NOT = {
+							is_in_list = areas_of_rebellion
+						}
+					}
+					add_to_list = areas_of_rebellion
+				}
+			}
+		}
+
+		# Check where in the duchy the rebellion troops should spawn, then spawn them.
+		every_in_list = {
+			list = areas_of_rebellion
+			save_temporary_scope_as = this_duchy
+
+			# Determine where in the duchy those troops should spawn.
+			ordered_in_de_jure_hierarchy = {
+				# Troops can only spawn in counties that belong to our faction!
+				limit = {
+					tier = tier_county
+					any_title_joined_faction = {
+						this = root
+					}
+				}
+
+				order_by = county_fertility
+
+				title_province = {
+					save_temporary_scope_as = local_center_of_rebellion
+				}
+			}
+
+			# Spawn the faction troops in the designated location.
+			root.faction_leader = {
+				spawn_nomadic_revolt_troops = yes
+			}
+			
+			# Give the populist leader a commander for each stack of troops.
+			create_character = {
+				template = new_commander_character
+				location = scope:local_center_of_rebellion
+				faith = root.faction_leader.faith
+				rite = root.faction_leader.rite
+				culture = root.faction_leader.culture
+				save_scope_as = new_populist_commander
+				gender_female_chance = {
+					if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_male_only_combatant } }
+						add = 0
+					}
+					else_if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_female_only_combatant } }
+						add = 100
+					}
+					else = {
+						add = 50
+					}
+				}
+			}
+			scope:new_populist_commander = {
+				set_employer = root.faction_leader
+				add_trait = nomadic_philosophy
+			}
+		}
+
+		# Give the populist leader a small purse so they don't immediately go bankrupt with army maintenance.
+		every_faction_county_member = {
+			root.faction_leader = {
+				add_gold = 25
+			}
+		}
+	}
+
+	leader_leaves = {
+		# Should only trigger when the leader is captured in battle.
+		if = {
+			limit = {
+				special_character ?= {
+					is_alive = no
+				}
+			}
+			faction_war = {
+				end_war = defender
+			}
+			destroy_faction = yes
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = peasant_destroying }
+				exists = faction_war
+			}
+			faction_war = {
+				end_war = defender
+			}
+		}
+	}
+
+	character_allow_create = no
+
+	special_character_title = "FACTIONS_WINDOW_LEADER"
+
+	inherit_membership = no
+
+	multiple_targeting = no
+}
+
+peasant_faction = {
+	casus_belli = peasant_war
+
+	short_effect_desc = peasant_faction_short_effect_desc
+
+	sort_order = 5
+
+	leaders_allowed_to_leave = no
+	player_can_join = no
+	power_threshold = 0 # Peasant Factions place their demand regardless of their Power
+
+	discontent_progress = {
+		base = @base_peasant_discontent_progress
+		modifier = {
+			faction_target = { ep3_restored_rome_hard_mode_trigger = yes }
+			add = 10
+			desc = ep3_story_cycle_restoring_rome_faction_discontent
+		}
+		modifier = {
+			faction_target = { can_vassals_be_attacked = yes }
+			add = 2
+			desc = border_war_increased_peasant_discontent
+		}
+		modifier = {
+			faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+			add = 2
+			desc = instability_increased_peasant_discontent
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_peasant
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	name = FACTION_PEASANT_NAME
+
+	requires_county = yes
+	requires_character = no
+
+	is_valid = {
+		always = yes
+	}
+
+	is_county_valid = {
+		# Peasants can only join a faction against their direct liege. Unless their liege is Byzantium trying to restore the Roman Empire, then they go for the emperor
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = {
+					ep3_restored_rome_hard_mode_trigger = yes
+				}
+			}
+			holder.top_liege = scope:faction.faction_target
+		}
+		trigger_else = { holder = scope:faction.faction_target }
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	is_character_valid = {
+		has_valid_faction_members_trigger = yes
+	}
+
+	demand = {
+		save_scope_as = faction
+		setup_peasant_leader_effect = yes
+		special_character = {
+			save_scope_as = peasant_leader
+		}
+
+		faction_leader = {
+			add_opinion = {
+				modifier = angry_opinion
+				target = root.faction_target
+				opinion = -50
+			}
+		}
+		scope:faction.faction_target = {
+			trigger_event = faction_demand.1101
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		modifier = {
+			add = 100
+			any_faction_county_member = {}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_creation = {
+		random_faction_county_member = {
+			save_scope_as = founding_county
+		}
+
+		set_variable = {
+			name = faction_culture
+			value = scope:founding_county.culture
+		}
+		set_variable = {
+			name = faction_faith
+			value = scope:founding_county.faith
+		}
+	}
+
+	on_destroy = {
+		set_variable = {
+			name = peasant_destroying
+			value = yes
+		}
+
+		if = {
+			limit = { exists = special_character }
+			special_character = {
+				if = {
+					#Verify that the title exists before trying to destroy it
+					limit = {
+						has_variable = peasant_title
+						exists = this.var:peasant_title
+						NOT = { has_variable = peasant_war_escalates }
+					}
+					destroy_title = this.var:peasant_title
+				}
+
+				if = {
+					limit = { is_alive = yes }
+					# Zero out our wallet since the revolt is over.
+					if = {
+						limit = { # To make sure we're not in debt
+							gold > 0
+						}
+						remove_long_term_gold = gold
+					}
+
+					# The peasant leader mysteriously vanishes on the next game tick.
+					if = {
+						limit = { NOT = { has_character_flag = peasant_revolt_do_not_kill } }
+						trigger_event = {
+							id = faction_demand.1102
+							days = 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	county_join_score =  {
+		base = 0
+		compare_modifier = {
+			desc = "FACTION_REASON_COUNTY_OPINION"
+			value = county_opinion
+			multiplier = -1.0
+		}
+
+		# If a suitable Popular Faction exists, perfer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_POPULIST_FACTION"
+			add = -10
+			AND = {
+				county_opinion <= -15
+				scope:faction.faction_target = {
+					top_liege = {
+						any_targeting_faction = {
+							faction_type = populist_faction
+							any_faction_county_member = {
+								this.title_province.faith = root.title_province.faith
+							}
+						}
+					}
+				}
+			}
+		}
+		# If a suitable Escalated Faction exists, prefer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_ESCALATED_FACTION"
+			add = -10
+			scope:faction.faction_target = {
+				any_targeting_faction = {
+					faction_type = escalated_peasant_faction
+				}
+			}
+		}
+
+		# Reduced weight for a character's own capital to join a revolt against them.
+		modifier = {
+			desc = "FACTION_REASON_CAPITAL_COUNTY"
+			add = -10
+			this.title_province = scope:faction.faction_target.capital_province
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 10 # Worth 10 opinion per virtue.
+		}
+
+		# Ruling Caste
+		modifier = {
+			desc = "FACTION_REASON_RULING_CASTE"
+			add = -25
+			culture != scope:faction.faction_target.culture
+			scope:faction.faction_target.culture = { has_cultural_parameter = peasant_and_populist_factions_less_common }
+		}
+
+		# Defiant Ambushers
+		modifier = {
+			add = 25
+			county_opinion < 0
+			culture != scope:faction.faction_target.culture
+			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
+		}
+
+		# Difficulty Settings
+		modifier = { # Easy
+			desc = "FACTION_REASON_DIFFICULTY_EASY"
+			add = -50
+			has_game_rule = easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Very Easy
+			desc = "FACTION_REASON_DIFFICULTY_VERY_EASY"
+			add = -150
+			has_game_rule = very_easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Hard
+			desc = "FACTION_REASON_DIFFICULTY_HARD"
+			add = -50
+			has_game_rule = hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = { # Very Hard
+			desc = "FACTION_REASON_DIFFICULTY_VERY_HARD"
+			add = -150
+			has_game_rule = very_hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -85
+			scope:faction.faction_target = {
+				ai_should_get_conqueror_bonuses = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -150
+			scope:faction.faction_target = {
+				ai_should_get_extreme_conqueror_bonuses = yes
+			}
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:faction.faction_target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:faction.faction_target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+
+		# stay if at war with the target
+		modifier = {
+			desc = "FACTION_REASON_AT_WAR_WITH_TARGET"
+			add = 1000
+			scope:faction = {
+				faction_is_at_war = yes
+			}
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			county_opinion < 0
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+		# Pure Land
+		modifier = {
+			desc = "FACTION_REASON_POPULIST_PEASANT_MORE_LIKELY"
+			add = 25
+			county_opinion < 0
+			faith != scope:faction.faction_target.faith
+			rite = {
+				rite_has_parameter = peasant_and_populist_factions_more_common
+			}
+		}
+	}
+
+	county_create_score = {
+		base = 0
+
+		####
+		# AI Modifiers
+		####
+
+		compare_modifier = {
+			value = county_opinion
+			multiplier = -1.0
+		}
+
+		# If a suitable Popular Faction exists, perfer to join it instead.
+		modifier = {
+			add = -10
+			AND = {
+				county_opinion <= -15
+				scope:target = {
+					top_liege = {
+						any_targeting_faction = {
+							faction_type = populist_faction
+							any_faction_county_member = {
+								this.title_province.faith = root.title_province.faith
+							}
+						}
+					}
+				}
+			}
+		}
+		# If a suitable Escalated Faction exists, prefer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_ESCALATED_FACTION"
+			add = -100
+			scope:target = {
+				any_targeting_faction = {
+					faction_type = escalated_peasant_faction
+				}
+			}
+		}
+
+		# Reduced weight for a character's own capital to join a revolt against them.
+		modifier = {
+			add = -20
+			exists = scope:target.capital_province
+			this.title_province = scope:target.capital_province
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:target
+			SCORE_PER_TRAIT = 10 # Worth 10 opinion per virtue.
+		}
+
+		# Ruling Caste
+		modifier = {
+			add = -25
+			culture != scope:target.culture
+			scope:target.culture = {
+				has_cultural_parameter = peasant_and_populist_factions_less_common
+			}
+		}
+
+		# Defiant Ambushers
+		modifier = {
+			add = 25
+			county_opinion < 0
+			culture != scope:target.culture
+			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
+		}
+
+		# Difficulty Settings
+		modifier = { # Easy
+			add = -50
+			has_game_rule = easy_difficulty
+			scope:target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Very Easy
+			add = -150
+			has_game_rule = very_easy_difficulty
+			scope:target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Hard
+			desc = "FACTION_REASON_DIFFICULTY_HARD"
+			add = -50
+			has_game_rule = hard_difficulty
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = { # Very Hard
+			desc = "FACTION_REASON_DIFFICULTY_VERY_HARD"
+			add = -150
+			has_game_rule = very_hard_difficulty
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = { # Conquerors
+			add = -150
+			scope:target = {
+				ai_should_get_extreme_conqueror_bonuses = yes
+			}
+		}
+
+
+		# Realm Stability Settings
+		modifier = {
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			add = -50
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			add = -100
+			has_game_rule = extreme_realm_stability
+		}
+
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			county_opinion < 0
+			scope:target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+		# Pure Land
+		modifier = {
+			add = 25
+			county_opinion < 0
+			faith != scope:target.faith
+			rite = {
+				rite_has_parameter = peasant_and_populist_factions_more_common
+			}
+		}
+	}
+
+	ai_join_score = {
+	}
+
+	can_character_join = {
+		custom_tooltip = {
+			text = can_join_escalated_peasant_faction_tt
+			OR = {
+				joined_faction = scope:faction
+				domicile ?= {
+					has_domicile_parameter = can_join_peasant_factions
+				}
+				has_trait = peasant_leader
+			}
+		}
+	}
+
+	can_county_join = {
+		# Peasants can only join a faction against their direct liege. Unless their liege is Byzantium trying to restore the Roman Empire, then they go for the emperor
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = {
+					OR = {
+						ep3_restored_rome_hard_mode_trigger = yes
+						has_variable = peasant_war_escalates
+					}
+				}
+			}
+			holder.top_liege = scope:faction.faction_target
+		}
+		trigger_else = { holder = scope:faction.faction_target }
+
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_county_create = {
+		# Peasants can only join a faction against their direct liege. Unless their liege is Byzantium trying to restore the Roman Empire, then they go for the emperor
+		trigger_if = {
+			limit = {
+				scope:target = {
+					OR = {
+						ep3_restored_rome_hard_mode_trigger = yes
+						has_variable = peasant_war_escalates
+					}
+				}
+			}
+			holder.top_liege = scope:target
+		}
+		trigger_else = { holder = scope:target }
+
+		scope:target = {
+			NAND = {
+				is_ai = yes
+				OR = {
+					has_trait = greatest_of_khans
+					has_character_modifier = the_great_khan_modifier
+				}
+			}
+		}
+
+		####
+		# BLOCKERS
+		####
+		# General Faction immunity
+		custom_description = {
+			text = character_is_immune_to_factions
+			subject = scope:target
+			NOT = { scope:target = { immune_to_factions_trigger = yes } }
+		}
+
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_character_become_leader = {
+		always = yes
+	}
+
+	on_war_start = {
+		# Give the peasant leader a small purse so they don't immediately go bankrupt with army maintenance.
+		every_faction_county_member = {
+			root.faction_leader = {
+				add_gold = 10
+			}
+		}
+		if = {
+			limit = { has_variable = ep3_governor_yearly_8150_ignored }
+			root.faction_leader = {
+				spawn_army = {
+					name = ep3_governor_yearly_8150_troop_name
+					men_at_arms = {
+						type = light_footmen
+						stacks = 2
+					}
+					war = root.faction_war
+					location = root.faction_leader.location
+					origin = root.faction_leader.location
+					inheritable = no
+				}
+			}
+			remove_variable = ep3_governor_yearly_8150_ignored
+		}
+
+		# If the target is Restoring Rome, the faction gets a military boon
+		if = {
+			limit = {
+				root.faction_target = { ep3_restored_rome_hard_mode_trigger = yes }
+			}
+			save_scope_value_as = {
+				name = spawn_army_size_levies
+				value = {
+					value = 1
+					root = {
+						every_faction_county_member = {
+							add = building_levies
+						}
+					}
+				}
+			}
+			root.faction_leader = {
+				spawn_army = {
+					name = ep3_restoring_rome_citizen_army_name
+					levies = scope:spawn_army_size_levies
+					men_at_arms = {
+						type = pikemen_unit
+						stacks = 16
+					}
+					men_at_arms = {
+						type = mangonel
+						stacks = 6
+					}
+					men_at_arms = {
+						type = armored_footmen
+						stacks = 10
+					}
+					men_at_arms = {
+						type = light_footmen
+						stacks = 10
+					}
+					men_at_arms = {
+						type = bowmen
+						stacks = 10
+					}
+					war = root.faction_war
+					location = root.faction_leader.location
+					origin = root.faction_leader.location
+					inheritable = no
+				}
+			}
+		}
+		else = {
+			root.faction_leader = {
+				spawn_army = {
+					name = peasant_leader_army_name
+					men_at_arms = {
+						type = pikemen_militia
+						stacks = {
+						    value = root.faction_leader.location.county.county_levies_to_raise
+						    divide = 100
+						    multiply = {
+						        value = "root.faction_leader.has_trait_xp(peasant_leader)"
+						        multiply = 0.05
+						    }
+							round = yes
+						    min = 1
+						}
+					}
+					men_at_arms = {
+						type = torch_bearers
+						stacks = {
+							value = "root.faction_leader.has_trait_xp(peasant_leader)"
+							multiply = 0.1
+							round = yes
+							min = 1
+						}
+					}
+					war = root.faction_war
+					location = root.faction_leader.location
+					origin = root.faction_leader.location
+					inheritable = no
+					war_keep_on_attacker_victory = yes
+				}
+			}
+		}
+	}
+
+	leader_leaves = {
+		# Should only trigger when the leader is captured in battle.
+		if = {
+			limit = {
+				NOT = { has_variable = peasant_destroying }
+				exists = faction_war
+			}
+			faction_war = {
+				end_war = defender
+			}
+		}
+	}
+
+	county_power = {
+		value = county_levies_to_raise
+		if = {
+			limit = {
+				scope:faction.faction_target = { ep3_restored_rome_hard_mode_trigger = yes }
+			}
+			multiply = 2
+		}
+		if = {
+			limit = {
+				rite = { rite_has_parameter = peasant_and_populist_factions_more_common }
+			}
+			multiply = 1.5
+		}
+	}
+
+	character_allow_create = no
+
+	special_character_title = "FACTIONS_WINDOW_LEADER"
+
+	inherit_membership = no
+
+	county_can_switch_to_other_faction = yes
+}
+
+populist_faction = {
+	casus_belli = populist_war
+
+	leaders_allowed_to_leave = no
+	player_can_join = no
+
+	sort_order = 3
+
+	name = FACTION_POPULIST_DYNAMIC_NAME
+
+	short_effect_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					faction_target = { government_allows = state_faith }
+				}
+				desc = populist_faction_short_effect_desc_admin
+			}
+			desc = populist_faction_short_effect_desc
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		modifier = {
+			faction_target = { can_vassals_be_attacked = yes }
+			add = 2
+			desc = border_war_increased_peasant_discontent
+		}
+		modifier = {
+			faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+			add = 2
+			desc = instability_increased_peasant_discontent
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_populist
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = liberty_faction
+		}
+	}
+
+	requires_county = yes
+	requires_character = no
+
+	# Faction existence is valid
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = special_character
+			}
+			special_character = {
+				is_alive = yes
+			}
+		}
+	}
+
+	###########
+	# Counties/characters are allowed to exist in the faction at all (will be kicked out if they fail these checks while already in it).
+	is_character_valid = {
+		has_valid_faction_members_trigger = yes
+		# Only AIs are allowed to be in popular factions.
+		is_ai = yes
+
+		# Landed rulers can only be in the faction...
+		trigger_if = {
+			limit = {
+				is_playable_character = yes
+				exists = liege
+				this != liege
+			}
+
+			# ... If they are a direct vassal of the faction target.
+			liege = scope:faction.faction_target
+
+			# ... If they are at least a count. (Barons are not allowed.)
+			highest_held_title_tier >= tier_county
+		}
+
+		# A rite other than the Admin State Rite is a grievance even within the same faith
+		custom_tooltip = {
+			text = populist_faction_same_culture_faith_as_liege
+			OR = {
+				faith != scope:faction.faction_target.faith
+				culture != scope:faction.faction_target.culture
+				AND = {
+					exists = scope:faction.faction_target.primary_title.state_rite
+					rite != scope:faction.faction_target.primary_title.state_rite
+				}
+			}
+		}
+
+		# Not forbidden from being in factions.
+		NOT = {
+			has_character_flag = joining_faction_block
+		}
+		is_imprisoned = no
+	}
+
+	is_county_valid = {
+		# Counties can only be in a faction against the top liege in their realm (who is inherently independent).
+		scope:faction.faction_target = holder.top_liege
+
+		# Counties must have a different faith or culture than the faction target;
+		# in Admin, a rite other than the State Rite also qualifies.
+		OR = {
+			faith != scope:faction.faction_target.faith
+			culture != scope:faction.faction_target.culture
+			AND = {
+				exists = scope:faction.faction_target.primary_title.state_rite
+				rite != scope:faction.faction_target.primary_title.state_rite
+			}
+		}
+
+		# Counties must have the same faith as the faction
+		scope:faction = {
+			OR = {
+				NOT = {
+					has_variable = faction_faith
+				}
+				AND = {
+					has_variable = faction_faith
+					root.faith = var:faction_faith
+				}
+			}
+		}
+
+		# Player capitals are blocked from joining populist factions (to avoid Game Overing a player due to a populist uprising against their liege, which as a vassal they can't really prevent or fight)
+		save_temporary_scope_as = this_county
+		trigger_if = {
+			limit = {
+				holder = {
+					is_ai = no
+				}
+			}
+			this != holder.capital_county
+		}
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	###########
+	# Counties/characters are allowed to create/join the faction (but will remain in faction if they fail these after joining).
+
+	can_character_join = {
+		# Must share this faction's faith.
+		scope:faction = {
+			has_variable = faction_faith
+			root.faith = var:faction_faith
+		}
+	}
+
+	can_county_join = {
+		# In Admin, the faith-driven faction also needs a State Rite grievance
+		scope:faction = {
+			trigger_if = {
+				limit = { has_variable = faction_faith }
+				root.faith = var:faction_faith
+				trigger_if = {
+					limit = {
+						exists = scope:faction.faction_target.primary_title.state_rite
+					}
+					root.rite != scope:faction.faction_target.primary_title.state_rite
+				}
+			}
+		}
+
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_county_create = {
+		county_opinion < 0
+
+		# Can only join factions against our top liege (not direct liege)
+		scope:target = holder.top_liege
+
+		# Must have a culture or faith different from the target's;
+		# in Admin, a rite other than the State Rite also qualifies.
+		OR = {
+			#make sure you do not accept their faith
+			faith ?= {
+				faith_hostility_level = {
+					target = scope:target.faith
+					value > faith_fully_accepted_level
+				}
+			}
+			culture != scope:target.culture
+			AND = {
+				exists = scope:target.primary_title.state_rite
+				rite != scope:target.primary_title.state_rite
+			}
+		}
+
+		####
+		# BLOCKERS
+		####
+		# General Faction immunity
+		custom_description = {
+			text = character_is_immune_to_factions
+			subject = scope:target
+			NOT = { scope:target = { immune_to_factions_trigger = yes } }
+		}
+
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	can_character_become_leader = {
+		has_variable = rebel_leader_peasants
+		var:rebel_leader_peasants = scope:faction
+	}
+
+	###########
+	# Counties/characters are *willing* to join or remain in the faction (not blocked from being in the faction, but unless these are true they will not join the faction unless forced).
+
+	county_create_score = {
+		base = -160 # Counties can't create a new faction unless opinion is less than -20 (see summary below).
+
+		# If a suitable Popular Faction already exists (of the same faith), side with it instead.
+		modifier = {
+			add = -1000
+			scope:target = {
+				any_targeting_faction = {
+					faction_type = populist_faction
+					any_faction_county_member = {
+						this.title_province.faith = root.title_province.faith
+					}
+				}
+			}
+		}
+		# If a suitable Escalated Faction exists, prefer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_ESCALATED_FACTION"
+			add = -100
+			scope:target = {
+				any_targeting_faction = {
+					faction_type = escalated_peasant_faction
+				}
+			}
+		}
+
+		# Summary of score weights (base + modifiers):
+		#	Different Culture Group + Evil Faith: 100% chance at -32 opinion, 1% chance at -19 opinion
+		#	Different Culture (Same Group) + Hostile Faith: 90% chance at -100 opinion, 1% chance at -46 opinion
+		# 	Different Culture AND Astray Faith: 40% chance at -100 opinion, 1% chance at -80 opinion
+		#	Different Culture OR Astray Faith: Never Creates
+		compare_modifier = {
+			trigger = {
+				this.title_province.culture != scope:target.culture
+				this.title_province.culture = { has_same_culture_heritage = scope:target.culture }
+			}
+			value = county_opinion
+			multiplier = -1.0
+		}
+		compare_modifier = {
+			trigger = {
+				NOT = { this.title_province.culture = { has_same_culture_heritage = scope:target.culture } }
+			}
+			value = county_opinion
+			multiplier = -3.0
+		}
+		pluralism_fundamentalism_dual_modifier = {
+			ASTRAY_BASE_VALUE = faction_county_opinion_astray
+			HOSTILE_BASE_VALUE = faction_county_opinion_hostile
+			EVIL_BASE_VALUE = faction_county_opinion_evil
+			BASE_FAITH = faith
+			TARGET = scope:target
+		}
+		pluralism_fundamentalism_modifier = {
+			ASTRAY_BASE_VALUE = faction_county_opinion_astray
+			HOSTILE_BASE_VALUE = faction_county_opinion_hostile
+			EVIL_BASE_VALUE = faction_county_opinion_evil
+			BASE_FAITH = faith
+			TARGET = scope:target
+		}
+
+		# Greatly reduced chance for a character's capital county to form a faction against them (extra -25 opinion needed).
+		modifier = {
+			add = -200
+			this.title_province = scope:target.capital_province
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:target
+			SCORE_PER_TRAIT = 50 # Worth ~12 opinion per trait.
+		}
+
+		liege_debt_modifier = {
+			TARGET = scope:target
+			SCORE_PER_DEBT_LEVEL = 20 # Worth ~5 opinon per debt level, up to a max of 140 (-35 opinion)
+		}
+
+		# Ruling Caste
+		modifier = {
+			add = -25
+			culture != scope:target.culture
+			scope:target.culture = {
+				has_cultural_parameter = peasant_and_populist_factions_less_common
+			}
+		}
+
+		# Defiant Ambushers
+		modifier = {
+			add = 25
+			county_opinion < 0
+			culture != scope:target.culture
+			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			add = 50
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			add = -100
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			add = -200
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 50
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -100
+			has_game_rule = higher_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -200
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			scope:target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+	
+		# 10-year 'grace period' from populist factions forming after game start
+		modifier = {
+			years_from_game_start <= 10
+			factor = {
+				value = 0
+				if = {
+					limit = { years_from_game_start >= 5 }
+					add = years_from_game_start
+					subtract = 5
+					divide = 5 # In year 6 factions can begin forming, but at 20% weighting. This increases to 40% in year 7, 60% in year 8, etc., up to 100% in year 10 where things are then normal.
+				}
+			}
+		}
+	}
+
+	county_join_score =  {
+		base = -120 # Counties won't join unless opinion is less than -15 (see summary below).
+
+		modifier = {
+			add = -1000
+			# Do not join if we have nothing to gain (already share Liege faith and will not share new liege Culture (Group)).
+			AND = {
+				# We already share a Faith with the Top Liege.
+				title_province.faith = scope:faction.faction_target.faith
+				# And we do NOT share a Culture Group with the faction leader.
+				NOT = { this.title_province.culture = { has_same_culture_heritage = scope:faction.var:faction_culture } }
+			}
+		}
+		# If a suitable Escalated Faction exists, prefer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_ESCALATED_FACTION"
+			add = -100
+			scope:faction.faction_target = {
+				any_targeting_faction = {
+					faction_type = escalated_peasant_faction
+				}
+			}
+		}
+
+		# Summary of score weights (base + modifiers):
+		#	Different Culture Group + Evil Faith: 100% chance at -28 opinion, 1% chance at -15 opinion
+		#	Different Culture (Same Group) + Hostile Faith: 100% chance at -88 opinion, 1% chance at -34 opinion
+		# 	Different Culture (Same Group) AND Astray Faith: 80% chance at -100 opinion, 1% chance at -60 opinion
+		#	Different Culture (Same Group) OR Astray Faith: Never Joins
+		compare_modifier = {
+			desc = "FACTION_REASON_CULTURAL_REASONS"
+			trigger = {
+				NOR = {
+					this.title_province.culture = scope:faction.faction_target.culture
+					AND = {
+						scope:faction.faction_target = { has_active_diarchy = yes }
+						this.title_province.culture = scope:faction.faction_target.diarch.culture
+					}
+				}
+				OR = {
+					this.title_province.culture = { has_same_culture_heritage = scope:faction.faction_target.culture }
+					AND = {
+						scope:faction.faction_target = { has_active_diarchy = yes }
+						this.title_province.culture = { has_same_culture_heritage = scope:faction.faction_target.diarch.culture }
+					}
+				}
+			}
+			value = county_opinion
+			multiplier = -1.0
+		}
+		compare_modifier = {
+			desc = "FACTION_REASON_CULTURAL_REASONS"
+			trigger = {
+				NOR = {
+					this.title_province.culture = scope:faction.faction_target.culture
+					AND = {
+						scope:faction.faction_target = { has_active_diarchy = yes }
+						this.title_province.culture = scope:faction.faction_target.diarch.culture
+					}
+				}
+			}
+			value = county_opinion
+			multiplier = -3.0
+		}
+		pluralism_fundamentalism_dual_modifier = {
+			ASTRAY_BASE_VALUE = faction_county_opinion_astray
+			HOSTILE_BASE_VALUE = faction_county_opinion_hostile
+			EVIL_BASE_VALUE = faction_county_opinion_evil
+			BASE_FAITH = faith
+			TARGET = scope:faction.faction_target
+		}
+		pluralism_fundamentalism_modifier = {
+			ASTRAY_BASE_VALUE = faction_county_opinion_astray
+			HOSTILE_BASE_VALUE = faction_county_opinion_hostile
+			EVIL_BASE_VALUE = faction_county_opinion_evil
+			BASE_FAITH = faith
+			TARGET = scope:faction.faction_target
+		}
+
+		# Reduced chance for a character's capital county to join a faction against them (extra -10 opinion needed).
+		modifier = {
+			desc = "FACTION_REASON_CAPITAL_COUNTY"
+			add = -80
+			exists = scope:faction.faction_target.capital_province
+			this.title_province = scope:faction.faction_target.capital_province
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 50 # Worth ~12 opinion per virtue.
+		}
+
+		liege_debt_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_DEBT_LEVEL = 20 # Worth ~5 opinon per debt level, up to a max of 140 (-35 opinion)
+		}
+
+		# Ruling Caste
+		modifier = {
+			desc = "FACTION_REASON_RULING_CASTE"
+			add = -25
+			culture != scope:faction.faction_target.culture
+			scope:faction.faction_target.culture = {
+				has_cultural_parameter = peasant_and_populist_factions_less_common
+			}
+		}
+
+		# Defiant Ambushers
+		modifier = {
+			add = 25
+			county_opinion < 0
+			culture != scope:faction.faction_target.culture
+			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 50
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -100
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -200
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 50
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -100
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -200
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:faction.faction_target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:faction.faction_target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+
+		# Regent
+		modifier = {
+			desc = "FACTION_REASON_REGENT_CULTURAL_REASONS"
+			add = -100
+			scope:faction.faction_target.culture != culture
+			scope:faction.faction_target = { has_active_diarchy = yes }
+			scope:faction.faction_target.diarch.culture ?= culture
+		}
+		modifier = {
+			desc = "FACTION_REASON_REGENT_FAITH_REASONS"
+			add = -100
+			scope:faction.faction_target.faith != faith
+			scope:faction.faction_target = { has_active_diarchy = yes }
+			scope:faction.faction_target.diarch.faith ?= faith
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+	}
+
+	county_power = county_levies_to_raise
+
+	ai_join_score = {
+		base = -25
+
+		# Do not join a new faction if I am already at war.
+		modifier = {
+			add = -1000
+			AND = {
+				is_at_war = yes
+				trigger_if = {
+					limit = {
+						exists = joined_faction
+					}
+					joined_faction != scope:faction
+				}
+			}
+		}
+
+		modifier = {
+			add = -1000
+			# Do not join if we have nothing to gain (already share Liege faith and will not share new liege Culture (Group)).
+			AND = {
+				# We already share a Faith with the Top Liege.
+				faith = scope:faction.faction_target.faith
+				# And we do NOT share a Culture Group with the faction leader.
+				NOT = { culture = { has_same_culture_heritage = scope:faction.var:faction_culture } }
+			}
+		}
+
+		# Block characters from joining if they have a high opinion of the target
+		modifier = {
+			add = -1000
+			save_temporary_opinion_value_as = { name = target_opinion target = scope:faction.faction_target }
+			scope:target_opinion >= 80
+		}
+
+		# Opinion of the Liege
+		opinion_modifier = {
+			who = root
+			opinion_target = scope:faction.faction_target
+			multiplier = -1
+		}
+
+		# Not a de jure vassal or consequent part of the realm is out of the De Jure
+		modifier = {
+			desc = "FACTION_REASON_RIGHTFUL"
+			add =	{
+				value = 125
+				# Larger realms are inherently more rebellious.
+				add = {
+					value = sub_realm_size
+					multiply = 2
+				}
+			}
+			OR = {
+				NOT = {
+					scope:faction.faction_target = {
+						is_rightful_liege_of = root
+					}
+				}
+				any_sub_realm_county = {
+					percent <= 0.5
+					save_temporary_scope_as = current_county
+					scope:faction.faction_target.primary_title = {
+						any_in_de_jure_hierarchy = {
+							this = scope:current_county
+						}
+					}
+				}
+			}
+		}
+
+		# Cultural and religious differences with liege
+		modifier = { # Between +50 and +100 based on culture
+			desc = "FACTION_REASON_CULTURAL_REASONS"
+			NOT = { culture = { has_same_culture_heritage = scope:faction.faction_target.culture } }
+			NOT = { culture = { has_cultural_parameter = doesnt_care_about_culture_faith_in_factions } }
+			culture = { has_same_culture_heritage = scope:faction.var:faction_culture }
+			add = {
+				value = 50
+				if = {
+					limit = {
+						culture != scope:faction.faction_target.culture
+						culture = scope:faction.var:faction_culture
+					}
+					add = 50
+				}
+			}
+		}
+
+		# Base values can range from +17.5 to +250 depending on hostility and pluralism/fundamentalism levels.
+		pluralism_fundamentalism_dual_modifier = {
+			ASTRAY_BASE_VALUE = 35
+			HOSTILE_BASE_VALUE = 75
+			EVIL_BASE_VALUE = 125
+			BASE_FAITH = faith
+			TARGET = scope:faction.faction_target
+		}
+		pluralism_fundamentalism_modifier = {
+			ASTRAY_BASE_VALUE = 35
+			HOSTILE_BASE_VALUE = 75
+			EVIL_BASE_VALUE = 125
+			BASE_FAITH = faith
+			TARGET = scope:faction.faction_target
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 25
+		}
+
+		liege_debt_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_DEBT_LEVEL = 10
+		}
+
+		tenet_divine_marriage_incestuous_liege_faction_modifier = {
+			TARGET = scope:faction.faction_target
+		}
+
+		# The AI is almost always unwilling to join a faction against their friends and lovers.
+		modifier = {
+			desc = "FACTION_REASON_TARGET_FRIEND_LOVER"
+			add = -250
+			OR = {
+				has_relation_lover = scope:faction.faction_target
+				has_relation_friend = scope:faction.faction_target
+			}
+		}
+
+		# Dread. Does not apply if the faction is above the power threshold
+		intimidated_from_faction_modifier = {
+			TARGET = scope:faction.faction_target
+			POWER =  scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		# Leader never leaves
+		modifier = {
+			desc = "FACTION_REASON_FACTION_LEADER"
+			has_variable = rebel_leader_peasants
+			add =  10000
+		}
+
+		# Ruling Caste
+		modifier = {
+			desc = "FACTION_REASON_RULING_CASTE"
+			add = -20
+			culture != scope:faction.faction_target.culture
+			scope:faction.faction_target.culture = {
+				has_cultural_parameter = peasant_and_populist_factions_less_common
+			}
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		##########################
+		# Faction 'Stacking' Factors, attempts to cluster AI rulers into several powerful factions instead of many weak ones.
+		join_faction_stacking_modifiers = yes
+
+		# Small multiplier for my neighbors already in the Faction
+		modifier = {
+			desc = "FACTION_REASON_NEIGHBORS"
+			factor = {
+				value = 1
+				scope:faction = {
+					every_faction_member = {
+						if = {
+							limit = {
+								any_neighboring_realm_same_rank_owner = {
+									this = root
+								}
+							}
+							add = 0.25
+						}
+					}
+				}
+			}
+		}
+
+		modifier = {
+			desc = "FACTION_REASON_POWERFUL_VASSAL"
+			factor = 2
+			is_powerful_vassal_of = scope:faction.faction_target
+		}
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+	}
+
+	on_creation = {
+		random_faction_county_member = {
+			save_scope_as = founding_county
+		}
+
+		set_variable = {
+			name = faction_culture
+			value = scope:founding_county.culture
+		}
+		set_variable = {
+			name = faction_faith
+			value = scope:founding_county.faith
+		}
+	}
+
+	on_destroy = {
+		set_variable = {
+			name = peasant_destroying
+			value = yes
+		}
+		if = {
+			limit = { exists = special_character }
+			special_character = {
+				if = {
+					limit = {
+						has_variable = {
+							name = peasant_faction_claimant_without_title
+							name = peasant_faction_random_peasant
+						}
+						has_variable = peasant_title
+					}
+					if = {
+						limit = {
+							has_variable = peasant_title
+						}
+						destroy_title = this.var:peasant_title
+					}
+					if = {
+						limit = { # To make sure we aren't in debt
+							is_alive = yes
+							gold > 0
+						}
+						remove_long_term_gold = gold # Zero out our wallet since the revolt is over and we're going back to being unlanded.
+					}
+				}
+				if = {
+					limit = {
+						is_alive = yes # To prevent dead people from being checked for variables
+					}
+					if = {
+						limit = {
+							has_variable = rebel_leader_peasants
+						}
+						remove_variable = rebel_leader_peasants
+					}
+					remove_variable = peasant_title
+					remove_character_flag = peasant_faction_random_peasant
+					remove_character_flag = peasant_faction_claimant_without_title
+					if = {
+						limit = {
+							has_character_flag =  peasant_faction_random_peasant
+							NOT = {	has_character_flag = peasant_revolt_do_not_kill }
+						}
+						death = {
+							death_reason = death_vanished
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		setup_populist_leader_effect = yes
+		# Faction leader is unhappy if they reach the point of needing to issue an ultimatim.
+		if = {
+			limit = { exists = faction_leader }
+			faction_leader = {
+				add_opinion = {
+					modifier = angry_opinion
+					target = root.faction_target
+					opinion = -20
+				}
+			}
+		}
+
+		# Refresh the faction's target title (best target may have changed between creation and pressing demands).
+		get_popular_revolt_target_effect = { FACTION = this }
+
+		# Save scopes that will be used in the demand event.
+		save_scope_as = faction
+		special_character = {
+			save_scope_as = peasant_leader
+			save_scope_as = faction_leader
+		}
+		special_title = {
+			save_scope_as = target_title
+		}
+
+		# Check for relevant vassals that owns any land targeted by the faction.
+		save_temporary_scope_as = county_faction
+		every_faction_county_member = {
+			limit = {
+				holder = {
+					this != scope:faction.faction_target
+					NOT = {
+						joined_faction ?= {
+							this = scope:county_faction
+						}
+					}
+					OR = {
+						is_vassal_of = scope:faction.faction_target
+						is_ai = no
+					}
+					NOT = { is_in_list = popular_faction_vassal_targets }
+				}
+			}
+			holder = {
+				add_to_list = popular_faction_vassal_targets
+			}
+		}
+		every_faction_county_member = {
+			holder = {
+				every_liege_or_above = {
+					limit = {
+						this != scope:faction.faction_target
+						NOT = {
+							joined_faction ?= {
+								this = scope:county_faction
+							}
+						}
+						OR = {
+							is_vassal_of = scope:faction.faction_target
+							is_ai = no
+						}
+						NOT = { is_in_list = popular_faction_vassal_targets }
+					}
+					add_to_list = popular_faction_vassal_targets
+				}
+			}
+		}
+
+		# Check if there is a player affected by the faction. AI rulers are blocked from accepting the faction demand if so.
+		if = {
+			limit = {
+				any_in_list = {
+					list = popular_faction_vassal_targets
+					is_ai = no
+				}
+			}
+			scope:faction = {
+				set_variable = {
+					name = faction_targets_player
+					value = yes
+				}
+			}
+		}
+
+		# Fire the demand event. A follow up event will be sent to affected vassals.
+		scope:faction.faction_target = {
+			trigger_event = faction_demand.1001
+		}
+	}
+
+	ai_demand_chance = {
+		base = 100
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		# Duchy initialization so we can concentrate the rebels in just a few important counties instead of spreading them over the entire realm.
+		every_faction_county_member = {
+			duchy = {
+				add_to_list = areas_of_rebellion
+			}
+		}
+
+		# Check where in the duchy the rebellion troops should spawn, then spawn them.
+		every_in_list = {
+			list = areas_of_rebellion
+			save_temporary_scope_as = this_duchy
+
+			# Determine where in the duchy those troops should spawn.
+			ordered_in_de_jure_hierarchy = {
+				# Troops can only spawn in counties that belong to our faction!
+				limit = {
+					tier = tier_county
+					any_title_joined_faction = {
+						this = root
+					}
+				}
+
+				# Sort counties by how many levies they provide; rebels will spawn in the strongest county.
+				order_by = total_county_levies
+
+				title_province = {
+					save_temporary_scope_as = local_center_of_rebellion
+				}
+			}
+
+			# Spawn the faction troops in the designated location.
+			root.faction_leader = {
+				spawn_popular_revolt_troops = yes
+			}
+
+			# Give the populist leader a commander for each stack of troops.
+			create_character = {
+				template = new_commander_character
+				location = scope:local_center_of_rebellion
+				faith = root.faction_leader.faith
+				rite = root.faction_leader.rite
+				culture = root.faction_leader.culture
+				save_scope_as = new_populist_commander
+				gender_female_chance = {
+					if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_male_only_combatant } }
+						add = 0
+					}
+					else_if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_female_only_combatant } }
+						add = 100
+					}
+					else = {
+						add = 50
+					}
+				}
+			}
+			scope:new_populist_commander = {
+				set_character_rite = root.faction_leader.rite
+				set_employer = root.faction_leader
+			}
+		}
+
+		# Give the populist leader a small purse so they don't immediately go bankrupt with army maintenance.
+		every_faction_county_member = {
+			root.faction_leader = {
+				add_gold = 25
+			}
+		}
+	}
+
+	leader_leaves = {
+		# Should only trigger when the leader is captured in battle.
+		if = {
+			limit = {
+				special_character = {
+					is_alive = no
+				}
+			}
+			if = {
+				limit = { exists = faction_war }
+				faction_war = {
+					end_war = defender
+				}
+			}
+			destroy_faction = yes
+		}
+		else_if = { # Not an if: the branch above destroys the faction, leaving this scope invalid
+			limit = {
+				NOT = { has_variable = peasant_destroying }
+				exists = faction_war
+			}
+			faction_war = {
+				end_war = defender
+			}
+		}
+	}
+
+	character_allow_create = no
+
+	special_character_title = "FACTIONS_WINDOW_LEADER"
+
+	inherit_membership = yes
+
+	multiple_targeting = yes
+}
+
+escalated_peasant_faction = {
+	casus_belli = populist_war
+
+	leaders_allowed_to_leave = no
+	player_can_join = yes
+
+	sort_order = 3
+
+	name = FACTION_ESCALATED_PEASANT_DYNAMIC_NAME
+
+	short_effect_desc = escalated_peasant_faction_short_effect_desc
+
+	is_shown = {
+		always = no
+	}
+
+	discontent_progress = {
+		base = 2
+		modifier = {
+			faction_target = { ep3_restored_rome_hard_mode_trigger = yes }
+			add = 10
+			desc = ep3_story_cycle_restoring_rome_faction_discontent
+		}
+		modifier = {
+			faction_target = { can_vassals_be_attacked = yes }
+			add = 2
+			desc = border_war_increased_peasant_discontent
+		}
+		modifier = {
+			faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+			add = 2
+			desc = instability_increased_peasant_discontent
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_peasant
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = 0 # Peasant Factions place their demand regardless of their Power
+
+	requires_county = yes
+	requires_character = yes
+
+	# Faction existence is valid
+	is_valid = {
+		trigger_if = {
+			limit = {
+				exists = special_character
+			}
+			special_character = {
+				is_alive = yes
+			}
+		}
+	}
+
+	###########
+	# Counties/characters are allowed to exist in the faction at all (will be kicked out if they fail these checks while already in it).
+	is_character_valid = {
+		has_valid_faction_members_trigger = yes
+		is_imprisoned = no
+
+		# Not forbidden from being in factions.
+		NOT = {
+			has_character_flag = joining_faction_block
+		}
+	}
+
+	is_county_valid = {
+		# Only in Dynastic Cycle
+		any_county_situation = {
+			situation_type = dynastic_cycle
+		}
+		# Counties can only be in a faction against the top liege in their realm (who is inherently independent).
+		scope:faction.faction_target = holder.top_liege
+
+		# Player capitals are blocked from joining populist factions (to avoid Game Overing a player due to a populist uprising against their liege, which as a vassal they can't really prevent or fight)
+		trigger_if = {
+			limit = {
+				holder = {
+					is_ai = no
+				}
+			}
+			this != holder.capital_county
+		}
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+
+	}
+
+	###########
+	# Counties/characters are allowed to create/join the faction (but will remain in faction if they fail these after joining).
+
+	can_character_join = {
+		custom_tooltip = {
+			text = can_join_escalated_peasant_faction_tt
+			OR = {
+				domicile ?= {
+					has_domicile_parameter = can_join_peasant_factions
+				}
+				has_trait = peasant_leader
+			}
+		}
+	}
+
+	can_county_join = {	
+		OR = {
+			has_county_modifier = peasant_war_lost_county_modifier
+			holder = scope:faction.faction_target
+		}
+	}
+
+	can_character_create = {
+		OR = {
+			domicile ?= {
+				has_domicile_parameter = can_join_peasant_factions
+			}
+			has_trait = peasant_leader
+		}
+	}
+
+	can_character_become_leader = {
+		OR = {
+			domicile ?= {
+				has_domicile_parameter = can_join_peasant_factions
+			}
+			has_trait = peasant_leader
+		}
+	}
+
+	county_join_score =  {
+		base = 0
+		compare_modifier = {
+			desc = "FACTION_REASON_COUNTY_OPINION"
+			value = county_opinion
+			multiplier = -1.0
+		}
+		# If a suitable Popular Faction exists, perfer to join it instead.
+		modifier = {
+			desc = "FACTION_REASON_PREFER_POPULIST_FACTION"
+			add = -100
+			scope:faction.faction_target = {
+				top_liege = {
+					any_targeting_faction = {
+						faction_type = populist_faction
+						any_faction_county_member = {
+							this.title_province.faith = root.title_province.faith
+						}
+					}
+				}
+			}
+		}
+
+		# Reduced weight for a character's own capital to join a revolt against them.
+		modifier = {
+			desc = "FACTION_REASON_CAPITAL_COUNTY"
+			add = -10
+			this.title_province = scope:faction.faction_target.capital_province
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 10 # Worth 10 opinion per virtue.
+		}
+
+		# Ruling Caste
+		modifier = {
+			desc = "FACTION_REASON_RULING_CASTE"
+			add = -25
+			culture != scope:faction.faction_target.culture
+			scope:faction.faction_target.culture = { has_cultural_parameter = peasant_and_populist_factions_less_common }
+		}
+
+		# Defiant Ambushers
+		modifier = {
+			add = 25
+			county_opinion < 0
+			culture != scope:faction.faction_target.culture
+			culture = { has_cultural_parameter = county_peasant_and_populist_factions_more_common }
+		}
+
+		# Difficulty Settings
+		modifier = { # Easy
+			desc = "FACTION_REASON_DIFFICULTY_EASY"
+			add = -50
+			has_game_rule = easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Very Easy
+			desc = "FACTION_REASON_DIFFICULTY_VERY_EASY"
+			add = -150
+			has_game_rule = very_easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Hard
+			desc = "FACTION_REASON_DIFFICULTY_HARD"
+			add = -50
+			has_game_rule = hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = { # Very Hard
+			desc = "FACTION_REASON_DIFFICULTY_VERY_HARD"
+			add = -150
+			has_game_rule = very_hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -85
+			scope:faction.faction_target = {
+				ai_should_get_conqueror_bonuses = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -150
+			scope:faction.faction_target = {
+				ai_should_get_extreme_conqueror_bonuses = yes
+			}
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:faction.faction_target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:faction.faction_target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+
+		# stay if at war with the target
+		modifier = {
+			desc = "FACTION_REASON_AT_WAR_WITH_TARGET"
+			add = 1000
+			scope:faction = {
+				faction_is_at_war = yes
+			}
+		}
+		# TGP Dynastic Cycle in Instability phase
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			county_opinion < 0
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+		# Pure Land
+		modifier = {
+			desc = "FACTION_REASON_POPULIST_PEASANT_MORE_LIKELY"
+			add = 25
+			county_opinion < 0
+			faith != scope:faction.faction_target.faith
+			rite = {
+				rite_has_parameter = peasant_and_populist_factions_more_common
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_ESCALATED_TO_LIEGE"
+			add = 100
+			has_county_modifier = peasant_war_lost_county_modifier
+		}
+	}
+
+	county_power = county_levies_to_raise
+
+	ai_create_score = {
+		base = -10000 #handled by scripted effect peasant_faction_demands_enforced in 00_faction_effects.txt
+	}
+
+	ai_join_score = {
+		base = 0
+		modifier = {
+			desc = "FACTION_REASON_ESCALATED_TO_LIEGE"
+			add = 100
+			has_variable = peasant_war_escalates
+		}
+	}
+
+	can_county_create = {
+		holder.top_liege = scope:target
+		scope:target = {
+			NAND = {
+				is_ai = yes
+				OR = {
+					has_trait = greatest_of_khans
+					has_character_modifier = the_great_khan_modifier
+				}
+			}
+		}
+
+		####
+		# BLOCKERS
+		####
+		# General Faction immunity
+		custom_description = {
+			text = character_is_immune_to_factions
+			subject = scope:target
+			NOT = { scope:target = { immune_to_factions_trigger = yes } }
+		}
+
+		title_province = {
+			NOR = {
+				has_holding_type = nomad_holding
+				has_holding_type = herder_holding
+			}
+		}
+	}
+
+	on_creation = {
+	}
+
+	on_destroy = {
+		set_variable = {
+			name = peasant_destroying
+			value = yes
+		}
+		if = {
+			limit = { exists = special_character }
+			special_character = {
+				if = {
+					limit = {
+						has_variable = {
+							name = peasant_faction_claimant_without_title
+							name = peasant_faction_random_peasant
+						}
+						has_variable = peasant_title
+					}
+					if = {
+						limit = {
+							has_variable = peasant_title
+						}
+						destroy_title = this.var:peasant_title
+					}
+					if = {
+						limit = { # To make sure we aren't in debt
+							is_alive = yes
+							gold > 0
+						}
+						remove_long_term_gold = gold # Zero out our wallet since the revolt is over and we're going back to being unlanded.
+					}
+				}
+				if = {
+					limit = {
+						is_alive = yes # To prevent dead people from being checked for variables
+					}
+					if = {
+						limit = {
+							has_variable = rebel_leader_peasants
+						}
+						remove_variable = rebel_leader_peasants
+					}
+					remove_variable = peasant_title
+					remove_character_flag = peasant_faction_random_peasant
+					remove_character_flag = peasant_faction_claimant_without_title
+					if = {
+						limit = {
+							has_character_flag =  peasant_faction_random_peasant
+							NOT = {	has_character_flag = peasant_revolt_do_not_kill }
+						}
+						death = {
+							death_reason = death_vanished
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		setup_populist_leader_effect = yes
+		# Faction leader is unhappy if they reach the point of needing to issue an ultimatim.
+		if = {
+			limit = { exists = faction_leader }
+			faction_leader = {
+				add_opinion = {
+					modifier = angry_opinion
+					target = root.faction_target
+					opinion = -20
+				}
+			}
+		}
+
+		# Refresh the faction's target title (best target may have changed between creation and pressing demands).
+		get_popular_revolt_target_effect = { FACTION = this }
+
+		# Save scopes that will be used in the demand event.
+		save_scope_as = faction
+		if = {
+			limit = {
+				special_character.joined_faction ?= root
+			}
+			special_character = {
+				save_scope_as = peasant_leader
+			}
+		}
+		else = {
+			faction_leader = {
+				save_scope_as = peasant_leader
+			}
+		}
+		special_title = {
+			save_scope_as = target_title
+		}
+
+		# Check for relevant vassals that owns any land targeted by the faction.
+		save_temporary_scope_as = county_faction
+		every_faction_county_member = {
+			limit = {
+				holder = {
+					this != scope:faction.faction_target
+					NOT = {
+						joined_faction ?= {
+							this = scope:county_faction
+						}
+					}
+					OR = {
+						is_vassal_of = scope:faction.faction_target
+						is_ai = no
+					}
+					NOT = { is_in_list = popular_faction_vassal_targets }
+				}
+			}
+			holder = {
+				add_to_list = popular_faction_vassal_targets
+			}
+		}
+		every_faction_county_member = {
+			holder = {
+				every_liege_or_above = {
+					limit = {
+						this != scope:faction.faction_target
+						NOT = {
+							joined_faction ?= {
+								this = scope:county_faction
+							}
+						}
+						OR = {
+							is_vassal_of = scope:faction.faction_target
+							is_ai = no
+						}
+						NOT = { is_in_list = popular_faction_vassal_targets }
+					}
+					add_to_list = popular_faction_vassal_targets
+				}
+			}
+		}
+
+		# Check if there is a player affected by the faction. AI rulers are blocked from accepting the faction demand if so.
+		if = {
+			limit = {
+				any_in_list = {
+					list = popular_faction_vassal_targets
+					is_ai = no
+				}
+			}
+			scope:faction = {
+				set_variable = {
+					name = faction_targets_player
+					value = yes
+				}
+			}
+		}
+
+		# Fire the demand event. A follow up event will be sent to affected vassals.
+		scope:faction.faction_target = {
+			trigger_event = faction_demand.1001
+		}
+	}
+
+	ai_demand_chance = {
+		base = 100
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		# Duchy initialization so we can concentrate the rebels in just a few important counties instead of spreading them over the entire realm.
+		every_faction_county_member = {
+			duchy = {
+				add_to_list = areas_of_rebellion
+			}
+		}
+
+		# Check where in the duchy the rebellion troops should spawn, then spawn them.
+		every_in_list = {
+			list = areas_of_rebellion
+			save_temporary_scope_as = this_duchy
+
+			# Determine where in the duchy those troops should spawn.
+			ordered_in_de_jure_hierarchy = {
+				# Troops can only spawn in counties that belong to our faction!
+				limit = {
+					tier = tier_county
+					any_title_joined_faction = {
+						this = root
+					}
+				}
+
+				# Sort counties by how many levies they provide; rebels will spawn in the strongest county.
+				order_by = total_county_levies
+
+				title_province = {
+					save_temporary_scope_as = local_center_of_rebellion
+				}
+			}
+
+			# Spawn the faction troops in the designated location.
+			root.faction_leader = {
+				spawn_popular_revolt_troops = yes
+			}
+
+			# Give the populist leader a commander for each stack of troops.
+			create_character = {
+				template = new_commander_character
+				location = scope:local_center_of_rebellion
+				faith = root.faction_leader.faith
+				rite = root.faction_leader.rite
+				culture = root.faction_leader.culture
+				save_scope_as = new_populist_commander
+				gender_female_chance = {
+					if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_male_only_combatant } }
+						add = 0
+					}
+					else_if = {
+						limit = { root.faction_leader.culture = { has_cultural_parameter = martial_custom_female_only_combatant } }
+						add = 100
+					}
+					else = {
+						add = 50
+					}
+				}
+			}
+			scope:new_populist_commander = {
+				set_character_rite = root.faction_leader.rite
+				set_employer = root.faction_leader
+			}
+		}
+
+		# Give the populist leader a small purse so they don't immediately go bankrupt with army maintenance.
+		every_faction_county_member = {
+			root.faction_leader = {
+				add_gold = 25
+			}
+		}
+		faction_leader = {
+			spawn_army = {
+				name = peasant_leader_army_name
+				men_at_arms = {
+					type = pikemen_militia
+					stacks = {
+						value = root.faction_leader.location.county.county_levies_to_raise
+						divide = 100
+						multiply = {
+							value = "root.faction_leader.has_trait_xp(peasant_leader)"
+							multiply = 0.05
+						}
+						round = yes
+						min = 1
+					}
+				}
+				men_at_arms = {
+					type = torch_bearers
+					stacks = {
+						value = "root.faction_leader.has_trait_xp(peasant_leader)"
+						multiply = 0.1
+						round = yes
+						min = 1
+					}
+				}
+				war = root.faction_war
+				location = root.faction_leader.location
+				origin = root.faction_leader.location
+				inheritable = no
+				war_keep_on_attacker_victory = yes
+			}
+		}
+		every_faction_member = {
+			limit = {
+				NOT = { has_trait = peasant_leader }
+			}
+			add_trait = peasant_leader
+			add_trait_xp = {
+				trait = peasant_leader
+				value = peasant_leader_xp_value
+			}
+			set_variable = {
+				name = rebel_leader_peasants
+				value = root
+			}
+		}
+	}
+
+	leader_leaves = {
+		# Should only trigger when the leader is captured in battle.
+		if = {
+			limit = {
+				special_character = {
+					is_alive = no
+				}
+			}
+			if = {
+				limit = { exists = faction_war }
+				faction_war = {
+					end_war = defender
+				}
+			}
+			destroy_faction = yes
+		}
+		else_if = { # Not an if: the branch above destroys the faction, leaving this scope invalid
+			limit = {
+				NOT = { has_variable = peasant_destroying }
+				exists = faction_war
+			}
+			faction_war = {
+				end_war = defender
+			}
+		}
+	}
+
+	character_allow_create = yes
+
+	special_character_title = "FACTIONS_WINDOW_LEADER"
+
+	inherit_membership = no
+
+	multiple_targeting = no
+
+	county_can_switch_to_other_faction = no
+}
+
+replace_ceremonial_regent_faction = {
+	casus_belli = replace_ceremonial_regent_faction_war
+
+	name = FACTION_JAPANESE_REPLACE_REGENT_NAME_DYNAMIC
+
+	desc = {
+		first_valid = {
+			desc = replace_ceremonial_regent_faction_desc
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					faction_leader = { tgp_is_ceremonial_liege_trigger = yes }
+				}
+				desc = replace_ceremonial_regent_faction_desc_emperor
+			}
+		}
+	}
+
+	short_effect_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					faction_leader ?= { tgp_is_ceremonial_liege_trigger = yes }
+				}
+				desc = replace_ceremonial_regent_faction_short_effect_desc_emperor
+			}
+			desc = replace_ceremonial_regent_faction_short_effect_desc_regent
+		}
+	}
+
+	special_character_title = "FACTIONS_WINDOW_JAPANESE_REGENT"
+
+	sort_order = 4
+
+	show_special_title = yes
+
+	multiple_targeting = yes
+
+	discontent_progress = {
+		base = 0
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+		# Hard rule perk
+		modifier = {
+			add = 20
+			faction_target = { has_perk = hard_rule_perk }
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}	
+
+	demand = {
+		save_scope_as = faction
+		faction_leader = { save_scope_as = faction_leader }
+		faction_target = { save_scope_as = faction_target }
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				NOT = { this = scope:faction.faction_leader }
+			}
+			trigger_event = tgp_faction_events.0105
+		}
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = tgp_faction_events.0101
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+		# 30% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.375
+		}
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+		# Less likely if already in a war with an external ruler - the Liberty Faction is pretty sporting
+		modifier = {
+			add = -75
+			faction_target = {
+				any_war_enemy = {
+					NOT = { target_is_liege_or_above = root.faction_target }
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = { var:gathered_support_for_faction ?= root }
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_shown = {
+		tgp_realm_has_ceremonial_liege_trigger = yes
+		has_dlc_feature = all_under_heaven
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	is_valid = {
+		trigger_if = {
+			limit = { exists = faction_target }
+			faction_target = { tgp_install_regent_faction_target_valid_trigger = yes }
+		}
+		trigger_if = {
+			limit = { exists = special_character }
+			special_character = { is_alive = yes }
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = { FACTION_TARGET = scope:faction.faction_target }
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = replace_ceremonial_regent_faction }
+		common_can_character_create_trigger = { FACTION_TARGET = scope:target }
+		tgp_install_regent_faction_can_create_trigger = yes
+		NOR = {
+			custom_tooltip = {
+				text = not_house_head_allied_to_faction_target_trigger # this is correct, keys are swapped in loc
+				house ?= scope:target.house
+			}
+			custom_tooltip = {
+				text = not_house_member_of_faction_target_trigger # this is correct, keys are swapped in loc
+				house.house_head ?= { is_allied_to = scope:target }
+			}
+		}
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = { FACTION_TARGET = scope:target }
+		tgp_install_regent_faction_can_create_trigger = yes
+		trigger_if = {
+			limit = {
+				is_ai = yes
+				is_male = yes
+			}
+			rite = {
+				OR = {
+					rite_has_parameter = male_dominated_law
+					rite_has_parameter = gender_equal_law
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				is_ai = yes
+				is_female = yes
+			}
+			rite = {
+				OR = {
+					rite_has_parameter = female_dominated_law
+					rite_has_parameter = gender_equal_law
+				}
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		NOR = {
+			custom_tooltip = {
+				text = not_house_head_allied_to_faction_target_trigger # this is correct, keys are swapped in loc
+				house ?= scope:target.house
+			}
+			custom_tooltip = {
+				text = not_house_member_of_faction_target_trigger # this is correct, keys are swapped in loc
+				house.house_head ?= { is_allied_to = scope:target }
+			}
+		}
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = { FACTION_TARGET = scope:faction.faction_target }
+		NOR = {
+			custom_tooltip = {
+				text = not_house_head_allied_to_faction_target_trigger # this is correct, keys are swapped in loc
+				house ?= scope:faction.faction_target.house
+			}
+			custom_tooltip = {
+				text = not_house_member_of_faction_target_trigger # this is correct, keys are swapped in loc
+				house.house_head ?= { is_allied_to = scope:faction.faction_target }
+			}
+		}
+		japan_faction_cohesion_hard_trigger = yes
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+		is_adult = yes
+	}
+
+	ai_create_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+		############
+		# BLOCKERS #
+		############
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_replace_regent_faction_war
+		}
+		#######################
+		# Standard AI Weights #
+		#
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		# 'Base Join Weight' depends on the current Crown Authority level.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+		replace_ceremonial_regent_faction_modifiers = { FACTION_TARGET = scope:target }
+		#House Hostility from Armenian tradition
+		modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+			NOT = { scope:target.house ?= root.house }
+			culture = { has_cultural_parameter = house_hostility_more_common }
+			factor = 1.25
+		}
+		modifier = {
+			house.house_confederation.leading_house.house_head ?= root
+			add = 50
+		}
+		# Extra check on leading house
+	    modifier = {
+	    	factor = 0
+	    	NOT = { house.house_confederation.leading_house ?= house }
+	    }
+	}
+
+	ai_join_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+		############
+		# BLOCKERS #
+		common_join_faction_blockers = { FACTION_TARGET = scope:faction.faction_target }
+		#######################
+		# Standard AI Weights #
+		#AI
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+		replace_ceremonial_regent_faction_modifiers = { FACTION_TARGET = scope:faction.faction_target }
+		struggle_faction_modifiers = yes
+		modifier = {
+			is_allied_to = scope:faction.faction_leader
+			NOT = { is_allied_to = scope:faction.faction_target }
+			add = 25
+		}
+		modifier = {
+			house ?= scope:faction.faction_leader.house
+			add = 15
+			desc = "FACTION_REASON_SAME_HOUSE_LEADER"
+		}
+		modifier = {
+			dynasty ?= scope:faction.faction_leader.dynasty
+			add = 10
+			desc = "FACTION_REASON_SAME_DYNASTY_LEADER"
+		}
+		modifier = {
+			house ?= scope:faction.faction_target.house
+			add = -15
+			desc = "FACTION_REASON_SAME_HOUSE_TARGET"
+		}
+		modifier = {
+			dynasty ?= scope:faction.faction_target.dynasty
+			add = -10
+			desc = "FACTION_REASON_SAME_DYNASTY_TARGET"
+		}
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+			NOT = { scope:faction.faction_target.house ?= root.house }
+			culture = { has_cultural_parameter = house_hostility_more_common }
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = { has_character_flag = low_legitimacy_admin_factions_flag }
+			}
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		set_special_title = scope:faction.faction_leader.top_liege.primary_title
+		set_special_character = scope:faction.faction_leader
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					is_landless_adventurer = yes
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						has_task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+restore_ceremonial_liege_faction = {
+	casus_belli = restore_ceremonial_liege_faction_war
+
+	name = FACTION_JAPANESE_RESTORE_EMPEROR_NAME_DYNAMIC
+
+	desc = {
+		desc = restore_ceremonial_liege_faction_desc
+	}
+	short_effect_desc = restore_ceremonial_liege_faction_short_effect_desc
+
+	special_character_title = "FACTIONS_WINDOW_JAPANESE_RESTORE_EMPEROR"
+
+	sort_order = 4
+
+	show_special_title = yes
+
+	multiple_targeting = no
+
+	discontent_progress = {
+		base = 0
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+		# Hard rule perk
+		modifier = {
+			add = 20
+			faction_target = { has_perk = hard_rule_perk }
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}	
+
+	demand = {
+		save_scope_as = faction
+		faction_leader = { save_scope_as = faction_leader }
+		faction_target = { save_scope_as = faction_target }
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				NOT = { this = scope:faction.faction_leader }
+			}
+			trigger_event = tgp_faction_events.0205
+		}
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = tgp_faction_events.0201
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+		# 30% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.375
+		}
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+		# Less likely if already in a war with an external ruler - the Liberty Faction is pretty sporting
+		modifier = {
+			add = -75
+			faction_target = {
+				any_war_enemy = {
+					NOT = { target_is_liege_or_above = root.faction_target }
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = { var:gathered_support_for_faction ?= root }
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_shown = {
+		tgp_realm_has_ceremonial_liege_trigger = yes
+		top_liege = { tgp_has_ceremonial_liege_title_trigger = no }
+		has_dlc_feature = all_under_heaven
+	}
+
+	is_valid = {
+		trigger_if = {
+			limit = { exists = special_character }
+			special_character = { is_alive = yes }
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = { FACTION_TARGET = scope:faction.faction_target }
+		trigger_if = {
+			limit = { 
+				government_is_japanese_trigger = yes
+				exists = scope:faction.faction_leader
+			}
+			scope:faction = {
+				any_faction_member = {
+					this = root.house.house_confederation.leading_house.house_head
+				}
+			}
+			house.house_confederation ?= {
+				OR = {
+					leading_house.house_head ?= scope:faction.faction_leader
+					leading_house.house_head ?= { tgp_is_ceremonial_liege_trigger = yes }
+				}
+				OR = {
+					has_cohesion_level_parameter = bloc_leader_unlocks_restore_emperor_faction
+					root.joined_faction ?= {
+						faction_is_at_war = yes
+					}
+				}
+			}
+		}
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = restore_ceremonial_liege_faction }
+		common_can_character_create_trigger = { FACTION_TARGET = scope:target }
+		restore_ceremonial_liege_faction_can_create_trigger = yes
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = { FACTION_TARGET = scope:target }
+		restore_ceremonial_liege_faction_can_create_trigger = yes
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = { FACTION_TARGET = scope:faction.faction_target }
+		NOR = {
+			house ?= {
+				this = scope:faction.faction_target.house
+				house_head ?= { is_allied_to = scope:faction.faction_target }
+			}
+			is_allied_to = scope:faction.faction_target
+		}
+		scope:faction.faction_target ?= {
+			is_independent_ruler = yes
+			tgp_realm_has_ceremonial_liege_trigger = yes
+			tgp_has_ceremonial_liege_title_trigger = no
+		}
+	}
+
+	ai_create_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+		############
+		# BLOCKERS #
+		############
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_restore_ceremonial_liege_faction_war
+		}
+		#######################
+		# Standard AI Weights #
+		# 'Base Join Weight' depends on the current Crown Authority level.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+		restore_ceremonial_liege_faction_modifiers = { FACTION_TARGET = scope:target }
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+			NOT = { scope:target.house ?= root.house }
+			culture = { has_cultural_parameter = house_hostility_more_common }
+			factor = 1.25
+	    }
+
+	    # Extra check on leading house
+	    modifier = {
+	    	factor = 0
+	    	NOT = { house.house_confederation.leading_house ?= house }
+	    }
+	}
+
+	ai_join_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+		############
+		# BLOCKERS #
+		common_join_faction_blockers = { FACTION_TARGET = scope:faction.faction_target }
+		#######################
+		# Standard AI Weights #
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+		restore_ceremonial_liege_faction_modifiers = { FACTION_TARGET = scope:faction.faction_target }
+		struggle_faction_modifiers = yes
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+			NOT = { scope:faction.faction_target.house ?= root.house }
+			culture = { has_cultural_parameter = house_hostility_more_common }
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = { has_character_flag = low_legitimacy_admin_factions_flag }
+			}
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		scope:faction ?= {
+			random_faction_member = {
+				limit = {
+					house.house_confederation.leading_house.house_head ?= this
+				}
+				save_scope_as = faction_leader_scope
+			}
+		}
+	
+		if = { # Japanese blocs
+			limit = { scope:faction_leader_scope.house.house_confederation.leading_house ?= scope:faction_leader_scope.house }
+			scope:faction_leader_scope.house.house_confederation ?= {
+				every_confederation_member = {
+					limit = { can_join_faction = scope:faction }
+					join_faction = scope:faction
+				}
+			}
+		}
+		
+		set_special_title = scope:faction_leader_scope.top_liege.primary_title.var:administrative_ui_special_title
+		set_special_character = scope:faction_leader_scope.top_liege.primary_title.var:administrative_ui_special_title.holder
+
+		if = {
+			limit = {
+				any_player = {
+					is_landless_adventurer = yes
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction_leader_scope
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						has_task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction_leader_scope
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction_leader_scope.task_contract_tier_value
+					location = scope:faction_leader_scope.primary_title.title_province
+					task_contract_employer = scope:faction_leader_scope
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+ceremonial_claimant_faction = {
+	casus_belli = ceremonial_claimant_faction_war
+
+	short_effect_desc = claimant_faction_short_effect_desc
+
+	sort_order = 1
+
+	character_interaction = create_ceremonial_claimant_faction_against_interaction
+
+	show_special_title = yes
+	name = FACTION_CEREMONIAL_CLAIMANT_DYNAMIC_NAME
+
+	claimant = yes
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20 
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		} 
+
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = liberty_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	is_shown = {
+		tgp_realm_has_ceremonial_liege_trigger = yes
+		top_liege = { tgp_is_ceremonial_regent_trigger = yes }
+		has_dlc_feature = all_under_heaven
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	# Is valid?
+	# (see also invalidate_claimant_factions_on_death_effect for what happens when the claimant dies)
+	is_valid = { # If the FACTION itself is valid
+		trigger_if = {
+			limit = {
+				OR = {
+					exists = special_character
+					exists = faction_war
+				}
+			}
+			OR = {
+				special_title.holder ?= faction_target
+				special_title.holder.top_liege ?= faction_target
+			}
+			faction_target = { tgp_realm_has_ceremonial_liege_trigger = yes }
+			OR = {
+				special_character ?= {
+					is_alive = yes
+					#has_claim_on = root.special_title
+					NOR = { 
+						has_trait = incapable
+						this = root.faction_target
+					}
+					trigger_if = { #If they're imprisoned by the faction target they can only be so for five years before invalidating
+						limit = { is_imprisoned_by = root.faction_target }
+						time_in_prison_type = { years < 5 }
+					}
+				}
+				exists = faction_war
+			}
+		}
+	}
+
+	demand = { # The effect of pressing demand
+		save_scope_as = faction
+		faction_leader = { save_scope_as = faction_leader }
+		faction_target = { save_scope_as = faction_target }
+		special_character = { save_scope_as = faction_claimant }
+		special_title = { save_scope_as = faction_targeted_title }
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.2015
+		}
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.2011
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		#Won't send ultimatum if the claimant is imprisoned by the faction-target!
+		modifier = {
+			add = -500
+			special_character = { is_imprisoned_by = root.faction_target }
+		}
+
+		# Won't start a war is the Realm is fighting against a Dissolution faction or Independent factions: you want to get the best realm possible. Better wait a bit longer
+		modifier = {
+			add = -1000
+			faction_target = {
+				any_character_war = {
+					OR = {
+						using_cb = independence_faction_war
+						using_cb = independence_war
+						using_cb = nation_fracturing_faction_war
+					}
+				}
+			}
+		}
+
+		# 40% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.5
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 1
+		}
+
+		# Less likely if already in a war with an external ruler
+		modifier = {
+			add = -50
+			faction_target = {
+				any_war_enemy = {
+					NOT = { target_is_liege_or_above = root.faction_target }
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_character_valid = { # Is the character valid to stay in the faction? This is also checked when creating it...
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		tgp_realm_has_ceremonial_liege_trigger = yes
+		has_valid_faction_members_trigger = yes
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = ceremonial_claimant_faction }
+		
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		ceremonial_claimant_faction_can_create_trigger = yes
+	}
+
+	can_character_create = { # If a character is allowed to create the faction. The 'is_character_valid' block is also checked in conjunction with this when creating a faction.
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		ceremonial_claimant_faction_can_create_trigger = yes
+	}
+
+	can_character_join = { # Can a character join an existing faction?
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		japan_faction_cohesion_hard_trigger = yes
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	ai_create_score = { # How likely is an AI to create a faction?
+		base = -25
+
+		####
+		# BLOCKERS
+		####
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_ceremonial_claimant_faction_war
+		}
+
+		ceremonial_claimant_faction_blockers = {
+			FACTION_TARGET = scope:target.top_liege.primary_title.var:administrative_ui_special_title.holder
+			FACTION_CLAIMANT = scope:claimant
+		}
+
+		####
+		# AI modifiers
+		####
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1.5
+			MAX_OPINION = 150
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		ceremonial_claimant_faction_modifiers = {
+			FACTION_TARGET = scope:target.top_liege.primary_title.var:administrative_ui_special_title.holder
+			FACTION_CLAIMANT = scope:claimant
+			FACTION_TITLE = scope:title
+		}
+
+		# Extra check on leading house
+	    modifier = {
+	    	factor = 0
+	    	NOT = { house.house_confederation.leading_house ?= house }
+	    }
+	}
+
+	ai_join_score = { # How likely is an AI to join an existing faction?
+		base = -25
+
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		ceremonial_claimant_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target 
+			FACTION_CLAIMANT = scope:faction.special_character 
+		}
+
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 100
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		ceremonial_claimant_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target.top_liege.primary_title.var:administrative_ui_special_title.holder
+			FACTION_CLAIMANT = scope:faction.special_character
+			FACTION_TITLE = scope:faction.faction_target.top_liege.primary_title.var:administrative_ui_special_title
+		}
+
+		admin_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_TYPE = claimant_faction
+		}		
+
+		admin_claimant_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			FACTION_CLAIMANT = scope:faction.special_character
+		}
+
+		# Faction 'Stacking' Factors, attempts to cluster AI rulers into several powerful factions instead of many weak ones.
+		join_faction_stacking_modifiers = yes
+		
+		modifier = { # CE1 Divine Mandate perk
+			desc = "FACTION_REASON_LEGITIMACY_LEGACY_4"
+			liege.dynasty = { has_dynasty_perk = ce1_legitimacy_legacy_4 }
+			add = -10
+		}
+		
+		struggle_faction_modifiers = yes
+		
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+
+		#EP3 King of England disgruntled vassals/life threatened modifiers
+		modifier = {
+			desc = "FACTION_REASON_CLAIMANT_DISGRUNTLED_VASSALS"
+			add = 25
+			liege = {
+				has_character_modifier = ep3_disgruntled_vassals_modifier
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_CLAIMANT_DISGRUNTLED_VASSALS"
+			add = 25
+			liege = {
+				has_character_modifier = ep3_life_threatened_modifier
+			}
+		}
+	}
+
+	is_county_valid = {
+		scope:faction.faction_target = holder
+	}
+
+	can_county_join = {
+		# Counties can only join if the De Jure belong to the title being claimed.
+		exists = scope:faction.special_title
+		target_is_de_jure_liege_or_above = scope:faction.special_title
+	}
+
+	county_join_score =  {
+		base = -80 # Needs to be less than the weight set in 00_populist_faction.txt, or counties will never join a claimant faction over a populist faction.
+
+		# Up to +3 join score per negative opinion (+80 at -27 opinion) if different culture. 
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_COUNTY_SHARED_CULTURE"
+			trigger = {
+				scope:faction.faction_target.culture != this.title_province.culture
+				scope:faction.special_character.culture = this.title_province.culture 
+			}
+			value = county_opinion
+			multiplier = -2.0
+		}
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_COUNTY_SHARED_HERITAGE"
+			trigger = {
+				NOT = { this.title_province.culture = { has_same_culture_heritage = scope:faction.faction_target.culture } }
+				this.title_province.culture = { has_same_culture_heritage = scope:faction.special_character.culture }
+			}
+			value = county_opinion
+			multiplier = -2.0
+		}
+
+		# If we have better relations with the claimant's faith than our current liege's, gain up to +5 join score per negative opinion (at Righteous) down to +1 join score per negative opinion (at Hostile).
+		compare_modifier = {
+			desc = "FACTION_REASON_LIKE_CLAIMANT_FAITH"
+			trigger = {
+				faith = {
+					faith_hostility_level_comparison = {
+						scope:faction.faction_target.faith > scope:faction.special_character.faith
+					}
+				}
+			}
+			value = county_opinion
+			multiplier = {
+				value = 0.0
+				if = {
+					limit = {
+						faith = {
+							faith_hostility_level = {
+								target = scope:faction.special_character.faith
+								value = faith_hostile_level
+							}
+						}
+					}
+					value = -1.0 # Hostile
+				}
+				else_if = {
+					limit = {
+						faith = {
+							faith_hostility_level = {
+								target = scope:faction.special_character.faith
+								value = faith_astray_level
+							}
+						}
+					}
+					value = -3.0 # Astray
+				}
+				else = {
+					value = -5.0 # Righteous
+				}
+			}
+		}
+
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 50 # Worth ~12 opinion per virtue.
+		}
+
+		# Greatly reduced chance for a character's capital county to form a faction against them (extra -25 opinion needed).
+		modifier = {
+			desc = "FACTION_REASON_CAPITAL_COUNTY"
+			add = -200
+			this.title_province = scope:faction.faction_target.capital_province
+		}
+		
+		# More likely to support adult claimants when a child is on the throne.
+		modifier = {
+			desc = "FACTION_REASON_ADULT_CLAIMANT_CHILD_RULER"
+			add = 10
+			exists = scope:faction.faction_target
+			exists = scope:faction.special_character
+			scope:faction.faction_target = { is_adult = no }
+			scope:faction.special_character = { is_adult = yes }
+		}
+
+		# Peasants perfer magnanimous rulers over harsh or cruel ones.
+		compare_modifier = {
+			desc = "FACTION_REASON_CLAIMANT_KINDNESS"
+			factor = {
+				# Gets a value between 0 (max greedy/dishonorable/vengeful/cruel) and 800 (max honorable/compassionate/generous/forgiving).
+				value = 400
+				add = scope:faction.special_character.ai_honor
+				add = scope:faction.special_character.ai_compassion
+				subtract = scope:faction.special_character.ai_greed
+				subtract = scope:faction.special_character.ai_vengefulness
+
+				# Converts the personality score into a percentage between 0% (will never support) and 100% (really wants to support)
+				divide = 800 
+			}
+
+			# How big the factor is for supporting this claimant over other factions at max support. 
+			multiplier = 2
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						has_contact = scope:faction.special_character
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = yes
+	county_allow_create = no
+	county_power = county_levies_to_raise
+
+	character_allow_create = yes
+
+	character_allow_join = yes
+
+	multiple_targeting = yes
+
+	special_character_title = "FACTIONS_WINDOW_CLAIMANT"
+
+	ignore_soft_block = yes
+}
+
+imperial_policy_faction = {
+	casus_belli = imperial_policy_faction_war
+
+	desc = imperial_policy_faction_desc
+
+	short_effect_desc = imperial_policy_faction_short_effect_desc
+
+	sort_order = 4
+
+	is_shown = {
+		realm_law_use_imperial_policy_trigger = yes
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+
+		common_discontent_progress_modifier = yes
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_common
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		#Lower the threshold depending on the state of other factions
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = independence_faction
+			FACTION_TYPE3 = liberty_faction
+		}
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+
+		faction_target = {
+			save_scope_as = faction_target
+		}
+
+		# Let the human players in the faction know that the demand will be sent
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = faction_demand.0225
+		}
+
+		# Send the actual demand in 5 days
+		faction_target = {
+			trigger_event = {
+				id = faction_demand.0221
+				days = 5
+			}
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		# 30% base chance at minimum power (80%), increasing linearly
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.375
+		}
+
+		# Once the faction has a good chance to win (10% stronger than liege) demand chance increases much more rapidly.
+		compare_modifier = {
+			trigger = {	faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+
+		# Less likely if already in a war with an external ruler - the Liberty Faction is pretty sporting
+		modifier = {
+			add = -75
+			faction_target = {
+				any_war_enemy = {
+					NOT = {
+						target_is_liege_or_above = root.faction_target
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_valid = {
+		faction_target ?= {
+			is_independent_ruler = yes
+			realm_law_use_imperial_policy_trigger = yes
+		}
+	}
+
+	is_character_valid = {
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+	}
+
+	can_character_create_ui = {
+		base_faction_trigger = { FACTION_TYPE = imperial_policy_faction }
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		imperial_policy_faction_can_create_trigger = yes
+	}
+
+	can_character_create = {
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		imperial_policy_faction_can_create_trigger = yes
+	}
+
+	can_character_join = {
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		
+		trigger_if = {
+			limit = {
+				scope:faction.faction_target = { government_has_mechanic = administrative }
+			}
+			scope:faction.faction_target = {
+				top_liege = this
+			}
+		}
+		realm_law_use_imperial_policy_trigger = yes
+		japan_faction_cohesion_trigger = yes
+	}
+
+	can_character_become_leader = {
+		can_become_leader_of_faction_trigger = yes
+	}
+
+	ai_create_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+
+		############
+		# BLOCKERS #
+		############
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_imperial_policy_faction_war
+		}
+
+		#######################
+		# Standard AI Weights #
+		#
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		# 'Base Join Weight' depends on the current Crown Authority level.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+
+		imperial_policy_faction_modifiers = {
+			FACTION_TARGET = scope:target
+		}
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+
+	    # Extra check on leading house
+	    modifier = {
+	    	factor = 0
+	    	NOT = { house.house_confederation.leading_house ?= house }
+	    }
+	}
+
+	ai_join_score = {
+		base = 0 # Join Weight is set primarily based on what Crown Laws a realm has.
+
+		############
+		# BLOCKERS #
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		
+		#######################
+		# Standard AI Weights #
+		#AI
+		# Modifiers for Liberty Factions are inherently small.
+		# This is because Liberty is the 'Default Faction' that vassals are join if they don't want/can't join any other faction.
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+
+		imperial_policy_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+
+		struggle_faction_modifiers = yes
+
+		#House Hostility from Armenian tradition
+	    modifier = {
+			desc = "FACTION_REASON_HOUSE_HOSTILITY"
+
+			scope:faction.faction_target.house ?= {
+				this != root.house
+			}
+			culture = { has_cultural_parameter = house_hostility_more_common }
+
+			factor = 1.25
+	    }
+		#EP3 admin legitimacy event
+		modifier = {
+			desc = "FACTION_REASON_LOW_LEGITIMACY_CHALLENGER"
+			add = 25
+			scope:faction = {
+				any_faction_member = {
+					has_character_flag = low_legitimacy_admin_factions_flag
+				}
+			}
+		}
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+hanfan_warlordization_faction = {
+	casus_belli = hanfan_warlordization_faction_war
+
+	desc = hanfan_warlordization_faction_desc
+
+	short_effect_desc = {
+			desc = hanfan_warlordization_faction_short_effect_desc
+	}
+
+	sort_order = 4
+
+	is_shown = {
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                liege ?= {  is_independent_ruler = yes }
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+		common_discontent_progress_modifier = yes
+		modifier = {
+			faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+			add = 2
+			desc = instability_increased_peasant_discontent
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_hanfan
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = liberty_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+		faction_target = {
+			save_scope_as = faction_target
+		}
+		faction_target = {
+			trigger_event = {
+				id = hanfan_faction.001
+				days = 5
+			}
+		}
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = hanfan_faction.002
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.1
+		}
+		compare_modifier = {
+			trigger = { faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+		modifier = {
+			add = 30
+			faction_target = {
+				any_war_enemy = {
+					NOT = {
+						target_is_liege_or_above = root.faction_target
+					}
+				}
+			}
+		}
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_character_valid = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+		is_vassal_of = scope:faction.faction_target
+                hanfan_start_no_factions_trigger = no
+	}
+
+	can_character_create_ui = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                hanfan_has_wuguan_succession_law_trigger = yes
+		base_faction_trigger = { FACTION_TYPE = hanfan_warlordization_faction }
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		japan_faction_cohesion_trigger = yes
+		is_vassal_of = scope:target
+	}
+
+	can_character_create = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                hanfan_has_wuguan_succession_law_trigger = yes
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		japan_faction_cohesion_trigger = yes
+		is_vassal_of = scope:target
+                hanfan_start_no_factions_trigger = no
+	}
+
+	can_character_join = {
+                is_landed = yes
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}		
+		is_vassal_of = scope:faction.faction_target
+                hanfan_start_no_factions_trigger = no
+	}
+
+	can_character_become_leader = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+		can_become_leader_of_faction_trigger = yes
+                hanfan_contract_military_trigger = yes
+                is_vassal_of = scope:faction.faction_target
+	}
+
+	ai_create_score = {
+		base = -10
+
+		modifier = {
+			add = -30
+                        has_education_martial_trigger = no
+		 }
+		modifier = {
+			add = -50
+                        hanfan_has_adm_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		modifier = {
+			add = -50
+                        has_trait = hanfan_3
+		 }
+		modifier = {
+			add = -100
+                        has_trait = hanfan_5
+		 }
+		modifier = {
+			add = -1000
+                        hanfan_is_zunwang_movement_member_trigger = yes
+			desc = HANFAN_IS_ZUNWANG_MOVEMENT
+		}
+		modifier = {
+			add = -1000
+                        highest_held_title_tier < tier_duchy
+			desc = HANFAN_LOW_TITLE_TIER
+		}
+		modifier = {
+			add = -1000
+                        hanfan_has_wenguan_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_liberty_faction_war
+		}
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+	}
+
+	ai_join_score = {
+		base = -10 
+
+		modifier = {
+			add = -30
+                        has_education_martial_trigger = no
+		 }
+		modifier = {
+			add = -50
+                        hanfan_has_adm_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		modifier = {
+			add = -50
+                        has_trait = hanfan_3
+		 }
+		modifier = {
+			add = -100
+                        has_trait = hanfan_5
+		 }
+		modifier = {
+			add = -1000
+                        hanfan_is_zunwang_movement_member_trigger = yes
+			desc = HANFAN_IS_ZUNWANG_MOVEMENT
+		}
+		modifier = {
+			add = -1000
+                        highest_held_title_tier < tier_duchy
+			desc = HANFAN_LOW_TITLE_TIER
+		}
+		modifier = {
+			add = -1000
+                        hanfan_has_wenguan_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}		
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+		struggle_faction_modifiers = yes
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_allow_join = no
+	county_allow_create = no
+}
+
+hanfan_yabing_faction = {
+	casus_belli = hanfan_yabing_faction_war
+
+	desc = hanfan_yabing_faction_desc
+
+	short_effect_desc = {
+			desc = hanfan_yabing_faction_short_effect_desc
+	}
+
+	sort_order = 4
+
+	is_shown = {
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                liege ?= { hanfan_contract_military_trigger = yes }
+		NAND = {
+			tgp_is_ceremonial_liege_trigger = yes
+			tgp_is_ceremonial_regent_trigger = no
+		}
+	}
+
+	discontent_progress = {
+		base = 0
+		common_discontent_progress_modifier = yes
+		modifier = {
+			faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+			add = 2
+			desc = instability_increased_peasant_discontent
+		}
+		# v1.3.12: subtract 40% of positive final progress only.
+		modifier = {
+			faction_target = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth rite = { rite_has_tenet = mm_tenet_earth_third } }
+			add = mm_creed_faction_reduction_hanfan
+			desc = mm_creed_faction_resistance
+		}
+	}
+
+	power_threshold = {
+		base = 80
+
+		modifier = {
+			add = 20
+			faction_target = {
+				has_perk = hard_rule_perk
+			}
+			desc = "FACTION_POWER_HARD_RULE"
+		}
+
+		dynamic_power_threshold_scripted_modifier = {
+			FACTION_TYPE1 = claimant_faction
+			FACTION_TYPE2 = liberty_faction
+			FACTION_TYPE3 = populist_faction
+		}
+	}
+
+	demand = {
+		save_scope_as = faction
+
+		faction_leader = {
+			save_scope_as = faction_leader
+		}
+		faction_target = {
+			save_scope_as = faction_target
+		}
+		faction_target = {
+			trigger_event = {
+				id = hanfan_faction.005
+				days = 5
+			}
+		}
+		every_faction_member = {
+			limit = {
+				is_ai = no
+				this != scope:faction.faction_leader
+			}
+			trigger_event = hanfan_faction.006
+		}
+	}
+
+	ai_demand_chance = {
+		base = 0
+
+		compare_modifier = {
+			value = faction_power
+			multiplier = 0.15
+		}
+		compare_modifier = {
+			trigger = { faction_power > 110 }
+			value = faction_power
+			multiplier = 0.75
+		}
+		modifier = {
+			add = 30
+			faction_target = {
+				any_war_enemy = {
+					NOT = {
+						target_is_liege_or_above = root.faction_target
+					}
+				}
+			}
+		}
+		modifier = {
+			add = -1000
+			faction_target = {
+				involved_activity ?= {
+					has_activity_type = activity_coronation
+					activity_host = prev
+				}
+			}
+		}
+	}
+
+	on_war_start = {
+		every_faction_member = {
+			limit = {
+				has_variable = gathered_support_for_faction
+				var:gathered_support_for_faction = root
+			}
+			spawn_army = {
+				name = gathered_support_for_faction_army
+				levies = {
+					value = this.massive_influence_value
+					multiply = 3
+				}
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				location = this.location
+				war = root.faction_war
+				inheritable = yes
+			}
+		}
+	}
+
+	is_character_valid = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                scope:faction.faction_target = { hanfan_contract_military_trigger = yes }
+		common_character_validity_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}
+		has_valid_faction_members_trigger = yes
+		is_vassal_of = scope:faction.faction_target
+	}
+
+	can_character_create_ui = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                hanfan_contract_military_trigger = yes
+                scope:target = { hanfan_contract_military_trigger = yes
+                                          hanfan_has_liuhou_succession_law_trigger = no }
+		base_faction_trigger = { FACTION_TYPE = hanfan_yabing_faction }
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		japan_faction_cohesion_trigger = yes
+		is_vassal_of = scope:target
+	}
+
+	can_character_create = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+                hanfan_situation_dynastic_cycle_decline_trigger = yes
+                hanfan_contract_military_trigger = yes
+                scope:target = { hanfan_contract_military_trigger = yes
+                                          hanfan_has_liuhou_succession_law_trigger = no }
+		common_can_character_create_trigger = {
+			FACTION_TARGET = scope:target
+		}
+		japan_faction_cohesion_trigger = yes
+		is_vassal_of = scope:target
+	}
+
+	can_character_join = {
+                is_landed = yes
+                hanfan_contract_military_trigger = yes
+                scope:faction.faction_target = { hanfan_contract_military_trigger = yes
+                                                                  hanfan_has_liuhou_succession_law_trigger = no }
+		common_can_character_join_trigger = {
+			FACTION_TARGET = scope:faction.faction_target
+		}		
+		is_vassal_of = scope:faction.faction_target
+	}
+
+	can_character_become_leader = {
+                is_landed = yes
+                hanfan_zhiguan_adm_gov_trigger = yes
+		can_become_leader_of_faction_trigger = yes
+                scope:faction.faction_target = { hanfan_contract_military_trigger = yes
+                                                                  hanfan_has_liuhou_succession_law_trigger = no }
+                hanfan_contract_military_trigger = yes
+                is_vassal_of = scope:faction.faction_target
+	}
+
+	can_county_join = {
+		holder = scope:faction.faction_target
+	}
+
+	county_join_score =  {
+		base = 0
+		compare_modifier = {
+			desc = "FACTION_REASON_COUNTY_OPINION"
+			value = county_opinion
+			multiplier = -1.0
+		}
+		modifier = {
+			desc = "FACTION_REASON_PREFER_ESCALATED_FACTION"
+			add = -10
+			scope:faction.faction_target = {
+				any_targeting_faction = {
+					faction_type = escalated_peasant_faction
+				}
+			}
+		}
+		legalism_virtue_and_sin_modifier = {
+			TARGET = scope:faction.faction_target
+			SCORE_PER_TRAIT = 10 
+		}
+		modifier = {
+			add = 25
+			county_opinion < 0
+		}
+		modifier = {
+			add = 15
+			culture != scope:faction.faction_target.culture
+		}
+
+		# Difficulty Settings
+		modifier = { # Easy
+			desc = "FACTION_REASON_DIFFICULTY_EASY"
+			add = -50
+			has_game_rule = easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Very Easy
+			desc = "FACTION_REASON_DIFFICULTY_VERY_EASY"
+			add = -150
+			has_game_rule = very_easy_difficulty
+			scope:faction.faction_target = {
+				is_ai = no
+			}
+		}
+		modifier = { # Hard
+			desc = "FACTION_REASON_DIFFICULTY_HARD"
+			add = -50
+			has_game_rule = hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = { # Very Hard
+			desc = "FACTION_REASON_DIFFICULTY_VERY_HARD"
+			add = -150
+			has_game_rule = very_hard_difficulty
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -85
+			scope:faction.faction_target = {
+				ai_should_get_conqueror_bonuses = yes
+			}
+		}
+
+		modifier = { # Conquerors
+			desc = "NO_FRIVOLOUS_ACTIVITIES_REASON"
+			add = -150
+			scope:faction.faction_target = {
+				ai_should_get_extreme_conqueror_bonuses = yes
+			}
+		}
+
+		# Realm Stability Settings
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_LESSER"
+			add = 25
+			has_game_rule = lesser_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_HIGHER"
+			add = -50
+			has_game_rule = higher_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME"
+			add = -100
+			has_game_rule = extreme_realm_stability_ai_only
+			scope:faction.faction_target = {
+				is_ai = yes
+			}
+		}
+
+		# Conquerors
+		modifier = {
+			add = -100
+			scope:faction.faction_target = { ai_should_get_conqueror_bonuses = yes }
+		}
+		modifier = {
+			add = -200
+			scope:faction.faction_target = { ai_should_get_extreme_conqueror_bonuses = yes }
+		}
+
+		modifier = {
+			desc = "FACTION_REASON_AT_WAR_WITH_TARGET"
+			add = 1000
+			exists = joined_faction
+			joined_faction = {
+				faction_is_at_war = yes
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_DYNASTIC_CYCLE_INSTABILITY"
+			add = 25
+			county_opinion < 0
+			scope:faction.faction_target = {
+				top_participant_group:dynastic_cycle ?= {
+					has_participant_group_parameter = dynastic_cycle_more_peasant_factions
+				}
+			}
+		}
+		modifier = {
+			desc = "FACTION_REASON_POPULIST_PEASANT_MORE_LIKELY"
+			add = 25
+			county_opinion < 0
+			rite != scope:faction.faction_target.rite
+			faith = {
+				has_doctrine_parameter = peasant_and_populist_factions_more_common
+			}
+		}
+	}
+
+	ai_create_score = {
+		base = -50 
+
+		modifier = {
+			add = -1000
+                        hanfan_is_zunwang_movement_member_trigger = yes
+			desc = HANFAN_IS_ZUNWANG_MOVEMENT
+		}
+		modifier = {
+			add = -1000
+                        hanfan_has_wenguan_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		common_create_faction_blockers = {
+			FACTION_TARGET = scope:target
+			FLAG = recent_liberty_faction_war
+		}
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = 0
+			THRESHOLD = 80
+		}
+	}
+
+	ai_join_score = {
+		base = 0 
+
+		modifier = {
+			add = -1000
+                        hanfan_is_zunwang_movement_member_trigger = yes
+			desc = HANFAN_IS_ZUNWANG_MOVEMENT
+		}
+		modifier = {
+			add = -1000
+                        hanfan_has_wenguan_succession_law_trigger = yes
+			desc = HANFAN_USE_ADM_SUCCESSION
+		 }
+		common_join_faction_blockers = {
+			FACTION_TARGET = scope:faction.faction_target
+		}		
+		common_faction_modifiers = {
+			FACTION_TARGET = scope:faction.faction_target
+			OPINION_MULTIPLIER = -1
+			MAX_OPINION = 0
+			POWER = scope:faction.faction_power
+			THRESHOLD = scope:faction.faction_power_threshold
+		}
+		struggle_faction_modifiers = yes
+	}
+
+	on_creation = {
+		save_scope_as = faction
+		tgp_bloc_members_join_faction_effect = yes
+		if = {
+			limit = {
+				any_player = {
+					has_government = landless_adventurer_government
+					is_within_diplo_range = { CHARACTER = scope:faction.faction_target }
+					OR = {
+						has_contact = scope:faction.faction_leader
+						NOT = { has_contact = scope:faction.faction_target }
+					}
+					any_character_task_contract = {
+						task_contract_type = laamp_join_faction_contract
+						count <= 3
+					}
+					can_create_task_contract = {
+						type_name = laamp_join_faction_contract
+						employer = scope:faction.faction_leader
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_join_faction_contract
+					task_contract_tier = scope:faction.faction_leader.task_contract_tier_value
+					location = scope:faction.faction_leader.primary_title.title_province
+					task_contract_employer = scope:faction.faction_leader
+					target = scope:faction.faction_target
+				}
+			}
+		}
+	}
+
+	county_power = {
+		value = county_levies_to_raise
+	}
+
+	county_allow_join = yes
+	county_allow_create = no
+        county_can_switch_to_other_faction = yes
+}

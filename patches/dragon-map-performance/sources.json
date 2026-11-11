@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "修复 Wyvern 地图 GUI 过时的宗教领袖绑定并恢复原版显示条件；未测性能",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/map_icon_layer.gui",
+      "sha256": "a858fee517c4fdb02beb8fc53009cde5250a128d670a2533203379dd6b7f5a88"
+    },
+    {
+      "root": "game",
+      "path": "gui/map_icon_layer.gui",
+      "sha256": "29bf7a31b79614d154dc55b71fa998470220de7fd0fe54ce95c7c061ae6769d8"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/gui/map_icon_layer.gui",
+      "sha256": "6391de4936d67fccd317a37a573e8de44a9ca2c1b34a15a88a9b21b2efa0b325"
+    }
+  ],
+  "updated": "2026-10-28"
+}

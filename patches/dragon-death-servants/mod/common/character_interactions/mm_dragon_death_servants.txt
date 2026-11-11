@@ -1,0 +1,35 @@
+mm_ds_hunt_interaction = {
+    category = interaction_category_hostile
+    icon = icon_duel
+    common_interaction = yes
+    auto_accept = yes
+    desc = mm_ds_hunt_interaction_desc
+    is_shown = {
+        scope:actor = { is_ai = no is_alive = yes age >= 18 NOT = { has_trait = mm_dragon_death_servant } }
+        scope:recipient = { is_alive = yes has_trait = mm_dragon_death_servant }
+    }
+    is_valid_showing_failures_only = {
+        scope:actor = { is_imprisoned = no is_incapable = no }
+        scope:recipient = { location.county = scope:actor.location.county is_imprisoned = no }
+    }
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = { is_alive = yes is_imprisoned = no is_incapable = no }
+                scope:recipient = { is_alive = yes has_trait = mm_dragon_death_servant location.county = scope:actor.location.county }
+            }
+            scope:recipient = {
+                save_scope_as = mm_ds_attacker
+                scope:actor = { save_scope_as = mm_ds_victim }
+                mm_ds_duel_effect = yes
+            }
+            if = {
+                limit = { scope:actor = { is_alive = yes } scope:recipient = { is_alive = no } }
+                scope:actor = {
+                    add_prestige = 100
+                    if = { limit = { mm_creed_is_dragon_faith_trigger = yes } add_piety = 100 }
+                }
+            }
+        }
+    }
+}

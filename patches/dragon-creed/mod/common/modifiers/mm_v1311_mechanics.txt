@@ -1,0 +1,105 @@
+﻿mm_v1311_mind_infection = { stress_gain_mult = 0.5 stress_loss_mult = -0.5 }
+mm_v1311_earth_birth_1 = { diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 prowess = 1 }
+mm_v1311_earth_birth_2 = { diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 prowess = 1 }
+mm_v1311_earth_birth_3 = { diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 prowess = 1 }
+mm_v1311_earth_birth_4 = { diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 prowess = 1 }
+mm_v1311_earth_birth_5 = { diplomacy = 1 martial = 1 stewardship = 1 intrigue = 1 learning = 1 prowess = 1 }
+
+mm_v1311_white_ruler = { intrigue = 4 diplomacy = 3 }
+mm_v1311_black_baghdad = { diplomacy = 5 martial = 5 stewardship = 5 intrigue = 5 learning = 5 prowess = 5 monthly_piety_gain_mult = 0.1 monthly_prestige_gain_mult = 0.1 }
+mm_v1311_fire_jingzhao = { domain_tax_mult = 0.2 build_speed = -0.3 build_gold_cost = -0.3 }
+mm_v1311_sky_sogn = { movement_speed = 0.15 prowess = 5 }
+mm_v1311_sea_coastal = { tax_mult = 0.1 }
+mm_v1311_sea_chandax = { tax_mult = 0.2 build_gold_cost = -0.3 }
+mm_v1311_dragon_inscription = { prowess_no_portrait = 2 }
+mm_v1311_fire_dynasty_1 = { diplomacy = 2 martial = 2 stewardship = 2 intrigue = 2 learning = 2 prowess = 2 monthly_prestige_gain_mult = 0.05 legitimacy_gain_mult = 0.05 }
+mm_v1311_fire_dynasty_2 = { diplomacy = 4 martial = 4 stewardship = 4 intrigue = 4 learning = 4 prowess = 4 monthly_prestige_gain_mult = 0.10 legitimacy_gain_mult = 0.10 }
+mm_v1311_fire_dynasty_3 = { diplomacy = 6 martial = 6 stewardship = 6 intrigue = 6 learning = 6 prowess = 6 monthly_prestige_gain_mult = 0.15 legitimacy_gain_mult = 0.15 }
+mm_v1311_fire_dynasty_4 = { diplomacy = 8 martial = 8 stewardship = 8 intrigue = 8 learning = 8 prowess = 8 monthly_prestige_gain_mult = 0.20 legitimacy_gain_mult = 0.20 }
+mm_v1311_fire_dynasty_5 = { diplomacy = 10 martial = 10 stewardship = 10 intrigue = 10 learning = 10 prowess = 10 monthly_prestige_gain_mult = 0.25 legitimacy_gain_mult = 0.25 }
+
+mm_v1311_eagle_active = { }
+mm_v1311_eagle_diplomacy_1 = { diplomacy = 1 }
+mm_v1311_eagle_diplomacy_2 = { diplomacy = 2 }
+mm_v1311_eagle_diplomacy_4 = { diplomacy = 4 }
+mm_v1311_eagle_diplomacy_8 = { diplomacy = 8 }
+mm_v1311_eagle_diplomacy_16 = { diplomacy = 16 }
+mm_v1311_eagle_diplomacy_32 = { diplomacy = 32 }
+mm_v1311_eagle_diplomacy_64 = { diplomacy = 64 }
+mm_v1311_eagle_diplomacy_128 = { diplomacy = 128 }
+mm_v1311_eagle_diplomacy_256 = { diplomacy = 256 }
+mm_v1311_eagle_diplomacy_512 = { diplomacy = 512 }
+mm_v1311_eagle_diplomacy_1024 = { diplomacy = 1024 }
+mm_v1311_eagle_diplomacy_2048 = { diplomacy = 2048 }
+mm_v1311_eagle_diplomacy_4096 = { diplomacy = 4096 }
+mm_v1311_eagle_diplomacy_8192 = { diplomacy = 8192 }
+mm_v1311_eagle_martial_1 = { martial = 1 }
+mm_v1311_eagle_martial_2 = { martial = 2 }
+mm_v1311_eagle_martial_4 = { martial = 4 }
+mm_v1311_eagle_martial_8 = { martial = 8 }
+mm_v1311_eagle_martial_16 = { martial = 16 }
+mm_v1311_eagle_martial_32 = { martial = 32 }
+mm_v1311_eagle_martial_64 = { martial = 64 }
+mm_v1311_eagle_martial_128 = { martial = 128 }
+mm_v1311_eagle_martial_256 = { martial = 256 }
+mm_v1311_eagle_martial_512 = { martial = 512 }
+mm_v1311_eagle_martial_1024 = { martial = 1024 }
+mm_v1311_eagle_martial_2048 = { martial = 2048 }
+mm_v1311_eagle_martial_4096 = { martial = 4096 }
+mm_v1311_eagle_martial_8192 = { martial = 8192 }
+mm_v1311_eagle_stewardship_1 = { stewardship = 1 }
+mm_v1311_eagle_stewardship_2 = { stewardship = 2 }
+mm_v1311_eagle_stewardship_4 = { stewardship = 4 }
+mm_v1311_eagle_stewardship_8 = { stewardship = 8 }
+mm_v1311_eagle_stewardship_16 = { stewardship = 16 }
+mm_v1311_eagle_stewardship_32 = { stewardship = 32 }
+mm_v1311_eagle_stewardship_64 = { stewardship = 64 }
+mm_v1311_eagle_stewardship_128 = { stewardship = 128 }
+mm_v1311_eagle_stewardship_256 = { stewardship = 256 }
+mm_v1311_eagle_stewardship_512 = { stewardship = 512 }
+mm_v1311_eagle_stewardship_1024 = { stewardship = 1024 }
+mm_v1311_eagle_stewardship_2048 = { stewardship = 2048 }
+mm_v1311_eagle_stewardship_4096 = { stewardship = 4096 }
+mm_v1311_eagle_stewardship_8192 = { stewardship = 8192 }
+mm_v1311_eagle_intrigue_1 = { intrigue = 1 }
+mm_v1311_eagle_intrigue_2 = { intrigue = 2 }
+mm_v1311_eagle_intrigue_4 = { intrigue = 4 }
+mm_v1311_eagle_intrigue_8 = { intrigue = 8 }
+mm_v1311_eagle_intrigue_16 = { intrigue = 16 }
+mm_v1311_eagle_intrigue_32 = { intrigue = 32 }
+mm_v1311_eagle_intrigue_64 = { intrigue = 64 }
+mm_v1311_eagle_intrigue_128 = { intrigue = 128 }
+mm_v1311_eagle_intrigue_256 = { intrigue = 256 }
+mm_v1311_eagle_intrigue_512 = { intrigue = 512 }
+mm_v1311_eagle_intrigue_1024 = { intrigue = 1024 }
+mm_v1311_eagle_intrigue_2048 = { intrigue = 2048 }
+mm_v1311_eagle_intrigue_4096 = { intrigue = 4096 }
+mm_v1311_eagle_intrigue_8192 = { intrigue = 8192 }
+mm_v1311_eagle_learning_1 = { learning = 1 }
+mm_v1311_eagle_learning_2 = { learning = 2 }
+mm_v1311_eagle_learning_4 = { learning = 4 }
+mm_v1311_eagle_learning_8 = { learning = 8 }
+mm_v1311_eagle_learning_16 = { learning = 16 }
+mm_v1311_eagle_learning_32 = { learning = 32 }
+mm_v1311_eagle_learning_64 = { learning = 64 }
+mm_v1311_eagle_learning_128 = { learning = 128 }
+mm_v1311_eagle_learning_256 = { learning = 256 }
+mm_v1311_eagle_learning_512 = { learning = 512 }
+mm_v1311_eagle_learning_1024 = { learning = 1024 }
+mm_v1311_eagle_learning_2048 = { learning = 2048 }
+mm_v1311_eagle_learning_4096 = { learning = 4096 }
+mm_v1311_eagle_learning_8192 = { learning = 8192 }
+mm_v1311_eagle_prowess_1 = { prowess = 1 }
+mm_v1311_eagle_prowess_2 = { prowess = 2 }
+mm_v1311_eagle_prowess_4 = { prowess = 4 }
+mm_v1311_eagle_prowess_8 = { prowess = 8 }
+mm_v1311_eagle_prowess_16 = { prowess = 16 }
+mm_v1311_eagle_prowess_32 = { prowess = 32 }
+mm_v1311_eagle_prowess_64 = { prowess = 64 }
+mm_v1311_eagle_prowess_128 = { prowess = 128 }
+mm_v1311_eagle_prowess_256 = { prowess = 256 }
+mm_v1311_eagle_prowess_512 = { prowess = 512 }
+mm_v1311_eagle_prowess_1024 = { prowess = 1024 }
+mm_v1311_eagle_prowess_2048 = { prowess = 2048 }
+mm_v1311_eagle_prowess_4096 = { prowess = 4096 }
+mm_v1311_eagle_prowess_8192 = { prowess = 8192 }

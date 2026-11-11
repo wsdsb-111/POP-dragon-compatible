@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-24",
+  "modulePath": "patches/wyvern-capture/mod",
+  "parentModule": "wyvern",
+  "scope": "Captured wild wyvern cages, feeding progress, temperament-specific taming schemes, and stable lifecycle",
+  "sourceRoots": {
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310",
+    "game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game"
+  },
+  "sourceFiles": [
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/myv_wyvern_triggers.txt",
+      "sha256": "9cb5d15fcb86100b50dd2dbd82c2fba1d0fbe08165021b21b110b0fe6446b1ad"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_stable_effects.txt",
+      "sha256": "00e051a2449a36a9e4260a17e309c7117d425bcb28f01af2e079370d93e29756"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+      "sha256": "cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/character_interactions/myv_wyvern_interactions.txt",
+      "sha256": "362c09e08f37582e73e2c69456da77879a2d6dc18c3b24952195a0da3b57f812"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/schemes/scheme_types/myv_wyvern_bond_schemes.txt",
+      "sha256": "cca02e822e78a3d0ddf2e9e3b09135b1f2c4c18b4788c882b999ec2936cbbbce"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/events/myv_wyvern_bond_events.txt",
+      "sha256": "f16fe191f01627159de6ca31664de21aaa3a7077ec6e4476bb0de1a24f64b99a"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/events/myv_wyvern_feeding_events.txt",
+      "sha256": "4213aa797b633a94b8eb756610db8c44314ebd93c8a90bc5cd6fc628b67e5050"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/events/myv_wyvern_stable_events.txt",
+      "sha256": "dffd447ec1ea37c3f1d894df223add9641d9511e318fc0a609fe7ba7eef4c9b5"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/myv_wyvern_feeding_triggers.txt",
+      "sha256": "c9698de5a9250e4fb5a40d60d6f72166c2a9776ddc548a43eae384390fa27db4"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/script_values/myv_wyvern_values.txt",
+      "sha256": "f94724851b8690e8123571dbae20d775c83546f1be1064bc873ec626d2406792"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/script_values/myv_wyvern_feeding_provisions_values.txt",
+      "sha256": "2c0d39829cde4213cab2d5dd0d282a23cefad1e3e3b764e530b182450ecf37d4"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/on_action/myv_wyvern_on_actions.txt",
+      "sha256": "fd3d1a49811f1d89590d51dd654519d8881bfd2b84f72ca41d6c2f30a2a63720"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/traits/myv_wyvern_traits.txt",
+      "sha256": "aaf736452526c87bda59b8da6a3a70ba3ff6a03e2126532a57cd5a32f0320030"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/buildings/myv_wyvern_stables.txt",
+      "sha256": "e21e914e59bb2d5337e126eaf89214675dbdb6eb3ba749fac7522afa5b4edf83"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_ai_slay_effects.txt",
+      "sha256": "0c5c64b5ba9b3185bcb94ad4e5d7d50933e9654c05f5507ef35f9298bb42bef7"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_lair_contract_effects.txt",
+      "sha256": "defb9093c665365fb30f04902f0192791b334f45e1e18c7577d06653b8742609"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/on_action/myv_wyvern_ai_slay_on_actions.txt",
+      "sha256": "ab13d2422249d323c17205de6948cbf6bd202ca924dca41a5dd9f14e7c29a60e"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/pam_saint_effects.txt",
+      "sha256": "9421c17a25774bf2b16c7d8cc2ea9af0eb6d6b51f69e70647a76cb1c34cb32f4"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/events/myv_wyvern_events.txt",
+      "sha256": "994a46d4a20cd3e67af29528f4cf8761f61552965b7c7524785e1854555bed25"
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/blueprints/00_reforge.txt",
+      "sha256": "02c224956abc6f6d2f43f33e690b77c73ef646901590901805cd025fa4dc4321"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_triggers/zz_myv_knight_exclusion.txt",
+      "sha256": "1febbf5c0d85b5ac5c766a47ffdf59dd3b93987af52d786e65be064eda7d6f58"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_army_location_effects.txt",
+      "sha256": "6934acdbea2417d36c0b7ce3cbdbbafabf777035c4b0f4b770ca5508a19c22d7"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/common/scripted_effects/myv_wyvern_ai_slay_effects.txt",
+      "sha256": "0c5c64b5ba9b3185bcb94ad4e5d7d50933e9654c05f5507ef35f9298bb42bef7"
+    }
+  ],
+  "overrides": [
+    "myv_is_living_wild_wyvern excludes characters with mm_wyvern_captor while preserving living-wyvern hunger processing",
+    "myv_wyvern_stable_integrity_effect routes captured creatures through cage validation and keeps the original stable repair path for all other creatures",
+    "myv_wyvern_move_one_province_effect, myv_wyvern_monthly_roaming_effect, and myv_wyvern_lair_county_maintenance_effect do nothing while captured",
+    "myv_attempt_slay_wyvern_interaction and myv_debug_trigger_wyvern_attack_interaction recheck the free-wild predicate before starting"
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/artifacts/blueprints/mm_wyvern_dragon_court_weapons.txt",
+      "sha256": "b0eb1de7f4aef1e3a9a08571802ae05b8d00ba68b155741e2913a58493ccd1e5"
+    },
+    {
+      "path": "mod/common/artifacts/visuals/mm_wyvern_dragon_court_weapons.txt",
+      "sha256": "7a54506eae054394e5e67dcf6685677a95d5788cd0ddf928abc436bbf788e1e2"
+    },
+    {
+      "path": "mod/common/artifacts/visuals/mm_wyvern_dragon_weapons.txt",
+      "sha256": "f077e906c6b217e93fcf6faf44d61f5a2c4bcaa95bef5b5f6a43af6394dcf17b"
+    },
+    {
+      "path": "mod/common/artifacts/visuals/mm_wyvern_personal_materials.txt",
+      "sha256": "9b4aed8f8482373f5064f6cfa4f2e4f847c9847066b08e4e62a2c9a4e4ce7a55"
+    },
+    {
+      "path": "mod/common/artifacts/visuals/mm_wyvern_trophies.txt",
+      "sha256": "d520f2b14aea4b4acf7b3c03e5b2febddf712ecf24de1672803fe67e22f046dc"
+    },
+    {
+      "path": "mod/common/character_interactions/zzzz_mm_wyvern_capture_interactions.txt",
+      "sha256": "576afe261d15587a21eae533da23d58eeaca04233104421073d66ebfc098fc2a"
+    },
+    {
+      "path": "mod/common/character_interactions/zzzzzz_mm_wyvern_mount_interaction.txt",
+      "sha256": "30d32cc3b203ee91f5abd09338c3a22777faca4b33d40ff387053190b79298f6"
+    },
+    {
+      "path": "mod/common/decisions/mm_wyvern_dragon_forging.txt",
+      "sha256": "bf60c0c6b0b4528d0cf088041f8e0b42df03ff29b083d490ea5314bbad4032dc"
+    },
+    {
+      "path": "mod/common/modifiers/mm_dragon_creed_combat.txt",
+      "sha256": "423548cee22d328c17576e6344b1862039ecf809568a283398e7e95075d0bead"
+    },
+    {
+      "path": "mod/common/modifiers/mm_wyvern_dragon_weapons.txt",
+      "sha256": "df0c02f47b159071fb816026a9473c873cc1069d8ee8547e72e51f44e2ff59da"
+    },
+    {
+      "path": "mod/common/on_action/zzzz_mm_wyvern_capture_on_actions.txt",
+      "sha256": "fb4307e4e18a6053c8a864b1d787c670e6847dfeeb0f0a74f53a1c8201b1110b"
+    },
+    {
+      "path": "mod/common/schemes/scheme_types/zzzz_mm_wyvern_capture_schemes.txt",
+      "sha256": "29b9511cab58a5b50f5c1b4f2c27cac7b105bc4cf424da8a00f88757eb8a16b0"
+    },
+    {
+      "path": "mod/common/script_values/zzzzzz_mm_wyvern_combat_values.txt",
+      "sha256": "01b1ce9e5174d0a38cf064b84d1c000940fe1aec4307ef5710cab0cad6061164"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_creed_combat.txt",
+      "sha256": "b624d286d173779c9e6fc8605b96ebb5528dbb4dc9cd12ef1125f54b2082cef3"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_wyvern_dragon_forging.txt",
+      "sha256": "04182474e3f972c26b5f8b417ccad13965a660ae89c019de90a1398a8c986d48"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_wyvern_dragon_weapon_affixes.txt",
+      "sha256": "c26330309f0fb053f00da3bd79733d66a9aab3b22108232fdbc82d01d83f7a6d"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_wyvern_trophies.txt",
+      "sha256": "7330ad8c1a633dc49024bc82a4addcb19c01fa34cc96d6aa9c917d87c2ed720d"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_wyvern_trophy_affixes.txt",
+      "sha256": "78bfaf1b6aad4f6155917178c7811a17e2c36eccb28edd5f175222c3aa075bee"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_wyvern_victory_effects.txt",
+      "sha256": "7c187b7fc4647d5311e458cb4ea16b2085a070c5e9d60e5a278cbe6c569e1f7b"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_wyvern_capture_effects.txt",
+      "sha256": "25fbbe7eddda4cc7fbd1e1c5a7a3942ad2ddf813ddcdc3b7dadc436ae4bec027"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzz_mm_creed_ai_slay_combat.txt",
+      "sha256": "e111f877fd0bbdac3d0065243263714454bf9b56030f0042dd623333fa63f202"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzz_mm_wyvern_ai_hunt_effects.txt",
+      "sha256": "ac62835f649406d87fb8619a0ab27a1f5eb127659901f4c5df1e22ca3e7ab84e"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzz_mm_wyvern_army_effects.txt",
+      "sha256": "6dbc2053d0c3578788045acce760e03758e20b28f2a1226929c189c55c8cf802"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_creed_combat.txt",
+      "sha256": "5a7e116f5d81be88013a31930f49a1513a362b7d9a7289fa6787c30f1267fe07"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_wyvern_dragon_forging.txt",
+      "sha256": "550b490834379b0cfbbd1f5ac2d768021f559f197cd6f0826eb6eb20d0c06f15"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzz_mm_wyvern_capture_triggers.txt",
+      "sha256": "5236c2faa654edcf98a9fa8730c39c8b2cb8da9ca0957a6f6a38c0dc19ee79fc"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "sha256": "1c47f6a9a10617da2b79ce6570e40048c22757ea15607bcd842c0af01179bb7c"
+    },
+    {
+      "path": "mod/common/traits/mm_wyvern_dragon_blood.txt",
+      "sha256": "05e187de1a599c3973bdc85f51f98c58163e450627fe62a5cb981bfe6aeb309f"
+    },
+    {
+      "path": "mod/common/traits/zzzz_mm_wyvern_capture_traits.txt",
+      "sha256": "87f6dbc270edf17af16889da1cda2c41b7144bfd0a1b43ab610934f421a4fe87"
+    },
+    {
+      "path": "mod/common/traits/zzzzz_mm_wyvern_species_health.txt",
+      "sha256": "e2a7a2c09f8ead603179bbf52dbf5b19ac6eecaba0b11c8798726d267d271467"
+    },
+    {
+      "path": "mod/CREDITS-winner_77-dragon-head.txt",
+      "sha256": "42706b263f63547ff3aa35f9280bad19880e108f1304bc580950911da4e79f30"
+    },
+    {
+      "path": "mod/events/mm_wyvern_dragon_forging_events.txt",
+      "sha256": "9dd9dac083c19abec986586efe0e10f74a771f0b36e8e16a9daa5339cb173fb3"
+    },
+    {
+      "path": "mod/events/myv_wyvern_events.txt",
+      "sha256": "f1fe2d0deba1ae8c5fd122e1a49e55de942426fbe25aea4698c0ca619c78ed81"
+    },
+    {
+      "path": "mod/events/zzzz_mm_wyvern_capture_events.txt",
+      "sha256": "faddb6022d42f222d2c371d77ecb380d3d092037b8ed55c0f31e6b5f6091be61"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_dragon_draxel.dds",
+      "sha256": "0a86bfc661ebc1130ff47d61ff006b98ed9ed66c791cef1ebc34be93c9453a0f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_dragon_serind.dds",
+      "sha256": "8ad745b376cf28279a22f882924a212635363ab22f682ebf196afc5c15f8ec72"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_material_claw.dds",
+      "sha256": "df8f4b5fe44694c2ecd6156a1dc412e620a3ab36ff0d6efe0db74291a4fcd098"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_material_horn.dds",
+      "sha256": "21bbf538c185b568e0dfcf23861fbfdf65f3d2c17ff07b1c90e8c1a99987bd0e"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_trophy_claw.dds",
+      "sha256": "f0ed9556b011dced93be9744896c55e894a95341efdb4e227892830521a7f8bd"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_trophy_eye.dds",
+      "sha256": "51a5f89fed365d93381291b2c2debdbc0b7645a13948477dd27cab96cf516d0c"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_trophy_fang.dds",
+      "sha256": "15101114a434631ed461d62e6bd5a9a6738a217d495ad9604ec382de77f97d67"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_trophy_head.dds",
+      "sha256": "47c43c8b2cc9ae294097f4ffe0ac2c9a3151167221f7f84419a9004a5be9fbce"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_wyvern_trophy_scale.dds",
+      "sha256": "212cb1a0ffa4e839aa734a301ad5533416a9e094ce0ff1f52c7fd0360d484176"
+    },
+    {
+      "path": "mod/gfx/interface/icons/traits/mm_dragon_bathed_blood.dds",
+      "sha256": "d2946816035878d30533aa85430c55c3737418c70c8efc48fb1568a910d329e1"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_draxel.mesh",
+      "sha256": "6209420bffa56d6bb735054486150bf2d33a3d30a95e8b0ad143b081a146cd92"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_serind.mesh",
+      "sha256": "513521b7d862dc26dbce397f9268edd32c84bb3c88fc8aadd374e02589fd62b9"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons.asset",
+      "sha256": "6fd8f5945c7822506eb0c2705769809f314d3bb1e2f1f2698807b44991246d8d"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_diffuse.dds",
+      "sha256": "8ccc61040226fed550b84c7fdc8ef721915d695f59d6faa3c83196089a8734cb"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_normal.dds",
+      "sha256": "b24d14865414fadd1fb8da75f73b0d092d75c1092006972c3e14fcbe096fd27e"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_weapons/mm_dragon_weapons_properties.dds",
+      "sha256": "1c06761388bee21ce96928388e1eb2a885a78b08ea7391f526716222e46914ff"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_diffuse.dds",
+      "sha256": "7fe70e8241b0dfc800be6ac602af63e787a1aac4eab09e8c24bff764bf148557"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_normal.dds",
+      "sha256": "3601659da71bfdd5a1b9782c313c47c9b5795d3d8432cc409f506ac814bddc0b"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_properties.dds",
+      "sha256": "58c80d73af1dabfc3e9467995af63f3b7423ed5b5a28d73c85446e3b47c86160"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies.asset",
+      "sha256": "92d97650a58cf6648e07a57b7734573f70683513964813ce6f3c0505bb46b68a"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_diffuse.dds",
+      "sha256": "bf0db29651cfae9970a24738bbb8a57e74d9aaf71eb476f5104635cb19dfc52d"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_normal.dds",
+      "sha256": "dbf70ba501e278d368745dba1cccd74944cc89f2ac831bebe2123cd7bb71ed3c"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies_properties.dds",
+      "sha256": "ce52670a64b0bdbd8b6d60208313d8919cfbd71bc75759db7d3c78a51643a3d8"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_claw.mesh",
+      "sha256": "1f1e80a9bff2c9e7bebec5849efeb7558e6728df5e30fba6f462df7520e48a96"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_eye.mesh",
+      "sha256": "f69fe4b8e0a340e25bddcf3f8dabaae5006f8dd3594e44f6d9eba7d66951d122"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_fang.mesh",
+      "sha256": "5749ec741baa17c4ef02fdab1138554660f1f9d4e8ced0862ebacf0d0145785e"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_head.mesh",
+      "sha256": "a1df48ceb2c38d7de9639f4d31468d98942c19e8eadfc7e4e9bb0d263cd1ed67"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_scale.mesh",
+      "sha256": "fcfb31d4086e584a7eceb76364becce80c374f062ce8baa02c6c9a22238d07ac"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_creed_combat_l_english.yml",
+      "sha256": "19d2e2bc97aa8df95d41207260534027c24f26f20c4e8868a327394ef3151123"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_capture_l_english.yml",
+      "sha256": "9bf2befdb2d820df69dc065207734cf8c6928daf1bc7497946ada3d92eaf4055"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_dragon_forging_l_english.yml",
+      "sha256": "eb35e2b0268193175f1fee357180a44e4c524ce312a1ad18ef1213f15a33161d"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_personal_materials_l_english.yml",
+      "sha256": "97d72db6b02a2eb040789e923d63f84cf774f919920ee4c56570645967b4c245"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_trophies_l_english.yml",
+      "sha256": "76182c9a104e6a78c3915c7b98cbb3a1dce7c193f68022abb57e864ff4893144"
+    },
+    {
+      "path": "mod/localization/english/mm_wyvern_victory_l_english.yml",
+      "sha256": "fef903d509b62a20dbdc22a3d45140f9fcbe3e2d761b21f2d2f439c6d5b3bd5d"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_creed_combat_l_simp_chinese.yml",
+      "sha256": "004c68fabed92dd77559d0a4d77eca011fa7fe94fdcc3ecd3784b909248ef39f"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_capture_l_simp_chinese.yml",
+      "sha256": "f967148d213940ffd58cd86f04fc7e3c1f7089c828f8598cb004ba4552372924"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_dragon_forging_l_simp_chinese.yml",
+      "sha256": "f8edfed0ce4043f62eb65565cd30eaadebdd828844ba5a8cf728a6304054b62f"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_personal_materials_l_simp_chinese.yml",
+      "sha256": "9c90d354e273d513b1926a21b7a472d9d25b0bc0e183874b9d365d2cfd932ed6"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_trophies_l_simp_chinese.yml",
+      "sha256": "8b1a3b78c708677b0d9435d0c275afc48c489ebafa6d0e99af0afb4814cc4963"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_wyvern_victory_l_simp_chinese.yml",
+      "sha256": "a8e80082b8f193da9e10ab1e0a0c980dfe5a8ab785bcd0d81c83c1156a9663e9"
+    }
+  ],
+  "updated": "2026-10-28"
+}

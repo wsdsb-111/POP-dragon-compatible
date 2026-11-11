@@ -1,0 +1,18 @@
+mm_dragon_horns_accessory = {
+	entity = { entity = "mm_dragon_horns_entity" node = "bn_h_head" }
+}
+mm_dragon_tail_accessory = {
+	entity = { entity = "mm_dragon_tail_entity" node = "body_root" }
+}
+mm_dragon_scales_accessory = {
+	entity = { entity = "mm_dragon_scales_entity" node = "bn_h_head" }
+}
+mm_dragon_horns_child_accessory = {
+	entity = { entity = "mm_dragon_horns_child_entity" node = "bn_h_head" }
+}
+mm_dragon_tail_child_accessory = {
+	entity = { entity = "mm_dragon_tail_child_entity" node = "body_root" }
+}
+mm_dragon_scales_child_accessory = {
+	entity = { entity = "mm_dragon_scales_child_entity" node = "bn_h_head" }
+}

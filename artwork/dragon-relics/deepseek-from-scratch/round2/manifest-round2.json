@@ -1,0 +1,96 @@
+{
+  "note": "round2 最终交付清单",
+  "assets": [
+    {
+      "id": "black_crown",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/black_crown/black_crown_r2.blend",
+        "bytes": 10277923,
+        "md5": "421d2b3fdb46714f0cce48351f6a960d"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/black_crown/out/black_crown_r2.glb",
+        "bytes": 90616800,
+        "md5": "524d2e4f05a37490cd0a6c79db47a4b9"
+      }
+    },
+    {
+      "id": "black_regalia",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/black_regalia/black_regalia_r2.blend",
+        "bytes": 10253743,
+        "md5": "0bf4022f884208fc91d5fe538063dfa3"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/black_regalia/out/black_regalia_r2.glb",
+        "bytes": 159920936,
+        "md5": "3b19d39b17238f7a499154906653073a"
+      }
+    },
+    {
+      "id": "white_book",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/white_book/white_book_r2.blend",
+        "bytes": 32532253,
+        "md5": "039a4ddb887babde603592672ba8af67"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/white_book/out/white_book_r2.glb",
+        "bytes": 98204296,
+        "md5": "80b8d09b29c4c71b2c720647502fb1a9"
+      }
+    },
+    {
+      "id": "fire_ring",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/fire_ring/fire_ring_r2.blend",
+        "bytes": 13812977,
+        "md5": "9e585bce76f9171a2179f28aa601ddce"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/fire_ring/out/fire_ring_r2.glb",
+        "bytes": 127903260,
+        "md5": "3bba513eb502f1901f82c15faeb84b1f"
+      }
+    },
+    {
+      "id": "earth_sarcophagus",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/earth_sarcophagus/earth_sarcophagus_r2.blend",
+        "bytes": 6103879,
+        "md5": "71fd4e0e76ef22dc1a405e3246a503fd"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/earth_sarcophagus/out/earth_sarcophagus_r2.glb",
+        "bytes": 97827484,
+        "md5": "59d58ef2eaaa54a12dbd822483c8e8ce"
+      }
+    },
+    {
+      "id": "sea_armor",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/sea_armor/sea_armor_r2.blend",
+        "bytes": 11088744,
+        "md5": "440f19954eae94df90c2c83cb70027b8"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/sea_armor/out/sea_armor_r2.glb",
+        "bytes": 106309436,
+        "md5": "ca44a7c9a3ea248b436afe8fbf2c2490"
+      }
+    },
+    {
+      "id": "sky_spear",
+      "blend": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/sky_spear/sky_spear_r2.blend",
+        "bytes": 31165325,
+        "md5": "666ed103107dc367964342b0f6d3eb81"
+      },
+      "glb": {
+        "path": "./artwork/dragon-relics/deepseek-from-scratch/round2/sky_spear/out/sky_spear_r2.glb",
+        "bytes": 131830020,
+        "md5": "1951e58d03e386e3398075d9af0dcbce"
+      }
+    }
+  ]
+}

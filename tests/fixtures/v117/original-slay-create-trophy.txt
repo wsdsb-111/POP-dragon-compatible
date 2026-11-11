@@ -1,0 +1,91 @@
+# source_path = 3811316052/common/scripted_effects/myv_wyvern_effects.txt
+# source_sha256 = cad02cac285f8b7cc36c3b3bb9d726fec44cfb09ecd51ad47928322f96bbe396
+myv_slay_create_trophy_effect = {
+    random_list = {
+        65 = {
+            if = {
+                limit = { scope:myv_slay_wyvern_target = { var:myv_wyvern_size >= 240 } }
+                create_artifact = {
+                    name = myv_wyvern_fang_name
+                    description = myv_wyvern_fang_desc
+                    type = miscellaneous
+                    visuals = myv_wyvern_fang
+                    rarity = illustrious
+                    modifier = artifact_monthly_prestige_4_modifier
+                    modifier = artifact_dread_baseline_add_3_modifier
+                    creator = root
+                    decaying = no
+                    save_scope_as = myv_wyvern_trophy
+                }
+            }
+            else_if = {
+                limit = { scope:myv_slay_wyvern_target = { var:myv_wyvern_size >= 150 } }
+                create_artifact = {
+                    name = myv_wyvern_fang_name
+                    description = myv_wyvern_fang_desc
+                    type = miscellaneous
+                    visuals = myv_wyvern_fang
+                    rarity = famed
+                    modifier = artifact_monthly_prestige_3_modifier
+                    modifier = artifact_dread_baseline_add_2_modifier
+                    creator = root
+                    decaying = no
+                    save_scope_as = myv_wyvern_trophy
+                }
+            }
+            else = {
+                create_artifact = {
+                    name = myv_wyvern_fang_name
+                    description = myv_wyvern_fang_desc
+                    type = miscellaneous
+                    visuals = myv_wyvern_fang
+                    rarity = masterwork
+                    modifier = artifact_monthly_prestige_2_modifier
+                    modifier = artifact_dread_baseline_add_1_modifier
+                    creator = root
+                    decaying = no
+                    save_scope_as = myv_wyvern_trophy
+                }
+            }
+        }
+        20 = {
+            create_artifact = {
+                name = myv_wyvern_scale_name
+                description = myv_wyvern_scale_desc
+                type = miscellaneous
+                visuals = myv_wyvern_scale
+                rarity = illustrious
+                modifier = artifact_monthly_minor_prestige_5_modifier
+                creator = root
+                decaying = no
+                save_scope_as = myv_wyvern_trophy
+            }
+			scope:myv_wyvern_trophy = {
+				set_variable = { name = myv_wyvern_scale_material value = 1 }
+			}
+        }
+        15 = {
+            create_artifact = {
+                name = myv_wyvern_blood_name
+                description = myv_wyvern_blood_desc
+                type = miscellaneous
+                visuals = myv_wyvern_blood
+                rarity = illustrious
+                modifier = artifact_monthly_minor_prestige_5_modifier
+                creator = root
+                decaying = no
+                save_scope_as = myv_wyvern_trophy
+            }
+			scope:myv_wyvern_trophy = {
+				set_variable = { name = myv_wyvern_blood_material value = 1 }
+			}
+        }
+    }
+
+    send_interface_toast = {
+        type = event_toast_effect_good
+        title = myv_wyvern_trophy_gained_toast
+        left_icon = scope:myv_wyvern_trophy
+    }
+    myv_slay_try_find_wyvern_eggs_effect = yes
+}

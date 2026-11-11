@@ -1,0 +1,23 @@
+﻿# Migrate only Dragon Creed split offshoots; other religions are never converted.
+mm_v1314_migrate_split_character_effect = {
+    if = {
+        limit = { faith.religion = religion:mm_dragon_creed_religion NOT = { faith = faith:mm_dragon_creed } }
+        if = { limit = { rite = { rite_has_tenet = mm_tenet_black } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_black }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_white } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_white }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_fire } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_fire }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_earth } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_earth }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_sea } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sea }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_sky } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sky }
+    }
+}
+mm_v1314_migrate_split_county_effect = {
+    if = {
+        limit = { faith.religion = religion:mm_dragon_creed_religion NOT = { faith = faith:mm_dragon_creed } }
+        if = { limit = { rite = { rite_has_tenet = mm_tenet_black } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_black }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_white } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_white }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_fire } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_fire }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_earth } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_earth }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_sea } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_sea }
+        else_if = { limit = { rite = { rite_has_tenet = mm_tenet_sky } } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_sky }
+    }
+}

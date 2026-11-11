@@ -1,0 +1,20 @@
+﻿namespace = mm_pod_kinfolk_first_change
+
+# Compatibility birthday bridge: some playsets define their own
+# on_16th_birthday and can drop POD's event list. This hidden event has the
+# same guard as POD_fera_maintenance.2 and explicitly queues it.
+mm_pod_kinfolk_first_change.0001 = {
+    type = character_event
+    hidden = yes
+    trigger = {
+        age = 16
+        has_character_flag = fera_first_change
+        has_trait = kinfolk
+        NOT = { has_trait = changeling }
+        NOT = { has_trait = revenant }
+    }
+    immediate = {
+        debug_log = "MM_POD_FIRST_CHANGE_BRIDGE_FIRED"
+        trigger_event = POD_fera_maintenance.2
+    }
+}

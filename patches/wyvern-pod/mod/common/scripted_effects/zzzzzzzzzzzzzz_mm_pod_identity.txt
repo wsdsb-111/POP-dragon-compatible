@@ -1,0 +1,277 @@
+﻿mm_pod_integrate_species_effect = {
+    mm_pod_migrate_legacy_torpor_effect = yes
+    if = {
+        limit = { mm_dragon_is_true_dragon_parent_trigger = yes }
+        add_trait = mm_pod_dragon_race
+        remove_trait = mortal
+    }
+    if = { limit = { mm_pod_has_dragon_blood = yes } add_trait = mm_pod_dragon_gifts }
+    mm_pod_sync_mokole_max_effect = yes
+    mm_pod_apply_fixed_royal_appearance_effect = yes
+    mm_pod_revise_egyptian_founders_effect = yes
+}
+
+mm_pod_revise_egyptian_founders_effect = {
+    if = {
+        limit = { has_character_flag = mm_pod_initial_founder has_trait = mm_dragon_half NOT = { has_character_flag = mm_pod_earth_founder_revision } OR = { this = character:795208 this = character:795209 this = character:795210 } }
+        mm_dragon_prepare_biological_origins_effect = yes
+        save_scope_as = mm_pod_revised_founder
+        if = {
+            limit = { this = character:795209 is_target_in_variable_list = { name = mm_dragon_origins target = character:99001304 } }
+            remove_list_variable = { name = mm_dragon_origins target = character:99001304 }
+            if = { limit = { NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } } } add_to_variable_list = { name = mm_dragon_origins target = character:99001306 } }
+            remove_variable = mm_dragon_origin_1
+remove_variable = mm_dragon_origin_2
+remove_variable = mm_dragon_origin_3
+remove_variable = mm_dragon_origin_4
+remove_variable = mm_dragon_origin_5
+remove_variable = mm_dragon_origin_6
+remove_variable = mm_dragon_origin_7
+remove_variable = mm_dragon_origin_8
+remove_variable = mm_dragon_origin_9
+remove_variable = mm_dragon_origin_10
+remove_variable = mm_dragon_origin_11
+remove_variable = mm_dragon_origin_12
+remove_variable = mm_dragon_origin_13
+remove_variable = mm_dragon_origin_14
+remove_variable = mm_dragon_origin_15
+remove_variable = mm_dragon_origin_16
+            remove_variable = mm_dragon_origin_count
+            mm_dragon_prepare_biological_origins_effect = yes
+            every_in_list = { variable = mm_dragon_origins mm_dragon_project_biological_branch_effect = { TARGET = scope:mm_pod_revised_founder } }
+            mm_dragon_refresh_branch_traits_effect = yes
+            if = { limit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_sky } set_character_rite = rite:mm_dragon_earth }
+            add_character_flag = mm_pod_earth_founder_revision
+        }
+if = {
+            limit = { this = character:795210 is_target_in_variable_list = { name = mm_dragon_origins target = character:99001310 } }
+            remove_list_variable = { name = mm_dragon_origins target = character:99001310 }
+            if = { limit = { NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } } } add_to_variable_list = { name = mm_dragon_origins target = character:99001306 } }
+            remove_variable = mm_dragon_origin_1
+remove_variable = mm_dragon_origin_2
+remove_variable = mm_dragon_origin_3
+remove_variable = mm_dragon_origin_4
+remove_variable = mm_dragon_origin_5
+remove_variable = mm_dragon_origin_6
+remove_variable = mm_dragon_origin_7
+remove_variable = mm_dragon_origin_8
+remove_variable = mm_dragon_origin_9
+remove_variable = mm_dragon_origin_10
+remove_variable = mm_dragon_origin_11
+remove_variable = mm_dragon_origin_12
+remove_variable = mm_dragon_origin_13
+remove_variable = mm_dragon_origin_14
+remove_variable = mm_dragon_origin_15
+remove_variable = mm_dragon_origin_16
+            remove_variable = mm_dragon_origin_count
+            mm_dragon_prepare_biological_origins_effect = yes
+            every_in_list = { variable = mm_dragon_origins mm_dragon_project_biological_branch_effect = { TARGET = scope:mm_pod_revised_founder } }
+            mm_dragon_refresh_branch_traits_effect = yes
+            if = { limit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_white } set_character_rite = rite:mm_dragon_earth }
+            add_character_flag = mm_pod_earth_founder_revision
+        }
+        if = { limit = { OR = { AND = { this = character:795208 is_target_in_variable_list = { name = mm_dragon_origins target = character:99001002 } } AND = { OR = { this = character:795209 this = character:795210 } is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } } } } add_character_flag = mm_pod_earth_founder_revision }
+    }
+}
+
+# Each culture is compared to the lairs using its map distribution once per save.
+# Scaling squared distances avoids overflowing an accumulated script value.
+mm_pod_find_cultural_throne_effect = {
+    if = { limit = { OR = { culture = culture:han culture = culture:tai } } set_variable = { name = mm_pod_seed_throne value = 1 } }
+    else_if = { limit = { culture = culture:ancient_egyptian } set_variable = { name = mm_pod_seed_throne value = 2 } }
+    else_if = { limit = { culture = culture:japanese } set_variable = { name = mm_pod_seed_throne value = 5 } }
+    else = {
+        if = {
+            limit = { NOT = { culture = { has_variable = mm_pod_nearest_throne } } }
+            set_variable = { name = mm_pod_distance_2 value = 0 }
+set_variable = { name = mm_pod_distance_3 value = 0 }
+set_variable = { name = mm_pod_distance_4 value = 0 }
+set_variable = { name = mm_pod_distance_5 value = 0 }
+set_variable = { name = mm_pod_distance_6 value = 0 }
+set_variable = { name = mm_pod_distance_7 value = 0 }
+set_variable = { name = mm_pod_distance_8 value = 0 }
+set_variable = { name = mm_pod_distance_9 value = 0 }
+            set_variable = { name = mm_pod_culture_provinces value = 0 }
+            every_province = {
+                limit = { exists = culture culture = scope:mm_pod_source_recipient.culture }
+                save_scope_as = mm_pod_culture_province
+                scope:mm_pod_source_recipient = {
+                    change_variable = { name = mm_pod_culture_provinces add = 1 }
+                    change_variable = { name = mm_pod_distance_2 add = { value = "scope:mm_pod_culture_province.squared_distance(province:10430)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_3 add = { value = "scope:mm_pod_culture_province.squared_distance(province:10216)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_4 add = { value = "scope:mm_pod_culture_province.squared_distance(province:6077)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_5 add = { value = "scope:mm_pod_culture_province.squared_distance(province:5759)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_6 add = { value = "scope:mm_pod_culture_province.squared_distance(province:2646)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_7 add = { value = "scope:mm_pod_culture_province.squared_distance(province:480)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_8 add = { value = "scope:mm_pod_culture_province.squared_distance(province:6)" multiply = 0.0001 } }
+change_variable = { name = mm_pod_distance_9 add = { value = "scope:mm_pod_culture_province.squared_distance(province:260)" multiply = 0.0001 } }
+                }
+            }
+            if = {
+                limit = { var:mm_pod_culture_provinces > 0 }
+                set_variable = { name = mm_pod_best_distance value = 999999999 }
+                if = { limit = { var:mm_pod_distance_2 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_2 } set_variable = { name = mm_pod_seed_throne value = 1 } }
+if = { limit = { var:mm_pod_distance_3 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_3 } set_variable = { name = mm_pod_seed_throne value = 1 } }
+if = { limit = { var:mm_pod_distance_4 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_4 } set_variable = { name = mm_pod_seed_throne value = 2 } }
+if = { limit = { var:mm_pod_distance_5 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_5 } set_variable = { name = mm_pod_seed_throne value = 2 } }
+if = { limit = { var:mm_pod_distance_6 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_6 } set_variable = { name = mm_pod_seed_throne value = 3 } }
+if = { limit = { var:mm_pod_distance_7 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_7 } set_variable = { name = mm_pod_seed_throne value = 3 } }
+if = { limit = { var:mm_pod_distance_8 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_8 } set_variable = { name = mm_pod_seed_throne value = 4 } }
+if = { limit = { var:mm_pod_distance_9 < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = var:mm_pod_distance_9 } set_variable = { name = mm_pod_seed_throne value = 4 } }
+                culture = { set_variable = { name = mm_pod_nearest_throne value = scope:mm_pod_source_recipient.var:mm_pod_seed_throne } }
+            }
+            remove_variable = mm_pod_distance_2
+remove_variable = mm_pod_distance_3
+remove_variable = mm_pod_distance_4
+remove_variable = mm_pod_distance_5
+remove_variable = mm_pod_distance_6
+remove_variable = mm_pod_distance_7
+remove_variable = mm_pod_distance_8
+remove_variable = mm_pod_distance_9
+            remove_variable = mm_pod_culture_provinces
+            remove_variable = mm_pod_best_distance
+        }
+        if = { limit = { culture = { has_variable = mm_pod_nearest_throne } } set_variable = { name = mm_pod_seed_throne value = culture.var:mm_pod_nearest_throne } }
+        else_if = {
+            limit = { exists = location }
+            set_variable = { name = mm_pod_best_distance value = 999999999 }
+            if = { limit = { "location.squared_distance(province:10430)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:10430)" } set_variable = { name = mm_pod_seed_throne value = 1 } }
+if = { limit = { "location.squared_distance(province:10216)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:10216)" } set_variable = { name = mm_pod_seed_throne value = 1 } }
+if = { limit = { "location.squared_distance(province:6077)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:6077)" } set_variable = { name = mm_pod_seed_throne value = 2 } }
+if = { limit = { "location.squared_distance(province:5759)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:5759)" } set_variable = { name = mm_pod_seed_throne value = 2 } }
+if = { limit = { "location.squared_distance(province:2646)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:2646)" } set_variable = { name = mm_pod_seed_throne value = 3 } }
+if = { limit = { "location.squared_distance(province:480)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:480)" } set_variable = { name = mm_pod_seed_throne value = 3 } }
+if = { limit = { "location.squared_distance(province:6)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:6)" } set_variable = { name = mm_pod_seed_throne value = 4 } }
+if = { limit = { "location.squared_distance(province:260)" < var:mm_pod_best_distance } set_variable = { name = mm_pod_best_distance value = "location.squared_distance(province:260)" } set_variable = { name = mm_pod_seed_throne value = 4 } }
+            remove_variable = mm_pod_best_distance
+        }
+    }
+}
+
+mm_pod_seed_source_effect = {
+    save_scope_as = mm_pod_source_recipient
+    clear_saved_scope = mm_pod_chosen_source
+    mm_dragon_prepare_biological_origins_effect = yes
+    if = {
+        limit = { NOT = { has_character_flag = mm_pod_initial_source_assigned } }
+        if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001001 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001001 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001305 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001305 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001002 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001002 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001306 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001003 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001003 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001307 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001307 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001304 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001304 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001308 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001308 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001309 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001309 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001310 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001310 = { save_scope_as = mm_pod_chosen_source } }
+        if = { limit = { exists = scope:mm_pod_chosen_source } add_character_flag = mm_pod_initial_source_assigned }
+    }
+    if = {
+        limit = { NOT = { has_character_flag = mm_pod_initial_source_assigned } }
+        if = {
+            limit = { has_character_flag = mm_pod_initial_founder }
+            if = { limit = { this = character:793509 } character:99001305 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { this = character:795111 } character:99001003 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { this = character:795208 } character:99001002 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { this = character:795209 } character:99001306 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { this = character:795210 } character:99001306 = { save_scope_as = mm_pod_chosen_source } }
+        }
+        else_if = {
+            limit = {
+                is_ai = no NOT = { exists = mother } NOT = { exists = father }
+                NOR = { this = character:795111 this = character:795113 this = character:795205 this = character:795206 this = character:795207 this = character:795114 this = character:795115 this = character:795116 this = character:795202 this = character:795208 this = character:795209 this = character:795210 this = character:795236 this = character:795243 this = character:795108 this = character:793509 this = character:795203 this = character:795204 this = character:795231 this = character:795234 this = character:795235 this = character:795237 this = character:795238 this = character:795239 this = character:795240 this = character:795211 this = character:795242 this = character:795107 this = character:795112 this = character:795232 this = character:795201 this = character:795241 this = character:795110 this = character:795233 this = character:795109 this = character:795271 this = character:795212 }
+            }
+            random_list = { 1 = { character:99001001 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001305 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001002 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001306 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001003 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001307 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001304 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001308 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001310 = { save_scope_as = mm_pod_chosen_source } } }
+        }
+        else = {
+            mm_pod_find_cultural_throne_effect = yes
+            if = { limit = { var:mm_pod_seed_throne = 1 } random_list = { 1 = { character:99001001 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001305 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 2 } random_list = { 1 = { character:99001002 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001306 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 3 } random_list = { 1 = { character:99001003 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001307 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 4 } random_list = { 1 = { character:99001304 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001308 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 5 } random_list = { 1 = { character:99001310 = { save_scope_as = mm_pod_chosen_source } } } }
+        }
+        if = {
+            limit = { exists = scope:mm_pod_chosen_source }
+            scope:mm_pod_chosen_source = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_pod_source_recipient } }
+            add_character_flag = mm_pod_initial_source_assigned
+        }
+    }
+    # Only the initial five founders convert, once, after a specific source exists.
+    if = {
+        limit = { has_character_flag = mm_pod_initial_founder has_trait = mm_dragon_half exists = scope:mm_pod_chosen_source NOT = { has_character_flag = mm_pod_founder_rite_assigned } }
+        if = { limit = { scope:mm_pod_chosen_source = { OR = { this = character:99001001 this = character:99001305 } } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_fire add_character_flag = mm_pod_founder_rite_assigned }
+if = { limit = { scope:mm_pod_chosen_source = { OR = { this = character:99001002 this = character:99001306 } } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_earth add_character_flag = mm_pod_founder_rite_assigned }
+if = { limit = { scope:mm_pod_chosen_source = { OR = { this = character:99001003 this = character:99001307 } } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sea add_character_flag = mm_pod_founder_rite_assigned }
+if = { limit = { scope:mm_pod_chosen_source = { OR = { this = character:99001304 this = character:99001308 } } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sky add_character_flag = mm_pod_founder_rite_assigned }
+if = { limit = { scope:mm_pod_chosen_source = { OR = { this = character:99001310 } } } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_white add_character_flag = mm_pod_founder_rite_assigned }
+    }
+    remove_variable = mm_pod_seed_throne
+    clear_saved_scope = mm_pod_chosen_source
+}
+
+mm_pod_seed_mokole_effect = {
+    if = {
+        limit = { has_trait = mokole NOT = { has_character_flag = mm_pod_initial_rank_assigned } }
+        add_character_flag = mm_pod_initial_rank_assigned
+        # Never overwrite a pre-update black-blood result or an acquired promotion.
+        if = {
+            limit = { mm_dragon_has_blood_trigger = no NOT = { has_character_flag = mm_dragon_lineage_initialized } NOT = { has_variable = mm_dragon_absorbed_source_count } }
+            remove_trait = mm_dragon_half
+            remove_trait = mm_dragon_lineage_1
+            remove_trait = mm_dragon_lineage_2
+            remove_trait = mm_dragon_lineage_3
+            remove_trait = mm_dragon_lineage_4
+            if = { limit = { true_age >= 1000 } add_trait = mm_dragon_half set_variable = { name = mm_dragon_lineage_generation value = 0 } }
+            else_if = { limit = { true_age >= 200 } add_trait = mm_dragon_lineage_1 set_variable = { name = mm_dragon_lineage_generation value = 1 } }
+            else_if = { limit = { true_age >= 100 } add_trait = mm_dragon_lineage_2 set_variable = { name = mm_dragon_lineage_generation value = 2 } }
+            else_if = { limit = { true_age >= 50 } add_trait = mm_dragon_lineage_3 set_variable = { name = mm_dragon_lineage_generation value = 3 } }
+            else = { add_trait = mm_dragon_lineage_4 set_variable = { name = mm_dragon_lineage_generation value = 4 } }
+            mm_dragon_prepare_biological_origins_effect = yes
+            if = { limit = { has_character_flag = mm_pod_initial_cohort_candidate has_trait = mm_dragon_half NOT = { has_variable_list = mm_dragon_origins } OR = { this = character:793509 this = character:795111 this = character:795208 this = character:795209 this = character:795210 } } add_character_flag = mm_pod_initial_founder }
+        }
+        add_character_flag = mm_dragon_lineage_initialized
+    }
+    mm_pod_seed_source_effect = yes
+    mm_pod_integrate_species_effect = yes
+}
+
+mm_pod_assign_true_creation_source_effect = {
+    if = {
+        limit = { mm_dragon_is_true_dragon_parent_trigger = yes mm_royal_is_king = no NOT = { has_variable = mm_pod_creation_source } has_variable = mm_royal_creation_throne }
+        save_scope_as = mm_pod_source_recipient
+        clear_saved_scope = mm_pod_chosen_source
+        mm_dragon_prepare_biological_origins_effect = yes
+        if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001001 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001001 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001305 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001305 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001002 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001002 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001306 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001306 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001003 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001003 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001307 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001307 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001304 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001304 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001308 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001308 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001309 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001309 = { save_scope_as = mm_pod_chosen_source } }
+if = { limit = { is_target_in_variable_list = { name = mm_dragon_origins target = character:99001310 } NOT = { exists = scope:mm_pod_chosen_source } } character:99001310 = { save_scope_as = mm_pod_chosen_source } }
+        if = {
+            limit = { NOT = { exists = scope:mm_pod_chosen_source } }
+            if = { limit = { exists = mother mother = { has_variable = mm_pod_creation_source } } mother.var:mm_pod_creation_source = { save_scope_as = mm_pod_chosen_source } }
+            else_if = { limit = { exists = real_father real_father = { has_variable = mm_pod_creation_source } } real_father.var:mm_pod_creation_source = { save_scope_as = mm_pod_chosen_source } }
+            else = {
+                set_variable = { name = mm_pod_seed_throne value = var:mm_royal_creation_throne }
+                if = { limit = { var:mm_pod_seed_throne = 1 } random_list = { 1 = { character:99001001 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001305 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 2 } random_list = { 1 = { character:99001002 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001306 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 3 } random_list = { 1 = { character:99001003 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001307 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 4 } random_list = { 1 = { character:99001304 = { save_scope_as = mm_pod_chosen_source } } 1 = { character:99001308 = { save_scope_as = mm_pod_chosen_source } } } }
+if = { limit = { var:mm_pod_seed_throne = 5 } random_list = { 1 = { character:99001310 = { save_scope_as = mm_pod_chosen_source } } } }
+                remove_variable = mm_pod_seed_throne
+            }
+        }
+        if = {
+            limit = { exists = scope:mm_pod_chosen_source }
+            set_variable = { name = mm_pod_creation_source value = scope:mm_pod_chosen_source }
+            scope:mm_pod_chosen_source = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_pod_source_recipient } }
+        }
+        clear_saved_scope = mm_pod_chosen_source
+    }
+}
+mm_dragon_creation_source_hook_effect = { mm_royal_assign_creation_effect = yes mm_pod_assign_true_creation_source_effect = yes mm_pod_integrate_species_effect = yes }

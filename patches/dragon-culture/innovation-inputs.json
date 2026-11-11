@@ -1,0 +1,136 @@
+{
+  "playset": {
+    "path": "E:\\Documents\\Paradox Interactive\\Crusader Kings III\\dlc_load.json",
+    "sha256": "73277cca42c74fa88c142c4a46b266ca2f346e8eba12ed052818b6e9caab7e96",
+    "enabled": [
+      "mod/ugc_3680914955.mod",
+      "mod/ugc_3346777360.mod",
+      "mod/ugc_2227658180.mod",
+      "mod/ugc_3082182371.mod",
+      "mod/ugc_3717989134.mod",
+      "mod/ugc_2939268227.mod",
+      "mod/ugc_3466741513.mod",
+      "mod/ugc_3601801031.mod",
+      "mod/ugc_3596220645.mod",
+      "mod/ugc_3595402176.mod",
+      "mod/ugc_3775117727.mod",
+      "mod/ugc_3610131530.mod",
+      "mod/ugc_3740401066.mod",
+      "mod/ugc_3599523302.mod",
+      "mod/ugc_3597022985.mod",
+      "mod/ugc_3722358200.mod",
+      "mod/ugc_3595279885.mod",
+      "mod/ugc_3597169709.mod",
+      "mod/ugc_3345773740.mod",
+      "mod/ugc_3605494923.mod",
+      "mod/ugc_3608146182.mod",
+      "mod/ugc_3543129505.mod",
+      "mod/ugc_3599447506.mod",
+      "mod/ugc_3596186602.mod",
+      "mod/ugc_3436935316.mod",
+      "mod/ugc_3596056273.mod",
+      "mod/ugc_3608994160.mod",
+      "mod/ugc_3776987370.mod",
+      "mod/ugc_3013259695.mod",
+      "mod/ugc_3799466986.mod",
+      "mod/ugc_3801965506.mod",
+      "mod/ugc_3802857675.mod",
+      "mod/ugc_3403925213.mod",
+      "mod/ugc_3604289242.mod",
+      "mod/ugc_3804856786.mod",
+      "mod/ugc_3708183984.mod",
+      "mod/ugc_3614384002.mod",
+      "mod/ugc_3745237555.mod",
+      "mod/ugc_3743938774.mod",
+      "mod/ugc_3805974923.mod",
+      "mod/ugc_3596577572.mod",
+      "mod/ugc_3805560229.mod",
+      "mod/ugc_3350701450.mod",
+      "mod/ugc_3723494357.mod",
+      "mod/ugc_3769843893.mod",
+      "mod/ugc_3780779762.mod",
+      "mod/ugc_3811316052.mod",
+      "mod/ugc_3684849062.mod",
+      "mod/ugc_2506311074.mod",
+      "mod/ugc_2592094512.mod",
+      "mod/VOTC_Three_Mod_Character_Name_Compatibility.mod"
+    ]
+  },
+  "descriptors": [
+    {
+      "name": "mod/ugc_3599523302.mod",
+      "sha256": "2a7384eb9703628c38a6129700f29eca625ade2c5c00539a53af40526968ab9c"
+    },
+    {
+      "name": "mod/ugc_3684849062.mod",
+      "sha256": "b3036ba38193b9f86b7b1a705840702b6dfd0aa88f994cc04cdef70197ac7d96"
+    },
+    {
+      "name": "mod/ugc_2506311074.mod",
+      "sha256": "0875dabc3cb2f4fbf07fdfe4e15ad7f742d8b4853eb1ae38f96ff27fc19fc8c8"
+    }
+  ],
+  "files": [
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\00_early_medieval_innovations.txt",
+      "sha256": "5b28496d23675132aad00f3ebc2462996ce1b591d923e674662a4a2df93caa1a"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\00_fp3_innovations.txt",
+      "sha256": "9e2792b99b4315665017005f1e6128a4cff6ff0c1728cea146644698e2e7657c"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\00_high_medieval_innovations.txt",
+      "sha256": "9eabf296cc3d6508ac9e11e1a3d6cc7da4f3178f0c8f4a3118ae5756ffecc750"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\00_late_medieval_innovations.txt",
+      "sha256": "698552703da08aa058b05d518944111f53fe2688e7aff01cd69f3ade949403ba"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\00_tribal_innovations.txt",
+      "sha256": "e878e75efa1dba64557b254a68c4a1f4379ea92209bfb6821d6876db68f1f961"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\01_fp1_innovations.txt",
+      "sha256": "9cf9c537ef8cc58cb46648f89160f61194cc84c330935a274423e620b6e23b2f"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\02_ce1_innovations.txt",
+      "sha256": "a16d6a3c1cae660070275e6cdbe317ad45c5a6417e41b56d6d99a09a81f7fb60"
+    },
+    {
+      "source": "game",
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\culture\\innovations\\tgp_innovations.txt",
+      "sha256": "5839e67aafd742da5c3193a5540ae9aaec9882a3449b480c45f3242bb38d54a7"
+    },
+    {
+      "source": "mod/ugc_2506311074.mod",
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2506311074\\common\\culture\\innovations\\oe_innovations.txt",
+      "sha256": "f824c1b152c4789e392e45a92ee67f45baaf2690460a16d7894c54356e4953f3"
+    },
+    {
+      "source": "mod/ugc_2506311074.mod",
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2506311074\\common\\culture\\innovations\\oe_override_innovations.txt",
+      "sha256": "72568ebf57e0046cbae5a090259c16596dc9a3cf5a2e81c7dc3bef183183805d"
+    },
+    {
+      "source": "mod/ugc_3599523302.mod",
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\3599523302\\common\\culture\\innovations\\00_cultural_maa_innovations.txt",
+      "sha256": "c803e013b5f92e456bf03f918932da210a8d3c059f5f98590b1d0a4b47e54c9a"
+    },
+    {
+      "source": "mod/ugc_3684849062.mod",
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\3684849062\\common\\culture\\innovations\\SanGong_innovations.txt",
+      "sha256": "47265e99d417d04953ea9db69cbb242aac31fd9cb41751b12e2b4b8d136e2f84"
+    }
+  ],
+  "count": 111
+}

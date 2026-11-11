@@ -1,0 +1,7 @@
+{
+  "sourcePath": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2506311074\\common\\scripted_triggers\\oe_contract_trigger.txt",
+  "sourceSha256": "8C55E34D1EE6243B5FAF7F7ACB79ED2B9176EA4A5BBA614144840E81A86A224F",
+  "sourceLineRange": [140, 164],
+  "definition": "is_oe_landed_bureaucrat_trigger",
+  "copiedConditionsUnmodified": true
+}

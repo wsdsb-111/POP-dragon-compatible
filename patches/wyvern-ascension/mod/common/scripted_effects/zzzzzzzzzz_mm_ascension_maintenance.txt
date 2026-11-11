@@ -1,0 +1,203 @@
+# Source-derived MYV bodies, guarded only for reversible sovereigns.
+# This module never registers them in the wild-animal population index.
+
+myv_remove_human_character_traits_effect = {
+    if = {
+        limit = { NOT = { has_trait = mm_asc_dragon_body } }
+        save_scope_as = myv_trait_cleanup_wyvern
+        every_character_trait = {
+            limit = {
+                OR = {
+                    has_trait_category = education
+                    has_trait_category = lifestyle
+                    has_trait_category = fame
+                    has_trait_category = commander
+                    has_trait_category = childhood
+                    has_trait_category = health
+                    AND = {
+                        has_trait_category = personality
+                        NOR = {
+                            this = trait:myv_wyvern_temperament_docile
+                            this = trait:myv_wyvern_temperament_alert
+                            this = trait:myv_wyvern_temperament_fierce
+                        }
+                    }
+                }
+            }
+            add_to_list = myv_human_traits_to_remove
+        }
+        every_in_list = {
+            list = myv_human_traits_to_remove
+            save_temporary_scope_as = myv_human_trait_to_remove
+            scope:myv_trait_cleanup_wyvern = {
+                remove_trait = scope:myv_human_trait_to_remove
+            }
+        }
+    }
+}
+
+myv_wyvern_human_death_protection_effect = {
+    if = {
+        limit = { NOT = { has_trait = mm_asc_dragon_body } }
+        if = {
+            limit = { myv_is_living_wyvern = yes }
+            add_character_flag = ai_will_not_convert
+            add_character_flag = immune_to_disease
+            add_character_flag = ai_immune_to_mental_breaks
+            if = {
+                limit = { stress > 0 }
+                add_stress = -1000
+            }
+            if = {
+                limit = { is_imprisoned = yes }
+                release_from_prison = yes
+            }
+            myv_remove_human_character_traits_effect = yes
+        }
+    }
+}
+
+myv_wyvern_nonhuman_maintenance_effect = {
+    if = {
+        limit = { NOT = { has_trait = mm_asc_dragon_body } }
+        if = {
+            limit = { myv_is_living_wyvern = yes }
+            save_scope_as = myv_isolated_wyvern
+            myv_wyvern_human_death_protection_effect = yes
+
+            if = {
+                limit = { exists = employer }
+                employer = { save_scope_as = myv_wyvern_former_employer }
+                # Knight eligibility excludes wyverns; they cannot be assigned a
+                # knight status here.
+            }
+
+            if = {
+                limit = {
+                    has_any_court_position = yes
+                    exists = scope:myv_wyvern_former_employer
+                }
+                scope:myv_wyvern_former_employer = {
+                    add_character_flag = free_revoke_cost
+                }
+                fire_specific_court_position_effect = {
+                    CHARACTER = scope:myv_isolated_wyvern
+                    LIEGE = scope:myv_wyvern_former_employer
+                }
+            }
+
+            if = {
+                limit = { has_trait = myv_wyvern_tamed }
+                myv_wyvern_tamed_maintenance_effect = yes
+            }
+            else = {
+                if = {
+                    limit = {
+                        is_courtier = yes
+                        exists = scope:myv_wyvern_former_employer
+                    }
+                    scope:myv_wyvern_former_employer = {
+                        remove_courtier_or_guest = scope:myv_isolated_wyvern
+                    }
+                }
+            }
+        }
+    }
+}
+
+myv_apply_wyvern_identity_effect = {
+    if = {
+        limit = { NOT = { has_trait = mm_asc_dragon_body } }
+        if = {
+            limit = { myv_is_living_wyvern = yes }
+            myv_wyvern_human_death_protection_effect = yes
+            if = {
+                # The wyvern's birthplace barony remains its lair even if later
+                # systems move the character to hunt, travel or meet a rider.
+                # This also repairs wyverns created by older mod versions.
+                limit = {
+                    NOT = { has_trait = myv_wyvern_tamed }
+                    NOT = { has_variable = myv_wyvern_lair_barony }
+                    exists = location
+                }
+                if = {
+                    limit = { has_variable = myv_wyvern_lair_county }
+                    set_variable = {
+                        name = myv_wyvern_lair_barony
+                        value = var:myv_wyvern_lair_county.title_province.barony
+                    }
+                }
+                else = {
+                    set_variable = {
+                        name = myv_wyvern_lair_barony
+                        value = location.barony
+                    }
+                }
+            }
+            # Once migrated, the old county scope is no longer the lair source.
+            if = {
+                limit = { has_variable = myv_wyvern_lair_county }
+                remove_variable = myv_wyvern_lair_county
+            }
+            if = {
+                # One-time old-save repair for a missing persistent color value.
+                limit = { NOT = { has_variable = myv_wyvern_color } }
+                myv_roll_wyvern_color_effect = yes
+            }
+            if = {
+                # Old saves and abnormal/debug creation paths receive an age-based
+                # size before their portrait flags are refreshed.
+                limit = { NOT = { has_variable = myv_wyvern_size } }
+                set_variable = {
+                    name = myv_wyvern_size
+                    value = myv_wyvern_expected_size_from_age
+                }
+            }
+            if = {
+                limit = { NOT = { has_variable = myv_wyvern_malnutrition } }
+                set_variable = { name = myv_wyvern_malnutrition value = 0 }
+            }
+            myv_sync_wyvern_malnutrition_trait_effect = yes
+            if = {
+                # New creatures and wyverns loaded from older saves start full.
+                limit = { NOT = { has_variable = myv_wyvern_hunger } }
+                set_variable = { name = myv_wyvern_hunger value = 100 }
+            }
+            if = {
+                limit = { NOT = { has_trait = myv_wyvern_tamed } }
+                # Adds/backfills the permanent marker and immediately enforces its cap.
+                myv_wyvern_lair_county_maintenance_effect = yes
+            }
+            if = {
+                # One-time v2 migration: wyverns older than 200 that were pinned
+                # to the former 30 m hard cap recover the slow growth they missed.
+                limit = { NOT = { has_variable = myv_wyvern_growth_curve_v2 } }
+                if = {
+                    limit = {
+                        has_variable = myv_wyvern_size
+                        age > 200
+                        var:myv_wyvern_size >= 300
+                        var:myv_wyvern_size <= 300
+                    }
+                    set_variable = {
+                        name = myv_wyvern_size
+                        value = myv_wyvern_expected_size_from_age
+                    }
+                }
+                set_variable = { name = myv_wyvern_growth_curve_v2 value = 1 }
+            }
+            if = {
+                # One-time old-save repair: never reroll an existing coordination.
+                limit = {
+                    NOR = {
+                        has_trait = myv_wyvern_coordination_clumsy
+                        has_trait = myv_wyvern_coordination_coordinated
+                        has_trait = myv_wyvern_coordination_dexterous
+                    }
+                }
+                myv_roll_wyvern_coordination_effect = yes
+            }
+            myv_refresh_wyvern_portrait_flags_effect = yes
+        }
+    }
+}

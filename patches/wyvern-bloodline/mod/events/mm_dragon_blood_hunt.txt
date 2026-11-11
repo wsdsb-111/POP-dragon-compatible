@@ -1,0 +1,18 @@
+namespace = mm_dragon_blood_hunt
+# Verified native callback names are sc_victor/sc_loser (not sc_winner).
+mm_dragon_blood_hunt.0001 = {
+    hidden = yes
+    immediate = {
+        single_combat_clean_shirtlessness_effect = { ATTACKER = scope:sc_attacker DEFENDER = scope:sc_defender }
+        if = { limit = { exists = scope:sc_victor } scope:sc_victor = { if = { limit = { var:mm_dragon_blood_hunt_opponent = scope:sc_loser } mm_dragon_clear_blood_hunt_effect = yes } } }
+        if = { limit = { exists = scope:sc_loser } scope:sc_loser = { if = { limit = { var:mm_dragon_blood_hunt_opponent = scope:sc_victor } mm_dragon_clear_blood_hunt_effect = yes } } }
+    }
+}
+mm_dragon_blood_hunt.0002 = {
+    hidden = yes
+    immediate = {
+        single_combat_clean_shirtlessness_effect = { ATTACKER = scope:sc_attacker DEFENDER = scope:sc_defender }
+        if = { limit = { exists = scope:sc_attacker } scope:sc_attacker = { if = { limit = { var:mm_dragon_blood_hunt_opponent = scope:sc_defender } mm_dragon_clear_blood_hunt_effect = yes } } }
+        if = { limit = { exists = scope:sc_defender } scope:sc_defender = { if = { limit = { var:mm_dragon_blood_hunt_opponent = scope:sc_attacker } mm_dragon_clear_blood_hunt_effect = yes } } }
+    }
+}

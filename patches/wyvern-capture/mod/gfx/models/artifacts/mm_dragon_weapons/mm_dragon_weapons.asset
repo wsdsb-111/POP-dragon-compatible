@@ -1,0 +1,94 @@
+﻿pdxmesh = {
+  name = "mm_dragon_draxel_court_mesh"
+  file = "mm_dragon_draxel.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_dragon_draxel_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_draxel_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_draxel_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_draxel_shape"
+    index = 3
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_dragon_draxel_court_entity" pdxmesh = "mm_dragon_draxel_court_mesh" }
+
+pdxmesh = {
+  name = "mm_dragon_serind_court_mesh"
+  file = "mm_dragon_serind.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_dragon_serind_shape"
+    index = 0
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_serind_shape"
+    index = 1
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_serind_shape"
+    index = 2
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_serind_shape"
+    index = 3
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_dragon_serind_shape"
+    index = 4
+    texture_diffuse = "mm_dragon_weapons_diffuse.dds"
+    texture_normal = "mm_dragon_weapons_normal.dds"
+    texture_specular = "mm_dragon_weapons_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_dragon_serind_court_entity" pdxmesh = "mm_dragon_serind_court_mesh" }

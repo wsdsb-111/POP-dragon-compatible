@@ -1,0 +1,79 @@
+mm_wyvern_sword_common_modifier = {
+	prowess_no_portrait = 15
+	monthly_prestige = 0.8
+	monthly_dynasty_prestige = 0.8
+	heavy_infantry_damage_mult = 0.1
+	advantage = 3
+	heavy_infantry_toughness_mult = 0.08
+}
+
+mm_wyvern_sword_masterwork_modifier = {
+	prowess_no_portrait = 15
+	monthly_prestige = 0.8
+	monthly_dynasty_prestige = 0.8
+	heavy_infantry_damage_mult = 0.1
+	advantage = 3
+	heavy_infantry_toughness_mult = 0.08
+}
+
+mm_wyvern_sword_famed_modifier = {
+	prowess_no_portrait = 19
+	monthly_prestige = 1
+	monthly_dynasty_prestige = 1
+	heavy_infantry_damage_mult = 0.125
+	advantage = 4
+	heavy_infantry_toughness_mult = 0.1
+}
+
+mm_wyvern_sword_illustrious_modifier = {
+	prowess_no_portrait = 23
+	monthly_prestige = 1.2
+	monthly_dynasty_prestige = 1.2
+	heavy_infantry_damage_mult = 0.15
+	advantage = 5
+	heavy_infantry_toughness_mult = 0.12
+}
+
+mm_wyvern_bow_common_modifier = {
+	prowess_no_portrait = 5
+	archers_damage_mult = 0.12
+	archers_toughness_mult = 0.08
+	forest_advantage = 3
+	taiga_advantage = 3
+	jungle_advantage = 3
+	monthly_dynasty_prestige_mult = 0.05
+	monthly_prestige = 0.18
+}
+
+mm_wyvern_bow_masterwork_modifier = {
+	prowess_no_portrait = 5
+	archers_damage_mult = 0.12
+	archers_toughness_mult = 0.08
+	forest_advantage = 3
+	taiga_advantage = 3
+	jungle_advantage = 3
+	monthly_dynasty_prestige_mult = 0.05
+	monthly_prestige = 0.18
+}
+
+mm_wyvern_bow_famed_modifier = {
+	prowess_no_portrait = 7
+	archers_damage_mult = 0.15
+	archers_toughness_mult = 0.1
+	forest_advantage = 4
+	taiga_advantage = 4
+	jungle_advantage = 4
+	monthly_dynasty_prestige_mult = 0.0625
+	monthly_prestige = 0.225
+}
+
+mm_wyvern_bow_illustrious_modifier = {
+	prowess_no_portrait = 8
+	archers_damage_mult = 0.18
+	archers_toughness_mult = 0.12
+	forest_advantage = 5
+	taiga_advantage = 5
+	jungle_advantage = 5
+	monthly_dynasty_prestige_mult = 0.075
+	monthly_prestige = 0.27
+}

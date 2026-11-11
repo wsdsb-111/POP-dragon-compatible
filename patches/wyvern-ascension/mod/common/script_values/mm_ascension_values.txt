@@ -1,0 +1,5 @@
+mm_asc_erosion_per_year = 10
+mm_asc_fusion_per_ritual = 20
+mm_asc_ritual_gold = 250
+mm_asc_ritual_piety = 250
+mm_asc_ritual_prestige = 100

@@ -1,0 +1,73 @@
+# Attach named handlers; vanilla on-actions already have effect blocks.
+on_birth_child = { on_actions = { mm_v1311_birth_child } }
+on_building_completed = { on_actions = { mm_v1311_building_completed } }
+on_set_relation_lover = { on_actions = { mm_v1311_relation } }
+on_set_relation_soulmate = { on_actions = { mm_v1311_relation } }
+mm_v1311_birth_child = { effect = { scope:mother ?= { mm_v1311_earth_birth_effect = yes } scope:real_father ?= { mm_v1311_earth_birth_effect = yes } } }
+mm_v1311_building_completed = {
+    effect = { scope:character ?= { if = { limit = { is_alive = yes rite = rite:mm_dragon_earth } change_spiritual_fulfillment = 3 } } }
+}
+mm_v1311_relation = { effect = { mm_v1311_sea_relation_effect = yes scope:target = { mm_v1311_sea_relation_effect = yes } } }
+
+# The upstream guarded global loop provides the monthly scheduler.
+myv_wyvern_monthly_pulse = { on_actions = { mm_v1311_monthly_characters } }
+mm_v1311_monthly_characters = {
+    effect = {
+        clear_global_variable_list = mm_v1311_member_refresh
+        clear_global_variable_list = mm_v1311_white_rulers
+        if = {
+            limit = { has_global_variable_list = mm_dragon_creed_members }
+            every_in_global_list = {
+                variable = mm_dragon_creed_members
+                if = {
+                    limit = { is_alive = yes faith = faith:mm_dragon_creed }
+                    mm_v1311_monthly_character_effect = yes
+                    if = { limit = { is_landed = yes rite = rite:mm_dragon_white } add_to_global_variable_list = { name = mm_v1311_white_rulers target = this } }
+                    add_to_global_variable_list = { name = mm_v1311_member_refresh target = this }
+                }
+                else = { mm_v1311_clear_dynamic_effect = yes }
+            }
+            clear_global_variable_list = mm_dragon_creed_members
+        }
+        if = {
+            limit = { has_global_variable_list = mm_v1311_member_refresh }
+            every_in_global_list = { variable = mm_v1311_member_refresh add_to_global_variable_list = { name = mm_dragon_creed_members target = this } }
+            clear_global_variable_list = mm_v1311_member_refresh
+        }
+        # Convert after rebuilding the membership list so conversion callbacks can register new members.
+        if = {
+            limit = { has_global_variable_list = mm_v1311_white_rulers }
+            every_in_global_list = { variable = mm_v1311_white_rulers mm_v1311_white_conversion_effect = yes }
+            clear_global_variable_list = mm_v1311_white_rulers
+        }
+    }
+}
+
+# Clear immediately when a character actually leaves the shared faith.
+on_faith_conversion = { on_actions = { mm_v1311_clear_after_conversion } }
+mm_v1311_clear_after_conversion = { effect = { if = { limit = { NOT = { faith = faith:mm_dragon_creed } } mm_v1311_clear_dynamic_effect = yes } } }
+
+# The native on_death root is the victim; scope:killer exists only when known.
+on_death = { on_actions = { mm_v1311_fire_servant_killed } }
+mm_v1311_fire_servant_killed = {
+    effect = {
+        if = {
+            limit = { has_trait = mm_dragon_death_servant exists = scope:killer scope:killer != root }
+            scope:killer = {
+                if = { limit = { is_alive = yes rite = rite:mm_dragon_fire } dynasty ?= { add_dynasty_prestige = 200 } change_spiritual_fulfillment = 10 }
+            }
+        }
+    }
+}
+# The root is the artifact; the new owner is a separate optional scope.
+on_artifact_changed_owner = { on_actions = { mm_v1311_fire_artifact_acquired } }
+mm_v1311_fire_artifact_acquired = {
+    effect = {
+        if = { limit = { rarity = illustrious exists = scope:owner } scope:owner = { if = { limit = { is_alive = yes rite = rite:mm_dragon_fire } dynasty ?= { add_dynasty_prestige = 200 } change_spiritual_fulfillment = 10 } } }
+    }
+}
+# Native documentation supplies scope:raid_loot at deposit, not the army carrying capacity.
+on_raid_loot_delivered = { on_actions = { mm_v1311_sky_raid_income } }
+mm_v1311_sky_raid_income = {
+    effect = { scope:raider ?= { if = { limit = { is_alive = yes rite = rite:mm_dragon_sky } add_gold = { value = scope:raid_loot multiply = 0.5 } } } }
+}

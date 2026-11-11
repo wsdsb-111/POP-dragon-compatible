@@ -1,0 +1,2 @@
+on_death = { on_actions = { mm_dragon_absorption_death } }
+mm_dragon_absorption_death = { effect = { mm_dragon_absorb_death_effect = yes } }

@@ -1,0 +1,42 @@
+﻿mm_relic_subjugate_interaction = {
+    category = interaction_category_friendly
+    filter_tags = { myv_wyvern_interaction }
+    common_interaction = yes
+    interface_priority = 110
+    icon = religious
+    desc = mm_relic_subjugate_interaction_desc
+    is_shown = { scope:actor != scope:recipient scope:actor = { any_equipped_character_artifact = { has_variable = mm_relic_black_crown_identity } } scope:recipient = { mm_relic_subordinate_dragon_trigger = yes } }
+    is_valid_showing_failures_only = { scope:actor = { mm_relic_black_crown_ready_trigger = yes  } scope:recipient = { mm_relic_subordinate_dragon_trigger = yes } }
+    auto_accept = yes
+    on_accept = { scope:actor = { mm_relic_subjugate_effect = yes } }
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+mm_relic_destroy_interaction = {
+    category = interaction_category_friendly
+    filter_tags = { myv_wyvern_interaction }
+    common_interaction = yes
+    interface_priority = 109
+    icon = religious
+    desc = mm_relic_destroy_interaction_desc
+    is_shown = { scope:actor != scope:recipient scope:actor = { any_equipped_character_artifact = { has_variable = mm_relic_black_regalia_identity } } scope:recipient = { mm_relic_destruction_target_trigger = yes } }
+    is_valid_showing_failures_only = { scope:actor = { mm_relic_black_regalia_ready_trigger = yes  } scope:recipient = { mm_relic_destruction_target_trigger = yes } }
+    auto_accept = yes
+    on_accept = { scope:actor = { mm_relic_destroy_effect = yes } }
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}
+mm_relic_oracle_interaction = {
+    category = interaction_category_friendly
+    filter_tags = { myv_wyvern_interaction }
+    common_interaction = yes
+    interface_priority = 108
+    icon = religious
+    desc = mm_relic_oracle_interaction_desc
+    is_shown = { scope:actor != scope:recipient scope:actor = { any_equipped_character_artifact = { has_variable = mm_relic_white_book_identity } } scope:recipient = { mm_relic_oracle_immune_trigger = no is_alive = yes } }
+    is_valid_showing_failures_only = { scope:actor = { mm_relic_white_book_ready_trigger = yes has_pam_dlc_trigger = yes } scope:recipient = { mm_relic_oracle_immune_trigger = no is_alive = yes } }
+    auto_accept = yes
+    on_accept = { scope:actor = { mm_relic_oracle_effect = yes } }
+    ai_potential = { always = no }
+    ai_will_do = { base = 0 }
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "User-authorized ten sleeping royal identities and explicit same-blood sacrifice rituals",
+  "sourceRoots": {},
+  "sourceFiles": [],
+  "outputs": [
+    {
+      "path": "mod/common/character_interactions/zzzzzzzzzzzz_mm_ritual.txt",
+      "sha256": "d9d2c35442af01eec0e9559cbba90ba69012aee9e0a5326b75d4c6340e7c4a1c"
+    },
+    {
+      "path": "mod/common/decisions/zzzzzzzzzzzz_mm_ritual.txt",
+      "sha256": "f79d91370011cb6e3bbf731fab124241f3685e6c131486df4d154c52f0b4af2b"
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzzzz_mm_ritual.txt",
+      "sha256": "562cfc59c26d11d267dc64d00a06390d311623e1f39616ba8c30ef60b35ff9d9"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzz_mm_ritual.txt",
+      "sha256": "c19b6b41193f762b6878dfcbc2c91f685553b2bc85b6561aa2772cb75449f273"
+    },
+    {
+      "path": "mod/localization/english/zzzzzzzzzzzz_mm_ritual_l_english.yml",
+      "sha256": "36c71bef73550b3cac7a0e0a75bad1b3222fa2e4752315323593ecc2023649de"
+    },
+    {
+      "path": "mod/localization/simp_chinese/zzzzzzzzzzzz_mm_ritual_l_simp_chinese.yml",
+      "sha256": "06404665186c2100424221cefc3f0cc5c2fdd2a1ed7ac904820503575baecf97"
+    }
+  ],
+  "updated": "2026-10-29"
+}

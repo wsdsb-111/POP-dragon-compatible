@@ -1,0 +1,19 @@
+# Roll once for this character, never once per portrait or form toggle.
+mm_dragon_initialize_features_effect = {
+	if = {
+		limit = { NOT = { has_character_flag = mm_dragon_features_rolled } }
+		add_character_flag = mm_dragon_features_rolled
+		add_trait = mm_dragon_tail
+		add_trait = mm_dragon_horns
+		add_trait = mm_dragon_pupils
+		add_trait = mm_dragon_scales
+		set_variable = { name = mm_dragon_feature_count value = 3 }
+		random_list = {
+			1 = { remove_trait = mm_dragon_tail }
+			1 = { remove_trait = mm_dragon_horns }
+			1 = { remove_trait = mm_dragon_pupils }
+			1 = { remove_trait = mm_dragon_scales }
+			1 = { set_variable = { name = mm_dragon_feature_count value = 4 } }
+		}
+	}
+}

@@ -1,0 +1,7 @@
+# Player scope, before the resolved victory's kill/capture choice.
+mm_creed_award_dragon_victory_effect = {
+    if = {
+        limit = { mm_creed_is_founder_trigger = yes exists = scope:myv_slay_wyvern_target scope:myv_slay_wyvern_target = { myv_is_living_wild_wyvern = yes mm_creed_is_founder_trigger = no } }
+        change_spiritual_fulfillment = 5
+    }
+}

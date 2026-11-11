@@ -1,0 +1,125 @@
+POD_wake_from_torpor_interaction = {
+	category = interaction_category_journeys
+	desc = POD_wake_from_torpor_interaction_desc
+	icon = POD_awaketorpor_interaction
+
+	#ai_frequency = 0
+
+	use_diplomatic_range = { NOT = { exists = scope:recipient.location } }
+
+	is_shown = {
+		scope:recipient = { NOT = { mm_royal_is_king = yes } }
+		scope:actor != scope:recipient
+		scope:actor = {
+			is_ai = no
+		}
+		scope:recipient = {
+			is_ai = yes
+			is_adult = yes
+			has_trait = torpor
+			is_imprisoned = no
+			NOT = { has_trait = automaton }
+			NOT = { has_character_modifier = caul_modifier }
+			# blocks demons in the abyss and fae in arcadia
+			# since they ought to use bespoke mechanics for this
+			POD_is_not_unreachable_trigger = yes
+		}
+		POD_cross_umbra_interaction_valid_trigger = yes
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { NOT = { mm_royal_is_king = yes } }
+		scope:actor = {
+			POD_not_already_on_journey_trigger = {
+				TYPE   = wake_from_torpor
+				TARGET = scope:recipient
+			}
+			POD_can_start_planning_phase_trigger = yes
+			is_adult = yes
+		}
+		POD_interaction_is_valid_showing_failures_only = yes
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:recipient = { NOT = { mm_royal_is_king = yes } }
+			}
+		if = {
+			limit = {
+				scope:recipient = {
+					POD_is_vampire_or_abomination_trigger = yes
+				}
+			}
+			custom_tooltip = {
+				text = POD_wake_from_torpor_interaction_effect
+				scope:actor = {
+					POD_start_targeted_journey_effect = {
+						TYPE    = wake_from_torpor
+						MONTHLY = wake_from_torpor
+						TARGET  = scope:recipient
+					}
+				}
+			}
+			custom_tooltip = POD_wake_from_torpor_interaction_monthly
+		
+			POD_journey_interaction_pause_hint = yes
+		}
+		else = {
+			scope:actor = { add_prestige = medium_prestige_loss }
+			scope:recipient = { remove_trait = torpor }
+		}
+		}
+	}
+	
+	auto_accept = yes
+	
+	ai_will_do = {
+		base = 0
+	}
+}
+
+POD_awaketorpor_prisoner_interaction = {
+	category = interaction_category_hostile
+	icon = POD_awaketorpor_interaction
+	desc = POD_awaketorpor_prisoner_interaction_desc
+
+	#ai_frequency = 0
+	
+	cost = {
+		prestige = {
+			value = {
+				add = medium_prestige_value
+			}
+		}
+	}
+
+	is_shown = {
+		scope:recipient = { NOT = { mm_royal_is_king = yes } }
+		scope:actor != scope:recipient
+		scope:recipient = { has_trait = torpor  }
+		scope:recipient = { is_imprisoned_by = scope:actor }
+		scope:recipient = { NOT = { has_character_modifier = caul_modifier } }
+		POD_basic_interaction_is_shown = yes
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { NOT = { mm_royal_is_king = yes } }
+		POD_interaction_is_valid_showing_failures_only = yes
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:recipient = { NOT = { mm_royal_is_king = yes } }
+			}
+		scope:recipient = { remove_trait = torpor }
+		}
+	}
+	
+	auto_accept = yes
+	
+	ai_will_do = {
+		base = 0
+	}
+}

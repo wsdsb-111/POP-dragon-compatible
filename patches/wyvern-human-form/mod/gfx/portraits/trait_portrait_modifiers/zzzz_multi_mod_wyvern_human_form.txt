@@ -1,0 +1,17 @@
+# The original trait modifier forces no_portrait and attaches the wyvern mesh.
+# Keep that entry valid only in dragon form; the game .info documents trigger
+# here, unlike regular portrait modifier entries which use weight conditions.
+myv_wyvern = {
+	myv_wyvern = {
+		traits = { myv_wyvern myv_wyvern_tamed myv_wyvern_legendary }
+		trigger = {
+			NOT = { has_character_flag = mm_wyvern_human_form }
+		}
+		dna_modifiers = {
+			human = {
+				accessory = { mode = modify gene = gene_myv_wyvern template = myv_wyvern_body value = 1.0 }
+				morph = { mode = replace gene = gene_myv_no_portrait template = no_portrait value = 1.0 }
+			}
+		}
+	}
+}

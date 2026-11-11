@@ -1,0 +1,64 @@
+myv_is_wyvern = {
+    OR = {
+        has_trait = myv_wyvern
+        has_trait = myv_wyvern_tamed
+        has_trait = myv_wyvern_legendary
+        has_trait = mm_asc_dragon_body
+    }
+}
+
+mm_asc_is_candidate = {
+    is_alive = yes
+    has_trait = mm_asc_usurper_blood
+    NOT = { has_variable = mm_asc_outcome }
+    NOT = { has_trait = mm_wyvern_bathed_in_dragon_blood }
+    NOT = { has_trait = mm_asc_dragon_body }
+}
+
+# Validate the exact dead source and the reserved killer before any outcome
+# lock, name, rank, or throne holder is changed.
+mm_asc_source_claim_valid = {
+    exists = var:mm_asc_blood_source
+    var:mm_asc_blood_source = {
+        is_alive = no
+        exists = var:mm_asc_blood_claimant
+        var:mm_asc_blood_claimant = prev
+        exists = var:mm_asc_seat_anchor
+        var:mm_asc_seat_anchor = {
+            exists = var:mm_asc_current_incarnation
+            var:mm_asc_current_incarnation = prev
+        }
+    }
+    has_variable = mm_asc_source_size
+    has_variable = mm_asc_source_color
+}
+
+mm_asc_can_ritual = {
+    mm_asc_is_candidate = yes
+    OR = { mm_asc_source_claim_valid = yes AND = { has_character_flag = mm_asc_black_trial has_trait = mm_dragon_black_blood mm_asc_black_trial_available_trigger = yes } }
+    is_adult = yes
+    is_imprisoned = no
+    is_incapable = no
+    NOT = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 } }
+    NOT = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value >= 100 } }
+    OR = {
+        NOT = { has_variable = mm_asc_last_ritual_year }
+        var:mm_asc_last_ritual_year < current_year
+    }
+    gold >= mm_asc_ritual_gold
+    piety >= mm_asc_ritual_piety
+    prestige >= mm_asc_ritual_prestige
+}
+
+mm_asc_can_change_form = {
+    is_alive = yes
+    is_adult = yes
+    is_imprisoned = no
+    is_incapable = no
+    has_trait = mm_asc_dragon_body
+    OR = { var:mm_asc_outcome = flag:fusion var:mm_asc_outcome = flag:dragon }
+    exists = var:mm_asc_blood_source
+    has_variable = mm_asc_source_size
+    has_variable = mm_asc_source_color
+    NOT = { has_trait = mm_asc_usurper_blood }
+}

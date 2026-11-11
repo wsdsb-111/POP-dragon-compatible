@@ -1,0 +1,2 @@
+on_game_start_after_lobby = { on_actions = { mm_relic_game_start } }
+mm_relic_game_start = { effect = { mm_relic_seed_all_effect = yes } }

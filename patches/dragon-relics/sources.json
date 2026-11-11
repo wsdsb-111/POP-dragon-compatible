@@ -1,0 +1,369 @@
+{
+  "updated": "2026-10-29",
+  "purpose": "Seven original imperial relic models and native holy-site, artifact, puppet and conquest integration; main-agent modeling; user amendments preserved.",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "project": ".",
+    "workshop": "D:/SteamLibrary/steamapps/workshop/content/1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/_templates.info",
+      "sha256": "7c36c4c6cec7a096c741cdfbb9c532dd8aca98cc12bf4fc6dcd07583307f8510"
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/blueprints/_blueprints.info",
+      "sha256": "339cd816a421dece55529603b8cac4cc2172ee0127cbb7ca49bae5768177234b"
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/types/_types.info",
+      "sha256": "1e56b6aead35fef3653836b664eff2afc25f00a6b114566c6f60ca23120a70d8"
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/visuals/_visuals.info",
+      "sha256": "3b64a49efad437d8a1e1e507b9ba246cea6482310c9a00e6543275279eda800c"
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/slots/01_holy_site.txt",
+      "sha256": "748a4c2f87bfea5959843c88456f38851eb968e507ef376bff0a725a6ac425df"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/02_starting_holy_site_relics_effects.txt",
+      "sha256": "1a4012823cfc44808ca113b786713ca387230a397ba54bab4245627618e9092a"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_holy_site.gui",
+      "sha256": "63de5cf87130cce6515e37ec8492280c71267ab722de52ea69585663ffbf3231"
+    },
+    {
+      "root": "game",
+      "path": "common/schemes/scheme_types/seduce_scheme.txt",
+      "sha256": "4f37de42079a928039d87294a21fb1d6147d27aedfe43df3425437877b41415d"
+    },
+    {
+      "root": "game",
+      "path": "common/schemes/scheme_types/court_scheme.txt",
+      "sha256": "48e3fc583e431a9941451ee158b6357d813536d6c5a93d89822af89f83a313a2"
+    },
+    {
+      "root": "game",
+      "path": "common/inspirations/00_inspirations.txt",
+      "sha256": "499b66073a52e0b2f3d001a7444ff26a877f2ce6fa13cb31870ae0dc3335558e"
+    },
+    {
+      "root": "game",
+      "path": "common/casus_belli_types/00_invasion_war.txt",
+      "sha256": "e78e5d8191f8c0439086b70029b96d91a69a0ab862b58aceebcf9a3091b7659a"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/pam_scripted_triggers.txt",
+      "sha256": "834f9cafa2fec02fa4cd5b5ca1603cfbc82a459549ae994cff6db7bad3c27369"
+    },
+    {
+      "root": "game",
+      "path": "common/puppets/types/pam_puppet_types.txt",
+      "sha256": "48022de291e1994a1cfac6d5b44aac13737b070568fcd44791c8820819023964"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_artifact_details.gui",
+      "sha256": "718c86ae7abc6b884a52ffb8807e94638e5e03ec8042ca5f2b55bc8e89e4699e"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/白色神谕之书.jpg",
+      "sha256": "1a88b0d21be5087a2377db27ad1263dd18837ea3f3279e6907b3b92f4665ca04"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/white_book.png",
+      "sha256": "aeb94f69d5e190e9e4d84f0d77106f1ffc9ad7e9eba0cc80dd3168e3658dad84"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/暴君始祖黑鳞冠.jpg",
+      "sha256": "af1c0087381cb8c8d6122d6841742f9f480da4ac1d9b1b78bb3b305bb9a89348"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/black_crown.png",
+      "sha256": "214d3dbd243102cbea27c9059e9c4e3e09461d696f28d1c7404cc892fd45ebda"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/常暗地脉石棺.jpg",
+      "sha256": "3771fbd62b06de4437429887525f1e3f298afccf014191c815c2f3fbe99e46fd"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/earth_sarcophagus.png",
+      "sha256": "1508cb0f5cb9097c7c46ec657b6ad2315bdb30451bcbf76dbbb4188888455b37"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/黑色皇帝之权柄.jpg",
+      "sha256": "69052e5516e8a91bef486b4323e87f43f0c1a1b30c934b8a72d49f599761bcee"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/black_regalia.png",
+      "sha256": "6935336f06e469f419720d8c2c5eb6eec4e78581d9ec111e2d37383ca41a08b9"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/怒潮海妖之甲.jpg",
+      "sha256": "f1964c69fa9488beb1511610d56014bccbbd132fe6e81024c2d8eba60ae1af13"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/sea_armor.png",
+      "sha256": "e32fc9cfa5ec4c0796a196a21ac1ca1083c7a5a74d42935533531ca39e6c7316"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/永恒之矛昆古尼尔.jpg",
+      "sha256": "5ee217f6d8ee6a10090f890e3ef331ae927a4e1a6df963fb87e655fa14e126d7"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/sky_spear.png",
+      "sha256": "b22d8d7002095eb2be5d3a66abc589669c9337b9894bb4f62569c9cb3587026f"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/originals/烛龙青铜玄戒.jpg",
+      "sha256": "313d66819cfd5c09f4e750fc9b4bb36679afe82a7b601493461d67c49039e6b4"
+    },
+    {
+      "root": "project",
+      "path": "artwork/dragon-relics/illustrations/cutouts/fire_ring.png",
+      "sha256": "b21a929d18aa565378a956b5b9ec4b1a75b4fe7e5dbcacc22ea39894ff9c414c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/artifacts/blueprints/mm_dragon_relics.txt",
+      "sha256": "84bbb11f38f93d11fc714494150ae54bb8c2ab39923530ee3e3f95507a6ac338"
+    },
+    {
+      "path": "mod/common/artifacts/templates/mm_dragon_relics.txt",
+      "sha256": "e286bb5816279df755dd39ba50b2f422b2c8a9253d2af83b65184a8d4117dbfe"
+    },
+    {
+      "path": "mod/common/artifacts/templates/zzzzzz_mm_relic_forging_access.txt",
+      "sha256": "8d66fd9f4731b105254248cf3a1cb044ef7cc7ebc188f9fc70e43c07f9760a7c"
+    },
+    {
+      "path": "mod/common/artifacts/types/mm_dragon_relics.txt",
+      "sha256": "43b0c09b60d9fbb9b4aa0f1dc3bc3d536f06d48734e7c50efb0d3b4583805de8"
+    },
+    {
+      "path": "mod/common/artifacts/visuals/mm_dragon_relics.txt",
+      "sha256": "eda5866c6c733078dad02b513183da584647e30e79325bbb2b39ab32ec1d75ba"
+    },
+    {
+      "path": "mod/common/casus_belli_types/mm_relic_storm_kingdom.txt",
+      "sha256": "1e36667696a1dbfec72f80cfbe081221f5a4fac5f4974dc58a05328107a60a47"
+    },
+    {
+      "path": "mod/common/character_interactions/mm_relic_powers.txt",
+      "sha256": "97998fc762e6164378ec477071d70ac3a0904639303da26b94389879408ffc48"
+    },
+    {
+      "path": "mod/common/decisions/mm_relic_powers.txt",
+      "sha256": "722bd939241c6246db11378b60270a3583d5abf6b6208873d299a6c0e7215230"
+    },
+    {
+      "path": "mod/common/inspirations/zzzzzz_mm_relic_forging.txt",
+      "sha256": "7ab6bc514943a22bfe10962727a0a5854f8317738b204c92509e702ef4a0b9f0"
+    },
+    {
+      "path": "mod/common/modifiers/mm_dragon_relics.txt",
+      "sha256": "a227819447cd00f6980ec3a7257b8c2aef751d0e0ae84734e28fd750c1119660"
+    },
+    {
+      "path": "mod/common/modifiers/mm_relic_active_powers.txt",
+      "sha256": "19397cc3f54bd28d47214e745e1d656761abc0c004e9513922d2ef9dc5847290"
+    },
+    {
+      "path": "mod/common/on_action/mm_dragon_relics.txt",
+      "sha256": "ee8966619e508a4ef146f30c0764a5b515d8d23b8cc40b517e972f7588288aa9"
+    },
+    {
+      "path": "mod/common/on_action/mm_relic_daily.txt",
+      "sha256": "6386cb3bd82bcc760f5c7a347ebcf6a7c3dc802c0ceb35e6b7eb3dd81e8477e0"
+    },
+    {
+      "path": "mod/common/schemes/scheme_types/zzzzzz_mm_relic_court_scheme.txt",
+      "sha256": "ec497be0d7346ac61894244b039e8eee536e9c2e7d89cb830dc87dc0b16c964b"
+    },
+    {
+      "path": "mod/common/schemes/scheme_types/zzzzzz_mm_relic_seduce_scheme.txt",
+      "sha256": "9b19cfe2d3f20bb69b7cdb5a8394ff3472440c2e70584cb4a77bd6d32bfb7d3b"
+    },
+    {
+      "path": "mod/common/script_values/mm_relic_commander_traits.txt",
+      "sha256": "01d3b2b04084240392274bccbf80292032346cececa223e4146f3ed618a20fc2"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_dragon_relic_initialization.txt",
+      "sha256": "e38452e46faf79a229df8b9ed4779878ac192cbdfbbc17a20f121affe362361b"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_relic_self_powers.txt",
+      "sha256": "8b1aca901a16b501440398f2887b654b0e2ec773979022c317aada41f5df74fc"
+    },
+    {
+      "path": "mod/common/scripted_effects/mm_relic_target_powers.txt",
+      "sha256": "8289228f2a59f2c5da158a34d040838f81c7f92b9e21073fab6b8dfec04f7574"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_dragon_relics.txt",
+      "sha256": "0888c25f97dd32f53dedeedadb36b4671ca55e653fdc21c4c4487f93e8a610a7"
+    },
+    {
+      "path": "mod/common/scripted_triggers/mm_relic_power_targets.txt",
+      "sha256": "268e5598156a5478bb1efefa61f7d1c89ce31f40e67b0b7fbf47089af3693af3"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzz_mm_relic_death_servants.txt",
+      "sha256": "1c4c16bb8065b08d166dc56a97ca70071ac8d03d312544ef658ee005f672eba2"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzz_mm_relic_puppet_access.txt",
+      "sha256": "4359e4c569de3b977fcc285d33abab93c0b7335accbbf5946225f27552cbe3d6"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_black_crown.dds",
+      "sha256": "9649119e51d3a4f7fa55921de06718393690f71bec5bbab0ded9bd0ebeba1a7f"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_black_regalia.dds",
+      "sha256": "f521130374571974ed162a834bf0c20f83d285ef8d452788269dbca6521403be"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_earth_sarcophagus.dds",
+      "sha256": "4013ae11fcf3d94d455d1452636dd1cac31b1d2bfa871f3359dd90cac08c7384"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_fire_ring.dds",
+      "sha256": "d73464cfee17c096291d68c97795ccdfcbd51030c8910421b75173de93237120"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_sea_armor.dds",
+      "sha256": "2b08f444a5c8ab407a446ea6f3059f834b2ae1948a5f1f75477bfa4e0a27e5ce"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_sky_spear.dds",
+      "sha256": "3b7302140f6d86caa7aadf16c3b1583e73cdf00ba4fc356d322e4b8bc4a94829"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_relic_white_book.dds",
+      "sha256": "ae7a898260f967adca85e6a18087751f57ff8bbd5de41850e959eb51b936a921"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics.asset",
+      "sha256": "961723c2cf69a949183e87144fe888a6b20e714778febdcffac31d3de7180bd2"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_diffuse.dds",
+      "sha256": "e65f7d966e4c51126966f55a87f70577965c11bfd2b04160dd55829cce8af743"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_normal.dds",
+      "sha256": "b031f77397fc637cfcfc8eb7ca251c2d44abea5966dc2567685882296531bc8d"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_dragon_relics_properties.dds",
+      "sha256": "6e0793998ba2e710a1bec0b09f7ee18eef4727fed23a6ea1dd7b2b61e236d7a4"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_black_crown.mesh",
+      "sha256": "8d321e8e8cf8620ee2b697708449211514fecdda33156761426739d4e20915a6"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_black_regalia.mesh",
+      "sha256": "ed14617628bd31287e2eb7909a9c43dcf0e7bbc6380f0d494918e70a47065072"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_earth_sarcophagus.mesh",
+      "sha256": "ed00cd76c73cf7f421c482a4231eeaa6595fcf487dc7a9741551e39bcee488b3"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_fire_ring.mesh",
+      "sha256": "d211468e9b6775ab3e87113816d651f54e4d5f2601d8c96ba3600d85625421d3"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_sea_armor.mesh",
+      "sha256": "eb308abf763ce269df4fa7970052e0932c6aec293aea773d352d6a470ca9f0b8"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_sky_spear.mesh",
+      "sha256": "f6eab959796e30ee1f9efc398d9aab2efe210c31545635ecb73ade7c93a1365d"
+    },
+    {
+      "path": "mod/gfx/models/artifacts/mm_dragon_relics/mm_relic_white_book.mesh",
+      "sha256": "59df07b9825be70331236bc464ef944469e5980dbc15ff46a2d7063193fb5eac"
+    },
+    {
+      "path": "mod/localization/english/mm_dragon_relics_l_english.yml",
+      "sha256": "a2c2bd98af40b449da019819cdf8a7907239753cea4c8462baa0c5a073fb7958"
+    },
+    {
+      "path": "mod/localization/english/mm_relic_powers_l_english.yml",
+      "sha256": "6265b9626df5eb9c4a1e7d6a426243eea0809bbaac024151cb6e3788ba4a1671"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_dragon_relics_l_simp_chinese.yml",
+      "sha256": "2cca72b0209f5c8061a78eaa01c2bf04baecc574850303cc9675da4529472062"
+    },
+    {
+      "path": "mod/localization/simp_chinese/mm_relic_powers_l_simp_chinese.yml",
+      "sha256": "3471843b8aa98f0b6022c54b3edcf56c7f969aa209ed4d165b37d2602ac28b13"
+    },
+    {
+      "path": "mod/gui/window_artifact_details.gui",
+      "sha256": "8e52aa1bee36b07e2499dfe0f98fb954f953f459968f9693835ed5987e107fe8"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_white_book.dds",
+      "sha256": "31a94bf790b1bfb5e910dff42e0f12334231f8d486158ce51fd6b62339b755da"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_black_crown.dds",
+      "sha256": "486ff74c6f296ee2dd5c468df82eba4cf3d504e96ffe606786753b99104489fb"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_earth_sarcophagus.dds",
+      "sha256": "d6ac84d18a83541db6db35eda02ec0cb5a8a15766976b47cd77eb50b985594c1"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_black_regalia.dds",
+      "sha256": "5af6658000fda950d49a08721bd18dde894568e5fc8b87e155782f75dd501c5e"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_sea_armor.dds",
+      "sha256": "33bfb9749404dd8f23057f288c2bcd450d155f025a0d4151587cbcd276fd97b3"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_sky_spear.dds",
+      "sha256": "ce36428bcbba4d9f458bea3527cc1b295c08c7f6d6f6b8c767c3937ee0290c44"
+    },
+    {
+      "path": "mod/gfx/interface/icons/artifact/mm_v1322_relic_fire_ring.dds",
+      "sha256": "0665353b3876127c61280ce65025c625f72c6c8fee4932b3d96e59e781cb4d6f"
+    }
+  ],
+  "designDocumentSha256": "2bfe198bb59b724e02d20fc819d790c72c3660423cec2062d9b067b204a3efb1",
+  "templateAccessManifest": "artwork/dragon-relics/template-access-provenance.json",
+  "modelManifest": "artwork/dragon-relics/models/manifest.json",
+  "illustrationManifest": "artwork/dragon-relics/illustrations/manifest.json"
+}

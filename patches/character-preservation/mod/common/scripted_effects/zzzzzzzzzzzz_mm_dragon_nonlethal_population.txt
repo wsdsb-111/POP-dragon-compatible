@@ -1,0 +1,14 @@
+# Every dragon is protected. A lower cap must never delete an existing animal.
+# Native natural spawning and our wild egg-hatching gates still check capacity.
+myv_enforce_wyvern_population_game_rule_effect = {
+    myv_refresh_wyvern_population_count_effect = yes
+}
+# Keep the old public parameter for callers outside the enforcement wrapper.
+# Recount without inventing deaths or decrementing a count for a living animal.
+myv_trim_wyvern_population_to_effect = {
+    myv_refresh_wyvern_population_count_effect = yes
+    if = {
+        limit = { global_var:myv_wyvern_population_count > $CAP$ }
+        myv_refresh_wyvern_population_count_effect = yes
+    }
+}

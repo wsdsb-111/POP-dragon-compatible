@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "排除龙形起义领袖，保留化形龙与混血政治资格",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/00_faction_triggers.txt",
+      "sha256": "35dd3f30f7c94e2bb8e1c8de6e2a55339db36073446daa4ac2652de9c6a9801e"
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_faction_effects.txt",
+      "sha256": "c7f853b9c8cf836cfc6b635c58bfa3c31a686528e99f5628e320a1d97a5efc70"
+    }
+  ],
+  "updated": "2026-10-28",
+  "outputs": [
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzzzz_mm_dragon_politics.txt",
+      "sha256": "bd90602fe149c3004170d3643fbbccb28bdb8cf91a88f0ff2ca2e1463849a807"
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzzzzzzzzzz_mm_dragon_politics.txt",
+      "sha256": "f43524d56c21adc6b2b69ef115ce1f19949417ade10d785d6f545a73523d8f5c"
+    }
+  ]
+}

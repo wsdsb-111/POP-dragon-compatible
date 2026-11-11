@@ -1,0 +1,106 @@
+[
+ {
+  "part": "GEO-SPK_C0",
+  "overlap_pairs": 45,
+  "base_inside_pts": 2,
+  "base_pts": 24,
+  "min_dist_mm": 0.35,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_F1",
+  "overlap_pairs": 118,
+  "base_inside_pts": 17,
+  "base_pts": 24,
+  "min_dist_mm": 0.26,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_F1L",
+  "overlap_pairs": 170,
+  "base_inside_pts": 17,
+  "base_pts": 24,
+  "min_dist_mm": 0.26,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_T2",
+  "overlap_pairs": 57,
+  "base_inside_pts": 6,
+  "base_pts": 24,
+  "min_dist_mm": 0.56,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_T2L",
+  "overlap_pairs": 57,
+  "base_inside_pts": 6,
+  "base_pts": 24,
+  "min_dist_mm": 0.56,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_H3",
+  "overlap_pairs": 13,
+  "base_inside_pts": 3,
+  "base_pts": 24,
+  "min_dist_mm": 0.24,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_H3L",
+  "overlap_pairs": 19,
+  "base_inside_pts": 3,
+  "base_pts": 24,
+  "min_dist_mm": 0.24,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_T4",
+  "overlap_pairs": 31,
+  "base_inside_pts": 4,
+  "base_pts": 24,
+  "min_dist_mm": 0.45,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_T4L",
+  "overlap_pairs": 40,
+  "base_inside_pts": 4,
+  "base_pts": 24,
+  "min_dist_mm": 0.36,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_K5",
+  "overlap_pairs": 64,
+  "base_inside_pts": 14,
+  "base_pts": 24,
+  "min_dist_mm": 2.06,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_K5L",
+  "overlap_pairs": 114,
+  "base_inside_pts": 14,
+  "base_pts": 24,
+  "min_dist_mm": 2.06,
+  "connected": true
+ },
+ {
+  "part": "GEO-SPK_C6",
+  "overlap_pairs": 0,
+  "base_inside_pts": 0,
+  "base_pts": 24,
+  "min_dist_mm": 0.91,
+  "connected": false
+ },
+ {
+  "part": "GEO-SPK_C6L",
+  "overlap_pairs": 0,
+  "base_inside_pts": 0,
+  "base_pts": 24,
+  "min_dist_mm": 0.91,
+  "connected": false
+ }
+]

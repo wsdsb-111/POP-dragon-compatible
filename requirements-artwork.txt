@@ -1,0 +1,5 @@
+numpy
+Pillow
+scipy
+fast-simplification
+xatlas

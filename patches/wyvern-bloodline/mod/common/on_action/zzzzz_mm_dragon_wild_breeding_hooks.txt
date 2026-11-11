@@ -1,0 +1,101 @@
+# Native definitions preserved with wild egg and monthly hooks.
+myv_wyvern_egg_yearly_pulse = {
+    effect = {
+        every_artifact = {
+            limit = {
+                has_variable = myv_wyvern_egg_color
+                mm_dragon_native_egg_may_hatch_trigger = yes
+				NOT = { has_variable = myv_wyvern_egg_hatch_scheduled }
+                artifact_owner = {
+                    is_alive = yes
+                    exists = location
+                }
+            }
+			if = {
+				limit = { has_variable = myv_wyvern_egg_hatch_months_remaining }
+				remove_variable = myv_wyvern_egg_hatch_months_remaining
+			}
+			if = {
+				limit = { is_equipped = yes }
+				random = {
+					chance = myv_wyvern_equipped_egg_hatch_chance
+					set_variable = { name = myv_wyvern_egg_hatch_scheduled value = yes }
+					trigger_event = {
+						on_action = myv_wyvern_egg_scheduled_hatch
+						days = { 1 364 }
+					}
+				}
+			}
+			else = {
+				random = {
+					chance = myv_wyvern_inventory_egg_hatch_chance
+					set_variable = { name = myv_wyvern_egg_hatch_scheduled value = yes }
+					trigger_event = {
+						on_action = myv_wyvern_egg_scheduled_hatch
+						days = { 1 364 }
+					}
+				}
+			}
+        }
+    }
+}
+
+myv_wyvern_egg_scheduled_hatch = {
+	effect = {
+		remove_variable = myv_wyvern_egg_hatch_scheduled
+		if = {
+			limit = {
+				has_variable = myv_wyvern_egg_color
+                mm_dragon_native_egg_may_hatch_trigger = yes
+				artifact_owner = {
+					is_alive = yes
+					exists = location
+				}
+			}
+			myv_hatch_wyvern_egg_effect = yes
+		}
+	}
+}
+
+myv_wyvern_monthly_pulse = {
+    effect = {
+        myv_wyvern_lair_contract_monthly_effect = yes
+        if = {
+            limit = { has_global_variable_list = myv_living_wyverns }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { myv_is_living_wyvern = yes }
+                myv_wyvern_nonhuman_maintenance_effect = yes
+				myv_wyvern_travel_integrity_effect = yes
+				myv_wyvern_stable_integrity_effect = yes
+                # Repair Harmony before hunger/Prowess refreshes read it.
+                myv_wyvern_harmony_integrity_effect = yes
+                myv_wyvern_monthly_hunger_effect = yes
+                # Starvation can kill during hunger consumption. No further
+                # care, injuries, Harmony or raids may run on that dead scope.
+                if = {
+                    limit = { myv_is_living_wyvern = yes }
+                    myv_wyvern_ai_monthly_care_effect = yes
+                    myv_notify_wyvern_hungry_effect = yes
+                    myv_wyvern_monthly_combat_injury_recovery_effect = yes
+                    myv_wyvern_harmony_monthly_effect = yes
+                    if = {
+                        limit = { has_trait = myv_wyvern_tamed }
+                        myv_wyvern_tamed_hunger_raid_effect = yes
+                    }
+                    else = {
+                        myv_wyvern_lair_county_maintenance_effect = yes
+                        myv_wyvern_monthly_roaming_effect = yes
+                    }
+                }
+            }
+        }
+		# Re-evaluate every AI keeper's strongest harmonious war mount monthly.
+		myv_wyvern_ai_monthly_mount_pulse_effect = yes
+        mm_dragon_wild_monthly_effect = yes
+        trigger_event = {
+            on_action = myv_wyvern_monthly_pulse
+            months = 1
+        }
+    }
+}

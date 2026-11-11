@@ -1,0 +1,242 @@
+99001001 = {
+    name = "mm_royal_name_constantine"
+
+    culture = "han"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_fierce
+
+    120.1.1 = { birth = yes }
+}
+
+99001002 = {
+    name = "mm_royal_name_fenrir"
+    female = yes
+    culture = "egyptian"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_coordinated
+    trait = myv_wyvern_temperament_docile
+
+    140.1.1 = { birth = yes }
+}
+
+99001003 = {
+    name = "mm_royal_name_behemoth"
+
+    culture = "greek"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_fierce
+
+    160.1.1 = { birth = yes }
+    895.1.1 = { culture = "maghrebi" }
+    1127.1.1 = { culture = "sicilian" }
+}
+
+99001304 = {
+    name = "mm_royal_name_hrist"
+    female = yes
+    culture = "pictish"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_fierce
+
+    180.1.1 = { birth = yes }
+    855.1.1 = { culture = "norse" }
+    1066.1.1 = { culture = "norwegian" }
+}
+
+99001305 = {
+    name = "mm_royal_name_norton"
+
+    culture = "han"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_alert
+    120.1.1 = { birth = yes }
+}
+
+99001306 = {
+    name = "mm_royal_name_jormungandr"
+    female = yes
+    culture = "georgian"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_alert
+    140.1.1 = { birth = yes }
+    867.1.1 = { culture = "armenian" }
+    1084.1.1 = { culture = "kurdish" }
+    1124.1.1 = { culture = "georgian" }
+}
+
+99001307 = {
+    name = "mm_royal_name_leviathan"
+    female = yes
+    culture = "greek"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_alert
+    160.1.1 = { birth = yes }
+}
+
+99001308 = {
+    name = "mm_royal_name_vidar"
+
+    culture = "norse"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001309
+    mother = 99001310
+    trait = mm_royal_torpor
+    trait = myv_wyvern_legendary
+    trait = mm_royal_dragon_king
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_alert
+    180.1.1 = { birth = yes }
+    1020.1.1 = { culture = "norwegian" }
+}
+
+99001309 = {
+    name = "mm_royal_name_black_emperor"
+
+    culture = "myv_wyvern_culture"
+    religion = "pagan"
+    disallow_random_traits = yes
+    trait = mm_royal_torpor
+    trait = mm_royal_perfect_instinct
+    trait = myv_wyvern_legendary
+    trait = mm_royal_black_emperor
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_fierce
+    1.1.1 = { birth = yes }
+}
+
+99001310 = {
+    name = "mm_royal_name_white_empress"
+    female = yes
+    culture = "myv_wyvern_culture"
+    religion = "pagan"
+    disallow_random_traits = yes
+    trait = mm_royal_torpor
+    trait = mm_royal_perfect_instinct
+    trait = myv_wyvern_legendary
+    trait = mm_royal_white_empress
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_dexterous
+    trait = myv_wyvern_temperament_alert
+    2.1.1 = { birth = yes }
+}
+
+
+99001004 = { # Typhon: two centuries old at death
+    name = "myv_typhon"
+    culture = "myv_wyvern_culture"
+    religion = "pagan"
+    disallow_random_traits = yes
+    trait = myv_wyvern
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_coordinated
+    trait = myv_wyvern_temperament_fierce
+    660.1.1 = {
+        birth = yes
+        effect = {
+            add_character_flag = myv_wyvern_color_gold
+            add_character_flag = myv_wyvern_size_tier_10
+        }
+    }
+    860.1.1 = { death = yes }
+}
+
+
+99001005 = { # Gaia: two centuries old at death
+    name = "myv_gaia"
+    female = yes
+    culture = "myv_wyvern_culture"
+    religion = "pagan"
+    disallow_random_traits = yes
+    trait = myv_wyvern
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_coordinated
+    trait = myv_wyvern_temperament_alert
+    662.1.1 = {
+        birth = yes
+        effect = {
+            add_character_flag = myv_wyvern_color_gold
+            add_character_flag = myv_wyvern_size_tier_10
+        }
+    }
+    862.1.1 = { death = yes }
+}
+
+
+99001006 = { # Ladon
+    name = "myv_ladon"
+    culture = "myv_wyvern_culture"
+    religion = "pagan"
+    disallow_random_traits = yes
+    father = 99001004
+    mother = 99001005
+    trait = myv_wyvern
+    trait = myv_wyvern_physique_powerful
+    trait = myv_wyvern_coordination_coordinated
+    trait = myv_wyvern_temperament_fierce
+    775.1.1 = {
+        birth = yes
+        effect = {
+            add_character_flag = myv_wyvern_color_gold
+            add_character_flag = myv_wyvern_size_tier_07
+        }
+    }
+    861.1.1 = { death = yes }
+}

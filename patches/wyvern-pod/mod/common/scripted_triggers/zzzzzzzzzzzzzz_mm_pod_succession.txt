@@ -1,0 +1,7 @@
+﻿mm_pod_has_royal_trial_source = {
+    is_alive = yes
+    NOT = { has_character_flag = mm_asc_black_trial }
+    exists = var:mm_asc_blood_source
+    var:mm_asc_blood_source = { mm_royal_is_king = yes }
+    OR = { mm_asc_source_claim_valid = yes mm_asc_is_current_incarnation = yes }
+}

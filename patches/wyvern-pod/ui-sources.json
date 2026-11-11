@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-02",
+  "scope": "PoD + Wyvern GUI compatibility overlay; no Chinese-core, More Personality Depth, or merit-module UI hooks",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310",
+    "repo": "."
+  },
+  "sourceFiles": [
+    {
+      "root": "game",
+      "path": "gui/window_character.gui",
+      "sha256": "2ff56541cb81ecb943ab34747ba4005cc0010f28a24494dc3e5728808050114d"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/window_character.gui",
+      "sha256": "ed0e323091b0487e77bddc4373f98fc881f1e369130d5f0723629cb36241aca0"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/window_character.gui",
+      "sha256": "0b2251594b68fd492857e9adf531169859506042e2ca1cc469ee0ee69cf69940"
+    },
+    {
+      "root": "game",
+      "path": "gui/interaction_confirmation.gui",
+      "sha256": "34b86f5253bc564f3e3ecdd4a037f4d66397c4063defa450208db5eb702dac68"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/interaction_confirmation.gui",
+      "sha256": "319f11f40be0480a521f39cdeb6dcf26e141a66a61c7f83eac6e493d14f28429"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/interaction_confirmation.gui",
+      "sha256": "1f7b9e0b367e227609662b20edd720cc71dd46e6d5b177c4aafb002f8fb1aeff"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_character_finder.gui",
+      "sha256": "8f3958ad2d697bca22786bc50e753488e25c937b93daf91f325e01972e9fd604"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/window_character_finder.gui",
+      "sha256": "9f77c9263b289866b4eaccd8e979475879abe9d3985d61e110518212fbd1d8ba"
+    },
+    {
+      "root": "game",
+      "path": "gui/map_icon_layer.gui",
+      "sha256": "29bf7a31b79614d154dc55b71fa998470220de7fd0fe54ce95c7c061ae6769d8"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/map_icon_layer.gui",
+      "sha256": "b74455e4fd0c74aef5bbf5f36dfd0d5f94b16c340964a6b11b698e326eef992d"
+    },
+    {
+      "root": "workshop",
+      "path": "3811316052/gui/map_icon_layer.gui",
+      "sha256": "a858fee517c4fdb02beb8fc53009cde5250a128d670a2533203379dd6b7f5a88"
+    },
+    {
+      "root": "repo",
+      "path": "patches/dragon-map-performance/mod/gui/map_icon_layer.gui",
+      "sha256": "6391de4936d67fccd317a37a573e8de44a9ca2c1b34a15a88a9b21b2efa0b325"
+    },
+    {
+      "root": "game",
+      "path": "gui/window_faith.gui",
+      "sha256": "407a527291517ffd9f169e48ace81157e652541f6fe9a898073bda7f9336dc9b"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/window_faith.gui",
+      "sha256": "b214d6a9abaff01037db44b76bc38a7e35fc32aad8141053a381c6cb271bc6ea"
+    },
+    {
+      "root": "repo",
+      "path": "patches/dragon-creed/mod/gui/window_faith.gui",
+      "sha256": "49b4fcd0270cb3f08cb2d43f9c7368bdc866838211331377ac00f5f0047e1d4e"
+    },
+    {
+      "root": "game",
+      "path": "gui/shared/cooltip.gui",
+      "sha256": "630bcb50727a3b190a685e0404226432423b467420092352a5bab628cf5c7ebf"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/shared/cooltip.gui",
+      "sha256": "17a6bc9af62ac38ca68b7c36d989623aa7b57d517a725927a8ba141521c3545b"
+    },
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/fe_templates.gui",
+      "sha256": "24b5bc699247af61354625635e5d0e66d9fdae769da94f67dd6a30a7644c50ba"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern/mod/gui/shared/00_votc_trait_tooltip.gui",
+      "sha256": "fe8bfa4087f8ef7efc23455a36229b27c11cb9d503471229d86be52be0568ed4"
+    }
+  ],
+  "missingSourceFiles": [
+    {
+      "root": "workshop",
+      "path": "2216659254/gui/window_character_finder.gui",
+      "reason": "PoD has no override; game base and Wyvern source were merged"
+    }
+  ],
+  "outputRoot": "patches/wyvern-pod/mod",
+  "outputs": [
+    {
+      "path": "gui/interaction_confirmation.gui",
+      "sha256": "b362db0ed332d56de49874b43132461b337a92d609d687ac653a730472f10a44"
+    },
+    {
+      "path": "gui/map_icon_layer.gui",
+      "sha256": "41e0cd9aa7cf78a5b460000c256ec9257d7e0c8f0d942de36f123f653b522869"
+    },
+    {
+      "path": "gui/window_character_finder.gui",
+      "sha256": "9e526588e02261dd72b0786adf3a979a506f0baa2b1190aa1e07be623a0aa2e4"
+    },
+    {
+      "path": "gui/window_character.gui",
+      "sha256": "eaa4e9fe755164bb4db2df6b48bcb1a2d7baa691258636e50f8ca8c284c7ee69"
+    },
+    {
+      "path": "gui/window_faith.gui",
+      "sha256": "0f0e01e395aa807a0b0650b44c70d797a28de02472c20dc21a21b96289b17fda"
+    },
+    {
+      "path": "gui/shared/00_votc_trait_tooltip.gui",
+      "sha256": "7d63bc814b00ca787cc9af23cde8359f8a89dc073d8dbea582ae27d3912a2dac"
+    }
+  ],
+  "mergeOperations": [
+    {
+      "output": "gui/window_character.gui",
+      "base": "game:gui/window_character.gui",
+      "current": "workshop:2216659254/gui/window_character.gui",
+      "other": "workshop:3811316052/gui/window_character.gui",
+      "method": "git merge-file 3-way after LF normalization; manual resolution kept both POD_window_character_knight_window and myv_wyvern_character_view; PoD faction hooks retained because PoD supplies their templates in gui/fe_templates.gui"
+    },
+    {
+      "output": "gui/interaction_confirmation.gui",
+      "base": "game:gui/interaction_confirmation.gui",
+      "current": "workshop:2216659254/gui/interaction_confirmation.gui",
+      "other": "workshop:3811316052/gui/interaction_confirmation.gui",
+      "method": "git merge-file 3-way after LF normalization; clean merge preserves PoD option scrollbox and Wyvern title/send-button sizing"
+    },
+    {
+      "output": "gui/window_character_finder.gui",
+      "base": "game:gui/window_character_finder.gui",
+      "current": "game:gui/window_character_finder.gui",
+      "other": "workshop:3811316052/gui/window_character_finder.gui",
+      "method": "git merge-file 3-way after LF normalization; PoD has no override"
+    },
+    {
+      "output": "gui/map_icon_layer.gui",
+      "base": "game:gui/map_icon_layer.gui",
+      "current": "workshop:2216659254/gui/map_icon_layer.gui",
+      "other": "repo:patches/dragon-map-performance/mod/gui/map_icon_layer.gui",
+      "method": "git merge-file 3-way after LF normalization; clean merge preserves PoD map additions and Wyvern portrait with corrected ReligiousHeadMapIcon binding"
+    },
+    {
+      "output": "gui/window_faith.gui",
+      "base": "game:gui/window_faith.gui",
+      "current": "workshop:2216659254/gui/window_faith.gui",
+      "other": "repo:patches/dragon-creed/mod/gui/window_faith.gui",
+      "method": "git merge-file 3-way after LF normalization; clean merge preserves PoD faith UI and Dragon Creed tenet/doctrine UI changes"
+    },
+    {
+      "output": "gui/shared/00_votc_trait_tooltip.gui",
+      "base": "game:gui/shared/cooltip.gui#character_trait_tooltip",
+      "current": "workshop:2216659254/gui/shared/cooltip.gui#character_trait_tooltip",
+      "other": "repo:patches/wyvern/mod/gui/shared/00_votc_trait_tooltip.gui",
+      "method": "git merge-file 3-way on the extracted template after LF normalization; retained Wyvern special track markers and PoD generic tooltip; removed the Trait.IsPersonality condition to avoid More Personality Depth UI coupling"
+    }
+  ],
+  "format": "UTF-8 BOM with CRLF; merge-input copies normalized to LF. No tests, game, Blender, build, packaging, or deployment run."
+}

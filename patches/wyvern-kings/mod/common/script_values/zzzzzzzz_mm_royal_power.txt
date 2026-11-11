@@ -1,0 +1,50 @@
+﻿mm_royal_power_cap = {
+    value = 150
+    if = { limit = { has_trait = mm_royal_dragon_king } value = 220 }
+    else_if = { limit = { has_trait = mm_royal_complete } value = 350 }
+    else_if = { limit = { has_trait = mm_royal_white_empress } value = 450 }
+    else_if = { limit = { has_trait = mm_royal_black_emperor } value = 600 }
+}
+mm_royal_power_factor = { value = mm_royal_power_cap divide = 100 }
+myv_wyvern_target_prowess = {
+    value = 0
+    if = {
+        limit = { NOT = { has_trait = mm_royal_torpor } }
+        if = {
+            limit = { mm_royal_is_king = yes }
+            value = myv_wyvern_size_prowess
+            multiply = myv_wyvern_physique_prowess_multiplier
+            multiply = myv_wyvern_temperament_prowess_multiplier
+            multiply = mm_royal_power_factor
+            if = { limit = { has_character_modifier = myv_wyvern_enraged } multiply = 1.1 }
+            max = mm_royal_power_cap
+            multiply = myv_wyvern_wing_injury_prowess_multiplier
+            multiply = myv_wyvern_hindleg_injury_prowess_multiplier
+            multiply = myv_wyvern_tail_injury_prowess_multiplier
+            multiply = mm_wyvern_hunger_power_multiplier
+            multiply = myv_wyvern_malnutrition_prowess_multiplier
+            round = yes
+            min = 0
+            max = mm_royal_power_cap
+        }
+        else = {
+value = myv_wyvern_size_prowess
+    multiply = myv_wyvern_physique_prowess_multiplier
+    multiply = myv_wyvern_temperament_prowess_multiplier
+    multiply = myv_wyvern_wing_injury_prowess_multiplier
+    multiply = myv_wyvern_hindleg_injury_prowess_multiplier
+    multiply = myv_wyvern_tail_injury_prowess_multiplier
+    if = {
+        limit = { has_character_modifier = myv_wyvern_enraged }
+        multiply = 1.1
+    }
+    # Saturate the fully fed value first, so physique/enrage cannot bypass hunger.
+    max = 150
+    multiply = mm_wyvern_hunger_power_multiplier
+    multiply = myv_wyvern_malnutrition_prowess_multiplier
+    round = yes
+    min = 0
+    max = 150
+        }
+    }
+}

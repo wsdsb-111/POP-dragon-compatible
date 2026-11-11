@@ -1,0 +1,46 @@
+# Native CK3 supports nested divide. Mass is in tonnes.
+# A heavier dragon is less agile and takes less track XP from a hit.
+mm_wyvern_mass_agility_multiplier = {
+    value = 1
+    divide = { value = mm_wyvern_mass_tonnes divide = 5000 add = 1 }
+    min = 0.35
+    max = 1
+}
+
+mm_wyvern_mass_wound_multiplier = {
+    value = 1
+    divide = { value = mm_wyvern_mass_tonnes divide = 3000 add = 1 }
+    min = 0.2
+    max = 1
+}
+
+# Native value, with mass applied exactly once before rounding.
+myv_wyvern_agility = {
+    value = myv_wyvern_size_agility
+    multiply = myv_wyvern_temperament_agility_multiplier
+    multiply = myv_wyvern_coordination_agility_multiplier
+    multiply = myv_wyvern_age_agility_multiplier
+    # Eye damage affects awareness. Locomotor injuries use exclusive grade
+    # multipliers; their combat-power effects are applied separately below.
+    if = {
+        limit = {
+            OR = {
+                has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value >= 75 }
+                has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value >= 75 }
+            }
+        }
+        multiply = 0.8
+    }
+    multiply = myv_wyvern_wing_injury_agility_multiplier
+    multiply = myv_wyvern_hindleg_injury_agility_multiplier
+    multiply = myv_wyvern_tail_injury_agility_multiplier
+    if = {
+        limit = { has_character_modifier = myv_wyvern_enraged }
+        multiply = 0.95
+    }
+    multiply = mm_wyvern_mass_agility_multiplier
+    if = { limit = { rite = rite:mm_dragon_sky } multiply = 1.1 }
+    round = yes
+    min = 0
+    max = 100
+}

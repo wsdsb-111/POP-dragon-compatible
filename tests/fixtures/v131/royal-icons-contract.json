@@ -1,0 +1,36 @@
+{
+  "manifest": "artwork/dragon-kings/user-icons/manifest.json",
+  "traitFile": "patches/wyvern-kings/mod/common/traits/mm_royal_traits.txt",
+  "iconDirectory": "patches/wyvern-kings/mod/gfx/interface/icons/traits",
+  "assets": [
+    { "index": 1, "role": "black_emperor", "trait": "mm_royal_black_emperor", "dds": "mm_black_emperor.dds", "backgroundRemoved": true },
+    { "index": 2, "role": "fire", "throne": 1, "dds": "mm_royal_fire.dds", "backgroundRemoved": false },
+    { "index": 3, "role": "white_empress", "trait": "mm_royal_white_empress", "dds": "mm_white_empress.dds", "backgroundRemoved": true },
+    { "index": 4, "role": "sea", "throne": 3, "dds": "mm_royal_sea.dds", "backgroundRemoved": false },
+    { "index": 5, "role": "earth", "throne": 2, "dds": "mm_royal_earth.dds", "backgroundRemoved": true },
+    { "index": 6, "role": "sky", "throne": 4, "dds": "mm_royal_sky.dds", "backgroundRemoved": false }
+  ],
+  "dynamicTraits": ["mm_royal_dragon_king", "mm_royal_complete"],
+  "throneIcons": [
+    { "value": 1, "role": "fire", "dds": "mm_royal_fire.dds" },
+    { "value": 2, "role": "earth", "dds": "mm_royal_earth.dds" },
+    { "value": 3, "role": "sea", "dds": "mm_royal_sea.dds" },
+    { "value": 4, "role": "sky", "dds": "mm_royal_sky.dds" }
+  ],
+  "fixedIcons": {
+    "mm_royal_black_emperor": "mm_black_emperor.dds",
+    "mm_royal_white_empress": "mm_white_empress.dds",
+    "mm_royal_torpor": "mm_dragon_torpor.dds"
+  },
+  "fallback": "mm_dragon_royal_crown.dds",
+  "ddsProfile": {
+    "width": 128,
+    "height": 128,
+    "format": "DXT5",
+    "transparentThreshold": 8,
+    "opaqueThreshold": 224,
+    "minimumTransparentPixels": 256,
+    "minimumOpaquePixels": 1000,
+    "minimumCentralOpaquePixels": 500
+  }
+}

@@ -1,0 +1,35 @@
+﻿mm_royal_support_1 = {
+    icon = prowess_positive
+    enemy_hard_casualty_modifier = 0.3
+    movement_speed = 0.15
+    max_combat_roll = 4
+    siege_phase_time = -0.3
+    advantage = 10
+}
+
+mm_royal_support_2 = {
+    icon = prowess_positive
+    enemy_hard_casualty_modifier = 0.4
+    movement_speed = 0.25
+    max_combat_roll = 6
+    siege_phase_time = -0.4
+    advantage = 20
+}
+
+mm_royal_support_3 = {
+    icon = prowess_positive
+    enemy_hard_casualty_modifier = 0.5
+    movement_speed = 0.3
+    max_combat_roll = 8
+    siege_phase_time = -0.5
+    advantage = 25
+}
+
+mm_royal_support_4 = {
+    icon = prowess_positive
+    enemy_hard_casualty_modifier = 0.6
+    movement_speed = 0.4
+    max_combat_roll = 10
+    siege_phase_time = -0.6
+    advantage = 30
+}

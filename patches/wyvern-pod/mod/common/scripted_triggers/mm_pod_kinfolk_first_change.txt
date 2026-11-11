@@ -1,0 +1,20 @@
+﻿mm_pod_kinfolk_first_change_eligible_trigger = {
+    is_alive = yes
+    age < 16
+    has_trait = kinfolk
+    NOT = { has_trait = fera }
+    NOT = { has_trait = changeling }
+    NOT = { has_trait = revenant }
+    NOT = { has_character_flag = fera_first_change }
+}
+
+# The player may have adult children and eligible grandchildren. Four nested
+# child levels cover the normal dynasty depth without scanning every character.
+mm_pod_has_eligible_kinfolk_descendant_trigger = {
+    OR = {
+        any_child = { mm_pod_kinfolk_first_change_eligible_trigger = yes }
+        any_child = { any_child = { mm_pod_kinfolk_first_change_eligible_trigger = yes } }
+        any_child = { any_child = { any_child = { mm_pod_kinfolk_first_change_eligible_trigger = yes } } }
+        any_child = { any_child = { any_child = { any_child = { mm_pod_kinfolk_first_change_eligible_trigger = yes } } } }
+    }
+}

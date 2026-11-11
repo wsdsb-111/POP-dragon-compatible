@@ -1,0 +1,254 @@
+namespace = mm_wyvern_capture
+
+mm_wyvern_capture.0001 = {
+	type = character_event
+	window = myv_wyvern_feeding_event
+	override_background = { reference = myv_wyvern_feeding }
+	title = mm_wyvern_capture.0001.t
+	desc = mm_wyvern_capture.0001.desc
+	theme = martial
+	left_portrait = { character = root animation = hunting_carcass_start }
+	right_portrait = { character = scope:mm_capture_target animation = myv_wyvern_main }
+
+	immediate = { scope:mm_capture_target = { save_scope_as = myv_fed_wyvern } }
+
+	option = {
+		name = {
+			text = {
+				first_valid = {
+					triggered_desc = { trigger = { government_has_flag = government_is_landless_adventurer } desc = mm_wyvern_capture.0001.scraps_provisions }
+					desc = mm_wyvern_capture.0001.scraps
+				}
+			}
+		}
+		trigger = {
+			scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+			trigger_if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				exists = domicile
+				domicile = { provisions >= myv_wyvern_feed_scraps_provisions_cost }
+			}
+			trigger_else = { gold >= myv_wyvern_feed_scraps_cost }
+		}
+		show_as_unavailable = { always = yes }
+		show_as_tooltip = {
+			if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				domicile = { change_provisions = { value = myv_wyvern_feed_scraps_provisions_cost multiply = -1 } }
+			}
+			else = { remove_short_term_gold = myv_wyvern_feed_scraps_cost }
+		}
+		custom_tooltip = mm_wyvern_capture.feed_progress_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+					trigger_if = {
+						limit = { government_has_flag = government_is_landless_adventurer }
+						exists = domicile
+						domicile = { provisions >= myv_wyvern_feed_scraps_provisions_cost }
+					}
+					trigger_else = { gold >= myv_wyvern_feed_scraps_cost }
+				}
+				if = {
+					limit = { government_has_flag = government_is_landless_adventurer }
+					domicile = { change_provisions = { value = myv_wyvern_feed_scraps_provisions_cost multiply = -1 } }
+				}
+				else = { remove_short_term_gold = myv_wyvern_feed_scraps_cost }
+				scope:mm_capture_target = { mm_wyvern_capture_feed_effect = { CAPTOR = root } }
+			}
+		}
+	}
+
+	option = {
+		name = {
+			text = {
+				first_valid = {
+					triggered_desc = { trigger = { government_has_flag = government_is_landless_adventurer } desc = mm_wyvern_capture.0001.standard_provisions }
+					desc = mm_wyvern_capture.0001.standard
+				}
+			}
+		}
+		trigger = {
+			scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+			trigger_if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				exists = domicile
+				domicile = { provisions >= myv_wyvern_feed_standard_provisions_cost }
+			}
+			trigger_else = { gold >= myv_wyvern_feed_standard_cost }
+		}
+		show_as_unavailable = { always = yes }
+		show_as_tooltip = {
+			if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				domicile = { change_provisions = { value = myv_wyvern_feed_standard_provisions_cost multiply = -1 } }
+			}
+			else = { remove_short_term_gold = myv_wyvern_feed_standard_cost }
+		}
+		custom_tooltip = mm_wyvern_capture.feed_progress_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+					trigger_if = {
+						limit = { government_has_flag = government_is_landless_adventurer }
+						exists = domicile
+						domicile = { provisions >= myv_wyvern_feed_standard_provisions_cost }
+					}
+					trigger_else = { gold >= myv_wyvern_feed_standard_cost }
+				}
+				if = {
+					limit = { government_has_flag = government_is_landless_adventurer }
+					domicile = { change_provisions = { value = myv_wyvern_feed_standard_provisions_cost multiply = -1 } }
+				}
+				else = { remove_short_term_gold = myv_wyvern_feed_standard_cost }
+				scope:mm_capture_target = { mm_wyvern_capture_feed_effect = { CAPTOR = root } }
+			}
+		}
+	}
+
+	option = {
+		name = {
+			text = {
+				first_valid = {
+					triggered_desc = { trigger = { government_has_flag = government_is_landless_adventurer } desc = mm_wyvern_capture.0001.prime_provisions }
+					desc = mm_wyvern_capture.0001.prime
+				}
+			}
+		}
+		trigger = {
+			scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+			trigger_if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				exists = domicile
+				domicile = { provisions >= myv_wyvern_feed_prime_provisions_cost }
+			}
+			trigger_else = { gold >= myv_wyvern_feed_prime_cost }
+		}
+		show_as_unavailable = { always = yes }
+		show_as_tooltip = {
+			if = {
+				limit = { government_has_flag = government_is_landless_adventurer }
+				domicile = { change_provisions = { value = myv_wyvern_feed_prime_provisions_cost multiply = -1 } }
+			}
+			else = { remove_short_term_gold = myv_wyvern_feed_prime_cost }
+		}
+		custom_tooltip = mm_wyvern_capture.feed_progress_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:mm_capture_target = { mm_wyvern_capture_can_feed_trigger = { CAPTOR = root } }
+					trigger_if = {
+						limit = { government_has_flag = government_is_landless_adventurer }
+						exists = domicile
+						domicile = { provisions >= myv_wyvern_feed_prime_provisions_cost }
+					}
+					trigger_else = { gold >= myv_wyvern_feed_prime_cost }
+				}
+				if = {
+					limit = { government_has_flag = government_is_landless_adventurer }
+					domicile = { change_provisions = { value = myv_wyvern_feed_prime_provisions_cost multiply = -1 } }
+				}
+				else = { remove_short_term_gold = myv_wyvern_feed_prime_cost }
+				scope:mm_capture_target = { mm_wyvern_capture_feed_effect = { CAPTOR = root } }
+			}
+		}
+	}
+
+	option = { name = mm_wyvern_capture.0001.cancel }
+	after = { clear_saved_scope = myv_fed_wyvern }
+}
+
+mm_wyvern_capture.0002 = {
+	type = character_event
+	window = myv_wyvern_feeding_event
+	override_background = { reference = myv_wyvern_stable }
+	title = mm_wyvern_capture.0002.t
+	desc = mm_wyvern_capture.0002.desc
+	theme = diplomacy
+	left_portrait = { character = root animation = happiness }
+	right_portrait = { character = scope:mm_wyvern_capture_scheme_target animation = myv_wyvern_main }
+	option = {
+		name = mm_wyvern_capture.0002.a
+		custom_tooltip = mm_wyvern_capture.tame_success_tt
+		hidden_effect = {
+		if = {
+			limit = {
+				is_alive = yes
+				scope:mm_wyvern_capture_scheme_target = {
+					mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = root }
+					var:mm_wyvern_taming_progress >= 100
+				}
+			}
+			scope:mm_wyvern_capture_scheme_target = { mm_wyvern_capture_tame_effect = { KEEPER = root } }
+			myv_notify_wyvern_success_effect = {
+				ACTOR = root
+				WYVERN = scope:mm_wyvern_capture_scheme_target
+				TITLE = myv_wyvern_bond_success_news_title
+				DESC = myv_wyvern_bond_success_news_desc
+			}
+		}
+		scope:mm_wyvern_capture_scheme = { end_scheme = yes }
+		}
+	}
+	after = {
+		clear_saved_scope = mm_wyvern_capture_scheme
+		clear_saved_scope = mm_wyvern_capture_scheme_target
+		clear_saved_scope = mm_wyvern_capture_scheme_owner
+		clear_saved_scope = mm_wyvern_capture_scheme_successful
+	}
+}
+
+mm_wyvern_capture.0003 = {
+	type = character_event
+	window = myv_wyvern_feeding_event
+	override_background = { reference = myv_wyvern_stable }
+	title = mm_wyvern_capture.0003.t
+	desc = mm_wyvern_capture.0003.desc
+	theme = martial
+	left_portrait = { character = root animation = fear }
+	right_portrait = { character = scope:mm_wyvern_capture_scheme_target animation = myv_wyvern_main }
+	option = {
+		name = mm_wyvern_capture.0003.a
+		if = {
+			limit = {
+				is_alive = yes
+				scope:mm_wyvern_capture_scheme_target = {
+					mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = root }
+					var:mm_wyvern_taming_progress >= 100
+				}
+			}
+			random_list = {
+				5 = { death = { death_reason = death_myv_failed_wyvern_bonding killer = scope:mm_wyvern_capture_scheme_target } }
+				25 = {
+					if = {
+						limit = { NOT = { has_trait = wounded_3 } }
+						if = {
+							limit = { OR = { has_trait = wounded_1 has_trait = wounded_2 } }
+							if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+							if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+							add_trait = wounded_3
+						}
+						else = { add_trait = wounded_2 }
+					}
+				}
+				70 = {
+					if = {
+						limit = { NOT = { has_trait = wounded_3 } }
+						if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 add_trait = wounded_3 }
+						else_if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 add_trait = wounded_2 }
+						else = { add_trait = wounded_1 }
+					}
+				}
+			}
+		}
+		scope:mm_wyvern_capture_scheme = { end_scheme = yes }
+	}
+	after = {
+		clear_saved_scope = mm_wyvern_capture_scheme
+		clear_saved_scope = mm_wyvern_capture_scheme_target
+		clear_saved_scope = mm_wyvern_capture_scheme_owner
+		clear_saved_scope = mm_wyvern_capture_scheme_successful
+	}
+}

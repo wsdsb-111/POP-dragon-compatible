@@ -1,0 +1,2 @@
+on_game_start_after_lobby = { on_actions = { mm_royal_restore_physical_profiles } }
+mm_royal_restore_physical_profiles = { effect = { mm_royal_update_physical_profiles_effect = yes } }

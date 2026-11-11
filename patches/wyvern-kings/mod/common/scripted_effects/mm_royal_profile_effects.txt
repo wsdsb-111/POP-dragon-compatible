@@ -1,0 +1,69 @@
+# Called on a fixed royal or a validated throne successor.
+# Repairs throne identity, phenotype and temperament; no injury, hunger or bond state.
+mm_royal_repair_profile_effect = {
+    if = {
+        limit = {
+            OR = {
+                AND = { has_character_flag = mm_royal_fixed_identity OR = { this = character:99001001 this = character:99001002 this = character:99001003 this = character:99001304 this = character:99001305 this = character:99001306 this = character:99001307 this = character:99001308 this = character:99001309 this = character:99001310 } }
+                AND = {
+                    exists = var:mm_asc_seat_anchor
+                    OR = {
+                        AND = {
+                            OR = { has_trait = mm_royal_dragon_king has_trait = mm_royal_complete }
+                            OR = {
+                                AND = { var:mm_royal_throne = 1 OR = { var:mm_asc_seat_anchor = character:99001001 var:mm_asc_seat_anchor = character:99001305 } }
+                                AND = { var:mm_royal_throne = 2 OR = { var:mm_asc_seat_anchor = character:99001002 var:mm_asc_seat_anchor = character:99001306 } }
+                                AND = { var:mm_royal_throne = 3 OR = { var:mm_asc_seat_anchor = character:99001003 var:mm_asc_seat_anchor = character:99001307 } }
+                                AND = { var:mm_royal_throne = 4 OR = { var:mm_asc_seat_anchor = character:99001304 var:mm_asc_seat_anchor = character:99001308 } }
+                            }
+                        }
+                        AND = { has_trait = mm_royal_black_emperor var:mm_asc_seat_anchor = character:99001309 }
+                        AND = { has_trait = mm_royal_white_empress var:mm_asc_seat_anchor = character:99001310 }
+                    }
+                }
+            }
+        }
+        mm_royal_sync_throne_identity_trait_effect = yes
+        mm_dragon_route_creed_hook_effect = yes
+        if = {
+            limit = { NOT = { has_trait = myv_wyvern_physique_powerful } }
+            remove_trait = myv_wyvern_physique_weak
+            remove_trait = myv_wyvern_physique_normal
+            add_trait = myv_wyvern_physique_powerful
+        }
+        if = {
+            limit = { OR = { this = character:99001002 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001002 } } NOT = { has_trait = myv_wyvern_coordination_coordinated } }
+            remove_trait = myv_wyvern_coordination_clumsy
+            remove_trait = myv_wyvern_coordination_dexterous
+            add_trait = myv_wyvern_coordination_coordinated
+        }
+        if = {
+            limit = { OR = { this = character:99001001 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001001 } this = character:99001003 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001003 } this = character:99001304 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001304 } this = character:99001305 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001305 } this = character:99001306 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001306 } this = character:99001307 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001307 } this = character:99001308 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001308 } this = character:99001309 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001309 } this = character:99001310 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001310 } } NOT = { has_trait = myv_wyvern_coordination_dexterous } }
+            remove_trait = myv_wyvern_coordination_clumsy
+            remove_trait = myv_wyvern_coordination_coordinated
+            add_trait = myv_wyvern_coordination_dexterous
+        }
+        if = {
+            limit = { OR = { this = character:99001002 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001002 } } NOT = { has_trait = myv_wyvern_temperament_docile } }
+            remove_trait = myv_wyvern_temperament_alert
+            remove_trait = myv_wyvern_temperament_fierce
+            add_trait = myv_wyvern_temperament_docile
+        }
+        if = {
+            limit = { OR = { this = character:99001001 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001001 } this = character:99001003 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001003 } this = character:99001304 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001304 } this = character:99001309 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001309 } } NOT = { has_trait = myv_wyvern_temperament_fierce } }
+            remove_trait = myv_wyvern_temperament_docile
+            remove_trait = myv_wyvern_temperament_alert
+            add_trait = myv_wyvern_temperament_fierce
+        }
+        if = {
+            limit = { OR = { this = character:99001305 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001305 } this = character:99001306 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001306 } this = character:99001307 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001307 } this = character:99001308 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001308 } this = character:99001310 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001310 } } NOT = { has_trait = myv_wyvern_temperament_alert } }
+            remove_trait = myv_wyvern_temperament_docile
+            remove_trait = myv_wyvern_temperament_fierce
+            add_trait = myv_wyvern_temperament_alert
+        }
+        if = {
+            limit = { OR = { this = character:99001309 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001309 } this = character:99001310 AND = { exists = var:mm_asc_seat_anchor var:mm_asc_seat_anchor = character:99001310 } } NOT = { has_trait = mm_royal_perfect_instinct } }
+            add_trait = mm_royal_perfect_instinct
+        }
+    }
+}

@@ -1,0 +1,92 @@
+mm_v1312_silk_road_queue_daily_effect = {
+    save_scope_as = mm_v1312_silk_road_target
+    if = {
+        limit = {
+            mm_v1312_silk_sea_member_trigger = yes
+            mm_v1312_silk_road_active_participant_trigger = yes
+            NOT = { has_character_flag = mm_v1312_silk_road_daily_queued }
+        }
+        add_character_flag = { flag = mm_v1312_silk_road_daily_queued days = 2 }
+        trigger_event = { id = mm_v1312_silk_road.0001 days = 1 }
+    }
+}
+
+mm_v1312_silk_road_remove_modifiers_effect = {
+    remove_character_modifier = mm_v1312_silk_road_china_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_china_bonus_40
+    remove_character_modifier = mm_v1312_silk_road_tibet_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_tibet_bonus_40
+    remove_character_modifier = mm_v1312_silk_road_india_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_india_bonus_40
+    remove_character_modifier = mm_v1312_silk_road_central_asia_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_central_asia_bonus_40
+    remove_character_modifier = mm_v1312_silk_road_transcaspia_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_transcaspia_bonus_40
+    remove_character_modifier = mm_v1312_silk_road_occident_bonus_20
+    remove_character_modifier = mm_v1312_silk_road_occident_bonus_40
+}
+
+mm_v1312_silk_road_clear_effect = {
+    mm_v1312_silk_road_remove_modifiers_effect = yes
+    remove_character_flag = mm_v1312_silk_road_daily_queued
+    remove_variable = mm_v1312_silk_road_last_date
+}
+
+mm_v1312_silk_road_region_bonus_effect = {
+    if = {
+        limit = { mm_v1312_silk_road_region_bounty_high_tax_trigger = { SUB_REGION = $SUB_REGION$ } }
+        add_character_modifier = { modifier = $BOUNTY_MODIFIER$ days = 2 }
+    }
+    else_if = {
+        limit = { mm_v1312_silk_road_region_bounty_periphery_tax_trigger = { SUB_REGION = $SUB_REGION$ } }
+        add_character_modifier = { modifier = $PERIPHERY_MODIFIER$ days = 2 }
+    }
+    else_if = {
+        limit = { mm_v1312_silk_road_region_steady_tax_trigger = { SUB_REGION = $SUB_REGION$ } }
+        add_character_modifier = { modifier = $STEADY_MODIFIER$ days = 2 }
+    }
+}
+
+mm_v1312_silk_road_refresh_effect = {
+    save_scope_as = mm_v1312_silk_road_target
+    mm_v1312_silk_road_remove_modifiers_effect = yes
+    if = {
+        limit = { mm_v1312_silk_sea_member_trigger = yes }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = china
+            BOUNTY_MODIFIER = mm_v1312_silk_road_china_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_china_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_china_bonus_20
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = tibet
+            BOUNTY_MODIFIER = mm_v1312_silk_road_tibet_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_tibet_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_tibet_bonus_20
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = india
+            BOUNTY_MODIFIER = mm_v1312_silk_road_india_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_india_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_india_bonus_20
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = central_asia
+            BOUNTY_MODIFIER = mm_v1312_silk_road_central_asia_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_central_asia_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_central_asia_bonus_20
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = transcaspia
+            BOUNTY_MODIFIER = mm_v1312_silk_road_transcaspia_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_transcaspia_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_transcaspia_bonus_20
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = occident
+            BOUNTY_MODIFIER = mm_v1312_silk_road_occident_bonus_40
+            PERIPHERY_MODIFIER = mm_v1312_silk_road_occident_bonus_20
+            STEADY_MODIFIER = mm_v1312_silk_road_occident_bonus_20
+        }
+    }
+}

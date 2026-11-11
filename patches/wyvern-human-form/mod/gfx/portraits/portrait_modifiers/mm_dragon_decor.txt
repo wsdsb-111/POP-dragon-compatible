@@ -1,0 +1,91 @@
+mm_dragon_horns_portrait = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2100
+ dragon_feature = {
+  dna_modifiers = { accessory = { mode = add gene = mm_dragon_horns_gene template = mm_dragon_horns_visible range = { 0 1 } } }
+  weight = {
+   base = 0
+   modifier = {
+    add = 1000
+    portrait_has_trait_trigger = { TRAIT = mm_dragon_horns }
+    OR = { has_character_flag = mm_wyvern_human_form has_character_flag = mm_dragon_blood_human }
+   }
+  }
+ }
+}
+mm_dragon_tail_portrait = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2100
+ dragon_feature = {
+  dna_modifiers = { accessory = { mode = add gene = mm_dragon_tail_gene template = mm_dragon_tail_visible range = { 0 1 } } }
+  weight = {
+   base = 0
+   modifier = {
+    add = 1000
+    portrait_has_trait_trigger = { TRAIT = mm_dragon_tail }
+    OR = { has_character_flag = mm_wyvern_human_form has_character_flag = mm_dragon_blood_human }
+   }
+  }
+ }
+}
+mm_dragon_scales_portrait = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2100
+ dragon_feature = {
+  dna_modifiers = { accessory = { mode = add gene = mm_dragon_scales_gene template = mm_dragon_scales_visible range = { 0 1 } } }
+  weight = {
+   base = 0
+   modifier = {
+    add = 1000
+    portrait_has_trait_trigger = { TRAIT = mm_dragon_scales }
+    OR = { has_character_flag = mm_wyvern_human_form has_character_flag = mm_dragon_blood_human }
+   }
+  }
+ }
+}
+mm_dragon_pupils_portrait = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2100
+ dragon_pupils = {
+  dna_modifiers = { color = { mode = replace gene = eye_color x = 0.4 y = 0.1 } }
+  weight = {
+   base = 0
+   modifier = {
+    add = 1000
+    portrait_has_trait_trigger = { TRAIT = mm_dragon_pupils }
+    NOT = { has_character_flag = mm_asc_dragon_form }
+    OR = {
+     has_character_flag = mm_wyvern_human_form
+     NOR = {
+      portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+      portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+      portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+     }
+    }
+   }
+  }
+ }
+}
+
+# Native wyverns retain their own phenotype in human form, including eye mesh.
+mm_wyvern_human_golden_eyes = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2101
+ golden_eyes = {
+  dna_modifiers = { color = { mode = replace gene = eye_color x = 0.4 y = 0.1 } }
+  weight = { base = 0 modifier = { add = 1000
+   has_character_flag = mm_wyvern_human_form
+   NOT = { has_character_flag = mm_asc_dragon_form }
+   OR = {
+    portrait_has_trait_trigger = { TRAIT = myv_wyvern }
+    portrait_has_trait_trigger = { TRAIT = myv_wyvern_tamed }
+    portrait_has_trait_trigger = { TRAIT = myv_wyvern_legendary }
+   }
+  } }
+ }
+}

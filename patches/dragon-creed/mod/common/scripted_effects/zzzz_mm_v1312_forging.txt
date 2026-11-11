@@ -1,0 +1,17 @@
+# Called in weapon-inspiration scope after native monthly effects.
+mm_v1312_fire_weapon_monthly_effect = {
+    if = {
+        limit = {
+            exists = scope:inspiration
+            exists = scope:inspiration_owner
+            exists = scope:inspiration_sponsor
+            this = scope:inspiration
+            has_inspiration_type = weapon_inspiration
+            inspiration_progress < 10
+            scope:inspiration_owner = { is_alive = yes exists = inspiration inspiration = scope:inspiration }
+            scope:inspiration_sponsor = { is_alive = yes rite = rite:mm_dragon_fire }
+            ep1_is_sponsor_valid_inspiration_basic = yes
+        }
+        random = { chance = 30 change_inspiration_progress = 1 }
+    }
+}

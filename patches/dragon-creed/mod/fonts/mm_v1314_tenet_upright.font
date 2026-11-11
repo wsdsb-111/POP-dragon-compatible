@@ -1,0 +1,7 @@
+﻿font = {
+    name = "MMDragonTenetUpright"
+    fontstyle = { style = regular fontfiles = "Gitan-Regular" }
+    fontstyle = { style = bold fontfiles = "Gitan-Bold" }
+    fontstyle = { style = italic fontfiles = "Gitan-Regular" }
+    fontstyle = { style = bold|italic fontfiles = "Gitan-Bold" }
+}

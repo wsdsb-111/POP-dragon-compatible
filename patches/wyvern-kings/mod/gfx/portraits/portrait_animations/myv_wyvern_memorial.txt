@@ -1,0 +1,1386 @@
+# Dead main portraits bypass flag-based selection using archive-selected animations.
+myv_wyvern_memorial_red_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_0 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_hatchling }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_hatchling }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_hatchling }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_1 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_01 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_01 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_01 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_2 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_02 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_02 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_02 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_3 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_03 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_03 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_03 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_4 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_04 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_04 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_04 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_5 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_05 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_05 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_05 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_6 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_06 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_06 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_06 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_7 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_07 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_07 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_07 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_8 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_08 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_08 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_08 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_9 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_09 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_09 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_09 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_red_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_red_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_green_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_green_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_black_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_black_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_grey_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_grey_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_gold_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_gold_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}
+
+myv_wyvern_memorial_nightmare_10 = {
+    male = {
+        force = yes
+                portrait_modifier = { trigger = { mm_royal_visual_fire = yes } mm_royal_wyvern_poses = body_fire_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_earth = yes } mm_royal_wyvern_poses = body_earth_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sea = yes } mm_royal_wyvern_poses = body_sea_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_sky = yes } mm_royal_wyvern_poses = body_sky_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_white = yes } mm_royal_wyvern_poses = body_white_tier_10 }
+        portrait_modifier = { trigger = { mm_royal_visual_black = yes } mm_royal_wyvern_poses = body_black_tier_10 }
+portrait_modifier = { myv_wyvern_visual_color_and_size = myv_wyvern_visual_nightmare_tier_10 }
+        default = { head = "idle" torso = "myv_human_offscreen" }
+        myv_wyvern_idle = {
+            animation = { head = "idle" torso = "myv_human_offscreen" }
+            weight = { base = 100 }
+        }
+    }
+    boy = male
+    female = male
+    girl = boy
+}

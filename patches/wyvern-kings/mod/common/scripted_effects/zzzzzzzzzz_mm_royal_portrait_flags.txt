@@ -1,0 +1,95 @@
+# Native effect retained; size flag selection uses the frozen visual tier.
+myv_refresh_wyvern_portrait_flags_effect = {
+    if = {
+        limit = { myv_is_living_wyvern = yes }
+        myv_sync_wyvern_size_archive_effect = yes
+
+        remove_character_flag = myv_wyvern_color_red
+        remove_character_flag = myv_wyvern_color_green
+        remove_character_flag = myv_wyvern_color_black
+        remove_character_flag = myv_wyvern_color_grey
+        remove_character_flag = myv_wyvern_color_gold
+        remove_character_flag = myv_wyvern_color_nightmare
+
+        if = {
+            limit = { var:myv_wyvern_color = 1 }
+            add_character_flag = myv_wyvern_color_red
+        }
+        else_if = {
+            limit = { var:myv_wyvern_color = 3 }
+            add_character_flag = myv_wyvern_color_black
+        }
+        else_if = {
+            limit = { var:myv_wyvern_color = 4 }
+            add_character_flag = myv_wyvern_color_grey
+        }
+        else_if = {
+            limit = { var:myv_wyvern_color = 5 }
+            add_character_flag = myv_wyvern_color_gold
+        }
+        else_if = {
+            limit = { var:myv_wyvern_color = 6 }
+            add_character_flag = myv_wyvern_color_nightmare
+        }
+        else = {
+            # Green is also the safe fallback for an invalid legacy value.
+            add_character_flag = myv_wyvern_color_green
+        }
+
+        remove_character_flag = myv_wyvern_size_hatchling
+        remove_character_flag = myv_wyvern_size_tier_01
+        remove_character_flag = myv_wyvern_size_tier_02
+        remove_character_flag = myv_wyvern_size_tier_03
+        remove_character_flag = myv_wyvern_size_tier_04
+        remove_character_flag = myv_wyvern_size_tier_05
+        remove_character_flag = myv_wyvern_size_tier_06
+        remove_character_flag = myv_wyvern_size_tier_07
+        remove_character_flag = myv_wyvern_size_tier_08
+        remove_character_flag = myv_wyvern_size_tier_09
+        remove_character_flag = myv_wyvern_size_tier_10
+
+        if = {
+            limit = { myv_wyvern_visual_size_tier < 1 }
+            add_character_flag = myv_wyvern_size_hatchling
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 2 }
+            add_character_flag = myv_wyvern_size_tier_01
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 3 }
+            add_character_flag = myv_wyvern_size_tier_02
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 4 }
+            add_character_flag = myv_wyvern_size_tier_03
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 5 }
+            add_character_flag = myv_wyvern_size_tier_04
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 6 }
+            add_character_flag = myv_wyvern_size_tier_05
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 7 }
+            add_character_flag = myv_wyvern_size_tier_06
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 8 }
+            add_character_flag = myv_wyvern_size_tier_07
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 9 }
+            add_character_flag = myv_wyvern_size_tier_08
+        }
+        else_if = {
+            limit = { myv_wyvern_visual_size_tier < 10 }
+            add_character_flag = myv_wyvern_size_tier_09
+        }
+        else = {
+            add_character_flag = myv_wyvern_size_tier_10
+        }
+    }
+}

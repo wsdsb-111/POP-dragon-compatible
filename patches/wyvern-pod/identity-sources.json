@@ -1,0 +1,230 @@
+{
+  "date": "2026-11-03",
+  "sourceFiles": [
+    {
+      "root": "repo",
+      "path": "patches/wyvern-kings/mod/common/scripted_effects/mm_royal_identity_effects.txt",
+      "sha256": "09d78b08c0acb76a4734cde2e2ae65e50c18bc4dd9945a8288b6ae9813aed6bf"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_splat_triggers.txt",
+      "sha256": "c292030919949d22cfd4efeb05ecd7b7e284ab68645627801efb665dd3de7daf"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_spirit_triggers.txt",
+      "sha256": "85d43ee098cec532e475f47556a26edb98e719e4be38db9c470a803b3f01ce47"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_interface_triggers.txt",
+      "sha256": "4f3400ea696618b1a3062a4549fcb139224ef0e330061368bb7c95cce1fd6f12"
+    },
+    {
+      "root": "pod",
+      "path": "common/script_values/POD_true_age_values.txt",
+      "sha256": "e3bdf7d851b41acd6de85168da28f5e6a247ac8954cc60fc64308abf506b7421"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-kings/mod/gui/custom_gui/myv_wyvern_character_window.gui",
+      "sha256": "50d1861d07bdc812c58cd8b7e299064dd0362ffb4617e086fe5c004005d446b0"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-bloodline/mod/common/scripted_effects/mm_dragon_absorption.txt",
+      "sha256": "eb5a680850f4e90605b9db12669645aea73d29e5d265e2e7964425c020dd3c1d"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-bloodline/mod/common/scripted_triggers/mm_dragon_blood_hunt.txt",
+      "sha256": "529da56e6cbe651a866cea27b9aaf0eaff947e7f4c10567b8c9a35f8780728fc"
+    },
+    {
+      "root": "repo",
+      "path": "tests/fixtures/pod-mokole-census-1230.json",
+      "sha256": "7dad40bb9e2893bd46a53c41f316814118ba88f5619841b964ba509b89ce5b51"
+    },
+    {
+      "root": "repo",
+      "path": "patches/wyvern-ascension/mod/common/scripted_effects/zzzzzzzzzz_mm_ascension_maintenance.txt",
+      "sha256": "8ad1e695c5ac8134ad0fba0bd6a1ec3298e1aa8ddf3063ff53b03f46ff11567d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "common/traits/mm_pod_species.txt",
+      "sha256": "587e26955bd8e8c764e3e960902d6e5bd98992f0b3bac77898e9cc42656abb57"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_species.txt",
+      "sha256": "44f1f9a106e890517b92912d6c965f603d844f47decb5302d8587b67dd3d3242"
+    },
+    {
+      "path": "common/script_values/zzzzzzzzzzzzzz_mm_pod_age.txt",
+      "sha256": "58d8adb4b72e7aad8e84ee22f7705faf83000c15359912416cc96138f36f9777"
+    },
+    {
+      "path": "gui/custom_gui/myv_wyvern_character_window.gui",
+      "sha256": "b82ee840c3fcb052dfc2fba9bce339e7519081ffd65bbc7dc789af7e8f9e3ed5"
+    },
+    {
+      "path": "common/customizable_localization/zzzzzzzzzzzzzz_mm_pod_sources.txt",
+      "sha256": "7cf935923bf77875534fcfc86d2f1397bca6c58485232d6eb1097e6c9f8b1f68"
+    },
+    {
+      "path": "localization/replace/simp_chinese/zzzzzzzzzzzzzz_mm_pod_identity_l_simp_chinese.yml",
+      "sha256": "6205c9819f740dfd0c2a73bf6bd04a108511cc87ee5ed80a2f35182a7799bb71"
+    },
+    {
+      "path": "localization/replace/english/zzzzzzzzzzzzzz_mm_pod_identity_l_english.yml",
+      "sha256": "07bc4940668216f6882040def91c0b01212c744b4e3197fdd960f4b745ef8949"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_absorption.txt",
+      "sha256": "748f6a1d6881a8f1e92ebe11e491bccae120e03277d7c2a78353ab40d5d9a698"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzzzz_mm_pod_absorption.txt",
+      "sha256": "aa5a4a048175b7cdea35f74f6e6551e8e23d1304bed67b5d2c91f7bf91ad39da"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzz_mm_pod_identity.txt",
+      "sha256": "b348cd7378390bcc9ecc44ad4d01227355211ac119bfbd0b9cfdd16c0fc4318b"
+    },
+    {
+      "path": "common/scripted_effects/zzzzzzzzzzzzzzz_mm_pod_creation.txt",
+      "sha256": "1dbadc5c190753f51966e1d6af8a52813e97968d0a80b3c44fb556bf85b76afa"
+    },
+    {
+      "path": "common/on_action/mm_dragon_lineage_initialization.txt",
+      "sha256": "cca3e5c71a3280a81f2dc2d59bdf63c1b8d544f972c0fe0fe4105ede8ae9e39c"
+    },
+    {
+      "path": "common/on_action/zzzzzzzzzzzzzz_mm_pod_identity.txt",
+      "sha256": "f05f84cbec83f61363dcecbc112a0aa42afde011f052b4876ea5d9a132ce76f8"
+    }
+  ],
+  "lairs": [
+    {
+      "branch": "fire",
+      "throne": 1,
+      "ids": [
+        99001001,
+        99001305
+      ],
+      "provinces": [
+        10430,
+        10216
+      ],
+      "age": 20300
+    },
+    {
+      "branch": "earth",
+      "throne": 2,
+      "ids": [
+        99001002,
+        99001306
+      ],
+      "provinces": [
+        6077,
+        5759
+      ],
+      "age": 20200
+    },
+    {
+      "branch": "sea",
+      "throne": 3,
+      "ids": [
+        99001003,
+        99001307
+      ],
+      "provinces": [
+        2646,
+        480
+      ],
+      "age": 20100
+    },
+    {
+      "branch": "sky",
+      "throne": 4,
+      "ids": [
+        99001304,
+        99001308
+      ],
+      "provinces": [
+        6,
+        260
+      ],
+      "age": 20000
+    }
+  ],
+  "historicalIds": [
+    "795111",
+    "795113",
+    "795205",
+    "795206",
+    "795207",
+    "795114",
+    "795115",
+    "795116",
+    "795202",
+    "795208",
+    "795209",
+    "795210",
+    "795236",
+    "795243",
+    "795108",
+    "793509",
+    "795203",
+    "795204",
+    "795231",
+    "795234",
+    "795235",
+    "795237",
+    "795238",
+    "795239",
+    "795240",
+    "795211",
+    "795242",
+    "795107",
+    "795112",
+    "795232",
+    "795201",
+    "795241",
+    "795110",
+    "795233",
+    "795109",
+    "795271",
+    "795212"
+  ],
+  "founders": [
+    {
+      "id": 793509,
+      "source": 99001305,
+      "branch": "fire"
+    },
+    {
+      "id": 795111,
+      "source": 99001003,
+      "branch": "sea"
+    },
+    {
+      "id": 795208,
+      "source": 99001002,
+      "branch": "earth"
+    },
+    {
+      "id": 795209,
+      "source": 99001306,
+      "branch": "earth"
+    },
+    {
+      "id": 795210,
+      "source": 99001306,
+      "branch": "earth"
+    }
+  ],
+  "CK3Runtime": "NOT_RUN"
+}

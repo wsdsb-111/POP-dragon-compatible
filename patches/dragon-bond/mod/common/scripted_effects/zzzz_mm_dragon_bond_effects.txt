@@ -1,0 +1,61 @@
+myv_establish_wyvern_keeper_bond_effect = {
+    $KEEPER$ = {
+        add_character_flag = myv_wyvern_keeper
+        remove_character_flag = myv_wyvern_bond_candidate
+    }
+    $WYVERN$ = {
+        set_variable = { name = myv_wyvern_bonded_character value = $KEEPER$ }
+        set_relation_myv_wyvern_bonded_character = $KEEPER$
+        remove_variable = myv_wyvern_bond_heir
+        if = {
+            limit = { NOT = { has_trait = myv_wyvern_harmony } }
+            add_trait = myv_wyvern_harmony
+            add_character_flag = mm_dragon_bond_unridden_harmony
+        }
+    }
+}
+
+myv_migrate_wyvern_harmony_effect = {
+    save_scope_as = myv_harmony_migration_wyvern
+    if = {
+        limit = {
+            NOT = { has_trait = myv_wyvern_harmony }
+            has_variable = myv_wyvern_bonded_character
+            var:myv_wyvern_bonded_character = {
+                is_alive = yes
+                has_trait = myv_wyvern_rider
+                has_variable = myv_current_wyvern
+                var:myv_current_wyvern = scope:myv_harmony_migration_wyvern
+            }
+        }
+        var:myv_wyvern_bonded_character = {
+            save_scope_as = myv_harmony_migration_rider
+        }
+        add_trait = myv_wyvern_harmony
+        add_trait_xp = {
+            trait = myv_wyvern_harmony
+            value = "scope:myv_harmony_migration_rider.has_trait_xp(myv_wyvern_rider)"
+        }
+        scope:myv_harmony_migration_rider = {
+            remove_variable = myv_current_wyvern
+        }
+    }
+    # Existing campaigns may already have wyvern-side Harmony without the
+    # hidden display relation. Rebuild it from the bonded keeper on load.
+    if = {
+        limit = {
+            has_trait = myv_wyvern_harmony
+            OR = {
+                NOT = { has_character_flag = mm_dragon_bond_unridden_harmony }
+                has_relation_myv_wyvern_rider = var:myv_wyvern_bonded_character
+            }
+            has_variable = myv_wyvern_bonded_character
+            var:myv_wyvern_bonded_character = { is_alive = yes }
+        }
+        var:myv_wyvern_bonded_character = {
+            save_scope_as = myv_harmony_relation_rider
+        }
+        set_relation_myv_wyvern_rider = scope:myv_harmony_relation_rider
+        myv_begin_wyvern_rider_record_effect = { RIDER = scope:myv_harmony_relation_rider DATE_KNOWN = no }
+    }
+}

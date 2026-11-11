@@ -1,0 +1,84 @@
+﻿mm_relic_black_crown_inventory_visual = {
+    default_type = mm_relic_black_crown_inventory
+    icon = "mm_v1322_relic_black_crown.dds"
+    asset = male_headgear_secular_western_royalty_01_artifact_entity
+    portrait_asset = male_headgear_secular_western_royalty_01_artifact_entity
+}
+mm_relic_black_crown_court_visual = {
+    default_type = mm_relic_black_crown_court
+    icon = "mm_v1322_relic_black_crown.dds"
+    asset = mm_relic_black_crown_entity
+}
+
+mm_relic_black_regalia_inventory_visual = {
+    default_type = mm_relic_black_regalia_inventory
+    icon = "mm_v1322_relic_black_regalia.dds"
+    asset = ep1_generic_jewelry_01_a_entity
+    portrait_asset = ep1_generic_jewelry_01_a_entity
+}
+mm_relic_black_regalia_court_visual = {
+    default_type = mm_relic_black_regalia_court
+    icon = "mm_v1322_relic_black_regalia.dds"
+    asset = mm_relic_black_regalia_entity
+}
+
+mm_relic_white_book_inventory_visual = {
+    default_type = mm_relic_white_book_inventory
+    icon = "mm_v1322_relic_white_book.dds"
+    asset = ep1_western_book_big_01_a_entity
+    portrait_asset = ep1_western_book_big_01_a_entity
+}
+mm_relic_white_book_court_visual = {
+    default_type = mm_relic_white_book_court
+    icon = "mm_v1322_relic_white_book.dds"
+    asset = mm_relic_white_book_entity
+}
+
+mm_relic_fire_ring_inventory_visual = {
+    default_type = mm_relic_fire_ring_inventory
+    icon = "mm_v1322_relic_fire_ring.dds"
+    asset = ep1_generic_jewelry_01_a_entity
+    portrait_asset = ep1_generic_jewelry_01_a_entity
+}
+mm_relic_fire_ring_court_visual = {
+    default_type = mm_relic_fire_ring_court
+    icon = "mm_v1322_relic_fire_ring.dds"
+    asset = mm_relic_fire_ring_entity
+}
+
+mm_relic_earth_sarcophagus_inventory_visual = {
+    default_type = mm_relic_earth_sarcophagus_inventory
+    icon = "mm_v1322_relic_earth_sarcophagus.dds"
+    asset = ep1_western_box_reliquary_01_a_entity
+    portrait_asset = ep1_western_box_reliquary_01_a_entity
+}
+mm_relic_earth_sarcophagus_court_visual = {
+    default_type = mm_relic_earth_sarcophagus_court
+    icon = "mm_v1322_relic_earth_sarcophagus.dds"
+    asset = mm_relic_earth_sarcophagus_entity
+}
+
+mm_relic_sea_armor_inventory_visual = {
+    default_type = mm_relic_sea_armor_inventory
+    icon = "mm_v1322_relic_sea_armor.dds"
+    asset = m_clothes_sec_byzantine_war_nob_01_artifact_entity
+    portrait_asset = m_clothes_sec_byzantine_war_nob_01_artifact_entity
+}
+mm_relic_sea_armor_court_visual = {
+    default_type = mm_relic_sea_armor_court
+    icon = "mm_v1322_relic_sea_armor.dds"
+    asset = mm_relic_sea_armor_entity
+}
+
+mm_relic_sky_spear_inventory_visual = {
+    default_type = mm_relic_sky_spear_inventory
+    icon = "mm_v1322_relic_sky_spear.dds"
+    asset = ep1_western_spear_01_a_portrait_entity
+    portrait_asset = ep1_western_spear_01_a_portrait_entity
+}
+mm_relic_sky_spear_court_visual = {
+    default_type = mm_relic_sky_spear_court
+    icon = "mm_v1322_relic_sky_spear.dds"
+    asset = mm_relic_sky_spear_entity
+}
+

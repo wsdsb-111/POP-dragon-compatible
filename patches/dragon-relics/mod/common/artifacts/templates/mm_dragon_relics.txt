@@ -1,0 +1,69 @@
+mm_relic_black_crown_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_black }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_black_regalia_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_black }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_white_book_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_white }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_fire_ring_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_fire }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_earth_sarcophagus_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_earth }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_sea_armor_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_sea }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}
+
+mm_relic_sky_spear_template = {
+    can_equip = { always = yes }
+    can_benefit = { faith = faith:mm_dragon_creed rite = rite:mm_dragon_sky }
+    can_reforge = { always = no }
+    can_repair = { always = yes }
+    is_holy_relic = { this = faith:mm_dragon_creed }
+    fallback = { }
+    unique = yes
+}

@@ -1,0 +1,189 @@
+# Static awake elder benchmark: base 100 + vampire 5 + disciplines 73
+# + sadistic 2 + vengeful 2 + torturer 4 = 186. Not a runtime maximum.
+mm_pod_elder_reference_prowess = { value = 186 }
+mm_wyvern_pod_size_power_factor = { value = mm_pod_elder_reference_prowess divide = 100 }
+
+mm_royal_power_cap = {
+    value = 190
+    # Black Emperor and White Empress use their fixed historical identities.
+    if = { limit = { this = character:99001309 } value = 400 }
+    else_if = { limit = { this = character:99001310 } value = 350 }
+    else_if = { limit = { has_trait = mm_royal_black_emperor } value = 400 }
+    else_if = { limit = { has_trait = mm_royal_white_empress } value = 350 }
+    # Keep the existing completed-king cap ahead of its original character ID.
+    else_if = { limit = { has_trait = mm_royal_complete } value = 298 }
+    # Fire pair: Constantine 275, Norton 225.
+    else_if = { limit = { this = character:99001001 } value = 275 }
+    else_if = { limit = { this = character:99001305 } value = 225 }
+    # Earth pair: Jormungandr 215, Fenrir 285.
+    else_if = { limit = { this = character:99001306 } value = 215 }
+    else_if = { limit = { this = character:99001002 } value = 285 }
+    # Sea pair: Leviathan 230, Behemoth 265.
+    else_if = { limit = { this = character:99001307 } value = 230 }
+    else_if = { limit = { this = character:99001003 } value = 265 }
+    # Sky pair: Hrist 260, Vidar (localized as Odin) 240.
+    else_if = { limit = { this = character:99001304 } value = 260 }
+    else_if = { limit = { this = character:99001308 } value = 240 }
+    # A successor resolves through the predecessor's seat anchor to the original throne.
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_fire_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001001
+                }
+            }
+        }
+        value = 275
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_fire_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001305
+                }
+            }
+        }
+        value = 225
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_earth_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001306
+                }
+            }
+        }
+        value = 215
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_earth_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001002
+                }
+            }
+        }
+        value = 285
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_sea_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001307
+                }
+            }
+        }
+        value = 230
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_sea_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001003
+                }
+            }
+        }
+        value = 265
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_sky_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001304
+                }
+            }
+        }
+        value = 260
+    }
+    else_if = {
+        limit = {
+            AND = {
+                has_trait = mm_royal_sky_king
+                has_variable = mm_asc_blood_source
+                exists = var:mm_asc_blood_source
+                var:mm_asc_blood_source = {
+                    has_variable = mm_asc_seat_anchor
+                    exists = var:mm_asc_seat_anchor
+                    var:mm_asc_seat_anchor = character:99001308
+                }
+            }
+        }
+        value = 240
+    }
+    # Uncatalogued kings fall back to their branch midpoint.
+    else_if = { limit = { has_trait = mm_royal_fire_king } value = 250 }
+    else_if = { limit = { has_trait = mm_royal_earth_king } value = 250 }
+    else_if = { limit = { has_trait = mm_royal_sea_king } value = 248 }
+    else_if = { limit = { has_trait = mm_royal_sky_king } value = 250 }
+}
+
+mm_royal_power_factor = {
+    value = mm_royal_power_cap
+    divide = mm_pod_elder_reference_prowess
+}
+
+myv_wyvern_target_prowess = {
+    value = 0
+    if = {
+        limit = { NOT = { has_trait = mm_royal_torpor } }
+        value = myv_wyvern_size_prowess
+        multiply = mm_wyvern_pod_size_power_factor
+        multiply = myv_wyvern_physique_prowess_multiplier
+        multiply = myv_wyvern_temperament_prowess_multiplier
+        if = {
+            limit = { mm_royal_is_king = yes }
+            multiply = mm_royal_power_factor
+        }
+        if = { limit = { has_character_modifier = myv_wyvern_enraged } multiply = 1.1 }
+
+        # Cap the fully fed size-based value before condition penalties.
+        max = mm_royal_power_cap
+        multiply = myv_wyvern_wing_injury_prowess_multiplier
+        multiply = myv_wyvern_hindleg_injury_prowess_multiplier
+        multiply = myv_wyvern_tail_injury_prowess_multiplier
+        multiply = mm_wyvern_hunger_power_multiplier
+        multiply = myv_wyvern_malnutrition_prowess_multiplier
+        if = {
+            limit = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger <= 0 }
+            value = 0
+        }
+        round = yes
+        min = 0
+        max = mm_royal_power_cap
+    }
+}

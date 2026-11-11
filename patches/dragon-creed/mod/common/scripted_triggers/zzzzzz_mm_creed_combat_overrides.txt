@@ -1,0 +1,8 @@
+# Character scope. Bloodline is a dependency of this module via wyvern-kings.
+mm_creed_is_founder_trigger = { rite = rite:mm_dragon_black }
+mm_creed_has_biological_blood_trigger = { mm_dragon_has_inheritable_blood_trigger = yes }
+mm_creed_earth_return_eligible_trigger = {
+    is_alive = yes
+    rite = rite:mm_dragon_earth
+    mm_creed_controls_qus_holy_site_trigger = yes
+}

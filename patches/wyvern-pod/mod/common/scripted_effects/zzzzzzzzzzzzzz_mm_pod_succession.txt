@@ -1,0 +1,158 @@
+﻿mm_pod_clear_previous_species_effect = {
+    if = {
+        limit = { NOT = { has_character_flag = mm_pod_royal_species_converted } }
+        # Fera reversion needs its old identity still present.
+        POD_remove_fera_on_embrace_effect = yes
+        POD_remove_splat_traits_effect = yes
+        POD_remove_vampire_clan_traits_effect = yes
+        POD_remove_vampire_generation_traits_effect = yes
+        POD_remove_vampire_discipline_traits_effect = yes
+        POD_remove_vampire_predatortype_traits_effect = yes
+        POD_remove_vampire_misc_traits_effect = yes
+        POD_remove_hunter_traits_effect = yes
+        POD_remove_mummy_traits_effect = yes
+        POD_remove_wraith_traits_effect = yes
+        POD_remove_wraith_arcanoi_traits_effect = yes
+        POD_remove_breed_traits_effect = yes
+        POD_remove_lunar_auspice_traits_effect = yes
+        POD_remove_pryio_traits_effect = yes
+        POD_remove_solar_auspice_traits_effect = yes
+        POD_remove_demon_traits_effect = yes
+        POD_remove_fae_kith_traits_effect = yes
+        POD_remove_fae_art_traits_effect = yes
+        POD_remove_fae_realm_traits_effect = yes
+        remove_trait = torpor
+        remove_trait = regnant
+        remove_trait = massregnant
+        remove_trait = unbondable
+        remove_trait = sire
+        remove_trait = masssire
+        remove_trait = diablerist
+        remove_trait = wight
+        remove_trait = exposed
+        remove_trait = oathbreaker
+        remove_trait = truefaith
+        remove_trait = beatific
+        remove_trait = witch
+        remove_trait = demonology
+        remove_trait = psychic
+        remove_trait = sorcerer
+        remove_trait = theurgist
+        remove_trait = gnosis
+        remove_trait = fomori
+        remove_trait = drone
+        remove_trait = gorgon
+        remove_trait = kami
+        POD_trait_injector_chi_arts = { EFFECT = POD_remove_trait }
+        remove_variable = fera_type
+        remove_trait = mm_dragon_half
+        remove_trait = mm_dragon_lineage_1
+        remove_trait = mm_dragon_lineage_2
+        remove_trait = mm_dragon_lineage_3
+        remove_trait = mm_dragon_lineage_4
+        remove_trait = mm_dragon_black_blood
+        remove_character_modifier = mm_dragon_diluted_blood_modifier
+        add_character_flag = mm_pod_royal_species_converted
+    }
+    add_trait = mm_pod_dragon_race
+    remove_trait = mortal
+    mm_pod_integrate_species_effect = yes
+}
+mm_pod_begin_royal_succession_effect = {
+    if = {
+        limit = { mm_pod_has_royal_trial_source = yes mm_asc_is_candidate = yes }
+        if = { limit = { var:mm_asc_source_rank = 4 } add_trait = mm_royal_black_emperor }
+        else_if = { limit = { var:mm_asc_source_rank = 3 } add_trait = mm_royal_white_empress }
+        else_if = { limit = { var:mm_asc_source_rank = 2 } add_trait = mm_royal_complete }
+        else = { add_trait = mm_royal_dragon_king }
+        if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_throne } } set_variable = { name = mm_royal_throne value = var:mm_asc_blood_source.var:mm_royal_throne } }
+        if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_creation_throne } } set_variable = { name = mm_royal_creation_throne value = var:mm_asc_blood_source.var:mm_royal_creation_throne } }
+        mm_royal_sync_throne_identity_trait_effect = yes
+        mm_pod_clear_previous_species_effect = yes
+        add_character_flag = mm_wyvern_human_form
+    }
+}
+mm_pod_claim_royal_seat_effect = {
+    save_scope_as = mm_asc_claimant
+    set_variable = { name = mm_asc_predecessor value = var:mm_asc_blood_source }
+    set_variable = { name = mm_asc_seat_anchor value = var:mm_asc_blood_source.var:mm_asc_seat_anchor }
+    var:mm_asc_seat_anchor = { set_variable = { name = mm_asc_current_incarnation value = scope:mm_asc_claimant } }
+    mm_asc_initialize_seats_effect = yes
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_throne } } set_variable = { name = mm_royal_throne value = var:mm_asc_blood_source.var:mm_royal_throne } }
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_creation_throne } } set_variable = { name = mm_royal_creation_throne value = var:mm_asc_blood_source.var:mm_royal_creation_throne } }
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_consumed_twin } } set_variable = { name = mm_royal_consumed_twin value = var:mm_asc_blood_source.var:mm_royal_consumed_twin } }
+    if = { limit = { var:mm_asc_source_rank = 4 } add_trait = mm_royal_black_emperor give_nickname = nick_mm_royal_black_emperor }
+    else_if = { limit = { var:mm_asc_source_rank = 3 } add_trait = mm_royal_white_empress give_nickname = nick_mm_royal_white_empress }
+    else_if = { limit = { var:mm_asc_source_rank = 2 } add_trait = mm_royal_complete mm_asc_complete_nickname_effect = yes }
+    else = { add_trait = mm_royal_dragon_king give_nickname = nick_mm_asc_successor mm_asc_reconnect_twin_effect = yes }
+    add_character_flag = mm_wyvern_legendary_origin
+    mm_royal_repair_profile_effect = yes
+    mm_royal_apply_physical_profile_effect = yes
+    myv_refresh_wyvern_prowess_effect = yes
+}
+mm_pod_complete_royal_succession_effect = {
+    if = {
+        limit = { mm_pod_has_royal_trial_source = yes has_trait = mm_asc_dragon_body }
+        if = { limit = { mm_asc_is_current_incarnation = no mm_asc_source_claim_valid = yes } mm_pod_claim_royal_seat_effect = yes }
+        mm_pod_clear_previous_species_effect = yes
+        myv_refresh_wyvern_prowess_effect = yes
+        mm_royal_queue_daily_effect = yes
+    }
+}
+mm_asc_receive_blood_effect = {
+    if = {
+        limit = {
+            is_alive = yes
+            exists = scope:myv_slay_wyvern_target
+            scope:myv_slay_wyvern_target = {
+                is_alive = no
+                OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin }
+            }
+        }
+        save_scope_as = mm_asc_claimant
+        scope:myv_slay_wyvern_target = {
+            mm_dragon_append_absorbed_origin_effect = { TARGET = scope:mm_asc_claimant }
+        }
+        if = {
+            limit = {
+                NOT = { has_trait = mm_wyvern_bathed_in_dragon_blood }
+                NOT = { has_trait = mm_asc_usurper_blood }
+                NOT = { has_trait = mm_asc_dragon_body }
+                NOT = { has_variable = mm_asc_outcome }
+                scope:myv_slay_wyvern_target = { NOT = { has_variable = mm_asc_blood_claimant } }
+            }
+            mm_asc_initialize_seats_effect = yes
+            scope:myv_slay_wyvern_target = {
+                mm_asc_initialize_seat_effect = yes
+                set_variable = { name = mm_asc_blood_claimant value = scope:mm_asc_claimant }
+            }
+            set_variable = { name = mm_asc_blood_source value = scope:myv_slay_wyvern_target }
+            set_variable = { name = mm_asc_last_erosion_year value = current_year }
+            mm_asc_snapshot_source_effect = yes
+            add_trait = mm_asc_usurper_blood
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value = 0 }
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value = 0 }
+            add_to_global_variable_list = { name = mm_asc_candidates target = this }
+            mm_asc_refresh_erosion_effect = yes
+        }
+    }
+
+    mm_pod_begin_royal_succession_effect = yes
+}
+mm_asc_finish_body_effect = {
+    remove_trait = mm_asc_usurper_blood
+    mm_asc_clear_negatives_effect = yes
+    add_trait = mm_asc_dragon_body
+    set_variable = { name = myv_wyvern_size value = var:mm_asc_source_size }
+    if = { limit = { has_variable = mm_asc_source_visual_tier } set_variable = { name = mm_royal_visual_tier value = var:mm_asc_source_visual_tier } }
+    set_variable = { name = myv_wyvern_color value = var:mm_asc_source_color }
+    set_variable = { name = myv_wyvern_hunger value = 100 }
+    set_variable = { name = myv_wyvern_malnutrition value = 0 }
+    myv_refresh_wyvern_portrait_flags_effect = yes
+    remove_list_global_variable = { name = mm_asc_candidates target = this }
+    add_to_global_variable_list = { name = mm_asc_sovereigns target = this }
+    remove_character_flag = mm_asc_claim_conflict
+    if = { limit = { var:mm_asc_outcome = flag:dragon } myv_refresh_wyvern_prowess_effect = yes mm_royal_queue_daily_effect = yes }
+
+    mm_pod_complete_royal_succession_effect = yes
+}

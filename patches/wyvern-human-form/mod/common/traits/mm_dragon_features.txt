@@ -1,0 +1,33 @@
+mm_dragon_tail = {
+	icon = "mm_dragon_tail.dds"
+	physical = yes
+	prowess = 1
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+mm_dragon_horns = {
+	icon = "mm_dragon_horns.dds"
+	physical = yes
+	monthly_prestige = 0.1
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+mm_dragon_pupils = {
+	icon = "mm_dragon_pupils.dds"
+	physical = yes
+	attraction_opinion = 5
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+mm_dragon_scales = {
+	icon = "mm_dragon_scales.dds"
+	physical = yes
+	health = 0.25
+	attraction_opinion = 5
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}

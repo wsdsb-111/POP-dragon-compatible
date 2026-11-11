@@ -1,0 +1,25 @@
+{
+  "method": "Actual UV triangle coverage and dominant original skin-bone categories; original red/green pixel differences; native HSV landmarks",
+  "categories": {
+    "wing_forelimb": "#4e91b5",
+    "tail": "#8b70b4",
+    "eye_face": "#d99849",
+    "jaw_mouth": "#bb7188",
+    "head_neck": "#77ac79",
+    "hindlimb": "#a69563",
+    "torso": "#ae856c"
+  },
+  "trianglesPerDominantRegion": {
+    "wing_forelimb": 3218,
+    "torso": 1506,
+    "head_neck": 6179,
+    "jaw_mouth": 2713,
+    "tail": 1906,
+    "eye_face": 529,
+    "hindlimb": 3492
+  },
+  "warning": "Bone influence groups are not exact anatomical material masks. Pale combines ventral and pale keratin; ridges use original blue chroma. Wing mask softening affects weights only, never source texture detail.",
+  "uvOrigin": "Native u0 direct top-left texture mapping; eye-weight UV range matches original amber-eye landmark.",
+  "protectedPixels": 72909,
+  "coveredPixels": 2060962
+}

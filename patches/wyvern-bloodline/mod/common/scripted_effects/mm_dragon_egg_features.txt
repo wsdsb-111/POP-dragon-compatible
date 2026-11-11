@@ -1,0 +1,31 @@
+mm_dragon_pick_egg_feature_effect = {
+	random_list = {
+        1 = {
+            modifier = { factor = 0 NOT = { scope:mm_dragon_half_dragon_parent = { has_trait = mm_dragon_tail } } }
+            modifier = { factor = 0 has_variable = mm_dragon_egg_tail }
+            set_variable = { name = mm_dragon_egg_tail value = yes }
+        }
+        1 = {
+            modifier = { factor = 0 NOT = { scope:mm_dragon_half_dragon_parent = { has_trait = mm_dragon_horns } } }
+            modifier = { factor = 0 has_variable = mm_dragon_egg_horns }
+            set_variable = { name = mm_dragon_egg_horns value = yes }
+        }
+        1 = {
+            modifier = { factor = 0 NOT = { scope:mm_dragon_half_dragon_parent = { has_trait = mm_dragon_pupils } } }
+            modifier = { factor = 0 has_variable = mm_dragon_egg_pupils }
+            set_variable = { name = mm_dragon_egg_pupils value = yes }
+        }
+        1 = {
+            modifier = { factor = 0 NOT = { scope:mm_dragon_half_dragon_parent = { has_trait = mm_dragon_scales } } }
+            modifier = { factor = 0 has_variable = mm_dragon_egg_scales }
+            set_variable = { name = mm_dragon_egg_scales value = yes }
+        }
+	}
+}
+
+mm_dragon_apply_egg_features_effect = {
+    if = { limit = { scope:mm_dragon_half_egg = { var:mm_dragon_egg_tail = yes } } add_trait = mm_dragon_tail }
+    if = { limit = { scope:mm_dragon_half_egg = { var:mm_dragon_egg_horns = yes } } add_trait = mm_dragon_horns }
+    if = { limit = { scope:mm_dragon_half_egg = { var:mm_dragon_egg_pupils = yes } } add_trait = mm_dragon_pupils }
+    if = { limit = { scope:mm_dragon_half_egg = { var:mm_dragon_egg_scales = yes } } add_trait = mm_dragon_scales }
+}

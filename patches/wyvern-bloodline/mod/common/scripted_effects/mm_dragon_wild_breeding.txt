@@ -1,0 +1,193 @@
+mm_dragon_wild_refresh_population_effect = {
+    set_global_variable = { name = mm_dragon_wild_population_count value = 0 }
+    every_in_global_list = {
+        variable = myv_living_wyverns
+        limit = { myv_is_living_wyvern = yes mm_dragon_wild_population_protected_trigger = no }
+        change_global_variable = { name = mm_dragon_wild_population_count add = 1 }
+    }
+}
+mm_dragon_wild_courtship_effect = {
+    if = {
+        limit = { current_month >= 3 current_month <= 5 mm_dragon_wild_male_ready_trigger = yes }
+        save_scope_as = mm_dragon_wild_male
+        clear_saved_scope = mm_dragon_wild_target
+        random_in_global_list = {
+            variable = myv_living_wyverns
+            limit = {
+                mm_dragon_wild_near_pair_trigger = { MALE = scope:mm_dragon_wild_male }
+                mm_dragon_wild_same_blood_trigger = { OTHER = scope:mm_dragon_wild_male }
+            }
+            save_scope_as = mm_dragon_wild_target
+        }
+        if = {
+            limit = { NOT = { exists = scope:mm_dragon_wild_target } }
+            random_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { mm_dragon_wild_near_pair_trigger = { MALE = scope:mm_dragon_wild_male } }
+                save_scope_as = mm_dragon_wild_target
+            }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_wild_target }
+            set_location = scope:mm_dragon_wild_target.location
+            set_variable = { name = mm_dragon_wild_courtship_target value = scope:mm_dragon_wild_target }
+            set_variable = { name = mm_dragon_wild_courtship_year value = current_year }
+        }
+    }
+}
+mm_dragon_wild_try_lay_effect = {
+    if = {
+        limit = { current_month >= 3 current_month <= 5 mm_dragon_wild_female_ready_trigger = yes }
+        save_scope_as = mm_dragon_wild_mother
+        clear_saved_scope = mm_dragon_wild_father
+        random_in_global_list = {
+            variable = myv_living_wyverns
+            limit = {
+                mm_dragon_wild_same_county_pair_trigger = { FEMALE = scope:mm_dragon_wild_mother }
+                mm_dragon_wild_same_blood_trigger = { OTHER = scope:mm_dragon_wild_mother }
+            }
+            save_scope_as = mm_dragon_wild_father
+        }
+        if = {
+            limit = { NOT = { exists = scope:mm_dragon_wild_father } }
+            random_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { mm_dragon_wild_same_county_pair_trigger = { FEMALE = scope:mm_dragon_wild_mother } }
+                save_scope_as = mm_dragon_wild_father
+            }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_wild_father }
+            set_variable = { name = mm_dragon_wild_attempt_year value = current_year }
+            random = {
+                chance = 10
+                save_scope_as = myv_wyvern_egg_mother
+                save_scope_as = myv_wyvern_egg_creator
+                scope:mm_dragon_wild_father = { save_scope_as = myv_wyvern_egg_father }
+                location = { save_scope_as = myv_wyvern_egg_location }
+                clear_saved_scope = myv_wyvern_egg
+                myv_create_stable_bred_wyvern_egg_artifact_effect = yes
+                if = {
+                    limit = { exists = scope:myv_wyvern_egg }
+                    set_variable = { name = mm_dragon_wild_current_egg value = scope:myv_wyvern_egg }
+                    add_character_flag = { flag = mm_dragon_wild_breeding_cooldown years = 5 }
+                    scope:myv_wyvern_egg = {
+                        set_variable = { name = mm_dragon_wild_egg value = yes }
+                        set_variable = { name = mm_dragon_wild_egg_lair value = scope:mm_dragon_wild_mother.var:myv_wyvern_lair_barony }
+                        set_variable = { name = mm_dragon_wild_hatch_year value = current_year }
+                        change_variable = { name = mm_dragon_wild_hatch_year add = 1 }
+                        set_variable = { name = mm_dragon_wild_hatch_month value = current_month }
+                        add_to_global_variable_list = { name = mm_dragon_wild_eggs target = this }
+                    }
+                }
+            }
+        }
+    }
+}
+mm_dragon_wild_hatch_effect = {
+    mm_dragon_wild_refresh_population_effect = yes
+    if = {
+        limit = { mm_dragon_wild_can_hatch_trigger = yes }
+        save_scope_as = mm_dragon_wild_hatching_egg
+        var:myv_wyvern_egg_mother = { save_scope_as = mm_dragon_wild_birth_mother }
+        var:myv_wyvern_egg_father = { save_scope_as = mm_dragon_wild_birth_father }
+        clear_saved_scope = mm_dragon_wild_new_child
+        set_variable = { name = mm_dragon_wild_hatch_started value = yes }
+        create_character = {
+            age = 0
+            gender_female_chance = 50
+            mother = scope:mm_dragon_wild_birth_mother
+            father = scope:mm_dragon_wild_birth_father
+            real_father = scope:mm_dragon_wild_birth_father
+            culture = scope:mm_dragon_wild_hatching_egg.var:mm_dragon_wild_egg_lair.province.culture
+            faith = faith:pagan
+            dynasty = none
+            random_traits = no
+            prowess = 0
+            location = scope:mm_dragon_wild_hatching_egg.var:mm_dragon_wild_egg_lair.province
+            trait = myv_wyvern
+            after_creation = {
+                save_scope_as = mm_dragon_wild_new_child
+                save_scope_as = myv_new_wyvern
+                add_character_flag = mm_dragon_wild_hatchling
+                random_list = {
+                    1 = { add_trait = myv_wyvern_physique_weak }
+                    1 = { add_trait = myv_wyvern_physique_normal }
+                    1 = { add_trait = myv_wyvern_physique_powerful }
+                }
+                myv_roll_wyvern_coordination_effect = yes
+                random_list = {
+                    1 = { add_trait = myv_wyvern_temperament_docile }
+                    1 = { add_trait = myv_wyvern_temperament_alert }
+                    1 = { add_trait = myv_wyvern_temperament_fierce }
+                }
+                set_variable = { name = myv_wyvern_size value = 5 }
+                set_variable = { name = myv_wyvern_hunger value = 100 }
+                set_variable = { name = myv_wyvern_color value = scope:mm_dragon_wild_hatching_egg.var:myv_wyvern_egg_color }
+                set_variable = { name = myv_wyvern_lair_barony value = scope:mm_dragon_wild_hatching_egg.var:mm_dragon_wild_egg_lair }
+                if = {
+                    limit = { scope:mm_dragon_wild_hatching_egg = { var:mm_dragon_legendary_egg = yes } }
+                    add_character_flag = mm_wyvern_legendary_origin
+                    add_trait = mm_wyvern_legendary_origin
+                }
+                mm_dragon_register_true_dragon_origins_effect = yes
+                mm_dragon_assign_regional_identity_effect = yes
+                myv_apply_wyvern_identity_effect = yes
+                myv_refresh_wyvern_prowess_effect = yes
+                add_to_global_variable_list = { name = myv_living_wyverns target = this }
+            }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_wild_new_child }
+            scope:mm_dragon_wild_birth_mother = { remove_variable = mm_dragon_wild_current_egg }
+            change_global_variable = { name = mm_dragon_wild_population_count add = 1 }
+            destroy_artifact = this
+        }
+        else = { remove_variable = mm_dragon_wild_hatch_started }
+    }
+}
+mm_dragon_wild_monthly_effect = {
+    if = {
+        limit = { NOT = {
+            has_global_variable = mm_dragon_wild_last_year
+            global_var:mm_dragon_wild_last_year = current_year
+            global_var:mm_dragon_wild_last_month = current_month
+        } }
+        set_global_variable = { name = mm_dragon_wild_last_year value = current_year }
+        set_global_variable = { name = mm_dragon_wild_last_month value = current_month }
+        every_in_global_list = {
+            variable = mm_dragon_wild_eggs
+            limit = { has_variable = mm_dragon_wild_egg exists = artifact_owner }
+            if = {
+                limit = { artifact_owner = {
+                    OR = { mm_dragon_is_true_dragon_parent_trigger = no mm_dragon_is_independent_royal_parent_trigger = yes }
+                } }
+                # Human ownership resumes normal inventory/equipped egg rules.
+                if = {
+                    limit = { exists = var:myv_wyvern_egg_mother }
+                    save_scope_as = mm_dragon_wild_transferred_egg
+                    var:myv_wyvern_egg_mother = {
+                        if = {
+                            limit = { var:mm_dragon_wild_current_egg = scope:mm_dragon_wild_transferred_egg }
+                            remove_variable = mm_dragon_wild_current_egg
+                        }
+                    }
+                }
+            }
+            else = { mm_dragon_wild_hatch_effect = yes }
+        }
+        if = {
+            limit = { current_month >= 3 current_month <= 5 }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { mm_dragon_wild_male_ready_trigger = yes }
+                mm_dragon_wild_courtship_effect = yes
+            }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { mm_dragon_wild_female_ready_trigger = yes }
+                mm_dragon_wild_try_lay_effect = yes
+            }
+        }
+    }
+}

@@ -1,0 +1,309 @@
+mm_royal_native_recovery_effect = {
+    if = {
+        limit = { has_trait = myv_wyvern_combat_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value > 0 } NOT = { has_trait = myv_wyvern_eye_injuries } } add_trait = myv_wyvern_eye_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value > 0 } NOT = { has_trait = myv_wyvern_wing_injuries } } add_trait = myv_wyvern_wing_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value > 0 } NOT = { has_trait = myv_wyvern_hindleg_injuries } } add_trait = myv_wyvern_hindleg_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value > 0 } NOT = { has_trait = myv_wyvern_tail_injury } } add_trait = myv_wyvern_tail_injury }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 1 }
+        }
+        remove_trait = myv_wyvern_combat_injuries
+    }
+
+    if = {
+    limit = { always = yes }
+    if = {
+        limit = { rite = rite:mm_dragon_sky }
+        if = { limit = { NOT = { has_variable = mm_creed_recovery_remainder } } set_variable = { name = mm_creed_recovery_remainder value = 0 } }
+        change_variable = { name = mm_creed_recovery_remainder add = 1 }
+        if = {
+            limit = { var:mm_creed_recovery_remainder >= 10 }
+            change_variable = { name = mm_creed_recovery_remainder subtract = 10 }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } } add_trait_xp = { trait = myv_wyvern_tail_injury value = -1 } }
+        }
+    }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } } add_trait_xp = { trait = myv_wyvern_tail_injury value = -1 } }
+
+    if = {
+        limit = {
+            has_trait = myv_wyvern_eye_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } }
+        }
+        remove_trait = myv_wyvern_eye_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_wing_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } }
+        }
+        remove_trait = myv_wyvern_wing_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_hindleg_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } }
+        }
+        remove_trait = myv_wyvern_hindleg_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_tail_injury
+            NOT = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } }
+        }
+        remove_trait = myv_wyvern_tail_injury
+    }
+    }
+    # Recovery can cross a grade boundary, so keep the native value used by
+    # knights and hunt advantage calculations synchronized immediately.
+    myv_refresh_wyvern_prowess_effect = yes
+}
+
+mm_dragon_ordinary_monthly_recovery_effect = {
+    if = {
+        limit = { has_trait = myv_wyvern_combat_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value > 0 } NOT = { has_trait = myv_wyvern_eye_injuries } } add_trait = myv_wyvern_eye_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value > 0 } NOT = { has_trait = myv_wyvern_wing_injuries } } add_trait = myv_wyvern_wing_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value > 0 } NOT = { has_trait = myv_wyvern_hindleg_injuries } } add_trait = myv_wyvern_hindleg_injuries }
+        if = { limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value > 0 } NOT = { has_trait = myv_wyvern_tail_injury } } add_trait = myv_wyvern_tail_injury }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_eye value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_wing value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_hindleg value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = 1 }
+        }
+        if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 100 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 100 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 75 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 75 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 50 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 50 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value >= 25 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 25 }
+        }
+        else_if = {
+            limit = { has_trait_xp = { trait = myv_wyvern_combat_injuries track = myv_wyvern_wound_tail value > 0 } }
+            add_trait_xp = { trait = myv_wyvern_tail_injury value = 1 }
+        }
+        remove_trait = myv_wyvern_combat_injuries
+    }
+
+    if = {
+    limit = { always = yes }
+    if = {
+        limit = { rite = rite:mm_dragon_sky }
+        if = { limit = { NOT = { has_variable = mm_creed_recovery_remainder } } set_variable = { name = mm_creed_recovery_remainder value = 0 } }
+        change_variable = { name = mm_creed_recovery_remainder add = 5 }
+        if = {
+            limit = { var:mm_creed_recovery_remainder >= 10 }
+            change_variable = { name = mm_creed_recovery_remainder subtract = 10 }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value = -1 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } } add_trait_xp = { trait = myv_wyvern_tail_injury value = -1 } }
+        }
+    }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } } add_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } } add_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } } add_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value = -5 } }
+    if = { limit = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } } add_trait_xp = { trait = myv_wyvern_tail_injury value = -5 } }
+
+    if = {
+        limit = {
+            has_trait = myv_wyvern_eye_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_left_eye value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_eye_injuries track = myv_wyvern_wound_right_eye value > 0 } }
+        }
+        remove_trait = myv_wyvern_eye_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_wing_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_left_wing value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_wing_injuries track = myv_wyvern_wound_right_wing value > 0 } }
+        }
+        remove_trait = myv_wyvern_wing_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_hindleg_injuries
+            NOT = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_left_hindleg value > 0 } }
+            NOT = { has_trait_xp = { trait = myv_wyvern_hindleg_injuries track = myv_wyvern_wound_right_hindleg value > 0 } }
+        }
+        remove_trait = myv_wyvern_hindleg_injuries
+    }
+    if = {
+        limit = {
+            has_trait = myv_wyvern_tail_injury
+            NOT = { has_trait_xp = { trait = myv_wyvern_tail_injury value > 0 } }
+        }
+        remove_trait = myv_wyvern_tail_injury
+    }
+    }
+    # Recovery can cross a grade boundary, so keep the native value used by
+    # knights and hunt advantage calculations synchronized immediately.
+    myv_refresh_wyvern_prowess_effect = yes
+}
+
+myv_wyvern_monthly_combat_injury_recovery_effect = {
+    if = { limit = { mm_royal_is_king = no } mm_dragon_ordinary_monthly_recovery_effect = yes }
+}

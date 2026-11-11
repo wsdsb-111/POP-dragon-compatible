@@ -1,0 +1,78 @@
+﻿# Each artifact rolls independently, without replacement between categories.
+mm_wyvern_apply_trophy_affixes_effect = {
+	if = {
+		limit = { NOT = { has_variable = mm_wyvern_trophy_affixes_generated } }
+		remove_artifact_modifier = artifact_placeholder_modifier
+		remove_artifact_modifier = artifact_monthly_minor_prestige_1_modifier
+		mm_wyvern_roll_trophy_affix_effect = yes
+		mm_wyvern_roll_trophy_affix_effect = yes
+		mm_wyvern_roll_trophy_affix_effect = yes
+		if = { limit = { rarity = illustrious } mm_wyvern_roll_trophy_affix_effect = yes }
+		set_variable = { name = mm_wyvern_trophy_affixes_generated value = 1 }
+	}
+}
+
+mm_wyvern_roll_trophy_affix_effect = {
+	random_list = {
+		100 = { # prowess
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_prowess_3_modifier has_artifact_modifier = artifact_prowess_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_prowess_5_modifier }
+			else = { add_artifact_modifier = artifact_prowess_3_modifier }
+		}
+		100 = { # knight_effectiveness
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_knight_effectiveness_5_modifier has_artifact_modifier = artifact_knight_effectiveness_8_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_knight_effectiveness_8_modifier }
+			else = { add_artifact_modifier = artifact_knight_effectiveness_5_modifier }
+		}
+		100 = { # health
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_health_gain_2_modifier has_artifact_modifier = artifact_health_gain_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_health_gain_4_modifier }
+			else = { add_artifact_modifier = artifact_health_gain_2_modifier }
+		}
+		100 = { # prestige
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_prestige_3_modifier has_artifact_modifier = artifact_monthly_prestige_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_prestige_5_modifier }
+			else = { add_artifact_modifier = artifact_monthly_prestige_3_modifier }
+		}
+		100 = { # piety
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_piety_3_modifier has_artifact_modifier = artifact_monthly_piety_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_piety_5_modifier }
+			else = { add_artifact_modifier = artifact_monthly_piety_3_modifier }
+		}
+		100 = { # grandeur
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_court_grandeur_baseline_add_2_modifier has_artifact_modifier = artifact_court_grandeur_baseline_add_3_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_court_grandeur_baseline_add_3_modifier }
+			else = { add_artifact_modifier = artifact_court_grandeur_baseline_add_2_modifier }
+		}
+		100 = { # dread
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_dread_baseline_add_2_modifier has_artifact_modifier = artifact_dread_baseline_add_3_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_dread_baseline_add_3_modifier }
+			else = { add_artifact_modifier = artifact_dread_baseline_add_2_modifier }
+		}
+		100 = { # stress
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_stress_gain_3_modifier has_artifact_modifier = artifact_stress_gain_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_stress_gain_4_modifier }
+			else = { add_artifact_modifier = artifact_stress_gain_3_modifier }
+		}
+		100 = { # income
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_income_3_modifier has_artifact_modifier = artifact_monthly_income_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_income_4_modifier }
+			else = { add_artifact_modifier = artifact_monthly_income_3_modifier }
+		}
+		100 = { # dynasty_opinion
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_dynasty_opinion_4_modifier has_artifact_modifier = artifact_dynasty_opinion_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_dynasty_opinion_5_modifier }
+			else = { add_artifact_modifier = artifact_dynasty_opinion_4_modifier }
+		}
+		100 = { # short_reign
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_short_reign_duration_mult_3_modifier has_artifact_modifier = artifact_short_reign_duration_mult_5_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_short_reign_duration_mult_5_modifier }
+			else = { add_artifact_modifier = artifact_short_reign_duration_mult_3_modifier }
+		}
+		100 = { # renown
+			trigger = { NOT = { OR = { has_artifact_modifier = artifact_monthly_dynasty_prestige_2_modifier has_artifact_modifier = artifact_monthly_dynasty_prestige_4_modifier } } }
+			if = { limit = { rarity = illustrious } add_artifact_modifier = artifact_monthly_dynasty_prestige_4_modifier }
+			else = { add_artifact_modifier = artifact_monthly_dynasty_prestige_2_modifier }
+		}
+	}
+}

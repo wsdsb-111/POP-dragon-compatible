@@ -1,0 +1,13 @@
+namespace = mm_dragon_death_servants
+mm_dragon_death_servants.1 = {
+    type = character_event
+    hidden = yes
+    trigger = { is_alive = yes has_trait = mm_dragon_death_servant }
+    immediate = {
+        mm_ds_daily_rampage_effect = yes
+        if = {
+            limit = { is_alive = yes has_trait = mm_dragon_death_servant }
+            trigger_event = { id = mm_dragon_death_servants.1 days = 1 }
+        }
+    }
+}

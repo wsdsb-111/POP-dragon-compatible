@@ -1,0 +1,341 @@
+# One exact historical seat; the dead anchor is never revived or replaced.
+mm_asc_initialize_seat_effect = {
+    if = {
+        limit = { NOT = { has_variable = mm_asc_seat_anchor } }
+        set_variable = { name = mm_asc_seat_anchor value = this }
+    }
+    if = {
+        limit = { NOT = { has_variable = mm_asc_current_incarnation } }
+        set_variable = { name = mm_asc_current_incarnation value = this }
+    }
+}
+
+mm_asc_initialize_seats_effect = {
+    if = {
+        limit = { exists = character:99001001 }
+        character:99001001 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001001 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001002 }
+        character:99001002 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001002 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001003 }
+        character:99001003 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001003 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001304 }
+        character:99001304 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001304 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001305 }
+        character:99001305 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001305 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001306 }
+        character:99001306 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001306 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001307 }
+        character:99001307 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001307 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001308 }
+        character:99001308 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001308 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001309 }
+        character:99001309 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001309 value = var:mm_asc_current_incarnation }
+        }
+    }
+    if = {
+        limit = { exists = character:99001310 }
+        character:99001310 = {
+            mm_asc_initialize_seat_effect = yes
+            set_global_variable = { name = mm_asc_seat_99001310 value = var:mm_asc_current_incarnation }
+        }
+    }
+}
+
+# Caller: the surviving actual killer, after the original target's death.
+# A reservation on the exact corpse prevents two contenders claiming one seat.
+mm_asc_receive_blood_effect = {
+    if = {
+        limit = {
+            is_alive = yes
+            exists = scope:myv_slay_wyvern_target
+            scope:myv_slay_wyvern_target = {
+                is_alive = no
+                OR = { has_trait = myv_wyvern_legendary has_character_flag = mm_wyvern_legendary_origin }
+            }
+        }
+        save_scope_as = mm_asc_claimant
+        scope:myv_slay_wyvern_target = {
+            mm_dragon_append_absorbed_origin_effect = { TARGET = scope:mm_asc_claimant }
+        }
+        if = {
+            limit = {
+                NOT = { has_trait = mm_wyvern_bathed_in_dragon_blood }
+                NOT = { has_trait = mm_asc_usurper_blood }
+                NOT = { has_trait = mm_asc_dragon_body }
+                NOT = { has_variable = mm_asc_outcome }
+                scope:myv_slay_wyvern_target = { NOT = { has_variable = mm_asc_blood_claimant } }
+            }
+            mm_asc_initialize_seats_effect = yes
+            scope:myv_slay_wyvern_target = {
+                mm_asc_initialize_seat_effect = yes
+                set_variable = { name = mm_asc_blood_claimant value = scope:mm_asc_claimant }
+            }
+            set_variable = { name = mm_asc_blood_source value = scope:myv_slay_wyvern_target }
+            set_variable = { name = mm_asc_last_erosion_year value = current_year }
+            mm_asc_snapshot_source_effect = yes
+            add_trait = mm_asc_usurper_blood
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value = 0 }
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value = 0 }
+            add_to_global_variable_list = { name = mm_asc_candidates target = this }
+            mm_asc_refresh_erosion_effect = yes
+        }
+    }
+}
+
+# Immutable appearance/rank snapshot from the actual source, not its name.
+mm_asc_snapshot_source_effect = {
+    if = {
+        limit = { exists = var:mm_asc_blood_source }
+        if = { limit = { var:mm_asc_blood_source = { has_variable = myv_wyvern_size } } set_variable = { name = mm_asc_source_size value = var:mm_asc_blood_source.var:myv_wyvern_size } }
+        set_variable = { name = mm_asc_source_visual_tier value = var:mm_asc_blood_source.myv_wyvern_visual_size_tier }
+        set_variable = { name = mm_asc_source_reference_size value = var:mm_asc_blood_source.mm_royal_reference_size }
+        set_variable = { name = mm_asc_source_reference_mass value = var:mm_asc_blood_source.mm_royal_reference_mass }
+        if = {
+            limit = { var:mm_asc_source_reference_size > 0 }
+            set_variable = { name = mm_asc_source_size value = { value = var:mm_asc_blood_source.myv_wyvern_display_size min = var:mm_asc_source_reference_size } }
+        }
+        if = { limit = { var:mm_asc_blood_source = { has_variable = myv_wyvern_color } } set_variable = { name = mm_asc_source_color value = var:mm_asc_blood_source.var:myv_wyvern_color } }
+        set_variable = { name = mm_asc_source_rank value = 1 }
+        if = { limit = { var:mm_asc_blood_source = { has_trait = mm_royal_complete } } set_variable = { name = mm_asc_source_rank value = 2 } }
+        else_if = { limit = { var:mm_asc_blood_source = { has_trait = mm_royal_white_empress } } set_variable = { name = mm_asc_source_rank value = 3 } }
+        else_if = { limit = { var:mm_asc_blood_source = { has_trait = mm_royal_black_emperor } } set_variable = { name = mm_asc_source_rank value = 4 } }
+        if = { limit = { var:mm_asc_source_rank = 3 } set_variable = { name = mm_asc_visual_family value = 5 } }
+        else_if = { limit = { var:mm_asc_source_rank = 4 } set_variable = { name = mm_asc_visual_family value = 6 } }
+        else_if = {
+            limit = { var:mm_asc_blood_source = { has_variable = mm_royal_throne var:mm_royal_throne > 0 } }
+            set_variable = { name = mm_asc_visual_family value = var:mm_asc_blood_source.var:mm_royal_throne }
+        }
+        else = { set_variable = { name = mm_asc_visual_family value = 0 } }
+    }
+}
+
+mm_asc_clear_negatives_effect = {
+    remove_character_modifier = mm_asc_erosion_0
+    remove_character_modifier = mm_asc_erosion_25
+    remove_character_modifier = mm_asc_erosion_50
+    remove_character_modifier = mm_asc_erosion_75
+    remove_character_modifier = mm_asc_whispers
+    remove_character_modifier = mm_asc_whisper_paranoia
+    remove_character_modifier = mm_asc_whisper_madness
+}
+
+mm_asc_refresh_erosion_effect = {
+    if = {
+        limit = { mm_asc_is_candidate = yes }
+        remove_character_modifier = mm_asc_erosion_0
+        remove_character_modifier = mm_asc_erosion_25
+        remove_character_modifier = mm_asc_erosion_50
+        remove_character_modifier = mm_asc_erosion_75
+        if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 75 } } add_character_modifier = mm_asc_erosion_75 }
+        else_if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 50 } } add_character_modifier = mm_asc_erosion_50 }
+        else_if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 25 } } add_character_modifier = mm_asc_erosion_25 }
+        else = { add_character_modifier = mm_asc_erosion_0 }
+        if = { limit = { NOT = { has_character_modifier = mm_asc_whispers } } add_character_modifier = mm_asc_whispers }
+    }
+}
+
+mm_asc_yearly_effect = {
+    if = {
+        limit = {
+            mm_asc_is_candidate = yes
+            OR = { NOT = { has_variable = mm_asc_last_erosion_year } var:mm_asc_last_erosion_year < current_year }
+        }
+        set_variable = { name = mm_asc_last_erosion_year value = current_year }
+        # Resolve already-full tracks before another mutation or whisper roll.
+        mm_asc_resolve_effect = yes
+        if = {
+            limit = { mm_asc_is_candidate = yes NOT = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 } } }
+            add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value = mm_asc_erosion_per_year }
+            mm_asc_resolve_effect = yes
+            mm_asc_refresh_erosion_effect = yes
+            if = {
+                limit = { mm_asc_is_candidate = yes NOT = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 } } }
+                if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 75 } } random = { chance = 75 trigger_event = mm_asc.0001 } }
+                else_if = { limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 50 } } random = { chance = 50 trigger_event = mm_asc.0001 } }
+                else = { random = { chance = 25 trigger_event = mm_asc.0001 } }
+            }
+        }
+    }
+}
+
+mm_asc_perform_ritual_effect = {
+    mm_asc_resolve_effect = yes
+    if = {
+        limit = { mm_asc_can_ritual = yes }
+        set_variable = { name = mm_asc_last_ritual_year value = current_year }
+        add_gold = { value = mm_asc_ritual_gold multiply = -1 }
+        add_piety = { value = mm_asc_ritual_piety multiply = -1 }
+        add_prestige = { value = mm_asc_ritual_prestige multiply = -1 }
+        add_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value = mm_asc_fusion_per_ritual }
+        mm_asc_resolve_effect = yes
+    }
+}
+
+# The outcome lock is written only after the source/seat claim is revalidated.
+# An abnormal pre-existing double-full state deterministically erodes first.
+mm_asc_resolve_effect = {
+    if = {
+        limit = { has_character_flag = mm_asc_black_trial }
+        mm_asc_resolve_black_trial_effect = yes
+    }
+    else_if = {
+        limit = { mm_asc_is_candidate = yes }
+        if = {
+            limit = {
+                OR = {
+                    has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 }
+                    has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_fusion value >= 100 }
+                }
+            }
+            if = {
+                limit = { mm_asc_source_claim_valid = yes }
+                if = {
+                    limit = { has_trait_xp = { trait = mm_asc_usurper_blood track = mm_asc_erosion value >= 100 } }
+                    set_variable = { name = mm_asc_outcome value = flag:dragon }
+                    mm_asc_inherit_throne_effect = yes
+                    mm_asc_finish_body_effect = yes
+                    add_character_flag = mm_asc_dragon_form
+                    remove_character_flag = mm_wyvern_human_form
+                    trigger_event = mm_asc.0003
+                }
+                else = {
+                    set_variable = { name = mm_asc_outcome value = flag:fusion }
+                    remove_trait = mm_asc_usurper_blood
+                    add_trait = mm_wyvern_bathed_in_dragon_blood
+                    mm_asc_finish_body_effect = yes
+                    remove_character_flag = mm_asc_dragon_form
+                    add_character_flag = mm_wyvern_human_form
+                    trigger_event = mm_asc.0002
+                }
+            }
+            else_if = {
+                limit = { NOT = { has_character_flag = mm_asc_claim_conflict } }
+                add_character_flag = mm_asc_claim_conflict
+                trigger_event = mm_asc.0004
+            }
+        }
+    }
+}
+
+mm_asc_finish_body_effect = {
+    remove_trait = mm_asc_usurper_blood
+    mm_asc_clear_negatives_effect = yes
+    add_trait = mm_asc_dragon_body
+    set_variable = { name = myv_wyvern_size value = var:mm_asc_source_size }
+    if = { limit = { has_variable = mm_asc_source_visual_tier } set_variable = { name = mm_royal_visual_tier value = var:mm_asc_source_visual_tier } }
+    set_variable = { name = myv_wyvern_color value = var:mm_asc_source_color }
+    set_variable = { name = myv_wyvern_hunger value = 100 }
+    set_variable = { name = myv_wyvern_malnutrition value = 0 }
+    myv_refresh_wyvern_portrait_flags_effect = yes
+    remove_list_global_variable = { name = mm_asc_candidates target = this }
+    add_to_global_variable_list = { name = mm_asc_sovereigns target = this }
+    remove_character_flag = mm_asc_claim_conflict
+    if = { limit = { var:mm_asc_outcome = flag:dragon } myv_refresh_wyvern_prowess_effect = yes mm_royal_queue_daily_effect = yes }
+}
+
+mm_asc_inherit_throne_effect = {
+    save_scope_as = mm_asc_claimant
+    set_variable = { name = mm_asc_predecessor value = var:mm_asc_blood_source }
+    set_variable = { name = mm_asc_seat_anchor value = var:mm_asc_blood_source.var:mm_asc_seat_anchor }
+    var:mm_asc_seat_anchor = { set_variable = { name = mm_asc_current_incarnation value = scope:mm_asc_claimant } }
+    mm_asc_initialize_seats_effect = yes
+    change_first_name = { template_character = var:mm_asc_blood_source }
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_throne } } set_variable = { name = mm_royal_throne value = var:mm_asc_blood_source.var:mm_royal_throne } }
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_creation_throne } } set_variable = { name = mm_royal_creation_throne value = var:mm_asc_blood_source.var:mm_royal_creation_throne } }
+    if = { limit = { var:mm_asc_blood_source = { has_variable = mm_royal_consumed_twin } } set_variable = { name = mm_royal_consumed_twin value = var:mm_asc_blood_source.var:mm_royal_consumed_twin } }
+    if = { limit = { var:mm_asc_source_rank = 4 } add_trait = mm_royal_black_emperor give_nickname = nick_mm_royal_black_emperor }
+    else_if = { limit = { var:mm_asc_source_rank = 3 } add_trait = mm_royal_white_empress give_nickname = nick_mm_royal_white_empress }
+    else_if = { limit = { var:mm_asc_source_rank = 2 } add_trait = mm_royal_complete mm_asc_complete_nickname_effect = yes }
+    else = { add_trait = mm_royal_dragon_king give_nickname = nick_mm_asc_successor mm_asc_reconnect_twin_effect = yes }
+    add_character_flag = mm_wyvern_legendary_origin
+    mm_royal_repair_profile_effect = yes
+    mm_royal_apply_physical_profile_effect = yes
+    myv_refresh_wyvern_prowess_effect = yes
+}
+
+mm_asc_complete_nickname_effect = {
+    if = { limit = { var:mm_royal_throne = 1 } give_nickname = nick_mm_royal_complete_fire }
+    else_if = { limit = { var:mm_royal_throne = 2 } give_nickname = nick_mm_royal_complete_earth }
+    else_if = { limit = { var:mm_royal_throne = 3 } give_nickname = nick_mm_royal_complete_sea }
+    else_if = { limit = { var:mm_royal_throne = 4 } give_nickname = nick_mm_royal_complete_sky }
+}
+
+mm_asc_reconnect_twin_effect = {
+    if = {
+        limit = { var:mm_asc_blood_source = { exists = var:mm_royal_twin } }
+        set_variable = { name = mm_royal_twin value = var:mm_asc_blood_source.var:mm_royal_twin }
+        # A dead counterpart may itself have a new living incarnation.
+        if = {
+            limit = { var:mm_royal_twin = { exists = var:mm_asc_seat_anchor } }
+            set_variable = { name = mm_royal_twin value = var:mm_royal_twin.var:mm_asc_seat_anchor.var:mm_asc_current_incarnation }
+        }
+        if = {
+            limit = { var:mm_royal_twin = { is_alive = yes has_trait = mm_royal_dragon_king } }
+            set_relation_mm_dragon_twin = var:mm_royal_twin
+            var:mm_royal_twin = {
+                if = { limit = { exists = var:mm_royal_twin } remove_relation_mm_dragon_twin = var:mm_royal_twin }
+                set_variable = { name = mm_royal_twin value = scope:mm_asc_claimant }
+                set_relation_mm_dragon_twin = scope:mm_asc_claimant
+            }
+        }
+    }
+}
+
+# Shape changes alter appearance only. Fusion never takes a throne or a name;
+# either result can return to the original human phenotype on the same ID.
+mm_asc_change_form_effect = {
+    if = {
+        limit = { mm_asc_can_change_form = yes }
+        if = {
+            limit = { has_character_flag = mm_asc_dragon_form }
+            remove_character_flag = mm_asc_dragon_form
+            add_character_flag = mm_wyvern_human_form
+        }
+        else = {
+            add_character_flag = mm_asc_dragon_form
+            remove_character_flag = mm_wyvern_human_form
+        }
+    }
+}

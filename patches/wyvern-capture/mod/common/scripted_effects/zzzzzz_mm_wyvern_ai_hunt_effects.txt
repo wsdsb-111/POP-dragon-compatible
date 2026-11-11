@@ -1,0 +1,25 @@
+﻿myv_wyvern_ai_attempt_slay_effect = {
+ clear_saved_scope = myv_slay_wyvern_target
+ save_scope_as = myv_wyvern_ai_slay_hunter
+ if = {
+  limit = { myv_can_ai_attempt_wyvern_slay = yes has_global_variable_list = myv_living_wyverns }
+  random = {
+   chance = myv_wyvern_ai_slay_quarterly_chance
+   random_in_global_list = {
+    variable = myv_living_wyverns
+    limit = {
+     myv_is_living_wild_wyvern = yes
+     in_diplomatic_range = scope:myv_wyvern_ai_slay_hunter
+     OR = {
+      scope:myv_wyvern_ai_slay_hunter = { prowess > 60 }
+      AND = { mm_wyvern_is_legendary_blood = no scope:myv_wyvern_ai_slay_hunter = { prowess > 30 } }
+     }
+    }
+    save_scope_as = myv_slay_wyvern_target
+   }
+   if = { limit = { exists = scope:myv_slay_wyvern_target } trigger_event = myv_wyvern_ai_slay.0001 }
+  }
+ }
+ clear_saved_scope = myv_slay_wyvern_target
+ clear_saved_scope = myv_wyvern_ai_slay_hunter
+}

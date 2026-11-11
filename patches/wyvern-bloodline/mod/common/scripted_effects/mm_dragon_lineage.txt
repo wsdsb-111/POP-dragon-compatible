@@ -1,0 +1,376 @@
+# SOURCE character scope. CHILD/TARGET is an explicit character, never an owner.
+mm_dragon_append_biological_origin_effect = {
+    save_scope_as = mm_dragon_api_source
+    $CHILD$ = {
+        mm_dragon_prepare_biological_origins_effect = yes
+        if = {
+            limit = { NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = scope:mm_dragon_api_source } } }
+            add_to_variable_list = { name = mm_dragon_origins target = scope:mm_dragon_api_source }
+            if = { limit = { NOT = { has_variable = mm_dragon_origin_count } } set_variable = { name = mm_dragon_origin_count value = 0 } }
+            change_variable = { name = mm_dragon_origin_count add = 1 }
+            if = { limit = { var:mm_dragon_origin_count = 1 } set_variable = { name = mm_dragon_origin_1 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 2 } set_variable = { name = mm_dragon_origin_2 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 3 } set_variable = { name = mm_dragon_origin_3 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 4 } set_variable = { name = mm_dragon_origin_4 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 5 } set_variable = { name = mm_dragon_origin_5 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 6 } set_variable = { name = mm_dragon_origin_6 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 7 } set_variable = { name = mm_dragon_origin_7 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 8 } set_variable = { name = mm_dragon_origin_8 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 9 } set_variable = { name = mm_dragon_origin_9 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 10 } set_variable = { name = mm_dragon_origin_10 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 11 } set_variable = { name = mm_dragon_origin_11 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 12 } set_variable = { name = mm_dragon_origin_12 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 13 } set_variable = { name = mm_dragon_origin_13 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 14 } set_variable = { name = mm_dragon_origin_14 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 15 } set_variable = { name = mm_dragon_origin_15 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_origin_count = 16 } set_variable = { name = mm_dragon_origin_16 value = scope:mm_dragon_api_source } }
+        }
+    }
+    if = { limit = { OR = { mm_dragon_source_is_fire_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_fire } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_fire value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sea_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sea } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_sea value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sky_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sky } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_sky value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_earth_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_earth } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_earth value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_white_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_white } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_white value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_black_trigger = yes AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_black } } } $CHILD$ = { set_variable = { name = mm_dragon_bio_black value = yes } } }
+    $CHILD$ = { mm_dragon_refresh_branch_traits_effect = yes }
+}
+mm_dragon_append_absorbed_origin_effect = {
+    save_scope_as = mm_dragon_api_source
+    $TARGET$ = {
+        if = { limit = { NOT = { has_variable = mm_dragon_absorption_points } } set_variable = { name = mm_dragon_absorption_points value = 0 } }
+        if = {
+            limit = { NOT = { is_target_in_variable_list = { name = mm_dragon_absorbed_sources target = scope:mm_dragon_api_source } } }
+            add_to_variable_list = { name = mm_dragon_absorbed_sources target = scope:mm_dragon_api_source }
+            if = { limit = { NOT = { has_variable = mm_dragon_absorbed_source_count } } set_variable = { name = mm_dragon_absorbed_source_count value = 0 } }
+            change_variable = { name = mm_dragon_absorbed_source_count add = 1 }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 1 } set_variable = { name = mm_dragon_absorbed_source_1 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 2 } set_variable = { name = mm_dragon_absorbed_source_2 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 3 } set_variable = { name = mm_dragon_absorbed_source_3 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 4 } set_variable = { name = mm_dragon_absorbed_source_4 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 5 } set_variable = { name = mm_dragon_absorbed_source_5 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 6 } set_variable = { name = mm_dragon_absorbed_source_6 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 7 } set_variable = { name = mm_dragon_absorbed_source_7 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 8 } set_variable = { name = mm_dragon_absorbed_source_8 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 9 } set_variable = { name = mm_dragon_absorbed_source_9 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 10 } set_variable = { name = mm_dragon_absorbed_source_10 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 11 } set_variable = { name = mm_dragon_absorbed_source_11 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 12 } set_variable = { name = mm_dragon_absorbed_source_12 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 13 } set_variable = { name = mm_dragon_absorbed_source_13 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 14 } set_variable = { name = mm_dragon_absorbed_source_14 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 15 } set_variable = { name = mm_dragon_absorbed_source_15 value = scope:mm_dragon_api_source } }
+            if = { limit = { var:mm_dragon_absorbed_source_count = 16 } set_variable = { name = mm_dragon_absorbed_source_16 value = scope:mm_dragon_api_source } }
+        }
+    }
+    if = { limit = { OR = { mm_dragon_source_is_fire_trigger = yes has_variable = mm_dragon_absorbed_fire AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_fire } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_fire value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sea_trigger = yes has_variable = mm_dragon_absorbed_sea AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sea } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_sea value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_sky_trigger = yes has_variable = mm_dragon_absorbed_sky AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_sky } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_sky value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_earth_trigger = yes has_variable = mm_dragon_absorbed_earth AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_earth } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_earth value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_absorbed_white AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_white } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_white value = yes } } }
+    if = { limit = { OR = { mm_dragon_source_is_black_trigger = yes has_variable = mm_dragon_absorbed_black AND = { mm_dragon_source_has_defined_branch_trigger = no has_variable = mm_dragon_bio_black } } } $TARGET$ = { set_variable = { name = mm_dragon_absorbed_black value = yes } } }
+    $TARGET$ = { mm_dragon_refresh_branch_traits_effect = yes }
+}
+# TARGET character scope; acquired branches are visible but never inheritance input.
+mm_dragon_refresh_branch_traits_effect = {
+    # Recompute only when every exact source carries usable branch evidence.
+    # Unknown legacy records and acquired powers are preserved.
+    if = {
+        limit = {
+            mm_dragon_is_royal_parent_trigger = no
+            has_variable_list = mm_dragon_origins
+            NOT = { any_in_list = { variable = mm_dragon_origins OR = {
+                mm_dragon_source_has_usable_branch_trigger = no
+                AND = { this = prev mm_dragon_source_has_defined_branch_trigger = no }
+            } } }
+        }
+        save_scope_as = mm_dragon_branch_projection_target
+        remove_variable = mm_dragon_bio_fire
+        remove_variable = mm_dragon_bio_sea
+        remove_variable = mm_dragon_bio_sky
+        remove_variable = mm_dragon_bio_earth
+        remove_variable = mm_dragon_bio_white
+        remove_variable = mm_dragon_bio_black
+        every_in_list = {
+            variable = mm_dragon_origins
+            mm_dragon_project_biological_branch_effect = { TARGET = scope:mm_dragon_branch_projection_target }
+        }
+    }
+    if = {
+        limit = { mm_dragon_is_royal_parent_trigger = yes }
+        remove_trait = mm_dragon_branch_fire
+        remove_trait = mm_dragon_branch_sea
+        remove_trait = mm_dragon_branch_sky
+        remove_trait = mm_dragon_branch_earth
+        remove_trait = mm_dragon_branch_white
+        remove_trait = mm_dragon_branch_black
+    }
+    else = {
+        if = { limit = { OR = { has_variable = mm_dragon_bio_fire has_variable = mm_dragon_absorbed_fire AND = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 1 } } } add_trait = mm_dragon_branch_fire }
+        else = { remove_trait = mm_dragon_branch_fire }
+        if = { limit = { OR = { has_variable = mm_dragon_bio_sea has_variable = mm_dragon_absorbed_sea AND = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 3 } } } add_trait = mm_dragon_branch_sea }
+        else = { remove_trait = mm_dragon_branch_sea }
+        if = { limit = { OR = { has_variable = mm_dragon_bio_sky has_variable = mm_dragon_absorbed_sky AND = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 4 } } } add_trait = mm_dragon_branch_sky }
+        else = { remove_trait = mm_dragon_branch_sky }
+        if = { limit = { OR = { has_variable = mm_dragon_bio_earth has_variable = mm_dragon_absorbed_earth AND = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 2 } } } add_trait = mm_dragon_branch_earth }
+        else = { remove_trait = mm_dragon_branch_earth }
+        if = { limit = { OR = { has_variable = mm_dragon_bio_white has_variable = mm_dragon_absorbed_white } } add_trait = mm_dragon_branch_white }
+        else = { remove_trait = mm_dragon_branch_white }
+        if = { limit = { OR = { has_variable = mm_dragon_bio_black has_variable = mm_dragon_absorbed_black } } add_trait = mm_dragon_branch_black }
+        else = { remove_trait = mm_dragon_branch_black }
+    }
+}
+# Old call-site compatibility. Append, never replace the child's other ancestors.
+mm_dragon_add_origin_effect = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_lineage_child } }
+# Newborn scope; grade selection and ancestry merging are deliberately separate.
+mm_dragon_consider_parent_effect = {
+    if = {
+        limit = { OR = { NOT = { has_variable = mm_dragon_lineage_generation } var:mm_dragon_lineage_generation > $GENERATION$ } }
+        set_variable = { name = mm_dragon_lineage_generation value = $GENERATION$ }
+    }
+    $PARENT$ = { mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_lineage_child } }
+}
+# Parent scope. Legacy origins remain authoritative, including a >16 full list.
+mm_dragon_copy_biological_origins_effect = {
+    if = {
+        limit = { mm_dragon_is_royal_parent_trigger = yes }
+        mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ }
+    }
+    else_if = {
+        limit = { has_variable_list = mm_dragon_origins }
+        every_in_list = { variable = mm_dragon_origins mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } }
+    }
+    else = {
+        if = { limit = { exists = var:mm_dragon_origin_1 } var:mm_dragon_origin_1 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_2 } var:mm_dragon_origin_2 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_3 } var:mm_dragon_origin_3 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_4 } var:mm_dragon_origin_4 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_5 } var:mm_dragon_origin_5 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_6 } var:mm_dragon_origin_6 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_7 } var:mm_dragon_origin_7 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_8 } var:mm_dragon_origin_8 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_9 } var:mm_dragon_origin_9 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_10 } var:mm_dragon_origin_10 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_11 } var:mm_dragon_origin_11 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_12 } var:mm_dragon_origin_12 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_13 } var:mm_dragon_origin_13 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_14 } var:mm_dragon_origin_14 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_15 } var:mm_dragon_origin_15 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+        if = { limit = { exists = var:mm_dragon_origin_16 } var:mm_dragon_origin_16 = { mm_dragon_append_biological_origin_effect = { CHILD = $CHILD$ } } }
+    }
+}
+mm_dragon_inherit_natural_blood_effect = {
+    if = {
+        limit = {
+            NOT = { has_character_flag = mm_dragon_lineage_initialized }
+            NOT = { mm_dragon_has_blood_trigger = yes }
+            OR = {
+                AND = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes } }
+                AND = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes } }
+                AND = { exists = scope:mother exists = scope:real_father scope:mother = { mm_dragon_is_true_dragon_parent_trigger = yes } scope:real_father = { mm_dragon_is_true_dragon_parent_trigger = no } }
+                AND = { exists = scope:real_father exists = scope:mother scope:real_father = { mm_dragon_is_true_dragon_parent_trigger = yes } scope:mother = { mm_dragon_is_true_dragon_parent_trigger = no } }
+            }
+        }
+        add_character_flag = mm_dragon_lineage_initialized
+        save_scope_as = mm_dragon_lineage_child
+        set_variable = { name = mm_dragon_origin_count value = 0 }
+        if = {
+            limit = { exists = scope:mother exists = scope:real_father scope:mother = { mm_dragon_is_true_dragon_parent_trigger = yes } scope:real_father = { mm_dragon_is_true_dragon_parent_trigger = no } }
+            set_variable = { name = mm_dragon_lineage_generation value = 1 }
+            if = { limit = { scope:mother = { mm_dragon_is_royal_parent_trigger = yes } } set_variable = { name = mm_dragon_lineage_generation value = 0 } }
+            scope:mother = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_lineage_child } mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_lineage_child } }
+        }
+        if = {
+            limit = { exists = scope:real_father exists = scope:mother scope:real_father = { mm_dragon_is_true_dragon_parent_trigger = yes } scope:mother = { mm_dragon_is_true_dragon_parent_trigger = no } }
+            set_variable = { name = mm_dragon_lineage_generation value = 1 }
+            if = { limit = { scope:real_father = { mm_dragon_is_royal_parent_trigger = yes } } set_variable = { name = mm_dragon_lineage_generation value = 0 } }
+            scope:real_father = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_lineage_child } mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_lineage_child } }
+        }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_half } } mm_dragon_consider_parent_effect = { PARENT = scope:mother GENERATION = 1 } }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_1 } } mm_dragon_consider_parent_effect = { PARENT = scope:mother GENERATION = 2 } }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_2 } } mm_dragon_consider_parent_effect = { PARENT = scope:mother GENERATION = 3 } }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_3 } } mm_dragon_consider_parent_effect = { PARENT = scope:mother GENERATION = 4 } }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_4 } } mm_dragon_consider_parent_effect = { PARENT = scope:mother GENERATION = 5 } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_half } } mm_dragon_consider_parent_effect = { PARENT = scope:real_father GENERATION = 1 } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_1 } } mm_dragon_consider_parent_effect = { PARENT = scope:real_father GENERATION = 2 } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_2 } } mm_dragon_consider_parent_effect = { PARENT = scope:real_father GENERATION = 3 } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_3 } } mm_dragon_consider_parent_effect = { PARENT = scope:real_father GENERATION = 4 } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_lineage_4 } } mm_dragon_consider_parent_effect = { PARENT = scope:real_father GENERATION = 5 } }
+        if = { limit = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } } scope:mother = { mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_lineage_child } } }
+        if = { limit = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } } scope:real_father = { mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_lineage_child } } }
+        # A single black-blood parent supplies ancestry, not an inherited tier.
+        # If the other parent has no mixed tier, the ordinary baseline is C.
+        if = {
+            limit = { NOT = { has_variable = mm_dragon_lineage_generation } OR = {
+                AND = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } }
+                AND = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } }
+            } }
+            set_variable = { name = mm_dragon_lineage_generation value = 4 }
+        }
+        # Baseline is one grade below the stronger parent; bonus is one above it, capped at S.
+        if = { limit = { has_variable = mm_dragon_lineage_generation } set_variable = { name = mm_dragon_stronger_parent_generation value = var:mm_dragon_lineage_generation } change_variable = { name = mm_dragon_stronger_parent_generation subtract = 2 } if = { limit = { var:mm_dragon_stronger_parent_generation < 1 } set_variable = { name = mm_dragon_stronger_parent_generation value = 1 } } }
+        if = { limit = { OR = { AND = { exists = scope:mother scope:mother = { has_trait = mm_dragon_black_blood } } AND = { exists = scope:real_father scope:real_father = { has_trait = mm_dragon_black_blood } } } } set_variable = { name = mm_dragon_stronger_parent_generation value = 1 } }
+        # True dragon parentage fixes S/first generation, with no human reroll.
+        if = {
+            limit = {
+                NOT = { OR = {
+                    AND = { exists = scope:mother scope:mother = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+                    AND = { exists = scope:real_father scope:real_father = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+                } }
+            }
+            if = {
+                limit = {
+                    AND = { exists = scope:mother scope:mother = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } }
+                    AND = { exists = scope:real_father scope:real_father = { mm_dragon_has_inheritable_blood_trigger = yes has_trait = mm_dragon_black_blood } }
+                }
+                set_variable = { name = mm_dragon_lineage_generation value = 6 }
+            }
+            else = {
+                if = {
+                    limit = { OR = {
+                        AND = { exists = scope:mother scope:mother = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } } }
+                        AND = { exists = scope:real_father scope:real_father = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } } }
+                    } }
+                    random = { chance = 20 set_variable = { name = mm_dragon_lineage_generation value = 6 } }
+                }
+                else = { random = { chance = mm_dragon_black_mutation_chance set_variable = { name = mm_dragon_lineage_generation value = 6 } } }
+            }
+            if = {
+                limit = { var:mm_dragon_lineage_generation != 6 OR = {
+                    AND = { exists = scope:mother scope:mother = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } } }
+                    AND = { exists = scope:real_father scope:real_father = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } } }
+                } }
+                random = {
+                    chance = 25
+                    if = { limit = { has_variable = mm_dragon_stronger_parent_generation } set_variable = { name = mm_dragon_lineage_generation value = var:mm_dragon_stronger_parent_generation } }
+                }
+            }
+        }
+        remove_variable = mm_dragon_stronger_parent_generation
+        # Both biological parents must be known: one founder-rite dragon blood, one without any dragon blood.
+        if = { limit = { exists = scope:mother exists = scope:real_father OR = {
+            AND = { scope:mother = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } OR = { mm_dragon_has_inheritable_blood_trigger = yes mm_dragon_is_true_dragon_parent_trigger = yes } } scope:real_father = { mm_dragon_has_inheritable_blood_trigger = no mm_dragon_is_true_dragon_parent_trigger = no } }
+            AND = { scope:real_father = { rite = rite:mm_dragon_black rite = { rite_has_tenet = mm_tenet_black_second } OR = { mm_dragon_has_inheritable_blood_trigger = yes mm_dragon_is_true_dragon_parent_trigger = yes } } scope:mother = { mm_dragon_has_inheritable_blood_trigger = no mm_dragon_is_true_dragon_parent_trigger = no } }
+        } } add_character_modifier = mm_dragon_diluted_blood_modifier }
+        if = { limit = { var:mm_dragon_lineage_generation = 0 } add_trait = mm_dragon_half }
+        if = { limit = { var:mm_dragon_lineage_generation = 1 } add_trait = mm_dragon_lineage_1 }
+        if = { limit = { var:mm_dragon_lineage_generation = 2 } add_trait = mm_dragon_lineage_2 }
+        if = { limit = { var:mm_dragon_lineage_generation = 3 } add_trait = mm_dragon_lineage_3 }
+        if = { limit = { var:mm_dragon_lineage_generation = 4 } add_trait = mm_dragon_lineage_4 }
+        if = { limit = { var:mm_dragon_lineage_generation = 6 } add_trait = mm_dragon_black_blood }
+        if = {
+            limit = { var:mm_dragon_lineage_generation = 5 }
+            # No active blood survives a failed terminal C-parent mutation.
+            clear_variable_list = mm_dragon_origins
+            set_variable = { name = mm_dragon_origin_count value = 0 }
+            remove_variable = mm_dragon_origin_1
+            remove_variable = mm_dragon_origin_2
+            remove_variable = mm_dragon_origin_3
+            remove_variable = mm_dragon_origin_4
+            remove_variable = mm_dragon_origin_5
+            remove_variable = mm_dragon_origin_6
+            remove_variable = mm_dragon_origin_7
+            remove_variable = mm_dragon_origin_8
+            remove_variable = mm_dragon_origin_9
+            remove_variable = mm_dragon_origin_10
+            remove_variable = mm_dragon_origin_11
+            remove_variable = mm_dragon_origin_12
+            remove_variable = mm_dragon_origin_13
+            remove_variable = mm_dragon_origin_14
+            remove_variable = mm_dragon_origin_15
+            remove_variable = mm_dragon_origin_16
+            remove_variable = mm_dragon_bio_fire
+            remove_trait = mm_dragon_branch_fire
+            remove_variable = mm_dragon_bio_sea
+            remove_trait = mm_dragon_branch_sea
+            remove_variable = mm_dragon_bio_sky
+            remove_trait = mm_dragon_branch_sky
+            remove_variable = mm_dragon_bio_earth
+            remove_trait = mm_dragon_branch_earth
+            remove_variable = mm_dragon_bio_white
+            remove_trait = mm_dragon_branch_white
+            remove_variable = mm_dragon_bio_black
+            remove_trait = mm_dragon_branch_black
+        }
+        mm_dragon_route_creed_hook_effect = yes
+    }
+}
+
+# True dragon character scope. Its own identity is a valid exact source for
+# later human offspring. Only nonroyal dragons also retain their true parents.
+# Safe to call again after native egg genealogy/royal creation assignment.
+mm_dragon_register_true_dragon_origins_effect = {
+    if = {
+        limit = { mm_dragon_is_true_dragon_parent_trigger = yes }
+        mm_dragon_creation_source_hook_effect = yes
+        save_scope_as = mm_dragon_true_origin_target
+        mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_true_origin_target }
+        if = {
+            limit = { mm_dragon_is_royal_parent_trigger = no exists = mother mother = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+            mother = {
+                mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_true_origin_target }
+                mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_true_origin_target }
+            }
+        }
+        if = {
+            limit = { mm_dragon_is_royal_parent_trigger = no exists = real_father real_father = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+            real_father = {
+                mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_true_origin_target }
+                mm_dragon_copy_biological_origins_effect = { CHILD = scope:mm_dragon_true_origin_target }
+            }
+        }
+    }
+}
+
+# Optional kings creation assignment precedes biological source projection.
+mm_dragon_creation_source_hook_effect = { }
+
+# Upgrade old slot-only records before an append, preserving the original source
+# list/projection rather than replacing slot 1 when the old count is absent.
+mm_dragon_prepare_biological_origins_effect = {
+    if = { limit = { exists = var:mm_dragon_origin_1 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_1 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_1 } }
+    if = { limit = { exists = var:mm_dragon_origin_2 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_2 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_2 } }
+    if = { limit = { exists = var:mm_dragon_origin_3 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_3 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_3 } }
+    if = { limit = { exists = var:mm_dragon_origin_4 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_4 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_4 } }
+    if = { limit = { exists = var:mm_dragon_origin_5 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_5 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_5 } }
+    if = { limit = { exists = var:mm_dragon_origin_6 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_6 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_6 } }
+    if = { limit = { exists = var:mm_dragon_origin_7 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_7 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_7 } }
+    if = { limit = { exists = var:mm_dragon_origin_8 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_8 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_8 } }
+    if = { limit = { exists = var:mm_dragon_origin_9 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_9 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_9 } }
+    if = { limit = { exists = var:mm_dragon_origin_10 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_10 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_10 } }
+    if = { limit = { exists = var:mm_dragon_origin_11 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_11 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_11 } }
+    if = { limit = { exists = var:mm_dragon_origin_12 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_12 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_12 } }
+    if = { limit = { exists = var:mm_dragon_origin_13 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_13 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_13 } }
+    if = { limit = { exists = var:mm_dragon_origin_14 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_14 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_14 } }
+    if = { limit = { exists = var:mm_dragon_origin_15 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_15 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_15 } }
+    if = { limit = { exists = var:mm_dragon_origin_16 NOT = { is_target_in_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_16 } } } add_to_variable_list = { name = mm_dragon_origins target = var:mm_dragon_origin_16 } }
+    if = {
+        limit = { NOT = { has_variable = mm_dragon_origin_count } }
+        set_variable = { name = mm_dragon_origin_count value = 0 }
+        save_scope_as = mm_dragon_projection_owner
+        every_in_list = {
+            variable = mm_dragon_origins
+            save_scope_as = mm_dragon_projection_source
+            scope:mm_dragon_projection_owner = {
+                change_variable = { name = mm_dragon_origin_count add = 1 }
+                if = { limit = { var:mm_dragon_origin_count = 1 } set_variable = { name = mm_dragon_origin_1 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 2 } set_variable = { name = mm_dragon_origin_2 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 3 } set_variable = { name = mm_dragon_origin_3 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 4 } set_variable = { name = mm_dragon_origin_4 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 5 } set_variable = { name = mm_dragon_origin_5 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 6 } set_variable = { name = mm_dragon_origin_6 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 7 } set_variable = { name = mm_dragon_origin_7 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 8 } set_variable = { name = mm_dragon_origin_8 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 9 } set_variable = { name = mm_dragon_origin_9 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 10 } set_variable = { name = mm_dragon_origin_10 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 11 } set_variable = { name = mm_dragon_origin_11 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 12 } set_variable = { name = mm_dragon_origin_12 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 13 } set_variable = { name = mm_dragon_origin_13 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 14 } set_variable = { name = mm_dragon_origin_14 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 15 } set_variable = { name = mm_dragon_origin_15 value = scope:mm_dragon_projection_source } }
+                if = { limit = { var:mm_dragon_origin_count = 16 } set_variable = { name = mm_dragon_origin_16 value = scope:mm_dragon_projection_source } }
+            }
+        }
+    }
+}
+
+# Optional creed module supplies the routing hook.
+mm_dragon_route_creed_hook_effect = { }

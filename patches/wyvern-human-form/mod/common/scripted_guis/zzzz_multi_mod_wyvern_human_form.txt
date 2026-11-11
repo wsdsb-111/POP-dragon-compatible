@@ -1,0 +1,10 @@
+# Preserve the MYV character sheet in dragon form. In human appearance the
+# existing vanilla character window is shown so the human portrait is visible.
+myv_wyvern_character_window = {
+	scope = character
+
+	is_shown = {
+		myv_is_wyvern = yes
+		NOT = { has_character_flag = mm_wyvern_human_form }
+	}
+}

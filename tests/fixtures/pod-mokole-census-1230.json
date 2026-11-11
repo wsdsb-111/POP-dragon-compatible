@@ -1,0 +1,1931 @@
+{
+  "generatedDate": "2026-11-03",
+  "mode": "read-only static audit; no tests or game launched",
+  "requestedCutoff": "1230.1.1",
+  "sources": [
+    {
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/history/characters/POD_Mokole_Characters.txt",
+      "purpose": "Mokolé trait roster, birth/death, culture, employer history"
+    },
+    {
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/common/script_values/POD_true_age_values.txt",
+      "purpose": "PoD true_age calculation and named Mokolé offsets"
+    },
+    {
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/history/titles/",
+      "purpose": "Title holders at cutoff and post-cutoff history transitions"
+    },
+    {
+      "path": "patches/wyvern-kings/mod/common/scripted_effects/mm_royal_identity_effects.txt",
+      "purpose": "Four throne pair identities and lair province mappings"
+    }
+  ],
+  "census": {
+    "charactersWithTopLevelTraitMokole": 37,
+    "bornByCutoff": 37,
+    "aliveAtCutoff": 37,
+    "cultureChangesBeforeCutoff": 0,
+    "mokoleTitleHoldersAtCutoff": 0,
+    "characterLocationFieldsSetByCutoff": 0,
+    "courtEmployersAtCutoff": [
+      "795208",
+      "795209",
+      "795210"
+    ],
+    "cultureCount": 16,
+    "cultures": {
+      "akan": {
+        "count": 5,
+        "ids": [
+          "795111",
+          "795113",
+          "795205",
+          "795206",
+          "795207"
+        ],
+        "tiers": {
+          "mm_dragon_half": 1,
+          "mm_dragon_lineage_1": 1,
+          "mm_dragon_lineage_2": 3
+        }
+      },
+      "ancient_egyptian": {
+        "count": 7,
+        "ids": [
+          "795114",
+          "795115",
+          "795116",
+          "795202",
+          "795208",
+          "795209",
+          "795210"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 1,
+          "mm_dragon_lineage_4": 2,
+          "mm_dragon_lineage_3": 1,
+          "mm_dragon_half": 3
+        }
+      },
+      "bengali": {
+        "count": 1,
+        "ids": [
+          "795236"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 1
+        }
+      },
+      "bisayan": {
+        "count": 1,
+        "ids": [
+          "795243"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 1
+        }
+      },
+      "han": {
+        "count": 11,
+        "ids": [
+          "795108",
+          "793509",
+          "795203",
+          "795204",
+          "795231",
+          "795234",
+          "795235",
+          "795237",
+          "795238",
+          "795239",
+          "795240"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 2,
+          "mm_dragon_half": 1,
+          "mm_dragon_lineage_2": 2,
+          "mm_dragon_lineage_4": 3,
+          "mm_dragon_lineage_3": 3
+        }
+      },
+      "japanese": {
+        "count": 1,
+        "ids": [
+          "795211"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 1
+        }
+      },
+      "kannada": {
+        "count": 1,
+        "ids": [
+          "795242"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 1
+        }
+      },
+      "khmer": {
+        "count": 1,
+        "ids": [
+          "795107"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 1
+        }
+      },
+      "maluku": {
+        "count": 2,
+        "ids": [
+          "795112",
+          "795232"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 2
+        }
+      },
+      "marathi": {
+        "count": 1,
+        "ids": [
+          "795201"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_2": 1
+        }
+      },
+      "oriya": {
+        "count": 1,
+        "ids": [
+          "795241"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_3": 1
+        }
+      },
+      "papuan": {
+        "count": 1,
+        "ids": [
+          "795110"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 1
+        }
+      },
+      "punjabi": {
+        "count": 1,
+        "ids": [
+          "795233"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 1
+        }
+      },
+      "rajput": {
+        "count": 1,
+        "ids": [
+          "795109"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_1": 1
+        }
+      },
+      "tai": {
+        "count": 1,
+        "ids": [
+          "795271"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_3": 1
+        }
+      },
+      "yemeni": {
+        "count": 1,
+        "ids": [
+          "795212"
+        ],
+        "tiers": {
+          "mm_dragon_lineage_4": 1
+        }
+      }
+    },
+    "seedTierCounts": {
+      "mm_dragon_lineage_1": 8,
+      "mm_dragon_half": 5,
+      "mm_dragon_lineage_4": 12,
+      "mm_dragon_lineage_3": 6,
+      "mm_dragon_lineage_2": 6
+    }
+  },
+  "ageMethod": {
+    "cutoff": "1230.1.1",
+    "scriptValue": "common/script_values/POD_true_age_values.txt:1-2825",
+    "rule": "PoD true_age starts at current_year. Named-character branches add their configured offset; the final else subtracts current_year and adds age, so characters without an override use native CK3 age.",
+    "specialMokoleOffsets": [
+      {
+        "id": "795111",
+        "offset": 10000,
+        "trueAge": 11230,
+        "sourceLines": "2790-2794"
+      },
+      {
+        "id": "795208",
+        "offset": 2566,
+        "trueAge": 3796,
+        "sourceLines": "2800-2804"
+      },
+      {
+        "id": "795209",
+        "offset": 2421,
+        "trueAge": 3651,
+        "sourceLines": "2805-2809"
+      },
+      {
+        "id": "795210",
+        "offset": 2307,
+        "trueAge": 3537,
+        "sourceLines": "2810-2813"
+      }
+    ],
+    "note": "793509 is born -2500.1.1 with no named true_age override; the script falls back to native age, 3730 at the cutoff."
+  },
+  "thronePairs": [
+    {
+      "throne": 1,
+      "label": "fire",
+      "royals": [
+        {
+          "id": "99001001",
+          "name": "Constantine",
+          "lairProvince": 10430,
+          "county": "c_jingzhao"
+        },
+        {
+          "id": "99001305",
+          "name": "Norton",
+          "lairProvince": 10216,
+          "county": "c_chengdu"
+        }
+      ]
+    },
+    {
+      "throne": 2,
+      "label": "earth",
+      "royals": [
+        {
+          "id": "99001002",
+          "name": "Fenrir",
+          "lairProvince": 6077,
+          "county": "c_qus"
+        },
+        {
+          "id": "99001306",
+          "name": "Jormungandr",
+          "lairProvince": 5759,
+          "county": "c_tbilisi"
+        }
+      ]
+    },
+    {
+      "throne": 3,
+      "label": "sea",
+      "royals": [
+        {
+          "id": "99001003",
+          "name": "Behemoth",
+          "lairProvince": 2646,
+          "county": "c_malta"
+        },
+        {
+          "id": "99001307",
+          "name": "Leviathan",
+          "lairProvince": 480,
+          "county": "c_chandax"
+        }
+      ]
+    },
+    {
+      "throne": 4,
+      "label": "sky",
+      "royals": [
+        {
+          "id": "99001304",
+          "name": "Hrist",
+          "lairProvince": 6,
+          "county": "c_faereyar"
+        },
+        {
+          "id": "99001308",
+          "name": "Vidar",
+          "lairProvince": 260,
+          "county": "c_sogn"
+        }
+      ]
+    }
+  ],
+  "cultureToThroneCandidates": [
+    {
+      "culture": "han",
+      "count": 11,
+      "candidate": "fire",
+      "status": "user-specified",
+      "basis": "User assigned East Asian cultures to Fire. Post-start title history also places multiple Han Mokolé in Chinese counties; those holdings begin after the exact cutoff."
+    },
+    {
+      "culture": "tai",
+      "count": 1,
+      "candidate": "fire",
+      "status": "conditional",
+      "basis": "User mentioned Dai among East Asian cultures. The actual PoD culture ID is tai (not dai); inherit that mapping only if intended. This character receives mainland Southeast Asian titles after the cutoff."
+    },
+    {
+      "culture": "japanese",
+      "count": 1,
+      "candidate": "fire",
+      "status": "candidate",
+      "basis": "East Asia candidate under the user's geographic rule; post-start title history places this character in Japan. No province location is explicit on 1230.1.1."
+    },
+    {
+      "culture": "ancient_egyptian",
+      "count": 7,
+      "candidate": "earth",
+      "status": "user-specified",
+      "basis": "User explicitly assigned Ancient Egyptian culture to Earth."
+    },
+    {
+      "culture": "persian",
+      "count": 0,
+      "candidate": "fire",
+      "status": "user-specified-not-present",
+      "basis": "User explicitly assigned Persian to Fire, but no Persian-culture character with trait=mokole is in this roster."
+    },
+    {
+      "culture": "greek",
+      "count": 0,
+      "candidate": "sea",
+      "status": "user-specified-not-present",
+      "basis": "User explicitly assigned Greek to Sea, but no Greek-culture character with trait=mokole is in this roster."
+    },
+    {
+      "culture": "latin",
+      "count": 0,
+      "candidate": "sea",
+      "status": "user-specified-not-present",
+      "basis": "User explicitly assigned Latin to Sea, but no Latin-culture character with trait=mokole is in this roster."
+    },
+    {
+      "culture": "norse",
+      "count": 0,
+      "candidate": "sky",
+      "status": "user-specified-not-present",
+      "basis": "User explicitly assigned Norse to Sky, but no Norse-culture character with trait=mokole is in this roster."
+    },
+    {
+      "culture": "khmer",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "rajput",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "papuan",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "akan",
+      "count": 5,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "maluku",
+      "count": 2,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "marathi",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "yemeni",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "punjabi",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "bengali",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "oriya",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "kannada",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    },
+    {
+      "culture": "bisayan",
+      "count": 1,
+      "candidate": null,
+      "status": "unresolved-at-cutoff",
+      "basis": "No province location, title, or court employer is recorded for these characters by 1230.1.1. Several receive title/employer assignments on 1230.1.3 or 1230.1.5; those later locations should not be treated as active at the requested baseline. Resolve using actual character province and native squared_distance when available; otherwise leave unassigned."
+    }
+  ],
+  "cutoffStateNotes": [
+    "All 37 top-level mokole trait entries are born and alive on 1230.1.1; all 37 retain their top-level culture through that date.",
+    "No culture-changing date blocks occur in POD_Mokole_Characters.txt.",
+    "No one in this 37-character set holds a PoD title at exactly 1230.1.1. The first title history transitions for this set are dated 1230.1.3 or 1230.1.5.",
+    "Only 795208, 795209, and 795210 have an employer by the cutoff: POD_wraith_01 (Charon), whose title is e_stygia. Their numeric county/province location is not encoded in the Mokolé history.",
+    "Employer changes for 795206, 795207, and 795238 are dated 1230.1.5 and are future to the requested cutoff."
+  ],
+  "postCutoffTitleEvents": [
+    {
+      "date": "1230.1.5",
+      "holder": "795108",
+      "title": "d_xingfeng",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795108",
+      "title": "c_fengzhou",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795108",
+      "title": "c_xingqing",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795236",
+      "title": "c_fanhe",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795237",
+      "title": "c_baishan",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795237",
+      "title": "c_zhanyin",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795235",
+      "title": "c_xiningzhou",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795235",
+      "title": "c_hezhou_2",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795234",
+      "title": "c_kuozhou",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795240",
+      "title": "c_changzhou",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795241",
+      "title": "c_shaowu",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.3",
+      "holder": "795239",
+      "title": "c_nanping",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "793509",
+      "title": "c_siraya",
+      "file": "e_china.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795211",
+      "title": "c_iyo",
+      "file": "e_japan.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795211",
+      "title": "c_tosa",
+      "file": "e_japan.txt"
+    },
+    {
+      "date": "1230.1.3",
+      "holder": "795242",
+      "title": "c_botum_sakor",
+      "file": "e_khmer.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795271",
+      "title": "d_mukdahan",
+      "file": "e_khmer.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795271",
+      "title": "c_canasha",
+      "file": "e_khmer.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795271",
+      "title": "c_ku_kaeo",
+      "file": "e_khmer.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795114",
+      "title": "d_adal",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795116",
+      "title": "c_dawaro",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795202",
+      "title": "c_gabal",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795116",
+      "title": "c_arusi",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795114",
+      "title": "c_dakkar",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795115",
+      "title": "c_harar",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795114",
+      "title": "c_hargaya",
+      "file": "k_adal.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795203",
+      "title": "c_beshbalik",
+      "file": "k_dzungaria.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795204",
+      "title": "c_jimsar",
+      "file": "k_dzungaria.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795231",
+      "title": "c_yangjibaliq",
+      "file": "k_dzungaria.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795203",
+      "title": "c_bugur",
+      "file": "k_dzungaria.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795212",
+      "title": "c_gomoco",
+      "file": "k_guge.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795212",
+      "title": "c_garkung",
+      "file": "k_guge.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795113",
+      "title": "c_kong",
+      "file": "k_kong.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795113",
+      "title": "c_nzi",
+      "file": "k_kong.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795201",
+      "title": "c_trikuta",
+      "file": "k_maharastra.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795201",
+      "title": "c_kondana",
+      "file": "k_maharastra.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795112",
+      "title": "c_IDO_nusa_nipa",
+      "file": "k_maluku.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795112",
+      "title": "c_IDO_humba",
+      "file": "k_maluku.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795232",
+      "title": "c_IDO_galiyao",
+      "file": "k_maluku.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795110",
+      "title": "c_aru",
+      "file": "k_maluku.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795110",
+      "title": "c_papua_selatan",
+      "file": "k_maluku.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795107",
+      "title": "c_thaton",
+      "file": "k_pagan.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795107",
+      "title": "c_sittaung",
+      "file": "k_pagan.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795243",
+      "title": "c_PHI_samar",
+      "file": "k_philippines.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795205",
+      "title": "c_bilma",
+      "file": "k_sahara.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795111",
+      "title": "c_dirku",
+      "file": "k_sahara.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795111",
+      "title": "c_djado",
+      "file": "k_sahara.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795109",
+      "title": "c_bhakkar",
+      "file": "k_sindh.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795109",
+      "title": "c_rajanpur",
+      "file": "k_sindh.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795233",
+      "title": "c_sibi",
+      "file": "k_sindh.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795111",
+      "title": "d_clutch_ancient",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795114",
+      "title": "k_clutch_iteru",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795113",
+      "title": "d_clutch_murky_waters",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795201",
+      "title": "d_clutch_hidden_fire",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795109",
+      "title": "d_clutch_silent_dunes",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795112",
+      "title": "d_clutch_little_dragons",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795108",
+      "title": "k_everlasting_winds_court",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795203",
+      "title": "d_clutch_humble_strength",
+      "file": "POD_special_titles.txt"
+    },
+    {
+      "date": "1230.1.5",
+      "holder": "795211",
+      "title": "d_clutch_ascended_body",
+      "file": "POD_special_titles.txt"
+    }
+  ],
+  "roster": [
+    {
+      "id": "795107",
+      "sourceLine": 3,
+      "name": "Nongkhai",
+      "nameChineseLoc": "廊开",
+      "culture": "khmer",
+      "birth": "889.1.1",
+      "death": "1569.1.1",
+      "nativeAgeAt1230_01_01": 341,
+      "trueAgeAt1230_01_01": 341,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_thaton",
+          "sourceFile": "history/titles/k_pagan.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_sittaung",
+          "sourceFile": "history/titles/k_pagan.txt"
+        }
+      ]
+    },
+    {
+      "id": "795108",
+      "sourceLine": 49,
+      "name": "Tong_Long_Hua",
+      "nameChineseLoc": "唐龙华",
+      "culture": "han",
+      "birth": "756.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 474,
+      "trueAgeAt1230_01_01": 474,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "d_xingfeng",
+          "sourceFile": "history/titles/e_china.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_fengzhou",
+          "sourceFile": "history/titles/e_china.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_xingqing",
+          "sourceFile": "history/titles/e_china.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "k_everlasting_winds_court",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795109",
+      "sourceLine": 114,
+      "name": "Red_Sky_Waiting",
+      "nameChineseLoc": "赤天待时",
+      "culture": "rajput",
+      "birth": "1029.1.1",
+      "death": "1298.1.1",
+      "nativeAgeAt1230_01_01": 201,
+      "trueAgeAt1230_01_01": 201,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_bhakkar",
+          "sourceFile": "history/titles/k_sindh.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_rajanpur",
+          "sourceFile": "history/titles/k_sindh.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_silent_dunes",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795110",
+      "sourceLine": 161,
+      "name": "Wolaru",
+      "nameChineseLoc": "沃拉鲁",
+      "culture": "papuan",
+      "birth": "998.1.1",
+      "death": "1756.1.1",
+      "nativeAgeAt1230_01_01": 232,
+      "trueAgeAt1230_01_01": 232,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_aru",
+          "sourceFile": "history/titles/k_maluku.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_papua_selatan",
+          "sourceFile": "history/titles/k_maluku.txt"
+        }
+      ]
+    },
+    {
+      "id": "795111",
+      "sourceLine": 212,
+      "name": "Mokole_mbembe",
+      "nameChineseLoc": "莫科莱‑姆贝姆贝",
+      "culture": "akan",
+      "birth": "20.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 1210,
+      "trueAgeAt1230_01_01": 11230,
+      "trueAgeRule": "current_year + 10000",
+      "assignedSeedTier": "mm_dragon_half",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_dirku",
+          "sourceFile": "history/titles/k_sahara.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_djado",
+          "sourceFile": "history/titles/k_sahara.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_ancient",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795113",
+      "sourceLine": 269,
+      "name": "Swims_mbembe",
+      "nameChineseLoc": "姆贝姆贝浪痕游弋者",
+      "culture": "akan",
+      "birth": "998.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 232,
+      "trueAgeAt1230_01_01": 232,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_kong",
+          "sourceFile": "history/titles/k_kong.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_nzi",
+          "sourceFile": "history/titles/k_kong.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_murky_waters",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795114",
+      "sourceLine": 324,
+      "name": "Sands_last_king",
+      "nameChineseLoc": "沙末王",
+      "culture": "ancient_egyptian",
+      "birth": "1029.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 201,
+      "trueAgeAt1230_01_01": 201,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "d_adal",
+          "sourceFile": "history/titles/k_adal.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_dakkar",
+          "sourceFile": "history/titles/k_adal.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_hargaya",
+          "sourceFile": "history/titles/k_adal.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "k_clutch_iteru",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795115",
+      "sourceLine": 376,
+      "name": "Swali",
+      "nameChineseLoc": "斯瓦利",
+      "culture": "ancient_egyptian",
+      "birth": "1201.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 29,
+      "trueAgeAt1230_01_01": 29,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_harar",
+          "sourceFile": "history/titles/k_adal.txt"
+        }
+      ]
+    },
+    {
+      "id": "795116",
+      "sourceLine": 428,
+      "name": "Unseen_shallow",
+      "nameChineseLoc": "浅水潜影",
+      "culture": "ancient_egyptian",
+      "birth": "1156.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 74,
+      "trueAgeAt1230_01_01": 74,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_dawaro",
+          "sourceFile": "history/titles/k_adal.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_arusi",
+          "sourceFile": "history/titles/k_adal.txt"
+        }
+      ]
+    },
+    {
+      "id": "795112",
+      "sourceLine": 478,
+      "name": "Towers_above_the_kings",
+      "nameChineseLoc": "凌驾诸王的众塔",
+      "culture": "maluku",
+      "birth": "1185.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 45,
+      "trueAgeAt1230_01_01": 45,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_IDO_nusa_nipa",
+          "sourceFile": "history/titles/k_maluku.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_IDO_humba",
+          "sourceFile": "history/titles/k_maluku.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_little_dragons",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "793509",
+      "sourceLine": 526,
+      "name": "Hunger_of_qyrl",
+      "nameChineseLoc": "奎尔之饥",
+      "culture": "han",
+      "birth": "-2500.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 3730,
+      "trueAgeAt1230_01_01": 3730,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_half",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_siraya",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795201",
+      "sourceLine": 601,
+      "name": "hides_in_plain_sight",
+      "nameChineseLoc": "大隐于市",
+      "culture": "marathi",
+      "birth": "1093.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 137,
+      "trueAgeAt1230_01_01": 137,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_trikuta",
+          "sourceFile": "history/titles/k_maharastra.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_kondana",
+          "sourceFile": "history/titles/k_maharastra.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_hidden_fire",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795202",
+      "sourceLine": 656,
+      "name": "Khabash",
+      "nameChineseLoc": null,
+      "culture": "ancient_egyptian",
+      "birth": "1194.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 36,
+      "trueAgeAt1230_01_01": 36,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_gabal",
+          "sourceFile": "history/titles/k_adal.txt"
+        }
+      ]
+    },
+    {
+      "id": "795203",
+      "sourceLine": 702,
+      "name": "Hao_Zhi",
+      "nameChineseLoc": "颢郅",
+      "culture": "han",
+      "birth": "1018.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 212,
+      "trueAgeAt1230_01_01": 212,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_beshbalik",
+          "sourceFile": "history/titles/k_dzungaria.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_bugur",
+          "sourceFile": "history/titles/k_dzungaria.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_humble_strength",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795204",
+      "sourceLine": 757,
+      "name": "Long_Yanshao",
+      "nameChineseLoc": "龙延绍",
+      "culture": "han",
+      "birth": "1057.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 173,
+      "trueAgeAt1230_01_01": 173,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_jimsar",
+          "sourceFile": "history/titles/k_dzungaria.txt"
+        }
+      ]
+    },
+    {
+      "id": "795205",
+      "sourceLine": 805,
+      "name": "Eyes_of_rage",
+      "nameChineseLoc": "怒目",
+      "culture": "akan",
+      "birth": "1069.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 161,
+      "trueAgeAt1230_01_01": 161,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_bilma",
+          "sourceFile": "history/titles/k_sahara.txt"
+        }
+      ]
+    },
+    {
+      "id": "795206",
+      "sourceLine": 852,
+      "name": "Voice_of_reason",
+      "nameChineseLoc": "理性之声",
+      "culture": "akan",
+      "birth": "1083.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 147,
+      "trueAgeAt1230_01_01": 147,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [
+        {
+          "date": "1230.1.5",
+          "employer": "795111"
+        }
+      ],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795207",
+      "sourceLine": 903,
+      "name": "Orator_of_spirits",
+      "nameChineseLoc": "魂语者",
+      "culture": "akan",
+      "birth": "1098.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 132,
+      "trueAgeAt1230_01_01": 132,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [
+        {
+          "date": "1230.1.5",
+          "employer": "795111"
+        }
+      ],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795208",
+      "sourceLine": 956,
+      "name": "Anemhor",
+      "nameChineseLoc": null,
+      "culture": "ancient_egyptian",
+      "birth": "84.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 1146,
+      "trueAgeAt1230_01_01": 3796,
+      "trueAgeRule": "current_year + 2566",
+      "assignedSeedTier": "mm_dragon_half",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": {
+        "id": "POD_wraith_01",
+        "name": "Charon",
+        "courtTitle": "e_stygia"
+      },
+      "locationEvidence": "History records court employer POD_wraith_01 (Charon); no numeric province/location field is set for this character.",
+      "futureEmployerEvents": [
+        {
+          "date": "84.1.1",
+          "employer": "POD_wraith_01"
+        }
+      ],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795209",
+      "sourceLine": 1019,
+      "name": "Antigone",
+      "nameChineseLoc": null,
+      "culture": "ancient_egyptian",
+      "birth": "107.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 1123,
+      "trueAgeAt1230_01_01": 3651,
+      "trueAgeRule": "current_year + 2421",
+      "assignedSeedTier": "mm_dragon_half",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": {
+        "id": "POD_wraith_01",
+        "name": "Charon",
+        "courtTitle": "e_stygia"
+      },
+      "locationEvidence": "History records court employer POD_wraith_01 (Charon); no numeric province/location field is set for this character.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795210",
+      "sourceLine": 1074,
+      "name": "Horemakhet",
+      "nameChineseLoc": null,
+      "culture": "ancient_egyptian",
+      "birth": "111.1.1",
+      "death": "2200.1.1",
+      "nativeAgeAt1230_01_01": 1119,
+      "trueAgeAt1230_01_01": 3537,
+      "trueAgeRule": "current_year + 2307",
+      "assignedSeedTier": "mm_dragon_half",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": {
+        "id": "POD_wraith_01",
+        "name": "Charon",
+        "courtTitle": "e_stygia"
+      },
+      "locationEvidence": "History records court employer POD_wraith_01 (Charon); no numeric province/location field is set for this character.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795211",
+      "sourceLine": 1134,
+      "name": "Munekane",
+      "nameChineseLoc": null,
+      "culture": "japanese",
+      "birth": "1021.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 209,
+      "trueAgeAt1230_01_01": 209,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_1",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_iyo",
+          "sourceFile": "history/titles/e_japan.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_tosa",
+          "sourceFile": "history/titles/e_japan.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "d_clutch_ascended_body",
+          "sourceFile": "history/titles/POD_special_titles.txt"
+        }
+      ]
+    },
+    {
+      "id": "795212",
+      "sourceLine": 1187,
+      "name": "Yusuf",
+      "nameChineseLoc": null,
+      "culture": "yemeni",
+      "birth": "1197.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 33,
+      "trueAgeAt1230_01_01": 33,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_gomoco",
+          "sourceFile": "history/titles/k_guge.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_garkung",
+          "sourceFile": "history/titles/k_guge.txt"
+        }
+      ]
+    },
+    {
+      "id": "795231",
+      "sourceLine": 1243,
+      "name": "Mingliang",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1192.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 38,
+      "trueAgeAt1230_01_01": 38,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_yangjibaliq",
+          "sourceFile": "history/titles/k_dzungaria.txt"
+        }
+      ]
+    },
+    {
+      "id": "795232",
+      "sourceLine": 1282,
+      "name": "Agung",
+      "nameChineseLoc": null,
+      "culture": "maluku",
+      "birth": "1203.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 27,
+      "trueAgeAt1230_01_01": 27,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_IDO_galiyao",
+          "sourceFile": "history/titles/k_maluku.txt"
+        }
+      ]
+    },
+    {
+      "id": "795233",
+      "sourceLine": 1321,
+      "name": "Govinda",
+      "nameChineseLoc": null,
+      "culture": "punjabi",
+      "birth": "1199.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 31,
+      "trueAgeAt1230_01_01": 31,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_sibi",
+          "sourceFile": "history/titles/k_sindh.txt"
+        }
+      ]
+    },
+    {
+      "id": "795234",
+      "sourceLine": 1362,
+      "name": "Yanqing_5EF6_5E86",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1184.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 46,
+      "trueAgeAt1230_01_01": 46,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_kuozhou",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795235",
+      "sourceLine": 1413,
+      "name": "Renshi_4EC1_5E08",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1168.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 62,
+      "trueAgeAt1230_01_01": 62,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_xiningzhou",
+          "sourceFile": "history/titles/e_china.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_hezhou_2",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795236",
+      "sourceLine": 1463,
+      "name": "Rajaganesha",
+      "nameChineseLoc": null,
+      "culture": "bengali",
+      "birth": "1201.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 29,
+      "trueAgeAt1230_01_01": 29,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_fanhe",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795237",
+      "sourceLine": 1509,
+      "name": "Liangfu_826F_8F85",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1153.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 77,
+      "trueAgeAt1230_01_01": 77,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_baishan",
+          "sourceFile": "history/titles/e_china.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_zhanyin",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795238",
+      "sourceLine": 1557,
+      "name": "Tongren_540C_4EBA",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1123.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 107,
+      "trueAgeAt1230_01_01": 107,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_2",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [
+        {
+          "date": "1230.1.5",
+          "employer": "795108"
+        }
+      ],
+      "firstTitleEventsAfterCutoff": []
+    },
+    {
+      "id": "795239",
+      "sourceLine": 1613,
+      "name": "Chongsi_5D07_55E3",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1162.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 68,
+      "trueAgeAt1230_01_01": 68,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.3",
+          "title": "c_nanping",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795240",
+      "sourceLine": 1662,
+      "name": "Derong_5FB7_5BB9",
+      "nameChineseLoc": null,
+      "culture": "han",
+      "birth": "1194.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 36,
+      "trueAgeAt1230_01_01": 36,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_changzhou",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795241",
+      "sourceLine": 1710,
+      "name": "Yuanzhong_5143_5FE0",
+      "nameChineseLoc": null,
+      "culture": "oriya",
+      "birth": "1179.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 51,
+      "trueAgeAt1230_01_01": 51,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_shaowu",
+          "sourceFile": "history/titles/e_china.txt"
+        }
+      ]
+    },
+    {
+      "id": "795242",
+      "sourceLine": 1760,
+      "name": "Jayasimha",
+      "nameChineseLoc": null,
+      "culture": "kannada",
+      "birth": "1201.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 29,
+      "trueAgeAt1230_01_01": 29,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.3",
+          "title": "c_botum_sakor",
+          "sourceFile": "history/titles/e_khmer.txt"
+        }
+      ]
+    },
+    {
+      "id": "795243",
+      "sourceLine": 1809,
+      "name": "Matikas",
+      "nameChineseLoc": null,
+      "culture": "bisayan",
+      "birth": "1184.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 46,
+      "trueAgeAt1230_01_01": 46,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_4",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "c_PHI_samar",
+          "sourceFile": "history/titles/k_philippines.txt"
+        }
+      ]
+    },
+    {
+      "id": "795271",
+      "sourceLine": 1862,
+      "name": "Chalawan",
+      "nameChineseLoc": "卡拉万",
+      "culture": "tai",
+      "birth": "1178.1.1",
+      "death": "1325.1.1",
+      "nativeAgeAt1230_01_01": 52,
+      "trueAgeAt1230_01_01": 52,
+      "trueAgeRule": "PoD true_age else branch simplifies to age",
+      "assignedSeedTier": "mm_dragon_lineage_3",
+      "aliveAtCutoff": true,
+      "locationAtCutoff": null,
+      "titleAtCutoff": [],
+      "courtMasterAtCutoff": null,
+      "locationEvidence": "No location, employer, or title is recorded for this character by 1230.1.1; title/court assignments scheduled later are excluded from this cutoff.",
+      "futureEmployerEvents": [],
+      "firstTitleEventsAfterCutoff": [
+        {
+          "date": "1230.1.5",
+          "title": "d_mukdahan",
+          "sourceFile": "history/titles/e_khmer.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_canasha",
+          "sourceFile": "history/titles/e_khmer.txt"
+        },
+        {
+          "date": "1230.1.5",
+          "title": "c_ku_kaeo",
+          "sourceFile": "history/titles/e_khmer.txt"
+        }
+      ]
+    }
+  ]
+}

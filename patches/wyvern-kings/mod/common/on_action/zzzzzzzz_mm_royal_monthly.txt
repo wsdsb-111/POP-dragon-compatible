@@ -1,0 +1,101 @@
+﻿myv_wyvern_monthly_pulse = {
+    effect = {
+        mm_royal_update_physical_profiles_effect = yes
+        myv_wyvern_lair_contract_monthly_effect = yes
+        if = {
+            limit = { has_global_variable_list = myv_living_wyverns }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { myv_is_living_wyvern = yes }
+                mm_dragon_refresh_branch_traits_effect = yes
+                # A save can retain roaming or travel state from before the
+                # king entered torpor. Keep the same incarnation at its fixed lair.
+                if = {
+                    limit = { mm_royal_is_king = yes has_trait = mm_royal_torpor }
+                    if = {
+                        limit = { is_travelling = yes }
+                        current_travel_plan ?= {
+                            if = {
+                                limit = { can_cancel = yes }
+                                cancel_travel_plan = yes
+                            }
+                        }
+                    }
+                    remove_character_flag = myv_wyvern_roaming
+                    clear_saved_scope = mm_royal_torpor_lair
+                    if = {
+                        limit = { has_variable = myv_wyvern_lair_barony }
+                        var:myv_wyvern_lair_barony = {
+                            title_province = { save_scope_as = mm_royal_torpor_lair }
+                        }
+                        if = {
+                            limit = {
+                                exists = scope:mm_royal_torpor_lair
+                                NOT = { location = scope:mm_royal_torpor_lair }
+                            }
+                            set_location = {
+                                location = scope:mm_royal_torpor_lair
+                                stick_to_location = yes
+                            }
+                        }
+                    }
+                    clear_saved_scope = mm_royal_torpor_lair
+                }
+            }
+            every_in_global_list = {
+                variable = myv_living_wyverns
+                limit = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } }
+                mm_dragon_register_true_dragon_origins_effect = yes
+                myv_wyvern_nonhuman_maintenance_effect = yes
+				myv_wyvern_travel_integrity_effect = yes
+				myv_wyvern_stable_integrity_effect = yes
+                # Repair Harmony before hunger/Prowess refreshes read it.
+                myv_wyvern_harmony_integrity_effect = yes
+                myv_wyvern_monthly_hunger_effect = yes
+                # Starvation can kill during hunger consumption. No further
+                # care, injuries, Harmony or raids may run on that dead scope.
+                if = {
+                    limit = { myv_is_living_wyvern = yes }
+                    myv_wyvern_ai_monthly_care_effect = yes
+                    myv_notify_wyvern_hungry_effect = yes
+                    myv_wyvern_monthly_combat_injury_recovery_effect = yes
+                    myv_wyvern_harmony_monthly_effect = yes
+                    if = {
+                        limit = { has_trait = myv_wyvern_tamed }
+                        myv_wyvern_tamed_hunger_raid_effect = yes
+                    }
+                    else = {
+                        myv_wyvern_lair_county_maintenance_effect = yes
+                        myv_wyvern_monthly_roaming_effect = yes
+                    }
+                }
+            }
+        }
+		# Re-evaluate every AI keeper's strongest harmonious war mount monthly.
+		myv_wyvern_ai_monthly_mount_pulse_effect = yes
+        mm_dragon_wild_monthly_effect = yes
+        trigger_event = {
+            on_action = myv_wyvern_monthly_pulse
+            months = 1
+        }
+    }
+}
+
+# The native one-off wild female has a separate create_character backend.
+# Only a successful fresh spawn may receive a new creation origin here.
+myv_initial_random_wild_wyvern_spawn = {
+    effect = {
+        if = {
+            limit = { NOT = { has_global_variable = myv_initial_random_wild_wyvern_spawned } }
+            myv_spawn_initial_random_wild_wyvern_effect = yes
+            if = {
+                limit = { has_global_variable = myv_initial_random_wild_wyvern_spawned exists = scope:myv_new_wyvern }
+                scope:myv_new_wyvern = {
+                    add_character_flag = mm_royal_newly_created
+                    mm_dragon_register_true_dragon_origins_effect = yes
+                    remove_character_flag = mm_royal_newly_created
+                }
+            }
+        }
+    }
+}

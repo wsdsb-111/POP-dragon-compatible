@@ -1,0 +1,75 @@
+mm_v1311_mind_erase_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    cooldown = { years = 5 }
+    is_shown = {
+        scope:actor = { is_alive = yes rite = rite:mm_dragon_white OR = { mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_bio_white } }
+        scope:recipient = { is_alive = yes this != scope:actor }
+    }
+    is_valid_showing_failures_only = {
+        scope:actor = { is_imprisoned = no is_incapable = no can_add_hook = { target = scope:recipient type = strong_favor_hook } }
+    }
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = { is_alive = yes is_imprisoned = no is_incapable = no rite = rite:mm_dragon_white OR = { mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_bio_white } can_add_hook = { target = scope:recipient type = strong_favor_hook } }
+                scope:recipient = { is_alive = yes this != scope:actor }
+            }
+            scope:actor = { add_hook = { target = scope:recipient type = strong_favor_hook } }
+        }
+    }
+}
+mm_v1311_mind_infection_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    cooldown = { years = 1 }
+    is_shown = {
+        scope:actor = { is_alive = yes rite = rite:mm_dragon_white mm_creed_controls_sagami_holy_site_trigger = yes }
+        scope:recipient = { is_alive = yes this != scope:actor }
+    }
+    is_valid_showing_failures_only = { scope:actor = { is_imprisoned = no is_incapable = no } }
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = { is_alive = yes is_imprisoned = no is_incapable = no rite = rite:mm_dragon_white mm_creed_controls_sagami_holy_site_trigger = yes }
+                scope:recipient = { is_alive = yes this != scope:actor }
+            }
+            scope:recipient = { add_character_modifier = { modifier = mm_v1311_mind_infection years = 5 } }
+        }
+    }
+}
+
+mm_v1311_blood_eagle_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    desc = mm_v1311_blood_eagle_interaction_desc
+    is_shown = {
+        scope:actor = { is_alive = yes rite = rite:mm_dragon_sky }
+        scope:recipient = { is_alive = yes this != scope:actor faith = scope:actor.faith is_imprisoned_by = scope:actor }
+    }
+    is_valid_showing_failures_only = {
+        scope:actor = { is_imprisoned = no is_incapable = no NOT = { has_character_modifier = mm_v1311_eagle_active } }
+        scope:recipient = { is_alive = yes is_imprisoned_by = scope:actor }
+    }
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = { is_alive = yes is_imprisoned = no is_incapable = no rite = rite:mm_dragon_sky NOT = { has_character_modifier = mm_v1311_eagle_active } }
+                scope:recipient = { is_alive = yes this != scope:actor faith = scope:actor.faith is_imprisoned_by = scope:actor }
+            }
+            scope:actor = {
+                add_character_modifier = { modifier = mm_v1311_eagle_active years = 3 }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = diplomacy VALUE = scope:recipient.diplomacy }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = martial VALUE = scope:recipient.martial }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = stewardship VALUE = scope:recipient.stewardship }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = intrigue VALUE = scope:recipient.intrigue }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = learning VALUE = scope:recipient.learning }
+                mm_v1311_eagle_attribute_effect = { ATTRIBUTE = prowess VALUE = scope:recipient.prowess }
+            }
+            scope:recipient = { death = { death_reason = death_execution killer = scope:actor } }
+        }
+    }
+}

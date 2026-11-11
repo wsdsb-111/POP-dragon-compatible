@@ -1,0 +1,4 @@
+# Compatibility fingerprints require the original bytes on every checkout.
+mod/** -text
+patches/** -text
+tests/fixtures/** -text

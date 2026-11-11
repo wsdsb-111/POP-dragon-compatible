@@ -1,0 +1,5 @@
+﻿mm_pod_royal_succession_status = {
+    type = character
+    text = { trigger = { has_character_flag = mm_pod_royal_species_converted } localization_key = mm_pod_royal_succession_desc }
+    text = { localization_key = EMPTY_STRING fallback = yes }
+}

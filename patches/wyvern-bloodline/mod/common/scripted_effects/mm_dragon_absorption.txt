@@ -1,0 +1,80 @@
+# Death root scope, with CK3's exact scope:killer; never called by previews.
+mm_dragon_absorb_death_effect = {
+    if = {
+        limit = {
+            NOT = { has_character_flag = mm_dragon_absorption_claimed }
+            exists = scope:killer
+            scope:killer != this
+            scope:killer = { is_alive = yes mm_dragon_has_blood_trigger = yes mm_dragon_is_true_dragon_parent_trigger = no }
+            OR = {
+                AND = { death_reason = death_myv_wyvern_slain mm_dragon_is_true_dragon_parent_trigger = yes }
+                AND = {
+                    death_reason = death_duel
+                    has_variable = mm_dragon_blood_hunt_opponent
+                    var:mm_dragon_blood_hunt_opponent = scope:killer
+                    scope:killer = { has_variable = mm_dragon_blood_hunt_opponent var:mm_dragon_blood_hunt_opponent = root }
+                    mm_dragon_has_blood_trigger = yes
+                }
+            }
+        }
+        save_scope_as = mm_dragon_absorption_victim
+        if = {
+            limit = { scope:killer = { mm_dragon_blood_rank < scope:mm_dragon_absorption_victim.mm_dragon_blood_rank } }
+            add_character_flag = mm_dragon_absorption_claimed
+            scope:killer = { save_scope_as = mm_dragon_absorption_hunter }
+            mm_dragon_append_absorbed_origin_effect = { TARGET = scope:mm_dragon_absorption_hunter }
+            # The prey's biological sources remain acquired power, not the
+            # hunter's new biological parents/ancestors.
+            every_in_list = { variable = mm_dragon_origins mm_dragon_append_absorbed_origin_effect = { TARGET = scope:mm_dragon_absorption_hunter } }
+            scope:mm_dragon_absorption_hunter = {
+                if = { limit = { NOT = { has_variable = mm_dragon_absorption_points } } set_variable = { name = mm_dragon_absorption_points value = 0 } }
+                change_variable = { name = mm_dragon_absorption_points add = scope:mm_dragon_absorption_victim.mm_dragon_absorption_victim_value }
+                # This reduction applies only to this exact victim and this promotion check.
+                remove_character_flag = mm_creed_absorption_heresy_discount
+                if = {
+                    limit = { rite = rite:mm_dragon_black faith = scope:mm_dragon_absorption_victim.faith NOT = { rite = scope:mm_dragon_absorption_victim.rite } }
+                    add_character_flag = mm_creed_absorption_heresy_discount
+                }
+                mm_dragon_apply_absorption_upgrade_effect = yes
+                remove_character_flag = mm_creed_absorption_heresy_discount
+                send_interface_toast = { title = mm_dragon_absorption_notice left_icon = scope:mm_dragon_absorption_victim custom_tooltip = mm_dragon_absorption_points_tt }
+            }
+        }
+    }
+}
+# A single if/else_if chain permits at most one promotion per real death.
+# First generation, S and terminal black blood have no promotion branch.
+mm_dragon_apply_absorption_upgrade_effect = {
+    if = {
+        limit = { has_trait = mm_dragon_lineage_4 var:mm_dragon_absorption_points >= mm_dragon_absorption_eligible_c_to_b }
+        change_variable = { name = mm_dragon_absorption_points subtract = mm_dragon_absorption_eligible_c_to_b }
+        remove_trait = mm_dragon_lineage_4
+        add_trait = mm_dragon_lineage_3
+        set_variable = { name = mm_dragon_lineage_generation value = 3 }
+    }
+    else_if = {
+        limit = { has_trait = mm_dragon_lineage_3 var:mm_dragon_absorption_points >= mm_dragon_absorption_eligible_b_to_a }
+        change_variable = { name = mm_dragon_absorption_points subtract = mm_dragon_absorption_eligible_b_to_a }
+        remove_trait = mm_dragon_lineage_3
+        add_trait = mm_dragon_lineage_2
+        set_variable = { name = mm_dragon_lineage_generation value = 2 }
+    }
+    else_if = {
+        limit = { has_trait = mm_dragon_lineage_2 var:mm_dragon_absorption_points >= mm_dragon_absorption_eligible_a_to_s }
+        change_variable = { name = mm_dragon_absorption_points subtract = mm_dragon_absorption_eligible_a_to_s }
+        remove_trait = mm_dragon_lineage_2
+        add_trait = mm_dragon_lineage_1
+        set_variable = { name = mm_dragon_lineage_generation value = 1 }
+    }
+}
+# Either bound party scope. Do not clear a newer, different hunt by stale callback.
+mm_dragon_clear_blood_hunt_effect = {
+    if = {
+        limit = { exists = var:mm_dragon_blood_hunt_opponent }
+        save_scope_as = mm_dragon_hunt_cleanup_actor
+        var:mm_dragon_blood_hunt_opponent = {
+            if = { limit = { var:mm_dragon_blood_hunt_opponent = scope:mm_dragon_hunt_cleanup_actor } remove_variable = mm_dragon_blood_hunt_opponent }
+        }
+        remove_variable = mm_dragon_blood_hunt_opponent
+    }
+}

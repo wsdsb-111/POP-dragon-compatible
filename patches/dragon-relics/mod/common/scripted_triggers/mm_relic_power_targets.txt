@@ -1,0 +1,40 @@
+mm_relic_has_black_blood_trigger = {
+    OR = { has_trait = mm_royal_black_emperor mm_dragon_source_is_black_trigger = yes has_variable = mm_dragon_bio_black }
+}
+mm_relic_has_white_blood_trigger = {
+    OR = { has_trait = mm_royal_white_empress mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_bio_white }
+}
+mm_relic_has_fire_blood_trigger = {
+    OR = { has_trait = mm_royal_fire_king mm_dragon_source_is_fire_trigger = yes has_variable = mm_dragon_bio_fire }
+}
+mm_relic_has_earth_blood_trigger = {
+    OR = { has_trait = mm_royal_earth_king mm_dragon_source_is_earth_trigger = yes has_variable = mm_dragon_bio_earth }
+}
+mm_relic_has_sea_blood_trigger = {
+    OR = { has_trait = mm_royal_sea_king mm_dragon_source_is_sea_trigger = yes has_variable = mm_dragon_bio_sea }
+}
+mm_relic_has_sky_blood_trigger = {
+    OR = { has_trait = mm_royal_sky_king mm_dragon_source_is_sky_trigger = yes has_variable = mm_dragon_bio_sky }
+}
+mm_relic_oracle_immune_trigger = {
+    OR = {
+        has_trait = mm_royal_black_emperor
+        has_trait = mm_royal_white_empress
+        has_variable = mm_dragon_bio_black
+        has_variable = mm_dragon_bio_white
+        has_trait = mm_dragon_branch_black
+        has_trait = mm_dragon_branch_white
+        has_variable = mm_dragon_absorbed_black
+        has_variable = mm_dragon_absorbed_white
+    }
+}
+mm_relic_subordinate_dragon_trigger = {
+    is_alive = yes
+    mm_dragon_is_true_dragon_parent_trigger = yes
+    mm_royal_is_king = no
+}
+mm_relic_destruction_target_trigger = {
+    is_alive = yes
+    mm_royal_is_king = no
+    OR = { mm_dragon_is_true_dragon_parent_trigger = yes mm_dragon_has_inheritable_blood_trigger = yes }
+}

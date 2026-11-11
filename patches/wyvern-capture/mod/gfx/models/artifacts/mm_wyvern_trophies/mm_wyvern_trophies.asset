@@ -1,0 +1,133 @@
+﻿pdxmesh = {
+  name = "mm_wyvern_trophy_fang_mesh"
+  file = "mm_wyvern_trophy_fang.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_wyvern_fang_shape"
+    index = 0
+    texture_diffuse = "mm_wyvern_trophies_diffuse.dds"
+    texture_normal = "mm_wyvern_trophies_normal.dds"
+    texture_specular = "mm_wyvern_trophies_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_wyvern_trophy_fang_entity" pdxmesh = "mm_wyvern_trophy_fang_mesh" }
+
+pdxmesh = {
+  name = "mm_wyvern_trophy_eye_mesh"
+  file = "mm_wyvern_trophy_eye.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_wyvern_eye_shape"
+    index = 0
+    texture_diffuse = "mm_wyvern_trophies_diffuse.dds"
+    texture_normal = "mm_wyvern_trophies_normal.dds"
+    texture_specular = "mm_wyvern_trophies_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_wyvern_trophy_eye_entity" pdxmesh = "mm_wyvern_trophy_eye_mesh" }
+
+pdxmesh = {
+  name = "mm_wyvern_trophy_scale_mesh"
+  file = "mm_wyvern_trophy_scale.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_wyvern_scale_shape"
+    index = 0
+    texture_diffuse = "mm_wyvern_trophies_diffuse.dds"
+    texture_normal = "mm_wyvern_trophies_normal.dds"
+    texture_specular = "mm_wyvern_trophies_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_wyvern_trophy_scale_entity" pdxmesh = "mm_wyvern_trophy_scale_mesh" }
+
+pdxmesh = {
+  name = "mm_wyvern_trophy_head_mesh"
+  file = "mm_wyvern_trophy_head.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 0
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 1
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 2
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 3
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 4
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 5
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+  meshsettings = {
+    name = "mm_wyvern_head_shape"
+    index = 6
+    texture_diffuse = "mm_wyvern_head_diffuse.dds"
+    texture_normal = "mm_wyvern_head_normal.dds"
+    texture_specular = "mm_wyvern_head_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_wyvern_trophy_head_entity" pdxmesh = "mm_wyvern_trophy_head_mesh" }
+
+pdxmesh = {
+  name = "mm_wyvern_trophy_claw_mesh"
+  file = "mm_wyvern_trophy_claw.mesh"
+  scale = 1
+  meshsettings = {
+    name = "mm_wyvern_claw_shape"
+    index = 0
+    texture_diffuse = "mm_wyvern_trophies_diffuse.dds"
+    texture_normal = "mm_wyvern_trophies_normal.dds"
+    texture_specular = "mm_wyvern_trophies_properties.dds"
+    shader = "court"
+    shader_file = "gfx/FX/court_scene.shader"
+  }
+}
+entity = { name = "mm_wyvern_trophy_claw_entity" pdxmesh = "mm_wyvern_trophy_claw_mesh" }

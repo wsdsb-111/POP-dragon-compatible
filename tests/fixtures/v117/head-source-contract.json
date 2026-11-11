@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "source": {
+    "author": "winner_77",
+    "originalTitle": "Screaming dragon head",
+    "filename": "DragScream.fbx",
+    "sha256": "e101ea332eb230ace37813c11b5ac76ee3b70992997ce5890df3d287eccb5298",
+    "originalVertices": 651443,
+    "originalTriangles": 1303950,
+    "license": "CC BY 4.0",
+    "fullSculptRetained": true,
+    "originalBounds": [
+      [
+        -36.033958435058594,
+        -0.001990820048376918,
+        -30.14044189453125
+      ],
+      [
+        41.76433181762695,
+        100.00201416015625,
+        44.98540115356445
+      ]
+    ],
+    "uniformScale": 0.36,
+    "optimizedTriangles": 240000,
+    "exportedTriangles": 240000,
+    "palette": {
+      "main": "#8A6A45",
+      "secondary": "#6F5338",
+      "grooves": "#4A3727",
+      "horn": "#3B312B",
+      "teeth": "#D7C6A1",
+      "tissue": "#8C6B5A"
+    }
+  },
+  "creditsFile": "CREDITS-winner_77-dragon-head.txt",
+  "runtimeModel": "mm_wyvern_trophy_head.mesh",
+  "runtimeTextures": [
+    "mm_wyvern_head_diffuse.dds",
+    "mm_wyvern_head_normal.dds",
+    "mm_wyvern_head_properties.dds"
+  ]
+}

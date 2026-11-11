@@ -1,0 +1,4 @@
+﻿l_english:
+ mm_pod_royal_succession_desc:0 "The slain sovereign's blood has made you a new dragon sovereign, replacing your former supernatural species. Fusion and erosion decide who controls the body; both outcomes preserve the inherited royal rank."
+ mm_asc_usurper_source_desc:0 "$trait_mm_asc_usurper_blood_desc$\n\nActual source: [ROOT.Char.MakeScope.Var('mm_asc_blood_source').Char.GetName].\n[ROOT.Char.Custom('mm_pod_royal_succession_status')]"
+ mm_asc.0002.desc:0 "The dragon blood has yielded to my will. My name and identity remain mine. The whispers fall silent and the source dragon's body is mine. If that source was a sovereign, its throne is now mine as well. I can still change between human and dragon form."

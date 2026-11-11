@@ -1,0 +1,402 @@
+mm_asc_native_color = { usage = game selection_behavior = weighted_random priority = 1300
+	myv_wyvern_visual_red_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_red_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_red_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_red_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_red_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_red_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_red_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_red_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_07 } } }
+	}
+	myv_wyvern_visual_red_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_red_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_red_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_red_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_red has_character_flag = myv_wyvern_size_tier_10 } } }
+	}
+	myv_wyvern_visual_green_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_green_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_green_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_green_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_green_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_green_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_green_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_green_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_07 } } }
+	}
+	myv_wyvern_visual_green_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_green_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_green_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_green_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_green has_character_flag = myv_wyvern_size_tier_10 } } }
+	}
+	myv_wyvern_visual_black_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_black_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_black_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_black_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_black_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_black_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_black_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_black_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_07 } } }
+	}
+	myv_wyvern_visual_black_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_black_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_black_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_black_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_black has_character_flag = myv_wyvern_size_tier_10 } } }
+	}
+	myv_wyvern_visual_grey_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_grey_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_grey_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_grey_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_grey_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_grey_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_grey_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_grey_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_07 } } }
+	}
+	myv_wyvern_visual_grey_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_grey_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_grey_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_grey_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_grey has_character_flag = myv_wyvern_size_tier_10 } } }
+	}
+	myv_wyvern_visual_gold_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_gold_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_gold_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_gold_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_gold_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_gold_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_gold_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_gold_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 OR = { AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_07 } this = character:99001006 } } }
+	}
+	myv_wyvern_visual_gold_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_gold_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_gold_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_gold_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 OR = { AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_gold has_character_flag = myv_wyvern_size_tier_10 } this = character:99001004 this = character:99001005 } } }
+	}
+	myv_wyvern_visual_nightmare_hatchling = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_hatchling value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_hatchling } } }
+	}
+	myv_wyvern_visual_nightmare_tier_01 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_01 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_01 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_02 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_02 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_02 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_03 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_03 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_03 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_04 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_04 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_04 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_05 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_05 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_05 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_06 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_06 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_06 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_07 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_07 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_07 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_08 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_08 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_08 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_09 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_09 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_09 } } }
+	}
+	myv_wyvern_visual_nightmare_tier_10 = {
+		dna_modifiers = {
+			accessory = { mode = replace gene = gene_myv_wyvern template = myv_wyvern_nightmare_tier_10 value = 1.0 }
+		}
+		weight = { base = 0 modifier = { add = 1000 AND = { portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_asc_dragon_form has_variable = mm_asc_visual_family var:mm_asc_visual_family = 0 NOT = { has_character_flag = mm_wyvern_human_form } has_character_flag = myv_wyvern_color_nightmare has_character_flag = myv_wyvern_size_tier_10 } } }
+	}
+}
+mm_asc_human_portrait = { usage = game selection_behavior = weighted_random priority = 2200
+  human = { dna_modifiers = { accessory = { mode = replace gene = gene_myv_wyvern template = no_myv_wyvern value = 1 } accessory = { mode = replace gene = gene_myv_wyvern_flying template = no_myv_wyvern_flying value = 1 } accessory = { mode = replace gene = gene_myv_wyvern_running template = no_myv_wyvern_running value = 1 } accessory = { mode = replace gene = gene_myv_mounted_wyvern template = no_myv_mounted_wyvern value = 1 } accessory = { mode = replace gene = gene_myv_wyvern_wild_aerial_flying template = no_myv_wyvern_wild_aerial_flying value = 1 } accessory = { mode = replace gene = gene_myv_compact_head template = no_myv_compact_head value = 1 } morph = { mode = replace gene = gene_myv_no_portrait template = normal_portrait value = 1 } }
+    weight = { base = 0 modifier = { add = 1000 portrait_has_trait_trigger = { TRAIT = mm_asc_dragon_body } has_character_flag = mm_wyvern_human_form NOT = { has_character_flag = mm_asc_dragon_form } } } }
+}

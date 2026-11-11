@@ -1,0 +1,2835 @@
+﻿mm_pod_original_true_age = {
+	value = current_year
+	
+	#Enoch
+	#Caine : Sumer is -10000, Caine is older, CK3 doesn't go beyond an integer value, so no -200000 theory
+	#Hence, arbitrary -14000 birth date for Caine, older than Sumer and the second gen, gives him time to be "the wanderer"
+	if = {
+		limit = { this = character:505001 }
+		add = 14000
+	}
+
+	#Lilith is older than Caine, she was Adam's first wife
+	#Arbitrary -15000
+	else_if = {
+		limit = { this = character:505002 }
+		add = 15000
+	}
+	
+	#Second generation : close to Sumer, hence -10000
+	else_if = {
+		limit = { this = character:505003 }
+		add = 10000
+	}
+	else_if = {
+		limit = { this = character:505004 }
+		add = 10000
+	}	
+	else_if = {
+		limit = { this = character:505005 }
+		add = 10000
+	}	
+
+	#Third generation : sources mostly agree on -8000
+	
+	else_if = {
+		limit = { this = character:505009 }
+		add = 8000
+	}			
+	else_if = {
+		limit = { this = character:791695 }
+		add = 8000
+	}	
+	else_if = {
+		limit = { this = character:505015 }
+		add = 8000
+	}
+	#Troile is actually post biblical flood, so -6000
+	else_if = {
+		limit = { this = character:505016 }
+		add = 6000
+	}	
+	else_if = {
+		limit = { this = character:505017 }
+		add = 8000
+	}
+	else_if = {
+		limit = { this = character:505013 }
+		add = 8000
+	}
+	else_if = {
+		limit = { this = character:505019 }
+		add = 8000
+	}			
+	else_if = {
+		limit = { this = character:505007 }
+		add = 8000
+	}			
+	else_if = {
+		limit = { this = character:505011 }
+		add = 8000
+	}
+	else_if = {
+		limit = { this = character:505020 }
+		add = 8000
+	}
+	else_if = {
+		limit = { this = character:505008 }
+		add = 8000
+	}
+	#Set is actually the youngest of them all
+	else_if = {
+		limit = { this = character:505012 }
+		add = 5000
+	}
+	else_if = {
+		limit = { this = character:505006 }
+		add = 8000
+	}
+	else_if = {
+		limit = { this = character:505021 }
+		add = 8000
+	}			
+	else_if = {
+		limit = { this = character:505014 }
+		add = 8000
+	}
+	#First recorded KJ, pre Chinese history
+	else_if = {
+		limit = { this = character:791111 }
+		add = 6000
+	}	
+	#The two known golden children are likely very very very old
+	else_if = {
+		limit = { this = character:795003 }
+		add = 3987
+	}	
+	else_if = {
+		limit = { this = character:795005 }
+		add = 4125
+	}
+	else_if = {
+		limit = { this = character:795104 }
+		add = 3659
+	}		
+	else_if = {
+		limit = { this = character:793122 }
+		add = 3500
+	}
+	else_if = {
+		limit = { this = character:795016 }
+		add = 3798
+	}
+	else_if = {
+		limit = { this = character:793495 }
+		add = 3356
+	}	
+	else_if = {
+		limit = { this = character:793238 }
+		add = 3459
+	}
+	else_if = {
+		limit = { this = character:793246 }
+		add = 985
+	}
+	else_if = {
+		limit = { this = character:795017 }
+		add = 1155
+	}
+	else_if = {
+		limit = { this = character:791114 }
+		add = 1755
+	}
+	else_if = {
+		limit = { this = character:793348 }
+		add = 1192
+	}	
+	else_if = {
+		limit = { this = character:793352 }
+		add = 220
+	}	
+	else_if = {
+		limit = { this = character:795027 }
+		add = 768
+	}		
+	else_if = {
+		limit = { this = character:793251 }
+		add = 2559
+	}
+	else_if = {
+		limit = { this = character:793252 }
+		add = 2450
+	}
+	else_if = {
+		limit = { this = character:793389 }
+		add = 2100
+	}
+	else_if = {
+		limit = { this = character:793390 }
+		add = 2100
+	}	
+	else_if = {
+		limit = { this = character:793253 }
+		add = 1023
+	}	
+	else_if = {
+		limit = { this = character:793266 }
+		add = 598
+	}	
+	else_if = {
+		limit = { this = character:793277 }
+		add = 359
+	}		
+	else_if = {
+		limit = { this = character:793239 }
+		add = 3100
+	}
+	else_if = {
+		limit = { this = character:793542 }
+		add = 633
+	}		
+	else_if = {
+		limit = { this = character:793240 }
+		add = 1559
+	}	
+	else_if = {
+		limit = { this = character:793239 }
+		add = 958
+	}	
+	else_if = {
+		limit = { this = character:795013 }
+		add = 2100
+	}
+	else_if = {
+		limit = { this = character:793413 }
+		add = 2090
+	}		
+	else_if = {
+		limit = { this = character:795014 }
+		add = 1550
+	}		
+	else_if = {
+		limit = { this = character:793241 }
+		add = 215
+	}
+	
+	else_if = {
+		limit = { this = character:793214 }
+		add = 3199
+	}	
+	else_if = {
+		limit = { this = character:793223 }
+		add = 785
+	}	
+	else_if = {
+		limit = { this = character:793234 }
+		add = 2556
+	}		
+	else_if = {
+		limit = { this = character:793210 }
+		add = 3125
+	}	
+	else_if = {
+		limit = { this = character:793212 }
+		add = 2300
+	}
+	else_if = {
+		limit = { this = character:793213 }
+		add = 1985
+	}	
+	else_if = {
+		limit = { this = character:793139 }
+		add = 3025
+	}
+	else_if = {
+		limit = { this = character:793174 }
+		add = 3000
+	}		
+	else_if = {
+		limit = { this = character:791129 }
+		add = 369
+	}	
+	
+
+	#Prias
+	else_if = {
+		limit = { this = character:555022 }
+		add = 1330
+	}
+
+	#Assamites
+	
+	else_if = {
+		limit = { this = character:790167 }
+		add = 330
+	}
+	
+	#Supposed to be -10000, but would put him earlier than the Antes
+	else_if = {
+		limit = { this = character:790356 }
+		add = 7770
+	}		
+	else_if = {
+		limit = { this = character:790164 }
+		add = 35
+	}
+	else_if = {
+		limit = { this = character:790357 }
+		add = 972
+	}
+	else_if = {
+		limit = { this = character:790219 }
+		add = 706
+	}
+	else_if = {
+		limit = { this = character:790523 }
+		add = 3800
+	}
+	else_if = {
+		limit = { this = character:790524 }
+		add = 303
+	}
+	else_if = {
+		limit = { this = character:790530 }
+		add = 3760
+	}
+
+	#Baali
+	
+	else_if = {
+		limit = { this = character:790367 }
+		add = 7436
+	}			
+	else_if = {
+		limit = { this = character:790368 }
+		add = 7436
+	}
+	else_if = {
+		limit = { this = character:793085 }
+		add = 7436
+	}
+	else_if = {
+		limit = { this = character:790545 }
+		add = 1100
+	}
+	else_if = {
+		limit = { this = character:790149 }
+		add = 1705
+	}
+	else_if = {
+		limit = { this = character:790147 }
+		add = 1500
+	}
+	else_if = {
+		limit = { this = character:790217 }
+		add = 333
+	}
+	else_if = {
+		limit = { this = character:790146 }
+		add = 3755
+	}
+	
+	#Brujah
+	else_if = {
+		limit = { this = character:790303 }
+		add = 206
+	}	
+	else_if = {
+		limit = { this = character:790853 }
+		add = 270
+	}
+	else_if = {
+		limit = { this = character:790309 }
+		add = 1200
+	}
+	else_if = {
+		limit = { this = character:790308 }
+		add = 478
+	}
+	else_if = {
+		limit = { this = character:790306 }
+		add = 2468
+	}	
+	else_if = {
+		limit = { this = character:792338 }
+		add = 1350
+	}	
+	else_if = {
+		limit = { this = character:791232 }
+		add = 2078
+	}
+	else_if = {
+		limit = { this = character:790436 }
+		add = 230
+	}
+	
+	#Cappadocian
+	
+	else_if = {
+		limit = { this = character:790020 }
+		add = 7225
+	}			
+	else_if = {
+		limit = { this = character:790021 }
+		add = 728
+	}	
+	else_if = {
+		limit = { this = character:790220 }
+		add = 532
+	}	
+	else_if = {
+		limit = { this = character:790155 }
+		add = 599
+	}	
+	else_if = {
+		limit = { this = character:793299 }
+		add = 67
+	}
+	
+	#Gangrel
+	
+	else_if = {
+		limit = { this = character:790351 }
+		add = 1223
+	}
+	else_if = {
+		limit = { this = character:790226 }
+		add = 906
+	}
+	else_if = {
+		limit = { this = character:505055 }
+		add = 1134
+	}
+	else_if = {
+		limit = { this = character:505088 }
+		add = 625
+	}		
+	else_if = {
+		limit = { this = character:790270 }
+		add = 550
+	}			
+	else_if = {
+		limit = { this = character:790199 }
+		add = 751
+	}				
+	else_if = {
+		limit = { this = character:791269 }
+		add = 390
+	}	
+	else_if = {
+		limit = { this = character:790483 }
+		add = 3
+	}
+	else_if = {
+		limit = { this = character:505101 }
+		add = 1094
+	}
+	else_if = {
+		limit = { this = character:791144 }
+		add = 1074
+	}
+	else_if = {
+		limit = { this = character:791143 }
+		add = 1044
+	}
+	else_if = {
+		limit = { this = character:793294 }
+		add = 874
+	}
+	else_if = {
+		limit = { this = character:793295 }
+		add = 552
+	}
+	else_if = {
+		limit = { this = character:793297 }
+		add = 248
+	}
+	
+	#Lasombra		
+	else_if = {
+		limit = { this = character:505070 }
+		add = 3156
+	}	
+	else_if = {
+		limit = { this = character:790201 }
+		add = 401
+	}
+	
+	#Malkavian	
+	else_if = {
+		limit = { this = character:792375 }
+		subtract = 40
+	}	
+	else_if = {
+		limit = { this = character:790205 }
+		add = 552
+	}
+	else_if = {
+		limit = { this = character:790631 }
+		add = 1200
+	}
+	else_if = {
+		limit = { this = character:790633 }
+		add = 200
+	}
+	else_if = {
+		limit = { this = character:792855 }
+		add = 1
+	}
+
+	#Nosferatu		
+	else_if = {
+		limit = { this = character:699998 }
+		add = 6206
+	}
+	else_if = {
+        limit = { this = character:795416 }
+        add = 84
+    }
+	else_if = {
+        limit = { this = character:795415 }
+        add = 683
+    }
+	else_if = {
+        limit = { this = character:795435 }
+        add = 149
+    }
+	#TBR Asia
+	#else_if = {
+	#	limit = { this = character:793311 }
+	#	add = 888
+	#}
+	#else_if = {
+	#	limit = { this = character:793332 }
+	#	add = 703
+	#}
+	#else_if = {
+	#	limit = { this = character:793333 }
+	#	add = 603
+	#}	
+	else_if = {
+		limit = { this = character:699999 }
+		add = 6009
+	}
+	else_if = {
+		limit = { this = character:505075 }
+		add = 5000
+	}
+	else_if = {
+		limit = { this = character:790917 }
+		add = 379
+	}
+
+	#Ravnos		
+	else_if = {
+		limit = { this = character:790190 }
+		add = 3282
+	}
+	else_if = {
+		limit = { this = character:790191 }
+		add = 1598
+	}
+	else_if = {
+		limit = { this = character:791174 }
+		add = 229
+	}	
+	else_if = {
+		limit = { this = character:793289 }
+		add = 350
+	}	
+	else_if = {
+		limit = { this = character:790998 }
+		add = 325
+	}
+	else_if = {
+		limit = { this = character:795401 }
+		add = 329
+	}
+	else_if = {
+		limit = { this = character:795402 }
+		add = 233
+	}
+
+	#Salubri		
+	else_if = {
+		limit = { this = character:790383 }
+		add = 6661
+	}
+	else_if = {
+		limit = { this = character:791007 }
+		add = 4500
+	}	
+	else_if = {
+		limit = { this = character:791015 }
+		add = 1788
+	}		
+	else_if = {
+		limit = { this = character:792827 }
+		add = 162
+	}
+
+	#Setite		
+	else_if = {
+		limit = { this = character:505094 }
+		add = 4970
+	}
+	else_if = {
+		limit = { this = character:790512 }
+		add = 1300
+	}
+	else_if = {
+		limit = { this = character:790514 }
+		add = 1352
+	}
+	else_if = {
+		limit = { this = character:790517 }
+		add = 1032
+	}
+	else_if = {
+		limit = { this = character:790128 }
+		add = 1928
+	}
+	else_if = {
+		limit = { this = character:790984 }
+		add = 180
+	}
+	else_if = {
+		limit = { this = character:799909 }
+		add = 4239
+	}
+
+	#Toreador		
+	else_if = {
+		limit = { this = character:505051 }
+		add = 2149
+	}
+	else_if = {
+		limit = { this = character:505051 }
+		add = 150
+	}
+	else_if = {
+		limit = { this = character:790299 }
+		add = 1559
+	}
+	else_if = {
+		limit = { this = character:790179 }
+		add = 1300
+	}
+	else_if = {
+		limit = { this = character:790731 }
+		add = 126
+	}
+	
+	#Tzimisce		
+	else_if = {
+		limit = { this = character:605123 }
+		add = 7793
+	}
+	else_if = {
+		limit = { this = character:793303 }
+		add = 5087
+	}	
+	else_if = {
+		limit = { this = character:790247 }
+		add = 7593
+	}
+	else_if = {
+		limit = { this = character:790341 }
+		add = 5793
+	}
+	else_if = {
+		limit = { this = character:605125 }
+		add = 3395
+	}
+	else_if = {
+		limit = { this = character:790951 }
+		add = 1348
+	}
+	
+	#Ventrue		
+	else_if = {
+		limit = { this = character:790277 }
+		add = 1976
+	}
+	else_if = {
+		limit = { this = character:790279 }
+		add = 1425
+	}
+	else_if = {
+		limit = { this = character:791463 }
+		add = 806
+	}
+	else_if = {
+		limit = { this = character:505071 }
+		add = 1258
+	}
+	else_if = {
+		limit = { this = character:505109 }
+		add = 430
+	}
+	else_if = {
+		limit = { this = character:505082 }
+		add = 700
+	}
+	else_if = {
+		limit = { this = character:790101 }
+		add = 395
+	}
+	else_if = {
+		limit = { this = character:505130 }
+		add = 1236
+	}
+	else_if = {
+		limit = { this = character:790284 }
+		add = 7323
+	}
+	else_if = {
+		limit = { this = character:795144 }
+		add = 1998
+	}	
+	else_if = {
+		limit = { this = character:790204 }
+		add = 681
+	}
+	else_if = {
+		limit = { this = character:790275 }
+		add = 2896
+	}
+	else_if = {
+		limit = { this = character:792773 }
+		add = 549
+	}	
+	else_if = {
+		limit = { this = character:505096 }
+		add = 480
+	}
+	else_if = {
+		limit = { this = character:795453 }
+		add = 200
+	}
+	
+	#These characters are non essential, their set_age could be shifted to another event if the startup is getting too busy
+	
+	#Ventrue
+	else_if = {
+		limit = { this = character:790425 }
+		add = 1356
+	}			
+	else_if = {
+		limit = { this = character:790567 }
+		add = 5569
+	}				
+	else_if = {
+		limit = { this = character:790421 }
+		add = 3100
+	}	
+	else_if = {
+		limit = { this = character:790422 }
+		add = 3000
+	}				
+	else_if = {
+		limit = { this = character:790285 }
+		add = 320
+	}			
+	else_if = {
+		limit = { this = character:790289 }
+		add = 342
+	}	
+	else_if = {
+		limit = { this = character:505110 }
+		add = 480
+	}			
+	else_if = {
+		limit = { this = character:790260 }
+		add = 372
+	}
+	else_if = {
+		limit = { this = character:790137 }
+		add = 146
+	}
+	else_if = {
+		limit = { this = character:710201 }
+		add = 1555
+	}
+	else_if = {
+		limit = { this = character:790139 }
+		subtract = 41
+	}
+	else_if = {
+		limit = { this = character:792777 }
+		add = 300
+	}	
+	else_if = {
+		limit = { this = character:792778 }
+		add = 250
+	}
+
+	else_if = {
+		limit = { this = character:792797 }
+		add = 255
+	}
+	
+	#Tzimisce		
+	else_if = {
+		limit = { this = character:792057 }
+		add = 1368
+	}
+	else_if = {
+		limit = { this = character:792135 }
+		add = 1139
+	}
+	else_if = {
+		limit = { this = character:792059 }
+		add = 239
+	}
+	
+	#Toreador	
+	else_if = {
+		limit = { this = character:790593 }
+		add = 284
+	}	
+	else_if = {
+		limit = { this = character:790429 }
+		add = 1339
+	}
+	else_if = {
+		limit = { this = character:790431 }
+		add = 1182
+	}
+	else_if = {
+		limit = { this = character:792129 }
+		add = 1079
+	}
+	else_if = {
+		limit = { this = character:790592 }
+		add = 806
+	}
+	else_if = {
+		limit = { this = character:605132 }
+		add = 706
+	}
+	else_if = {
+		limit = { this = character:791024 }
+		add = 808
+	}
+	else_if = {
+		limit = { this = character:790290 }
+		add = 1310
+	}
+	else_if = {
+		limit = { this = character:792052 }
+		add = 4792
+	}
+	else_if = {
+		limit = { this = character:792053 }
+		add = 924
+	}
+	else_if = {
+		limit = { this = character:792054 }
+		add = 3900
+	}
+	else_if = {
+		limit = { this = character:792195 }
+		add = 2036
+	}
+	
+	#Setite		
+	else_if = {
+		limit = { this = character:790513 }
+		add = 1982
+	}
+	else_if = {
+		limit = { this = character:790515 }
+		add = 72
+	}
+	else_if = {
+		limit = { this = character:790126 }
+		add = 2357
+	}
+	else_if = {
+		limit = { this = character:790985 }
+		add = 1924
+	}
+	else_if = {
+		limit = { this = character:790986 }
+		add = 1615
+	}
+	else_if = {
+		limit = { this = character:791181 }
+		add = 1521
+	}
+	else_if = {
+		limit = { this = character:790987 }
+		add = 1284
+	}
+	else_if = {
+		limit = { this = character:790988 }
+		add = 535
+	}
+	else_if = {
+		limit = { this = character:790989 }
+		add = 3468
+	}
+	else_if = {
+		limit = { this = character:791150 }
+		add = 5000
+	}
+	else_if = {
+		limit = { this = character:791151 }
+		add = 4684
+	}
+	else_if = {
+		limit = { this = character:791152 }
+		add = 1000
+	}
+	else_if = {
+		limit = { this = character:792046 }
+		add = 3359
+	}
+	else_if = {
+		limit = { this = character:792047 }
+		add = 755
+	}
+	else_if = {
+		limit = { this = character:792048 }
+		add = 924
+	}
+	else_if = {
+		limit = { this = character:792049 }
+		add = 4772
+	}
+	else_if = {
+		limit = { this = character:790393 }
+		add = 3150
+	}	
+	
+	
+	#Salubri		
+	else_if = {
+		limit = { this = character:790382 }
+		add = 6542
+	}
+	else_if = {
+		limit = { this = character:790384 }
+		add = 5782
+	}
+	else_if = {
+		limit = { this = character:793355 }
+		add = 3954
+	}	
+	else_if = {
+		limit = { this = character:791148 }
+		add = 3982
+	}
+	else_if = {
+		limit = { this = character:791149 }
+		add = 3982
+	}
+	
+	#Ravnos		
+	else_if = {
+		limit = { this = character:790193 }
+		add = 3180
+	}
+	else_if = {
+		limit = { this = character:793498 }
+		add = 2456
+	}	
+	else_if = {
+		limit = { this = character:793084 }
+		add = 847
+	}	
+	else_if = {
+		limit = { this = character:790192 }
+		add = 3095
+	}
+	else_if = {
+		limit = { this = character:795157 }
+		add = 2256
+	}	
+	else_if = {
+		limit = { this = character:790194 }
+		add = 2332
+	}
+	else_if = {
+		limit = { this = character:790995 }
+		add = 1737
+	}
+	else_if = {
+		limit = { this = character:790994 }
+		add = 1872
+	}
+	else_if = {
+		limit = { this = character:791822 }
+		add = 1400
+	}
+	else_if = {
+		limit = { this = character:790386 }
+		add = 1751
+	}
+	else_if = {
+		limit = { this = character:790996 }
+		add = 3315
+	}
+	
+	#Nosferatu		
+	else_if = {
+		limit = { this = character:790249 }
+		add = 2000
+	}
+	else_if = {
+		limit = { this = character:790914 }
+		add = 1000
+	}
+	else_if = {
+		limit = { this = character:790378 }
+		add = 1025
+	}
+	else_if = {
+		limit = { this = character:792122 }
+		add = 722
+	}
+	else_if = {
+		limit = { this = character:790273 }
+		add = 774
+	}
+	else_if = {
+		limit = { this = character:790501 }
+		add = 5724
+	}
+	else_if = {
+		limit = { this = character:791248 }
+		add = 3352
+	}
+	else_if = {
+		limit = { this = character:791023 }
+		add = 338
+	}
+	else_if = {
+		limit = { this = character:790705 }
+		add = 47
+	}
+	else_if = {
+		limit = { this = character:792212 }
+		add = 3352
+	}
+	
+	#Malkavian		
+	else_if = {
+		limit = { this = character:790318 }
+		add = 753
+	}
+	else_if = {
+		limit = { this = character:792173 }
+		add = 451
+	}
+	else_if = {
+		limit = { this = character:790319 }
+		add = 765
+	}
+	else_if = {
+		limit = { this = character:790900 }
+		add = 2550
+	}
+	else_if = {
+		limit = { this = character:790899 }
+		add = 2661
+	}
+	else_if = {
+		limit = { this = character:790320 }
+		add = 2771
+	}
+	else_if = {
+		limit = { this = character:790634 }
+		add = 776
+	}
+	else_if = {
+		limit = { this = character:790556 }
+		add = 838
+	}
+	else_if = {
+		limit = { this = character:790489 }
+		add = 873
+	}
+	else_if = {
+		limit = { this = character:790488 }
+		add = 1137
+	}			
+	else_if = {
+		limit = { this = character:790635 }
+		add = 232
+	}
+	else_if = {
+		limit = { this = character:792927 }
+		add = 200
+	}	
+	else_if = {
+		limit = { this = character:790632 }
+		add = 872
+	}
+	else_if = {
+		limit = { this = character:790894 }
+		add = 1332
+	}
+	else_if = {
+		limit = { this = character:790901 }
+		add = 320
+	}
+	else_if = {
+		limit = { this = character:790895 }
+		add = 893
+	}
+	else_if = {
+		limit = { this = character:790896 }
+		add = 330
+	}
+	else_if = {
+		limit = { this = character:790897 }
+		add = 220
+	}
+	else_if = {
+		limit = { this = character:791234 }
+		add = 166
+	}
+	else_if = {
+		limit = { this = character:792498 }
+		add = 350
+	}	
+	else_if = {
+		limit = { this = character:791757 }
+		add = 550
+	}
+	else_if = {
+		limit = { this = character:792785 }
+		add = 2250
+	}
+	
+	#Lasombra		
+	else_if = {
+		limit = { this = character:790109 }
+		add = 320
+	}	
+	else_if = {
+		limit = { this = character:505149 }
+		add = 478
+	}
+	else_if = {
+		limit = { this = character:505140 }
+		add = 551
+	}			
+	else_if = {
+		limit = { this = character:792174 }
+		add = 547
+	}
+	else_if = {
+		limit = { this = character:791264 }
+		add = 215
+	}
+	else_if = {
+		limit = { this = character:791263 }
+		add = 421
+	}
+	else_if = {
+		limit = { this = character:790221 }
+		add = 487
+	}
+	else_if = {
+		limit = { this = character:790210 }
+		add = 693
+	}
+	else_if = {
+		limit = { this = character:505145 }
+		add = 1121
+	}
+	else_if = {
+		limit = { this = character:790449 }
+		add = 2387
+	}
+
+	#KJ	
+	else_if = {
+		limit = { this = character:791125 }
+		add = 2559
+	}
+	else_if = {
+		limit = { this = character:792365 }
+		add = 204
+	}	
+	else_if = {
+		limit = { this = character:793517 }
+		add = 959
+	}	
+	else_if = {
+		limit = { this = character:793514 }
+		add = 256
+	}	
+	else_if = {
+		limit = { this = character:791117 }
+		add = 456
+	}
+	else_if = {
+		limit = { this = character:793541 }
+		add = 329
+	}	
+	else_if = {
+		limit = { this = character:793516 }
+		add = 159
+	}	
+	else_if = {
+		limit = { this = character:793513 }
+		add = 333
+	}		
+	else_if = {
+		limit = { this = character:795055 }
+		add = 1559
+	}	
+	else_if = {
+		limit = { this = character:791126 }
+		add = 2603
+	}
+	else_if = {
+		limit = { this = character:795035 }
+		add = 1955
+	}	
+	else_if = {
+		limit = { this = character:793161 }
+		add = 625
+	}	
+	else_if = {
+		limit = { this = character:793164 }
+		add = 505
+	}	
+	else_if = {
+		limit = { this = character:793445 }
+		add = 1555
+	}	
+	else_if = {
+		limit = { this = character:793532 }
+		add = 1006
+	}	
+	else_if = {
+		limit = { this = character:793533 }
+		subtract = 32
+	}
+	
+	#Gangrel	
+	else_if = {
+		limit = { this = character:790481 }
+		add = 1982
+	}
+	else_if = {
+		limit = { this = character:790482 }
+		add = 1400
+	}
+	else_if = {
+		limit = { this = character:793309 }
+		add = 1962
+	}
+	#TBR Asia
+	#else_if = {
+	#	limit = { this = character:793338 }
+	#	add = 542
+	#}
+	#else_if = {
+	#	limit = { this = character:793327 }
+	#	add = 496
+	#}
+	#else_if = {
+	#	limit = { this = character:793328 }
+	#	add = 268
+	#}
+	#else_if = {
+	#	limit = { this = character:793329 }
+	#	add = 165
+	#}
+	#else_if = {
+	#	limit = { this = character:793330 }
+	#	add = 112
+	#}
+	#else_if = {
+	#	limit = { this = character:793488 }
+	#	add = 1250
+	#}	
+	
+	else_if = {
+		limit = { this = character:790485 }
+		add = 9
+	}
+	else_if = {
+		limit = { this = character:790643 }
+		add = 756
+	}
+	else_if = {
+		limit = { this = character:790883 }
+		add = 552
+	}
+	else_if = {
+		limit = { this = character:792050 }
+		add = 3359
+	}
+	else_if = {
+		limit = { this = character:792051 }
+		add = 2206
+	}
+	else_if = {
+		limit = { this = character:792055 }
+		add = 3232
+	}
+	else_if = {
+		limit = { this = character:791106 }
+		add = 355
+	}	
+	else_if = {
+		limit = { this = character:792026 }
+		add = 650
+	}	
+	else_if = {
+		limit = { this = character:505128 }
+		add = 725
+	}	
+	else_if = {
+		limit = { this = character:792779 }
+		add = 610
+	}
+	else_if = {
+		limit = { this = character:792780 }
+		add = 605
+	}
+	else_if = {
+		limit = { this = character:792781 }
+		add = 583
+	}	
+	else_if = {
+		limit = { this = character:792870 }
+		add = 2185
+	}	
+	
+	#Cappadocian
+
+	else_if = {
+		limit = { this = character:793083 }
+		add = 308
+	}		
+	else_if = {
+		limit = { this = character:791272 }
+		add = 86
+	}	
+	else_if = {
+		limit = { this = character:790405 }
+		add = 722
+	}	
+	else_if = {
+		limit = { this = character:790408 }
+		add = 621
+	}				
+	else_if = {
+		limit = { this = character:791222 }
+		add = 421
+	}	
+	else_if = {
+		limit = { this = character:791290 }
+		add = 273
+	}
+	else_if = {
+		limit = { this = character:792043 }
+		add = 751
+	}
+	else_if = {
+		limit = { this = character:792112 }
+		add = 586
+	}
+	else_if = {
+		limit = { this = character:792113 }
+		add = 380
+	}
+	else_if = {
+		limit = { this = character:793280 }
+		add = 100
+	}	
+	else_if = {
+		limit = { this = character:792044 }
+		add = 2551
+	}	
+	else_if = {
+		limit = { this = character:792045 }
+		add = 2248
+	}		
+	else_if = {
+		limit = { this = character:793018 }
+		add = 150
+	}
+	else_if = {
+		limit = { this = character:793019 }
+		add = 203
+	}
+	#Brujah
+	else_if = {
+		limit = { this = character:790854 }
+		add = 205
+	}	
+	else_if = {
+		limit = { this = character:790852 }
+		add = 196
+	}
+	else_if = {
+		limit = { this = character:790313 }
+		add = 226
+	}			
+	else_if = {
+		limit = { this = character:790312 }
+		add = 339
+	}	
+	else_if = {
+		limit = { this = character:790150 }
+		add = 148
+	}	
+	else_if = {
+		limit = { this = character:605102 }
+		add = 1131
+	}				
+	else_if = {
+		limit = { this = character:790311 }
+		add = 439
+	}
+	else_if = {
+		limit = { this = character:790310 }
+		add = 306
+	}
+	else_if = {
+		limit = { this = character:790305 }
+		add = 2426
+	}
+	else_if = {
+		limit = { this = character:792344 }
+		add = 1545
+	}			
+	else_if = {
+		limit = { this = character:791858 }
+		add = 306
+	}
+	else_if = {
+		limit = { this = character:790845 }
+		add = 1409
+	}
+	else_if = {
+		limit = { this = character:791033 }
+		add = 406
+	}
+	else_if = {
+		limit = { this = character:791277 }
+		add = 370
+	}			
+	else_if = {
+		limit = { this = character:791253 }
+		add = 226
+	}	
+	else_if = {
+		limit = { this = character:792738 }
+		add = 355
+	}
+	else_if = {
+		limit = { this = character:792741 }
+		add = 451
+	}
+	else_if = {
+		limit = { this = character:795145 }
+		add = 255
+	}	
+	else_if = {
+		limit = { this = character:792619 }
+		add = 403
+	}
+	else_if = {
+		limit = { this = character:792800 }
+		add = 358
+	}
+	else_if = {
+		limit = { this = character:791184 }
+		add = 758
+	}
+	else_if = {
+		limit = { this = character:710401 }
+		add = 1201
+	}
+	
+	#Baali
+	
+	else_if = {
+		limit = { this = character:505095 }
+		add = 2286
+	}
+	else_if = {
+		limit = { this = character:790369 }
+		add = 928
+	}
+	else_if = {
+		limit = { this = character:790370 }
+		add = 1889
+	}
+	else_if = {
+		limit = { this = character:790145 }
+		add = 195
+	}			
+	else_if = {
+		limit = { this = character:790145 }
+		add = 4339
+	}
+	
+	#Assamites
+
+	else_if = {
+		limit = { this = character:505093 }
+		add = 1306
+	}
+	else_if = {
+		limit = { this = character:791450 }
+		add = 333
+	}
+	else_if = {
+		limit = { this = character:791449 }
+		add = 4
+	}
+	else_if = {
+		limit = { this = character:790353 }
+		add = 4006
+	}
+	else_if = {
+		limit = { this = character:710101 }
+		add = 2505
+	}	
+	else_if = {
+		limit = { this = character:790736 }
+		add = 669
+	}
+	else_if = {
+		limit = { this = character:790655 }
+		add = 1005
+	}
+	else_if = {
+		limit = { this = character:792042 }
+		add = 6431
+	}
+	else_if = {
+		limit = { this = character:792751 }
+		add = 556
+	}
+	else_if = {
+		limit = { this = character:792752 }
+		add = 556
+	}
+	else_if = {
+		limit = { this = character:792753 }
+		add = 556
+	}
+	else_if = {
+		limit = { this = character:792883 }
+		add = 1
+	}
+	
+	#Wepauwet
+	else_if = {
+		limit = { this = character:792579 }
+		add = 953
+	}
+	
+	#feras
+	# else_if = {
+	# 	limit = { this = character:793507 }
+	# 	add = 1255
+	# }
+	
+
+	#Atticus, Patron, who really wanted their character to be a gladiator at the height of the gladiatorial games.
+	else_if = {
+		limit = { this = character:560130 }
+		add = 212
+	}
+	
+	# Narkissos, Patron, who really wanted their character to be inspiration for or to inspire the Greek myth.
+	else_if = {
+		limit = { this = character:560082 }
+		add = 561
+	}	
+	
+	# Osiris 
+	else_if = {
+		limit = { this = character:791150 }
+		add = 5035
+	}
+	
+	#Mummies
+	#Horus, son of Osiris 
+	# else_if = {
+		# limit = { this = character:792593 }
+		# add = 5000
+	# }	
+
+	# else_if = {
+		# limit = { this = character:792594 }
+		# add = 4953
+	# }
+	
+	# else_if = {
+		# limit = { this = character:792595 }
+		# add = 2051
+	# }	
+	
+	# else_if = {
+		# limit = { this = character:792599 }
+		# add = 1273
+	# }
+
+	# else_if = {
+		# limit = { this = character:792601 }
+		# add = 1555
+	# }	
+
+	# else_if = {
+		# limit = { this = character:792602 }
+		# add = 2620
+	# }
+	
+	# else_if = {
+		# limit = { this = character:792603 }
+		# add = 1191
+	# }
+
+	# else_if = {
+		# limit = { this = character:792604 }
+		# add = 2610
+	# }	
+
+	# else_if = {
+		# limit = { this = character:792605 }
+		# add = 2563
+	# }
+
+	# else_if = {
+		# limit = { this = character:792606 }
+		# add = 2400
+	# }
+
+	# else_if = {
+		# limit = { this = character:792607 }
+		# add = 1786
+	# }
+
+	# else_if = {
+		# limit = { this = character:792608 }
+		# add = 27
+	# }
+
+	# else_if = {
+		# limit = { this = character:792611 }
+		# add = 187
+	# }	
+
+	# else_if = {
+		# limit = { this = character:792609 }
+		# add = 163
+	# }
+
+	# else_if = {
+		# limit = { this = character:792612 }
+		# add = 59
+	# }	
+	
+	# Stygia
+	
+	
+	# else_if = {
+		# limit = { this = character:POD_wraith_01 }
+		# add = 14000
+	# }
+
+# Tuatha Dé Danann High Kings
+# These kings are considered to be legendary.
+# First date is FFE: chronology based on reign lengths given in Geoffrey Keating's Forus Feasa ar Erinn.
+# Second date is AFM: chronology from the Annals of the Four Masters
+# We shall use the Annals of the Four Masters, as they give older dates.
+# Bres	 	1477–1470 BC	1897–1890 BC
+# Nuada	 	1470–1447 BC	1890–1870 BC
+# Lugh	 	1447–1407 BC	1870–1830 BC
+# Eochaid Ollathair (The Dagda)	 	1407–1337 BC	1830–1750 BC
+# Delbáeth	 	1337–1327 BC	1750–1740 BC
+# Fiacha	 	1327–1317 BC	1740–1730 BC
+# Mac Cuill, Mac Cecht and Mac Gréine	 	1317–1287 BC	1730–1700 BC	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1000 }
+		add = 2000
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_1001 }
+		add = 2000
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1002 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1003 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1004 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1005 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1006 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1007 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1008 }
+		add = 1900
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1009 }
+		add = 1900
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_1010 }
+		add = 1900
+	}	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_1011 }
+		add = 1900
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_01 }
+		add = 1800
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_02 }
+		add = 1800
+	}		
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_03 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_04 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_05 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_06 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_07 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_08 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_09 }
+		add = 3000
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_10 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_11 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_12 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_13 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_13 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_14 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_15 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_16 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_17 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_18 }
+		add = 1800
+	}
+
+
+	else_if = {
+		limit = { this = character:POD_fae_character_19 }
+		add = 1800
+	}
+
+
+	else_if = {
+		limit = { this = character:POD_fae_character_20 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_21 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_22 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_23 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_24 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_25 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_26 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_27 }
+		add = 1800
+	}
+
+
+	else_if = {
+		limit = { this = character:POD_fae_character_28 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_29 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_30 }
+		add = 1800
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_32 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_35 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_36 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_38 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_39 }
+		add = 2000
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_40 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_41 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_42 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_43 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_44 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_45 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_46 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_47 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_48 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_55 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_56 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_57 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_58 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_59 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_60 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_61 }
+		add = 1800
+	}
+
+# Publius Ovidius Naso, 20 March 43 BC, author of Metamorphoses in which Pygmalion creates Galatea. 
+	else_if = {
+		limit = { this = character:POD_fae_character_64 }
+		add = 73
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_72 }
+		add = 1800
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_82 }
+		add = 1800
+	}	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_83 }
+		add = 1800
+	}			
+
+	else_if = {
+		limit = { this = character:POD_fae_character_84 }
+		add = 1800
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_85 }
+		add = 1800
+	}	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_86 }
+		add = 1800
+	}
+
+	else_if = {
+		limit = { this = character:POD_fae_character_87 }
+		add = 1800
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_88 }
+		add = 1800
+	}
+
+	# Eshu / Oba
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5080 }
+		add = 2000
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_50 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5081 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5082 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5083 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5084 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5085 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5086 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5087 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5088 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5089 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5090 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5091 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5092 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5093 }
+		add = 1200
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5094 }
+		add = 1100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5095 }
+		add = 1000
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5096 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5097 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5098 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5099 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5100 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5101 }
+		add = 1400
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5102 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5103 }
+		add = 800
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5104 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5105 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5106 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5107 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5108 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5109 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5110 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5111 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5112 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5113 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5114 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5115 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5116 }
+		add = 400
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5117 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5118 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5119 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5120 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5121 }
+		add = 450
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5122 }
+		add = 350
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5123 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5124 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5125 }
+		add = 1980
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5126 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5127 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5128 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_65 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_66 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5129 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5130 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5131 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5132 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5133 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5134 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5135 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5136 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5137 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5138 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5139 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5140 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5141 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5142 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5143 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5144 }
+		add = 10
+	}
+	
+	# Africanized Kithain
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5064 }
+		add = 50
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5065 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5066 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5067 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5068 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5069 }
+		add = 200
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5070 }
+		add = 200
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5071 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5072 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5073 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5074 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5075 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5076 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5077 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5078 }
+		add = 20
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5079 }
+		add = 50
+	}
+	
+	# Orisha-Nla (Inanimae)
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5058 }
+		add = 400
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5059 }
+		add = 400
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5060 }
+		add = 400
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5061 }
+		add = 400
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5062 }
+		add = 20
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5063 }
+		add = 1400
+	}	
+	
+	# Kuino
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_71 }
+		add = 90
+	}	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_5038 }
+		add = 50
+	}	
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5039 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5040 }
+		add = 300
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5041 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5042 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5043 }
+		add = 150
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5044 }
+		add = 150
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5045 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5046 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5047 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5048 }
+		add = 20
+	}
+	
+	# Obambo
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5049 }
+		add = 2400
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5050 }
+		add = 1600
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5051 }
+		add = 1100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5052 }
+		add = 100
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5053 }
+		add = 50
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5054 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5055 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5056 }
+		add = 10
+	}
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_5057 }
+		add = 10
+	}
+	
+	# Djedi
+	
+	else_if = {
+		limit = { this = character:POD_fae_character_70 }
+		add = 2589
+	}	
+
+	else_if = {
+		limit = { this = character:POD_fae_character_70 }
+		add = 2589
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5000 }
+		add = 2529
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5001 }
+		add = 2529
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5002 }
+		add = 1279
+	}		
+	else_if = {
+		limit = { this = character:POD_fae_character_5003 }
+		add = 2500
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5004 }
+		add = 2500
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5005 }
+		add = 2500
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5006 }
+		add = 3200
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5007 }
+		add = 3200
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5008 }
+		add = 3200
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5009 }
+		add = 3120
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5010 }
+		add = 1800
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5012 }
+		add = 3200
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5011 }
+		add = 3200
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5013 }
+		add = 3120
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5014 }
+		add = 3120
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5015 }
+		add = 3120
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5016 }
+		add = 3120
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5017 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5018 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5019 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5020 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5021 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5022 }
+		add = 20
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5023 }
+		add = 1800
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5024 }
+		add = 1800
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5025 }
+		add = 1800
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5026 }
+		add = 1800
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5027 }
+		add = 2000
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5028 }
+		add = 1300
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5029 }
+		add = 1360
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5030 }
+		add = 620
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5031 }
+		add = 2500
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5032 }
+		add = 1200
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5033 }
+		add = 2360
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_5034 }
+		add = 2360
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5035 }
+		add = 2365
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5036 }
+		add = 2370
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_5037 }
+		add = 20
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_1024 }
+		add = 1134
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_1025 }
+		add = 1134
+	}
+	else_if = {
+		limit = { this = character:POD_fae_character_1023 }
+		add = 1134
+	}	
+	else_if = {
+		limit = { this = character:POD_fae_character_144 }
+		add = 900
+	}	
+	else_if = {
+		limit = { this = character:560208 }
+		add = 4110
+	}		
+	else_if = {
+		limit = { this = character:560228 }
+		add = 4870
+	}
+	else_if = {
+		limit = { this = character:560208 }
+		add = 3180
+	}	
+	else_if = {
+		limit = { this = character:560226 }
+		add = 965
+	}
+	
+	###Fera
+
+	#Mokole-Mbembethe, oldest mokole said to be have seen the first city
+	else_if = {
+		limit = { this = character:795111 }
+		add = 10000
+	}
+	#Sobek, should be around Set's age 
+	else_if = {
+		limit = { this = character:795200 }
+		add = 4926
+	}
+	#Anemhor, mummified ancient mokole
+	else_if = {
+		limit = { this = character:795208 }
+		add = 2566
+	}
+	#His daughter, Antigone
+	else_if = {
+		limit = { this = character:795209 }
+		add = 2421
+	}
+	#His son, Horemakhet 
+	else_if = {
+		limit = { this = character:795210 }
+		add = 2307
+	}
+
+
+	else = {
+		subtract = current_year
+		add = age
+	}
+}
+true_age = {
+    value = current_year
+    if = { limit = { this = character:99001001 } add = 19070 }
+    else_if = { limit = { this = character:99001305 } add = 19070 }
+    else_if = { limit = { this = character:99001002 } add = 18970 }
+    else_if = { limit = { this = character:99001306 } add = 18970 }
+    else_if = { limit = { this = character:99001003 } add = 18870 }
+    else_if = { limit = { this = character:99001307 } add = 18870 }
+    else_if = { limit = { this = character:99001304 } add = 18770 }
+    else_if = { limit = { this = character:99001308 } add = 18770 }
+    else_if = { limit = { this = character:99001309 } add = 20770 }
+    else_if = { limit = { this = character:99001310 } add = 19770 }
+    else = { value = mm_pod_original_true_age }
+}

@@ -1,0 +1,18 @@
+mm_royal_human_golden_eyes = {
+ usage = game
+ selection_behavior = weighted_random
+ priority = 2101
+ golden_eyes = {
+  dna_modifiers = { color = { mode = replace gene = eye_color x = 0.4 y = 0.1 } }
+  weight = { base = 0 modifier = { add = 1000
+   has_character_flag = mm_wyvern_human_form
+   NOT = { has_character_flag = mm_asc_dragon_form }
+   OR = {
+    portrait_has_trait_trigger = { TRAIT = mm_royal_dragon_king }
+    portrait_has_trait_trigger = { TRAIT = mm_royal_complete }
+    portrait_has_trait_trigger = { TRAIT = mm_royal_white_empress }
+    portrait_has_trait_trigger = { TRAIT = mm_royal_black_emperor }
+   }
+  } }
+ }
+}

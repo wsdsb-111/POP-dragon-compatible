@@ -1,0 +1,585 @@
+﻿namespace = myv_wyvern_battlefield
+
+# The player and the designated war mount share the left portrait scene; the
+# spotted enemy commander occupies the right. The mounted portrait variable is
+# removed after the event so ordinary character portraits remain untouched.
+myv_wyvern_battlefield.0001 = {
+	type = character_event
+	window = myv_wyvern_dive_event
+	override_background = { reference = myv_wyvern_dive }
+	title = myv_wyvern_battlefield.0001.t
+	desc = myv_wyvern_battlefield.0001.desc
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = root.var:myv_battlefield_event_enemy_commander
+		animation = shock
+		outfit_tags = { military_outfit }
+	}
+
+	immediate = {
+		# Keep the tooltip target independent of variables cleared by option previews.
+		var:myv_battlefield_event_enemy_commander = { save_scope_as = myv_battlefield_tooltip_enemy }
+		set_variable = {
+			name = myv_riding_portrait_wyvern
+			value = var:myv_battlefield_event_wyvern
+		}
+		# The left portrait character is human, so mirror the mount's size tier
+		# onto temporary rider flags for the size-aware mirrored dive camera.
+		var:myv_battlefield_event_wyvern = {
+			if = { limit = { has_character_flag = myv_wyvern_size_hatchling } root = { add_character_flag = myv_battlefield_mount_size_hatchling } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_01 } root = { add_character_flag = myv_battlefield_mount_size_tier_01 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_02 } root = { add_character_flag = myv_battlefield_mount_size_tier_02 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_03 } root = { add_character_flag = myv_battlefield_mount_size_tier_03 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_04 } root = { add_character_flag = myv_battlefield_mount_size_tier_04 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_05 } root = { add_character_flag = myv_battlefield_mount_size_tier_05 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_06 } root = { add_character_flag = myv_battlefield_mount_size_tier_06 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_07 } root = { add_character_flag = myv_battlefield_mount_size_tier_07 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_08 } root = { add_character_flag = myv_battlefield_mount_size_tier_08 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_09 } root = { add_character_flag = myv_battlefield_mount_size_tier_09 } }
+			else_if = { limit = { has_character_flag = myv_wyvern_size_tier_10 } root = { add_character_flag = myv_battlefield_mount_size_tier_10 } }
+		}
+	}
+
+	option = {
+		name = myv_wyvern_battlefield.0001.a
+		trigger = {
+			var:myv_battlefield_event_enemy_commander = {
+				is_alive = yes
+				NOT = { myv_is_active_wyvern_war_rider = yes }
+			}
+		}
+        custom_tooltip = mm_creed_bf_pounce_tt
+        hidden_effect = {
+            var:myv_battlefield_event_enemy_commander = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned }
+                else = { myv_record_enemy_rider_battle_death_effect = yes death = { death_reason = death_myv_wyvern_battlefield_pounce killer = root } root = { add_prestige = knight_prestige_gain_on_kill } }
+            }
+        }
+	}
+
+	option = {
+		name = myv_wyvern_battlefield.0001.c
+		trigger = {
+			var:myv_battlefield_event_enemy_commander = {
+				myv_is_active_wyvern_war_rider = yes
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				name = myv_wyvern_duel_enemy_rider
+				value = var:myv_battlefield_event_enemy_commander
+			}
+			myv_begin_wyvern_rider_duel_effect = yes
+		}
+	}
+
+	option = {
+		name = myv_wyvern_battlefield.0001.b
+	}
+
+	after = {
+		remove_variable = myv_battlefield_event_wyvern
+		# The mounted-duel result still needs these battle scopes to attribute
+		# deaths correctly, and it also reuses the portrait-mount variable. The
+		# duel cleanup removes all of them after its third round.
+		if = {
+			limit = { NOT = { has_variable = myv_wyvern_duel_enemy_rider } }
+			remove_variable = myv_riding_portrait_wyvern
+			remove_variable = myv_battlefield_event_enemy_commander
+			remove_variable = myv_battlefield_event_enemy_war_leader
+			remove_variable = myv_battlefield_event_friendly_war_leader
+			remove_variable = myv_battlefield_event_location
+		}
+		remove_character_flag = myv_wyvern_battlefield_event_portrait
+		remove_character_flag = myv_battlefield_mount_size_hatchling
+		remove_character_flag = myv_battlefield_mount_size_tier_01
+		remove_character_flag = myv_battlefield_mount_size_tier_02
+		remove_character_flag = myv_battlefield_mount_size_tier_03
+		remove_character_flag = myv_battlefield_mount_size_tier_04
+		remove_character_flag = myv_battlefield_mount_size_tier_05
+		remove_character_flag = myv_battlefield_mount_size_tier_06
+		remove_character_flag = myv_battlefield_mount_size_tier_07
+		remove_character_flag = myv_battlefield_mount_size_tier_08
+		remove_character_flag = myv_battlefield_mount_size_tier_09
+		remove_character_flag = myv_battlefield_mount_size_tier_10
+	}
+}
+
+# Mounted duel opening. Both riders carry their own portrait-mount variable,
+# allowing the ordinary duel window to render two complete mounted pairs.
+myv_wyvern_battlefield.0100 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0100.t
+	desc = myv_wyvern_battlefield.0100.desc
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = root.var:myv_wyvern_duel_enemy_rider
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+
+	option = {
+		name = myv_wyvern_battlefield.0100.a
+		trigger_event = myv_wyvern_battlefield.0101
+	}
+}
+
+# Reused for at most three exchanges. The previous scene and body-part wounds
+# appear before the next choice; a destroyed wing routes to the crash result.
+myv_wyvern_battlefield.0101 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0101.t
+	immediate = {
+		var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_slay_wyvern_target }
+		myv_ensure_aerial_duel_scene_state_effect = yes
+	}
+	desc = {
+		# Narrate the preceding exchange and each struck body part.
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		desc = myv_wyvern_battlefield.0101.desc
+	}
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+	right_portrait = {
+		character = root.var:myv_wyvern_duel_enemy_rider
+		animation = myv_wyvern_rider_flying
+		outfit_tags = { military_outfit }
+	}
+
+	option = {
+		name = myv_wyvern_battlefield.0101.cautious
+		custom_tooltip = myv_wyvern_battlefield.0101.cautious_tt
+		hidden_effect = {
+			set_variable = { name = myv_wyvern_duel_action value = 1 }
+			trigger_event = myv_wyvern_battlefield.0102
+		}
+	}
+	option = {
+		name = myv_wyvern_battlefield.0101.balanced
+		custom_tooltip = myv_wyvern_battlefield.0101.balanced_tt
+		custom_tooltip = myv_wyvern_battlefield.0101.balanced_enemy_tt
+		hidden_effect = {
+			set_variable = { name = myv_wyvern_duel_action value = 2 }
+			trigger_event = myv_wyvern_battlefield.0102
+		}
+	}
+	option = {
+		name = myv_wyvern_battlefield.0101.aggressive
+		custom_tooltip = myv_wyvern_battlefield.0101.aggressive_tt
+		custom_tooltip = myv_wyvern_battlefield.0101.aggressive_enemy_tt
+		hidden_effect = {
+			set_variable = { name = myv_wyvern_duel_action value = 3 }
+			trigger_event = myv_wyvern_battlefield.0102
+		}
+	}
+}
+
+# Keep random exchange effects out of the option's tooltip simulation.
+myv_wyvern_battlefield.0102 = {
+	type = character_event
+	hidden = yes
+	immediate = { myv_resolve_wyvern_rider_duel_round_effect = yes }
+}
+
+# Combat-phase tooltip simulation cannot read the opponent variable that the
+# phase effect has just set. Resolve the opening after the phase is committed.
+myv_wyvern_battlefield.0103 = {
+	type = character_event
+	hidden = yes
+	immediate = { myv_begin_wyvern_rider_duel_effect = yes }
+}
+
+myv_wyvern_battlefield.0109 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		# Old saves can have the former score resolver queued. A full three
+		# exchanges without a destroyed wing always ends in a draw now.
+		trigger_event = myv_wyvern_battlefield.0112
+	}
+}
+
+myv_wyvern_battlefield.0110 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0110.t
+	immediate = {
+		var:myv_wyvern_duel_enemy_rider = { save_scope_as = myv_defeated_wyvern_rider }
+		var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_defeated_wyvern_mount }
+		var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_slay_wyvern_target }
+		hidden_effect = {
+			var:myv_wyvern_duel_enemy_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+		}
+		set_variable = { name = myv_slay_mounted_wild_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } }
+        set_variable = { name = mm_creed_bf_changed value = 0 }
+        set_variable = { name = mm_creed_bf_enemy_rider value = var:myv_slay_mounted_wild_survives_crash }
+        set_variable = { name = mm_creed_bf_enemy_mount value = var:myv_slay_mounted_wild_survives_crash }
+        if = {
+            limit = { var:myv_slay_mounted_wild_survives_crash = 0 }
+            var:myv_wyvern_duel_enemy_rider = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_enemy_rider value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+            var:myv_wyvern_duel_enemy_mount = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_enemy_mount value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+        }
+	}
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+            triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 } desc = mm_creed_bf_0110_changed }
+			triggered_desc = { trigger = { var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern_battlefield.0110.desc_survives }
+			desc = myv_wyvern_battlefield.0110.desc
+		}
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_rider = 0 } desc = mm_creed_bf_enemy_rider_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_rider = 1 } desc = mm_creed_bf_enemy_rider_alive }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_mount = 0 } desc = mm_creed_bf_enemy_mount_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_mount = 1 } desc = mm_creed_bf_enemy_mount_alive }
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = root.var:myv_wyvern_duel_enemy_rider animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	option = {
+        name = myv_wyvern_battlefield.0110.a
+        if = { limit = { var:mm_creed_bf_enemy_rider = 0 } custom_tooltip = myv_wyvern_battlefield.0110.enemy_rider_killed_tt }
+        if = { limit = { var:mm_creed_bf_enemy_mount = 0 } custom_tooltip = myv_wyvern_battlefield.0110.enemy_mount_killed_tt }
+        if = { limit = { var:mm_creed_bf_enemy_rider = 1 var:mm_creed_bf_enemy_mount = 1 } custom_tooltip = myv_wyvern_battlefield.0110.enemy_pair_survives_tt }
+        hidden_effect = {
+            if = { limit = { var:mm_creed_bf_enemy_mount = 0 } scope:myv_defeated_wyvern_mount = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = root.var:myv_wyvern_duel_player_mount } } }
+            if = { limit = { var:mm_creed_bf_enemy_rider = 1 } scope:myv_defeated_wyvern_rider = { if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+                    if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+                    if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 } } }
+            else = { scope:myv_defeated_wyvern_rider = { myv_record_enemy_rider_battle_death_effect = yes death = { death_reason = death_myv_wyvern_rider_duel killer = root } } add_prestige = knight_prestige_gain_on_kill }
+            remove_variable = mm_creed_bf_changed
+            remove_variable = mm_creed_bf_player_rider
+            remove_variable = mm_creed_bf_player_mount
+            remove_variable = mm_creed_bf_enemy_rider
+            remove_variable = mm_creed_bf_enemy_mount
+            myv_cleanup_wyvern_rider_duel_effect = yes
+        }
+    }
+}
+
+myv_wyvern_battlefield.0111 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0111.t
+	immediate = {
+		var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_slay_wyvern_target }
+		hidden_effect = {
+			var:myv_wyvern_duel_player_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+		}
+		set_variable = { name = myv_slay_mounted_player_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+        set_variable = { name = mm_creed_bf_changed value = 0 }
+        set_variable = { name = mm_creed_bf_player_rider value = var:myv_slay_mounted_player_survives_crash }
+        set_variable = { name = mm_creed_bf_player_mount value = var:myv_slay_mounted_player_survives_crash }
+        if = {
+            limit = { var:myv_slay_mounted_player_survives_crash = 0 }
+            mm_creed_earth_wyvern_return_roll_effect = yes
+            if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned set_variable = { name = mm_creed_bf_player_rider value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } }
+            var:myv_wyvern_duel_player_mount = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_player_mount value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+        }
+	}
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+            triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 } desc = mm_creed_bf_0111_changed }
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 } desc = myv_wyvern_battlefield.0111.desc_survives }
+			desc = myv_wyvern_battlefield.0111.desc
+		}
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_rider = 0 } desc = mm_creed_bf_player_rider_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_rider = 1 } desc = mm_creed_bf_player_rider_alive }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_mount = 0 } desc = mm_creed_bf_player_mount_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_mount = 1 } desc = mm_creed_bf_player_mount_alive }
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = root.var:myv_wyvern_duel_enemy_rider animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	option = {
+        name = myv_wyvern_battlefield.0111.a
+        hidden_effect = {
+            var:myv_wyvern_duel_enemy_rider = { save_scope_as = myv_victorious_wyvern_rider }
+            var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_victorious_wyvern_mount }
+            if = { limit = { var:mm_creed_bf_player_mount = 0 } var:myv_wyvern_duel_player_mount = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = scope:myv_victorious_wyvern_mount } } }
+            if = { limit = { var:mm_creed_bf_player_rider = 1 } if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+                    if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+                    if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 } remove_variable = mm_creed_bf_changed
+            remove_variable = mm_creed_bf_player_rider
+            remove_variable = mm_creed_bf_player_mount
+            remove_variable = mm_creed_bf_enemy_rider
+            remove_variable = mm_creed_bf_enemy_mount myv_cleanup_wyvern_rider_duel_effect = yes }
+            else = { myv_record_player_rider_battle_death_effect = yes remove_variable = mm_creed_bf_changed
+            remove_variable = mm_creed_bf_player_rider
+            remove_variable = mm_creed_bf_player_mount
+            remove_variable = mm_creed_bf_enemy_rider
+            remove_variable = mm_creed_bf_enemy_mount myv_cleanup_wyvern_rider_duel_effect = yes death = { death_reason = death_myv_wyvern_rider_duel killer = scope:myv_victorious_wyvern_rider } }
+        }
+    }
+}
+
+myv_wyvern_battlefield.0112 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0112.t
+	immediate = { var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_slay_wyvern_target } }
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		desc = myv_wyvern_battlefield.0112.desc
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = root.var:myv_wyvern_duel_enemy_rider animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	option = {
+		name = myv_wyvern_battlefield.0112.a
+		myv_cleanup_wyvern_rider_duel_effect = yes
+	}
+}
+
+# Both wings fail in the same exchange. Resolve the two impacts independently.
+myv_wyvern_battlefield.0113 = {
+	type = character_event
+	window = myv_wyvern_duel_event
+	override_background = { reference = myv_wyvern_riding_sky }
+	title = myv_wyvern_battlefield.0113.t
+	immediate = {
+		var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_slay_wyvern_target }
+		hidden_effect = {
+			var:myv_wyvern_duel_player_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+			var:myv_wyvern_duel_enemy_mount = { myv_apply_aerial_crash_injuries_effect = yes }
+		}
+		set_variable = { name = myv_slay_mounted_player_survives_crash value = 0 }
+		set_variable = { name = myv_slay_mounted_wild_survives_crash value = 0 }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_player_survives_crash value = 1 } }
+		random = { chance = 10 set_variable = { name = myv_slay_mounted_wild_survives_crash value = 1 } }
+        set_variable = { name = mm_creed_bf_changed value = 0 }
+        set_variable = { name = mm_creed_bf_player_rider value = var:myv_slay_mounted_player_survives_crash }
+        set_variable = { name = mm_creed_bf_player_mount value = var:myv_slay_mounted_player_survives_crash }
+        if = {
+            limit = { var:myv_slay_mounted_player_survives_crash = 0 }
+            mm_creed_earth_wyvern_return_roll_effect = yes
+            if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned set_variable = { name = mm_creed_bf_player_rider value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } }
+            var:myv_wyvern_duel_player_mount = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_player_mount value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+        }
+        set_variable = { name = mm_creed_bf_enemy_rider value = var:myv_slay_mounted_wild_survives_crash }
+        set_variable = { name = mm_creed_bf_enemy_mount value = var:myv_slay_mounted_wild_survives_crash }
+        if = {
+            limit = { var:myv_slay_mounted_wild_survives_crash = 0 }
+            var:myv_wyvern_duel_enemy_rider = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_enemy_rider value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+            var:myv_wyvern_duel_enemy_mount = {
+                mm_creed_earth_wyvern_return_roll_effect = yes
+                if = { limit = { has_character_flag = mm_creed_earth_wyvern_returned } remove_character_flag = mm_creed_earth_wyvern_returned root = { set_variable = { name = mm_creed_bf_enemy_mount value = 1 } set_variable = { name = mm_creed_bf_changed value = 1 } } }
+            }
+        }
+	}
+	desc = {
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 0 } desc = myv_wyvern.0262.scene_0 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 1 } desc = myv_wyvern.0262.scene_1 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 2 } desc = myv_wyvern.0262.scene_2 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 3 } desc = myv_wyvern.0262.scene_3 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 4 } desc = myv_wyvern.0262.scene_4 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 5 } desc = myv_wyvern.0262.scene_5 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 6 } desc = myv_wyvern.0262.scene_6 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 7 } desc = myv_wyvern.0262.scene_7 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 8 } desc = myv_wyvern.0262.scene_8 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 9 } desc = myv_wyvern.0262.scene_9 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 10 } desc = myv_wyvern.0262.scene_10 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_exchange_scene = 11 } desc = myv_wyvern.0262.scene_11 }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 1 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 2 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 1 } desc = myv_wyvern.0262.player_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 3 var:myv_slay_mounted_player_target_side = 2 } desc = myv_wyvern.0262.player_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_player_hit = 1 var:myv_slay_mounted_player_target_part = 4 } desc = myv_wyvern.0262.player_tail }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 1 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_eye }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 2 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_wing }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 1 } desc = myv_wyvern.0262.enemy_left_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 3 var:myv_slay_mounted_enemy_target_side = 2 } desc = myv_wyvern.0262.enemy_right_hindleg }
+		triggered_desc = { trigger = { var:myv_slay_mounted_enemy_hit = 1 var:myv_slay_mounted_enemy_target_part = 4 } desc = myv_wyvern.0262.enemy_tail }
+		first_valid = {
+            triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 } desc = mm_creed_bf_0113_changed }
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern_battlefield.0113.desc_both_survive }
+			triggered_desc = { trigger = { var:myv_slay_mounted_player_survives_crash = 1 } desc = myv_wyvern_battlefield.0113.desc_player_survives }
+			triggered_desc = { trigger = { var:myv_slay_mounted_wild_survives_crash = 1 } desc = myv_wyvern_battlefield.0113.desc_enemy_survives }
+			desc = myv_wyvern_battlefield.0113.desc_none_survive
+		}
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_rider = 0 } desc = mm_creed_bf_player_rider_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_rider = 1 } desc = mm_creed_bf_player_rider_alive }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_mount = 0 } desc = mm_creed_bf_player_mount_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_player_mount = 1 } desc = mm_creed_bf_player_mount_alive }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_rider = 0 } desc = mm_creed_bf_enemy_rider_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_rider = 1 } desc = mm_creed_bf_enemy_rider_alive }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_mount = 0 } desc = mm_creed_bf_enemy_mount_dead }
+        triggered_desc = { trigger = { var:mm_creed_bf_changed = 1 var:mm_creed_bf_enemy_mount = 1 } desc = mm_creed_bf_enemy_mount_alive }
+	}
+	theme = martial
+	left_portrait = { character = root animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	right_portrait = { character = root.var:myv_wyvern_duel_enemy_rider animation = myv_wyvern_rider_flying outfit_tags = { military_outfit } }
+	option = {
+        name = myv_wyvern_battlefield.0113.a
+        hidden_effect = {
+            var:myv_wyvern_duel_enemy_rider = { save_scope_as = myv_crashed_enemy_rider }
+            var:myv_wyvern_duel_enemy_mount = { save_scope_as = myv_crashed_enemy_mount }
+            var:myv_wyvern_duel_player_mount = { save_scope_as = myv_crashed_player_mount }
+            if = { limit = { var:mm_creed_bf_enemy_mount = 0 } scope:myv_crashed_enemy_mount = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = scope:myv_crashed_player_mount } } }
+            if = { limit = { var:mm_creed_bf_enemy_rider = 1 } scope:myv_crashed_enemy_rider = { if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+                    if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+                    if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 } } }
+            else = { scope:myv_crashed_enemy_rider = { myv_record_enemy_rider_battle_death_effect = yes death = { death_reason = death_myv_wyvern_rider_duel killer = root } } if = { limit = { var:mm_creed_bf_player_rider = 1 } add_prestige = knight_prestige_gain_on_kill } }
+            if = { limit = { var:mm_creed_bf_player_mount = 0 } scope:myv_crashed_player_mount = { death = { death_reason = death_myv_wyvern_rider_duel_mount killer = scope:myv_crashed_enemy_mount } } }
+            if = { limit = { var:mm_creed_bf_player_rider = 1 } if = { limit = { has_trait = wounded_1 } remove_trait = wounded_1 }
+                    if = { limit = { has_trait = wounded_2 } remove_trait = wounded_2 }
+                    if = { limit = { NOT = { has_trait = wounded_3 } } add_trait = wounded_3 } remove_variable = mm_creed_bf_changed
+            remove_variable = mm_creed_bf_player_rider
+            remove_variable = mm_creed_bf_player_mount
+            remove_variable = mm_creed_bf_enemy_rider
+            remove_variable = mm_creed_bf_enemy_mount myv_cleanup_wyvern_rider_duel_effect = yes }
+            else = { myv_record_player_rider_battle_death_effect = yes remove_variable = mm_creed_bf_changed
+            remove_variable = mm_creed_bf_player_rider
+            remove_variable = mm_creed_bf_player_mount
+            remove_variable = mm_creed_bf_enemy_rider
+            remove_variable = mm_creed_bf_enemy_mount myv_cleanup_wyvern_rider_duel_effect = yes death = { death_reason = death_myv_wyvern_rider_duel killer = scope:myv_crashed_enemy_rider } }
+        }
+    }
+}
+

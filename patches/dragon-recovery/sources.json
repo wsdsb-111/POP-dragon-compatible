@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-28",
+  "scope": "七条龙伤轨道同时恢复，普通每月5点、王族每日1点",
+  "sourceRoots": {
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game",
+    "workshop": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310"
+  },
+  "sourceFiles": [],
+  "updated": "2026-10-28",
+  "outputs": [
+    {
+      "path": "mod/common/scripted_effects/zzzzzzzzzzzz_mm_dragon_recovery.txt",
+      "sha256": "918f53a4f9a10fb68135ba9ddbb4c8538a10a8f7a6430ffd7a53c3a9e1e090f6"
+    }
+  ]
+}

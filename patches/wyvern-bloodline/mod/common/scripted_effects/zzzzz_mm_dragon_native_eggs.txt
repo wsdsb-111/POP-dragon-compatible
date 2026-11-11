@@ -1,0 +1,140 @@
+myv_create_stable_bred_wyvern_egg_artifact_effect = {
+	save_scope_as = myv_wyvern_bred_egg_recipient
+	random_list = {
+		60 = { scope:myv_wyvern_egg_mother = { save_scope_as = myv_wyvern_egg_color_parent } }
+		40 = { scope:myv_wyvern_egg_father = { save_scope_as = myv_wyvern_egg_color_parent } }
+	}
+	if = {
+		limit = { scope:myv_wyvern_egg_color_parent = { has_character_flag = myv_wyvern_color_red } }
+		myv_create_red_wyvern_egg_artifact_effect = yes
+	}
+	else_if = {
+		limit = { scope:myv_wyvern_egg_color_parent = { has_character_flag = myv_wyvern_color_black } }
+		myv_create_black_wyvern_egg_artifact_effect = yes
+	}
+	else_if = {
+		limit = { scope:myv_wyvern_egg_color_parent = { has_character_flag = myv_wyvern_color_grey } }
+		myv_create_grey_wyvern_egg_artifact_effect = yes
+	}
+	else_if = {
+		limit = { scope:myv_wyvern_egg_color_parent = { has_character_flag = myv_wyvern_color_gold } }
+		myv_create_gold_wyvern_egg_artifact_effect = yes
+	}
+	else_if = {
+		limit = { scope:myv_wyvern_egg_color_parent = { has_character_flag = myv_wyvern_color_nightmare } }
+		myv_create_nightmare_wyvern_egg_artifact_effect = yes
+	}
+	else = {
+		myv_create_green_wyvern_egg_artifact_effect = yes
+	}
+	scope:myv_wyvern_egg = {
+		add_artifact_history = {
+			type = created
+			actor = scope:myv_wyvern_egg_creator
+			recipient = scope:myv_wyvern_bred_egg_recipient
+			location = scope:myv_wyvern_egg_location
+		}
+		set_variable = { name = myv_wyvern_egg_mother value = scope:myv_wyvern_egg_mother }
+		set_variable = { name = myv_wyvern_egg_father value = scope:myv_wyvern_egg_father }
+	}
+    # Freeze legendary inheritance on this exact newly created egg.
+    scope:myv_wyvern_egg = {
+        if = {
+            limit = {
+                OR = {
+                    scope:myv_wyvern_egg_mother = { mm_dragon_legendary_parent_trigger = yes }
+                    scope:myv_wyvern_egg_father = { mm_dragon_legendary_parent_trigger = yes }
+                }
+            }
+            random = { chance = 50 set_variable = { name = mm_dragon_legendary_egg value = yes } }
+        }
+    }
+}
+
+myv_hatch_wyvern_egg_effect = {
+    if = {
+        limit = { var:mm_dragon_half_egg = yes }
+        mm_dragon_hatch_half_egg_effect = yes
+    }
+    else = {
+
+    clear_saved_scope = myv_new_wyvern
+    save_scope_as = myv_hatching_wyvern_egg
+	if = {
+		limit = { has_variable = myv_wyvern_egg_mother }
+		var:myv_wyvern_egg_mother = { save_scope_as = myv_hatching_wyvern_mother }
+	}
+	if = {
+		limit = { has_variable = myv_wyvern_egg_father }
+		var:myv_wyvern_egg_father = { save_scope_as = myv_hatching_wyvern_father }
+	}
+    artifact_owner = {
+        save_scope_as = myv_wyvern_hatch_owner
+        add_character_flag = mm_dragon_native_hatch_in_progress
+        if = {
+            limit = { scope:myv_hatching_wyvern_egg.var:myv_wyvern_egg_color = 1 }
+            myv_create_tamed_wyvern_effect = { COLOR = 1 AGE = 0 SIZE = 5 }
+        }
+        else_if = {
+            limit = { scope:myv_hatching_wyvern_egg.var:myv_wyvern_egg_color = 3 }
+            myv_create_tamed_wyvern_effect = { COLOR = 3 AGE = 0 SIZE = 5 }
+        }
+        else_if = {
+            limit = { scope:myv_hatching_wyvern_egg.var:myv_wyvern_egg_color = 4 }
+            myv_create_tamed_wyvern_effect = { COLOR = 4 AGE = 0 SIZE = 5 }
+        }
+        else_if = {
+            limit = { scope:myv_hatching_wyvern_egg.var:myv_wyvern_egg_color = 5 }
+            myv_create_tamed_wyvern_effect = { COLOR = 5 AGE = 0 SIZE = 5 }
+        }
+        else_if = {
+            limit = { scope:myv_hatching_wyvern_egg.var:myv_wyvern_egg_color = 6 }
+            myv_create_tamed_wyvern_effect = { COLOR = 6 AGE = 0 SIZE = 5 }
+        }
+        else = {
+            myv_create_tamed_wyvern_effect = { COLOR = 2 AGE = 0 SIZE = 5 }
+        }
+        remove_character_flag = mm_dragon_native_hatch_in_progress
+		scope:myv_new_wyvern = {
+			if = {
+				# Saved scopes can survive across sibling effect calls during the
+				# same yearly artifact loop. Gate genealogy on this exact egg's
+				# variables so a wild/debug egg can never inherit the preceding
+				# stable-bred egg's parents.
+				limit = {
+					scope:myv_hatching_wyvern_egg = {
+						has_variable = myv_wyvern_egg_mother
+					}
+					exists = scope:myv_hatching_wyvern_mother
+				}
+				set_mother = scope:myv_hatching_wyvern_mother
+			}
+			if = {
+				limit = {
+					scope:myv_hatching_wyvern_egg = {
+						has_variable = myv_wyvern_egg_father
+					}
+					exists = scope:myv_hatching_wyvern_father
+				}
+				set_father = scope:myv_hatching_wyvern_father
+			}
+		}
+        if = {
+            limit = { scope:myv_hatching_wyvern_egg = { var:mm_dragon_legendary_egg = yes } }
+            scope:myv_new_wyvern = {
+                add_character_flag = mm_wyvern_legendary_origin
+                add_trait = mm_wyvern_legendary_origin
+            }
+        }
+        scope:myv_new_wyvern = {
+            add_character_flag = mm_royal_newly_created
+            mm_dragon_register_true_dragon_origins_effect = yes
+            remove_character_flag = mm_royal_newly_created
+            mm_dragon_assign_regional_identity_effect = yes
+        }
+        trigger_event = myv_wyvern.0300
+    }
+    if = { limit = { exists = scope:myv_new_wyvern } destroy_artifact = scope:myv_hatching_wyvern_egg }
+
+    }
+}

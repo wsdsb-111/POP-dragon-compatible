@@ -1,0 +1,311 @@
+{
+  "models": {
+    "fang": {
+      "vertices": 10893,
+      "editableVertices": 10935,
+      "triangles": 18640,
+      "min": [
+        -10.0,
+        0.0,
+        -12.017093752790073
+      ],
+      "max": [
+        10.0,
+        36.38468170777391,
+        9.96
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 10893,
+          "triangles": 18640,
+          "min": [
+            -10.0,
+            0.0,
+            -12.017093752790073
+          ],
+          "max": [
+            10.0,
+            36.38468170777391,
+            9.96
+          ]
+        }
+      ],
+      "sha256": "5749ec741baa17c4ef02fdab1138554660f1f9d4e8ced0862ebacf0d0145785e"
+    },
+    "eye": {
+      "vertices": 13133,
+      "editableVertices": 13175,
+      "triangles": 23168,
+      "min": [
+        -11.0,
+        0.0,
+        -10.94
+      ],
+      "max": [
+        11.0,
+        22.2,
+        10.94
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 13133,
+          "triangles": 23168,
+          "min": [
+            -11.0,
+            0.0,
+            -10.94
+          ],
+          "max": [
+            11.0,
+            22.2,
+            10.94
+          ]
+        }
+      ],
+      "sha256": "f69fe4b8e0a340e25bddcf3f8dabaae5006f8dd3594e44f6d9eba7d66951d122"
+    },
+    "scale": {
+      "vertices": 10303,
+      "editableVertices": 10343,
+      "triangles": 16936,
+      "min": [
+        -14.129820282306367,
+        0.0,
+        -11.92
+      ],
+      "max": [
+        12.0,
+        36.3,
+        11.92
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 10303,
+          "triangles": 16936,
+          "min": [
+            -14.129820282306367,
+            0.0,
+            -11.92
+          ],
+          "max": [
+            12.0,
+            36.3,
+            11.92
+          ]
+        }
+      ],
+      "sha256": "fcfb31d4086e584a7eceb76364becce80c374f062ce8baa02c6c9a22238d07ac"
+    },
+    "head": {
+      "vertices": 360966,
+      "editableVertices": 355261,
+      "triangles": 520000,
+      "min": [
+        -28.395639419555664,
+        -0.0013553891330957413,
+        -27.4229793548584
+      ],
+      "max": [
+        28.396778106689453,
+        72.99708557128906,
+        27.425065994262695
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 86033,
+          "min": [
+            -28.395639419555664,
+            -5.1362359954509884e-05,
+            -27.4229793548584
+          ],
+          "max": [
+            14.44381046295166,
+            37.72396469116211,
+            1.7674070596694946
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 86374,
+          "min": [
+            -13.921907424926758,
+            -0.0002682044287212193,
+            -26.957319259643555
+          ],
+          "max": [
+            25.846675872802734,
+            64.062255859375,
+            0.9323734045028687
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 60000,
+          "triangles": 87297,
+          "min": [
+            -21.22858428955078,
+            35.41646194458008,
+            -25.533245086669922
+          ],
+          "max": [
+            8.924735069274902,
+            72.71463012695312,
+            0.9923676252365112
+          ]
+        },
+        {
+          "index": 3,
+          "vertices": 59999,
+          "triangles": 87533,
+          "min": [
+            -25.289743423461914,
+            0.0009233589516952634,
+            -13.957727432250977
+          ],
+          "max": [
+            16.258602142333984,
+            70.26435852050781,
+            21.466644287109375
+          ]
+        },
+        {
+          "index": 4,
+          "vertices": 60000,
+          "triangles": 86172,
+          "min": [
+            -0.660171389579773,
+            -0.0013553891330957413,
+            -0.7131137847900391
+          ],
+          "max": [
+            26.58187484741211,
+            37.44865798950195,
+            27.425065994262695
+          ]
+        },
+        {
+          "index": 5,
+          "vertices": 60000,
+          "triangles": 85341,
+          "min": [
+            -24.792110443115234,
+            24.54636001586914,
+            -0.5569722652435303
+          ],
+          "max": [
+            28.396778106689453,
+            72.99708557128906,
+            24.817317962646484
+          ]
+        },
+        {
+          "index": 6,
+          "vertices": 967,
+          "triangles": 1250,
+          "min": [
+            -0.27807191014289856,
+            54.48691940307617,
+            13.41914176940918
+          ],
+          "max": [
+            8.257364273071289,
+            65.88919830322266,
+            20.071521759033203
+          ]
+        }
+      ],
+      "sha256": "a1df48ceb2c38d7de9639f4d31468d98942c19e8eadfc7e4e9bb0d263cd1ed67",
+      "source": {
+        "author": "winner_77",
+        "title": "Screaming dragon head 3D print",
+        "url": "https://skfb.ly/6TrJ8",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceFile": "DragScream.fbx",
+        "originalSha256": "e101ea332eb230ace37813c11b5ac76ee3b70992997ce5890df3d287eccb5298",
+        "originalVertices": 651443,
+        "originalTriangles": 1303950,
+        "fullSculptRetained": true,
+        "originalBounds": [
+          [
+            -36.033958435058594,
+            -0.001990820048376918,
+            -30.14044189453125
+          ],
+          [
+            41.76433181762695,
+            100.00201416015625,
+            44.98540115356445
+          ]
+        ],
+        "uniformScale": 0.73,
+        "optimizedTriangles": 520000,
+        "exportedTriangles": 520000,
+        "palette": {
+          "main": "#586347",
+          "raised": "#74805B",
+          "secondary": "#4D5940",
+          "grooves": "#30392D",
+          "horn": "#4B4035",
+          "hornMiddle": "#665642",
+          "hornTip": "#91816A",
+          "teeth": "#D2C39F",
+          "tissue": "#65574A",
+          "ventral": "#74745F"
+        },
+        "changes": [
+          "Preserved the complete head, neck and original base",
+          "Retained 520000 original-sculpt triangles and unwrapped UVs",
+          "Projected original sculpt normals",
+          "Revision 2 grey-olive organic hide, grey-brown throat and dark dry keratin; albedo-only update",
+          "Enlarged pedestal bust by 0.73/0.65 while keeping the base at Y=0"
+        ],
+        "materialRevision": 2,
+        "materialSample": "artwork/dragon-weapons/head-materials-v121-source.png"
+      }
+    },
+    "claw": {
+      "vertices": 22991,
+      "editableVertices": 23039,
+      "triangles": 37684,
+      "min": [
+        -12.0,
+        0.0,
+        -11.92
+      ],
+      "max": [
+        12.0,
+        29.601904483448603,
+        11.92
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 22991,
+          "triangles": 37684,
+          "min": [
+            -12.0,
+            0.0,
+            -11.92
+          ],
+          "max": [
+            12.0,
+            29.601904483448603,
+            11.92
+          ]
+        }
+      ],
+      "sha256": "1f1e80a9bff2c9e7bebec5849efeb7558e6728df5e30fba6f462df7520e48a96"
+    }
+  },
+  "format": "PDX binary @@b@ 1.0",
+  "shader": "court",
+  "axis": "Y-up; outward native triangle winding",
+  "build": "python scripts/build-wyvern-trophy-models.py"
+}

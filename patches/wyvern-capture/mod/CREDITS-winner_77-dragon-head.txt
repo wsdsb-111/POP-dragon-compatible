@@ -1,0 +1,23 @@
+Dragon head model attribution / 龙头模型署名
+
+"Screaming dragon head 3D print" by winner_77
+Source: https://skfb.ly/6TrJ8
+Full source page: https://sketchfab.com/3d-models/screaming-dragon-head-3d-print-5712b52618f743b193bdd39459099f25
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Supplied source file: DragScream.fbx
+Original SHA-256: e101ea332eb230ace37813c11b5ac76ee3b70992997ce5890df3d287eccb5298
+Original mesh: 651443 vertices, 1303950 triangles.
+
+Changes made for this CK3 compatibility mod:
+- Preserved the complete head, neck and original base without cropping.
+- Reduced to 520000 triangles, added UV coordinates and projected sculpt normals.
+- Baked 4096-pixel maps and exported 7 native mesh parts with continuous tangent frames.
+- Added Plan A muted olive-brown hide, khaki throat and graduated brown keratin horns, aged bone teeth and cloudy eyes.
+- Centered and uniformly scaled the bust to 0.73 for a larger court pedestal display.
+- Converted to CK3 PDX binary mesh and non-emissive RRxG/PBR DDS maps.
+
+The original creator does not endorse this mod. The adapted head geometry and
+derived sculpt-normal data retain the above attribution and CC BY 4.0 terms.
+Other mod components retain their own authorship and applicable terms.

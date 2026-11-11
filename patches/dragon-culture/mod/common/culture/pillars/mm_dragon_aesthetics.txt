@@ -1,0 +1,4 @@
+﻿ethos_mm_dragon_aesthetics = {
+    type = ethos
+    ai_will_do = { value = 0 }
+}

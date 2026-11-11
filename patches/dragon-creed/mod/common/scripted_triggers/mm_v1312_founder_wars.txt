@@ -1,0 +1,22 @@
+# Only the three patched religious CBs use this extension. Other war types
+# and every other native eligibility check keep their original rules.
+mm_v1312_is_valid_religious_war_target_trigger = {
+    OR = {
+        is_valid_religious_war_target_trigger = { TARGET = $TARGET$ }
+        AND = {
+            faith = faith:mm_dragon_creed
+            rite = rite:mm_dragon_black
+            rite = { rite_has_doctrine = mm_doctrine_black }
+            $TARGET$ = {
+                faith = faith:mm_dragon_creed
+                OR = {
+                    rite = rite:mm_dragon_fire
+                    rite = rite:mm_dragon_earth
+                    rite = rite:mm_dragon_sea
+                    rite = rite:mm_dragon_sky
+                    rite = rite:mm_dragon_white
+                }
+            }
+        }
+    }
+}

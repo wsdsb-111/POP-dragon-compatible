@@ -1,0 +1,10 @@
+{
+ "state": "pass",
+ "tris": 62208,
+ "objects": 205,
+ "boundary": 0,
+ "nonmanifold": 0,
+ "degenerate": 0,
+ "self_intersections": 0,
+ "normals_inverted": 0
+}

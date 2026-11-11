@@ -1,0 +1,11 @@
+mm_pod_character_panel_age = {
+    type = character
+    text = {
+        trigger = { mm_pod_is_fixed_royal = yes }
+        localization_key = mm_pod_royal_age_unknown
+    }
+    text = {
+        localization_key = mm_pod_panel_age_native
+        fallback = yes
+    }
+}

@@ -1,0 +1,89 @@
+﻿template mm_v1314_viewed_doctrine_tooltip {
+	object_tooltip_pop_out = {
+		blockoverride "title_text" {
+			text = "[SelectLocalization( GetScriptedGui( 'mm_v1314_is_creed_view' ).IsShown( GuiScope.SetRoot( FaithWindow.GetFaith.MakeScope ).End ), 'mm_v1314_doctrine_title', 'mm_v1314_native_doctrine_title' )]"
+			default_format = "#T"
+		}
+
+		blockoverride "subtitle_text" {
+			text = "[DoctrineType.GetHistoricalGlossary( Faith.Self )]"
+		}
+
+		blockoverride "description_text" {
+			text = "[SelectLocalization( GetScriptedGui( 'mm_v1314_is_creed_view' ).IsShown( GuiScope.SetRoot( FaithWindow.GetFaith.MakeScope ).End ), 'mm_v1314_doctrine_effects', 'FAITH_DOCTRINE_GENERAL_TOOLTIP' )]"
+		}
+
+		blockoverride "extra_data_after_description" {
+			vbox = {
+				layoutpolicy_horizontal = expanding
+
+				textbox_religion_flavor_description = {
+					text = "[SelectLocalization( GetScriptedGui( 'mm_v1314_is_creed_view' ).IsShown( GuiScope.SetRoot( FaithWindow.GetFaith.MakeScope ).End ), 'mm_v1314_doctrine_description', 'FAITH_DOCTRINE_GENERAL_TOOLTIP_DESCRIPTION' )]"
+				}
+
+				block "doctrine_extra_data_after_description" {}
+			}
+		}
+
+		# Only shown where a window fills in input_info_text, such as the click hints in the rite creation window
+		blockoverride "input_info" {
+			textbox = {
+				name = "input_info"
+				layoutpolicy_horizontal = expanding
+				margin_top = 10
+				using = DefaultTooltipText
+				multiline = yes
+				block "input_info_text" {
+					visible = no
+				}
+				fonttintcolor = "[TooltipInfo.GetTintColor]"
+			}
+		}
+
+		# Doctrines have no shortcuts, so drop the empty shortcut textbox and its margins
+		blockoverride "tooltip_text_shortcut" {
+			visible = no
+		}
+
+		# Minimum padding below the last line
+		blockoverride "call_to_action" {
+			vbox = {
+				margin_bottom = 15
+			}
+		}
+
+		blockoverride "concept_link" {
+			text = [doctrine|E]
+		}
+
+		blockoverride "header_additions" {
+			hbox = {
+				datacontext = "[DoctrineType.GetGroup]"
+				datacontext = "[DoctrineGroupType.GetCategory]"
+				margin_right = 10
+				margin_left = -5
+
+				icon_doctrine = {
+					name = "doctrine_icon_main"
+					visible = "[DoctrineCategoryType.HasTag( 'main' )]"
+					texture = "[DoctrineType.GetIcon]"
+					size = { 60 60 }
+				}
+
+				icon_doctrine = {
+					name = "doctrine_icon_other"
+					visible = "[And( Not( DoctrineCategoryType.HasTag( 'main' ) ), Not( DoctrineCategoryType.HasTag( 'special' ) ) )]"
+					texture = "[DoctrineType.GetGroup.GetIcon]"
+					size = { 60 60 }
+				}
+
+				icon_doctrine = {
+					name = "doctrine_icon_special"
+					visible = "[DoctrineCategoryType.HasTag( 'special' )]"
+					texture = "[DoctrineType.GetIcon]"
+					size = { 60 60 }
+				}
+			}
+		}
+	}
+}

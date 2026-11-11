@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-02",
+  "sourceFiles": [
+    {
+      "root": "repo",
+      "path": "patches/dragon-culture/mod/history/cultures/myv_wyvern_culture.txt",
+      "sha256": "99590763de5a5d0e2c8cd63241c508100d3c4653aaffd2626f15e5aa35e1c130"
+    },
+    {
+      "root": "repo",
+      "path": "patches/character-preservation/mod/common/scripted_triggers/zzzzzzzzzzzz_mm_cleanup_protection.txt",
+      "sha256": "60b632e6a4dacb884989d948ab1f1d156fb2f0086be376d3327f82cea763692d"
+    },
+    {
+      "root": "pod",
+      "path": "common/on_action/POD_vanilla_child_birth_on_actions.txt",
+      "sha256": "21437cf5731be7184d5bb644c1d9e705d3a424d7017b613ee1798e61072b2858"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_triggers.txt",
+      "sha256": "eb86ada76bd4772a707b20e25dceef8dee8bc0605060571b749832c4d1797175"
+    },
+    {
+      "root": "pod",
+      "path": "common/scripted_triggers/POD_religion_triggers.txt",
+      "sha256": "f05a1fa1e6987db76a804dcf59a94bfec9407a51fcf5a513a0339e63c1e333e5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "history/cultures/myv_wyvern_culture.txt",
+      "sha256": "d25e7255b0abf841ab78fdab441964d7be2f34ced1105daeba0fb347453bf9cf"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_cleanup_protection.txt",
+      "sha256": "f53917d7bc552befb7e56760d5299228b23cc7aaf89bdd70b526098abab6438d"
+    },
+    {
+      "path": "common/on_action/POD_vanilla_child_birth_on_actions.txt",
+      "sha256": "795b23e94d1611560c56276dbecb803ed378204eb440743c9dda7d3d735f3724"
+    },
+    {
+      "path": "common/scripted_triggers/zzzzzzzzzzzz_mm_pod_dragon_religion.txt",
+      "sha256": "5afdb9a5be0f0d2e13b6badf777d9d1b82505facf45e8cdfb6b47806f509f1de"
+    }
+  ],
+  "notes": [
+    "Culture: remove only three OE/Tianjia innovations; retain native TGP innovations and regional data.",
+    "Cleanup: remove has_trait=immortality, which has no trait definition in vanilla/PoD/Wyvern. Keep native is_immortal and flag checks.",
+    "Birth: preserve all PoD birth hooks and race assignment. Only exclude existing true dragons from the fallback mortal trait; hybrids and PoD races keep PoD rules. No race/splat flags or vampire fertility changes.",
+    "Recognize Dragon Creed as supported custom religion, exclude it from vanilla-faith cleanup/hiding and illegal-faith fallback; leave PoD conversion and splat-family restrictions intact."
+  ]
+}

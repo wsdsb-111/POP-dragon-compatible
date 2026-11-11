@@ -1,0 +1,131 @@
+# These schemes mirror the original temperament-specific bond schemes but
+# accept only the captor's fully fed wild captive. They never accept tamed
+# dragons and do not change the native schemes' eligibility.
+mm_wyvern_tame_alert_captive = {
+	skill = intrigue
+	desc = mm_wyvern_tame_alert_captive_desc
+	success_desc = MM_WYVERN_TAME_CAPTIVE_SUCCESS_DESC
+	icon = icon_scheme_befriend
+	illustration = "gfx/interface/illustrations/myv/myv_wyvern_background_stable.dds"
+	target_type = character
+	is_secret = no
+	is_basic = yes
+	speed_per_skill_point = -2
+	spymaster_speed_per_skill_point = 0
+	uses_resistance = no
+	base_progress_goal = 180
+	base_maximum_success = 90
+	minimum_success = 10
+	allow = {
+		is_adult = yes
+		is_imprisoned = no
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_alert
+		}
+	}
+	valid = {
+		is_alive = yes
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_alert
+		}
+	}
+	odds_prediction = { add = 50 }
+	base_success_chance = {
+		base = 15
+		modifier = { add = { value = scope:owner.intrigue multiply = 2 floor = yes } desc = MYV_BOND_WYVERN_YOUR_INTRIGUE }
+		compare_modifier = { desc = MYV_BOND_WYVERN_YOUR_PROWESS value = scope:owner.prowess multiplier = 1 }
+	}
+	on_phase_completed = { mm_wyvern_capture_scheme_resolution_effect = yes }
+}
+
+mm_wyvern_tame_docile_captive = {
+	skill = stewardship
+	desc = mm_wyvern_tame_docile_captive_desc
+	success_desc = MM_WYVERN_TAME_CAPTIVE_SUCCESS_DESC
+	icon = icon_scheme_befriend
+	illustration = "gfx/interface/illustrations/myv/myv_wyvern_background_stable.dds"
+	target_type = character
+	is_secret = no
+	is_basic = yes
+	speed_per_skill_point = -2
+	spymaster_speed_per_skill_point = 0
+	uses_resistance = no
+	base_progress_goal = 180
+	base_maximum_success = 90
+	minimum_success = 10
+	allow = {
+		is_adult = yes
+		is_imprisoned = no
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_docile
+		}
+	}
+	valid = {
+		is_alive = yes
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_docile
+		}
+	}
+	odds_prediction = { add = 50 }
+	base_success_chance = {
+		base = 15
+		modifier = { add = { value = scope:owner.stewardship multiply = 2 floor = yes } desc = MYV_BOND_WYVERN_YOUR_STEWARDSHIP }
+		compare_modifier = { desc = MYV_BOND_WYVERN_YOUR_PROWESS value = scope:owner.prowess multiplier = 1 }
+	}
+	on_phase_completed = { mm_wyvern_capture_scheme_resolution_effect = yes }
+}
+
+mm_wyvern_tame_fierce_captive = {
+	skill = martial
+	desc = mm_wyvern_tame_fierce_captive_desc
+	success_desc = MM_WYVERN_TAME_CAPTIVE_SUCCESS_DESC
+	icon = icon_scheme_befriend
+	illustration = "gfx/interface/illustrations/myv/myv_wyvern_background_stable.dds"
+	target_type = character
+	is_secret = no
+	is_basic = yes
+	speed_per_skill_point = -2
+	spymaster_speed_per_skill_point = 0
+	uses_resistance = no
+	base_progress_goal = 180
+	base_maximum_success = 90
+	minimum_success = 10
+	allow = {
+		is_adult = yes
+		is_imprisoned = no
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_fierce
+		}
+	}
+	valid = {
+		is_alive = yes
+		is_incapable = no
+		scope:target = {
+			mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = scope:owner }
+			var:mm_wyvern_taming_progress >= 100
+			has_trait = myv_wyvern_temperament_fierce
+		}
+	}
+	odds_prediction = { add = 50 }
+	base_success_chance = {
+		base = 15
+		modifier = { add = { value = scope:owner.martial multiply = 2 floor = yes } desc = MYV_BOND_WYVERN_YOUR_MARTIAL }
+		compare_modifier = { desc = MYV_BOND_WYVERN_YOUR_PROWESS value = scope:owner.prowess multiplier = 1 }
+	}
+	on_phase_completed = { mm_wyvern_capture_scheme_resolution_effect = yes }
+}

@@ -1,0 +1,61 @@
+{
+  "activePlaysetSha256": "73277cca42c74fa88c142c4a46b266ca2f346e8eba12ed052818b6e9caab7e96",
+  "counts": {
+    "templates": 147,
+    "can_equip": 146,
+    "can_benefit": 145
+  },
+  "sources": [
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\00_badge_templates.txt",
+      "sha256": "d179ba4c3a36c1ebd40a1277413bdfb7a06e89450a477764a2ed1dd1729dc4d9"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\00_event_templates.txt",
+      "sha256": "e2e93bb01c78df61be25e4f20127cbc6cb53f31cfe5ee04c719823f27f38cbcb"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\00_historical_artifacts_templates.txt",
+      "sha256": "81572177df33ab1cd834721966046f99cde67f1f10037e86e8f59cfe32cf2cf0"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\00_type_templates.txt",
+      "sha256": "b1a0f66571899a60a95e8b09d5c0c7ab438be40d44438955cb30e16b6aba99d1"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\01_ep2_templates.txt",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\02_ep3_templates.txt",
+      "sha256": "31923689d42e7bfb51c979232cb08392afc7e29007c6b19dd43f92b148f49f1b"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game\\common\\artifacts\\templates\\pam_saint_relic_templates.txt",
+      "sha256": "e7b568e6d42f78aa10b834877ce1a164ff982deea09d2cd0d110c175711f329f"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2939268227\\common\\artifacts\\templates\\zhuge_artifact_templates_00_imperial_seal.txt",
+      "sha256": "3cbce534d7f66a582b9417ab54424d3411a5a2ebcd5c322d1de2154e49df8d49"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\3804856786\\common\\artifacts\\templates\\mrel_templates.txt",
+      "sha256": "be8c4d0e02dd37fdfaae10cd3cd5b53dd9430b9f4b84823a55f638a2e9d41a41"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\3684849062\\common\\artifacts\\templates\\SanGong_templates.txt",
+      "sha256": "a0d39987e109e3f0db0f472b80fe7a6a4ce9f3a4525baa9d7fd10ceade5a303b"
+    },
+    {
+      "path": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2506311074\\common\\artifacts\\templates\\01_oe_artifacts_templates.txt",
+      "sha256": "e9dc05c2a35718a0033fd372b46614a0f9c4b662006e84af4a65da0be2d620c8"
+    },
+    {
+      "path": "./patches/dragon-relics/mod/common/artifacts/templates/mm_dragon_relics.txt",
+      "sha256": "e286bb5816279df755dd39ba50b2f422b2c8a9253d2af83b65184a8d4117dbfe"
+    }
+  ],
+  "output": "patches\\dragon-relics\\mod\\common\\artifacts\\templates\\zzzzzz_mm_relic_forging_access.txt",
+  "outputSha256": "8d66fd9f4731b105254248cf3a1cb044ef7cc7ebc188f9fc70e43c07f9760a7c",
+  "boundary": "Only can_equip/can_benefit predicates gain an active fire-forging alternative; all other fields remain identical. Engine ownership, DLC and slots are unchanged."
+}

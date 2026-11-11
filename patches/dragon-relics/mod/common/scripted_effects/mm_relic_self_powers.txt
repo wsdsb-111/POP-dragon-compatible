@@ -1,0 +1,133 @@
+mm_relic_fire_forging_effect = {
+    if = {
+        limit = { mm_relic_fire_ring_ready_trigger = yes }
+        add_character_modifier = { modifier = mm_relic_fire_forging years = 3 }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_fire_ring_identity YEARS = 5 }
+    }
+}
+mm_relic_earth_creation_effect = {
+    if = {
+        limit = { mm_relic_earth_sarcophagus_ready_trigger = yes }
+        add_character_modifier = { modifier = mm_relic_earth_creation years = 2 }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_earth_sarcophagus_identity YEARS = 5 }
+    }
+}
+mm_relic_sea_trade_effect = {
+    if = {
+        limit = { mm_relic_sea_armor_ready_trigger = yes }
+        add_character_modifier = { modifier = mm_relic_sea_trade years = 3 }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_sea_armor_identity YEARS = 5 }
+        add_to_global_variable_list = { name = mm_relic_traders target = this }
+        mm_relic_trade_refresh_effect = yes
+    }
+}
+mm_relic_sky_execution_effect = {
+    if = {
+        limit = { mm_relic_sky_spear_ready_trigger = yes }
+        add_character_modifier = { modifier = mm_relic_sky_execution years = 3 }
+        mm_relic_set_cooldown_effect = { IDENTITY = mm_relic_sky_spear_identity YEARS = 5 }
+        mm_relic_three_commander_traits_effect = yes
+    }
+}
+mm_relic_three_commander_traits_effect = {
+    random_list = {
+        1 = { modifier = { factor = 0 OR = { has_trait = logistician } } add_trait = logistician }
+        1 = { modifier = { factor = 0 OR = { has_trait = military_engineer } } add_trait = military_engineer }
+        1 = { modifier = { factor = 0 OR = { has_trait = aggressive_attacker } } add_trait = aggressive_attacker }
+        1 = { modifier = { factor = 0 OR = { has_trait = unyielding_defender } } add_trait = unyielding_defender }
+        1 = { modifier = { factor = 0 OR = { has_trait = forder } } add_trait = forder }
+        1 = { modifier = { factor = 0 OR = { has_trait = flexible_leader } } add_trait = flexible_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = desert_warrior } } add_trait = desert_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = jungle_stalker } } add_trait = jungle_stalker }
+        1 = { modifier = { factor = 0 OR = { has_trait = reaver } } add_trait = reaver }
+        1 = { modifier = { factor = 0 OR = { has_trait = reckless has_trait = cautious_leader } } add_trait = reckless }
+        1 = { modifier = { factor = 0 OR = { has_trait = holy_warrior } } add_trait = holy_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = open_terrain_expert } } add_trait = open_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = rough_terrain_expert } } add_trait = rough_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = forest_fighter } } add_trait = forest_fighter }
+        1 = { modifier = { factor = 0 OR = { has_trait = cautious_leader has_trait = reckless } } add_trait = cautious_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = organizer } } add_trait = organizer }
+    }
+    random_list = {
+        1 = { modifier = { factor = 0 OR = { has_trait = logistician } } add_trait = logistician }
+        1 = { modifier = { factor = 0 OR = { has_trait = military_engineer } } add_trait = military_engineer }
+        1 = { modifier = { factor = 0 OR = { has_trait = aggressive_attacker } } add_trait = aggressive_attacker }
+        1 = { modifier = { factor = 0 OR = { has_trait = unyielding_defender } } add_trait = unyielding_defender }
+        1 = { modifier = { factor = 0 OR = { has_trait = forder } } add_trait = forder }
+        1 = { modifier = { factor = 0 OR = { has_trait = flexible_leader } } add_trait = flexible_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = desert_warrior } } add_trait = desert_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = jungle_stalker } } add_trait = jungle_stalker }
+        1 = { modifier = { factor = 0 OR = { has_trait = reaver } } add_trait = reaver }
+        1 = { modifier = { factor = 0 OR = { has_trait = reckless has_trait = cautious_leader } } add_trait = reckless }
+        1 = { modifier = { factor = 0 OR = { has_trait = holy_warrior } } add_trait = holy_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = open_terrain_expert } } add_trait = open_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = rough_terrain_expert } } add_trait = rough_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = forest_fighter } } add_trait = forest_fighter }
+        1 = { modifier = { factor = 0 OR = { has_trait = cautious_leader has_trait = reckless } } add_trait = cautious_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = organizer } } add_trait = organizer }
+    }
+    random_list = {
+        1 = { modifier = { factor = 0 OR = { has_trait = logistician } } add_trait = logistician }
+        1 = { modifier = { factor = 0 OR = { has_trait = military_engineer } } add_trait = military_engineer }
+        1 = { modifier = { factor = 0 OR = { has_trait = aggressive_attacker } } add_trait = aggressive_attacker }
+        1 = { modifier = { factor = 0 OR = { has_trait = unyielding_defender } } add_trait = unyielding_defender }
+        1 = { modifier = { factor = 0 OR = { has_trait = forder } } add_trait = forder }
+        1 = { modifier = { factor = 0 OR = { has_trait = flexible_leader } } add_trait = flexible_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = desert_warrior } } add_trait = desert_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = jungle_stalker } } add_trait = jungle_stalker }
+        1 = { modifier = { factor = 0 OR = { has_trait = reaver } } add_trait = reaver }
+        1 = { modifier = { factor = 0 OR = { has_trait = reckless has_trait = cautious_leader } } add_trait = reckless }
+        1 = { modifier = { factor = 0 OR = { has_trait = holy_warrior } } add_trait = holy_warrior }
+        1 = { modifier = { factor = 0 OR = { has_trait = open_terrain_expert } } add_trait = open_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = rough_terrain_expert } } add_trait = rough_terrain_expert }
+        1 = { modifier = { factor = 0 OR = { has_trait = forest_fighter } } add_trait = forest_fighter }
+        1 = { modifier = { factor = 0 OR = { has_trait = cautious_leader has_trait = reckless } } add_trait = cautious_leader }
+        1 = { modifier = { factor = 0 OR = { has_trait = organizer } } add_trait = organizer }
+    }
+}
+mm_relic_trade_refresh_effect = {
+    save_scope_as = mm_v1312_silk_road_target
+    if = {
+        limit = { is_alive = yes has_character_modifier = mm_relic_sea_trade }
+        every_held_title = {
+            limit = { tier = tier_county any_county_province = { is_coastal = yes } }
+            add_county_modifier = { modifier = mm_relic_sea_coastal_trade days = 2 }
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = china
+            BOUNTY_MODIFIER = mm_relic_silk_china_high
+            PERIPHERY_MODIFIER = mm_relic_silk_china_low
+            STEADY_MODIFIER = mm_relic_silk_china_low
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = tibet
+            BOUNTY_MODIFIER = mm_relic_silk_tibet_high
+            PERIPHERY_MODIFIER = mm_relic_silk_tibet_low
+            STEADY_MODIFIER = mm_relic_silk_tibet_low
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = india
+            BOUNTY_MODIFIER = mm_relic_silk_india_high
+            PERIPHERY_MODIFIER = mm_relic_silk_india_low
+            STEADY_MODIFIER = mm_relic_silk_india_low
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = central_asia
+            BOUNTY_MODIFIER = mm_relic_silk_central_asia_high
+            PERIPHERY_MODIFIER = mm_relic_silk_central_asia_low
+            STEADY_MODIFIER = mm_relic_silk_central_asia_low
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = transcaspia
+            BOUNTY_MODIFIER = mm_relic_silk_transcaspia_high
+            PERIPHERY_MODIFIER = mm_relic_silk_transcaspia_low
+            STEADY_MODIFIER = mm_relic_silk_transcaspia_low
+        }
+        mm_v1312_silk_road_region_bonus_effect = {
+            SUB_REGION = occident
+            BOUNTY_MODIFIER = mm_relic_silk_occident_high
+            PERIPHERY_MODIFIER = mm_relic_silk_occident_low
+            STEADY_MODIFIER = mm_relic_silk_occident_low
+        }
+    }
+}

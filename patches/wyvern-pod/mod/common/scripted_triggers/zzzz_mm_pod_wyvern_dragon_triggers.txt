@@ -1,0 +1,269 @@
+can_marry_common_trigger = {
+	is_alive = yes
+	NOT = { has_trait_with_flag = can_not_marry }
+	trigger_if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } is_adult = yes has_character_flag = mm_wyvern_human_form }
+	NOT = { has_variable = can_not_marry }
+
+	POD_can_marry_common_trigger = yes
+
+	trigger_if = {
+		limit = {
+			exists = primary_title
+		}
+		NOR = {
+			# Block Mercenaries from marrying or showing up in marriage interactions
+			primary_title = {
+				is_mercenary_company = yes
+			}
+			is_leading_faction_type = peasant_faction
+			is_leading_faction_type = populist_faction
+			government_has_flag = government_is_herder
+		}
+	}
+
+	# Clergy cannot marry if their faith disallows it
+	trigger_if = {
+		limit = { is_clergy = yes }
+		marriage_clergy_can_marry_trigger = yes
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.involved_activity.var:tournament_marriage_prize
+			this = liege.involved_activity.var:tournament_marriage_prize
+		}
+		exists = scope:contest_winner
+	}
+}
+
+mm_dragon_bond_marriage_pair_trigger = {
+    OR = {
+        AND = {
+            scope:secondary_actor = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:secondary_recipient has_relation_myv_wyvern_bonded_character = scope:secondary_recipient }
+            scope:secondary_recipient = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = no }
+        }
+        AND = {
+            scope:secondary_recipient = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:secondary_actor has_relation_myv_wyvern_bonded_character = scope:secondary_actor }
+            scope:secondary_actor = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = no }
+        }
+    }
+}
+
+mm_dragon_bond_blood_trigger = { OR = { mm_dragon_is_true_dragon_parent_trigger = yes mm_dragon_has_blood_trigger = yes } }
+
+can_be_knight_trigger = {
+	is_available_quick = {
+			ai = yes
+			hostage = no
+		}
+	NOT = { POD_custom_incompatible_splats_trigger = { ACTOR = this RECIPIENT = $ARMY_OWNER$ } }
+	NOT = { has_trait = torpor }
+	trigger_if = {
+		limit = {
+			myv_is_wyvern = yes
+			NOT = { has_trait = mm_asc_dragon_body }
+		}
+		mm_wyvern_can_serve_as_knight = { ARMY_OWNER = $ARMY_OWNER$ }
+	}
+	trigger_else = {
+		OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+		can_be_warrior_trigger = { ARMY_OWNER = $ARMY_OWNER$ }
+		trigger_if = { # Admin governors cannot be knights
+				limit = {
+					$ARMY_OWNER$ = { government_has_mechanic = administrative }
+					is_courtier = no
+					exists = primary_title
+				}
+				primary_title = {
+					tier < tier_duchy
+					trigger_if = {
+						limit = { is_noble_family_title = yes }
+						always = no
+					}
+				}
+			}
+		trigger_if = {
+				limit = {
+					$ARMY_OWNER$.culture = {
+						has_cultural_parameter = minimum_prowess_for_knights
+					}
+				}
+				prowess >= 12
+			}
+		trigger_if = {
+				limit = {
+					always = no # CfV: disabled in PoD
+					is_clergy = yes
+				}
+				OR = {
+					rite = { rite_has_parameter = clergy_can_fight }
+					AND = {
+						has_personal_tenet_flag = clergy_can_fight_personal
+						NOT = {
+							rite = { rite_has_parameter = pacifist }
+						}
+					}
+					culture = { has_cultural_parameter = culture_clergy_can_fight }
+					AND = {
+						$ARMY_OWNER$.culture = {
+							has_cultural_parameter = high_prowess_ignores_knight_restrictions
+						}
+						prowess >= 10
+					}
+				}
+			}
+		trigger_if = {
+				limit = {
+					always = no # CfV: disabled in PoD
+					exists = liege.diarch
+				}
+				this != liege.diarch
+			}
+		trigger_if = {
+				limit = {
+					$ARMY_OWNER$ = {
+						is_ai = no
+					}
+				}
+				is_knight_permitted = $ARMY_OWNER$
+			}
+	}
+}
+
+can_hunt_trigger = {
+	NOR = {
+		has_trait = wounded_2
+		has_trait = wounded_3
+		has_trait = infirm
+		has_trait = maimed
+		has_trait = blind
+	}
+	has_contagious_deadly_disease_trigger = no
+	custom_tooltip = {
+		text = hunt_cannot_hunt_parameter_tt
+		NOT = {
+			culture = { has_cultural_parameter = cannot_hunt }
+		}
+	}
+	OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+}
+
+court_position_employee_shown_trigger = {
+	is_imprisoned = no
+	tgp_is_ceremonial_liege_trigger = no
+	OR = { myv_is_wyvern = no has_trait = mm_asc_dragon_body }
+}
+
+mm_wyvern_is_legendary_blood = {
+    OR = { has_trait = myv_wyvern_legendary has_trait = mm_wyvern_legendary_origin has_character_flag = mm_wyvern_legendary_origin }
+}
+
+mm_wyvern_is_very_hungry = {
+    myv_is_living_wyvern = yes
+    OR = {
+        AND = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger < 10 }
+        myv_wyvern_malnutrition_progress > 0
+    }
+}
+
+mm_wyvern_has_assigned_rider = {
+    trigger_if = {
+        limit = { exists = var:myv_war_mount_rider }
+        var:myv_war_mount_rider = {
+            is_alive = yes
+            has_trait = myv_wyvern_rider
+            trigger_if = {
+                limit = { exists = var:myv_war_mount }
+                var:myv_war_mount = prev
+            }
+            trigger_else = { always = no }
+        }
+    }
+    trigger_else = { always = no }
+}
+
+mm_wyvern_can_serve_as_knight = {
+    is_available_quick = { ai = yes adult = yes imprisoned = no incapable = no hostage = no }
+    myv_is_living_wyvern = yes
+    has_trait = myv_wyvern_tamed
+    exists = employer
+    employer = $ARMY_OWNER$
+    NOT = { has_variable = mm_wyvern_captor }
+    NOT = { mm_wyvern_has_assigned_rider = yes }
+    NOT = { has_character_flag = myv_wyvern_travelling_with_rider }
+    NOT = { exists = current_travel_plan }
+    trigger_if = {
+        limit = { exists = var:myv_wyvern_bonded_character }
+        var:myv_wyvern_bonded_character = { is_alive = yes }
+    }
+    trigger_else = { always = no }
+    trigger_if = {
+        limit = { $ARMY_OWNER$ = { is_ai = no } }
+        is_knight_permitted = $ARMY_OWNER$
+    }
+}
+
+mm_wyvern_is_independent_knight_deployed = {
+    trigger_if = {
+        limit = { exists = employer }
+        mm_wyvern_can_serve_as_knight = { ARMY_OWNER = employer }
+        exists = knight_army.location
+    }
+    trigger_else = { always = no }
+}
+
+mm_wyvern_hunter_can_finish = {
+    myv_is_wyvern = no
+    exists = scope:myv_slay_wyvern_target
+    trigger_if = {
+        limit = { scope:myv_slay_wyvern_target = { mm_wyvern_is_legendary_blood = yes } }
+        prowess > 60
+    }
+    trigger_else = { prowess > 30 }
+}
+
+myv_is_wyvern_deployed_with_army = {
+    OR = {
+        mm_wyvern_is_independent_knight_deployed = yes
+        AND = {
+    trigger_if = {
+        limit = { myv_is_living_wyvern = yes exists = var:myv_war_mount_rider }
+        var:myv_war_mount_rider = {
+            myv_is_active_wyvern_war_rider = yes
+            var:myv_war_mount = prev
+            OR = {
+                exists = commanding_army.location
+                exists = knight_army.location
+            }
+        }
+    }
+    trigger_else = { always = no }
+        }
+    }
+}
+
+can_have_external_ruler_puppet_trigger = {
+	OR = {
+		AND = { has_character_flag = mm_relic_oracle_cast_in_progress has_pam_dlc_trigger = yes }
+		AND = {
+			can_have_puppets_trigger = yes
+				has_pam_dlc_trigger = yes
+		}
+	}
+}
+
+can_have_theological_agent_puppet_trigger = {
+	OR = {
+		AND = { has_character_flag = mm_relic_oracle_cast_in_progress has_pam_dlc_trigger = yes }
+		AND = {
+			can_have_puppets_trigger = yes
+				rite = {
+					OR = {
+						rite_has_doctrine = doctrine_theocracy_temporal
+						rite_has_doctrine = doctrine_monasticism_accepted
+						rite_has_doctrine = doctrine_monasticism_encouraged
+					}
+				}
+				has_pam_dlc_trigger = yes
+		}
+	}
+}

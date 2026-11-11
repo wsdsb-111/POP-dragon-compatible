@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-11-02",
+  "scope": "Static PoD plus Wyvern non-GUI compatibility definitions. No CK3 runtime or test process was run.",
+  "sourceRoots": {
+    "R": ".",
+    "PoD": "D:\\SteamLibrary\\steamapps\\workshop\\content\\1158310\\2216659254",
+    "game": "D:\\SteamLibrary\\steamapps\\common\\Crusader Kings III\\game"
+  },
+  "sources": [
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/00_badge_templates.txt",
+      "sha256": "d179ba4c3a36c1ebd40a1277413bdfb7a06e89450a477764a2ed1dd1729dc4d9",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/00_event_templates.txt",
+      "sha256": "e2e93bb01c78df61be25e4f20127cbc6cb53f31cfe5ee04c719823f27f38cbcb",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/00_historical_artifacts_templates.txt",
+      "sha256": "81572177df33ab1cd834721966046f99cde67f1f10037e86e8f59cfe32cf2cf0",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/00_type_templates.txt",
+      "sha256": "b1a0f66571899a60a95e8b09d5c0c7ab438be40d44438955cb30e16b6aba99d1",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/01_ep2_templates.txt",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/02_ep3_templates.txt",
+      "sha256": "31923689d42e7bfb51c979232cb08392afc7e29007c6b19dd43f92b148f49f1b",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/artifacts/templates/pam_saint_relic_templates.txt",
+      "sha256": "e7b568e6d42f78aa10b834877ce1a164ff982deea09d2cd0d110c175711f329f",
+      "roles": [
+        "vanilla artifact-template baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/casus_belli_types/00_religious_war.txt",
+      "sha256": "3c390b6fc66b5204b176e82707b52b2c2b5163948867631e1fe83ea3374e2644",
+      "roles": [
+        "Vanilla religious-war ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_factions.txt",
+      "sha256": "c604b3fcf3fe315516483a9da45fe8c0e38db2031dc683ba6edd569c120b377b",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_nation_fracturing_faction.txt",
+      "sha256": "195e160d2c534f00d62e75ae1a44b88dc54fee01650d481bd8ea20560aa1d336",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_nomadic_faction.txt",
+      "sha256": "74be9ae0df2cfc89b5b5c99c57c2c567786af0b390339843224921ea26f0e858",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_peasant_faction_new.txt",
+      "sha256": "abcfd7119d00285660818e7e26aed230c78ace863f714a746a1ee99ea9672aa4",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/00_populist_faction.txt",
+      "sha256": "c67853a56bcea26ed90427cdba7ed4a51968ee085ec88e34fe2976ce5437dd4d",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/factions/10_tgp_factions.txt",
+      "sha256": "c232e64f26daa3a0bc1994fa55633af804d4935297bd075f5deee2b15932bd6a",
+      "roles": [
+        "vanilla TGP faction baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/inspirations/00_inspirations.txt",
+      "sha256": "499b66073a52e0b2f3d001a7444ff26a877f2ce6fa13cb31870ae0dc3335558e",
+      "roles": [
+        "Vanilla inspiration ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/schemes/scheme_types/court_scheme.txt",
+      "sha256": "48e3fc583e431a9941451ee158b6357d813536d6c5a93d89822af89f83a313a2",
+      "roles": [
+        "Vanilla courting-scheme ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/schemes/scheme_types/seduce_scheme.txt",
+      "sha256": "4f37de42079a928039d87294a21fb1d6147d27aedfe43df3425437877b41415d",
+      "roles": [
+        "Vanilla seduction-scheme ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/script_values/99_court_chaplain_values.txt",
+      "sha256": "216f07c8b65800faf373691a9247c913fbccd933161c8e2cebe3a37bf144e3f3",
+      "roles": [
+        "Vanilla court chaplain conversion baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
+      "sha256": "1b60d78e54e1ebff7601bd13e59b2251cff47d96f595a4431c666fa3ee11a831",
+      "roles": [
+        "Vanilla artifact wealth ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/00_romance_effects.txt",
+      "sha256": "a4a88fa0f36e95e865dcdd077dcb64f5985db1b9a441fcca1795494abda66211",
+      "roles": [
+        "Vanilla sex-effect ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_effects/pam_effects.txt",
+      "sha256": "f4978bc5396431a0fb965dafc8163705c2cfea981ae4361ddb2340b3ff115404",
+      "roles": [
+        "Vanilla vows-of-poverty effect ancestor"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/00_hunt_triggers.txt",
+      "sha256": "ba92e5f0e3bf14b89d6a7312f0036b2e392daebda1994bf02b9c69d7a379274a",
+      "roles": [
+        "Vanilla hunt eligibility baseline"
+      ]
+    },
+    {
+      "root": "game",
+      "path": "common/scripted_triggers/pam_scripted_triggers.txt",
+      "sha256": "834f9cafa2fec02fa4cd5b5ca1603cfbc82a459549ae994cff6db7bad3c27369",
+      "roles": [
+        "Vanilla puppet trigger ancestor"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/artifacts/templates/00_historical_artifacts_templates.txt",
+      "sha256": "15db3702de75aaead50cc68a8bc7c370c2a62978138ba8cb77907643d8824520",
+      "roles": [
+        "PoD artifact-template baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/artifacts/templates/00_POD_artifacts_book_of_nod_templates.txt",
+      "sha256": "ba65ba4060ab83ab5e1f0d3449aaccdce2be32f5af39474f9b6b8ff21b6ed8a9",
+      "roles": [
+        "PoD artifact-template baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/artifacts/templates/00_POD_artifacts_fetish_templates.txt",
+      "sha256": "a6b3709ebff46685ccffc5fc6a6aecffe361b2db780f856a43a9636a217661de",
+      "roles": [
+        "PoD artifact-template baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/artifacts/templates/00_POD_artifacts_templates.txt",
+      "sha256": "2a4612e16bbe55ffc19f1708af6a153371adb9c56a57b417b9bc2e15cdf73690",
+      "roles": [
+        "PoD artifact-template baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/casus_belli_types/00_religious_war.txt",
+      "sha256": "d7c989c07e12699f49fb5e5a17ce7f631781925dc75fca02af05ffe3de04ee23",
+      "roles": [
+        "PoD religious-war baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_factions.txt",
+      "sha256": "6c921a9ed15c71d372ab5981e6da443090821c101c727c14d06dd1aba5f340e3",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_nation_fracturing_faction.txt",
+      "sha256": "b1918dc726709a84fa895937b8efba340cbeaaa37004e45574167dd6908a7d50",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_nomadic_faction.txt",
+      "sha256": "1de4762da60320c939088614c36e4376ba19936b3fd9056b24fc59115c0b08ad",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_peasant_faction_new.txt",
+      "sha256": "c7e81c5cac851231c42f7e58655044dd6979de67e762625a97652363ae4090ab",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_POD_hunter_faction.txt",
+      "sha256": "b9b2aa0bf2237e94a01b930a19a66786656ca31e70e7494141b0ef891b18c2ad",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/factions/00_populist_faction.txt",
+      "sha256": "634a28f164bf92026ca18d47367a13edd40eee9f9c36d8ba1762cbd0a9c35728",
+      "roles": [
+        "PoD faction baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/inspirations/00_inspirations.txt",
+      "sha256": "8f4b0489757b7983a11152353b0418c5109d157fda62cea7c08a04f18b15c1d3",
+      "roles": [
+        "PoD inspiration baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/schemes/scheme_types/court_scheme.txt",
+      "sha256": "7f6f44391f9e0ac5882cfced231b3924f2cf84a2643070baabae3732980bda1d",
+      "roles": [
+        "PoD courting-scheme baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/schemes/scheme_types/seduce_scheme.txt",
+      "sha256": "c5a11fd60068ed16c8b799b09cb9f0a107d75c62afe81a513ec2aeb47fee1bb4",
+      "roles": [
+        "PoD seduction-scheme baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/script_values/02_religion_values.txt",
+      "sha256": "edd4a40a50d7b207d309264fa5876ade1d3caea666166a1f9b0eac5e14aff249",
+      "roles": [
+        "PoD religion conversion baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
+      "sha256": "118053d8b5bceed59002f0f15370cc9e1157e5a04a62fc7eef5b668b60967cd8",
+      "roles": [
+        "PoD artifact wealth and quality baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_effects/00_romance_effects.txt",
+      "sha256": "86374b4fb7ca7edf6e171a5cb08d505ebca7f7a32181a545a1f4b703527fda12",
+      "roles": [
+        "PoD sex-effect baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "f52d35680da9d44a5e2bae1c318cf18ee181a46ffba167ae854581a6f523de66",
+      "roles": [
+        "PoD base for preserved EP3 cleanup"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_effects/POD_romance_effects.txt",
+      "sha256": "75903ade592a922abd85de0185b54cf7862f432c5cf4fadb77485cb5eedeac93",
+      "roles": [
+        "PoD had-sex callback"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_modifiers/00_marriage_scripted_modifiers.txt",
+      "sha256": "502f311b2ae2a3bf2ce88d9570201fc18098f0fb4d1cac0afb0ae77baa95cb02",
+      "roles": [
+        "PoD marriage modifier baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/00_court_position_triggers.txt",
+      "sha256": "8994480bcd1678577413d0bb1aa8dc2387538acaa9293a7996fca21354cdba5b",
+      "roles": [
+        "PoD court-position visibility baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/00_marriage_triggers.txt",
+      "sha256": "c23164641bc79b0ac5e4075991176563e5eecfe2a93f51c0701f29d793d6874e",
+      "roles": [
+        "PoD marriage trigger baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/00_war_and_peace_triggers.txt",
+      "sha256": "fc3b17e265f8ab8fcbfcc9cbd1d0b9df7207825af4ca96b177de9c45fa924074",
+      "roles": [
+        "PoD knight eligibility baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "common/scripted_triggers/pam_scripted_triggers.txt",
+      "sha256": "f288135f0fa4306d5f84a033acb366ec5e6134f41f09ca304da8b3f0cdac2142",
+      "roles": [
+        "PoD puppet trigger baseline"
+      ]
+    },
+    {
+      "root": "PoD",
+      "path": "events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "f93926e0d18ba5598ada385e9ce28c5a15e34724f3d187c94486791530c06b29",
+      "roles": [
+        "PoD guest-cleanup event base"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/character-preservation/mod/common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "65edc85ce6d71fd457953b434f9219feee80a05db88a8c71ce772810b0a39c4f",
+      "roles": [
+        "MMPatch cleanup protection"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/character-preservation/mod/events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "fe0a01c474bf3f1a35e8296f2e0a01f2c60fae1b486b68acdb30152a8791a550",
+      "roles": [
+        "MMPatch guest-cleanup guard"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-bond/mod/common/scripted_modifiers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "9b73909c31c2ec5f94dfa7eee7d99291c982904a4c7549bfd12867f4c01e010f",
+      "roles": [
+        "Dragon Bond marriage modifiers"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-bond/mod/common/scripted_triggers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "108404a8398731f08257f41c807c0474846c473856f9ddaf427777d04cad8d2b",
+      "roles": [
+        "Dragon Bond marriage trigger additions"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/casus_belli_types/zzzzzz_mm_v1312_religious_wars.txt",
+      "sha256": "5933687681b19deed85351a6f6244c8d82664b6bfbf8be6a2f829b84556e1920",
+      "roles": [
+        "Dragon Creed religious-war additions"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/factions/zzzzzz_mm_v1312_factions.txt",
+      "sha256": "d19c3aca7448ea0bb853539a57e942a81f57e0da3116be1c3ce7e8c779c1977e",
+      "roles": [
+        "Dragon Creed faction reductions"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/inspirations/zzzz_mm_v1312_forging.txt",
+      "sha256": "5ceddcc94ae1bbebc7813c55a22cb2c5d2f1f012ba85531aecbf84e5c0e5c608",
+      "roles": [
+        "MM Dragon Creed weapon inspiration reward"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_conversion_factors.txt",
+      "sha256": "b2ec01979c20531c3fed8b5cbc26b854e08e8d4d34b20c66214c77889eba05e8",
+      "roles": [
+        "Dragon Creed holy-site conversion addition"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_faction_values.txt",
+      "sha256": "f0a7b166f3749ccdcdf06533af5cdedc5bf19a8d1c8451ab9450a8031a12e1fb",
+      "roles": [
+        "Dragon Creed faction reduction values"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_religion_values.txt",
+      "sha256": "f3f5210e888e25d38e29bef9e8d0a7bc512f0a4486f3c90e6200d30951412397",
+      "roles": [
+        "Dragon Creed conversion-resistance addition"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_effects/zzzz_mm_v1312_activity_rewards.txt",
+      "sha256": "33825d35918d0e9939aea544d37a458c0d33196044e8d72152bcdf5cb27f5139",
+      "roles": [
+        "Dragon Creed activity reward effects"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_effects/zzzz_mm_v1312_forging.txt",
+      "sha256": "695ca8daecb8d60e253718f4a1bcd616d01c298c867e60242507a87f43489120",
+      "roles": [
+        "Dragon Creed weapon monthly reward helper"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_effects/zzzz_mm_v1312_quality.txt",
+      "sha256": "724d2efe48aac9f1ae88390fe969ccdbc7a37cfb81cc691df607ddbe9c2651b9",
+      "roles": [
+        "Dragon Creed fire-equipment quality effect"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_triggers/mm_v1312_founder_wars.txt",
+      "sha256": "fe8a6fe3ca52ab0f5646e5507d6829fa8975b095471cb8ea8ce381f8685e4d78",
+      "roles": [
+        "Dragon Creed religious-war target helper"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/artifacts/templates/mm_dragon_relics.txt",
+      "sha256": "e286bb5816279df755dd39ba50b2f422b2c8a9253d2af83b65184a8d4117dbfe",
+      "roles": [
+        "Seven MM dragon relic templates"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/artifacts/templates/zzzzzz_mm_relic_forging_access.txt",
+      "sha256": "8d66fd9f4731b105254248cf3a1cb044ef7cc7ebc188f9fc70e43c07f9760a7c",
+      "roles": [
+        "MM artifact-template access wrappers"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/inspirations/zzzzzz_mm_relic_forging.txt",
+      "sha256": "7ab6bc514943a22bfe10962727a0a5854f8317738b204c92509e702ef4a0b9f0",
+      "roles": [
+        "MM inspiration fire-ring progress bonus"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/schemes/scheme_types/zzzzzz_mm_relic_court_scheme.txt",
+      "sha256": "ec497be0d7346ac61894244b039e8eee536e9c2e7d89cb830dc87dc0b16c964b",
+      "roles": [
+        "MM courting-scheme sea-armor bonus"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/schemes/scheme_types/zzzzzz_mm_relic_seduce_scheme.txt",
+      "sha256": "9b19cfe2d3f20bb69b7cdb5a8394ff3472440c2e70584cb4a77bd6d32bfb7d3b",
+      "roles": [
+        "MM seduction-scheme sea-armor bonus"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/scripted_triggers/mm_dragon_relics.txt",
+      "sha256": "0888c25f97dd32f53dedeedadb36b4671ca55e653fdc21c4c4487f93e8a610a7",
+      "roles": [
+        "MM sea-armor equipped trigger",
+        "MM fire-ring equipped trigger"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/scripted_triggers/zzzzzz_mm_relic_puppet_access.txt",
+      "sha256": "4359e4c569de3b977fcc285d33abab93c0b7335accbbf5946225f27552cbe3d6",
+      "roles": [
+        "Dragon relic puppet access branches"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/wyvern-ascension/mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_civil_rights.txt",
+      "sha256": "5e1689d0cade5751aab0bc1aebae77aae92fbf11a1729611d12821fdb6e3322d",
+      "roles": [
+        "Wyvern ascension knight branch and helper triggers"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "patches/wyvern-capture/mod/common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "sha256": "1c47f6a9a10617da2b79ce6570e40048c22757ea15607bcd842c0af01179bb7c",
+      "roles": [
+        "Wyvern capture knight branch and helper triggers"
+      ]
+    },
+    {
+      "root": "R",
+      "path": "scripts/build-wyvern-pod-mechanics.js",
+      "sha256": "972924a30167dcb37b2dca84b870bc74add923ac5855184d32c1adc1960475f2",
+      "roles": [
+        "reproducible generator"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_pod_character_preservation.txt",
+      "sha256": "8fafce2b729a0131383b24f0e1a275c97fdb8d3552e6adb80a327566d070eb2c",
+      "semantic": "PoD create_landless_adventurer_title_effect with the MM cleanup-protection guard; leaves PoD building restoration, camp-invitation and curia logic intact."
+    },
+    {
+      "path": "mod/events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "f1500b5fac9b28f669996586727929d33b1b3db10e890cfd5640f358aa0d2810",
+      "semantic": "PoD courtier_guest_management.2001 event with the MM cleanup-protection condition; retains PoD availability, longevity and disabled pool-development logic."
+    },
+    {
+      "path": "mod/common/factions/zzzz_mm_pod_dragon_creed_factions.txt",
+      "sha256": "db4e44bd9ba4ef62dbe9c94b8a901c365218b913cdc3e0442484cc9cda866a24",
+      "semantic": "Twelve PoD or vanilla faction definitions with only their matching MM earth-rite discontent reduction; omits Hanfan faction definitions."
+    },
+    {
+      "path": "mod/common/script_values/zzzz_mm_pod_dragon_creed_faction_values.txt",
+      "sha256": "d23e5d4fd25c660d14c54fc7b3217a40aa3ab7aa0157c9403ea1e19b7bb96bbf",
+      "semantic": "MM common, populist, peasant and nomadic reductions only; excludes both Hanfan-specific values."
+    },
+    {
+      "path": "mod/common/script_values/zzzz_mm_pod_dragon_creed_conversion.txt",
+      "sha256": "6f68c32659ac48f37f5affd96707afd29ba933b795a46f2566dae26f175ac50c",
+      "semantic": "PoD demand-conversion values plus the MM earth-rite resistance, and vanilla court-chaplain values plus the MM controlled holy-site bonus."
+    },
+    {
+      "path": "mod/common/scripted_modifiers/zzzz_mm_pod_dragon_bond_marriage.txt",
+      "sha256": "57d2959e2266af89b540acd67675c8bb23a1e184a0ef109c748b1c9dc377dfda",
+      "semantic": "PoD marriage acceptance modifier and its PoD-specific weights, with the MM Dragon Bond modifiers and six dragon/rite acceptance additions."
+    },
+    {
+      "path": "mod/common/scripted_triggers/zzzz_mm_pod_wyvern_dragon_triggers.txt",
+      "sha256": "664e1862e470b7eb525a7aa23b0ab334f17bdd6cef58cfacee4016eeec896999",
+      "semantic": "PoD marriage and court-position rules combined with Wyvern eligibility; vanilla hunt rules plus the ascension-body gate; Dragon Bond helpers; and PoD puppet rules plus the relic-oracle in-progress access path."
+    },
+    {
+      "path": "mod/common/artifacts/templates/zzzz_mm_pod_dragon_relic_templates.txt",
+      "sha256": "41091bc4d3d1a2338746495b262a32536edb8f0350119def2e9e908490f5b5c8",
+      "semantic": "PoD baseline plus MM fire-forging bypass for 47 PoD and 29 vanilla templates; adds seven dragon relic templates with can_reforge disabled. Omits 64 templates absent from both PoD and vanilla so other-mod/East-only IDs remain untouched."
+    },
+    {
+      "path": "mod/common/casus_belli_types/zzzz_mm_pod_dragon_creed_religious_wars.txt",
+      "sha256": "3b3c7665f5471e1e750e1f14eb44537837382faf032cf76f1e50b6223a9f5a1a",
+      "semantic": "PoD minor, regular and major religious wars retain hostile-faith access, dynasty cost modifiers and major-war cooldown; adds the MM black-founder rite target and piety exemption."
+    },
+    {
+      "path": "mod/common/schemes/scheme_types/zzzz_mm_pod_dragon_relic_seduction.txt",
+      "sha256": "dbe5919b86596f4b4a0baefdf5393b00d8a3ef6fdf4a94a3f03d44a40eb9d023",
+      "semantic": "PoD courting and seduction schemes keep their age, availability and glimpse behavior; grafts the MM sea-armor +16 success bonus."
+    },
+    {
+      "path": "mod/common/inspirations/zzzz_mm_pod_dragon_relic_inspirations.txt",
+      "sha256": "9e657de769f2dd2ffbf74e4f118f70599017f9ab07035cf6258fda082bdff14d",
+      "semantic": "Nine PoD inspiration definitions retain their event and reward hooks; the MM 75 progress value is represented as a delta over each PoD base and the fire-ring 10% progress bonus is grafted once. Weapon inspiration also retains the Dragon Creed monthly reward."
+    },
+    {
+      "path": "mod/common/scripted_effects/zzzz_mm_pod_dragon_creed_effects.txt",
+      "sha256": "fb47575545f469c17e02d9c6f664572f68748fff76f84ae78665f1badee002e1",
+      "semantic": "PoD sex effect retains PoD had-sex and race-pregnancy behavior, adds MM memory and sea-rite activity reward, and carries activity helpers. PoD wealth/quality calculation is retained before the MM fire-equipment quality effect."
+    }
+  ],
+  "excludedSourceFiles": [
+    {
+      "root": "R",
+      "path": "patches/character-preservation/mod/common/scripted_effects/07_dlc_ep3_scripted_effects.txt",
+      "sha256": "65edc85ce6d71fd457953b434f9219feee80a05db88a8c71ce772810b0a39c4f",
+      "reason": "Replaced by a PoD-preserving cleanup effect; the separate zongfan government branch is not part of this PoD overlay."
+    },
+    {
+      "root": "R",
+      "path": "patches/character-preservation/mod/events/courtier_guest_management_events/courtier_guest_management_events.txt",
+      "sha256": "fe0a01c474bf3f1a35e8296f2e0a01f2c60fae1b486b68acdb30152a8791a550",
+      "reason": "Replaced by the PoD event plus the MM cleanup guard."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/factions/zzzzzz_mm_v1312_factions.txt",
+      "sha256": "d19c3aca7448ea0bb853539a57e942a81f57e0da3116be1c3ce7e8c779c1977e",
+      "reason": "Replaced by twelve PoD/vanilla faction definitions with reductions; Hanfan factions omitted."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_faction_values.txt",
+      "sha256": "f0a7b166f3749ccdcdf06533af5cdedc5bf19a8d1c8451ab9450a8031a12e1fb",
+      "reason": "Replaced by the seven common/populist/peasant/nomadic values; Hanfan values omitted."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_religion_values.txt",
+      "sha256": "f3f5210e888e25d38e29bef9e8d0a7bc512f0a4486f3c90e6200d30951412397",
+      "reason": "Replaced by the PoD conversion-demand value plus its MM earth-rite block."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/script_values/zzzzzz_mm_dragon_v1312_conversion_factors.txt",
+      "sha256": "b2ec01979c20531c3fed8b5cbc26b854e08e8d4d34b20c66214c77889eba05e8",
+      "reason": "Replaced by the vanilla court-chaplain value plus its MM holy-site block."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-bond/mod/common/scripted_modifiers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "9b73909c31c2ec5f94dfa7eee7d99291c982904a4c7549bfd12867f4c01e010f",
+      "reason": "Replaced by the PoD marriage modifier plus the MM Dragon Bond changes."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-bond/mod/common/scripted_triggers/zzzz_mm_dragon_bond_marriage.txt",
+      "sha256": "108404a8398731f08257f41c807c0474846c473856f9ddaf427777d04cad8d2b",
+      "reason": "Replaced by the PoD marriage trigger plus Dragon Bond helpers."
+    },
+    {
+      "root": "R",
+      "path": "patches/wyvern-ascension/mod/common/scripted_triggers/zzzzzzzzzz_mm_ascension_civil_rights.txt",
+      "sha256": "5e1689d0cade5751aab0bc1aebae77aae92fbf11a1729611d12821fdb6e3322d",
+      "reason": "Replaced by combined PoD/Wyvern knight eligibility and retained ascension hunt/visibility gates."
+    },
+    {
+      "root": "R",
+      "path": "patches/wyvern-capture/mod/common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "sha256": "1c47f6a9a10617da2b79ce6570e40048c22757ea15607bcd842c0af01179bb7c",
+      "reason": "Replaced by combined PoD/Wyvern knight eligibility and retained capture helper triggers."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/scripted_triggers/zzzzzz_mm_relic_puppet_access.txt",
+      "sha256": "4359e4c569de3b977fcc285d33abab93c0b7335accbbf5946225f27552cbe3d6",
+      "reason": "Replaced by PoD puppet triggers plus the MM relic-oracle access branches."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/artifacts/templates/zzzzzz_mm_relic_forging_access.txt",
+      "sha256": "8d66fd9f4731b105254248cf3a1cb044ef7cc7ebc188f9fc70e43c07f9760a7c",
+      "reason": "Replaced by PoD/vanilla base templates plus MM access gates; only matching PoD/vanilla IDs and seven custom dragon templates are emitted."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/artifacts/templates/mm_dragon_relics.txt",
+      "sha256": "e286bb5816279df755dd39ba50b2f422b2c8a9253d2af83b65184a8d4117dbfe",
+      "reason": "Seven custom templates are emitted with the later MM access rules and can_reforge disabled."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/casus_belli_types/zzzzzz_mm_v1312_religious_wars.txt",
+      "sha256": "5933687681b19deed85351a6f6244c8d82664b6bfbf8be6a2f829b84556e1920",
+      "reason": "Replaced by PoD religious-war definitions with the dragon-founder target and piety exception grafted; PoD hostile-faith and major-war cooldown logic stays."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/schemes/scheme_types/zzzzzz_mm_relic_court_scheme.txt",
+      "sha256": "ec497be0d7346ac61894244b039e8eee536e9c2e7d89cb830dc87dc0b16c964b",
+      "reason": "Replaced by the PoD courting definition with only the MM sea-armor +16 success modifier added."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/schemes/scheme_types/zzzzzz_mm_relic_seduce_scheme.txt",
+      "sha256": "9b19cfe2d3f20bb69b7cdb5a8394ff3472440c2e70584cb4a77bd6d32bfb7d3b",
+      "reason": "Replaced by the PoD seduction definition with only the MM sea-armor +16 success modifier added."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/inspirations/zzzz_mm_v1312_forging.txt",
+      "sha256": "5ceddcc94ae1bbebc7813c55a22cb2c5d2f1f012ba85531aecbf84e5c0e5c608",
+      "reason": "The weapon inspiration is composed once from the PoD base with the MM progress change, fire-ring bonus and Dragon Creed monthly reward."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-relics/mod/common/inspirations/zzzzzz_mm_relic_forging.txt",
+      "sha256": "7ab6bc514943a22bfe10962727a0a5854f8317738b204c92509e702ef4a0b9f0",
+      "reason": "The nine PoD inspiration definitions are composed once with the MM progress change and fire-ring bonus."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_effects/zzzz_mm_v1312_activity_rewards.txt",
+      "sha256": "33825d35918d0e9939aea544d37a458c0d33196044e8d72152bcdf5cb27f5139",
+      "reason": "Replaced by the PoD-preserving had-sex effect plus all three retained MM activity effects from this file."
+    },
+    {
+      "root": "R",
+      "path": "patches/dragon-creed/mod/common/scripted_effects/zzzz_mm_v1312_quality.txt",
+      "sha256": "724d2efe48aac9f1ae88390fe969ccdbc7a37cfb81cc691df607ddbe9c2651b9",
+      "reason": "Replaced by the PoD wealth/quality effect plus the retained MM fire-equipment quality helper."
+    }
+  ]
+}

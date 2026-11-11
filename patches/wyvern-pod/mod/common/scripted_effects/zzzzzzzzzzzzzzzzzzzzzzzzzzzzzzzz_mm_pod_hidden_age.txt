@@ -1,0 +1,42 @@
+mm_pod_apply_fixed_royal_appearance_effect = {
+    if = {
+        limit = { this = character:99001309 }
+        set_immortal_age = 40
+    }
+    else_if = {
+        limit = { this = character:99001310 }
+        set_immortal_age = 35
+    }
+    else_if = {
+        limit = { this = character:99001305 }
+        set_immortal_age = 25
+    }
+    else_if = {
+        limit = { this = character:99001001 }
+        set_immortal_age = 13
+    }
+    else_if = {
+        limit = { this = character:99001306 }
+        set_immortal_age = 23
+    }
+    else_if = {
+        limit = { this = character:99001002 }
+        set_immortal_age = 18
+    }
+    else_if = {
+        limit = { this = character:99001307 }
+        set_immortal_age = 28
+    }
+    else_if = {
+        limit = { this = character:99001003 }
+        set_immortal_age = 23
+    }
+    else_if = {
+        limit = { this = character:99001308 }
+        set_immortal_age = 60
+    }
+    else_if = {
+        limit = { this = character:99001304 }
+        set_immortal_age = 30
+    }
+}

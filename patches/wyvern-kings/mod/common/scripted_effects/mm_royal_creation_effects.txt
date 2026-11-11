@@ -1,0 +1,39 @@
+mm_royal_assign_creation_effect = {
+    if = {
+        limit = { is_alive = yes myv_is_wyvern = yes mm_royal_is_king = no NOT = { has_variable = mm_royal_creation_throne } has_global_variable = mm_royal_catalog_initialized }
+        if = {
+            limit = { has_global_variable = mm_royal_seed_throne }
+            set_variable = { name = mm_royal_creation_throne value = global_var:mm_royal_seed_throne }
+        }
+        else_if = {
+            limit = { exists = mother mother = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne > 0 } }
+            set_variable = { name = mm_royal_creation_throne value = mother.var:mm_royal_creation_throne }
+        }
+        else_if = {
+            limit = { exists = real_father real_father = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne > 0 } }
+            set_variable = { name = mm_royal_creation_throne value = real_father.var:mm_royal_creation_throne }
+        }
+        else_if = {
+            limit = { exists = father father = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne > 0 } }
+            set_variable = { name = mm_royal_creation_throne value = father.var:mm_royal_creation_throne }
+        }
+        else_if = {
+            limit = {
+                has_character_flag = mm_royal_newly_created
+                NOT = { exists = mother mother = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+                NOT = { exists = real_father real_father = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+                NOT = { exists = father father = { mm_dragon_is_true_dragon_parent_trigger = yes } }
+            }
+            random_list = {
+                25 = { set_variable = { name = mm_royal_creation_throne value = 1 } }
+                25 = { set_variable = { name = mm_royal_creation_throne value = 2 } }
+                25 = { set_variable = { name = mm_royal_creation_throne value = 3 } }
+                25 = { set_variable = { name = mm_royal_creation_throne value = 4 } }
+            }
+        }
+        if = { limit = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 1 } set_relation_mm_dragon_creator = character:99001001 set_relation_mm_dragon_creator = character:99001305 }
+        if = { limit = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 2 } set_relation_mm_dragon_creator = character:99001002 set_relation_mm_dragon_creator = character:99001306 }
+        if = { limit = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 3 } set_relation_mm_dragon_creator = character:99001003 set_relation_mm_dragon_creator = character:99001307 }
+        if = { limit = { has_variable = mm_royal_creation_throne var:mm_royal_creation_throne = 4 } set_relation_mm_dragon_creator = character:99001304 set_relation_mm_dragon_creator = character:99001308 }
+    }
+}

@@ -1,0 +1,71 @@
+# Optional death-servants module authorizes the failure endpoint.
+mm_asc_black_trial_available_trigger = { always = no }
+mm_asc_black_trial_can_start_trigger = {
+    is_alive = yes
+    is_adult = yes
+    is_imprisoned = no
+    is_incapable = no
+    has_trait = mm_dragon_black_blood
+    mm_asc_black_trial_available_trigger = yes
+    NOR = {
+        has_trait = mm_asc_usurper_blood
+        has_trait = mm_asc_dragon_body
+        has_trait = mm_dragon_death_servant
+        has_trait = mm_wyvern_bathed_in_dragon_blood
+        has_variable = mm_asc_outcome
+        has_variable = mm_asc_black_trial_outcome
+    }
+    exists = character:99001309
+    any_character_artifact = { mm_asc_fire_blood_material_trigger = yes }
+    any_character_artifact = { mm_asc_earth_blood_material_trigger = yes }
+    any_character_artifact = { mm_asc_sea_blood_material_trigger = yes }
+    any_character_artifact = { mm_asc_sky_blood_material_trigger = yes }
+}
+mm_asc_fire_blood_material_trigger = {
+    artifact_type = miscellaneous
+    var:mm_wyvern_material_kind = flag:blood
+    has_variable = myv_wyvern_blood_material
+    exists = var:mm_wyvern_trophy_source
+    var:mm_wyvern_trophy_source = {
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_dragon_is_royal_parent_trigger = no
+        has_variable = mm_royal_creation_throne
+        var:mm_royal_creation_throne = 1
+    }
+}
+mm_asc_earth_blood_material_trigger = {
+    artifact_type = miscellaneous
+    var:mm_wyvern_material_kind = flag:blood
+    has_variable = myv_wyvern_blood_material
+    exists = var:mm_wyvern_trophy_source
+    var:mm_wyvern_trophy_source = {
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_dragon_is_royal_parent_trigger = no
+        has_variable = mm_royal_creation_throne
+        var:mm_royal_creation_throne = 2
+    }
+}
+mm_asc_sea_blood_material_trigger = {
+    artifact_type = miscellaneous
+    var:mm_wyvern_material_kind = flag:blood
+    has_variable = myv_wyvern_blood_material
+    exists = var:mm_wyvern_trophy_source
+    var:mm_wyvern_trophy_source = {
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_dragon_is_royal_parent_trigger = no
+        has_variable = mm_royal_creation_throne
+        var:mm_royal_creation_throne = 3
+    }
+}
+mm_asc_sky_blood_material_trigger = {
+    artifact_type = miscellaneous
+    var:mm_wyvern_material_kind = flag:blood
+    has_variable = myv_wyvern_blood_material
+    exists = var:mm_wyvern_trophy_source
+    var:mm_wyvern_trophy_source = {
+        mm_dragon_is_true_dragon_parent_trigger = yes
+        mm_dragon_is_royal_parent_trigger = no
+        has_variable = mm_royal_creation_throne
+        var:mm_royal_creation_throne = 4
+    }
+}

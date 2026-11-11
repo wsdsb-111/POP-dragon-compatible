@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-11-03",
+  "scope": "PoD-only static Wyvern combat balance",
+  "unit": "native CK3 prowess points",
+  "benchmark": {
+    "symbol": "M",
+    "value": 186,
+    "method": "Ur-Shulgi awake static profile: base prowess 100 + vampire 5 + direct listed discipline prowess 73 + sadistic 2 + vengeful 2 + torturer 4",
+    "qualification": "This is the full reviewed static profile for the selected living elder candidate after torpor removal. His torpor profile is 166. M=186 is not a live-save value or an absolute PoD maximum."
+  },
+  "reviewedStaticCandidates": [
+    {
+      "character": "Ur-Shulgi",
+      "id": "790356",
+      "aliveByHistoryAt1230": true,
+      "baseProwess": 100,
+      "vampire": 5,
+      "disciplineProwess": 73,
+      "otherTraitProwess": { "sadistic": 2, "vengeful": 2, "torturer": 4 },
+      "torpor": -20,
+      "torporStaticTotal": 166,
+      "awakeStaticTotal": 186
+    },
+    {
+      "character": "Nergal",
+      "id": "790368",
+      "aliveByHistoryAt1230": true,
+      "baseProwess": 100,
+      "vampire": 5,
+      "disciplineProwess": 73,
+      "otherTraitProwess": { "vengeful": 2, "ambitious": 1, "sadistic": 2 },
+      "torpor": -20,
+      "torporStaticTotal": 163,
+      "awakeStaticTotal": 183
+    },
+    {
+      "character": "Haqim",
+      "id": "505009",
+      "aliveByHistoryAt1230": false,
+      "baseProwess": 100,
+      "education": 10,
+      "vampire": 5,
+      "disciplineProwess": 55,
+      "blademasterAndHunterAt100Xp": 7,
+      "torpor": -20,
+      "torporStaticTotal": 157,
+      "awakeStaticTotal": 177,
+      "historyDeath": "100.1.1 death_disappearance"
+    }
+  ],
+  "sourceRoots": {
+    "compatRoot": ".build/compat-v111",
+    "podWorkshop": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254",
+    "nativeWyvernWorkshop": "D:/SteamLibrary/steamapps/workshop/content/1158310/3811316052",
+    "ck3Game": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game"
+  },
+  "sources": [
+    {
+      "role": "previous royal caps, king trigger, and throne identity ids",
+      "path": ".build/compat-v111/patches/wyvern-kings/mod/common/script_values/zzzzzzzz_mm_royal_power.txt",
+      "sha256": "a10adba5c0428bbc052c2f08794392cb43d8df4d42a36a414e0dee37881b64ca"
+    },
+    {
+      "role": "royal classification trigger",
+      "path": ".build/compat-v111/patches/wyvern-kings/mod/common/scripted_triggers/zzzzzzzz_mm_royal_triggers.txt",
+      "sha256": "6e25651658ebf403795274dfecc1281787af66b0a8167f14b456ae88b60aa1bc"
+    },
+    {
+      "role": "four king identity traits",
+      "path": ".build/compat-v111/patches/wyvern-kings/mod/common/traits/mm_royal_throne_identity_traits.txt",
+      "sha256": "15c71d0c730a0d98528ce9f2820f9074a4e45b628d712bc4b4d27716d62adf3d"
+    },
+    {
+      "role": "capture combat tier, hunger multiplier, and target override context",
+      "path": ".build/compat-v111/patches/wyvern-capture/mod/common/script_values/zzzzzz_mm_wyvern_combat_values.txt",
+      "sha256": "01b1ce9e5174d0a38cf064b84d1c000940fe1aec4307ef5710cab0cad6061164"
+    },
+    {
+      "role": "capture finish eligibility gate",
+      "path": ".build/compat-v111/patches/wyvern-capture/mod/common/scripted_triggers/zzzzzz_mm_wyvern_lifecycle_combat.txt",
+      "sha256": "1c47f6a9a10617da2b79ce6570e40048c22757ea15607bcd842c0af01179bb7c"
+    },
+    {
+      "role": "PoD dragon finish eligibility gate",
+      "path": ".build/compat-v111/patches/wyvern-pod/mod/common/scripted_triggers/zzzz_mm_pod_wyvern_dragon_triggers.txt",
+      "sha256": "664e1862e470b7eb525a7aa23b0ab334f17bdd6cef58cfacee4016eeec896999"
+    },
+    {
+      "role": "royal historical dragon identities",
+      "path": ".build/compat-v111/patches/wyvern-kings/mod/history/characters/myv_historical_wyverns.txt",
+      "sha256": "923d10afe978aff00d0f34eb38fc22e85a54543ba988b50b4820af104a220ad2"
+    },
+    {
+      "role": "Simplified Chinese display names used to resolve Hrist and Vidar/Odin",
+      "path": ".build/compat-v111/patches/wyvern-kings/mod/localization/simp_chinese/zzzzzzzz_mm_royal_l_simp_chinese.yml",
+      "sha256": "24cdbd7a0a48ff09b77916ea03e28f55a280ef563413e25cfcf07b7bb32e4a40"
+    },
+    {
+      "role": "PoD discipline and torpor modifiers",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/common/traits/00_POD_traits.txt",
+      "sha256": "a2dba59c62a7ffd39c285b5a53165ccc9864b134d7260cc2c7d50a4043604181"
+    },
+    {
+      "role": "PoD education, personality, and lifestyle modifiers",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/common/traits/00_traits.txt",
+      "sha256": "8d96ea3c737e8f842f4cbfd94ae7f2bfce6f1e73c293f877017c2de8855364a7"
+    },
+    {
+      "role": "Haqim and Ur-Shulgi historical stats, traits, and disappearance/death dates",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/history/characters/POD_Vampire_Assamite_Characters.txt",
+      "sha256": "7659983d7c4b851221432f1714816275f666b7deb373ec3c9b3bd7fdbfc595fc"
+    },
+    {
+      "role": "Nergal historical stats and traits",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/2216659254/history/characters/POD_Vampire_Baali_Characters.txt",
+      "sha256": "6fe1558a4e335afac047db143547776c1a2d38e1bf5870af79083b75b6506084"
+    },
+    {
+      "role": "Levantine culture traits and tradition list used for conditional mystic bonus audit",
+      "path": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game/common/culture/cultures/00_arabic.txt",
+      "sha256": "5cc86e9d8703bb9b0520a8e2044c10fa5f4d019051384017bf9d1bc15b53f9ff"
+    },
+    {
+      "role": "Assyrian culture traits and tradition list used for conditional mystic bonus audit",
+      "path": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game/common/culture/cultures/00_syriac.txt",
+      "sha256": "af04acbdeb484ff996aacd9f435b015cb90999a1e8d4395a2ad8578b3f80062b"
+    },
+    {
+      "role": "culture tradition that gates prowess_from_religious_traits",
+      "path": "D:/SteamLibrary/steamapps/common/Crusader Kings III/game/common/culture/traditions/00_combat_traditions.txt",
+      "sha256": "a8bc43161e50c2763e9871952072f3dc558a99d05f5c0b01d052f00962baa7c5"
+    },
+    {
+      "role": "native size power, condition multipliers, combat tiers, and prowess delta",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/3811316052/common/script_values/myv_wyvern_values.txt",
+      "sha256": "f94724851b8690e8123571dbae20d775c83546f1be1064bc873ec626d2406792"
+    },
+    {
+      "role": "native prowess refresh implementation and refresh call sites",
+      "path": "D:/SteamLibrary/steamapps/workshop/content/1158310/3811316052/common/scripted_effects/myv_wyvern_effects.txt",
+      "sha256": "7bc42ccb7c64c772bef4911f9e2fef873e30d5eff376e51acae22466f3415e6b"
+    }
+  ],
+  "targets": [
+    { "identity": "ordinary", "name": "Ordinary dragon", "cap": 190, "selection": "default" },
+    { "identity": "constantine", "characterId": "99001001", "name": "Constantine", "cap": 275 },
+    { "identity": "norton", "characterId": "99001305", "name": "Norton", "cap": 225 },
+    { "identity": "jormungandr", "characterId": "99001306", "name": "Jormungandr", "cap": 215 },
+    { "identity": "fenrir", "characterId": "99001002", "name": "Fenrir", "cap": 285 },
+    { "identity": "leviathan", "characterId": "99001307", "name": "Leviathan", "cap": 230 },
+    { "identity": "behemoth", "characterId": "99001003", "name": "Behemoth", "cap": 265 },
+    { "identity": "hrist", "characterId": "99001304", "name": "Hrist", "localizedChineseName": "瓦尔基里", "cap": 260 },
+    { "identity": "vidar_odin", "characterId": "99001308", "name": "Vidar", "localizedChineseName": "奥丁", "cap": 240 },
+    { "identity": "complete_king", "name": "Complete King", "cap": 298, "selection": "existing mm_royal_complete cap" },
+    { "identity": "white_empress", "characterId": "99001310", "name": "White Empress", "cap": 350 },
+    { "identity": "black_emperor", "characterId": "99001309", "name": "Black Emperor", "cap": 400 }
+  ],
+  "fallbackCaps": [
+    { "identity": "uncatalogued_fire_king", "trait": "mm_royal_fire_king", "cap": 250 },
+    { "identity": "uncatalogued_earth_king", "trait": "mm_royal_earth_king", "cap": 250 },
+    { "identity": "uncatalogued_sea_king", "trait": "mm_royal_sea_king", "cap": 248 },
+    { "identity": "uncatalogued_sky_king", "trait": "mm_royal_sky_king", "cap": 250 },
+    { "identity": "white_empress_trait", "trait": "mm_royal_white_empress", "cap": 350 },
+    { "identity": "black_emperor_trait", "trait": "mm_royal_black_emperor", "cap": 400 }
+  ],
+  "inheritanceRouting": {
+    "originalSeatIds": ["99001001", "99001002", "99001003", "99001304", "99001305", "99001306", "99001307", "99001308", "99001309", "99001310"],
+    "sourceIdFixture": ".build/compat-v111/tests/fixtures/v132/independent-requirements.json#ascension.seatIds",
+    "existingAssertion": "test-wyvern-v132-ascension-source.js loops over fixture.seatIds and checks mm_asc_initialize_seats_effect for every original ID",
+    "inheritanceSourceEffect": ".build/compat-v111/patches/wyvern-ascension/mod/common/scripted_effects/mm_ascension_effects.txt#mm_asc_inherit_throne_effect",
+    "sourceResolution": "candidate.mm_asc_blood_source -> source.mm_asc_seat_anchor -> original historical character ID; the immediate predecessor may itself be a successor",
+    "requiredGuards": ["has_variable = mm_asc_blood_source", "exists = var:mm_asc_blood_source", "has_variable = mm_asc_seat_anchor", "exists = var:mm_asc_seat_anchor", "exact mm_asc_seat_anchor character-ID match", "matching elemental king trait"],
+    "elementalSeatCaps": [
+      { "seatAnchorId": "99001001", "name": "Constantine", "trait": "mm_royal_fire_king", "cap": 275 },
+      { "seatAnchorId": "99001305", "name": "Norton", "trait": "mm_royal_fire_king", "cap": 225 },
+      { "seatAnchorId": "99001306", "name": "Jormungandr", "trait": "mm_royal_earth_king", "cap": 215 },
+      { "seatAnchorId": "99001002", "name": "Fenrir", "trait": "mm_royal_earth_king", "cap": 285 },
+      { "seatAnchorId": "99001307", "name": "Leviathan", "trait": "mm_royal_sea_king", "cap": 230 },
+      { "seatAnchorId": "99001003", "name": "Behemoth", "trait": "mm_royal_sea_king", "cap": 265 },
+      { "seatAnchorId": "99001304", "name": "Hrist", "trait": "mm_royal_sky_king", "cap": 260 },
+      { "seatAnchorId": "99001308", "name": "Vidar/Odin", "trait": "mm_royal_sky_king", "cap": 240 }
+    ],
+    "completeTraitCap": 298,
+    "completePrecedesInheritedSeatRoutes": true
+  },
+  "targetRounding": "nearest integer after condition multipliers, then clamp to [0, selected fixed cap]",
+  "staticFixtures": [
+    {
+      "id": "juvenile-size-growth",
+      "input": { "sizeProwess": 5, "sizeFactor": 1.86, "identityCap": 190 },
+      "expectedFinalProwess": 9
+    },
+    {
+      "id": "ordinary-adult-20m-neutral",
+      "input": { "sizeProwess": 80, "sizeFactor": 1.86, "physique": 1, "temperament": 1, "identityCap": 190 },
+      "expectedFinalProwess": 149
+    },
+    {
+      "id": "ordinary-adult-30m-neutral",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "physique": 1, "temperament": 1, "identityCap": 190 },
+      "expectedFinalProwess": 186
+    },
+    {
+      "id": "body-and-enrage-cannot-bypass-ordinary-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "physique": 1.1, "temperament": 1.1, "enrage": 1.1, "identityCap": 190 },
+      "expectedFinalProwess": 190
+    },
+    {
+      "id": "severe-wing-leg-tail-injuries-lower-final-value",
+      "input": { "preConditionCap": 190, "wing": 0.75, "hindleg": 0.75, "tail": 0.9, "hunger": 1, "malnutrition": 1 },
+      "expectedFinalProwess": 96
+    },
+    {
+      "id": "hunger-zero-is-zero",
+      "input": { "preConditionCap": 190, "hunger": 0, "malnutrition": 1, "explicitZeroHungerBranch": true },
+      "expectedFinalProwess": 0
+    },
+    {
+      "id": "constantine-wing-injury",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.478494623655914, "identityCap": 275, "wing": 0.75 },
+      "expectedFinalProwess": 206
+    },
+    {
+      "id": "norton-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.2096774193548387, "identityCap": 225 },
+      "expectedFinalProwess": 225
+    },
+    {
+      "id": "jormungandr-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.1559139784946237, "identityCap": 215 },
+      "expectedFinalProwess": 215
+    },
+    {
+      "id": "fenrir-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.532258064516129, "identityCap": 285 },
+      "expectedFinalProwess": 285
+    },
+    {
+      "id": "leviathan-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.2365591397849462, "identityCap": 230 },
+      "expectedFinalProwess": 230
+    },
+    {
+      "id": "behemoth-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.424731182795699, "identityCap": 265 },
+      "expectedFinalProwess": 265
+    },
+    {
+      "id": "hrist-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.3978494623655913, "identityCap": 260 },
+      "expectedFinalProwess": 260
+    },
+    {
+      "id": "odin-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.2903225806451613, "identityCap": 240 },
+      "expectedFinalProwess": 240
+    },
+    {
+      "id": "complete-king-existing-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.6021505376344085, "identityCap": 298 },
+      "expectedFinalProwess": 298
+    },
+    {
+      "id": "white-empress-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 1.881720430107527, "identityCap": 350 },
+      "expectedFinalProwess": 350
+    },
+    {
+      "id": "black-emperor-fixed-cap",
+      "input": { "sizeProwess": 100, "sizeFactor": 1.86, "royalFactor": 2.150537634408602, "identityCap": 400 },
+      "expectedFinalProwess": 400
+    }
+  ],
+  "nativeRefresh": {
+    "delta": "myv_wyvern_target_prowess - prowess",
+    "effect": "myv_refresh_wyvern_prowess_effect",
+    "steps": ["force_character_skill_recalculation", "add_prowess_skill", "force_character_skill_recalculation"],
+    "newEffectOverrideRequired": false,
+    "hookGuidance": "Call the existing native effect in the changed character's scope after any state change that lacks an existing native refresh call site."
+  },
+  "tierAudit": {
+    "nativeHunterStep": 5,
+    "compatHunterStep": 10,
+    "wyvernTargetStep": 10,
+    "nativeWyvernTierReads": "scope:myv_slay_wyvern_target.prowess after native refresh",
+    "rOverlayWyvernTierReads": "scope:myv_slay_wyvern_target.myv_wyvern_target_prowess after condition multipliers",
+    "maxThreeCapFound": false,
+    "finishGate": "prowess > 30 for ordinary targets; prowess > 60 against legendary-blood targets",
+    "changedByThisPatch": false
+  },
+  "patchOutputs": [
+    ".build/compat-v111/patches/wyvern-pod/mod/common/script_values/zzzzzzzzzzzz_mm_pod_combat.txt",
+    ".build/compat-v111/patches/wyvern-pod/combat-sources.json",
+    ".build/compat-v111/docs/pod-combat-benchmark-20261103.md",
+    ".build/compat-v111/tests/test-wyvern-pod-combat.js"
+  ],
+  "verification": {
+    "staticInspection": true,
+    "staticFixtureFileAdded": true,
+    "inheritedSeatRouteTableAdded": true,
+    "originalSeatIdSetConfirmedAgainstCurrentFixture": true,
+    "testsRun": false,
+    "gameRun": false,
+    "saveInspected": false,
+    "saveOrMeltUsed": false,
+    "toolsDownloaded": false,
+    "deployed": false,
+    "runtimeVerified": false
+  }
+}

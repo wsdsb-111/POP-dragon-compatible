@@ -1,0 +1,1 @@
+mm_ds_relic_mutation_bonus_trigger = { mm_relic_sky_spear_equipped_trigger = yes }

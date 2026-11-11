@@ -1,0 +1,104 @@
+# Public optional-module bridge. Kings adds its protected startup cohort.
+mm_dragon_wild_population_protected_trigger = { always = no }
+# The optional kings module owns the scripted twin relation.
+mm_dragon_wild_not_twin_trigger = { always = yes }
+mm_dragon_wild_adult_trigger = {
+    myv_is_living_wild_wyvern = yes
+    mm_dragon_is_royal_parent_trigger = no
+    NOT = { has_trait = myv_wyvern_legendary }
+    NOT = { has_character_flag = mm_royal_fixed_identity }
+    NOT = { has_character_flag = myv_wyvern_in_stable }
+    NOT = { has_variable = mm_wyvern_captor }
+    is_imprisoned = no
+    is_incapable = no
+    age >= 12
+    has_variable = myv_wyvern_hunger
+    var:myv_wyvern_hunger >= 60
+    exists = location.county
+    exists = var:myv_wyvern_lair_barony
+}
+mm_dragon_wild_male_ready_trigger = { mm_dragon_wild_adult_trigger = yes is_female = no }
+mm_dragon_wild_female_ready_trigger = {
+    mm_dragon_wild_adult_trigger = yes
+    is_female = yes
+    NOT = { has_character_flag = mm_dragon_wild_breeding_cooldown }
+    NOT = { exists = var:mm_dragon_wild_current_egg }
+    NOT = { has_variable = mm_dragon_wild_attempt_year var:mm_dragon_wild_attempt_year = current_year }
+}
+mm_dragon_wild_same_blood_trigger = {
+    has_variable = mm_royal_creation_throne
+    var:mm_royal_creation_throne > 0
+    $OTHER$ = { has_variable = mm_royal_creation_throne }
+    var:mm_royal_creation_throne = $OTHER$.var:mm_royal_creation_throne
+}
+# Female scope: neighboring counties permit travel, never remote egg laying.
+mm_dragon_wild_near_pair_trigger = {
+    mm_dragon_wild_female_ready_trigger = yes
+    $MALE$ = { mm_dragon_wild_male_ready_trigger = yes }
+    NOT = { is_close_family_of = $MALE$ }
+    mm_dragon_wild_not_twin_trigger = { OTHER = $MALE$ }
+    location.county = {
+        OR = {
+            this = $MALE$.location.county
+            any_neighboring_county = { this = $MALE$.location.county }
+        }
+    }
+}
+# Male scope: a request is valid only after he actually reached this female.
+mm_dragon_wild_same_county_pair_trigger = {
+    mm_dragon_wild_male_ready_trigger = yes
+    $FEMALE$ = { mm_dragon_wild_female_ready_trigger = yes }
+    NOT = { is_close_family_of = $FEMALE$ }
+    mm_dragon_wild_not_twin_trigger = { OTHER = $FEMALE$ }
+    location.county = $FEMALE$.location.county
+    has_variable = mm_dragon_wild_courtship_target
+    has_variable = mm_dragon_wild_courtship_year
+    var:mm_dragon_wild_courtship_target = $FEMALE$
+    var:mm_dragon_wild_courtship_year = current_year
+}
+mm_dragon_wild_population_room_trigger = {
+    OR = {
+        has_game_rule = myv_max_wyverns_unlimited
+        AND = { has_game_rule = myv_max_wyverns_10 global_var:mm_dragon_wild_population_count < 10 }
+        AND = { has_game_rule = myv_max_wyverns_50 global_var:mm_dragon_wild_population_count < 50 }
+        AND = {
+            NOT = { has_game_rule = myv_max_wyverns_unlimited }
+            NOT = { has_game_rule = myv_max_wyverns_10 }
+            NOT = { has_game_rule = myv_max_wyverns_50 }
+            global_var:mm_dragon_wild_population_count < 30
+        }
+    }
+}
+mm_dragon_native_egg_may_hatch_trigger = {
+    NOT = { has_variable = mm_dragon_wild_hatch_started }
+    OR = {
+        NOT = { has_variable = mm_dragon_wild_egg }
+        artifact_owner = {
+            OR = { mm_dragon_is_true_dragon_parent_trigger = no mm_dragon_is_independent_royal_parent_trigger = yes }
+        }
+    }
+}
+mm_dragon_wild_can_hatch_trigger = {
+    has_variable = mm_dragon_wild_egg
+    has_variable = myv_wyvern_egg_color
+    has_variable = mm_dragon_wild_hatch_year
+    has_variable = mm_dragon_wild_hatch_month
+    NOT = { has_variable = mm_dragon_wild_hatch_started }
+    exists = var:myv_wyvern_egg_mother
+    exists = var:myv_wyvern_egg_father
+    exists = var:mm_dragon_wild_egg_lair
+    artifact_owner = {
+        myv_is_living_wild_wyvern = yes
+        mm_dragon_is_royal_parent_trigger = no
+        NOT = { has_trait = myv_wyvern_legendary }
+        NOT = { has_character_flag = mm_royal_fixed_identity }
+        NOT = { has_variable = mm_wyvern_captor }
+        NOT = { has_character_flag = myv_wyvern_in_stable }
+        is_imprisoned = no
+    }
+    OR = {
+        current_year > var:mm_dragon_wild_hatch_year
+        AND = { current_year = var:mm_dragon_wild_hatch_year current_month >= var:mm_dragon_wild_hatch_month }
+    }
+    mm_dragon_wild_population_room_trigger = yes
+}

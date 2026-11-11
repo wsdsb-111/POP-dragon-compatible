@@ -1,0 +1,9 @@
+# A sovereign keeps the ordinary political sheet in either appearance.
+myv_wyvern_character_window = {
+    scope = character
+    is_shown = {
+        myv_is_wyvern = yes
+        NOT = { has_trait = mm_asc_dragon_body }
+        NOT = { has_character_flag = mm_wyvern_human_form }
+    }
+}

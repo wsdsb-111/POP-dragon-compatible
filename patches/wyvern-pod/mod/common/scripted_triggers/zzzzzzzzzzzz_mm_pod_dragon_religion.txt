@@ -1,0 +1,125 @@
+﻿# Register only Dragon Creed as an additional supported custom religion.
+# All PoD families, conversion restrictions and race rules remain in their original definitions.
+has_POD_religion_group = {
+	OR = {
+		this = religion:mm_dragon_creed_religion
+		is_in_family = rf_kindred
+		is_in_family = rf_hunters
+		is_in_family = rf_ignorance
+		is_in_family = rf_gaia
+		is_in_family = rf_wyrm		
+		is_in_family = rf_mummies
+		is_in_family = rf_wraiths
+		is_in_family = rf_kueijin
+		is_in_family = rf_demons
+		is_in_family = rf_fae
+	}
+}
+
+is_vanilla_faith_trigger = {
+	NOT = { religion = religion:mm_dragon_creed_religion }
+	OR = {
+		religion = { is_in_family = rf_abrahamic }
+		religion = { is_in_family = rf_eastern }
+		religion = { is_in_family = rf_sinitic }
+		religion = { is_in_family = rf_pagan }
+	}
+}
+
+POD_has_illegal_religion_custom_trigger = {
+	NOT = { $FAITH$ = { religion = religion:mm_dragon_creed_religion } }
+	trigger_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_ignorance } }
+		}
+		$CHARACTER$ = { NOT = { has_trait = mortal } }
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_kindred } }
+		}
+		$CHARACTER$ = { has_POD_vamp_blood_trigger = no }
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_kueijin } }
+		}
+		trigger_if = {
+			limit = { $FAITH$ = { religion = religion:thousandhells_religion } }
+			$CHARACTER$ = {
+				POD_has_defiled_liege_trigger = no
+				NOT = { has_trait = kueijin } 
+				NOT = { has_trait = dhampyr }
+			}
+		}
+		trigger_else = {
+			$CHARACTER$ = {
+				NOT = { has_trait = kueijin } 
+				NOT = { has_trait = dhampyr }
+			}
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_hunters } }
+		}
+		$CHARACTER$ = { 
+			NOT = { has_trait = supehunter }
+			is_child_of_supehunter_trigger = no
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { 
+				OR = {
+					religion = { is_in_family = rf_gaia }
+					religion = { is_in_family = rf_wyrm }
+				}
+				is_spirit_faith_trigger = no
+			}
+		}
+		$CHARACTER$ = { 
+			NOT = { has_trait = fera }
+			NOT = { has_trait = kinfolk }
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_wraiths } }
+		}
+		$CHARACTER$ = { NOT = { has_trait = wraith } }
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_fae } }
+		}
+		$CHARACTER$ = { has_POD_fae_blood_trigger = no }
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_mummies } }
+		}
+		$CHARACTER$ = { 
+			NOT = { has_trait = mummy } 
+			is_a_neteru = no
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			$FAITH$ = { religion = { is_in_family = rf_demons } }
+		}
+		$CHARACTER$ = { 
+			NOT = { has_trait = demon } 
+			is_a_cultist = no
+		}
+	}
+	trigger_else_if = {
+		limit = { 
+			$FAITH$ = { is_spirit_faith_trigger = yes }
+		}
+		POD_is_spirit_trigger = no
+	}
+	trigger_else = {
+		has_game_rule = world_of_monsters # Allow vanilla religion?
+	}
+}

@@ -1,0 +1,34 @@
+﻿mm_wyvern_trophy_fang = {
+	default_type = pedestal
+	icon = "mm_wyvern_trophy_fang.dds"
+	support_type = "tall"
+	asset = mm_wyvern_trophy_fang_entity
+}
+
+mm_wyvern_trophy_eye = {
+	default_type = pedestal
+	icon = "mm_wyvern_trophy_eye.dds"
+	support_type = "tall"
+	asset = mm_wyvern_trophy_eye_entity
+}
+
+mm_wyvern_trophy_scale = {
+	default_type = pedestal
+	icon = "mm_wyvern_trophy_scale.dds"
+	support_type = "tall"
+	asset = mm_wyvern_trophy_scale_entity
+}
+
+mm_wyvern_trophy_head = {
+	default_type = pedestal
+	icon = "mm_wyvern_trophy_head.dds"
+	support_type = "tall"
+	asset = mm_wyvern_trophy_head_entity
+}
+
+mm_wyvern_trophy_claw = {
+	default_type = pedestal
+	icon = "mm_wyvern_trophy_claw.dds"
+	support_type = "tall"
+	asset = mm_wyvern_trophy_claw_entity
+}

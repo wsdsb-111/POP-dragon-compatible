@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ trait_myv_wyvern_rider:0 "人龙羁绊"
+ trait_myv_wyvern_rider_desc:0 "此人已经具备骑乘龙族的资格。每条龙分别记录与其绑定者的人龙羁绊，经验不在不同龙之间共享。"
+ trait_myv_wyvern_harmony:0 "人龙羁绊"
+ trait_myv_wyvern_harmony_desc:0 "这条龙与其绑定者的羁绊。相处时间、有效喂食和共同战斗可以提升进度；繁育与婚配接受度会随之提高。建立羁绊不等于已经骑乘。"

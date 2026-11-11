@@ -1,0 +1,64 @@
+{
+  "historyPath": "history/characters/myv_historical_wyverns.txt",
+  "characters": [
+    { "id": "99001001", "key": "constantine", "sex": "male", "awake": false, "name": "mm_royal_name_constantine", "englishName": "Constantine", "chineseName": "康斯坦丁", "nickname": "nick_mm_royal_constantine", "chineseNickname": "青铜与火之王·永燃之焰", "throne": "fire", "twin": "99001305" },
+    { "id": "99001002", "key": "fenrir", "sex": "female", "awake": false, "name": "mm_royal_name_fenrir", "englishName": "Fenrir", "chineseName": "芬里厄", "nickname": "nick_mm_royal_fenrir", "chineseNickname": "大地与山之王·群山之心", "throne": "earth", "twin": "99001306" },
+    { "id": "99001003", "key": "behemoth", "sex": "male", "awake": true, "name": "mm_royal_name_behemoth", "englishName": "Behemoth", "chineseName": "贝西摩斯", "nickname": "nick_mm_royal_behemoth", "chineseNickname": "海洋与水之王·潮汐之怒", "throne": "sea", "twin": "99001307" },
+    { "id": "99001304", "key": "hrist", "sex": "female", "awake": false, "name": "mm_royal_name_hrist", "englishName": "Valkyrie", "chineseName": "瓦尔基里", "nickname": "nick_mm_royal_hrist", "chineseNickname": "天空与风之王·风暴之翼", "throne": "sky", "twin": "99001308" },
+    { "id": "99001305", "key": "norton", "sex": "male", "awake": true, "name": "mm_royal_name_norton", "englishName": "Norton", "chineseName": "诺顿", "nickname": "nick_mm_royal_norton", "chineseNickname": "青铜与火之王·青铜王座", "throne": "fire", "twin": "99001001" },
+    { "id": "99001306", "key": "jormungandr", "sex": "female", "awake": true, "name": "mm_royal_name_jormungandr", "englishName": "Jormungandr", "chineseName": "耶梦加得", "nickname": "nick_mm_royal_jormungandr", "chineseNickname": "大地与山之王·大地王座", "throne": "earth", "twin": "99001002" },
+    { "id": "99001307", "key": "leviathan", "sex": "female", "awake": false, "name": "mm_royal_name_leviathan", "englishName": "Leviathan", "chineseName": "利维坦", "nickname": "nick_mm_royal_leviathan", "chineseNickname": "海洋与水之王·深海王座", "throne": "sea", "twin": "99001003" },
+    { "id": "99001308", "key": "vidar", "sex": "male", "awake": true, "name": "mm_royal_name_vidar", "englishName": "Odin", "chineseName": "奥丁", "nickname": "nick_mm_royal_vidar", "chineseNickname": "天空与风之王·苍穹王座", "throne": "sky", "twin": "99001304" },
+    { "id": "99001309", "key": "black_emperor", "sex": "male", "awake": false, "name": "mm_royal_name_black_emperor", "englishName": "Nidhogg", "chineseName": "尼德霍格", "nickname": "nick_mm_royal_black_emperor", "chineseNickname": "黑皇", "role": "black" },
+    { "id": "99001310", "key": "white_empress", "sex": "female", "awake": false, "name": "mm_royal_name_white_empress", "englishName": "Izanami", "chineseName": "伊邪那美", "nickname": "nick_mm_royal_white_empress", "chineseNickname": "白皇", "role": "white", "creator": "99001309" }
+  ],
+  "creators": [
+    { "creator": "99001309", "creation": "99001310" },
+    { "creator": "99001309", "creation": "99001001" },
+    { "creator": "99001310", "creation": "99001001" },
+    { "creator": "99001309", "creation": "99001002" },
+    { "creator": "99001310", "creation": "99001002" },
+    { "creator": "99001309", "creation": "99001003" },
+    { "creator": "99001310", "creation": "99001003" },
+    { "creator": "99001309", "creation": "99001304" },
+    { "creator": "99001310", "creation": "99001304" },
+    { "creator": "99001309", "creation": "99001305" },
+    { "creator": "99001310", "creation": "99001305" },
+    { "creator": "99001309", "creation": "99001306" },
+    { "creator": "99001310", "creation": "99001306" },
+    { "creator": "99001309", "creation": "99001307" },
+    { "creator": "99001310", "creation": "99001307" },
+    { "creator": "99001309", "creation": "99001308" },
+    { "creator": "99001310", "creation": "99001308" }
+  ],
+  "pairs": [
+    { "throne": "fire", "members": ["99001001", "99001305"], "fusion": "Surtur", "fusionName": "mm_royal_complete_name_fire", "chineseFusionName": "苏尔特尔", "fusionNickname": "nick_mm_royal_complete_fire", "chineseFusionNickname": "青铜与火之王·完整王权" },
+    { "throne": "earth", "members": ["99001002", "99001306"], "fusion": "Hela", "fusionName": "mm_royal_complete_name_earth", "chineseFusionName": "海拉", "fusionNickname": "nick_mm_royal_complete_earth", "chineseFusionNickname": "大地与山之王·完整王权" },
+    { "throne": "sea", "members": ["99001003", "99001307"], "fusion": "Aegir", "fusionName": "mm_royal_complete_name_sea", "chineseFusionName": "埃吉尔", "fusionNickname": "nick_mm_royal_complete_sea", "chineseFusionNickname": "海洋与水之王·完整王权" },
+    { "throne": "sky", "members": ["99001304", "99001308"], "fusion": "Vidar", "fusionName": "mm_royal_complete_name_sky", "chineseFusionName": "维达尔", "fusionNickname": "nick_mm_royal_complete_sky", "chineseFusionNickname": "天空与风之王·完整王权" }
+  ],
+  "awakeningCosts": {
+    "pair": { "gold": 1500, "prestige": 1000, "piety": 500 },
+    "white": { "gold": 5000, "prestige": 5000, "piety": 2000 },
+    "black": { "gold": 10000, "prestige": 10000, "piety": 5000 }
+  },
+  "awakenings": [
+    { "decision": "mm_royal_wake_constantine_decision", "target": "99001001", "bondedTwin": "99001305", "cost": "pair" },
+    { "decision": "mm_royal_wake_fenrir_decision", "target": "99001002", "bondedTwin": "99001306", "cost": "pair" },
+    { "decision": "mm_royal_wake_leviathan_decision", "target": "99001307", "bondedTwin": "99001003", "cost": "pair" },
+    { "decision": "mm_royal_wake_hrist_decision", "target": "99001304", "bondedTwin": "99001308", "cost": "pair" },
+    { "decision": "mm_royal_wake_white_empress_decision", "target": "99001310", "cost": "white" },
+    { "decision": "mm_royal_wake_black_emperor_decision", "target": "99001309", "cost": "black" }
+  ],
+  "tiers": [
+    { "trait": "mm_royal_dragon_king", "power": 220, "prowess": 100, "health": 25, "movement_speed": 0.15, "enemy_hard_casualty_modifier": 0.3, "max_combat_roll": 4, "siege_phase_time": -0.3, "advantage": 10 },
+    { "trait": "mm_royal_complete", "power": 350, "prowess": 150, "health": 40, "movement_speed": 0.25, "enemy_hard_casualty_modifier": 0.4, "max_combat_roll": 6, "siege_phase_time": -0.4, "advantage": 20 },
+    { "trait": "mm_royal_white_empress", "power": 450, "prowess": 250, "health": 75, "movement_speed": 0.3, "enemy_hard_casualty_modifier": 0.5, "max_combat_roll": 8, "siege_phase_time": -0.5, "advantage": 25 },
+    { "trait": "mm_royal_black_emperor", "power": 600, "prowess": 300, "health": 100, "movement_speed": 0.4, "enemy_hard_casualty_modifier": 0.6, "max_combat_roll": 10, "siege_phase_time": -0.6, "advantage": 30 }
+  ],
+  "woundBlock": { "chance": 70, "blocked": true, "appliedChance": 30, "applyOncePerHit": true },
+  "restoration": { "royalDays": 1, "ordinaryMonths": 1, "royalBypassesNativeMonthlyRecovery": true },
+  "awakenedCount": 4,
+  "torpidCount": 6,
+  "noBiologicalParents": ["99001309", "99001310"]
+}

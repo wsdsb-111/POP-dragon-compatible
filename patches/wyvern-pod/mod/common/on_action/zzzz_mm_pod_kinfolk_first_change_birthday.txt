@@ -1,0 +1,13 @@
+﻿# Add a birthday bridge in addition to POD's own on_16th_birthday list.
+# Both events only queue POD_fera_maintenance.2 when its trigger is true.
+on_birthday = {
+    events = {
+        mm_pod_kinfolk_first_change.0001
+    }
+}
+
+on_16th_birthday = {
+    events = {
+        mm_pod_kinfolk_first_change.0001
+    }
+}

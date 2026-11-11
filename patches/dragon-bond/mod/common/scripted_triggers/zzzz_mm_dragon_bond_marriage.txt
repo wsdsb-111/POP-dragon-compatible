@@ -1,0 +1,48 @@
+can_marry_common_trigger = {
+	is_alive = yes
+	NOT = { has_trait_with_flag = can_not_marry }
+	trigger_if = { limit = { mm_dragon_is_true_dragon_parent_trigger = yes } is_adult = yes has_character_flag = mm_wyvern_human_form }
+	NOT = { has_variable = can_not_marry }
+
+	trigger_if = {
+		limit = {
+			exists = primary_title
+		}
+		NOR = {
+			# Block Mercenaries from marrying or showing up in marriage interactions
+			primary_title = {
+				is_mercenary_company = yes
+			}
+			is_leading_faction_type = peasant_faction
+			is_leading_faction_type = populist_faction
+			government_has_flag = government_is_herder
+		}
+	}
+
+	# Clergy cannot marry if their faith disallows it
+	trigger_if = {
+		limit = { is_clergy = yes }
+		marriage_clergy_can_marry_trigger = yes
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.involved_activity.var:tournament_marriage_prize
+			this = liege.involved_activity.var:tournament_marriage_prize
+		}
+		exists = scope:contest_winner
+	}
+}
+
+mm_dragon_bond_marriage_pair_trigger = {
+    OR = {
+        AND = {
+            scope:secondary_actor = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:secondary_recipient has_relation_myv_wyvern_bonded_character = scope:secondary_recipient }
+            scope:secondary_recipient = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = no }
+        }
+        AND = {
+            scope:secondary_recipient = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = yes has_character_flag = mm_wyvern_human_form exists = var:myv_wyvern_bonded_character var:myv_wyvern_bonded_character = scope:secondary_actor has_relation_myv_wyvern_bonded_character = scope:secondary_actor }
+            scope:secondary_actor = { is_adult = yes mm_dragon_is_true_dragon_parent_trigger = no }
+        }
+    }
+}
+mm_dragon_bond_blood_trigger = { OR = { mm_dragon_is_true_dragon_parent_trigger = yes mm_dragon_has_blood_trigger = yes } }

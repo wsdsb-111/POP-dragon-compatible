@@ -1,0 +1,9 @@
+mm_asc_dragon_body = {
+  mm_asc_dragon_body = {
+    traits = { mm_asc_dragon_body }
+    dna_modifiers = { human = {
+      accessory = { mode = modify gene = gene_myv_wyvern template = myv_wyvern_body value = 1 }
+      morph = { mode = replace gene = gene_myv_no_portrait template = no_portrait value = 1 }
+    } }
+  }
+}

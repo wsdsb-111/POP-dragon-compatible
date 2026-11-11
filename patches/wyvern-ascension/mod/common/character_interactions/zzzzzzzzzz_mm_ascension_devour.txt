@@ -1,0 +1,54 @@
+mm_royal_command_devour_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    use_diplomatic_range = yes
+    icon = icon_murder
+    desc = mm_royal_devour_desc
+    is_shown = {
+        scope:actor = { is_ai = no }
+        scope:recipient = { has_trait = mm_royal_dragon_king has_relation_myv_wyvern_bonded_character = scope:actor }
+    }
+    is_valid_showing_failures_only = { scope:actor = { mm_royal_pair_ready_for_devour = yes } }
+    on_accept = {
+        scope:actor = {
+            if = {
+                limit = { mm_royal_pair_ready_for_devour = yes }
+                scope:recipient = { mm_asc_unite_twins_effect = yes }
+            }
+        }
+    }
+}
+
+mm_asc_devour_own_twin_interaction = {
+    category = interaction_category_hostile
+    common_interaction = yes
+    auto_accept = yes
+    use_diplomatic_range = yes
+    icon = icon_murder
+    desc = mm_asc_devour_own_twin_interaction_desc
+    is_shown = {
+        scope:actor = { is_ai = no has_trait = mm_asc_dragon_body var:mm_asc_outcome = flag:dragon has_trait = mm_royal_dragon_king exists = var:mm_royal_twin }
+        scope:recipient = scope:actor.var:mm_royal_twin
+        scope:actor != scope:recipient
+    }
+    is_valid_showing_failures_only = {
+        scope:actor = { mm_royal_player_available = yes mm_asc_pair_can_unite = yes }
+        scope:recipient = scope:actor.var:mm_royal_twin
+    }
+    on_accept = {
+        scope:actor = {
+            if = {
+                limit = {
+                    is_ai = no
+                    has_trait = mm_asc_dragon_body
+                    var:mm_asc_outcome = flag:dragon
+                    mm_royal_player_available = yes
+                    mm_asc_pair_can_unite = yes
+                    scope:recipient = var:mm_royal_twin
+                }
+                mm_asc_unite_twins_effect = yes
+            }
+        }
+    }
+}

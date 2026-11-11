@@ -1,0 +1,94 @@
+{
+  "created": "2026-10-28",
+  "method": "Original imagegen artwork, resized and converted to transparent RGBA DDS; no borrowed faith emblems",
+  "assets": [
+    {
+      "id": "creed",
+      "png": "artwork/dragon-creed/creed.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "ee944aa5a6d1bd48646fe6f1c0d4f01b7eea02e82246bca3f53929db7f980096",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_creed.dds",
+      "gameSha256": "b7ffa8b0704d16dc7a191dc4d98d981004d077f4974e485252a8d551f681bd26"
+    },
+    {
+      "id": "fire",
+      "png": "artwork/dragon-creed/fire.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "bceb43ae2e73851b41aeb2fc8a5ccee1a52c3eb65f323fd343f55d8865f3af74",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_fire.dds",
+      "gameSha256": "76c627dba3dcaaa8860751712ab020804282eebb76518a60d81bd0c82028575f"
+    },
+    {
+      "id": "earth",
+      "png": "artwork/dragon-creed/earth.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "487ec1ddd5619329ecfb860dba80f879a94ab1a90c768a3eb942bcea53ba98e8",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_earth.dds",
+      "gameSha256": "e9c514169d560b99c284289aeef55b7a8ef9599d24cb42de9685bf382f388736"
+    },
+    {
+      "id": "sea",
+      "png": "artwork/dragon-creed/sea.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "7cc6689b598723b0f5f86f91e85deca5878607d568ae6122b41e43e759fec573",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_sea.dds",
+      "gameSha256": "8b151050de0013a0ec08e001dded15741df0e2bacdc9d3c021a885b80a838a3f"
+    },
+    {
+      "id": "sky",
+      "png": "artwork/dragon-creed/sky.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "d5d9619180256de050391993ea28c4ca7c5e4a62d71bda731a6d4d2e6ef3e367",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_sky.dds",
+      "gameSha256": "687c451c51630c67a0d553444c7abcda6afa34bff7e44a0637b190c5a4d938bd"
+    },
+    {
+      "id": "black",
+      "png": "artwork/dragon-creed/black.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "3319f345b748a5dcfa0bc081898b6c7eb314abf55d7991281e060eba8f65a935",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_black.dds",
+      "gameSha256": "cd17c81f8c881ac246a8d2560c6d562ad3f6b0d08264c72b6ad5f3b15cbe7a91"
+    },
+    {
+      "id": "white",
+      "png": "artwork/dragon-creed/white.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "b6fc40d88341e8f49123701f76c0d3c4dd4f5d5a8edd49b5264795527d2f8c39",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/faith/mm_dragon_white.dds",
+      "gameSha256": "08707dae8cd12b732f35a3c5718af9e63c2227c3139b291ec1af87e069f22f09"
+    },
+    {
+      "id": "death-servant",
+      "png": "artwork/dragon-creed/death-servant.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceSha256": "e2b41d655299a34a88aea299df2031c1a63539d779c65dc67bd8315371f3fbd7",
+      "gameFile": "patches/dragon-creed/mod/gfx/interface/icons/traits/mm_dragon_death_servant.dds",
+      "gameSha256": "332674c00e71e90eb7e33ad1218b4e4f734d16900d99b9c8e0af7af03211ceac"
+    }
+  ]
+}

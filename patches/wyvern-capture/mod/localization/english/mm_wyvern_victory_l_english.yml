@@ -1,0 +1,8 @@
+﻿l_english:
+ mm_wyvern_victory_title:0 "The Wyvern Defeated"
+ mm_wyvern_victory_desc:0 "[myv_slay_wyvern_target.GetFirstNameNoTooltip] lies before you, still breathing. You may finish the creature and collect trophies, or take it captive and attempt to tame it later."
+ mm_wyvern_victory_kill:0 "Slay it and collect the trophies."
+ mm_wyvern_victory_kill_tt:0 "Keep the original slayer rewards, crafting loot and egg roll; gain five decorative trophies. Ordinary sources are Famed with 3 random bonuses, legendary sources Illustrious with 4. Slaying a legendary wyvern also grants Bathed in Dragon Blood."
+ mm_wyvern_victory_capture:0 "Spare it and secure it in a cage."
+ mm_wyvern_victory_capture_tt:0 "No kill, corpse trophies, eggs or slayer reward. Secure the wyvern in an available personal stable or a landless adventurer camp cage. Feed it to unlock a taming attempt."
+ mm_wyvern_victory_unavailable:0 "This creature is no longer under my control."

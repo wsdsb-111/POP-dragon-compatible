@@ -1,0 +1,10 @@
+mm_wyvern_dragon_sword = {
+  default_type = sword
+  icon = "mm_dragon_draxel.dds"
+  asset = ep1_western_sword_04_a_entity
+}
+mm_wyvern_dragon_bow = {
+  default_type = bow
+  icon = "mm_dragon_serind.dds"
+  asset = ep2_steppe_bow_01_a_portrait_entity
+}

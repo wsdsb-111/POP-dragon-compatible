@@ -1,0 +1,96 @@
+# Release captured creatures immediately when their captor dies; the monthly
+# integrity pass handles stable inheritance/building loss and government change.
+on_death = {
+	on_actions = { mm_wyvern_capture_captor_death_release }
+}
+
+mm_wyvern_capture_captor_death_release = {
+	effect = {
+		if = {
+			limit = { has_global_variable_list = myv_living_wyverns }
+			every_in_global_list = {
+				variable = myv_living_wyverns
+				limit = {
+					myv_is_living_wyvern = yes
+					has_variable = mm_wyvern_captor
+					var:mm_wyvern_captor = root
+				}
+				mm_wyvern_capture_release_effect = yes
+			}
+		}
+	}
+}
+
+# Upgrade only this mod's pre-affix court trophies owned by current players.
+# Original forging materials are miscellaneous artifacts and are excluded.
+on_game_start_after_lobby = {
+	on_actions = { mm_wyvern_legacy_trophy_affixes mm_wyvern_legacy_material_affixes mm_wyvern_legacy_trophy_display_types }
+}
+
+# Preserve the actual artifact, source, quality and affixes while changing its slot.
+# Only source-tagged, typed trophies created by this patch are eligible.
+mm_wyvern_legacy_trophy_display_types = {
+	effect = {
+		every_player = {
+			every_character_artifact = {
+				limit = { has_variable = mm_wyvern_trophy_source }
+				if = {
+					limit = { var:mm_wyvern_material_kind = flag:head artifact_slot_type = wall_small }
+					reforge_artifact = { type = pedestal visuals = mm_wyvern_trophy_head }
+				}
+				else_if = {
+					limit = {
+						artifact_slot_type = pedestal
+						OR = {
+							var:mm_wyvern_material_kind = flag:fang
+							var:mm_wyvern_material_kind = flag:scale
+							var:mm_wyvern_material_kind = flag:claw
+							var:mm_wyvern_material_kind = flag:eye
+						}
+					}
+					reforge_artifact = { type = miscellaneous }
+				}
+			}
+		}
+	}
+}
+
+# Source-tagged raw drops keep their original crafting flags, name and base bonuses.
+mm_wyvern_legacy_material_affixes = {
+	effect = {
+		every_player = {
+			every_character_artifact = {
+				limit = {
+					has_variable = mm_wyvern_trophy_source
+					NOT = { has_variable = mm_wyvern_trophy_affixes_generated }
+					artifact_slot_type = miscellaneous
+					OR = { rarity = common rarity = masterwork rarity = famed rarity = illustrious }
+					OR = {
+						has_variable = myv_wyvern_scale_material
+						has_variable = myv_wyvern_blood_material
+						var:mm_wyvern_material_kind = flag:fang
+						var:mm_wyvern_material_kind = flag:scale
+						var:mm_wyvern_material_kind = flag:blood
+					}
+				}
+				mm_wyvern_apply_trophy_affixes_effect = yes
+			}
+		}
+	}
+}
+
+mm_wyvern_legacy_trophy_affixes = {
+	effect = {
+		every_player = {
+			every_character_artifact = {
+				limit = {
+					has_variable = mm_wyvern_trophy_source
+					NOT = { has_variable = mm_wyvern_trophy_affixes_generated }
+					OR = { artifact_slot_type = pedestal artifact_slot_type = wall_small }
+					OR = { rarity = famed rarity = illustrious }
+				}
+				mm_wyvern_apply_trophy_affixes_effect = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,795 @@
+{
+  "format": "PDX binary @@b@ 1.0",
+  "shader": "court",
+  "shaderFile": "gfx/FX/court_scene.shader",
+  "axis": "Y-up; face toward native court -X; base at or above Y=0",
+  "texturePrefix": "mm_dragon_relics",
+  "textureSize": [
+    2048,
+    2048
+  ],
+  "artDirection": "Imperial court luxury: low circlet, openwork scepter, gilded casket and polished ceremonial armor; no bone-spike forest.",
+  "authoring": "Main agent geometry and material revision after user feedback; serial model builds.",
+  "normalChannels": "RRxG tangent normal; blue emissive mask is zero",
+  "propertiesChannels": "alpha roughness, green specular color, blue metalness",
+  "preview": "Offline software render using court-style material/lighting approximation; not an in-game capture.",
+  "models": {
+    "mm_relic_black_crown": {
+      "vertices": 258034,
+      "editableVertices": 253799,
+      "triangles": 466440,
+      "min": [
+        -11.950000000000001,
+        0.0,
+        -14.0
+      ],
+      "max": [
+        11.0,
+        13.299096345089445,
+        14.0
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 106582,
+          "min": [
+            -11.950000000000001,
+            0.0,
+            -14.0
+          ],
+          "max": [
+            11.0,
+            11.699992934500322,
+            13.625
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 109392,
+          "min": [
+            -9.754000000000001,
+            6.6289751198639095,
+            -9.8
+          ],
+          "max": [
+            9.799622665091455,
+            12.832,
+            0.1858221696391539
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 60000,
+          "triangles": 107575,
+          "min": [
+            -11.950000000000001,
+            0.0,
+            -13.625
+          ],
+          "max": [
+            11.0,
+            13.299096345089445,
+            14.0
+          ]
+        },
+        {
+          "index": 3,
+          "vertices": 60000,
+          "triangles": 110041,
+          "min": [
+            -7.574529409848984,
+            6.6289751198639095,
+            -0.18582216963915055
+          ],
+          "max": [
+            9.799622665091455,
+            13.299096345089445,
+            9.786418994076811
+          ]
+        },
+        {
+          "index": 4,
+          "vertices": 18034,
+          "triangles": 32850,
+          "min": [
+            -0.5157550507485243,
+            6.630122488172256,
+            6.713453179974458
+          ],
+          "max": [
+            6.959984858194428,
+            11.809536279004826,
+            9.798490689423302
+          ]
+        }
+      ],
+      "sha256": "8d321e8e8cf8620ee2b697708449211514fecdda33156761426739d4e20915a6",
+      "modelId": "mm_relic_black_crown",
+      "meshFile": "mm_relic_black_crown.mesh",
+      "meshSha256": "8d321e8e8cf8620ee2b697708449211514fecdda33156761426739d4e20915a6",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_black_crown.obj",
+          "sha256": "5cf240327fae215680706fc2d902282395566f558fcb06e77937ece92dad41a2"
+        },
+        "glb": {
+          "file": "mm_relic_black_crown.glb",
+          "sha256": "8b54bf90c2057fc16ec08f199278ed8a15705984a3028acebd9de7afd9f04212"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_black_crown-front.png",
+          "sha256": "361ee5cce5e690063e1d8f454f1670c3b4e261ab46d7cdb03ef994f6c8562149",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_black_crown-angle.png",
+          "sha256": "4c08b97d211234d9a6ba0bb3ccc63d59e493af8578191c8efc6ac43b7582d684",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_black_crown-back.png",
+          "sha256": "6eba9ff247c03b0d94e515555a6c8ed5f3b9c9174c1573377f9e67ce466d3b32",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_black_crown.dds",
+        "sha256": "9649119e51d3a4f7fa55921de06718393690f71bec5bbab0ded9bd0ebeba1a7f"
+      }
+    },
+    "mm_relic_black_regalia": {
+      "vertices": 165548,
+      "editableVertices": 158745,
+      "triangles": 299272,
+      "min": [
+        -10.88,
+        0.0,
+        -12.0
+      ],
+      "max": [
+        10.0,
+        87.1,
+        12.0
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 106876,
+          "min": [
+            -10.88,
+            0.0,
+            -12.0
+          ],
+          "max": [
+            10.0,
+            86.85155577170299,
+            11.625
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 106507,
+          "min": [
+            -10.88,
+            0.0,
+            -11.625
+          ],
+          "max": [
+            10.0,
+            87.1,
+            12.0
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 45548,
+          "triangles": 85889,
+          "min": [
+            -1.3183057894657897,
+            43.60631578947368,
+            -0.0668569028671014
+          ],
+          "max": [
+            1.3183057894657897,
+            87.1,
+            5.58
+          ]
+        }
+      ],
+      "sha256": "ed14617628bd31287e2eb7909a9c43dcf0e7bbc6380f0d494918e70a47065072",
+      "modelId": "mm_relic_black_regalia",
+      "meshFile": "mm_relic_black_regalia.mesh",
+      "meshSha256": "ed14617628bd31287e2eb7909a9c43dcf0e7bbc6380f0d494918e70a47065072",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_black_regalia.obj",
+          "sha256": "495f68b5d7c9c74adf0a95e6593ab783d548058a4f8971d643dd95e706cc4a6c"
+        },
+        "glb": {
+          "file": "mm_relic_black_regalia.glb",
+          "sha256": "f1e642031488db853e0e8f8fb7378e948e3a40171ccfdc8b1fa310532d6861e5"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_black_regalia-front.png",
+          "sha256": "8b852b10f1052be0c7c7d87b097915085cf42ad625c25bb8050f7a62198e974e",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_black_regalia-angle.png",
+          "sha256": "3b0eace210df476d90a58218de917923ae41c2bd2959ef5611d9d37868eca019",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_black_regalia-back.png",
+          "sha256": "cf45a5cc1eb598af53e3894f89071a43821bdedc79f3bce26bc58ab63b70e63f",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_black_regalia.dds",
+        "sha256": "f521130374571974ed162a834bf0c20f83d285ef8d452788269dbca6521403be"
+      }
+    },
+    "mm_relic_white_book": {
+      "vertices": 159101,
+      "editableVertices": 157468,
+      "triangles": 279202,
+      "min": [
+        -13.02,
+        0.0,
+        -19.5
+      ],
+      "max": [
+        12.0,
+        35.35164901572079,
+        19.5
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 105070,
+          "min": [
+            -13.02,
+            0.0,
+            -19.5
+          ],
+          "max": [
+            12.0,
+            34.56318843006052,
+            19.125
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 104460,
+          "min": [
+            -13.02,
+            0.0,
+            -19.125
+          ],
+          "max": [
+            12.0,
+            35.35164901572079,
+            19.5
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 39101,
+          "triangles": 69672,
+          "min": [
+            -5.14,
+            11.6875,
+            -15.4125
+          ],
+          "max": [
+            3.975,
+            35.35164901572079,
+            16.215765902453292
+          ]
+        }
+      ],
+      "sha256": "59df07b9825be70331236bc464ef944469e5980dbc15ff46a2d7063193fb5eac",
+      "modelId": "mm_relic_white_book",
+      "meshFile": "mm_relic_white_book.mesh",
+      "meshSha256": "59df07b9825be70331236bc464ef944469e5980dbc15ff46a2d7063193fb5eac",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_white_book.obj",
+          "sha256": "b14cf84f165ee2730aa150f775e74b343525c02c40d30c2235b114060f42f525"
+        },
+        "glb": {
+          "file": "mm_relic_white_book.glb",
+          "sha256": "55332c9cce7f6243d6fb0b768b7404b5bda1713ed0b1aff9d613ea2f5875a103"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_white_book-front.png",
+          "sha256": "0079886dcb35910bc868efb0b16d2d1853de02b671bc1fd4423788db4b5667b7",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_white_book-angle.png",
+          "sha256": "adaa4fff197b4b44c05cfefac7b071cf7c03aae485452c5ebcd5a5d1249ad8f4",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_white_book-back.png",
+          "sha256": "8fb95537f1ba3403c6d5259f61b29f33a796e03251896362abfe5e746d70383a",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_white_book.dds",
+        "sha256": "ae7a898260f967adca85e6a18087751f57ff8bbd5de41850e959eb51b936a921"
+      }
+    },
+    "mm_relic_fire_ring": {
+      "vertices": 123336,
+      "editableVertices": 122182,
+      "triangles": 212114,
+      "min": [
+        -11.950000000000001,
+        0.0,
+        -14.0
+      ],
+      "max": [
+        11.0,
+        24.55,
+        14.0
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 103402,
+          "min": [
+            -11.950000000000001,
+            0.0,
+            -14.0
+          ],
+          "max": [
+            11.0,
+            24.55,
+            13.625
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 102894,
+          "min": [
+            -11.950000000000001,
+            0.0,
+            -13.625
+          ],
+          "max": [
+            11.0,
+            24.55,
+            14.0
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 3336,
+          "triangles": 5818,
+          "min": [
+            -1.155,
+            13.658061117235668,
+            -3.105
+          ],
+          "max": [
+            1.65,
+            24.55,
+            7.35
+          ]
+        }
+      ],
+      "sha256": "d211468e9b6775ab3e87113816d651f54e4d5f2601d8c96ba3600d85625421d3",
+      "modelId": "mm_relic_fire_ring",
+      "meshFile": "mm_relic_fire_ring.mesh",
+      "meshSha256": "d211468e9b6775ab3e87113816d651f54e4d5f2601d8c96ba3600d85625421d3",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_fire_ring.obj",
+          "sha256": "38990cfcf7b41fab2c9dfe8f36384b5e3a21028be89eeb948166df109169e3ee"
+        },
+        "glb": {
+          "file": "mm_relic_fire_ring.glb",
+          "sha256": "272580dfa24f8bf6d407400eb2007a59552e397cdec66a640c5ffb5cbdec8dce"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_fire_ring-front.png",
+          "sha256": "20b2ad410921f8ad7cdd3083121c28508facc515bd53d6ecf22a9139d4d44447",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_fire_ring-angle.png",
+          "sha256": "ed27935ffafb08759d8aa411ea2c9ac9b9240376d6982a8ef572ac7b8efb7598",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_fire_ring-back.png",
+          "sha256": "7bb280084cba440e8260d10be36d04b78a659a11bb78ee5c02face8d355df19c",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_fire_ring.dds",
+        "sha256": "d73464cfee17c096291d68c97795ccdfcbd51030c8910421b75173de93237120"
+      }
+    },
+    "mm_relic_earth_sarcophagus": {
+      "vertices": 204310,
+      "editableVertices": 199660,
+      "triangles": 340282,
+      "min": [
+        -14.625,
+        0.0,
+        -21.5
+      ],
+      "max": [
+        13.5,
+        23.8,
+        21.5
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 98545,
+          "min": [
+            -14.625,
+            0.0,
+            -21.5
+          ],
+          "max": [
+            13.5,
+            23.78509610091153,
+            21.125
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 98423,
+          "min": [
+            -14.625,
+            0.0,
+            -21.125
+          ],
+          "max": [
+            13.5,
+            23.8,
+            21.5
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 59999,
+          "triangles": 102832,
+          "min": [
+            -11.5,
+            6.8,
+            -19.32
+          ],
+          "max": [
+            11.5,
+            23.8,
+            19.5
+          ]
+        },
+        {
+          "index": 3,
+          "vertices": 24311,
+          "triangles": 40482,
+          "min": [
+            -11.32,
+            6.8,
+            -19.32
+          ],
+          "max": [
+            11.5,
+            23.31953069243236,
+            19.5
+          ]
+        }
+      ],
+      "sha256": "ed00cd76c73cf7f421c482a4231eeaa6595fcf487dc7a9741551e39bcee488b3",
+      "modelId": "mm_relic_earth_sarcophagus",
+      "meshFile": "mm_relic_earth_sarcophagus.mesh",
+      "meshSha256": "ed00cd76c73cf7f421c482a4231eeaa6595fcf487dc7a9741551e39bcee488b3",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_earth_sarcophagus.obj",
+          "sha256": "d8c8bff8feded168dea4fc3d48294885d18e938ca693455b7a3b84ee15aae1c2"
+        },
+        "glb": {
+          "file": "mm_relic_earth_sarcophagus.glb",
+          "sha256": "56f928ff8df0c1181a152ecd87e451617eb589b0cde3a143525f1300ce748dfc"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_earth_sarcophagus-front.png",
+          "sha256": "cf34dffe2ceaff8c6267182f9babd331e0e3def716bf0c33826a0fe310980481",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_earth_sarcophagus-angle.png",
+          "sha256": "c546fa30836333e5c881168b31e0d2a1da2d8b75959adf0964cd1f6da0ef3159",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_earth_sarcophagus-back.png",
+          "sha256": "b591426cc2d432bb2689879a5e89c462f878c5acc17f53cb76128addcfb36e84",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_earth_sarcophagus.dds",
+        "sha256": "4013ae11fcf3d94d455d1452636dd1cac31b1d2bfa871f3359dd90cac08c7384"
+      }
+    },
+    "mm_relic_sea_armor": {
+      "vertices": 211507,
+      "editableVertices": 207173,
+      "triangles": 348090,
+      "min": [
+        -13.909337914283107,
+        0.0,
+        -19.8
+      ],
+      "max": [
+        12.0,
+        72.7,
+        19.8
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 97140,
+          "min": [
+            -13.909337914283107,
+            0.0,
+            -19.724525637623508
+          ],
+          "max": [
+            12.0,
+            70.51795049431811,
+            15.125
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 99006,
+          "min": [
+            -13.90917019105582,
+            0.0,
+            -19.8
+          ],
+          "max": [
+            12.0,
+            72.7,
+            19.44320081404336
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 60000,
+          "triangles": 98939,
+          "min": [
+            -13.909337914283107,
+            0.0,
+            -0.2259861287712094
+          ],
+          "max": [
+            12.0,
+            72.59454761810339,
+            19.724525637623508
+          ]
+        },
+        {
+          "index": 3,
+          "vertices": 31507,
+          "triangles": 53005,
+          "min": [
+            -1.4713776097493383,
+            35.0,
+            -0.5940195128161283
+          ],
+          "max": [
+            7.2,
+            72.7,
+            19.8
+          ]
+        }
+      ],
+      "sha256": "eb308abf763ce269df4fa7970052e0932c6aec293aea773d352d6a470ca9f0b8",
+      "modelId": "mm_relic_sea_armor",
+      "meshFile": "mm_relic_sea_armor.mesh",
+      "meshSha256": "eb308abf763ce269df4fa7970052e0932c6aec293aea773d352d6a470ca9f0b8",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_sea_armor.obj",
+          "sha256": "806fbe2d32389a156c089366a0e3f2648b45949627d51a479cf51efed291eaea"
+        },
+        "glb": {
+          "file": "mm_relic_sea_armor.glb",
+          "sha256": "77c9c5539502a846278d915c1b191c53a5cfc95071f2cad2e8cecbc406431f3e"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_sea_armor-front.png",
+          "sha256": "ee9c8f3f6cf555d134b008af21aa226d28c650413bb8b74cb49fb27cf15f0a41",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_sea_armor-angle.png",
+          "sha256": "5b90820c7fceb7d25755154965ab86945cbd54f989c483bf938c517bd34cc45a",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_sea_armor-back.png",
+          "sha256": "90772c717ffa2518565780e1edd3042034456d22618e3876da013e1b2d8deacd",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_sea_armor.dds",
+        "sha256": "2b08f444a5c8ab407a446ea6f3059f834b2ae1948a5f1f75477bfa4e0a27e5ce"
+      }
+    },
+    "mm_relic_sky_spear": {
+      "vertices": 123887,
+      "editableVertices": 119661,
+      "triangles": 220554,
+      "min": [
+        -12.485000000000001,
+        0.0,
+        -13.0
+      ],
+      "max": [
+        11.5,
+        103.0,
+        13.0
+      ],
+      "submeshes": [
+        {
+          "index": 0,
+          "vertices": 60000,
+          "triangles": 106669,
+          "min": [
+            -12.485000000000001,
+            0.0,
+            -13.0
+          ],
+          "max": [
+            11.5,
+            97.55,
+            12.625
+          ]
+        },
+        {
+          "index": 1,
+          "vertices": 60000,
+          "triangles": 107154,
+          "min": [
+            -12.485000000000001,
+            0.0,
+            -12.625
+          ],
+          "max": [
+            11.5,
+            103.0,
+            13.0
+          ]
+        },
+        {
+          "index": 2,
+          "vertices": 3887,
+          "triangles": 6731,
+          "min": [
+            -0.8,
+            49.609722201394746,
+            -0.06686655324704623
+          ],
+          "max": [
+            2.3571717476823384,
+            103.0,
+            7.753319856272719
+          ]
+        }
+      ],
+      "sha256": "f6eab959796e30ee1f9efc398d9aab2efe210c31545635ecb73ade7c93a1365d",
+      "modelId": "mm_relic_sky_spear",
+      "meshFile": "mm_relic_sky_spear.mesh",
+      "meshSha256": "f6eab959796e30ee1f9efc398d9aab2efe210c31545635ecb73ade7c93a1365d",
+      "editableFiles": {
+        "obj": {
+          "file": "mm_relic_sky_spear.obj",
+          "sha256": "83e7e76e660804ad9deaa4ca4cc8932de316650c76481ebc345701137008e3dc"
+        },
+        "glb": {
+          "file": "mm_relic_sky_spear.glb",
+          "sha256": "a04d0d913877de93146ab582bb6d1517659232efd72fe3781d243d216fa9586f"
+        }
+      },
+      "previews": {
+        "front": {
+          "file": "mm_relic_sky_spear-front.png",
+          "sha256": "7b88d157b1314f3853a30c091bbbb2c823b0656899503a8a15b7852d54b5a492",
+          "offline": true
+        },
+        "angle": {
+          "file": "mm_relic_sky_spear-angle.png",
+          "sha256": "736c3f6990c9bc83e147967549301df0be1762f3a96bf90abb04ab2bd792e6ad",
+          "offline": true
+        },
+        "back": {
+          "file": "mm_relic_sky_spear-back.png",
+          "sha256": "58e0ab89588c32d3344093939518076493938549f4cb38237e0c2d067a346218",
+          "offline": true
+        }
+      },
+      "inventoryIcon": {
+        "file": "patches/dragon-relics/mod/gfx/interface/icons/artifact/mm_relic_sky_spear.dds",
+        "sha256": "3b7302140f6d86caa7aadf16c3b1583e73cdf00ba4fc356d322e4b8bc4a94829"
+      }
+    }
+  },
+  "sharedTextures": {
+    "diffuse": {
+      "png": "mm_dragon_relics_diffuse.png",
+      "pngSha256": "e664642cdbdedae995c3e7b5bd7edaf216f10c1c0164b73114ee91a28bc3a951",
+      "dds": "mm_dragon_relics_diffuse.dds",
+      "ddsSha256": "e65f7d966e4c51126966f55a87f70577965c11bfd2b04160dd55829cce8af743"
+    },
+    "normal": {
+      "png": "mm_dragon_relics_normal.png",
+      "pngSha256": "e08ecb14c2deca8e63611cbb043703de87f5883a1c2441213ee5838ccdd8cbd8",
+      "dds": "mm_dragon_relics_normal.dds",
+      "ddsSha256": "b031f77397fc637cfcfc8eb7ca251c2d44abea5966dc2567685882296531bc8d"
+    },
+    "properties": {
+      "png": "mm_dragon_relics_properties.png",
+      "pngSha256": "d8296bf8b35df7c6ea0e58608f713464bd40388c54c2a10537f484c60fe778d4",
+      "dds": "mm_dragon_relics_properties.dds",
+      "ddsSha256": "6e0793998ba2e710a1bec0b09f7ee18eef4727fed23a6ea1dd7b2b61e236d7a4"
+    }
+  },
+  "assetDefinition": {
+    "file": "mm_dragon_relics.asset",
+    "sha256": "961723c2cf69a949183e87144fe888a6b20e714778febdcffac31d3de7180bd2",
+    "entities": [
+      "mm_relic_black_crown_entity",
+      "mm_relic_black_regalia_entity",
+      "mm_relic_white_book_entity",
+      "mm_relic_fire_ring_entity",
+      "mm_relic_earth_sarcophagus_entity",
+      "mm_relic_sea_armor_entity",
+      "mm_relic_sky_spear_entity"
+    ]
+  },
+  "contactSheet": {
+    "file": "contact-sheet.png",
+    "sha256": "94eeb9f6ad97745926f66d7dd9382369b0cb73f350f774145258de0791b66ae6",
+    "offline": true
+  }
+}

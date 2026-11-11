@@ -1,0 +1,36 @@
+﻿mm_relic_fire_forging_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_relic_fire_forging_decision_desc
+    selection_tooltip = mm_relic_fire_forging_decision_tooltip
+    is_shown = { is_ai = no mm_relic_fire_ring_equipped_trigger = yes }
+    is_valid = { mm_relic_fire_ring_ready_trigger = yes }
+    effect = { custom_tooltip = mm_relic_fire_forging_decision_tooltip mm_relic_fire_forging_effect = yes }
+    ai_check_interval = 0
+}
+mm_relic_earth_creation_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_relic_earth_creation_decision_desc
+    selection_tooltip = mm_relic_earth_creation_decision_tooltip
+    is_shown = { is_ai = no mm_relic_earth_sarcophagus_equipped_trigger = yes }
+    is_valid = { mm_relic_earth_sarcophagus_ready_trigger = yes }
+    effect = { custom_tooltip = mm_relic_earth_creation_decision_tooltip mm_relic_earth_creation_effect = yes }
+    ai_check_interval = 0
+}
+mm_relic_sea_trade_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_relic_sea_trade_decision_desc
+    selection_tooltip = mm_relic_sea_trade_decision_tooltip
+    is_shown = { is_ai = no mm_relic_sea_armor_equipped_trigger = yes }
+    is_valid = { mm_relic_sea_armor_ready_trigger = yes }
+    effect = { custom_tooltip = mm_relic_sea_trade_decision_tooltip mm_relic_sea_trade_effect = yes }
+    ai_check_interval = 0
+}
+mm_relic_sky_execution_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = mm_relic_sky_execution_decision_desc
+    selection_tooltip = mm_relic_sky_execution_decision_tooltip
+    is_shown = { is_ai = no mm_relic_sky_spear_equipped_trigger = yes }
+    is_valid = { mm_relic_sky_spear_ready_trigger = yes }
+    effect = { custom_tooltip = mm_relic_sky_execution_decision_tooltip mm_relic_sky_execution_effect = yes }
+    ai_check_interval = 0
+}

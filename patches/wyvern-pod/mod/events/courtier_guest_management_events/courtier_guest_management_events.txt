@@ -1,0 +1,107 @@
+courtier_guest_management.2001 = {
+	hidden = yes
+	trigger = {
+		is_pool_character = yes # Can cease to be in the pool between it queuing and executing
+		POD_is_available_for_events = yes
+	}
+
+	immediate = {
+		#Am I lost in the void?
+		if = {
+			limit = { NOT = { exists = location } }
+
+			#Oops, no good! Go someplace. (family is also moved with this effect)
+			fallback_move_to_pool_effect = yes
+		}
+
+		#Don't I have the "last_visited_ruler" variable? (= it ran out or I'm from some weird source that doesn't set var)
+		if = {
+			limit = { NOT = { exists = var:last_visited_ruler } }
+
+			if = { # If character is prune-able, prune.
+				limit = {
+					pool_character_is_pruneable_trigger = yes
+					NOT = { mm_cleanup_is_protected = yes }
+				}
+				if = {
+					limit = { 
+						OR = { 
+							age < 65 
+							AND = {
+								has_POD_longevity_trigger = yes
+								age < 300
+							}
+							is_immortal = yes
+						}
+					}
+					death = { death_reason = death_accident }
+				}
+				else = {
+					death = { death_reason = death_old_age }
+				}
+			}
+			else = { # Otherwise, go somewhere else.
+				fallback_move_to_pool_effect = yes
+			}
+		}
+
+		if = {
+			limit = { is_alive = yes } #Because we might just have killed you and then 🎵nothing else matters🎵
+
+			#Develop
+			#random = { # Very performance-intensive, so we restrict it as much as possible at this step.
+			#	chance = 50
+			#	if = {
+			#		limit = {
+			#			static_group_filter = {
+			#				group = random_dev_blocker
+			#				match = 0.8
+			#			}
+			#			is_immortal = no
+			#			is_adult = yes
+			#			is_lowborn = no
+			#			is_physically_able = yes
+			#		}
+			#		pool_character_development_effect = yes
+			#	}
+			#}
+			if = {
+				limit = {
+					gold >= 1000
+				}
+				purge_excess_wanderer_riches_effect = yes
+			}
+
+			#Is my pool full? Then move
+			if = {
+				limit = {
+					location = {
+						exists = province_owner
+						local_pool_is_full_trigger = yes
+					}
+				}
+
+				location.province_owner = {
+					random_neighboring_and_across_water_top_liege_realm_owner = {
+						limit = {
+							capital_province ?= { local_pool_is_full_trigger = no }
+						}
+						capital_province = { save_scope_as = destination }
+					}
+				}
+
+				if = {
+					limit = { exists = scope:destination }
+					every_traveling_family_member = {
+						limit = { NOT = { is_in_pool_at = scope:destination } }
+						move_to_pool_at = scope:destination
+					}
+				}
+				else = {
+					fallback_move_to_pool_effect = yes
+				}
+			}
+		}
+
+	}
+}

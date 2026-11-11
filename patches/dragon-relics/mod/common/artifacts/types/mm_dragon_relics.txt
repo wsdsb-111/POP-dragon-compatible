@@ -1,0 +1,20 @@
+mm_relic_black_crown_inventory = { slot = helmet default_visuals = mm_relic_black_crown_inventory_visual can_reforge = no }
+mm_relic_black_crown_court = { slot = pedestal default_visuals = mm_relic_black_crown_court_visual can_reforge = no }
+
+mm_relic_black_regalia_inventory = { slot = regalia default_visuals = mm_relic_black_regalia_inventory_visual can_reforge = no }
+mm_relic_black_regalia_court = { slot = pedestal default_visuals = mm_relic_black_regalia_court_visual can_reforge = no }
+
+mm_relic_white_book_inventory = { slot = journal default_visuals = mm_relic_white_book_inventory_visual can_reforge = no }
+mm_relic_white_book_court = { slot = pedestal default_visuals = mm_relic_white_book_court_visual can_reforge = no }
+
+mm_relic_fire_ring_inventory = { slot = miscellaneous default_visuals = mm_relic_fire_ring_inventory_visual can_reforge = no }
+mm_relic_fire_ring_court = { slot = pedestal default_visuals = mm_relic_fire_ring_court_visual can_reforge = no }
+
+mm_relic_earth_sarcophagus_inventory = { slot = miscellaneous default_visuals = mm_relic_earth_sarcophagus_inventory_visual can_reforge = no }
+mm_relic_earth_sarcophagus_court = { slot = pedestal default_visuals = mm_relic_earth_sarcophagus_court_visual can_reforge = no }
+
+mm_relic_sea_armor_inventory = { slot = armor default_visuals = mm_relic_sea_armor_inventory_visual can_reforge = no }
+mm_relic_sea_armor_court = { slot = pedestal default_visuals = mm_relic_sea_armor_court_visual can_reforge = no }
+
+mm_relic_sky_spear_inventory = { slot = primary_armament default_visuals = mm_relic_sky_spear_inventory_visual can_reforge = no }
+mm_relic_sky_spear_court = { slot = pedestal default_visuals = mm_relic_sky_spear_court_visual can_reforge = no }

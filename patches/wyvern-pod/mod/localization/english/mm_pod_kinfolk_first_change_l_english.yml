@@ -1,0 +1,6 @@
+﻿l_english:
+ mm_pod_prepare_kinfolk_children_decision:0 "Guide Kinfolk Descendants toward Their First Change"
+ mm_pod_prepare_kinfolk_children_decision_desc:0 "Awaken the potential for the First Change in your kinfolk descendants. They retain their existing changing-breed ancestry and experience their First Change at sixteen, rather than transforming immediately."
+ mm_pod_prepare_kinfolk_children_decision_tooltip:0 "Grant the First Change flag to all eligible underage kinfolk descendants."
+ mm_pod_prepare_kinfolk_children_decision_confirm:0 "Guide their potential"
+ mm_pod_prepare_kinfolk_children_decision_effect:0 "All living kinfolk descendants under sixteen who lack the First Change flag gain it. At sixteen, the original First Change event follows their existing changing-breed ancestry. Descendants who are already Fera, changelings, or revenants are excluded. This decision costs no gold or piety."

@@ -1,0 +1,54 @@
+mm_dragon_can_enter_human_politics_trigger = {
+	NOT = {
+		AND = {
+			NOT = { has_character_flag = mm_wyvern_human_form }
+			OR = {
+				AND = { myv_is_wyvern = yes NOT = { has_trait = mm_asc_dragon_body } }
+				AND = { has_trait = mm_asc_dragon_body has_character_flag = mm_asc_dragon_form }
+				has_trait = mm_royal_dragon_king
+				has_trait = mm_royal_complete
+			}
+		}
+	}
+}
+
+has_valid_faction_members_trigger = {
+	mm_dragon_can_enter_human_politics_trigger = yes
+	trigger_if = {
+		limit = {
+			is_landless_adventurer = yes
+		}
+		scope:faction = {
+			OR = {
+				any_faction_member = {
+					is_landless_adventurer = no
+					is_forced_into_faction = no
+				}
+				any_faction_county_member = { }
+			}
+		}
+	}
+}
+
+can_become_leader_of_faction_trigger = {
+	mm_dragon_can_enter_human_politics_trigger = yes
+	is_playable_character = yes
+	trigger_if = {
+		limit = {
+			government_has_flag = government_has_house_blocs
+		}
+		OR = {
+			is_confederation_member = no
+			house.house_confederation.leading_house.house_head ?= this
+			AND = {
+				house.house_confederation.leading_house.house_head ?= {
+					tgp_is_ceremonial_liege_trigger = yes
+				}
+				joined_faction.faction_leader ?= {
+					is_leading_faction_type = restore_ceremonial_liege_faction
+				}
+			}
+			NOT = { exists = joined_faction.faction_leader }
+		}
+	}
+}

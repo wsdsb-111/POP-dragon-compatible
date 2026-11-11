@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ mm_pod_royal_succession_desc:0 "弑王夺取的血液已使你成为新的龙王，原有超自然种族身份已被龙族身份取代。融合与侵蚀决定谁主导这具身体，两种结局都保留所继承的龙王位阶。"
+ mm_asc_usurper_source_desc:0 "$trait_mm_asc_usurper_blood_desc$\n\n实际血源：[ROOT.Char.MakeScope.Var('mm_asc_blood_source').Char.GetName]。\n[ROOT.Char.Custom('mm_pod_royal_succession_status')]"
+ mm_asc.0002.desc:0 "龙血终于与我的意志和解。我仍是我，名字与身份不因融合而被夺走。侵蚀与低语止息，我获得源龙之躯。若这血源是龙王，我也正式执掌其王座；同一身体仍能在人形与龙形之间转换。"

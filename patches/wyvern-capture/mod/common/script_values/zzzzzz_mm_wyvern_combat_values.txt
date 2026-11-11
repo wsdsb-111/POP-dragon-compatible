@@ -1,0 +1,95 @@
+﻿# Apply once to fully composed creature power; do not stack flat prowess penalties.
+mm_wyvern_hunger_power_multiplier = {
+    value = 1
+    if = {
+        limit = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger < 10 }
+        value = 0.25
+        if = { limit = { mm_wyvern_is_legendary_blood = yes } value = 0.5 }
+    }
+    else_if = {
+        limit = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger < 20 }
+        value = 0.5
+        if = { limit = { mm_wyvern_is_legendary_blood = yes } value = 0.6 }
+    }
+    else_if = {
+        limit = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger < 30 }
+        value = 0.7
+        if = { limit = { mm_wyvern_is_legendary_blood = yes } value = 0.8 }
+    }
+    else_if = {
+        limit = { has_variable = myv_wyvern_hunger var:myv_wyvern_hunger < 50 }
+        value = 0.9
+        if = { limit = { mm_wyvern_is_legendary_blood = yes } value = 0.95 }
+    }
+}
+
+myv_wyvern_target_prowess = {
+    value = myv_wyvern_size_prowess
+    multiply = myv_wyvern_physique_prowess_multiplier
+    multiply = myv_wyvern_temperament_prowess_multiplier
+    multiply = myv_wyvern_wing_injury_prowess_multiplier
+    multiply = myv_wyvern_hindleg_injury_prowess_multiplier
+    multiply = myv_wyvern_tail_injury_prowess_multiplier
+    if = {
+        limit = { has_character_modifier = myv_wyvern_enraged }
+        multiply = 1.1
+    }
+    # Saturate the fully fed value first, so physique/enrage cannot bypass hunger.
+    max = 150
+    multiply = mm_wyvern_hunger_power_multiplier
+    multiply = myv_wyvern_malnutrition_prowess_multiplier
+    round = yes
+    min = 0
+    max = 150
+}
+
+myv_slay_hunter_combat_tier = {
+    value = prowess
+    if = { limit = { mm_creed_is_founder_trigger = yes scope:myv_slay_wyvern_target = { mm_creed_is_death_servant_trigger = yes } } multiply = 1.3 }
+    if = { limit = { NOT = { mm_creed_is_founder_trigger = yes } mm_creed_has_biological_blood_trigger = yes scope:myv_slay_wyvern_target = { mm_creed_is_founder_trigger = yes } } multiply = 0.8 }
+    subtract = 10
+    divide = 10
+    ceiling = yes
+    min = 0
+}
+
+myv_slay_wyvern_combat_tier = {
+    value = scope:myv_slay_wyvern_target.myv_wyvern_target_prowess
+    if = { limit = { mm_creed_is_death_servant_trigger = yes scope:myv_slay_wyvern_target = { mm_creed_is_founder_trigger = yes } } multiply = 1.3 }
+    if = { limit = { mm_creed_is_founder_trigger = yes scope:myv_slay_wyvern_target = { NOT = { mm_creed_is_founder_trigger = yes } } } multiply = 0.8 }
+    subtract = 10
+    divide = 10
+    ceiling = yes
+    min = 0
+}
+
+myv_slay_final_strike_chance = {
+    value = scope:myv_slay_wyvern_target.myv_wyvern_agility
+    divide = 2
+    multiply = -1
+    add = 80
+    add = myv_slay_advantage_chance_modifier
+    min = 20
+    max = 90
+    if = { limit = { NOT = { mm_wyvern_hunter_can_finish = yes } } value = 0 }
+}
+
+# Calculated in the rider's scope from the two saved duel mounts, never from panel prowess.
+myv_aerial_duel_player_power_tier = {
+    value = var:myv_aerial_duel_player_power
+    if = { limit = { var:myv_slay_mounted_player_mount = { mm_creed_is_founder_trigger = yes } scope:myv_slay_wyvern_target = { mm_creed_is_death_servant_trigger = yes } } multiply = 1.3 }
+    if = { limit = { var:myv_slay_mounted_player_mount = { NOT = { mm_creed_is_founder_trigger = yes } } scope:myv_slay_wyvern_target = { mm_creed_is_founder_trigger = yes } } multiply = 0.8 }
+    subtract = 10
+    divide = 10
+    ceiling = yes
+    min = 0
+}
+myv_aerial_duel_enemy_power_tier = {
+    value = var:myv_aerial_duel_enemy_power
+    if = { limit = { scope:myv_slay_wyvern_target = { mm_creed_is_founder_trigger = yes } var:myv_slay_mounted_player_mount = { mm_creed_is_death_servant_trigger = yes } } multiply = 1.3 }
+    if = { limit = { scope:myv_slay_wyvern_target = { NOT = { mm_creed_is_founder_trigger = yes } } var:myv_slay_mounted_player_mount = { mm_creed_is_founder_trigger = yes } } multiply = 0.8 }
+    subtract = 10
+    divide = 10
+    ceiling = yes
+    min = 0
+}

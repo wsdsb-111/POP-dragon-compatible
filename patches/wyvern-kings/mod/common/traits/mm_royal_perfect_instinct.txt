@@ -1,0 +1,9 @@
+# Emperor-only combined positive temperament effects; original temperament remains.
+mm_royal_perfect_instinct = {
+    icon = "wrathful.dds"
+    physical = yes
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+    desc = trait_mm_royal_perfect_instinct_desc
+}

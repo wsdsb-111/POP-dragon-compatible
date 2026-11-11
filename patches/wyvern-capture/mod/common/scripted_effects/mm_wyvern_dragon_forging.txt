@@ -1,0 +1,170 @@
+# Bind every exact input when opening the choice. Only the chosen recipe is consumed.
+mm_wyvern_forge_select_materials_effect = {
+  clear_saved_scope = mm_wyvern_sword_fang
+  clear_saved_scope = mm_wyvern_sword_fang_second
+  clear_saved_scope = mm_wyvern_sword_claw
+  clear_saved_scope = mm_wyvern_sword_horn
+  clear_saved_scope = mm_wyvern_bow_scale
+  clear_saved_scope = mm_wyvern_bow_scale_second
+  clear_saved_scope = mm_wyvern_bow_horn
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_fang_material_trigger = yes }
+    save_scope_as = mm_wyvern_sword_fang
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_fang_material_trigger = yes NOT = { this = scope:mm_wyvern_sword_fang } }
+    save_scope_as = mm_wyvern_sword_fang_second
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_claw_material_trigger = yes }
+    save_scope_as = mm_wyvern_sword_claw
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_horn_material_trigger = yes }
+    save_scope_as = mm_wyvern_sword_horn
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_scale_material_trigger = yes }
+    save_scope_as = mm_wyvern_bow_scale
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_scale_material_trigger = yes NOT = { this = scope:mm_wyvern_bow_scale } }
+    save_scope_as = mm_wyvern_bow_scale_second
+  }
+  ordered_character_artifact = {
+    order_by = artifact_rarity
+    max = 1
+    limit = { mm_wyvern_forge_horn_material_trigger = yes }
+    save_scope_as = mm_wyvern_bow_horn
+  }
+}
+
+# Revalidate all 4 displayed inputs before creating or consuming anything.
+mm_wyvern_forge_sword_effect = {
+  clear_saved_scope = mm_wyvern_forged_dragon_weapon
+  if = {
+    limit = { mm_wyvern_sword_pair_valid_trigger = yes }
+    if = {
+      limit = {
+        scope:mm_wyvern_sword_fang = { OR = { rarity = illustrious } }
+        scope:mm_wyvern_sword_fang_second = { OR = { rarity = illustrious } }
+        scope:mm_wyvern_sword_claw = { OR = { rarity = illustrious } }
+        scope:mm_wyvern_sword_horn = { OR = { rarity = illustrious } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = sword RARITY = illustrious }
+    }
+    else_if = {
+      limit = {
+        scope:mm_wyvern_sword_fang = { OR = { rarity = illustrious rarity = famed } }
+        scope:mm_wyvern_sword_fang_second = { OR = { rarity = illustrious rarity = famed } }
+        scope:mm_wyvern_sword_claw = { OR = { rarity = illustrious rarity = famed } }
+        scope:mm_wyvern_sword_horn = { OR = { rarity = illustrious rarity = famed } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = sword RARITY = famed }
+    }
+    else_if = {
+      limit = {
+        scope:mm_wyvern_sword_fang = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+        scope:mm_wyvern_sword_fang_second = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+        scope:mm_wyvern_sword_claw = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+        scope:mm_wyvern_sword_horn = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = sword RARITY = masterwork }
+    }
+    else = { mm_wyvern_create_dragon_weapon_effect = { TYPE = sword RARITY = common } }
+    if = {
+      limit = { exists = scope:mm_wyvern_forged_dragon_weapon }
+      destroy_artifact = scope:mm_wyvern_sword_fang
+      destroy_artifact = scope:mm_wyvern_sword_fang_second
+      destroy_artifact = scope:mm_wyvern_sword_claw
+      destroy_artifact = scope:mm_wyvern_sword_horn
+      send_interface_toast = {
+        type = msg_artifact_gained
+        title = mm_wyvern_dragon_forging.complete
+        right_icon = scope:mm_wyvern_forged_dragon_weapon
+        custom_tooltip = mm_wyvern_dragon_forging.complete_desc
+      }
+    }
+  }
+}
+
+# Revalidate all 3 displayed inputs before creating or consuming anything.
+mm_wyvern_forge_bow_effect = {
+  clear_saved_scope = mm_wyvern_forged_dragon_weapon
+  if = {
+    limit = { mm_wyvern_bow_pair_valid_trigger = yes }
+    if = {
+      limit = {
+        scope:mm_wyvern_bow_scale = { OR = { rarity = illustrious } }
+        scope:mm_wyvern_bow_scale_second = { OR = { rarity = illustrious } }
+        scope:mm_wyvern_bow_horn = { OR = { rarity = illustrious } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = bow RARITY = illustrious }
+    }
+    else_if = {
+      limit = {
+        scope:mm_wyvern_bow_scale = { OR = { rarity = illustrious rarity = famed } }
+        scope:mm_wyvern_bow_scale_second = { OR = { rarity = illustrious rarity = famed } }
+        scope:mm_wyvern_bow_horn = { OR = { rarity = illustrious rarity = famed } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = bow RARITY = famed }
+    }
+    else_if = {
+      limit = {
+        scope:mm_wyvern_bow_scale = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+        scope:mm_wyvern_bow_scale_second = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+        scope:mm_wyvern_bow_horn = { OR = { rarity = illustrious rarity = famed rarity = masterwork } }
+      }
+      mm_wyvern_create_dragon_weapon_effect = { TYPE = bow RARITY = masterwork }
+    }
+    else = { mm_wyvern_create_dragon_weapon_effect = { TYPE = bow RARITY = common } }
+    if = {
+      limit = { exists = scope:mm_wyvern_forged_dragon_weapon }
+      destroy_artifact = scope:mm_wyvern_bow_scale
+      destroy_artifact = scope:mm_wyvern_bow_scale_second
+      destroy_artifact = scope:mm_wyvern_bow_horn
+      send_interface_toast = {
+        type = msg_artifact_gained
+        title = mm_wyvern_dragon_forging.complete
+        right_icon = scope:mm_wyvern_forged_dragon_weapon
+        custom_tooltip = mm_wyvern_dragon_forging.complete_desc
+      }
+    }
+  }
+}
+
+mm_wyvern_create_dragon_weapon_effect = {
+  clear_saved_scope = mm_wyvern_forged_dragon_weapon
+  create_artifact = {
+    name = mm_wyvern_$TYPE$_name
+    description = mm_wyvern_$TYPE$_desc
+    type = $TYPE$
+    visuals = mm_wyvern_dragon_$TYPE$
+    rarity = $RARITY$
+    modifier = mm_wyvern_$TYPE$_$RARITY$_modifier
+    generate_history = no
+    creator = root
+    decaying = no
+    save_scope_as = mm_wyvern_forged_dragon_weapon
+  }
+  if = {
+    limit = { exists = scope:mm_wyvern_forged_dragon_weapon }
+    scope:mm_wyvern_forged_dragon_weapon = {
+      set_variable = { name = mm_wyvern_weapon_kind value = flag:$TYPE$ }
+      mm_wyvern_apply_dragon_weapon_affixes_effect = yes
+      add_artifact_history = { type = created actor = root recipient = root location = root.location }
+    }
+  }
+}

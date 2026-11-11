@@ -1,0 +1,6 @@
+﻿mm_dragon_is_independent_royal_parent_trigger = {
+    has_trait = mm_asc_dragon_body
+    OR = { var:mm_asc_outcome = flag:dragon var:mm_asc_outcome = flag:fusion }
+    mm_royal_is_king = yes
+    mm_asc_is_current_incarnation = yes
+}

@@ -1,0 +1,126 @@
+# Captives remain living wyverns for hunger/starvation but cease to be free
+# wild targets for roaming, hunts, expeditions, lair searches, and population.
+myv_is_living_wild_wyvern = {
+	myv_is_living_wyvern = yes
+	NOT = { has_trait = myv_wyvern_tamed }
+	NOT = { has_variable = mm_wyvern_captor }
+}
+
+# A housed wyvern is counted against its county's native 3/5/8 capacity.
+# The iterator's count check includes both original stable occupants and this
+# module's captured occupants, which use the same in_stable/county ledger.
+mm_wyvern_capture_stable_room_trigger = {
+	OR = {
+		AND = {
+			any_county_province = { has_building_or_higher = myv_wyvern_stable_03 }
+			NOT = {
+				any_in_global_list = {
+					variable = myv_living_wyverns
+					myv_is_living_wyvern = yes
+					has_character_flag = myv_wyvern_in_stable
+					has_variable = myv_wyvern_stable_county
+					var:myv_wyvern_stable_county = prev
+					count >= 8
+				}
+			}
+		}
+		AND = {
+			NOT = { any_county_province = { has_building_or_higher = myv_wyvern_stable_03 } }
+			any_county_province = { has_building_or_higher = myv_wyvern_stable_02 }
+			NOT = {
+				any_in_global_list = {
+					variable = myv_living_wyverns
+					myv_is_living_wyvern = yes
+					has_character_flag = myv_wyvern_in_stable
+					has_variable = myv_wyvern_stable_county
+					var:myv_wyvern_stable_county = prev
+					count >= 5
+				}
+			}
+		}
+		AND = {
+			NOT = { any_county_province = { has_building_or_higher = myv_wyvern_stable_02 } }
+			any_county_province = { has_building_or_higher = myv_wyvern_stable_01 }
+			NOT = {
+				any_in_global_list = {
+					variable = myv_living_wyverns
+					myv_is_living_wyvern = yes
+					has_character_flag = myv_wyvern_in_stable
+					has_variable = myv_wyvern_stable_county
+					var:myv_wyvern_stable_county = prev
+					count >= 3
+				}
+			}
+		}
+	}
+}
+
+# Public API: call in the winning character's scope after the combat result,
+# with the original myv_slay_wyvern_target saved as scope:mm_capture_target.
+mm_wyvern_can_capture_target_trigger = {
+	is_alive = yes
+	is_ai = no
+	is_imprisoned = no
+	is_incapable = no
+	myv_is_wyvern = no
+	OR = {
+		AND = {
+			government_has_flag = government_is_landless_adventurer
+			exists = domicile
+			domicile = { exists = domicile_location }
+		}
+		AND = {
+			is_landed = yes
+			any_held_county = {
+				mm_wyvern_capture_stable_room_trigger = yes
+			}
+		}
+	}
+	scope:mm_capture_target = {
+		myv_is_living_wild_wyvern = yes
+		NOT = { has_character_flag = myv_wyvern_in_stable }
+		NOT = { has_character_modifier = myv_wyvern_stabled }
+		NOT = { has_variable = myv_wyvern_stable_county }
+	}
+}
+
+# Current cage ownership, legal location, and capture state are checked again
+# by feeding, scheme start, scheme validation, and successful conversion.
+mm_wyvern_capture_valid_for_captor_trigger = {
+	myv_is_living_wyvern = yes
+	NOT = { has_trait = myv_wyvern_tamed }
+	has_variable = mm_wyvern_captor
+	var:mm_wyvern_captor = $CAPTOR$
+	$CAPTOR$ = { is_alive = yes }
+	has_variable = mm_wyvern_taming_progress
+	OR = {
+		AND = {
+			has_character_flag = mm_wyvern_capture_stable_cage
+			NOT = { has_character_flag = mm_wyvern_capture_temporary_cage }
+			has_character_flag = myv_wyvern_in_stable
+			has_variable = myv_wyvern_stable_county
+			has_variable = myv_wyvern_stable_payer
+			var:myv_wyvern_stable_payer = $CAPTOR$
+			var:myv_wyvern_stable_county = {
+				holder = $CAPTOR$
+				any_county_province = { has_building_or_higher = myv_wyvern_stable_01 }
+			}
+			$CAPTOR$ = { is_landed = yes }
+		}
+		AND = {
+			has_character_flag = mm_wyvern_capture_temporary_cage
+			NOT = { has_character_flag = mm_wyvern_capture_stable_cage }
+			$CAPTOR$ = {
+				government_has_flag = government_is_landless_adventurer
+				exists = domicile
+				domicile = { exists = domicile_location }
+			}
+		}
+	}
+}
+
+mm_wyvern_capture_can_feed_trigger = {
+	mm_wyvern_capture_valid_for_captor_trigger = { CAPTOR = $CAPTOR$ }
+	has_variable = myv_wyvern_hunger
+	var:myv_wyvern_hunger < 100
+}

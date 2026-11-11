@@ -1,0 +1,249 @@
+mm_dragon_half = {
+	icon = "mm_dragon_half_dragon.dds"
+	physical = yes
+	opposites = { mm_dragon_lineage_1 mm_dragon_lineage_2 mm_dragon_lineage_3 mm_dragon_lineage_4 mm_dragon_black_blood }
+	life_expectancy = 150
+	health = 5
+	epidemic_resistance = 70
+	martial = 30
+	prowess = 50
+	diplomacy = 1
+	attraction_opinion = 20
+	general_opinion = 10
+	monthly_prestige = 10
+	monthly_legitimacy_add = 2
+	domicile_monthly_gold_mult = 0.2
+	enemy_hard_casualty_modifier = 0.2
+	movement_speed = 0.1
+	max_combat_roll = 3
+	siege_phase_time = -0.2
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+
+mm_dragon_lineage_1 = {
+	icon = "mm_dragon_lineage_1.dds"
+	physical = yes
+	opposites = { mm_dragon_half mm_dragon_lineage_2 mm_dragon_lineage_3 mm_dragon_lineage_4 mm_dragon_black_blood }
+	life_expectancy = 50
+	health = 4
+	epidemic_resistance = 50
+	martial = 15
+	prowess = 30
+	diplomacy = 1
+	attraction_opinion = 10
+	same_opinion = 10
+	monthly_prestige = 5
+	monthly_legitimacy_add = 1
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+
+mm_dragon_lineage_2 = {
+	icon = "mm_dragon_lineage_2.dds"
+	physical = yes
+	opposites = { mm_dragon_half mm_dragon_lineage_1 mm_dragon_lineage_3 mm_dragon_lineage_4 mm_dragon_black_blood }
+	life_expectancy = 30
+	health = 3
+	epidemic_resistance = 40
+	martial = 10
+	prowess = 20
+	diplomacy = 1
+	attraction_opinion = 7
+	same_opinion = 7
+	monthly_prestige = 3
+	monthly_legitimacy_add = 0.75
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+
+mm_dragon_lineage_3 = {
+	icon = "mm_dragon_lineage_3.dds"
+	physical = yes
+	opposites = { mm_dragon_half mm_dragon_lineage_1 mm_dragon_lineage_2 mm_dragon_lineage_4 mm_dragon_black_blood }
+	life_expectancy = 15
+	health = 2
+	epidemic_resistance = 30
+	martial = 5
+	prowess = 10
+	attraction_opinion = 4
+	same_opinion = 4
+	monthly_prestige = 2
+	monthly_legitimacy_add = 0.5
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+
+mm_dragon_lineage_4 = {
+	icon = "mm_dragon_lineage_4.dds"
+	physical = yes
+	opposites = { mm_dragon_half mm_dragon_lineage_1 mm_dragon_lineage_2 mm_dragon_lineage_3 mm_dragon_black_blood }
+	life_expectancy = 5
+	health = 1
+	epidemic_resistance = 20
+	martial = 2
+	prowess = 5
+	attraction_opinion = 2
+	same_opinion = 2
+	monthly_prestige = 1
+	monthly_legitimacy_add = 0.25
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}
+
+mm_dragon_black_blood = {
+	icon = "mm_dragon_black_blood.dds"
+	physical = yes
+	opposites = { mm_dragon_half mm_dragon_lineage_1 mm_dragon_lineage_2 mm_dragon_lineage_3 mm_dragon_lineage_4 }
+	life_expectancy = 100
+	health = 5
+	epidemic_resistance = 60
+	martial = 40
+	prowess = 80
+	diplomacy = 1
+	attraction_opinion = 18
+	general_opinion = 8
+	monthly_prestige = 12
+	monthly_legitimacy_add = 2.5
+	domicile_monthly_gold_mult = 0.25
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = mm_dragon_blood_generic_desc }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_16 } desc = mm_dragon_blood_sources_16 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_15 } desc = mm_dragon_blood_sources_15 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_14 } desc = mm_dragon_blood_sources_14 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_13 } desc = mm_dragon_blood_sources_13 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_12 } desc = mm_dragon_blood_sources_12 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_11 } desc = mm_dragon_blood_sources_11 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_10 } desc = mm_dragon_blood_sources_10 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_9 } desc = mm_dragon_blood_sources_9 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_8 } desc = mm_dragon_blood_sources_8 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_7 } desc = mm_dragon_blood_sources_7 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_6 } desc = mm_dragon_blood_sources_6 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_5 } desc = mm_dragon_blood_sources_5 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_4 } desc = mm_dragon_blood_sources_4 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_3 } desc = mm_dragon_blood_sources_3 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_2 } desc = mm_dragon_blood_sources_2 }
+			triggered_desc = { trigger = { has_variable = mm_dragon_origin_1 } desc = mm_dragon_blood_sources_1 }
+			desc = mm_dragon_blood_generic_desc
+		}
+	}
+	shown_in_ruler_designer = no
+	random_creation = 0
+	birth = 0
+}

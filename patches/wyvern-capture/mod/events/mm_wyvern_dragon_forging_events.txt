@@ -1,0 +1,38 @@
+namespace = mm_wyvern_dragon_forging
+mm_wyvern_dragon_forging.0001 = {
+  type = character_event
+  title = mm_wyvern_dragon_forging.0001.t
+  desc = {
+    desc = mm_wyvern_dragon_forging.0001.desc
+    triggered_desc = { trigger = { mm_wyvern_sword_pair_valid_trigger = yes } desc = mm_wyvern_dragon_forging.sword_materials }
+    triggered_desc = { trigger = { mm_wyvern_bow_pair_valid_trigger = yes } desc = mm_wyvern_dragon_forging.bow_materials }
+  }
+  theme = stewardship
+  left_portrait = root
+  immediate = { mm_wyvern_forge_select_materials_effect = yes }
+  option = {
+    name = mm_wyvern_dragon_forging.0001.sword
+    trigger = { mm_wyvern_sword_pair_valid_trigger = yes }
+    show_as_unavailable = { always = yes }
+    custom_tooltip = mm_wyvern_dragon_forging.sword_stats
+    hidden_effect = { mm_wyvern_forge_sword_effect = yes }
+  }
+  option = {
+    name = mm_wyvern_dragon_forging.0001.bow
+    trigger = { mm_wyvern_bow_pair_valid_trigger = yes }
+    show_as_unavailable = { always = yes }
+    custom_tooltip = mm_wyvern_dragon_forging.bow_stats
+    hidden_effect = { mm_wyvern_forge_bow_effect = yes }
+  }
+  option = { name = mm_wyvern_dragon_forging.0001.cancel }
+  after = {
+    clear_saved_scope = mm_wyvern_sword_fang
+    clear_saved_scope = mm_wyvern_sword_fang_second
+    clear_saved_scope = mm_wyvern_sword_claw
+    clear_saved_scope = mm_wyvern_sword_horn
+    clear_saved_scope = mm_wyvern_bow_scale
+    clear_saved_scope = mm_wyvern_bow_scale_second
+    clear_saved_scope = mm_wyvern_bow_horn
+    clear_saved_scope = mm_wyvern_forged_dragon_weapon
+  }
+}

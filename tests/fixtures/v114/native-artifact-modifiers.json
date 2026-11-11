@@ -1,0 +1,32 @@
+{
+  "sourcePath": "game/common/modifiers/00_artifact_modifiers.txt",
+  "sourceSha256": "06495c2f0b39634895f9587a4f3fb26725183d913851d4ea1ec6f4d3b8efe059",
+  "declarations": [
+    { "id": "artifact_prowess_3_modifier", "definition": { "prowess_no_portrait": "3" } },
+    { "id": "artifact_prowess_5_modifier", "definition": { "prowess_no_portrait": "5" } },
+    { "id": "artifact_knight_effectiveness_5_modifier", "definition": { "knight_effectiveness_mult": "0.06" } },
+    { "id": "artifact_knight_effectiveness_8_modifier", "definition": { "knight_effectiveness_mult": "0.09" } },
+    { "id": "artifact_health_gain_2_modifier", "definition": { "health": "0.15" } },
+    { "id": "artifact_health_gain_4_modifier", "definition": { "health": "0.25" } },
+    { "id": "artifact_monthly_prestige_3_modifier", "definition": { "monthly_prestige": "0.12" } },
+    { "id": "artifact_monthly_prestige_5_modifier", "definition": { "monthly_prestige": "0.2" } },
+    { "id": "artifact_monthly_piety_3_modifier", "definition": { "monthly_piety": "0.3" } },
+    { "id": "artifact_monthly_piety_5_modifier", "definition": { "monthly_piety": "0.5" } },
+    { "id": "artifact_court_grandeur_baseline_add_2_modifier", "definition": { "court_grandeur_baseline_add": "2" } },
+    { "id": "artifact_court_grandeur_baseline_add_3_modifier", "definition": { "court_grandeur_baseline_add": "3" } },
+    { "id": "artifact_dread_baseline_add_2_modifier", "definition": { "dread_baseline_add": "6" } },
+    { "id": "artifact_dread_baseline_add_3_modifier", "definition": { "dread_baseline_add": "9" } },
+    { "id": "artifact_stress_gain_3_modifier", "definition": { "stress_gain_mult": "-0.08" } },
+    { "id": "artifact_stress_gain_4_modifier", "definition": { "stress_gain_mult": "-0.10" } },
+    { "id": "artifact_monthly_income_3_modifier", "definition": { "monthly_income_mult": "0.03" } },
+    { "id": "artifact_monthly_income_4_modifier", "definition": { "monthly_income_mult": "0.04" } },
+    { "id": "artifact_dynasty_opinion_4_modifier", "definition": { "dynasty_opinion": "4" } },
+    { "id": "artifact_dynasty_opinion_5_modifier", "definition": { "dynasty_opinion": "6" } },
+    { "id": "artifact_short_reign_duration_mult_3_modifier", "definition": { "short_reign_duration_mult": "-0.12" } },
+    { "id": "artifact_short_reign_duration_mult_5_modifier", "definition": { "short_reign_duration_mult": "-0.20" } },
+    { "id": "artifact_monthly_dynasty_prestige_2_modifier", "definition": { "monthly_dynasty_prestige_mult": "0.03" } },
+    { "id": "artifact_monthly_dynasty_prestige_4_modifier", "definition": { "monthly_dynasty_prestige_mult": "0.05" } },
+    { "id": "artifact_placeholder_modifier", "definition": { "monthly_prestige": "0.01" } },
+    { "id": "artifact_monthly_minor_prestige_1_modifier", "definition": { "monthly_prestige": "0.01" } }
+  ]
+}

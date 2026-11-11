@@ -1,0 +1,75 @@
+mm_dragon_legendary_parent_trigger = { OR = { has_trait = myv_wyvern_legendary has_trait = mm_wyvern_legendary_origin has_character_flag = mm_wyvern_legendary_origin } }
+# Caller is the dragon; HUMAN is the exact consenting biological human parent.
+mm_dragon_human_pair_base_trigger = {
+    is_alive = yes
+    age >= 18
+    mm_dragon_is_true_dragon_parent_trigger = yes
+    OR = { has_trait = myv_wyvern_tamed mm_dragon_is_royal_parent_trigger = yes }
+    has_character_flag = mm_wyvern_human_form
+    is_imprisoned = no
+    is_incapable = no
+    NOT = { has_character_flag = mm_dragon_half_breeding_cooldown }
+    OR = {
+        has_relation_myv_wyvern_bonded_character = $HUMAN$
+        AND = {
+            mm_dragon_is_independent_royal_parent_trigger = yes
+            mm_dragon_is_royal_parent_trigger = yes
+            OR = {
+                is_spouse_of = $HUMAN$
+                has_relation_lover = $HUMAN$
+                has_relation_soulmate = $HUMAN$
+            }
+        }
+    }
+    NOT = { is_close_family_of = $HUMAN$ }
+    OR = {
+        AND = { is_female = yes $HUMAN$ = { is_female = no } }
+        AND = { is_female = no $HUMAN$ = { is_female = yes } }
+    }
+    $HUMAN$ = {
+        is_alive = yes
+        age >= 18
+        is_imprisoned = no
+        is_incapable = no
+        mm_dragon_is_true_dragon_parent_trigger = no
+    }
+}
+# Keep FATHER as the old call-site parameter; it now means the human of either sex.
+mm_dragon_human_pair_valid_trigger = { mm_dragon_human_pair_base_trigger = { HUMAN = $FATHER$ } mm_dragon_breeding_dragon_available_trigger = yes }
+mm_dragon_stable_mother_base_trigger = {
+	is_alive = yes
+    mm_dragon_is_true_dragon_parent_trigger = yes
+	is_female = yes
+	age >= 12
+	has_trait = myv_wyvern_tamed
+	has_character_flag = myv_wyvern_in_stable
+	has_variable = myv_wyvern_stable_county
+	NOT = { has_character_flag = mm_dragon_forced_breeding_cooldown }
+	var:myv_wyvern_stable_county = {
+		holder = $KEEPER$
+		any_county_province = { has_building_or_higher = myv_wyvern_stable_01 }
+	}
+}
+mm_dragon_stable_pair_base_trigger = {
+	is_alive = yes
+    mm_dragon_is_true_dragon_parent_trigger = yes
+	is_female = no
+	age >= 12
+	has_trait = myv_wyvern_tamed
+	has_character_flag = myv_wyvern_in_stable
+	has_variable = myv_wyvern_stable_county
+	$MOTHER$ = { mm_dragon_stable_mother_valid_trigger = { KEEPER = $KEEPER$ } }
+	var:myv_wyvern_stable_county = $MOTHER$.var:myv_wyvern_stable_county
+	NOT = { is_close_family_of = $MOTHER$ }
+}
+
+mm_dragon_stable_mother_valid_trigger = { mm_dragon_stable_mother_base_trigger = { KEEPER = $KEEPER$ } mm_dragon_breeding_dragon_available_trigger = yes }
+mm_dragon_stable_pair_valid_trigger = { mm_dragon_stable_pair_base_trigger = { MOTHER = $MOTHER$ KEEPER = $KEEPER$ } mm_dragon_breeding_dragon_available_trigger = yes }
+
+# The same biological pairing may be proposed by the human or the true dragon.
+mm_dragon_consent_pair_valid_trigger = {
+    OR = {
+        AND = { scope:actor = { mm_dragon_is_true_dragon_parent_trigger = no } scope:recipient = { mm_dragon_human_pair_valid_trigger = { FATHER = scope:actor } } }
+        AND = { scope:recipient = { mm_dragon_is_true_dragon_parent_trigger = no } scope:actor = { mm_dragon_human_pair_valid_trigger = { FATHER = scope:recipient } } }
+    }
+}

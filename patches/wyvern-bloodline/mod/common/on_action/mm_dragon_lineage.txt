@@ -1,0 +1,6 @@
+on_birth_child = {
+    on_actions = { mm_dragon_natural_birth }
+}
+mm_dragon_natural_birth = {
+    effect = { scope:child = { mm_dragon_register_true_dragon_origins_effect = yes mm_dragon_inherit_natural_blood_effect = yes } }
+}

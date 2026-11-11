@@ -1,0 +1,77 @@
+is_needed_to_be_cleaned_up = {
+	NOT = { mm_cleanup_is_protected = yes }
+    # 基础设定
+	is_ruler = no # 不是统治者
+    any_parent = {
+        even_if_dead = yes
+        count = 0
+    } # 没有父母
+    any_child = {
+        even_if_dead = yes
+        count = 0
+    } # 没有子女
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_marriage_setting }
+		# 婚姻设定
+		is_married = no # 未婚
+		is_concubine = no # 不是侍妾/庶夫
+	}
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_court_position_setting }
+		# 职位设定
+		is_knight = no # 不是骑士
+		is_councillor = no # 不是内阁成员
+		has_any_court_position = no # 未担任宫廷职位
+	}
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_inspiration_setting }
+		# 灵感
+		NOT = { exists = inspiration } # 没有灵感
+	}
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_diarch_setting }
+		# 摄政
+		is_diarch = no # 没有与领主分享权力/实权摄政
+	}
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_relationship_setting }
+		# 社会关系
+		NOR = {
+			any_relation = {
+				type = lover
+				is_ruler = yes
+			}
+			any_relation = {
+				type = friend
+				is_ruler = yes
+			}
+			any_relation = {
+				type = rival
+				is_ruler = yes
+			}
+		}
+	}
+
+	trigger_if = {
+		limit = { has_global_variable = BoTL_trait_setting }
+		# 特殊特质
+		NOR = {
+			has_trait = heresiarch
+			has_trait = populist_leader
+			has_trait = historical_character
+			has_character_flag = easteregg
+		}
+	}
+
+	trigger_if = {
+		limit = {
+			has_global_variable = AGOT_is_loaded
+		}
+		NOT = { has_trait = dragon } # AGOT兼容，龙不被清理
+	}
+}

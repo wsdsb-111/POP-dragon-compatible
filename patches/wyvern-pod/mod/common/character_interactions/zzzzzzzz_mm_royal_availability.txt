@@ -1,0 +1,450 @@
+﻿myv_attempt_slay_wyvern_interaction = {
+	category = interaction_category_hostile
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_combat
+	interface_priority = 100
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = yes
+	cooldown_against_recipient = { years = 1 }
+	desc = myv_attempt_slay_wyvern_interaction_desc
+
+	is_shown = {
+		scope:actor = { is_ai = no is_alive = yes myv_is_wyvern = no }
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			NOT = { has_trait = myv_wyvern_tamed }
+			NOT = { has_variable = mm_wyvern_captor }
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { is_imprisoned = no is_incapable = no }
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			NOT = { has_trait = myv_wyvern_tamed }
+			NOT = { has_variable = mm_wyvern_captor }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = { scope:recipient = { myv_is_living_wild_wyvern = yes } }
+				scope:recipient = { save_scope_as = myv_slay_wyvern_target }
+				if = {
+					limit = { scope:recipient = { has_character_flag = myv_wyvern_roaming } }
+					if = { limit = { myv_is_active_wyvern_war_rider = yes } myv_slay_begin_mounted_outdoor_duel_effect = yes }
+					else = {
+						myv_slay_reset_state_effect = yes
+						set_variable = { name = myv_slay_round value = 1 }
+						set_variable = { name = myv_slay_hits value = 0 }
+						set_variable = { name = myv_slay_previous_outcome value = 0 }
+						set_variable = { name = myv_slay_outdoor_battle value = 1 }
+						set_variable = { name = myv_slay_wyvern_action value = 3 }
+						set_variable = { name = myv_slay_attack_strength value = 1 }
+						trigger_event = myv_wyvern.0213
+					}
+				}
+				else = { hidden_effect = { myv_slay_begin_lair_combat_effect = yes } }
+			}
+		}
+	}
+}
+
+
+myv_debug_trigger_wyvern_attack_interaction = {
+	category = interaction_debug_main
+	filter_tags = { myv_wyvern_interaction }
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	common_interaction = no
+	icon = icon_combat
+	auto_accept = yes
+	desc = myv_debug_trigger_wyvern_attack_interaction_desc
+
+	is_shown = {
+		debug_only = yes
+		scope:actor = { is_alive = yes myv_is_wyvern = no }
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			NOT = { has_trait = myv_wyvern_tamed }
+			NOT = { has_variable = mm_wyvern_captor }
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			exists = location.county
+			NOT = { has_variable = mm_wyvern_captor }
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:recipient = { myv_is_living_wild_wyvern = yes exists = location.county } }
+			scope:recipient = {
+				save_scope_as = myv_raiding_wyvern
+				location.county = { save_scope_as = myv_raided_county }
+				change_variable = { name = myv_wyvern_hunger add = 20 }
+				if = { limit = { var:myv_wyvern_hunger > 100 } set_variable = { name = myv_wyvern_hunger value = 100 } }
+				myv_wyvern_refresh_hunger_state_effect = yes
+			}
+			save_scope_value_as = { name = myv_raid_debug_override value = yes }
+			scope:actor = { myv_resolve_wyvern_raid_victim_effect = yes }
+			clear_saved_scope = myv_raid_debug_override
+		}
+	}
+}
+
+# The wyvern's own bonded keeper may switch its portrait between its human
+# phenotype and custom wyvern mesh without changing its game identity or stats.
+mm_wyvern_toggle_human_form_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_scheme_befriend
+	interface_priority = 97
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+
+	desc = mm_wyvern_toggle_human_form_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			myv_is_wyvern = no
+			is_imprisoned = no
+			is_incapable = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			has_trait = myv_wyvern_tamed
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			age >= 10
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = { always = yes }
+
+	on_send = {
+		debug_log = "MM_WYVERN_HUMAN_FORM_SEND"
+		scope:recipient = {
+			if = {
+				limit = { has_character_flag = mm_wyvern_human_form }
+				remove_character_flag = mm_wyvern_human_form
+				debug_log = "MM_HUMAN_FORM_OFF"
+			}
+			else = {
+				add_character_flag = mm_wyvern_human_form
+				mm_dragon_initialize_features_effect = yes
+				debug_log = "MM_HUMAN_FORM_ON"
+			}
+		}
+	}
+}
+
+
+myv_set_wyvern_war_mount_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_combat
+	interface_priority = 98
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = yes
+
+	desc = mm_wyvern_set_war_mount_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			has_trait = myv_wyvern_rider
+			NOT = { has_variable = myv_war_mount }
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			has_trait = myv_wyvern_harmony
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			NOT = { has_variable = myv_war_mount_rider }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+        scope:recipient = { NOT = { exists = knight_army } }
+		scope:actor = {
+			is_imprisoned = no
+			is_incapable = no
+		}
+	}
+
+    on_accept = {
+        if = {
+            limit = {
+                scope:actor = {
+                    is_alive = yes
+                    has_trait = myv_wyvern_rider
+                    NOT = { has_variable = myv_war_mount }
+                    is_imprisoned = no
+                    is_incapable = no
+                }
+                scope:recipient = {
+                    myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+                    has_trait = myv_wyvern_harmony
+                    has_relation_myv_wyvern_bonded_character = scope:actor
+                    NOT = { has_variable = myv_war_mount_rider }
+                    NOT = { exists = knight_army }
+                }
+            }
+
+		scope:recipient = {
+			set_variable = { name = myv_war_mount_rider value = scope:actor }
+		}
+		scope:actor = {
+			set_variable = { name = myv_war_mount value = scope:recipient }
+			myv_refresh_war_mount_combat_stats_effect = yes
+		}
+
+        }
+    }
+}
+
+
+myv_feed_wyvern_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = artifact
+	interface_priority = 100
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = yes
+
+	desc = myv_feed_wyvern_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			myv_is_wyvern = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			has_trait = myv_wyvern_tamed
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_imprisoned = no
+			is_incapable = no
+		}
+		scope:recipient = {
+			myv_can_feed_bonded_wyvern = { FEEDER = scope:actor }
+			has_variable = myv_wyvern_hunger
+			var:myv_wyvern_hunger < 100
+			custom_description = {
+				text = myv_feed_wyvern_stabled_blocked
+				OR = {
+					NOT = { has_character_modifier = myv_wyvern_stabled }
+					has_character_modifier = myv_wyvern_stable_supply_paused
+				}
+			}
+		}
+	    scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } }
+    }
+on_accept = {
+        if = {
+            limit = { scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } } }
+scope:actor = {
+			if = {
+				limit = { scope:recipient = { myv_can_feed_bonded_wyvern = { FEEDER = scope:actor } } }
+				scope:recipient = { save_scope_as = myv_fed_wyvern }
+				trigger_event = myv_wyvern_feeding.0001
+			}
+		}
+        }
+    }
+}
+
+myv_ride_wyvern_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_combat
+	interface_priority = 99
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = yes
+	cooldown_against_recipient = { months = 1 }
+
+	desc = myv_ride_wyvern_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			myv_is_wyvern = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			has_trait = myv_wyvern_tamed
+		}
+		scope:actor != scope:recipient
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_adult = yes
+			is_imprisoned = no
+			is_incapable = no
+		}
+		scope:recipient = {
+			has_relation_myv_wyvern_bonded_character = scope:actor
+			age >= 10
+		}
+	    scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } }
+    }
+on_accept = {
+        if = {
+            limit = { scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } } }
+scope:actor = {
+			scope:recipient = { save_scope_as = myv_ridden_wyvern }
+			trigger_event = myv_wyvern_riding.0001
+		}
+        }
+    }
+}
+
+myv_establish_wyvern_bond_interaction = {
+	category = interaction_category_friendly
+	filter_tags = { myv_wyvern_interaction }
+	icon = icon_scheme_befriend
+	interface_priority = 100
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:recipient = { has_trait = myv_wyvern_temperament_alert } }
+				desc = myv_establish_wyvern_bond_interaction_desc_alert
+			}
+			triggered_desc = {
+				trigger = { scope:recipient = { has_trait = myv_wyvern_temperament_docile } }
+				desc = myv_establish_wyvern_bond_interaction_desc_docile
+			}
+			triggered_desc = {
+				trigger = { scope:recipient = { has_trait = myv_wyvern_temperament_fierce } }
+				desc = myv_establish_wyvern_bond_interaction_desc_fierce
+			}
+			desc = myv_establish_wyvern_bond_interaction_desc
+		}
+	}
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_alive = yes
+			myv_is_wyvern = no
+		}
+		scope:recipient = {
+			myv_is_living_wyvern = yes
+            NOT = { has_trait = mm_royal_torpor }
+			has_trait = myv_wyvern_tamed
+			NOT = { has_variable = myv_wyvern_bonded_character }
+			OR = {
+				AND = {
+					has_variable = myv_wyvern_bond_heir
+					var:myv_wyvern_bond_heir = scope:actor
+				}
+				myv_can_same_house_claim_unbonded_stabled_wyvern = { CLAIMANT = scope:actor }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_adult = yes
+			is_imprisoned = no
+			is_incapable = no
+		}
+		trigger_if = {
+			limit = { scope:recipient = { has_trait = myv_wyvern_temperament_alert } }
+			scope:actor = {
+				can_start_scheme = {
+					type = myv_bond_alert_wyvern
+					target_character = scope:recipient
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = { scope:recipient = { has_trait = myv_wyvern_temperament_docile } }
+			scope:actor = {
+				can_start_scheme = {
+					type = myv_bond_docile_wyvern
+					target_character = scope:recipient
+				}
+			}
+		}
+		trigger_else = {
+			scope:recipient = { has_trait = myv_wyvern_temperament_fierce }
+			scope:actor = {
+				can_start_scheme = {
+					type = myv_bond_fierce_wyvern
+					target_character = scope:recipient
+				}
+			}
+		}
+	    scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } }
+    }
+on_accept = {
+        if = {
+            limit = { scope:recipient = { myv_is_living_wyvern = yes NOT = { has_trait = mm_royal_torpor } } }
+scope:recipient = {
+			if = {
+				limit = { NOT = { has_variable = myv_wyvern_bond_heir } }
+				set_variable = { name = myv_wyvern_bond_heir value = scope:actor }
+			}
+		}
+		scope:actor = {
+			if = {
+				limit = { scope:recipient = { has_trait = myv_wyvern_temperament_alert } }
+				start_scheme = {
+					type = myv_bond_alert_wyvern
+					target_character = scope:recipient
+				}
+			}
+			else_if = {
+				limit = { scope:recipient = { has_trait = myv_wyvern_temperament_docile } }
+				start_scheme = {
+					type = myv_bond_docile_wyvern
+					target_character = scope:recipient
+				}
+			}
+			else_if = {
+				limit = { scope:recipient = { has_trait = myv_wyvern_temperament_fierce } }
+				start_scheme = {
+					type = myv_bond_fierce_wyvern
+					target_character = scope:recipient
+				}
+			}
+		}
+        }
+    }
+}

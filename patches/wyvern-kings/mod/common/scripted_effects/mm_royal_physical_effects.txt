@@ -1,0 +1,13 @@
+# Call for a living named sovereign after identity has been initialized.
+mm_royal_apply_physical_profile_effect = {
+    if = {
+        limit = { is_alive = yes mm_royal_reference_size > 0 mm_royal_reference_mass > 0 }
+        if = { limit = { NOT = { has_variable = mm_royal_visual_tier } } set_variable = { name = mm_royal_visual_tier value = myv_wyvern_visual_size_tier } }
+        if = {
+            limit = { OR = { NOT = { has_variable = myv_wyvern_size } var:myv_wyvern_size < mm_royal_reference_size } }
+            set_variable = { name = myv_wyvern_size value = mm_royal_reference_size }
+            myv_refresh_wyvern_portrait_flags_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+        }
+    }
+}

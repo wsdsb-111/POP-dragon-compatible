@@ -1,0 +1,55 @@
+# Character scope. Compares the actual county holder’s realm with the acting character’s realm.
+mm_creed_is_dragon_faith_trigger = {
+	faith.religion = religion:mm_dragon_creed_religion
+}
+
+mm_creed_controls_chengdu_holy_site_trigger = {
+	exists = title:c_chengdu.holder
+	title:c_chengdu.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_jingzhao_holy_site_trigger = {
+	exists = title:c_jingzhao.holder
+	title:c_jingzhao.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_tbilisi_holy_site_trigger = {
+	exists = title:c_tbilisi.holder
+	title:c_tbilisi.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_qus_holy_site_trigger = {
+	exists = title:c_qus.holder
+	title:c_qus.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_malta_holy_site_trigger = {
+	exists = title:c_malta.holder
+	title:c_malta.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_chandax_holy_site_trigger = {
+	exists = title:c_chandax.holder
+	title:c_chandax.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_sogn_holy_site_trigger = {
+	exists = title:c_sogn.holder
+	title:c_sogn.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_faereyar_holy_site_trigger = {
+	exists = title:c_faereyar.holder
+	title:c_faereyar.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_baghdad_holy_site_trigger = {
+	exists = title:c_baghdad.holder
+	title:c_baghdad.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+
+mm_creed_controls_sagami_holy_site_trigger = {
+	exists = title:c_sagami.holder
+	title:c_sagami.holder = { OR = { this = prev target_is_liege_or_above = prev } }
+}
+

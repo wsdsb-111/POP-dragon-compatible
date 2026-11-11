@@ -1,0 +1,137 @@
+# Route using biological evidence only; preserve any matching current or legacy rite before choosing a branch.
+mm_dragon_route_creed_effect = {
+    if = {
+        limit = { NOT = { has_character_flag = mm_dragon_creed_routing } OR = { mm_dragon_is_true_dragon_parent_trigger = yes mm_dragon_has_inheritable_blood_trigger = yes } }
+        add_character_flag = mm_dragon_creed_routing
+        mm_v1313_ensure_rites_effect = yes
+        # Actual royal identity takes priority over mixed biological origins and the current rite.
+        if = {
+            limit = { has_character_flag = mm_relic_forced_white_rite NOR = { has_trait = mm_royal_black_emperor has_trait = mm_royal_white_empress has_variable = mm_dragon_bio_black has_variable = mm_dragon_bio_white has_trait = mm_dragon_branch_black has_trait = mm_dragon_branch_white has_variable = mm_dragon_absorbed_black has_variable = mm_dragon_absorbed_white } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_white
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { has_trait = mm_royal_black_emperor }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_black
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { has_trait = mm_royal_white_empress }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_white
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { mm_dragon_is_royal_parent_trigger = yes has_variable = mm_royal_throne var:mm_royal_throne = 1 }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_fire
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { mm_dragon_is_royal_parent_trigger = yes has_variable = mm_royal_throne var:mm_royal_throne = 2 }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_earth
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { mm_dragon_is_royal_parent_trigger = yes has_variable = mm_royal_throne var:mm_royal_throne = 3 }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sea
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { mm_dragon_is_royal_parent_trigger = yes has_variable = mm_royal_throne var:mm_royal_throne = 4 }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sky
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_fire AND = { exists = rite:mm_dragon_legacy_fire rite = rite:mm_dragon_legacy_fire } } OR = { mm_dragon_source_is_fire_trigger = yes has_variable = mm_dragon_bio_fire } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_fire
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_earth AND = { exists = rite:mm_dragon_legacy_earth rite = rite:mm_dragon_legacy_earth } } OR = { mm_dragon_source_is_earth_trigger = yes has_variable = mm_dragon_bio_earth } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_earth
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_sea AND = { exists = rite:mm_dragon_legacy_sea rite = rite:mm_dragon_legacy_sea } } OR = { mm_dragon_source_is_sea_trigger = yes has_variable = mm_dragon_bio_sea } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sea
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_sky AND = { exists = rite:mm_dragon_legacy_sky rite = rite:mm_dragon_legacy_sky } } OR = { mm_dragon_source_is_sky_trigger = yes has_variable = mm_dragon_bio_sky } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sky
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_black AND = { exists = rite:mm_dragon_legacy_black rite = rite:mm_dragon_legacy_black } } OR = { mm_dragon_source_is_black_trigger = yes has_variable = mm_dragon_bio_black } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_black
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { rite = rite:mm_dragon_white AND = { exists = rite:mm_dragon_legacy_white rite = rite:mm_dragon_legacy_white } } OR = { mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_bio_white } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_white
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_fire_trigger = yes has_variable = mm_dragon_bio_fire } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_fire
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_earth_trigger = yes has_variable = mm_dragon_bio_earth } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_earth
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_sea_trigger = yes has_variable = mm_dragon_bio_sea } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sea
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_sky_trigger = yes has_variable = mm_dragon_bio_sky } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_sky
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_black_trigger = yes has_variable = mm_dragon_bio_black } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_black
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else_if = {
+            limit = { OR = { mm_dragon_source_is_white_trigger = yes has_variable = mm_dragon_bio_white } }
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            set_character_rite = rite:mm_dragon_white
+            remove_character_flag = mm_dragon_creed_origin_unknown
+        }
+        else = {
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_character_faith = faith:mm_dragon_creed }
+            add_character_flag = mm_dragon_creed_origin_unknown
+        }
+        remove_character_flag = mm_dragon_creed_routing
+        if = {
+            limit = { NOT = { is_target_in_global_variable_list = { name = mm_dragon_blood_members target = this } } }
+            add_to_global_variable_list = { name = mm_dragon_blood_members target = this }
+        }
+    }
+    # Include non-dragon adherents as well; monthly consumers recheck current faith.
+    if = {
+        limit = { faith = faith:mm_dragon_creed NOT = { is_target_in_global_variable_list = { name = mm_dragon_creed_members target = this } } }
+        add_to_global_variable_list = { name = mm_dragon_creed_members target = this }
+    }
+}

@@ -1,0 +1,12 @@
+﻿mm_dragon_force_hatch_eligible_trigger = {
+    has_variable = myv_wyvern_egg_color
+    NOT = { has_variable = mm_dragon_hatched_child }
+    artifact_owner = { is_alive = yes exists = location }
+    trigger_if = {
+        limit = { var:mm_dragon_half_egg = yes }
+        exists = var:myv_wyvern_egg_mother
+        exists = var:myv_wyvern_egg_father
+        var:myv_wyvern_egg_mother = { is_female = yes }
+        var:myv_wyvern_egg_father = { is_female = no }
+    }
+}

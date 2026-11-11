@@ -1,0 +1,35 @@
+{
+  "purpose": "Frozen independent user requirements; expected values must not be generated from production code",
+  "families": {
+    "fire": ["han", "persian"],
+    "sea": ["greek", "italian", "sardinian", "cisalpine", "roman"],
+    "sky": ["norse", "norman", "norwegian", "swedish", "danish"],
+    "earth": ["egyptian", "levantine", "bedouin"],
+    "white": ["japanese"],
+    "familiesPerActiveGroup": 5,
+    "blackInitialFamilies": 0,
+    "sLeadersPerActiveGroup": 1,
+    "validCountyCounts": [0, 1, 2, 3, 4, 5],
+    "expectedDistributions": [[], [5], [2, 3], [1, 2, 2], [1, 1, 1, 2], [1, 1, 1, 1, 1]]
+  },
+  "naturalBirth": {
+    "eligibleParentTraits": ["mm_dragon_half", "mm_dragon_lineage_1", "mm_dragon_lineage_2", "mm_dragon_lineage_3", "mm_dragon_lineage_4"],
+    "failureChildTraits": ["mm_dragon_lineage_1", "mm_dragon_lineage_2", "mm_dragon_lineage_3", "mm_dragon_lineage_4", null],
+    "blackChance": 10,
+    "ancestryStressCount": 23,
+    "blackPersonal": {"martial": 40, "prowess": 80, "life_expectancy": 100, "health": 5, "epidemic_resistance": 60}
+  },
+  "absorption": {"thresholds": [12, 30, 60], "preyPoints": [1, 2, 3, 4, 5, 6], "ceiling": "mm_dragon_lineage_1"},
+  "ascension": {
+    "erosionPerYear": 10,
+    "fusionPerRitual": 20,
+    "cost": {"gold": 250, "piety": 250, "prestige": 100},
+    "progressThreshold": 100,
+    "seatIds": ["99001001", "99001002", "99001003", "99001304", "99001305", "99001306", "99001307", "99001308", "99001309", "99001310"],
+    "negativeModifiers": ["mm_asc_erosion_0", "mm_asc_erosion_25", "mm_asc_erosion_50", "mm_asc_erosion_75", "mm_asc_whispers", "mm_asc_whisper_paranoia", "mm_asc_whisper_madness"],
+    "preservedTraits": ["paranoid", "lunatic_1", "pneumonic", "brave", "education_martial_4"],
+    "erosionStages": [{"xp": 0, "modifier": "mm_asc_erosion_0"}, {"xp": 25, "modifier": "mm_asc_erosion_25"}, {"xp": 50, "modifier": "mm_asc_erosion_50"}, {"xp": 75, "modifier": "mm_asc_erosion_75"}]
+  },
+  "palettes": {"families": ["fire", "sea", "sky", "earth", "black", "white"], "poses": ["idle", "flying", "running", "compact", "riding", "combat", "memorial"]},
+  "evidenceBoundary": "Finite script execution and structural checks do not certify CK3 runtime, engine callbacks, player control, GUI rendering, materials, or animation."
+}

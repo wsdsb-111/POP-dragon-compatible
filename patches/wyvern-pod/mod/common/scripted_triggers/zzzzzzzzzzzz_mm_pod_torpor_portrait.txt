@@ -1,0 +1,8 @@
+POD_uses_torpor_corpse_animation = {
+	NOT = { mm_dragon_is_true_dragon_parent_trigger = yes }
+	has_trait = torpor
+	OR = {
+		POD_is_vampire_or_abomination_trigger = yes
+		#POD_is_fera_trigger = yes # seems to break some characters
+	}
+}

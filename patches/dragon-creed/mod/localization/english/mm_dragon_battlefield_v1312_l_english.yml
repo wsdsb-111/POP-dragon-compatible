@@ -1,0 +1,13 @@
+﻿l_english:
+ mm_creed_bf_0110_changed:0 "The enemy pair crash. The Underworld intervenes in the aftermath."
+ mm_creed_bf_0111_changed:0 "You and your mount crash. The Underworld intervenes in the aftermath."
+ mm_creed_bf_0113_changed:0 "Both pairs crash. The Underworld intervenes in the aftermath."
+ mm_creed_bf_pounce_tt:0 "The enemy commander is struck and may survive through the Underworld."
+ mm_creed_bf_player_rider_alive:0 "You survive the crash."
+ mm_creed_bf_player_rider_dead:0 "You die in the crash."
+ mm_creed_bf_player_mount_alive:0 "Your mount survives the crash."
+ mm_creed_bf_player_mount_dead:0 "Your mount dies in the crash."
+ mm_creed_bf_enemy_rider_alive:0 "The enemy rider survives the crash."
+ mm_creed_bf_enemy_rider_dead:0 "The enemy rider dies in the crash."
+ mm_creed_bf_enemy_mount_alive:0 "The enemy mount survives the crash."
+ mm_creed_bf_enemy_mount_dead:0 "The enemy mount dies in the crash."

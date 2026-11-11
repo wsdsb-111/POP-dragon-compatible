@@ -1,0 +1,23 @@
+﻿mm_pod_dragon_race = {
+    icon = "mm_dragon_royal_crown.dds"
+    flag = splat
+    flag = sidebar_priority_display
+    opposites = { mortal }
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+}
+mm_pod_dragon_gifts = {
+    icon = "mm_dragon_half_dragon.dds"
+    POD_terrain_umbra_aptitude_advantage = 0.5
+    POD_terrain_umbra_sense_advantage = 0.05
+    POD_terrain_umbra_spirit_wilds_access_cancel_negative_supply = yes
+    POD_terrain_umbra_deep_umbra_access_cancel_negative_supply = yes
+    POD_terrain_can_damage_spirit_cancel_negative_supply = yes
+    flag = regeneration
+    flag = fera_trait_healing
+    flag = can_become_ancestor_spirit
+    shown_in_ruler_designer = no
+    random_creation = 0
+    birth = 0
+}

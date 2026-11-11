@@ -1,0 +1,183 @@
+﻿mm_v1313_ensure_rites_effect = {
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_fire } }
+        create_rite_from_type = { type = mm_dragon_fire convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_fire }
+        rite:mm_dragon_fire = { if = { limit = { rite_has_doctrine = mm_doctrine_black } remove_rite_doctrine = mm_doctrine_black } if = { limit = { rite_has_doctrine = mm_doctrine_white } remove_rite_doctrine = mm_doctrine_white } if = { limit = { rite_has_doctrine = mm_doctrine_earth } remove_rite_doctrine = mm_doctrine_earth } if = { limit = { rite_has_doctrine = mm_doctrine_sea } remove_rite_doctrine = mm_doctrine_sea } if = { limit = { rite_has_doctrine = mm_doctrine_sky } remove_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_fire } } add_rite_doctrine = mm_doctrine_fire } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } } }
+    }
+
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_earth } }
+        create_rite_from_type = { type = mm_dragon_earth convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_earth }
+        rite:mm_dragon_earth = { if = { limit = { rite_has_doctrine = mm_doctrine_black } remove_rite_doctrine = mm_doctrine_black } if = { limit = { rite_has_doctrine = mm_doctrine_white } remove_rite_doctrine = mm_doctrine_white } if = { limit = { rite_has_doctrine = mm_doctrine_fire } remove_rite_doctrine = mm_doctrine_fire } if = { limit = { rite_has_doctrine = mm_doctrine_sea } remove_rite_doctrine = mm_doctrine_sea } if = { limit = { rite_has_doctrine = mm_doctrine_sky } remove_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_earth } } add_rite_doctrine = mm_doctrine_earth } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } } }
+    }
+
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_sea } }
+        create_rite_from_type = { type = mm_dragon_sea convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_sea }
+        rite:mm_dragon_sea = { if = { limit = { rite_has_doctrine = mm_doctrine_black } remove_rite_doctrine = mm_doctrine_black } if = { limit = { rite_has_doctrine = mm_doctrine_white } remove_rite_doctrine = mm_doctrine_white } if = { limit = { rite_has_doctrine = mm_doctrine_fire } remove_rite_doctrine = mm_doctrine_fire } if = { limit = { rite_has_doctrine = mm_doctrine_earth } remove_rite_doctrine = mm_doctrine_earth } if = { limit = { rite_has_doctrine = mm_doctrine_sky } remove_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_sea } } add_rite_doctrine = mm_doctrine_sea } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } } }
+    }
+
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_sky } }
+        create_rite_from_type = { type = mm_dragon_sky convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_sky }
+        rite:mm_dragon_sky = { if = { limit = { rite_has_doctrine = mm_doctrine_black } remove_rite_doctrine = mm_doctrine_black } if = { limit = { rite_has_doctrine = mm_doctrine_white } remove_rite_doctrine = mm_doctrine_white } if = { limit = { rite_has_doctrine = mm_doctrine_fire } remove_rite_doctrine = mm_doctrine_fire } if = { limit = { rite_has_doctrine = mm_doctrine_earth } remove_rite_doctrine = mm_doctrine_earth } if = { limit = { rite_has_doctrine = mm_doctrine_sea } remove_rite_doctrine = mm_doctrine_sea } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_sky } } add_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } } }
+    }
+
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_black } }
+        create_rite_from_type = { type = mm_dragon_black convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_black }
+        rite:mm_dragon_black = { if = { limit = { rite_has_doctrine = mm_doctrine_white } remove_rite_doctrine = mm_doctrine_white } if = { limit = { rite_has_doctrine = mm_doctrine_fire } remove_rite_doctrine = mm_doctrine_fire } if = { limit = { rite_has_doctrine = mm_doctrine_earth } remove_rite_doctrine = mm_doctrine_earth } if = { limit = { rite_has_doctrine = mm_doctrine_sea } remove_rite_doctrine = mm_doctrine_sea } if = { limit = { rite_has_doctrine = mm_doctrine_sky } remove_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_black } } add_rite_doctrine = mm_doctrine_black } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = yes include_derived = no } } }
+    }
+
+    if = {
+        limit = { NOT = { exists = rite:mm_dragon_white } }
+        create_rite_from_type = { type = mm_dragon_white convert = no }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_white }
+        rite:mm_dragon_white = { if = { limit = { rite_has_doctrine = mm_doctrine_black } remove_rite_doctrine = mm_doctrine_black } if = { limit = { rite_has_doctrine = mm_doctrine_fire } remove_rite_doctrine = mm_doctrine_fire } if = { limit = { rite_has_doctrine = mm_doctrine_earth } remove_rite_doctrine = mm_doctrine_earth } if = { limit = { rite_has_doctrine = mm_doctrine_sea } remove_rite_doctrine = mm_doctrine_sea } if = { limit = { rite_has_doctrine = mm_doctrine_sky } remove_rite_doctrine = mm_doctrine_sky } if = { limit = { NOT = { rite_has_doctrine = mm_doctrine_white } } add_rite_doctrine = mm_doctrine_white } if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } } }
+    }
+}
+
+# Empty scope: called once on each lobby exit, before character routing.
+mm_v1313_repair_saved_creed_effect = {
+    every_player = { mm_v1313_ensure_rites_effect = yes }
+    if = {
+        limit = { exists = faith:mm_dragon_fire }
+        faith:mm_dragon_fire = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_fire }
+        rite:mm_dragon_legacy_fire = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    if = {
+        limit = { exists = faith:mm_dragon_earth }
+        faith:mm_dragon_earth = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_earth }
+        rite:mm_dragon_legacy_earth = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    if = {
+        limit = { exists = faith:mm_dragon_sea }
+        faith:mm_dragon_sea = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_sea }
+        rite:mm_dragon_legacy_sea = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    if = {
+        limit = { exists = faith:mm_dragon_sky }
+        faith:mm_dragon_sky = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_sky }
+        rite:mm_dragon_legacy_sky = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    if = {
+        limit = { exists = faith:mm_dragon_black }
+        faith:mm_dragon_black = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_black }
+        rite:mm_dragon_legacy_black = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    if = {
+        limit = { exists = faith:mm_dragon_white }
+        faith:mm_dragon_white = {
+            every_faith_rite = {
+                set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no }
+            }
+        }
+    }
+    if = {
+        limit = { exists = rite:mm_dragon_legacy_white }
+        rite:mm_dragon_legacy_white = {
+            set_can_convert_to_rite = no
+            if = { limit = { NOT = { faith = faith:mm_dragon_creed } } set_parent_faith = { target = faith:mm_dragon_creed main = no include_derived = no } }
+        }
+    }
+    religion:mm_dragon_creed_religion = {
+        every_faith = {
+            limit = { NOT = { this = faith:mm_dragon_creed } }
+            every_faith_rite = { set_can_convert_to_rite = no }
+        }
+    }
+    rite:mm_dragon_black = { set_main_rite = yes }
+    rite:mm_dragon_sea = {
+        if = {
+            limit = { rite_has_doctrine = doctrine_funeral_stoic }
+            remove_rite_doctrine = doctrine_funeral_stoic
+            add_rite_doctrine = mm_doctrine_funeral_sea
+        }
+    }
+}
+
+# Character or county scope. Preserve branch affiliation while retiring legacy rites.
+mm_v1313_migrate_legacy_character_effect = {
+    if = { limit = { exists = rite:mm_dragon_legacy_fire rite = rite:mm_dragon_legacy_fire } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_fire }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_earth rite = rite:mm_dragon_legacy_earth } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_earth }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_sea rite = rite:mm_dragon_legacy_sea } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sea }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_sky rite = rite:mm_dragon_legacy_sky } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_sky }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_black rite = rite:mm_dragon_legacy_black } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_black }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_white rite = rite:mm_dragon_legacy_white } set_character_faith = faith:mm_dragon_creed set_character_rite = rite:mm_dragon_white }
+}
+
+mm_v1313_migrate_legacy_county_effect = {
+    if = { limit = { exists = rite:mm_dragon_legacy_fire rite = rite:mm_dragon_legacy_fire } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_fire }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_earth rite = rite:mm_dragon_legacy_earth } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_earth }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_sea rite = rite:mm_dragon_legacy_sea } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_sea }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_sky rite = rite:mm_dragon_legacy_sky } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_sky }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_black rite = rite:mm_dragon_legacy_black } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_black }
+    else_if = { limit = { exists = rite:mm_dragon_legacy_white rite = rite:mm_dragon_legacy_white } set_county_faith = faith:mm_dragon_creed set_county_rite = rite:mm_dragon_white }
+}

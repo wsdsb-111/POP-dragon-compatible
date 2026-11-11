@@ -1,0 +1,10 @@
+daily_global_pulse = { on_actions = { mm_relic_trade_daily } }
+mm_relic_trade_daily = {
+    effect = {
+        every_in_global_list = {
+            variable = mm_relic_traders
+            if = { limit = { is_alive = yes has_character_modifier = mm_relic_sea_trade } mm_relic_trade_refresh_effect = yes }
+            else = { remove_list_global_variable = { name = mm_relic_traders target = this } }
+        }
+    }
+}

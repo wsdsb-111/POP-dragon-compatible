@@ -1,0 +1,8 @@
+﻿mm_v1314_show_faith = {
+    scope = faith
+    is_shown = { OR = { NOT = { religion = religion:mm_dragon_creed_religion } this = faith:mm_dragon_creed } }
+}
+mm_v1314_is_creed_view = {
+    scope = faith
+    is_shown = { this = faith:mm_dragon_creed }
+}

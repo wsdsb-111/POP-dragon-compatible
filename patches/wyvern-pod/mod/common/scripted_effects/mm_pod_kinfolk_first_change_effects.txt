@@ -1,0 +1,33 @@
+﻿# Mark every eligible descendant. Nested every_child covers children,
+# grandchildren, great-grandchildren and great-great-grandchildren.
+mm_pod_mark_eligible_kinfolk_descendants_effect = {
+    debug_log = "MM_POD_KINFOLK_DESCENDANTS_MARKED"
+    every_child = {
+        limit = { mm_pod_kinfolk_first_change_eligible_trigger = yes }
+        add_character_flag = fera_first_change
+    }
+    every_child = {
+        every_child = {
+            limit = { mm_pod_kinfolk_first_change_eligible_trigger = yes }
+            add_character_flag = fera_first_change
+        }
+    }
+    every_child = {
+        every_child = {
+            every_child = {
+                limit = { mm_pod_kinfolk_first_change_eligible_trigger = yes }
+                add_character_flag = fera_first_change
+            }
+        }
+    }
+    every_child = {
+        every_child = {
+            every_child = {
+                every_child = {
+                    limit = { mm_pod_kinfolk_first_change_eligible_trigger = yes }
+                    add_character_flag = fera_first_change
+                }
+            }
+        }
+    }
+}

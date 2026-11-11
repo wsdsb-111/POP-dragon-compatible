@@ -1,0 +1,240 @@
+domicile_building_slots = {
+		external_slot_1 = {
+			position = { 19.7% 5.5% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_01.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_01_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_01.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_01_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+
+		external_slot_4 = {
+			position = { 49.0% 2.5% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_04.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_04_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_04.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_04_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+
+		main_slot = {
+			slot_type = main
+			position = { 28.2% 13.2% }
+			size = { 28% 34.5% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_01.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_01_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_01.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_01_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_manor_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_manor_construction_chinese_mask.png"
+			}
+		}
+
+		external_slot_2 = {
+			position = { 4.5% 20% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_02.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_02_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_02.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_02_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+
+		external_slot_3 = {
+			position = { 13.5% 45% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_03.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_03_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_03.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_03_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+
+		external_slot_5 = {
+			position = { 64% 29% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_05.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_05_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_05.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_05_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+
+		external_slot_6 = {
+			position = { 39% 47% }
+			size = { 15% 30% }
+
+			# Empty slot in city
+			empty_slot_asset = {
+				trigger = {
+					domicile_location = {
+						OR = {
+							this = root.owner.top_liege.capital_province
+							county = duchy.title_capital_county
+						}
+					}
+				}
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/asian_empty_slot_06.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/asian_empty_slot_06_mask.png"
+			}
+
+			# Empty slot
+			empty_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/yurt_empty_slot_06.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/yurt_empty_slot_06_mask.png"
+			}
+
+			# Under Construction
+			construction_slot_asset = {
+				icon = "gfx/interface/icons/flat_icons/plus.dds"
+				texture = "gfx/interface/window_domiciles/estate_building_construction_chinese.dds"
+				intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_construction_chinese_mask.png"
+			}
+		}
+	}

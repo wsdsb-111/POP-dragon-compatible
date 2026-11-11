@@ -1,0 +1,128 @@
+﻿# Optional kings module overrides this catalog, keeping standalone bloodline safe.
+mm_dragon_initialize_seed_catalog_effect = { }
+mm_dragon_seed_add_culture_effect = {
+    if = {
+        limit = { any_in_global_list = { variable = mm_dragon_seed_people culture = $CULTURE$ is_adult = yes exists = house mm_dragon_has_blood_trigger = no } }
+        add_to_global_variable_list = { name = mm_dragon_seed_cultures target = $CULTURE$ }
+    }
+}
+# One use per available culture per round; five existing founders at most.
+mm_dragon_seed_next_family_effect = {
+    clear_saved_scope = mm_dragon_seed_founder
+    clear_saved_scope = mm_dragon_seed_culture
+    if = {
+        limit = { any_in_global_list = { variable = mm_dragon_seed_cultures always = yes } }
+        every_in_global_list = {
+            variable = mm_dragon_seed_round
+            limit = { NOT = { any_in_global_list = { variable = mm_dragon_seed_people culture = prev is_adult = yes exists = house mm_dragon_has_blood_trigger = no NOT = { is_target_in_global_variable_list = { name = mm_dragon_seed_houses target = house } } } } }
+            remove_list_global_variable = { name = mm_dragon_seed_round target = this }
+        }
+        if = {
+            limit = { NOT = { any_in_global_list = { variable = mm_dragon_seed_round always = yes } } }
+            every_in_global_list = {
+                variable = mm_dragon_seed_cultures
+                limit = { any_in_global_list = { variable = mm_dragon_seed_people culture = prev is_adult = yes exists = house mm_dragon_has_blood_trigger = no NOT = { is_target_in_global_variable_list = { name = mm_dragon_seed_houses target = house } } } }
+                add_to_global_variable_list = { name = mm_dragon_seed_round target = this }
+            }
+        }
+        random_in_global_list = {
+            variable = mm_dragon_seed_round
+            save_scope_as = mm_dragon_seed_culture
+            remove_list_global_variable = { name = mm_dragon_seed_round target = this }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_seed_culture }
+            random_in_global_list = {
+                variable = mm_dragon_seed_people
+                limit = { culture = scope:mm_dragon_seed_culture is_adult = yes exists = house mm_dragon_has_blood_trigger = no NOT = { is_target_in_global_variable_list = { name = mm_dragon_seed_houses target = house } } }
+                save_scope_as = mm_dragon_seed_founder
+            }
+        }
+        scope:mm_dragon_seed_origin_a = { save_scope_as = mm_dragon_seed_origin }
+        if = {
+            limit = { exists = scope:mm_dragon_seed_origin_b }
+            random = { chance = 50 scope:mm_dragon_seed_origin_b = { save_scope_as = mm_dragon_seed_origin } }
+        }
+        if = {
+            limit = { exists = scope:mm_dragon_seed_founder exists = scope:mm_dragon_seed_origin }
+            scope:mm_dragon_seed_founder = { mm_dragon_seed_create_family_effect = yes }
+        }
+    }
+}
+# Existing founder: no creation, House/name/parents/title changes, or spouse conversion.
+mm_dragon_seed_create_family_effect = {
+    add_to_global_variable_list = { name = mm_dragon_seed_houses target = house }
+    set_variable = { name = mm_dragon_seed_candidate_generation value = 2 }
+    if = { limit = { global_var:mm_dragon_seed_family_index = 0 } set_variable = { name = mm_dragon_seed_candidate_generation value = 1 } }
+    mm_dragon_seed_apply_existing_blood_effect = yes
+    if = {
+        limit = { mm_dragon_has_blood_trigger = yes }
+        add_character_flag = mm_dragon_seed_family_founder
+        change_global_variable = { name = mm_dragon_seed_assigned_founders add = 1 }
+        debug_log = "MM_DRAGON_SEED_EXISTING_FOUNDER_ASSIGNED"
+    }
+    remove_variable = mm_dragon_seed_candidate_generation
+    every_in_global_list = {
+        variable = mm_dragon_seed_people
+        limit = { OR = { mm_dragon_has_blood_trigger = no has_character_flag = mm_dragon_seed_existing_carrier } }
+        save_scope_as = mm_dragon_seed_descendant
+        remove_variable = mm_dragon_seed_candidate_generation
+        set_global_variable = { name = mm_dragon_seed_probe_generation value = scope:mm_dragon_seed_founder.var:mm_dragon_lineage_generation }
+        mm_dragon_seed_probe_ancestor_effect = yes
+        if = { limit = { has_variable = mm_dragon_seed_candidate_generation } mm_dragon_seed_apply_existing_blood_effect = yes }
+        remove_variable = mm_dragon_seed_candidate_generation
+    }
+    change_global_variable = { name = mm_dragon_seed_family_index add = 1 }
+}
+# Walk mother/real_father directly, including dead intermediates and hidden
+# biological fathers; never trust the legal-father child iterator for ancestry.
+# The counter is restored after each branch, so the depth is bounded by tier 4.
+mm_dragon_seed_probe_ancestor_effect = {
+    if = {
+        limit = { this = scope:mm_dragon_seed_founder }
+        scope:mm_dragon_seed_descendant = {
+            if = {
+                limit = { OR = { NOT = { has_variable = mm_dragon_seed_candidate_generation } var:mm_dragon_seed_candidate_generation > global_var:mm_dragon_seed_probe_generation } }
+                set_variable = { name = mm_dragon_seed_candidate_generation value = global_var:mm_dragon_seed_probe_generation }
+            }
+        }
+    }
+    else_if = {
+        limit = { global_var:mm_dragon_seed_probe_generation < 4 }
+        change_global_variable = { name = mm_dragon_seed_probe_generation add = 1 }
+        if = { limit = { exists = mother } mother = { mm_dragon_seed_probe_ancestor_effect = yes } }
+        if = { limit = { exists = real_father } real_father = { mm_dragon_seed_probe_ancestor_effect = yes } }
+        change_global_variable = { name = mm_dragon_seed_probe_generation add = -1 }
+    }
+}
+mm_dragon_seed_apply_existing_blood_effect = {
+    add_character_flag = mm_dragon_lineage_initialized
+    add_character_flag = mm_dragon_seed_existing_carrier
+    if = {
+        limit = { OR = { NOT = { has_variable = mm_dragon_lineage_generation } var:mm_dragon_lineage_generation > var:mm_dragon_seed_candidate_generation } }
+        remove_trait = mm_dragon_lineage_1
+        remove_trait = mm_dragon_lineage_2
+        remove_trait = mm_dragon_lineage_3
+        remove_trait = mm_dragon_lineage_4
+        set_variable = { name = mm_dragon_lineage_generation value = var:mm_dragon_seed_candidate_generation }
+    }
+    if = { limit = { var:mm_dragon_lineage_generation = 1 } add_trait = mm_dragon_lineage_1 }
+    else_if = { limit = { var:mm_dragon_lineage_generation = 2 } add_trait = mm_dragon_lineage_2 }
+    else_if = { limit = { var:mm_dragon_lineage_generation = 3 } add_trait = mm_dragon_lineage_3 }
+    else_if = { limit = { var:mm_dragon_lineage_generation = 4 } add_trait = mm_dragon_lineage_4 }
+    save_scope_as = mm_dragon_seed_blood_recipient
+    scope:mm_dragon_seed_origin = { mm_dragon_append_biological_origin_effect = { CHILD = scope:mm_dragon_seed_blood_recipient } }
+    mm_dragon_route_creed_hook_effect = yes
+}
+mm_dragon_seed_run_group_effect = {
+    set_global_variable = { name = mm_dragon_seed_family_index value = 0 }
+    mm_dragon_seed_next_family_effect = yes
+    mm_dragon_seed_next_family_effect = yes
+    mm_dragon_seed_next_family_effect = yes
+    mm_dragon_seed_next_family_effect = yes
+    mm_dragon_seed_next_family_effect = yes
+    clear_global_variable_list = mm_dragon_seed_cultures
+    clear_global_variable_list = mm_dragon_seed_round
+    remove_global_variable = mm_dragon_seed_family_index
+    clear_saved_scope = mm_dragon_seed_origin_b
+}

@@ -1,0 +1,260 @@
+mm_royal_bootstrap_effect = {
+    if = {
+        limit = { exists = character:99001310 NOT = { has_global_variable = mm_royal_catalog_initialized } }
+        set_global_variable = { name = mm_royal_catalog_initialized value = yes }
+        character:99001001 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_constantine
+            set_variable = { name = mm_royal_throne value = 1 }
+            set_variable = { name = mm_royal_creation_throne value = 1 }
+            set_variable = { name = myv_wyvern_size value = 260 }
+            set_variable = { name = myv_wyvern_color value = 1 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:10430.barony }
+            set_location = province:10430
+            # c_jingzhao: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 1 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001305 }
+            set_relation_mm_dragon_twin = character:99001305
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001002 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_fenrir
+            set_variable = { name = mm_royal_throne value = 2 }
+            set_variable = { name = mm_royal_creation_throne value = 2 }
+            set_variable = { name = myv_wyvern_size value = 300 }
+            set_variable = { name = myv_wyvern_color value = 3 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:6077.barony }
+            set_location = province:6077
+            # c_qus: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 3 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001306 }
+            set_relation_mm_dragon_twin = character:99001306
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001003 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_behemoth
+            set_variable = { name = mm_royal_throne value = 3 }
+            set_variable = { name = mm_royal_creation_throne value = 3 }
+            set_variable = { name = myv_wyvern_size value = 260 }
+            set_variable = { name = myv_wyvern_color value = 2 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:2646.barony }
+            set_location = province:2646
+            # c_malta: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 2 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001307 }
+            set_relation_mm_dragon_twin = character:99001307
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001304 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_hrist
+            set_variable = { name = mm_royal_throne value = 4 }
+            set_variable = { name = mm_royal_creation_throne value = 4 }
+            set_variable = { name = myv_wyvern_size value = 240 }
+            set_variable = { name = myv_wyvern_color value = 4 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:6.barony }
+            set_location = province:6
+            # c_faereyar: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 4 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001308 }
+            set_relation_mm_dragon_twin = character:99001308
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001305 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_norton
+            set_variable = { name = mm_royal_throne value = 1 }
+            set_variable = { name = mm_royal_creation_throne value = 1 }
+            set_variable = { name = myv_wyvern_size value = 280 }
+            set_variable = { name = myv_wyvern_color value = 5 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:10216.barony }
+            set_location = province:10216
+            # c_chengdu: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 5 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001001 }
+            set_relation_mm_dragon_twin = character:99001001
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001306 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_jormungandr
+            set_variable = { name = mm_royal_throne value = 2 }
+            set_variable = { name = mm_royal_creation_throne value = 2 }
+            set_variable = { name = myv_wyvern_size value = 260 }
+            set_variable = { name = myv_wyvern_color value = 4 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:5759.barony }
+            set_location = province:5759
+            # c_tbilisi: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 4 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001002 }
+            set_relation_mm_dragon_twin = character:99001002
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001307 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_leviathan
+            set_variable = { name = mm_royal_throne value = 3 }
+            set_variable = { name = mm_royal_creation_throne value = 3 }
+            set_variable = { name = myv_wyvern_size value = 280 }
+            set_variable = { name = myv_wyvern_color value = 2 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:480.barony }
+            set_location = province:480
+            # c_chandax: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 2 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001003 }
+            set_relation_mm_dragon_twin = character:99001003
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001308 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_vidar
+            set_variable = { name = mm_royal_throne value = 4 }
+            set_variable = { name = mm_royal_creation_throne value = 4 }
+            set_variable = { name = myv_wyvern_size value = 260 }
+            set_variable = { name = myv_wyvern_color value = 4 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:260.barony }
+            set_location = province:260
+            # c_sogn: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 4 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_variable = { name = mm_royal_twin value = character:99001304 }
+            set_relation_mm_dragon_twin = character:99001304
+            set_relation_mm_dragon_creator = character:99001309
+            set_relation_mm_dragon_creator = character:99001310
+        }
+        character:99001309 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_black_emperor
+            set_variable = { name = mm_royal_throne value = 0 }
+            set_variable = { name = mm_royal_creation_throne value = 0 }
+            set_variable = { name = myv_wyvern_size value = 300 }
+            set_variable = { name = myv_wyvern_color value = 3 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:4828.barony }
+            set_location = province:4828
+            # c_baghdad: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 3 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+        }
+        character:99001310 = {
+            add_character_flag = mm_royal_fixed_identity
+            add_character_flag = mm_wyvern_legendary_origin
+            give_nickname = nick_mm_royal_white_empress
+            set_variable = { name = mm_royal_throne value = 0 }
+            set_variable = { name = mm_royal_creation_throne value = 0 }
+            set_variable = { name = myv_wyvern_size value = 290 }
+            set_variable = { name = myv_wyvern_color value = 4 }
+            set_variable = { name = myv_wyvern_lair_barony value = province:10765.barony }
+            set_location = province:10765
+            # c_sagami: verified native county capital province.
+            set_immortal_age = 25
+            myv_initialize_historical_wyvern_effect = { COLOR = 4 }
+            mm_dragon_assign_regional_identity_effect = yes
+            mm_royal_repair_profile_effect = yes
+            mm_royal_apply_physical_profile_effect = yes
+            myv_refresh_wyvern_prowess_effect = yes
+            set_relation_mm_dragon_creator = character:99001309
+        }
+    }
+    if = {
+        limit = { has_global_variable = mm_royal_catalog_initialized }
+        character:99001001 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001002 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001003 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001304 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001305 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001306 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001307 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001308 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001309 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+        character:99001310 = { if = { limit = { is_alive = yes mm_royal_is_king = yes } mm_royal_queue_daily_effect = yes } }
+    }
+}
+
+mm_royal_queue_daily_effect = {
+    if = {
+        limit = { is_alive = yes mm_royal_is_king = yes NOT = { has_character_flag = mm_royal_daily_queued } }
+        add_character_flag = { flag = mm_royal_daily_queued days = 2 }
+        trigger_event = { id = mm_royal.0001 days = 1 }
+    }
+}
+mm_royal_awaken_effect = {
+    if = {
+        limit = { is_alive = yes mm_royal_is_king = yes has_trait = mm_royal_torpor }
+        remove_trait = mm_royal_torpor
+        add_character_flag = mm_royal_awakened
+        myv_refresh_wyvern_prowess_effect = yes
+        mm_royal_queue_daily_effect = yes
+    }
+}
+
+mm_royal_sync_throne_identity_trait_effect = {
+    remove_trait = mm_royal_fire_king
+    remove_trait = mm_royal_earth_king
+    remove_trait = mm_royal_sea_king
+    remove_trait = mm_royal_sky_king
+    if = { limit = { has_variable = mm_royal_throne var:mm_royal_throne = 1 } add_trait = mm_royal_fire_king }
+    if = { limit = { has_variable = mm_royal_throne var:mm_royal_throne = 2 } add_trait = mm_royal_earth_king }
+    if = { limit = { has_variable = mm_royal_throne var:mm_royal_throne = 3 } add_trait = mm_royal_sea_king }
+    if = { limit = { has_variable = mm_royal_throne var:mm_royal_throne = 4 } add_trait = mm_royal_sky_king }
+}

@@ -1,0 +1,283 @@
+﻿myv_wyvern_character_window = {
+    scope = character
+
+    is_shown = {
+        myv_is_wyvern = yes
+        NOT = { has_trait = mm_asc_dragon_body }
+        NOT = { has_character_flag = mm_wyvern_human_form }
+    }
+}
+
+# The native birth-name controller always samples the culture of the character
+# being renamed. These actions select that source culture before it rolls.
+# The hatching event restores the original culture on confirmation.
+myv_hatchling_use_wyvern_culture_for_name = {
+	scope = character
+
+	is_valid = {
+		exists = scope:myv_hatchling
+		scope:myv_hatchling = { myv_is_living_wyvern = yes }
+	}
+
+	effect = {
+		scope:myv_hatchling = {
+			if = { limit = { NOT = { has_variable = mm_dragon_name_original_culture } } set_variable = { name = mm_dragon_name_original_culture value = culture } }
+			set_culture = culture:myv_wyvern_culture
+		}
+	}
+}
+
+myv_hatchling_use_player_culture_for_name = {
+	scope = character
+
+	is_valid = {
+		exists = scope:myv_hatchling
+		scope:myv_hatchling = { myv_is_living_wyvern = yes }
+	}
+
+	effect = {
+		scope:myv_hatchling = {
+			if = { limit = { NOT = { has_variable = mm_dragon_name_original_culture } } set_variable = { name = mm_dragon_name_original_culture value = culture } }
+			set_culture = root.culture
+		}
+	}
+}
+
+# A resting wyvern is shown inside its lair. Roaming wyverns use the terrain
+# at their current location; all unlisted terrain falls back to the grassland
+# scene (including forests and coasts).
+myv_wyvern_scene_cave = {
+    scope = character
+    is_shown = {
+        NOT = { has_character_flag = myv_wyvern_roaming }
+        NOT = { has_trait = myv_wyvern_tamed }
+    }
+}
+
+myv_wyvern_scene_stable = {
+	scope = character
+	is_shown = {
+		has_character_flag = myv_wyvern_in_stable
+	}
+}
+
+myv_wyvern_scene_snow = {
+    scope = character
+    is_shown = {
+		NOT = { has_character_flag = myv_wyvern_in_stable }
+        OR = {
+            has_character_flag = myv_wyvern_roaming
+            has_trait = myv_wyvern_tamed
+        }
+        exists = location
+        location = { terrain = taiga }
+    }
+}
+
+myv_wyvern_scene_mountains = {
+    scope = character
+    is_shown = {
+		NOT = { has_character_flag = myv_wyvern_in_stable }
+        OR = {
+            has_character_flag = myv_wyvern_roaming
+            has_trait = myv_wyvern_tamed
+        }
+        exists = location
+        location = {
+            OR = {
+                terrain = hills
+                terrain = mountains
+            }
+        }
+    }
+}
+
+myv_wyvern_scene_desert = {
+    scope = character
+    is_shown = {
+		NOT = { has_character_flag = myv_wyvern_in_stable }
+        OR = {
+            has_character_flag = myv_wyvern_roaming
+            has_trait = myv_wyvern_tamed
+        }
+        exists = location
+        location = {
+            OR = {
+                terrain = desert
+                terrain = desert_mountains
+                terrain = drylands
+                terrain = oasis
+            }
+        }
+    }
+}
+
+myv_wyvern_scene_grassland = {
+    scope = character
+    is_shown = {
+		NOT = { has_character_flag = myv_wyvern_in_stable }
+        OR = {
+            has_character_flag = myv_wyvern_roaming
+            has_trait = myv_wyvern_tamed
+        }
+        OR = {
+            NOT = { exists = location }
+            location = {
+                NOT = {
+                    OR = {
+                        terrain = taiga
+                        terrain = hills
+                        terrain = mountains
+                        terrain = desert
+                        terrain = desert_mountains
+                        terrain = drylands
+                        terrain = oasis
+                    }
+                }
+            }
+        }
+    }
+}
+
+myv_wyvern_uses_camera_tier_0 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 0 }
+}
+
+myv_wyvern_uses_camera_tier_1 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 1 }
+}
+
+myv_wyvern_uses_camera_tier_2 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 2 }
+}
+
+myv_wyvern_uses_camera_tier_3 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 3 }
+}
+
+myv_wyvern_uses_camera_tier_4 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 4 }
+}
+
+myv_wyvern_uses_camera_tier_5 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 5 }
+}
+
+myv_wyvern_uses_camera_tier_6 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 6 }
+}
+
+myv_wyvern_uses_camera_tier_7 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 7 }
+}
+
+myv_wyvern_uses_camera_tier_8 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 8 }
+}
+
+myv_wyvern_uses_camera_tier_9 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 9 }
+}
+
+myv_wyvern_uses_camera_tier_10 = {
+    scope = character
+    is_shown = { myv_wyvern_visual_size_tier = 10 }
+}
+
+myv_wyvern_forge_weapon_catalog_visible = {
+	scope = character
+	is_shown = { has_character_flag = myv_wyvern_forge_weapon_catalog_open }
+}
+
+myv_wyvern_forge_armor_catalog_visible = {
+	scope = character
+	is_shown = { has_character_flag = myv_wyvern_forge_armor_catalog_open }
+}
+
+myv_wyvern_forge_select_sword = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 1 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 1 } }
+}
+myv_wyvern_forge_select_axe = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 2 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 2 } }
+}
+myv_wyvern_forge_select_spear = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 3 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 3 } }
+}
+myv_wyvern_forge_select_hammer = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 4 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 4 } }
+}
+myv_wyvern_forge_select_mace = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 5 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 5 } }
+}
+myv_wyvern_forge_select_dagger = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 6 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 6 } }
+}
+myv_wyvern_forge_select_armor_western = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 101 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 101 } }
+}
+myv_wyvern_forge_select_armor_northern = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 102 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 102 } }
+}
+myv_wyvern_forge_select_armor_eastern = {
+	scope = character
+	is_shown = { var:myv_wyvern_forge_selected_style = 103 }
+	effect = { set_variable = { name = myv_wyvern_forge_selected_style value = 103 } }
+}
+
+
+myv_wyvern_uses_portrait_color_1 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 1 }
+}
+
+myv_wyvern_uses_portrait_color_2 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 2 }
+}
+
+myv_wyvern_uses_portrait_color_3 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 3 }
+}
+
+myv_wyvern_uses_portrait_color_4 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 4 }
+}
+
+myv_wyvern_uses_portrait_color_5 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 5 }
+}
+
+myv_wyvern_uses_portrait_color_6 = {
+    scope = character
+    is_shown = { myv_wyvern_display_color = 6 }
+}
+

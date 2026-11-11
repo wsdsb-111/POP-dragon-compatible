@@ -1,0 +1,93 @@
+[
+ {
+  "asset": "black_crown",
+  "state": "pass",
+  "tris": 525942,
+  "objects": 203,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 203,
+  "meshes": 203
+ },
+ {
+  "asset": "black_regalia",
+  "state": "pass",
+  "tris": 553146,
+  "objects": 207,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 207,
+  "meshes": 207
+ },
+ {
+  "asset": "white_book",
+  "state": "pass",
+  "tris": 1053718,
+  "objects": 97,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 97,
+  "meshes": 97
+ },
+ {
+  "asset": "fire_ring",
+  "state": "pass",
+  "tris": 552248,
+  "objects": 108,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 108,
+  "meshes": 108
+ },
+ {
+  "asset": "earth_sarcophagus",
+  "state": "pass",
+  "tris": 525224,
+  "objects": 485,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 485,
+  "meshes": 485
+ },
+ {
+  "asset": "sea_armor",
+  "state": "pass",
+  "tris": 531042,
+  "objects": 95,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 95,
+  "meshes": 95
+ },
+ {
+  "asset": "sky_spear",
+  "state": "pass",
+  "tris": 979678,
+  "objects": 96,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "self_intersections": 0,
+  "normals_inverted": 0,
+  "uv": 96,
+  "meshes": 96
+ }
+]

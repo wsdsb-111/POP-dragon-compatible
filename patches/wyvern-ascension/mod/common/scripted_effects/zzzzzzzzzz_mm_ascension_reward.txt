@@ -1,0 +1,3 @@
+mm_wyvern_legendary_blood_reward_effect = {
+    mm_asc_receive_blood_effect = yes
+}

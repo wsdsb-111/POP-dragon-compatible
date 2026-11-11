@@ -1,0 +1,102 @@
+{
+  "formatVersion": 1,
+  "baselineEntryCount": 133,
+  "immutableEntryCount": 13,
+  "mutableAlbedoPaths": [
+    "artwork/wyvern-trophies/models/mm_wyvern_head_diffuse.png",
+    "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_diffuse.dds"
+  ],
+  "immutableAssets": [
+    {
+      "path": "patches/wyvern-capture/mod/common/artifacts/visuals/mm_wyvern_trophies.txt",
+      "sha256": "d520f2b14aea4b4acf7b3c03e5b2febddf712ecf24de1672803fe67e22f046dc"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/common/scripted_effects/mm_wyvern_trophies.txt",
+      "sha256": "7330ad8c1a633dc49024bc82a4addcb19c01fa34cc96d6aa9c917d87c2ed720d"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_normal.dds",
+      "sha256": "3601659da71bfdd5a1b9782c313c47c9b5795d3d8432cc409f506ac814bddc0b"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_head_properties.dds",
+      "sha256": "58c80d73af1dabfc3e9467995af63f3b7423ed5b5a28d73c85446e3b47c86160"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophies.asset",
+      "sha256": "92d97650a58cf6648e07a57b7734573f70683513964813ce6f3c0505bb46b68a"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/gfx/models/artifacts/mm_wyvern_trophies/mm_wyvern_trophy_head.mesh",
+      "sha256": "a1df48ceb2c38d7de9639f4d31468d98942c19e8eadfc7e4e9bb0d263cd1ed67"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/localization/english/mm_wyvern_trophies_l_english.yml",
+      "sha256": "76182c9a104e6a78c3915c7b98cbb3a1dce7c193f68022abb57e864ff4893144"
+    },
+    {
+      "path": "patches/wyvern-capture/mod/localization/simp_chinese/mm_wyvern_trophies_l_simp_chinese.yml",
+      "sha256": "8b1a3b78c708677b0d9435d0c275afc48c489ebafa6d0e99af0afb4814cc4963"
+    },
+    {
+      "path": "artwork/wyvern-trophies/models/winner77-head.npz",
+      "sha256": "11ac556d034f4573c92adf17a4af63023be9443c71494bd942450c6c3d8eab2f"
+    },
+    {
+      "path": "artwork/wyvern-trophies/models/head.obj",
+      "sha256": "eb755ff20538f8817962d4740db96db82f3ed163acbc5cbe2841fea8035c9807"
+    },
+    {
+      "path": "artwork/wyvern-trophies/models/head.mtl",
+      "sha256": "fb47a1d0776ee6d9d68efd453242b7c7cbb115a9a3ec3f53eb47c723b8b04941"
+    },
+    {
+      "path": "artwork/wyvern-trophies/models/mm_wyvern_head_normal.png",
+      "sha256": "7245d54a46e24f7d7981ce792332963a546275dd34fb7b530b23ee917fef8f35"
+    },
+    {
+      "path": "artwork/wyvern-trophies/models/mm_wyvern_head_properties.png",
+      "sha256": "644aaeb66a129a4be08643491b3caf17701f5bbb6091776e38422926b1c2f059"
+    }
+  ],
+  "texture": {
+    "width": 4096,
+    "height": 4096,
+    "mipLevels": 13,
+    "fourCC": "DXT5",
+    "alpha": "opaque"
+  },
+  "oldSourcePngSha256": "77d1f9ad66683b31cb48f9bde1051bedb7d4611b3689c04b4373ac8053aa0ba4",
+  "oldAlbedoSha256": "cfb57aac95720139c48e88ce48c2a3359a645dbc143ffa6291f6f06af39117f5",
+  "nativeCourtShader": {
+    "path": "game/gfx/FX/court_scene.shader",
+    "sha256": "b67a90d1134bdb356f1999693fbc660b350f45df2bea240f7ab321dcab8c7386",
+    "specularOverride": "Properties.g = 0.16f;",
+    "materialCall": "float3 Color = CommonPixelShader( Diffuse, Properties, NormalSample, Input, HoverMult );"
+  },
+  "colorAnchors": {
+    "old": {
+      "main": "#6E7558",
+      "secondary": "#5A6047",
+      "grooves": "#3E4335",
+      "horn": "#4B4036",
+      "teeth": "#D6C8A8",
+      "tissue": "#7A675C",
+      "ventral": "#8E836B",
+      "hornTip": "#A89C86"
+    },
+    "target": {
+      "main": "#586347",
+      "highlight": "#74805B",
+      "secondary": "#4D5940",
+      "grooves": "#30392D",
+      "ventral": "#74745F",
+      "hornRoot": "#4B4035",
+      "hornMid": "#665642",
+      "hornTip": "#91816A",
+      "teeth": "#D2C39F",
+      "tissue": "#65574A"
+    }
+  }
+}

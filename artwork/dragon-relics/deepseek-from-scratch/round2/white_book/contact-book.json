@@ -1,0 +1,271 @@
+{
+ "dragon": [],
+ "guard": [
+  {
+   "part": "GEO-CG-1-1_plate",
+   "overlap_pairs": 96,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 1.9,
+   "connected": true
+  },
+  {
+   "part": "GEO-CG-1-1_rib0",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 5.42,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-1-1_rib1",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.24,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-1-1_rib2",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.43,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-1-1_pearl",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 10.88,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-11_plate",
+   "overlap_pairs": 95,
+   "base_inside_pts": 8,
+   "base_pts": 16,
+   "min_dist_mm": 0.6,
+   "connected": true
+  },
+  {
+   "part": "GEO-CG-11_rib0",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 2.13,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-11_rib1",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.24,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-11_rib2",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 2.18,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG-11_pearl",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 10.88,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG1-1_plate",
+   "overlap_pairs": 91,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 1.9,
+   "connected": true
+  },
+  {
+   "part": "GEO-CG1-1_rib0",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 7.94,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG1-1_rib1",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 1.5,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG1-1_rib2",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.24,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG1-1_pearl",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 10.88,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG11_plate",
+   "overlap_pairs": 91,
+   "base_inside_pts": 8,
+   "base_pts": 16,
+   "min_dist_mm": 0.6,
+   "connected": true
+  },
+  {
+   "part": "GEO-CG11_rib0",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.24,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG11_rib1",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 4.75,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG11_rib2",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 0.72,
+   "connected": false
+  },
+  {
+   "part": "GEO-CG11_pearl",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 10.88,
+   "connected": false
+  }
+ ],
+ "clasp": [
+  {
+   "part": "GEO-CLASP_ring32",
+   "overlap_pairs": 176,
+   "base_inside_pts": 1,
+   "base_pts": 16,
+   "min_dist_mm": 0.02,
+   "connected": true
+  },
+  {
+   "part": "GEO-CLASP_ring18",
+   "overlap_pairs": 78,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 1.55,
+   "connected": true
+  },
+  {
+   "part": "GEO-CLASP_ray0",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 16.52,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray1",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 10.06,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray2",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 3.28,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray3",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 11.76,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray4",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 18.41,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray5",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 11.76,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray6",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 3.28,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_ray7",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 8,
+   "min_dist_mm": 10.06,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_hub",
+   "overlap_pairs": 18,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 6.0,
+   "connected": true
+  },
+  {
+   "part": "GEO-CLASP_hinge",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 32.04,
+   "connected": false
+  },
+  {
+   "part": "GEO-CLASP_keeper",
+   "overlap_pairs": 0,
+   "base_inside_pts": 0,
+   "base_pts": 16,
+   "min_dist_mm": 12.78,
+   "connected": false
+  }
+ ]
+}

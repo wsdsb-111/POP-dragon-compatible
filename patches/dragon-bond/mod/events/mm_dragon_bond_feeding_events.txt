@@ -1,0 +1,187 @@
+﻿namespace = myv_wyvern_feeding
+
+# A normal character-event window presents the human and physically scaled
+# wyvern side by side. Its dedicated cameras inherit the proven duel ratio.
+myv_wyvern_feeding.0001 = {
+    type = character_event
+    window = myv_wyvern_feeding_event
+    override_background = { reference = myv_wyvern_feeding }
+    title = myv_wyvern_feeding.0001.t
+    desc = myv_wyvern_feeding.0001.desc
+    theme = martial
+
+    left_portrait = {
+        character = root
+        animation = hunting_carcass_start
+    }
+    right_portrait = {
+        character = scope:myv_fed_wyvern
+        animation = myv_wyvern_main
+    }
+
+    # Resolve the premium reward before option tooltips are drawn so the
+    # player sees the exact 1-5 Harmony gain.
+    immediate = {
+        save_scope_as = myv_feeding_bonded_keeper
+        scope:myv_fed_wyvern = {
+            var:myv_wyvern_bonded_character ?= { save_scope_as = myv_feeding_bonded_keeper }
+        }
+        random_list = {
+            1 = { set_variable = { name = myv_wyvern_feed_harmony_gain value = 1 } }
+            1 = { set_variable = { name = myv_wyvern_feed_harmony_gain value = 2 } }
+            1 = { set_variable = { name = myv_wyvern_feed_harmony_gain value = 3 } }
+            1 = { set_variable = { name = myv_wyvern_feed_harmony_gain value = 4 } }
+            1 = { set_variable = { name = myv_wyvern_feed_harmony_gain value = 5 } }
+        }
+    }
+
+    option = {
+        name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = { government_has_flag = government_is_landless_adventurer }
+                        desc = myv_wyvern_feeding.0001.scraps.provisions
+                    }
+                    desc = myv_wyvern_feeding.0001.scraps
+                }
+            }
+        }
+        trigger = {
+            scope:myv_fed_wyvern = { myv_can_feed_bonded_wyvern = { FEEDER = root } }
+            trigger_if = {
+                limit = { government_has_flag = government_is_landless_adventurer }
+                exists = domicile
+                domicile = { provisions >= myv_wyvern_feed_scraps_provisions_cost }
+            }
+            trigger_else = { gold >= myv_wyvern_feed_scraps_cost }
+        }
+        show_as_unavailable = { always = yes }
+        if = {
+            limit = { government_has_flag = government_is_landless_adventurer }
+            domicile = {
+                change_provisions = { value = myv_wyvern_feed_scraps_provisions_cost multiply = -1 }
+            }
+        }
+        else = { remove_short_term_gold = myv_wyvern_feed_scraps_cost }
+        custom_tooltip = myv_wyvern_feed_scraps_harmony_tt
+        hidden_effect = {
+            scope:myv_fed_wyvern = {
+                myv_wyvern_feed_20_effect = yes
+                if = {
+                    limit = { has_trait = myv_wyvern_harmony }
+                    add_trait_xp = { trait = myv_wyvern_harmony value = -5 }
+                    # Harmony changes the active war-mount contribution, so
+                    # refresh it immediately instead of waiting for a pulse.
+                    myv_refresh_wyvern_prowess_effect = yes
+                }
+                myv_wyvern_harmony_integrity_effect = yes
+            }
+            remove_variable = myv_wyvern_feed_harmony_gain
+        }
+    }
+
+    option = {
+        name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = { government_has_flag = government_is_landless_adventurer }
+                        desc = myv_wyvern_feeding.0001.standard.provisions
+                    }
+                    desc = myv_wyvern_feeding.0001.standard
+                }
+            }
+        }
+        trigger = {
+            scope:myv_fed_wyvern = { myv_can_feed_bonded_wyvern = { FEEDER = root } }
+            trigger_if = {
+                limit = { government_has_flag = government_is_landless_adventurer }
+                exists = domicile
+                domicile = { provisions >= myv_wyvern_feed_standard_provisions_cost }
+            }
+            trigger_else = { gold >= myv_wyvern_feed_standard_cost }
+        }
+        show_as_unavailable = { always = yes }
+        if = {
+            limit = { government_has_flag = government_is_landless_adventurer }
+            domicile = {
+                change_provisions = { value = myv_wyvern_feed_standard_provisions_cost multiply = -1 }
+            }
+        }
+        else = { remove_short_term_gold = myv_wyvern_feed_standard_cost }
+        hidden_effect = {
+            scope:myv_fed_wyvern = {
+                myv_wyvern_feed_20_effect = yes
+                if = {
+                    limit = {
+                        has_trait = myv_wyvern_harmony
+                        exists = var:myv_wyvern_bonded_character
+                        var:myv_wyvern_bonded_character = root
+                        has_relation_myv_wyvern_bonded_character = root
+                        NOT = { has_character_flag = mm_dragon_bond_fed_recently }
+                    }
+                    add_trait_xp = { trait = myv_wyvern_harmony value = 2 }
+                    add_character_flag = { flag = mm_dragon_bond_fed_recently months = 1 }
+                    myv_refresh_wyvern_prowess_effect = yes
+                }
+                myv_wyvern_harmony_integrity_effect = yes
+            }
+            remove_variable = myv_wyvern_feed_harmony_gain
+        }
+    }
+
+    option = {
+        name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = { government_has_flag = government_is_landless_adventurer }
+                        desc = myv_wyvern_feeding.0001.prime.provisions
+                    }
+                    desc = myv_wyvern_feeding.0001.prime
+                }
+            }
+        }
+        trigger = {
+            scope:myv_fed_wyvern = { myv_can_feed_bonded_wyvern = { FEEDER = root } }
+            trigger_if = {
+                limit = { government_has_flag = government_is_landless_adventurer }
+                exists = domicile
+                domicile = { provisions >= myv_wyvern_feed_prime_provisions_cost }
+            }
+            trigger_else = { gold >= myv_wyvern_feed_prime_cost }
+        }
+        show_as_unavailable = { always = yes }
+        if = {
+            limit = { government_has_flag = government_is_landless_adventurer }
+            domicile = {
+                change_provisions = { value = myv_wyvern_feed_prime_provisions_cost multiply = -1 }
+            }
+        }
+        else = { remove_short_term_gold = myv_wyvern_feed_prime_cost }
+        custom_tooltip = myv_wyvern_feed_prime_harmony_tt
+        hidden_effect = {
+            scope:myv_fed_wyvern = {
+                myv_wyvern_feed_20_effect = yes
+                if = {
+                    limit = { has_trait = myv_wyvern_harmony }
+                    add_trait_xp = {
+                        trait = myv_wyvern_harmony
+                        value = root.var:myv_wyvern_feed_harmony_gain
+                    }
+                    myv_refresh_wyvern_prowess_effect = yes
+                }
+                myv_wyvern_harmony_integrity_effect = yes
+            }
+            remove_variable = myv_wyvern_feed_harmony_gain
+        }
+    }
+
+    # Safe exit if the player cannot or does not wish to pay for any tier.
+    option = {
+        name = myv_wyvern_feeding.0001.cancel
+        remove_variable = myv_wyvern_feed_harmony_gain
+    }
+    after = { clear_saved_scope = myv_feeding_bonded_keeper }
+}

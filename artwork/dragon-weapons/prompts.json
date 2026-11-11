@@ -1,0 +1,22 @@
+{
+  "mode": "built-in image_gen",
+  "transparentBackground": true,
+  "sword": "Use case: stylized-concept. Asset type: one square transparent inventory artifact icon for a medieval grand strategy game, readable at 240 x 240. Primary request: an original imposing dragon-slaying sword named Draxel, without any written lettering. One complete elegant longsword displayed diagonally from lower-left pommel to upper-right tip; long dark polished steel blade with a narrow aged ivory dragonbone inlay along the fuller, restrained bronze crossguard shaped like two swept-back dragon horns, black leather grip, small deep-red jewel in the pommel. A powerful noble historical-fantasy heirloom, not exaggerated spiky videogame equipment. Style: refined hand-painted medieval treasure illustration, moderately realistic, crisp silhouette, tactile ivory/steel/leather, restrained antique gold, subtle highlights from upper left, painterly shading matching a CK3 inventory treasure icon. Composition: isolated single sword occupying about 82% of a square canvas with generous transparent padding so no part is cut off. Constraints: genuinely transparent background; no frame, no text, no UI, no watermark, no people, no scenery, no glow effects, no extra objects. The sword should look strong and regal.",
+  "bow": "Use case: stylized-concept. Asset type: one square transparent inventory artifact icon for an original medieval grand strategy game, readable at 240 x 240. Primary request: one complete original dragonbone recurved bow named Serind, without written lettering. The bow is shown diagonally with its upper limb near the upper-right and lower limb near the lower-left; a clearly visible taut dark bowstring connects the tips. The limbs are carved aged ivory dragonbone with subtle natural bone grain, slim overlapping dark emerald dragonscales reinforce the center and outer curve, small antique bronze bindings, dark leather handgrip, graceful swept horn tips. Noble powerful hunting heirloom, historically grounded medieval fantasy, no arrow and no quiver. Style: refined hand-painted medieval treasure illustration, moderately realistic, sharp silhouette, restrained colors of aged ivory, emerald, antique gold and warm black; subtle highlights from upper left; painterly shading matching a CK3 inventory treasure icon. Composition: centered isolated single bow occupying about 80% of a square canvas with generous transparent padding, entire bow and string visible without cropping. Constraints: genuinely transparent background; no frame, no text, no UI, no watermark, no people, no scenery, no magic glow, no extra objects.",
+  "assets": [
+    {
+      "name": "draxel",
+      "source": "draxel.png",
+      "sourceSha256": "9839c77c3f7e065cccc1950b243c6c851082d8ad03820d69c2e4b6f6dd20df70",
+      "icon": "mm_dragon_draxel.dds",
+      "iconSha256": "0a86bfc661ebc1130ff47d61ff006b98ed9ed66c791cef1ebc34be93c9453a0f"
+    },
+    {
+      "name": "serind",
+      "source": "serind.png",
+      "sourceSha256": "d889f52d9b762131722c1b20871ae5fa269a8b158639254789f8f50649eae05c",
+      "icon": "mm_dragon_serind.dds",
+      "iconSha256": "8ad745b376cf28279a22f882924a212635363ab22f682ebf196afc5c15f8ec72"
+    }
+  ]
+}

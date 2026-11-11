@@ -1,0 +1,62 @@
+mm_v1312_silk_sea_member_trigger = {
+    is_alive = yes
+    faith = faith:mm_dragon_creed
+    rite = rite:mm_dragon_sea
+}
+
+mm_v1312_silk_road_active_participant_trigger = {
+    any_character_situation = {
+        situation_type = silk_road_situation
+        any_situation_sub_region = {
+            any_situation_sub_region_participant_group = {
+                participant_group_has_character = scope:mm_v1312_silk_road_target
+            }
+        }
+    }
+}
+
+mm_v1312_silk_road_region_bounty_high_tax_trigger = {
+    any_character_situation = {
+        situation_type = silk_road_situation
+        situation_sub_region:region_silk_road_proper_$SUB_REGION$ = {
+            sub_region_current_phase = phase_exceptional_bounty
+            any_situation_sub_region_participant_group = {
+                participant_group_has_character = scope:mm_v1312_silk_road_target
+                OR = {
+                    participant_group_type = china_realm
+                    participant_group_type = silk_road_domain
+                    participant_group_type = silk_road_realm
+                }
+            }
+        }
+    }
+}
+
+mm_v1312_silk_road_region_bounty_periphery_tax_trigger = {
+    any_character_situation = {
+        situation_type = silk_road_situation
+        situation_sub_region:region_silk_road_proper_$SUB_REGION$ = {
+            sub_region_current_phase = phase_exceptional_bounty
+            any_situation_sub_region_participant_group = {
+                participant_group_type = silk_road_periphery
+                participant_group_has_character = scope:mm_v1312_silk_road_target
+            }
+        }
+    }
+}
+
+mm_v1312_silk_road_region_steady_tax_trigger = {
+    any_character_situation = {
+        situation_type = silk_road_situation
+        situation_sub_region:region_silk_road_proper_$SUB_REGION$ = {
+            sub_region_current_phase = phase_steady_trading
+            any_situation_sub_region_participant_group = {
+                participant_group_has_character = scope:mm_v1312_silk_road_target
+                OR = {
+                    participant_group_type = china_realm
+                    participant_group_type = silk_road_domain
+                }
+            }
+        }
+    }
+}

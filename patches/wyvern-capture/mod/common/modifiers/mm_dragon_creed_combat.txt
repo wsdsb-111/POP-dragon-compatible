@@ -1,0 +1,2 @@
+# Provisional values: the doctrine did not specify a magnitude or duration.
+mm_creed_earth_wyvern_return = { prowess = 5 martial = 3 }
